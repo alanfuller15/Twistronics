@@ -1,0 +1,1 @@
+Temporary, content-addressed staging for the authorized v053 import. Original file bytes are uploaded through GitHub's normal file-upload UI and restored to their recorded paths in a subsequent Git tree. No project code or workflow executes. This staging directory will be absent from the final snapshot.
