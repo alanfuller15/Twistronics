@@ -1,0 +1,53 @@
+--- a/bm_strain.py
++++ b/bm_strain.py
+@@ -50,10 +50,13 @@
+ 
+ class BM:
+     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,
+-                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear'):
++                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', cutoff_tol=1e-6):
+         # geometry: 'linear' (campaign: K_l=(1-E_l)R K, q_j linearised) | 'exact' ((1+E_l)^{-T} R, as tbg_ref)
+         if geometry not in ('linear', 'exact'): raise ValueError(geometry)
+         self.geometry = geometry
++        self.cutoff_tol = float(cutoff_tol)
++        if not np.isfinite(self.cutoff_tol) or self.cutoff_tol < 0:
++            raise ValueError('cutoff_tol must be finite and nonnegative')
+         # kinetic: 'none' (v023 campaign), 'full' (v039: [I+(1-beta)E] R^T, lab gauge),
+         #          'lab_nn_full' (v041 declared: R^T [I+(1-beta)E], crystal-frame gauge rotated to lab)
+         if kinetic not in ('none', 'full', 'lab_nn_full'): raise ValueError(kinetic)
+@@ -96,7 +99,7 @@
+                                             + np.sin(2 * np.pi * j / 3) * sy)
+                   for j in range(3)]
+         # plane-wave lattice
+-        gmax = N * np.linalg.norm(self.G1) + 1e-6
++        gmax = N * np.linalg.norm(self.G1) + self.cutoff_tol
+         idx = []
+         for m in range(-3 * N, 3 * N + 1):
+             for n in range(-3 * N, 3 * N + 1):
+
+--- a/tbg_ref.py
++++ b/tbg_ref.py
+@@ -37,10 +37,13 @@
+ 
+ 
+ class TBG:
+-    def __init__(self, theta=1.05, w1=110.0, w0=88.0, eps=0.0, phi=0.0, nu=0.16, beta=3.14, N=4, A=0.0, B=0.0, Bt=0.0, kinetic=None):
++    def __init__(self, theta=1.05, w1=110.0, w0=88.0, eps=0.0, phi=0.0, nu=0.16, beta=3.14, N=4, A=0.0, B=0.0, Bt=0.0, kinetic=None, cutoff_tol=1e-9):
+         # kinetic must be given explicitly (v041): 'none' | 'geom_wrong' (v036, retained for record) | 'full' (v039) | 'lab_nn_full' (v041 declared)
+         if kinetic not in ('none', 'geom_wrong', 'full', 'lab_nn_full'): raise ValueError('kinetic must be one of none/geom_wrong/full/lab_nn_full, got %r' % (kinetic,))
+         self.kinetic = kinetic; self.beta = beta
++        self.cutoff_tol = float(cutoff_tol)
++        if not np.isfinite(self.cutoff_tol) or self.cutoff_tol < 0:
++            raise ValueError('cutoff_tol must be finite and nonnegative')
+         th = np.radians(theta); ph = np.radians(phi)
+         E = eps * np.array([[np.cos(ph)**2 - nu*np.sin(ph)**2, (1+nu)*np.sin(ph)*np.cos(ph)],
+                             [(1+nu)*np.sin(ph)*np.cos(ph), np.sin(ph)**2 - nu*np.cos(ph)**2]])
+@@ -60,7 +63,7 @@
+         self.w1, self.A, self.B, self.Bt, self.N = w1, A, B, Bt, N
+         # absolute-momentum grid centred on the layer-1 Dirac point K_0^(1), shared by both layers
+         self.origin = self.Kl[0][0]
+-        gmax = N*np.linalg.norm(self.G1) + 1e-9
++        gmax = N*np.linalg.norm(self.G1) + self.cutoff_tol
+         self.mn = [(a, b) for a in range(-3*N, 3*N+1) for b in range(-3*N, 3*N+1) if np.linalg.norm(a*self.G1 + b*self.G2) <= gmax]
+         self.ix = {t: i for i, t in enumerate(self.mn)}; self.nG = len(self.mn); self.dim = 4*self.nG
+         self.Gv = np.array([a*self.G1 + b*self.G2 for a, b in self.mn])

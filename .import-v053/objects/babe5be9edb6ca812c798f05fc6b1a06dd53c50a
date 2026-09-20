@@ -1,0 +1,117 @@
+--- v041/v023_code/bm_strain.py
++++ v043/v023_code/bm_strain.py
+@@ -50,7 +50,10 @@
+ 
+ class BM:
+     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,
+-                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none'):
++                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear'):
++        # geometry: 'linear' (campaign: K_l=(1-E_l)R K, q_j linearised) | 'exact' ((1+E_l)^{-T} R, as tbg_ref)
++        if geometry not in ('linear', 'exact'): raise ValueError(geometry)
++        self.geometry = geometry
+         # kinetic: 'none' (v023 campaign), 'full' (v039: [I+(1-beta)E] R^T, lab gauge),
+         #          'lab_nn_full' (v041 declared: R^T [I+(1-beta)E], crystal-frame gauge rotated to lab)
+         if kinetic not in ('none', 'full', 'lab_nn_full'): raise ValueError(kinetic)
+@@ -68,8 +71,10 @@
+         self.thetas = [-self.theta / 2, +self.theta / 2]
+         self.Es = [-E / 2, +E / 2]
+         self.Kl, self.Al = [], []
++        lat = (lambda El, th, v: np.linalg.inv(np.eye(2) + El).T @ rot(th) @ v) if geometry == 'exact' \
++              else (lambda El, th, v: (np.eye(2) - El) @ rot(th) @ v)
+         for th, El in zip(self.thetas, self.Es):
+-            self.Kl.append((np.eye(2) - El) @ rot(th) @ KD)
++            self.Kl.append(lat(El, th, KD))
+             if kinetic == 'lab_nn_full':
+                 Ec = rot(-th) @ El @ rot(th)                       # strain in the layer's crystal frame
+                 Ac = np.sqrt(3) * beta / (2 * A_LAT) * np.array([Ec[0, 0] - Ec[1, 1], -2 * Ec[0, 1]])
+@@ -81,8 +86,8 @@
+         self.q = []
+         for j in range(3):
+             Kj = rot(2 * np.pi * j / 3) @ KD
+-            K1 = (np.eye(2) - self.Es[0]) @ rot(self.thetas[0]) @ Kj
+-            K2 = (np.eye(2) - self.Es[1]) @ rot(self.thetas[1]) @ Kj
++            K1 = lat(self.Es[0], self.thetas[0], Kj)
++            K2 = lat(self.Es[1], self.thetas[1], Kj)
+             self.q.append(K1 - K2)
+         self.G1 = self.q[1] - self.q[0]
+         self.G2 = self.q[2] - self.q[0]
+
+--- v041/v023_code/tbg_ref.py
++++ v043/v023_code/tbg_ref.py
+@@ -221,8 +221,10 @@
+     def relative_charge(self, U, n1, n2, lo, r=None):
+         d = ((n2-n1)+0.5) % 1-0.5; n2 = n1 + d
+         sep = np.linalg.norm(d)
+-        if sep < 1e-4: raise ValueError('coincident seeds (sep=%.1e)' % sep)
+-        r = min(r or 0.01, 0.01, 0.3*sep)                                # bound enforced for any requested radius
++        if not np.isfinite(sep) or sep < 1e-4: raise ValueError('nonfinite/coincident seeds (sep=%.1e)' % sep)
++        requested = 0.01 if r is None else float(r)
++        if not np.isfinite(requested) or requested <= 0: raise ValueError('radius must be positive and finite')
++        r = min(requested, 0.01, 0.3*sep)
+         self.smin_log = []
+         off = -1.5*r*d/sep                                            # frame point on the side away from the partner node
+         base = self.real_frame(U, self.k(n1 + off), lo)
+@@ -241,19 +243,38 @@
+ 
+     def gap_min(self, i, n=18, keep=4):
+         """bounded multistart minimum of gap i over the fundamental cell, with explicit seam seeds (v040 correction)."""
++        if not isinstance(n, (int, np.integer)) or n < 2 or not isinstance(keep, (int, np.integer)) or keep < 1:
++            raise ValueError('gap_min requires integer n >= 2 and keep >= 1')
+         fn = self.gap(i); fs = np.linspace(0, 1, n, endpoint=False)
+         V = np.array([[fn(np.array([a, b])) for b in fs] for a in fs])
++        if not np.isfinite(V).all(): raise RuntimeError('nonfinite gap grid')
+         seeds = sorted([(V[p, q], fs[p], fs[q]) for p in range(n) for q in range(n)
+                         if V[p, q] <= min(V[(p+dp) % n, (q+dq) % n] for dp in (-1, 0, 1) for dq in (-1, 0, 1))])[:keep]
+         pts = [np.array([a, b]) for _, a, b in seeds]
+         for a, b in list(pts):                                                   # seam/edge seeds for every candidate
+             pts += [np.array([a, b]) + np.array(sh) for sh in ((1, 0), (-1, 0), (0, 1), (0, -1)) if 0 <= a+sh[0] <= 1 and 0 <= b+sh[1] <= 1]
+             pts += [np.array([1.0 if a > 0.5 else 0.0, b]), np.array([a, 1.0 if b > 0.5 else 0.0])]
+-        best = np.inf
++        # Cover both faces explicitly, including inward seeds: clipping a
++        # Nelder-Mead simplex on a face can otherwise retain a false edge
++        # minimum. Two-grid agreement alone missed the endpoint regression.
++        for a, b in list(pts):
++            pts += [np.array([0., b]), np.array([1., b]), np.array([a, 0.]), np.array([a, 1.])]
++        pts += [np.array([a, b]) for a in (0., .5, 1.) for b in (0., .5, 1.)]
++        pts += [np.clip(p, .01, .99) for p in list(pts) if np.any((p == 0.) | (p == 1.))]
++        pts = [np.array(p) for p in sorted(set(tuple(p) for p in pts))]
++        best = np.inf; self.gap_min_log = []
+         for p0 in pts:
+-            r = minimize(lambda f: fn(np.array(f)), np.clip(p0, 0, 1), method='Nelder-Mead',
++            p0 = np.clip(p0, 0, 1); initial = float(fn(p0))
++            if not np.isfinite(initial): raise RuntimeError('nonfinite gap seed')
++            r = minimize(lambda f: fn(np.array(f)), p0, method='Nelder-Mead',
+                          bounds=[(0, 1), (0, 1)], options={'xatol': 1e-8, 'fatol': 1e-11, 'maxiter': 800})
+-            if r.success: best = min(best, r.fun)
++            self.gap_min_log.append(dict(seed=p0.tolist(), initial=initial,
++                                         success=bool(r.success), value=float(r.fun),
++                                         message=str(getattr(r, 'message', ''))))
++            if not r.success or not np.isfinite(r.fun) or r.fun > initial + 1e-7:
++                raise RuntimeError('gap refinement failed, nonfinite, or worsened seed')
++            best = min(best, r.fun)
++        if not np.isfinite(best): raise RuntimeError('no accepted gap refinement')
+         return best
+ 
+     def band_sign_holonomy(self, U, band, axis, c, n=100):
+
+--- v041/v023_code/test_tbg_ref.py
++++ v043/v023_code/test_tbg_ref.py
+@@ -65,3 +65,18 @@
+     d = np.linalg.norm(nodes[0] - nodes[1])
+     w = m.node_charge(U, nodes[0], lo, frame, r=0.45 * d)
+     assert w is None or abs(w) == 1
++
++def test_exact_geometry_makes_engines_agree_to_roundoff():
++    """v043: with geometry='exact' in bm_strain, the two engines are the same declared model to roundoff."""
++    a = BM(N=3, eps=0.003, phi_deg=65, kinetic='lab_nn_full', geometry='exact'); b = TBG(N=3, eps=0.003, phi=65, kinetic='lab_nn_full')
++    for f in ([0.31, 0.27], [1.13, 0.62]):
++        wa = a.bands_near_zero(a.frac_to_k(np.array(f)), 3); wb = b.bands(b.k(np.array(f)), 3)
++        assert np.abs(wa - wb).max() < 1e-10
++    a2 = BM(N=3, eps=0.003, phi_deg=65, kinetic='lab_nn_full', geometry='linear')
++    wa2 = a2.bands_near_zero(a2.frac_to_k(np.array([0.31, 0.27])), 3); wb = b.bands(b.k(np.array([0.31, 0.27])), 3)
++    assert 1e-5 < np.abs(wa2 - wb).max() < 2e-3          # linearised geometry residual, as v042 reported
++
++def test_gap_min_never_returns_infinity():
++    m = TBG(N=3, eps=0.003, kinetic='none')
++    v = m.gap_min(2, n=8, keep=2)
++    assert np.isfinite(v) and v > 0
