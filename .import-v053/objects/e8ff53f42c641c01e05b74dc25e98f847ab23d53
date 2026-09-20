@@ -1,0 +1,37 @@
+{
+  "scope": "Second braid, ratio .99 to 1.00 at A=0,B=-.4,T=-.8,phi80,eps.003,theta1.05; both declared engines, N4,N6. Explicit unwrapped chart for U2 near f2=1.013.",
+  "parameter_points": 11,
+  "parameter_steps": [
+    0.001,
+    0.002
+  ],
+  "loop_trials": [
+    [
+      0.006,
+      64
+    ],
+    [
+      0.006,
+      128
+    ],
+    [
+      0.003,
+      128
+    ]
+  ],
+  "transport_steps": [
+    128,
+    256
+  ],
+  "root_xtol": 1e-10,
+  "hypothesis": "X1 crossing coincides with SAME-to-OPPOSITE spatial comparison; carried individual charges unchanged; gate rejects singular path. Failure retained, no gate relaxation.",
+  "sources": {
+    "models.py": "ef3a207636916ee82402579fe10447ea68e48f457fcc6ab23fc44c3593d879fe",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "replay_second.py": "5dbb944f261b60d54b405772ec2e420898f8feadbe1793b4c60aafcbf3e9a96a",
+    "engines/independent_model.py": "1d803d518b8ff4df76bc7740d9a91af6da1535c03de3764c9f5238f89195f585",
+    "engines/tbg_ref.py": "5503229a4b1e921fdd2740328038e5a579d9a69c1e15b5ca19e31f7d5c645208",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "results/discovery.json": "1c6e033e8f93ef707ad8a4c8b4169ed40eef298592b8163e8dc6e39eb859236f"
+  }
+}

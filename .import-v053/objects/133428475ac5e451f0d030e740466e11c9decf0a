@@ -1,0 +1,49 @@
+--- a/v023_code/tbg_ref.py
++++ b/v023_code/tbg_ref.py
+@@ -221,8 +221,10 @@
+     def relative_charge(self, U, n1, n2, lo, r=None):
+         d = ((n2-n1)+0.5) % 1-0.5; n2 = n1 + d
+         sep = np.linalg.norm(d)
+-        if sep < 1e-4: raise ValueError('coincident seeds (sep=%.1e)' % sep)
+-        r = min(r or 0.01, 0.01, 0.3*sep)                                # bound enforced for any requested radius
++        if not np.isfinite(sep) or sep < 1e-4: raise ValueError('nonfinite/coincident seeds (sep=%.1e)' % sep)
++        requested = 0.01 if r is None else float(r)
++        if not np.isfinite(requested) or requested <= 0: raise ValueError('radius must be positive and finite')
++        r = min(requested, 0.01, 0.3*sep)
+         self.smin_log = []
+         off = -1.5*r*d/sep                                            # frame point on the side away from the partner node
+         base = self.real_frame(U, self.k(n1 + off), lo)
+@@ -241,19 +243,30 @@
+ 
+     def gap_min(self, i, n=18, keep=4):
+         """bounded multistart minimum of gap i over the fundamental cell, with explicit seam seeds (v040 correction)."""
++        if not isinstance(n, (int, np.integer)) or n < 2 or not isinstance(keep, (int, np.integer)) or keep < 1:
++            raise ValueError('gap_min requires integer n >= 2 and keep >= 1')
+         fn = self.gap(i); fs = np.linspace(0, 1, n, endpoint=False)
+         V = np.array([[fn(np.array([a, b])) for b in fs] for a in fs])
++        if not np.isfinite(V).all(): raise RuntimeError('nonfinite gap grid')
+         seeds = sorted([(V[p, q], fs[p], fs[q]) for p in range(n) for q in range(n)
+                         if V[p, q] <= min(V[(p+dp) % n, (q+dq) % n] for dp in (-1, 0, 1) for dq in (-1, 0, 1))])[:keep]
+         pts = [np.array([a, b]) for _, a, b in seeds]
+         for a, b in list(pts):                                                   # seam/edge seeds for every candidate
+             pts += [np.array([a, b]) + np.array(sh) for sh in ((1, 0), (-1, 0), (0, 1), (0, -1)) if 0 <= a+sh[0] <= 1 and 0 <= b+sh[1] <= 1]
+             pts += [np.array([1.0 if a > 0.5 else 0.0, b]), np.array([a, 1.0 if b > 0.5 else 0.0])]
+-        best = np.inf
++        best = np.inf; self.gap_min_log = []
+         for p0 in pts:
+-            r = minimize(lambda f: fn(np.array(f)), np.clip(p0, 0, 1), method='Nelder-Mead',
++            p0 = np.clip(p0, 0, 1); initial = float(fn(p0))
++            if not np.isfinite(initial): raise RuntimeError('nonfinite gap seed')
++            r = minimize(lambda f: fn(np.array(f)), p0, method='Nelder-Mead',
+                          bounds=[(0, 1), (0, 1)], options={'xatol': 1e-8, 'fatol': 1e-11, 'maxiter': 800})
+-            if r.success: best = min(best, r.fun)
++            self.gap_min_log.append(dict(seed=p0.tolist(), initial=initial,
++                                         success=bool(r.success), value=float(r.fun),
++                                         message=str(getattr(r, 'message', ''))))
++            if not r.success or not np.isfinite(r.fun) or r.fun > initial + 1e-7:
++                raise RuntimeError('gap refinement failed, nonfinite, or worsened seed')
++            best = min(best, r.fun)
++        if not np.isfinite(best): raise RuntimeError('no accepted gap refinement')
+         return best
+ 
+     def band_sign_holonomy(self, U, band, axis, c, n=100):

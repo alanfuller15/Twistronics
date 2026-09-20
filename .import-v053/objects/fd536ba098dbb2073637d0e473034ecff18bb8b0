@@ -1,0 +1,20 @@
+{
+  "reason": "Report gate found RUNNING record with two of five band-cycle groups despite earlier completion log. Cause not established. Preserve snapshot and repeat only this job.",
+  "snapshot_sha256": "8af2ba159e989816ca75da4d05aa3263e30cf254d1535edd44b5e7fd19ac1921",
+  "observed_status": "RUNNING",
+  "observed_cycle_groups": [
+    "lower_remote",
+    "flat1"
+  ],
+  "action": "run_focused.py --engine ref_lab --N 4 resumes accepted jobs and recomputes incomplete endpoint",
+  "acceptance_thresholds_changed": false,
+  "replacement_status": "ACCEPT",
+  "replacement_cycle_groups": [
+    "lower_remote",
+    "flat1",
+    "flat2",
+    "upper_remote",
+    "flat_pair"
+  ],
+  "replacement_sha256": "0a60e56e9caec0b848e9eb885c10529e6600dcc00297ea854aa8152c35d9048d"
+}

@@ -1,0 +1,88 @@
+{
+  "version": "v042-lab-two-engine",
+  "source_sha256": {
+    "boundary_audit.py": "40a1bf0a87f52fd7266ab0bc212bf2b2f0f7f623717458cc4fadfef3c06cde23",
+    "check_gapped.py": "21cec1d7591bf7ec7556de0a514cf2555eb020ffc661baf5505bde5908683655",
+    "engines/bm_strain.py": "61a4d9ec9dd3b047354a3b881f4f77beea1b17a5e684340c5a947deb1d9bd612",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "d60f5f3cf9a967302a875942bdc5425908e8f5580a306260a8d8a6fa10065755",
+    "fold_character.py": "8f7713901b7973cb796982013e122fddf9d5b77c7a0916326ba154c90335f545",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "93613ce79ccb7e6aa148fb64142bdacdeefb6ef25323914ef3628b79593240a3",
+    "preflight.py": "eaecdc7a08d0b79c6c973e6758b0afb2617fab4d30cf623f7416fe15e4e05445",
+    "refined_charge.py": "ff6be61f99b0cc26ea1daa67507f1cea2e07bfb32bf10181e305556979dbe0d5",
+    "replay_events_refined.py": "5cc4b3dddf7de6df6d1b0877b18191a094b27f23da606afe5bb8d1bd42415b9d",
+    "replay_second.py": "3cdc9de20d964ee3f8ea7ac4db0d988eb1fe032399995c01538d5a97724306ea",
+    "run_engine.py": "2fdc6f8df13dacdd51c0c9bc90273c985f12cebedbff6154a4f13dfdcf503045",
+    "run_focused.py": "d3ff96b104f49bb9ae9d67cd039b0e504ed0678943456585bfdfcffd58152ae3",
+    "tests/test_gate_integration.py": "4d81713d9c58489b62f9ed70d778c7098255643ae5a253722dbc87e1d84637a2",
+    "verify_models.py": "1f40f7fd41945f909978082464b95b03ea71dcde5ecc8d7cf42647bba226250c"
+  },
+  "input_zip_sha256": "359ae73c7d90dd74402bdae24582ab8417ac5ffaf3045d853a786b4b54423def",
+  "kinetic": "lab_nn_full",
+  "engines": {
+    "bm_lab": "Uploaded BM, linearized reciprocal geometry, source add_harmonic for B and T",
+    "ref_lab": "Uploaded TBG, exact inverse reciprocal geometry"
+  },
+  "jobs": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "tasks": [
+        "second",
+        "first_ann",
+        "bridge",
+        "endpoint",
+        "post_transfer"
+      ]
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "tasks": [
+        "second",
+        "first_ann",
+        "bridge",
+        "endpoint",
+        "post_transfer"
+      ]
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "tasks": [
+        "second",
+        "first_ann",
+        "bridge",
+        "endpoint",
+        "post_transfer"
+      ]
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "tasks": [
+        "second",
+        "first_ann",
+        "bridge",
+        "endpoint",
+        "post_transfer"
+      ]
+    }
+  ],
+  "gate_origin": "v040/v038; numerical thresholds unchanged",
+  "sampling": "11 braid parameter states; collision 9 approaching-root states; loop and parameter refinement; grid 18/24; cycle meshes64/128 and offsets0/0.5; edge and opposite-seam seeds",
+  "preflight": "Starting roots and crossing bracket verified before freezing; no acceptance thresholds tuned.",
+  "scope_exclusions": [
+    "Earlier connecting legs",
+    "Cleanup under this model",
+    "Other collision windows under this model",
+    "N>6",
+    "Physical tunneling strain law",
+    "Continuum proof"
+  ]
+}

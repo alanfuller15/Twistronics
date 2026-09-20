@@ -1,0 +1,54 @@
+{
+  "version": "v040-focused",
+  "source_sha256": {
+    "boundary_audit.py": "93b46066670b40902bd8eeac9e957ce25de45fcd51a296bf9be748225e61d807",
+    "check_gapped.py": "8826c85974b575011f6066e9c48e79a84b777706b49f24c94b9a42c3bfbe4521",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/independent_model.py": "1d803d518b8ff4df76bc7740d9a91af6da1535c03de3764c9f5238f89195f585",
+    "engines/tbg_ref.py": "87c5b4411e75d56b513472b12a74bdf0fc29c3a5729bf245b28cc38b4b540739",
+    "fold_character.py": "8f7713901b7973cb796982013e122fddf9d5b77c7a0916326ba154c90335f545",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "018d930c75443cd4e82f4380786b5f1275a4c65ec3f714ddc8e92031b0128d9f",
+    "refined_charge.py": "ff6be61f99b0cc26ea1daa67507f1cea2e07bfb32bf10181e305556979dbe0d5",
+    "replay_events_refined.py": "d30df5c19cbd6547ef98d07c33357c06a2dcb91adaa55d0dd1fe823abee57f2a",
+    "replay_second.py": "08c703dda6ae2898bdfa6f279b8691a367fb10e6cd7624c70ee313fb152296e2",
+    "run_focused.py": "837a24cb0ca9bca0964d5ff6020c325675e027dc8cdab729f7d14b496fd2342e",
+    "strain_audit.py": "b9bcfbdbeff4075eff29774af64bbd6405c52e0e1d8a825e905625237e1141af",
+    "strain_check.py": "3e704b5d349c30b639529a007c8f78e81873842a0a1e73ca54daf6c39ed6d410",
+    "tests/test_adapter.py": "24e51ac36f0f5debd315b405db1eb6d703c261cf860c55c6a32215e35d296a6d"
+  },
+  "models": {
+    "v039_full": "Uploaded tbg_ref.py, explicit kinetic=full; exact reciprocal geometry; V R.T; legacy gauge",
+    "lab_nn_full": "Sensitivity adapter only; R.T V and crystal-to-lab gauge; no campaign run planned"
+  },
+  "primary_jobs": [
+    {
+      "engine": "v039_full",
+      "N": 4,
+      "tasks": [
+        "second",
+        "first_ann",
+        "bridge",
+        "endpoint"
+      ]
+    },
+    {
+      "engine": "v039_full",
+      "N": 6,
+      "tasks": [
+        "second",
+        "first_ann",
+        "bridge",
+        "endpoint"
+      ]
+    }
+  ],
+  "gates": "Unchanged v038 refined loop, isolation, residual, phase, overlap, seam and optimizer gates; explicit boundary seeding included from start.",
+  "limits": [
+    "Finite searches, not rigorous gap lower bounds",
+    "N4/N6 only",
+    "One Hamiltonian engine and shared independent measurement harness",
+    "No end-to-end earlier-leg replay or strain-dependent tunneling"
+  ],
+  "input_zip_sha256": "cb7c7f749d3d84dc7843105f3252c52b4a3bde4f7317d20022e83d10614e1525"
+}
