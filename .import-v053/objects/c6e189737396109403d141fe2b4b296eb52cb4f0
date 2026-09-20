@@ -1,0 +1,118 @@
+{
+  "version": "our_v053",
+  "scope": "Original flat-pair sampled preparation replay with parameter frames and endpoint relative-orientation join",
+  "engines": {
+    "bm_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "linear",
+      "cutoff_tol": 1e-06
+    },
+    "ref_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "cutoff_tol": 1e-09
+    }
+  },
+  "cutoffs": [
+    4,
+    6
+  ],
+  "route": [
+    {
+      "parameter": "A",
+      "start": 0,
+      "end": 0.2,
+      "fine_intervals": 8,
+      "coarse_intervals": 4
+    },
+    {
+      "parameter": "B",
+      "start": 0,
+      "end": -0.25,
+      "fine_intervals": 10,
+      "coarse_intervals": 5
+    }
+  ],
+  "held": {
+    "T": 0,
+    "phi": 0,
+    "ratio": 0.8,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0
+  },
+  "states_per_case": 19,
+  "total_primary_states": 76,
+  "charge_at_every_state": true,
+  "gates": {
+    "gap_index": 3,
+    "node_residual": 1e-06,
+    "node_separation": 0.001,
+    "max_root_jump": 0.06,
+    "external_gap": 1e-05,
+    "loop_radius": "min(.004,separation/8)",
+    "loop_meshes": [
+      64,
+      128,
+      128
+    ],
+    "phase_only_fallback": [
+      [
+        256,
+        512,
+        512
+      ],
+      [
+        1024,
+        2048,
+        2048
+      ]
+    ],
+    "spatial_meshes": [
+      128,
+      256
+    ],
+    "parameter_orientation_det": 0.99,
+    "spatial_orientation_det": 0.99,
+    "min_transport_overlap": 0.1,
+    "max_basis_norm_loss": 0.02,
+    "fixed_basis_enforced": true,
+    "endpoint_root": 1e-06,
+    "endpoint_plane_overlap": 0.999999,
+    "endpoint_relative_orientation": 1,
+    "common_global_orientation_flip_allowed": true
+  },
+  "resume_check": "BM N4: three committed states, process stop, reload and continue; preserved checkpoint digests, not an uninterrupted rerun comparison",
+  "pilot": "11-state BM N4 exploratory run kept separately",
+  "source_sha256": {
+    "basis.py": "abde0c16c26a5cf22558dcbe2c2d18ba0dedc8390a1a65b9fe8fd4cf1c27bb1f",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "engines/bm_strain.py": "66498fc7de422d2680b3ebf6e8c63a137ed325684f1a5a3f9380a3d387c7f037",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "frame_checks.py": "ba969e29e607c8d639b9e8e7d6484b0ce0791305ed4736a42cb403ce50248716",
+    "frame_join.py": "c2992b691b995be725f92d7b07a1e9deff751713b22f87ae03661fc11973db2f",
+    "ledger_guard.py": "7f862f6a4a24b68125786c46bb778af552aacfc63b529330437e476d86f4d198",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "replay_prep.py": "b974d8db4004985345814c5b6262d6243d8eb99f41b6b9433e4b773b56449c2a",
+    "routes.py": "531de5f864bd39eb3d7aa4e463ef30f97be1297baf6691fbcd28246537f2b68a",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e"
+  },
+  "anchor_sha256": {
+    "anchors/v044_start_bm_lab_N4.json": "f4ed2b88ae799a0564f8a90cdd11df0e9e591d0d66232c7b559fe63a262007db",
+    "anchors/v044_start_bm_lab_N4.npz": "79f976f0b382ef556471f6a88522f336f596f2f404bce750775640f90128d6de",
+    "anchors/v044_start_bm_lab_N6.json": "7cc329a4a5631937327475617930ce186333256cf4207b8be1bb684bb63ee119",
+    "anchors/v044_start_bm_lab_N6.npz": "ec1314dc0fbadcfe75bbc1b4646cf2885408efda6154ea8c4ece92bd252358d4",
+    "anchors/v044_start_ref_lab_N4.json": "9f2077014d4ef841183417099e973681ae3045540b35b69994d3e67a85215c99",
+    "anchors/v044_start_ref_lab_N4.npz": "d1aaf2cc6a15bddcf309bc44d5b382e0437998ff6f99696c655bddebc9c7da2b",
+    "anchors/v044_start_ref_lab_N6.json": "57796c8c279e47d61db53a975e476dba0e1a4d69396406aa462815d92f338ea9",
+    "anchors/v044_start_ref_lab_N6.npz": "c61e50e80f4d8ad33b0085c0211e47dd07aee07eafb031825ceb738835fa6e30"
+  }
+}
