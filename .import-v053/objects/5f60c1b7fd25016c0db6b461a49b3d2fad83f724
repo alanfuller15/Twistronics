@@ -1,0 +1,183 @@
+{
+  "status": "ACCEPT",
+  "step": 9,
+  "protocol_sha256": "224484a5781f78b35df59c87e35cdc5ebb6e24bf76de2ec9b5f783e055945956",
+  "engine": "ref_lab",
+  "N": 4,
+  "case": "pre_ann",
+  "state": {
+    "A": 0.04999999999999999,
+    "B": -0.4,
+    "T": -0.4,
+    "phi": 60.0,
+    "ratio": 0.8,
+    "theta": 1.05,
+    "eps": 0.003
+  },
+  "leg": 2,
+  "leg_step": 3,
+  "varying": "A",
+  "nodes": [
+    {
+      "f": [
+        0.7539939551072349,
+        0.7387159526276006
+      ],
+      "gap": 7.975842208907125e-13,
+      "index": 3,
+      "nfev": 6
+    },
+    {
+      "f": [
+        0.5906533367431872,
+        0.7899208796862289
+      ],
+      "gap": 3.907985046680551e-13,
+      "index": 3,
+      "nfev": 5
+    }
+  ],
+  "node_jumps": [
+    0.01790077549974187,
+    0.018598948292057247
+  ],
+  "separation": 0.17117856805870563,
+  "basis_dimension": 244,
+  "temporal_transport": [
+    {
+      "min_overlap": 0.993506048709314,
+      "old_norm_loss": 1.0013608855054467e-15,
+      "new_norm_loss": 3.2481312688570063e-16,
+      "old_dimension": 244,
+      "new_dimension": 244,
+      "common_dimension": 244,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "min_overlap": 0.9883044273552959,
+      "old_norm_loss": 0.0,
+      "new_norm_loss": 1.1102237539925408e-15,
+      "old_dimension": 244,
+      "new_dimension": 244,
+      "common_dimension": 244,
+      "removed": 0,
+      "added": 0
+    }
+  ],
+  "parameter_mesh_check": null,
+  "spatial_transport": [
+    {
+      "min_overlap": 0.9997520127840864,
+      "min_external_gap": 10.271471146028695,
+      "samples": 163,
+      "located_gap_minima": [
+        {
+          "t": 0.3220171816324009,
+          "gap": 10.271471146028695,
+          "gap_index": 2
+        },
+        {
+          "t": 0.8283734689686065,
+          "gap": 19.335178353847247,
+          "gap_index": 4
+        }
+      ]
+    },
+    {
+      "min_overlap": 0.9999373203824777,
+      "min_external_gap": 10.271471146028674,
+      "samples": 291,
+      "located_gap_minima": [
+        {
+          "t": 0.32201717241855415,
+          "gap": 10.271471146028674,
+          "gap_index": 2
+        },
+        {
+          "t": 0.8283734916530262,
+          "gap": 19.335178353846683,
+          "gap_index": 4
+        }
+      ]
+    }
+  ],
+  "spatial_mesh_determinant": 1.0,
+  "temporal_trials": [
+    {
+      "radius": 0.004,
+      "points": 64,
+      "a": {
+        "winding": 1.0,
+        "charge": 1,
+        "min_loop_gap": 0.6845604630372392,
+        "max_phase_step": 0.20560330575313066,
+        "min_chart_overlap": 0.9997080658511746
+      },
+      "b": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.7242380183424868,
+        "max_phase_step": 0.14268016529599933,
+        "min_chart_overlap": 0.9991940011157429
+      },
+      "label": "OPPOSITE"
+    },
+    {
+      "radius": 0.004,
+      "points": 128,
+      "a": {
+        "winding": 1.0,
+        "charge": 1,
+        "min_loop_gap": 0.6845604630372392,
+        "max_phase_step": 0.10333675689728498,
+        "min_chart_overlap": 0.9997080055268556
+      },
+      "b": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.724161725931922,
+        "max_phase_step": 0.07143304278017767,
+        "min_chart_overlap": 0.9991940011157429
+      },
+      "label": "OPPOSITE"
+    },
+    {
+      "radius": 0.002,
+      "points": 128,
+      "a": {
+        "winding": 1.0,
+        "charge": 1,
+        "min_loop_gap": 0.34508771871825944,
+        "max_phase_step": 0.10268679873888303,
+        "min_chart_overlap": 0.9999283877490043
+      },
+      "b": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.3693289551195331,
+        "max_phase_step": 0.07051306727120583,
+        "min_chart_overlap": 0.9998010712153406
+      },
+      "label": "OPPOSITE"
+    }
+  ],
+  "rejected_loop_stages": [],
+  "rectangle_orientation": 1,
+  "spatial_direct_charge": {
+    "winding": -1.0,
+    "charge": -1,
+    "min_loop_gap": 0.7241617259319215,
+    "max_phase_step": 0.07143304278017754,
+    "min_chart_overlap": 0.9991940011157433
+  },
+  "label": "OPPOSITE",
+  "diagnostics": {
+    "max_eigen_residual": 3.82990021177459e-16,
+    "max_reality": 5.6842956145041694e-14,
+    "max_hermitian": 0.0
+  },
+  "sampled_points": 898,
+  "seconds": 3.556478261947632,
+  "frames_sha256": "e970118ecf02090f520160781b78e05453dd8750beae1abfe57e154b3b031f68"
+}

@@ -1,0 +1,1429 @@
+{
+  "status": "ACCEPT",
+  "version": "v044",
+  "protocol_sha256": "583ac8f4324d9123f8516abd25655762924c529cf3d4a1674ee198cba8e2f424",
+  "primary_states": 148,
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "geometry": "linear",
+      "states": 37,
+      "center_crossing": -0.2901737961590045,
+      "shifted_crossing": -0.27997953631814493,
+      "events": [
+        {
+          "engine": "bm_lab",
+          "geometry": "linear",
+          "kinetic": "lab_nn_full",
+          "N": 4,
+          "shift": 0.0,
+          "B": -0.2901737961590045,
+          "location": {
+            "t": 0.4036440632240204,
+            "offset": -1.41693198768362e-15
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.741725627789291,
+                0.6112982799962697
+              ],
+              "gap": 3.836930773104541e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.5191758096838329,
+                0.8275833786128605
+              ],
+              "gap": 4.014566457044566e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "U1": {
+              "f": [
+                0.6518947149394382,
+                0.6986004760166794
+              ],
+              "gap": 3.979039320256561e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 3.907985046680551e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.007109883066934718,
+            -0.038060609290425866
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 3.267607761285533e-16,
+            "max_reality": 5.6685122099938394e-14,
+            "max_hermitian": 0.0
+          }
+        },
+        {
+          "engine": "bm_lab",
+          "geometry": "linear",
+          "kinetic": "lab_nn_full",
+          "N": 4,
+          "shift": 0.012,
+          "B": -0.27997953631814493,
+          "location": {
+            "t": 0.4281410737783322,
+            "offset": 1.1419019379312228e-15
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.7427527349606996,
+                0.6115323781951353
+              ],
+              "gap": 4.014566457044566e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.5185777196441759,
+                0.8275499696603239
+              ],
+              "gap": 0.0,
+              "index": 3,
+              "nfev": 3
+            },
+            "U1": {
+              "f": [
+                0.6587742031888083,
+                0.7040183817600494
+              ],
+              "gap": 3.979039320256561e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 3.979039320256561e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.015509905585897514,
+            -0.029831445323598348
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 3.847319205320586e-16,
+            "max_reality": 5.6653462402372185e-14,
+            "max_hermitian": 0.0
+          }
+        }
+      ],
+      "event_checks": [
+        {
+          "shift": 0.0,
+          "nearest_state": 16,
+          "node_distances": {
+            "F1": 1.7773628025985326e-05,
+            "F3": 1.0703367119056593e-05,
+            "U1": 0.0001398849077699712
+          }
+        },
+        {
+          "shift": 0.012,
+          "nearest_state": 12,
+          "node_distances": {
+            "F1": 2.1369368718532445e-06,
+            "F3": 1.1419175171612102e-06,
+            "U1": 1.874861480106192e-05
+          }
+        }
+      ],
+      "labels": [
+        "OPPOSITE",
+        "SAME"
+      ],
+      "label_changes": [
+        {
+          "step": 17,
+          "B": -0.2925,
+          "T": 0,
+          "label": "OPPOSITE"
+        }
+      ],
+      "temporal_charges": {
+        "a": [
+          1
+        ],
+        "b": [
+          1
+        ]
+      },
+      "final_label": "OPPOSITE",
+      "final_U1_offset": 0.016537300602037456,
+      "min_unlink_U1_offset": 0.016537300602037456,
+      "min_parameter_overlap": 0.9943097173129425,
+      "min_spatial_overlap": 0.9858195257267325,
+      "min_resolved_spatial_external_gap": 0.015860820520764207,
+      "max_node_gap": 8.100187187665142e-13,
+      "max_eigen_residual": 5.410024662139472e-16,
+      "anchor_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          1.4217791915866692e-15,
+          1.7798229048217483e-15
+        ],
+        "max_distance": 1.7798229048217483e-15,
+        "label": "OPPOSITE",
+        "frame_joins": [
+          {
+            "node": "F1",
+            "anchor_node": 0,
+            "min_overlap": 1.0000000000000002,
+            "orientation": -1,
+            "anchor_charge": -1,
+            "carried_charge": 1
+          },
+          {
+            "node": "F3",
+            "anchor_node": 1,
+            "min_overlap": 0.9999999999999992,
+            "orientation": 1,
+            "anchor_charge": 1,
+            "carried_charge": 1
+          }
+        ]
+      },
+      "loop_fallbacks": [],
+      "seconds": 109.52038908004761
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "geometry": "linear",
+      "states": 37,
+      "center_crossing": -0.29017026426335774,
+      "shifted_crossing": -0.27997918089288004,
+      "events": [
+        {
+          "engine": "bm_lab",
+          "geometry": "linear",
+          "kinetic": "lab_nn_full",
+          "N": 6,
+          "shift": 0.0,
+          "B": -0.29017026426335774,
+          "location": {
+            "t": 0.4036281969200488,
+            "offset": 8.07025269217896e-16
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.7417491764660189,
+                0.6112888120846376
+              ],
+              "gap": 0.0,
+              "index": 3,
+              "nfev": 3
+            },
+            "F3": {
+              "f": [
+                0.5192373078714175,
+                0.8276285734866473
+              ],
+              "gap": 3.836930773104541e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "U1": {
+              "f": [
+                0.6519371121518686,
+                0.6986096399014438
+              ],
+              "gap": 0.0,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 0.0,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.007116502389588532,
+            -0.03807230607565264
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 3.020059561015637e-16,
+            "max_reality": 5.6840631732243216e-14,
+            "max_hermitian": 0.0
+          }
+        },
+        {
+          "engine": "bm_lab",
+          "geometry": "linear",
+          "kinetic": "lab_nn_full",
+          "N": 6,
+          "shift": 0.012,
+          "B": -0.27997918089288004,
+          "location": {
+            "t": 0.4281094162204778,
+            "offset": 8.003168681150075e-16
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.7427762069866387,
+                0.6115228455364228
+              ],
+              "gap": 0.0,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.5186418213427102,
+                0.8275933572978603
+              ],
+              "gap": 0.0,
+              "index": 3,
+              "nfev": 3
+            },
+            "U1": {
+              "f": [
+                0.6588221659936805,
+                0.7040246661890711
+              ],
+              "gap": 3.907985046680551e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 3.907985046680551e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.015518346488049452,
+            -0.029841306599469077
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 7.693683765454232e-16,
+            "max_reality": 1.121475311500752e-13,
+            "max_hermitian": 0.0
+          }
+        }
+      ],
+      "event_checks": [
+        {
+          "shift": 0.0,
+          "nearest_state": 16,
+          "node_distances": {
+            "F1": 1.7416521825492875e-05,
+            "F3": 1.0448987541778111e-05,
+            "U1": 0.0001371268890576142
+          }
+        },
+        {
+          "shift": 0.012,
+          "nearest_state": 12,
+          "node_distances": {
+            "F1": 2.174519772527593e-06,
+            "F3": 1.1568212989857622e-06,
+            "U1": 1.9085098663601683e-05
+          }
+        }
+      ],
+      "labels": [
+        "OPPOSITE",
+        "SAME"
+      ],
+      "label_changes": [
+        {
+          "step": 17,
+          "B": -0.2925,
+          "T": 0,
+          "label": "OPPOSITE"
+        }
+      ],
+      "temporal_charges": {
+        "a": [
+          1
+        ],
+        "b": [
+          1
+        ]
+      },
+      "final_label": "OPPOSITE",
+      "final_U1_offset": 0.01609359069653112,
+      "min_unlink_U1_offset": 0.01609359069653112,
+      "min_parameter_overlap": 0.9943053034622162,
+      "min_spatial_overlap": 0.9857379245549481,
+      "min_resolved_spatial_external_gap": 0.015543101869575082,
+      "max_node_gap": 1.1652900866465643e-12,
+      "max_eigen_residual": 6.541575084036497e-16,
+      "anchor_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          1.1102230246251565e-15,
+          1.0235750533041806e-15
+        ],
+        "max_distance": 1.1102230246251565e-15,
+        "label": "OPPOSITE",
+        "frame_joins": [
+          {
+            "node": "F1",
+            "anchor_node": 0,
+            "min_overlap": 0.9999999999999988,
+            "orientation": -1,
+            "anchor_charge": -1,
+            "carried_charge": 1
+          },
+          {
+            "node": "F3",
+            "anchor_node": 1,
+            "min_overlap": 0.9999999999999983,
+            "orientation": 1,
+            "anchor_charge": 1,
+            "carried_charge": 1
+          }
+        ]
+      },
+      "loop_fallbacks": [],
+      "seconds": 502.9593653678894
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "geometry": "exact",
+      "states": 37,
+      "center_crossing": -0.2901753967322526,
+      "shifted_crossing": -0.2799809815516125,
+      "events": [
+        {
+          "engine": "ref_lab",
+          "geometry": "exact",
+          "kinetic": "lab_nn_full",
+          "N": 4,
+          "shift": 0.0,
+          "B": -0.2901753967322526,
+          "location": {
+            "t": 0.40364743194319835,
+            "offset": 3.908586760446238e-15
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.7417258728007016,
+                0.6112976119652751
+              ],
+              "gap": 7.673861546209082e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.51917580268869,
+                0.8275830426085561
+              ],
+              "gap": 1.2043699371133698e-12,
+              "index": 3,
+              "nfev": 4
+            },
+            "U1": {
+              "f": [
+                0.6518941085212067,
+                0.6986006706111614
+              ],
+              "gap": 3.979039320256561e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 7.958078640513122e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.007108696287197844,
+            -0.038061673352984736
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 2.9835918969941055e-16,
+            "max_reality": 5.67321444386243e-14,
+            "max_hermitian": 0.0
+          }
+        },
+        {
+          "engine": "ref_lab",
+          "geometry": "exact",
+          "kinetic": "lab_nn_full",
+          "N": 4,
+          "shift": 0.012,
+          "B": -0.2799809815516125,
+          "location": {
+            "t": 0.42814451627553135,
+            "offset": -2.4172197746507535e-16
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.7427529919406122,
+                0.6115316962684523
+              ],
+              "gap": 8.029132914089132e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.5185777042690846,
+                0.8275496311882716
+              ],
+              "gap": 1.1297629498585593e-12,
+              "index": 3,
+              "nfev": 4
+            },
+            "U1": {
+              "f": [
+                0.6587735718395581,
+                0.7040185905215377
+              ],
+              "gap": 3.979039320256561e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 7.887024366937112e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.015508714055303182,
+            -0.029832510550359664
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 2.786753033930375e-16,
+            "max_reality": 5.612489012266717e-14,
+            "max_hermitian": 0.0
+          }
+        }
+      ],
+      "event_checks": [
+        {
+          "shift": 0.0,
+          "nearest_state": 16,
+          "node_distances": {
+            "F1": 1.7937212332301675e-05,
+            "F3": 1.0801856601999269e-05,
+            "U1": 0.0001411723437837776
+          }
+        },
+        {
+          "shift": 0.012,
+          "nearest_state": 12,
+          "node_distances": {
+            "F1": 1.9860064990307457e-06,
+            "F3": 1.061260558388684e-06,
+            "U1": 1.7424373520338413e-05
+          }
+        }
+      ],
+      "labels": [
+        "OPPOSITE",
+        "SAME"
+      ],
+      "label_changes": [
+        {
+          "step": 17,
+          "B": -0.2925,
+          "T": 0,
+          "label": "OPPOSITE"
+        }
+      ],
+      "temporal_charges": {
+        "a": [
+          -1
+        ],
+        "b": [
+          -1
+        ]
+      },
+      "final_label": "OPPOSITE",
+      "final_U1_offset": 0.016536900204343886,
+      "min_unlink_U1_offset": 0.016536900204343886,
+      "min_parameter_overlap": 0.9943097553222779,
+      "min_spatial_overlap": 0.9858194927549085,
+      "min_resolved_spatial_external_gap": 0.0160068861381788,
+      "max_node_gap": 1.2150280781497713e-12,
+      "max_eigen_residual": 1.2633241888675164e-15,
+      "anchor_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          1.8906416838689214e-15,
+          2.9831756714991726e-15
+        ],
+        "max_distance": 2.9831756714991726e-15,
+        "label": "OPPOSITE",
+        "frame_joins": [
+          {
+            "node": "F1",
+            "anchor_node": 0,
+            "min_overlap": 0.9999999999999996,
+            "orientation": -1,
+            "anchor_charge": 1,
+            "carried_charge": -1
+          },
+          {
+            "node": "F3",
+            "anchor_node": 1,
+            "min_overlap": 0.9999999999999996,
+            "orientation": 1,
+            "anchor_charge": -1,
+            "carried_charge": -1
+          }
+        ]
+      },
+      "loop_fallbacks": [],
+      "seconds": 109.9461944103241
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "geometry": "exact",
+      "states": 37,
+      "center_crossing": -0.2901718633120653,
+      "shifted_crossing": -0.27998062468664664,
+      "events": [
+        {
+          "engine": "ref_lab",
+          "geometry": "exact",
+          "kinetic": "lab_nn_full",
+          "N": 6,
+          "shift": 0.0,
+          "B": -0.2901718633120653,
+          "location": {
+            "t": 0.4036315663616306,
+            "offset": 1.6921348985071705e-15
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.7417494214582856,
+                0.6112881440375747
+              ],
+              "gap": 3.9612757518625585e-13,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.5192372996617388,
+                0.8276282367537903
+              ],
+              "gap": 0.0,
+              "index": 3,
+              "nfev": 3
+            },
+            "U1": {
+              "f": [
+                0.6519365052030943,
+                0.69860983452744
+              ],
+              "gap": 8.029132914089132e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 8.029132914089132e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.0071153159309623485,
+            -0.038073368803884726
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 2.5380222807886376e-16,
+            "max_reality": 5.67631180972112e-14,
+            "max_hermitian": 0.0
+          }
+        },
+        {
+          "engine": "ref_lab",
+          "geometry": "exact",
+          "kinetic": "lab_nn_full",
+          "N": 6,
+          "shift": 0.012,
+          "B": -0.27998062468664664,
+          "location": {
+            "t": 0.4281128597172981,
+            "offset": -2.972153474362277e-15
+          },
+          "nodes": {
+            "F1": {
+              "f": [
+                0.742776463948239,
+                0.6115221635946122
+              ],
+              "gap": 1.886490963443066e-12,
+              "index": 3,
+              "nfev": 4
+            },
+            "F3": {
+              "f": [
+                0.5186418047638199,
+                0.8275930181291088
+              ],
+              "gap": 0.0,
+              "index": 3,
+              "nfev": 3
+            },
+            "U1": {
+              "f": [
+                0.6588215340430374,
+                0.704024875030938
+              ],
+              "gap": 3.979039320256561e-13,
+              "index": 4,
+              "nfev": 4
+            }
+          },
+          "external_gap": 7.887024366937112e-13,
+          "singular_path_rejected": true,
+          "bracket": [
+            -0.3,
+            -0.25
+          ],
+          "bracket_offsets": [
+            0.015517155246048204,
+            -0.029842370525994224
+          ],
+          "diagnostics": {
+            "max_eigen_residual": 3.154590653777848e-16,
+            "max_reality": 1.0964423957547608e-13,
+            "max_hermitian": 0.0
+          }
+        }
+      ],
+      "event_checks": [
+        {
+          "shift": 0.0,
+          "nearest_state": 16,
+          "node_distances": {
+            "F1": 1.7579990728042667e-05,
+            "F3": 1.0547038998617951e-05,
+            "U1": 0.00013841390837327806
+          }
+        },
+        {
+          "shift": 0.012,
+          "nearest_state": 12,
+          "node_distances": {
+            "F1": 2.023707132411506e-06,
+            "F3": 1.0765864010834278e-06,
+            "U1": 1.776142139150039e-05
+          }
+        }
+      ],
+      "labels": [
+        "OPPOSITE",
+        "SAME"
+      ],
+      "label_changes": [
+        {
+          "step": 17,
+          "B": -0.2925,
+          "T": 0,
+          "label": "OPPOSITE"
+        }
+      ],
+      "temporal_charges": {
+        "a": [
+          1
+        ],
+        "b": [
+          1
+        ]
+      },
+      "final_label": "OPPOSITE",
+      "final_U1_offset": 0.01609319678863772,
+      "min_unlink_U1_offset": 0.01609319678863772,
+      "min_parameter_overlap": 0.9943053415707697,
+      "min_spatial_overlap": 0.9857403256292983,
+      "min_resolved_spatial_external_gap": 0.01568907170258882,
+      "max_node_gap": 1.5134560271690134e-12,
+      "max_eigen_residual": 6.720701316230198e-16,
+      "anchor_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          1.1322097734007351e-15,
+          2.3420180361420893e-15
+        ],
+        "max_distance": 2.3420180361420893e-15,
+        "label": "OPPOSITE",
+        "frame_joins": [
+          {
+            "node": "F1",
+            "anchor_node": 0,
+            "min_overlap": 0.9999999999999997,
+            "orientation": 1,
+            "anchor_charge": 1,
+            "carried_charge": 1
+          },
+          {
+            "node": "F3",
+            "anchor_node": 1,
+            "min_overlap": 0.9999999999999992,
+            "orientation": -1,
+            "anchor_charge": -1,
+            "carried_charge": 1
+          }
+        ]
+      },
+      "loop_fallbacks": [],
+      "seconds": 500.3251543045044
+    }
+  ],
+  "comparisons": [
+    {
+      "N": 4,
+      "max_tracked_node_difference": 3.442594449085159e-06,
+      "labels_agree": true,
+      "center_root_ref_minus_bm": -1.6005732481061408e-06
+    },
+    {
+      "N": 6,
+      "max_tracked_node_difference": 3.4422825077837196e-06,
+      "labels_agree": true,
+      "center_root_ref_minus_bm": -1.5990487075567827e-06
+    }
+  ],
+  "exact_control": {
+    "status": "ACCEPT",
+    "scope": "crossing roots and singular-path rejection only; no full bm_exact path replay",
+    "protocol_sha256": "583ac8f4324d9123f8516abd25655762924c529cf3d4a1674ee198cba8e2f424",
+    "control_source_sha256": "cf54b1332e8e6a5ca1f33607dc2893daf8d86139c6e0017a4f3bc776d843c11c",
+    "events": [
+      {
+        "engine": "bm_exact",
+        "geometry": "exact",
+        "kinetic": "lab_nn_full",
+        "N": 4,
+        "shift": 0.0,
+        "B": -0.2901753967322497,
+        "location": {
+          "t": 0.40364743194319125,
+          "offset": -2.3981694383444545e-15
+        },
+        "nodes": {
+          "F1": {
+            "f": [
+              0.7417258728006992,
+              0.6112976119652774
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 3
+          },
+          "F3": {
+            "f": [
+              0.5191758026886854,
+              0.8275830426085542
+            ],
+            "gap": 8.029132914089132e-13,
+            "index": 3,
+            "nfev": 4
+          },
+          "U1": {
+            "f": [
+              0.6518941085212093,
+              0.698600670611165
+            ],
+            "gap": 3.979039320256561e-13,
+            "index": 4,
+            "nfev": 4
+          }
+        },
+        "external_gap": 3.979039320256561e-13,
+        "singular_path_rejected": true,
+        "bracket": [
+          -0.3,
+          -0.25
+        ],
+        "bracket_offsets": [
+          0.007108696287198228,
+          -0.038061673352988
+        ],
+        "diagnostics": {
+          "max_eigen_residual": 3.038271918433372e-16,
+          "max_reality": 5.67321444386243e-14,
+          "max_hermitian": 0.0
+        },
+        "ref_B": -0.2901753967322526,
+        "difference": 2.942091015256665e-15
+      },
+      {
+        "engine": "bm_exact",
+        "geometry": "exact",
+        "kinetic": "lab_nn_full",
+        "N": 4,
+        "shift": 0.012,
+        "B": -0.27998098155161155,
+        "location": {
+          "t": 0.4281445162755186,
+          "offset": 1.5232919423643414e-15
+        },
+        "nodes": {
+          "F1": {
+            "f": [
+              0.7427529919406142,
+              0.6115316962684508
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 3
+          },
+          "F3": {
+            "f": [
+              0.5185777042690799,
+              0.8275496311882752
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          },
+          "U1": {
+            "f": [
+              0.6587735718395589,
+              0.7040185905215344
+            ],
+            "gap": 7.887024366937112e-13,
+            "index": 4,
+            "nfev": 4
+          }
+        },
+        "external_gap": 3.979039320256561e-13,
+        "singular_path_rejected": true,
+        "bracket": [
+          -0.3,
+          -0.25
+        ],
+        "bracket_offsets": [
+          0.0155087140553036,
+          -0.029832510550362897
+        ],
+        "diagnostics": {
+          "max_eigen_residual": 2.6549108244756047e-16,
+          "max_reality": 5.6725560554081403e-14,
+          "max_hermitian": 0.0
+        },
+        "ref_B": -0.2799809815516125,
+        "difference": 9.43689570931383e-16
+      },
+      {
+        "engine": "bm_exact",
+        "geometry": "exact",
+        "kinetic": "lab_nn_full",
+        "N": 6,
+        "shift": 0.0,
+        "B": -0.2901718633120614,
+        "location": {
+          "t": 0.4036315663616524,
+          "offset": -8.442639699677608e-16
+        },
+        "nodes": {
+          "F1": {
+            "f": [
+              0.7417494214582872,
+              0.6112881440375737
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          },
+          "F3": {
+            "f": [
+              0.51923729966174,
+              0.8276282367537879
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          },
+          "U1": {
+            "f": [
+              0.6519365052030927,
+              0.698609834527445
+            ],
+            "gap": 1.2079226507921703e-12,
+            "index": 4,
+            "nfev": 4
+          }
+        },
+        "external_gap": 3.979039320256561e-13,
+        "singular_path_rejected": true,
+        "bracket": [
+          -0.3,
+          -0.25
+        ],
+        "bracket_offsets": [
+          0.007115315930962527,
+          -0.03807336880388538
+        ],
+        "diagnostics": {
+          "max_eigen_residual": 4.855926489229523e-16,
+          "max_reality": 5.682032186452427e-14,
+          "max_hermitian": 0.0
+        },
+        "ref_B": -0.2901718633120653,
+        "difference": 3.885780586188048e-15
+      },
+      {
+        "engine": "bm_exact",
+        "geometry": "exact",
+        "kinetic": "lab_nn_full",
+        "N": 6,
+        "shift": 0.012,
+        "B": -0.2799806246866491,
+        "location": {
+          "t": 0.4281128597173118,
+          "offset": 1.1317504078318542e-16
+        },
+        "nodes": {
+          "F1": {
+            "f": [
+              0.7427764639482408,
+              0.6115221635946103
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 3
+          },
+          "F3": {
+            "f": [
+              0.518641804763819,
+              0.8275930181291099
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 3
+          },
+          "U1": {
+            "f": [
+              0.6588215340430329,
+              0.7040248750309381
+            ],
+            "gap": 3.979039320256561e-13,
+            "index": 4,
+            "nfev": 4
+          }
+        },
+        "external_gap": 3.979039320256561e-13,
+        "singular_path_rejected": true,
+        "bracket": [
+          -0.3,
+          -0.25
+        ],
+        "bracket_offsets": [
+          0.01551715524604839,
+          -0.029842370525994876
+        ],
+        "diagnostics": {
+          "max_eigen_residual": 3.224442291317886e-16,
+          "max_reality": 1.1312239918126133e-13,
+          "max_hermitian": 0.0
+        },
+        "ref_B": -0.27998062468664664,
+        "difference": -2.4424906541753444e-15
+      }
+    ]
+  },
+  "geometry_verification": {
+    "status": "PASS",
+    "checks": 24,
+    "max_exact_matrix_difference": 1.374858882450988e-12,
+    "rows": [
+      {
+        "N": 4,
+        "case": "baseline",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 196,
+        "exact_matrix_difference": 4.547473508864641e-13,
+        "linear_matrix_difference": 0.002480356152449822,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "baseline",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 196,
+        "exact_matrix_difference": 4.556346636343676e-13,
+        "linear_matrix_difference": 0.00249291887925582,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "braid1",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 196,
+        "exact_matrix_difference": 4.547473508864641e-13,
+        "linear_matrix_difference": 0.002480356152449822,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "braid1",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 196,
+        "exact_matrix_difference": 4.556346636343676e-13,
+        "linear_matrix_difference": 0.00249291887925582,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "v028",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 196,
+        "exact_matrix_difference": 4.547473508864641e-13,
+        "linear_matrix_difference": 0.002480356152449822,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "v028",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 196,
+        "exact_matrix_difference": 4.556346636343676e-13,
+        "linear_matrix_difference": 0.00249291887925582,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "first_ann",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 244,
+        "exact_matrix_difference": 1.255712165537632e-12,
+        "linear_matrix_difference": 0.0032441521231471693,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "first_ann",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 244,
+        "exact_matrix_difference": 7.959347365693046e-13,
+        "linear_matrix_difference": 0.00395653601711662,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "braid2",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 284,
+        "exact_matrix_difference": 3.2155493553843715e-13,
+        "linear_matrix_difference": 0.0032413917796836706,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "braid2",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 284,
+        "exact_matrix_difference": 5.084229945850415e-13,
+        "linear_matrix_difference": 0.004001156567551488,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "endpoint",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 284,
+        "exact_matrix_difference": 3.2155493553843715e-13,
+        "linear_matrix_difference": 0.0032413917796836706,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 4,
+        "case": "endpoint",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 284,
+        "exact_matrix_difference": 5.084229945850415e-13,
+        "linear_matrix_difference": 0.004001156567551488,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "baseline",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 452,
+        "exact_matrix_difference": 6.844854043943254e-13,
+        "linear_matrix_difference": 0.003930656533028604,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "baseline",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 452,
+        "exact_matrix_difference": 5.084229945850415e-13,
+        "linear_matrix_difference": 0.003933860166224599,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "braid1",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 452,
+        "exact_matrix_difference": 6.844854043943254e-13,
+        "linear_matrix_difference": 0.003930656533028604,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "braid1",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 452,
+        "exact_matrix_difference": 5.084229945850415e-13,
+        "linear_matrix_difference": 0.003933860166224599,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "v028",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 452,
+        "exact_matrix_difference": 6.844854043943254e-13,
+        "linear_matrix_difference": 0.003930656533028604,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "v028",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 452,
+        "exact_matrix_difference": 5.084229945850415e-13,
+        "linear_matrix_difference": 0.003933860166224599,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "first_ann",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 556,
+        "exact_matrix_difference": 1.374858882450988e-12,
+        "linear_matrix_difference": 0.0047096335365933795,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "first_ann",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 556,
+        "exact_matrix_difference": 7.959347365693046e-13,
+        "linear_matrix_difference": 0.005422015030143677,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "braid2",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 596,
+        "exact_matrix_difference": 1.3645380800150865e-12,
+        "linear_matrix_difference": 0.004921707710551977,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "braid2",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 596,
+        "exact_matrix_difference": 1.3643160655200277e-12,
+        "linear_matrix_difference": 0.005681483741711614,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "endpoint",
+        "f": [
+          0.31,
+          0.27
+        ],
+        "dimension": 596,
+        "exact_matrix_difference": 1.3645380800150865e-12,
+        "linear_matrix_difference": 0.004921707710551977,
+        "linear_unchanged_bitwise": true
+      },
+      {
+        "N": 6,
+        "case": "endpoint",
+        "f": [
+          1.13,
+          0.62
+        ],
+        "dimension": 596,
+        "exact_matrix_difference": 1.3643160655200277e-12,
+        "linear_matrix_difference": 0.005681483741711614,
+        "linear_unchanged_bitwise": true
+      }
+    ]
+  },
+  "cutoff_witness": {
+    "N": 4,
+    "phi": 15.843560625048124,
+    "eps": 0.003,
+    "selected_index": [
+      -4,
+      3
+    ],
+    "boundary_excess": 4.999999988763992e-07,
+    "bm_dimension": 196,
+    "ref_dimension": 188,
+    "bm_only": [
+      [
+        -4,
+        3
+      ],
+      [
+        4,
+        -3
+      ]
+    ],
+    "ref_only": [],
+    "bm_padding": 1e-06,
+    "ref_padding": 1e-09
+  },
+  "historical_comparison": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "old_kinetic": "none",
+      "old_B": -0.2859429055154832,
+      "new_B": -0.2901737961590045,
+      "difference": -0.0042308906435213345
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "old_kinetic": "none",
+      "old_B": -0.2859415354157637,
+      "new_B": -0.29017026426335774,
+      "difference": -0.00422872884759401
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "old_kinetic": "legacy (I-E) R^T; now geom_wrong",
+      "old_B": -0.2879529695334827,
+      "new_B": -0.2901753967322526,
+      "difference": -0.0022224271987699162
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "old_kinetic": "legacy (I-E) R^T; now geom_wrong",
+      "old_B": -0.28795057626689813,
+      "new_B": -0.2901718633120653,
+      "difference": -0.002221287045167164
+    }
+  ],
+  "tests": {
+    "supplied": "29 passed in 39.31s",
+    "adopted_guards": "10 passed in 39.03s",
+    "optional_cutoff_patch": "8 passed"
+  }
+}
