@@ -1,0 +1,74 @@
+[
+  {
+    "script": "replay_events_refined.py",
+    "args": [
+      "--engine",
+      "original",
+      "--N",
+      "6",
+      "--case",
+      "first_ann"
+    ],
+    "name": "first_ann_original_N6_refined"
+  },
+  {
+    "script": "replay_events.py",
+    "args": [
+      "--engine",
+      "original",
+      "--N",
+      "6",
+      "--case",
+      "upper_ann"
+    ],
+    "name": "upper_ann_original_N6"
+  },
+  {
+    "script": "replay_events.py",
+    "args": [
+      "--engine",
+      "original",
+      "--N",
+      "6",
+      "--case",
+      "flat_birth"
+    ],
+    "name": "flat_birth_original_N6"
+  },
+  {
+    "script": "replay_events.py",
+    "args": [
+      "--engine",
+      "original",
+      "--N",
+      "6",
+      "--case",
+      "final_ann"
+    ],
+    "name": "final_ann_original_N6"
+  },
+  {
+    "script": "check_gapped.py",
+    "args": [
+      "--engine",
+      "original",
+      "--N",
+      "6",
+      "--state",
+      "bridge"
+    ],
+    "name": "bridge_original_N6"
+  },
+  {
+    "script": "check_gapped.py",
+    "args": [
+      "--engine",
+      "original",
+      "--N",
+      "6",
+      "--state",
+      "endpoint"
+    ],
+    "name": "endpoint_original_N6"
+  }
+]
