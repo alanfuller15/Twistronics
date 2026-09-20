@@ -1,0 +1,32 @@
+{
+  "scope": "Track original upper nodes continuously through fixed-phi cleanup: T -.8 to -1.2, A 0 to -.2, T -1.2 to -1.8, A -.2 to -.35, ratio1 phi80 B-.4. Connect accepted second-braid endpoint to accepted upper-annihilation initial roots.",
+  "states": 17,
+  "parameter_mesh": "4 or 2 intervals per leg for orientation comparison",
+  "loop_trials": [
+    [
+      0.004,
+      128
+    ],
+    [
+      0.004,
+      256
+    ],
+    [
+      0.002,
+      256
+    ]
+  ],
+  "transport_mesh": [
+    128,
+    256
+  ],
+  "additional_transport_sampling": "Locate local minima of both external gaps in every sampled path chart; require positive gaps and add geometrically graded samples around minima.",
+  "collision_seed_agreement": 1e-06,
+  "hypothesis": "Individually transported charges remain constant and spatial comparison stays OPPOSITE through this cleanup. Failure retained.",
+  "limitation": "Known-pair tracking; no global inventory along every state. Does not connect v037 to first annihilation or the first annihilation to second braid.",
+  "sources": {
+    "replay_cleanup.py": "cd087659df920ca6edd8455a289ba604164f1e11d2b6ba5ac0260e27ab5b0ecd",
+    "models.py": "ef3a207636916ee82402579fe10447ea68e48f457fcc6ab23fc44c3593d879fe",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2"
+  }
+}

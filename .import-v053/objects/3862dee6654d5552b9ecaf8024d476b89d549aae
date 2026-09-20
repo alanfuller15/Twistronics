@@ -1,0 +1,15 @@
+{
+  "reason": "Original N6 endpoint lower gap initial constrained minimum22.70877352564345 at x=0 missed prior known22.691984750071356 at x=.9909525221054059. Two grid sizes alone did not reveal this. Re-evaluate all bridge/endpoint gaps with explicit seam-side and edge seeds, retaining original records.",
+  "extra_seeds": "Corners and edge centers, every prior refined point and its opposite chart boundary when within .1 of a seam. New values are recomputed; no periodic wrap of a value.",
+  "grids": [
+    18,
+    24
+  ],
+  "positive_gap_floor": 1e-05,
+  "agreement": 0.01,
+  "sources": {
+    "boundary_audit.py": "1235acad90fd80260205589717e14c6a69e59fdae48d20fa2a10c86b2f19d1c8",
+    "models.py": "ef3a207636916ee82402579fe10447ea68e48f457fcc6ab23fc44c3593d879fe",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2"
+  }
+}

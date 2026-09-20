@@ -1,0 +1,35 @@
+{
+  "scope": "Four fixed-direction event windows: first flat annihilation, upper annihilation via ratio, associated flat birth, final flat annihilation. Does not cover connecting phi legs or cleanup trajectories.",
+  "engines": [
+    "original",
+    "partner"
+  ],
+  "N": [
+    4,
+    6
+  ],
+  "fold_derivative_steps": [
+    2e-05,
+    1e-05
+  ],
+  "fold_parameter_agreement": 1e-06,
+  "fold_gap_tolerance": 1e-06,
+  "fold_small_singular_value": 0.001,
+  "side_parameter_offset": 0.001,
+  "pair_states": 9,
+  "minimum_grids": [
+    18,
+    24
+  ],
+  "gap_grid_agreement_meV": 0.01,
+  "positive_gap_floor_meV": 1e-05,
+  "hypothesis": "Opposite distinct pair approaches rank-one fold; global multistart finite searches find positive gap on other side. Additional births between grids are not excluded. Failures retained; no solver failure means annihilation.",
+  "sources": {
+    "models.py": "ef3a207636916ee82402579fe10447ea68e48f457fcc6ab23fc44c3593d879fe",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "replay_events.py": "9a2714d40e5c93a083c19a6ed851d2d9c1072b74a92f517b031373ccba7a8003",
+    "engines/independent_model.py": "1d803d518b8ff4df76bc7740d9a91af6da1535c03de3764c9f5238f89195f585",
+    "engines/tbg_ref.py": "5503229a4b1e921fdd2740328038e5a579d9a69c1e15b5ca19e31f7d5c645208",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3"
+  }
+}
