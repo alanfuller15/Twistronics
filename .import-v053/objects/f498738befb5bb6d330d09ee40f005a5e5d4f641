@@ -1,0 +1,86 @@
+name: 'Audit — review-worthiness re-ranker'
+description: 'Run flawfinder + cppcheck on C/C++ code, then re-rank findings by review-worthiness (deduplicated, consensus- and tool-quality-weighted). Uploads to the Security tab and produces an HTML triage report.'
+author: 'Alan M. Fuller'
+branding:
+  icon: 'shield'
+  color: 'green'
+
+inputs:
+  path:
+    description: 'Directory of C/C++ source to scan'
+    required: false
+    default: '.'
+  cppcheck:
+    description: 'Run cppcheck in addition to flawfinder (true/false)'
+    required: false
+    default: 'true'
+  upload-sarif:
+    description: 'Upload results to the GitHub Security tab (true/false)'
+    required: false
+    default: 'true'
+
+outputs:
+  report-html:
+    description: 'Path to the generated HTML triage report'
+    value: ${{ steps.rank.outputs.report }}
+  findings:
+    description: 'Number of findings after dedup'
+    value: ${{ steps.rank.outputs.findings }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install scanners
+      shell: bash
+      run: |
+        pip install flawfinder
+        if [ "${{ inputs.cppcheck }}" = "true" ]; then
+          sudo apt-get update -qq && sudo apt-get install -y cppcheck
+        fi
+
+    - name: Run flawfinder (SARIF)
+      shell: bash
+      run: |
+        flawfinder --sarif "${{ inputs.path }}" > flawfinder.sarif 2>flawfinder.log || true
+        echo "flawfinder: $(grep -c '"ruleId"' flawfinder.sarif 2>/dev/null || echo 0) findings"
+
+    - name: Run cppcheck (XML -> SARIF, robust path)
+      if: ${{ inputs.cppcheck == 'true' }}
+      shell: bash
+      run: |
+        # XML+convert is the reliable CI path; apt cppcheck may predate native SARIF.
+        cppcheck --enable=all --xml --xml-version=2 "${{ inputs.path }}" 2>cppcheck.xml 1>/dev/null || true
+        python3 "${{ github.action_path }}/src/cppcheck_xml_to_sarif.py" cppcheck.xml cppcheck.sarif || \
+          echo '{"version":"2.1.0","runs":[{"tool":{"driver":{"name":"Cppcheck"}},"results":[]}]}' > cppcheck.sarif
+        echo "cppcheck: $(grep -c '"ruleId"' cppcheck.sarif 2>/dev/null || echo 0) findings"
+
+    - name: Re-rank by review-worthiness
+      id: rank
+      shell: bash
+      run: |
+        SAR="flawfinder.sarif"
+        [ -s cppcheck.sarif ] && grep -q '{' cppcheck.sarif && SAR="$SAR cppcheck.sarif"
+        python3 "${{ github.action_path }}/src/audit.py" --ingest $SAR \
+          --json audit_result.json --sarif audit_result.sarif
+        python3 "${{ github.action_path }}/src/audit_html_report.py" audit_result.json audit_report.html
+        N=$(python3 -c "import json;print(len(json.load(open('audit_result.json'))['ranked']))")
+        echo "report=audit_report.html" >> $GITHUB_OUTPUT
+        echo "findings=$N" >> $GITHUB_OUTPUT
+
+    - name: Upload HTML report (artifact)
+      uses: actions/upload-artifact@v4
+      with:
+        name: audit-review-worthiness-report
+        path: audit_report.html
+
+    - name: Upload to Security tab (SARIF)
+      if: ${{ inputs.upload-sarif == 'true' }}
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: audit_result.sarif
+        category: audit-review-worthiness
