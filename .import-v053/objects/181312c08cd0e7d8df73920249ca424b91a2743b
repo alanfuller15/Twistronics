@@ -1,0 +1,49 @@
+--- v043/v023_code/bm_strain.py
++++ v045/v023_code/bm_strain.py
+@@ -50,7 +50,12 @@
+ 
+ class BM:
+     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,
+-                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear'):
++                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average'):
++        # tunnelling strain law (v045): T_j -> T_j (1 + w_kappa * e_j), e_j = strain along the K_j direction,
++        #   w_mode='average': mean of the two layers (vanishes for pure heterostrain, the first-order BM result)
++        #   w_mode='layer1' : layer-1 strain only (cancellation switched off; worst-case sensitivity bound)
++        if w_mode not in ('average', 'layer1'): raise ValueError(w_mode)
++        self.w_kappa, self.w_mode = w_kappa, w_mode
+         # geometry: 'linear' (campaign: K_l=(1-E_l)R K, q_j linearised) | 'exact' ((1+E_l)^{-T} R, as tbg_ref)
+         if geometry not in ('linear', 'exact'): raise ValueError(geometry)
+         self.geometry = geometry
+@@ -92,9 +97,13 @@
+         self.G1 = self.q[1] - self.q[0]
+         self.G2 = self.q[2] - self.q[0]
+         self.ktheta = np.linalg.norm(self.q[0])
+-        self.T = [self.w0 * s0 + self.w1 * (np.cos(2 * np.pi * j / 3) * sx
+-                                            + np.sin(2 * np.pi * j / 3) * sy)
+-                  for j in range(3)]
++        self.T = []
++        for j in range(3):
++            e = rot(2 * np.pi * j / 3) @ np.array([1.0, 0.0])            # K_j direction
++            ej = [float(e @ El @ e) for El in self.Es]
++            eps_j = 0.5 * (ej[0] + ej[1]) if w_mode == 'average' else ej[0]
++            self.T.append((1.0 + w_kappa * eps_j) * (self.w0 * s0 + self.w1 * (np.cos(2 * np.pi * j / 3) * sx
++                                                                             + np.sin(2 * np.pi * j / 3) * sy)))
+         # plane-wave lattice
+         gmax = N * np.linalg.norm(self.G1) + 1e-6
+         idx = []
+
+--- v043/v023_code/test_regression.py
++++ v045/v023_code/test_regression.py
+@@ -65,3 +65,12 @@
+ 
+ if __name__ == "__main__":
+     import sys; sys.exit(pytest.main([__file__, "-q"]))
++
++def test_tunnelling_strain_law_first_order_cancellation_and_bound():
++    """v045: heterostrain modulates w0,w1 only at O(eps^2) in the average law; worst case bounded."""
++    m0 = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact')
++    ma = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact', w_kappa=5.0, w_mode='average')
++    mw = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact', w_kappa=5.0, w_mode='layer1')
++    for j in range(3):
++        assert np.abs(ma.T[j] - m0.T[j]).max() < 1e-12             # exact cancellation for E_1 = -E_2
++        assert 0.99 < np.linalg.norm(mw.T[j]) / np.linalg.norm(m0.T[j]) < 1.0    # <= 0.75% at kappa=5, eps=0.3%
