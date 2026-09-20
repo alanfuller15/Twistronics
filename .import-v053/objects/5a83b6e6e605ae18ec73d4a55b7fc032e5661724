@@ -1,0 +1,4921 @@
+{
+  "status": "ACCEPT",
+  "engine": "bm_exact",
+  "N": 4,
+  "source_sha256": "6fc4fa43784bf04adb56a32965e33d33db4ad81dcdca9aff5036de9de445d9b3",
+  "scope": "three baseline configurations and four braid endpoints; finite samples, not a physical bound",
+  "rows": [
+    {
+      "kind": "baseline",
+      "state": {
+        "A": 0,
+        "B": 0,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": 0.0,
+        "w_mode": "average"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.5815527477603113,
+              0.7265971522350372
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 3
+          },
+          {
+            "f": [
+              0.7594291615166413,
+              0.6066145845702964
+            ],
+            "gap": 4.085620730620576e-13,
+            "index": 3,
+            "nfev": 4
+          }
+        ],
+        "separation": 0.21455963067230802,
+        "label": "SAME",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.5191182634631861,
+              "max_phase_step": 0.04375660413858718,
+              "min_chart_overlap": 0.9994906492367528
+            },
+            "b": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.5122824343723663,
+              "max_phase_step": 0.04455386631874225,
+              "min_chart_overlap": 0.9995075667819251
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": -1.0000000000000002,
+              "charge": -1,
+              "min_loop_gap": 0.5191182634631861,
+              "max_phase_step": 0.021884042188252687,
+              "min_chart_overlap": 0.9994906492367528
+            },
+            "b": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.512243561561203,
+              "max_phase_step": 0.02227772194174678,
+              "min_chart_overlap": 0.9995075667819251
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": -0.9999999999999999,
+              "charge": -1,
+              "min_loop_gap": 0.2598421469410317,
+              "max_phase_step": 0.021851396899796552,
+              "min_chart_overlap": 0.9998757388858476
+            },
+            "b": {
+              "winding": -1.0000000000000002,
+              "charge": -1,
+              "min_loop_gap": 0.25643475530887716,
+              "max_phase_step": 0.022241743136299407,
+              "min_chart_overlap": 0.9998793864578372
+            },
+            "label": "SAME"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.999945266011198,
+            "min_external_gap": 19.913909733960857,
+            "samples": 161,
+            "located_gap_minima": [
+              {
+                "t": 0.3751690934067251,
+                "gap": 20.770409492023916,
+                "gap_index": 2
+              },
+              {
+                "t": 0.6153081183350382,
+                "gap": 19.913909733960857,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.9999862693556216,
+            "min_external_gap": 19.913909733961113,
+            "samples": 289,
+            "located_gap_minima": [
+              {
+                "t": 0.3751689872831028,
+                "gap": 20.77040949202423,
+                "gap_index": 2
+              },
+              {
+                "t": 0.6153081457559318,
+                "gap": 19.913909733961113,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 6.126198751921982e-16,
+          "max_reality": 5.684133615550718e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "gaps": {
+        "lower": [
+          {
+            "grid": 18,
+            "grid_min": 9.582644981724616,
+            "minimum": {
+              "f": [
+                0.6533175131952054,
+                0.5983855226040774
+              ],
+              "gap": 7.13623633461442,
+              "seed": [
+                0.6666666666666666,
+                0.611111111111111
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                  "value": 7.13623633461442
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.34562997835591547,
+                  0.0
+                ],
+                "gap": 63.31899442419384,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 63.31899442419384
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.395000605232166
+                ],
+                "gap": 57.3729281328185,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.3729281328185
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126573941,
+                  0.5983855233967009
+                ],
+                "gap": 7.136236334615102,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334615102
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34562997257077993,
+                  0.0
+                ],
+                "gap": 63.31899442419371,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.31899442419371
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126722285,
+                  0.5983855233826522
+                ],
+                "gap": 7.136236334614999,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614999
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126475728,
+                  0.5983855234061627
+                ],
+                "gap": 7.136236334614836,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614836
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.653317512660215,
+                  0.598385523392196
+                ],
+                "gap": 7.136236334614818,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614818
+                  }
+                ]
+              },
+              {
+                "f": [
+                  1.0,
+                  1.0
+                ],
+                "gap": 74.18163530725886,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 74.18163530725886
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175131952054,
+                  0.5983855226040774
+                ],
+                "gap": 7.13623633461442,
+                "seed": [
+                  0.6666666666666666,
+                  0.611111111111111
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.13623633461442
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175131952054,
+                  0.5983855226040774
+                ],
+                "gap": 7.13623633461442,
+                "seed": [
+                  0.6666666666666666,
+                  0.611111111111111
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.13623633461442
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grid": 24,
+            "grid_min": 7.358543262499424,
+            "minimum": {
+              "f": [
+                0.6533175131952055,
+                0.5983855226040777
+              ],
+              "gap": 7.136236334614505,
+              "seed": [
+                0.6533175131952054,
+                0.5983855226040774
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": false,
+                  "message": "ABNORMAL: ",
+                  "value": 7.13623633461442
+                },
+                {
+                  "method": "SLSQP",
+                  "success": true,
+                  "message": "Optimization terminated successfully",
+                  "value": 7.136236334614505
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.34562997835591547,
+                  0.0
+                ],
+                "gap": 63.31899442419384,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 63.31899442419384
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.395000605232166
+                ],
+                "gap": 57.3729281328185,
+                "seed": [
+                  0.0,
+                  0.395000605232166
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.3729281328185
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.395000605232166
+                ],
+                "gap": 57.3729281328185,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.3729281328185
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126573941,
+                  0.5983855233967009
+                ],
+                "gap": 7.136236334615102,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334615102
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34562997257078076,
+                  0.0
+                ],
+                "gap": 63.31899442419369,
+                "seed": [
+                  0.34562997257077993,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.31899442419369
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126582145,
+                  0.5983855233944995
+                ],
+                "gap": 7.136236334614978,
+                "seed": [
+                  0.34562997257077993,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614978
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34562997835591547,
+                  0.0
+                ],
+                "gap": 63.31899442419384,
+                "seed": [
+                  0.34562997835591547,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 63.31899442419384
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.653317512656969,
+                  0.5983855233955724
+                ],
+                "gap": 7.136236334614537,
+                "seed": [
+                  0.34562997835591547,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614537
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34562997257077993,
+                  0.0
+                ],
+                "gap": 63.31899442419371,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.31899442419371
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126722285,
+                  0.5983855233826522
+                ],
+                "gap": 7.136236334614999,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614999
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126475728,
+                  0.5983855234061627
+                ],
+                "gap": 7.136236334614836,
+                "seed": [
+                  0.6533175126475728,
+                  0.5983855234061627
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614836
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126573941,
+                  0.5983855233967009
+                ],
+                "gap": 7.136236334615102,
+                "seed": [
+                  0.6533175126573941,
+                  0.5983855233967009
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334615102
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.653317512660215,
+                  0.598385523392196
+                ],
+                "gap": 7.136236334614818,
+                "seed": [
+                  0.653317512660215,
+                  0.598385523392196
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614818
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126722285,
+                  0.5983855233826522
+                ],
+                "gap": 7.136236334614999,
+                "seed": [
+                  0.6533175126722285,
+                  0.5983855233826522
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614999
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175131952055,
+                  0.5983855226040777
+                ],
+                "gap": 7.136236334614505,
+                "seed": [
+                  0.6533175131952054,
+                  0.5983855226040774
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": false,
+                    "message": "ABNORMAL: ",
+                    "value": 7.13623633461442
+                  },
+                  {
+                    "method": "SLSQP",
+                    "success": true,
+                    "message": "Optimization terminated successfully",
+                    "value": 7.136236334614505
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175126475728,
+                  0.5983855234061627
+                ],
+                "gap": 7.136236334614836,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614836
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175125709442,
+                  0.5983855234923664
+                ],
+                "gap": 7.136236334614647,
+                "seed": [
+                  1.0,
+                  0.395000605232166
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.136236334614647
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.653317512660215,
+                  0.598385523392196
+                ],
+                "gap": 7.136236334614818,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.136236334614818
+                  }
+                ]
+              },
+              {
+                "f": [
+                  1.0,
+                  1.0
+                ],
+                "gap": 74.18163530725886,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 74.18163530725886
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175125238302,
+                  0.5983855234593846
+                ],
+                "gap": 7.136236334614512,
+                "seed": [
+                  0.6666666666666666,
+                  0.5833333333333333
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.136236334614512
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6533175125238302,
+                  0.5983855234593846
+                ],
+                "gap": 7.136236334614512,
+                "seed": [
+                  0.6666666666666666,
+                  0.5833333333333333
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.136236334614512
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "upper": [
+          {
+            "grid": 18,
+            "grid_min": 7.259655728664594,
+            "minimum": {
+              "f": [
+                0.6800702398138125,
+                0.7432885300529567
+              ],
+              "gap": 4.970921142912177,
+              "seed": [
+                0.7222222222222222,
+                0.7222222222222222
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                  "value": 4.970921142912177
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.82220915747462,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.82220915747462
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5144495131486325
+                ],
+                "gap": 43.48265772474288,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.48265772474288
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5144495131269211
+                ],
+                "gap": 43.48265772474329,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.48265772474329
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47432780840389305,
+                  0.0
+                ],
+                "gap": 45.80583297646058,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.80583297646058
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399659736,
+                  0.7432885298003471
+                ],
+                "gap": 4.970921142912381,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.970921142912381
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47432779911667045,
+                  0.0
+                ],
+                "gap": 45.805832976460316,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 45.805832976460316
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399657105,
+                  0.743288529801707
+                ],
+                "gap": 4.97092114291268,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.97092114291268
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.82220915747462,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.82220915747462
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702398138125,
+                  0.7432885300529567
+                ],
+                "gap": 4.970921142912177,
+                "seed": [
+                  0.7222222222222222,
+                  0.7222222222222222
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 4.970921142912177
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702398138125,
+                  0.7432885300529567
+                ],
+                "gap": 4.970921142912177,
+                "seed": [
+                  0.7222222222222222,
+                  0.7222222222222222
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 4.970921142912177
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grid": 24,
+            "grid_min": 5.2491255963335455,
+            "minimum": {
+              "f": [
+                0.6800702398138125,
+                0.7432885300529567
+              ],
+              "gap": 4.970921142912177,
+              "seed": [
+                0.6800702398138125,
+                0.7432885300529567
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                  "value": 4.970921142912177
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.82220915747462,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.82220915747462
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5144495131486325
+                ],
+                "gap": 43.48265772474288,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.48265772474288
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5144495131269211
+                ],
+                "gap": 43.48265772474329,
+                "seed": [
+                  0.0,
+                  0.5144495131269211
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.48265772474329
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5144495131486325
+                ],
+                "gap": 43.48265772474288,
+                "seed": [
+                  0.0,
+                  0.5144495131486325
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.48265772474288
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5144495131269211
+                ],
+                "gap": 43.48265772474329,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.48265772474329
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4743277999673383,
+                  0.0
+                ],
+                "gap": 45.805832976460295,
+                "seed": [
+                  0.47432779911667045,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 45.805832976460295
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399414044,
+                  0.7432885298235842
+                ],
+                "gap": 4.970921142912477,
+                "seed": [
+                  0.47432779911667045,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.970921142912477
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47432780840389305,
+                  0.0
+                ],
+                "gap": 45.80583297646058,
+                "seed": [
+                  0.47432780840389305,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.80583297646058
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399414182,
+                  0.7432885298235702
+                ],
+                "gap": 4.970921142912491,
+                "seed": [
+                  0.47432780840389305,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.970921142912491
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47432780840389305,
+                  0.0
+                ],
+                "gap": 45.80583297646058,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.80583297646058
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399659736,
+                  0.7432885298003471
+                ],
+                "gap": 4.970921142912381,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.970921142912381
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702398138125,
+                  0.7432885300529567
+                ],
+                "gap": 4.970921142912177,
+                "seed": [
+                  0.6800702398138125,
+                  0.7432885300529567
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 4.970921142912177
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399657105,
+                  0.743288529801707
+                ],
+                "gap": 4.97092114291268,
+                "seed": [
+                  0.6800702399657105,
+                  0.743288529801707
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.97092114291268
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399659736,
+                  0.7432885298003471
+                ],
+                "gap": 4.970921142912381,
+                "seed": [
+                  0.6800702399659736,
+                  0.7432885298003471
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.970921142912381
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47432779911667045,
+                  0.0
+                ],
+                "gap": 45.805832976460316,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 45.805832976460316
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399657105,
+                  0.743288529801707
+                ],
+                "gap": 4.97092114291268,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.97092114291268
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399134145,
+                  0.7432885298463738
+                ],
+                "gap": 4.970921142912712,
+                "seed": [
+                  1.0,
+                  0.5144495131269211
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.970921142912712
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399134132,
+                  0.7432885298463756
+                ],
+                "gap": 4.9709211429129745,
+                "seed": [
+                  1.0,
+                  0.5144495131486325
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.9709211429129745
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.82220915747462,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.82220915747462
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399683225,
+                  0.743288529798427
+                ],
+                "gap": 4.9709211429126725,
+                "seed": [
+                  0.6666666666666666,
+                  0.75
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.9709211429126725
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6800702399683225,
+                  0.743288529798427
+                ],
+                "gap": 4.9709211429126725,
+                "seed": [
+                  0.6666666666666666,
+                  0.75
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.9709211429126725
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "remote_gap": 4.970921142912177,
+      "diagnostics": {
+        "max_eigen_residual": 6.126198751921982e-16,
+        "max_reality": 5.684133615550718e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "kind": "baseline",
+      "state": {
+        "A": 0,
+        "B": 0,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": 5.0,
+        "w_mode": "layer1"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.5826241631566171,
+              0.730152592924709
+            ],
+            "gap": 3.957945082788683e-13,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.7583341515722517,
+              0.6029948519383027
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          }
+        ],
+        "separation": 0.21689419337960256,
+        "label": "SAME",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.5308956597727409,
+              "max_phase_step": 0.04348413192842221,
+              "min_chart_overlap": 0.9995250842539282
+            },
+            "b": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.5218009273288862,
+              "max_phase_step": 0.044270447465125394,
+              "min_chart_overlap": 0.9995350347121815
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.5308956597727409,
+              "max_phase_step": 0.021747580771151836,
+              "min_chart_overlap": 0.9995250389314676
+            },
+            "b": {
+              "winding": -1.0000000000000002,
+              "charge": -1,
+              "min_loop_gap": 0.5217675623970822,
+              "max_phase_step": 0.022136304906849435,
+              "min_chart_overlap": 0.9995350347121815
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.26574331822891556,
+              "max_phase_step": 0.021711053844946572,
+              "min_chart_overlap": 0.9998838763219305
+            },
+            "b": {
+              "winding": -1.0000000000000002,
+              "charge": -1,
+              "min_loop_gap": 0.2612108660438994,
+              "max_phase_step": 0.02209775085966022,
+              "min_chart_overlap": 0.9998858009226391
+            },
+            "label": "SAME"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.9999445564162898,
+            "min_external_gap": 20.362441447995167,
+            "samples": 161,
+            "located_gap_minima": [
+              {
+                "t": 0.4071277785713696,
+                "gap": 21.22175069966906,
+                "gap_index": 2
+              },
+              {
+                "t": 0.5822572166048843,
+                "gap": 20.362441447995167,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.9999861380943367,
+            "min_external_gap": 20.36244144799504,
+            "samples": 289,
+            "located_gap_minima": [
+              {
+                "t": 0.4071277776243194,
+                "gap": 21.221750699669016,
+                "gap_index": 2
+              },
+              {
+                "t": 0.5822572345293562,
+                "gap": 20.36244144799504,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 6.220541804971791e-16,
+          "max_reality": 5.6842288906326136e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "gaps": {
+        "lower": [
+          {
+            "grid": 18,
+            "grid_min": 9.925128650989038,
+            "minimum": {
+              "f": [
+                0.6560078206665528,
+                0.5956585709621145
+              ],
+              "gap": 7.534433995632522,
+              "seed": [
+                0.0,
+                1.0
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                  "value": 7.534433995632522
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.3440377030795125,
+                  0.0
+                ],
+                "gap": 63.26008090585482,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.26008090585482
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.3956614968751492
+                ],
+                "gap": 57.45824278196802,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.45824278196802
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206665528,
+                  0.5956585709621145
+                ],
+                "gap": 7.534433995632522,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632522
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.3440377008527993,
+                  0.0
+                ],
+                "gap": 63.260080905854835,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.260080905854835
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078207067578,
+                  0.5956585709182428
+                ],
+                "gap": 7.5344339956327495,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.5344339956327495
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206565341,
+                  0.5956585709602721
+                ],
+                "gap": 7.534433995632668,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632668
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206703995,
+                  0.5956585709566764
+                ],
+                "gap": 7.534433995632888,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632888
+                  }
+                ]
+              },
+              {
+                "f": [
+                  1.0,
+                  1.0
+                ],
+                "gap": 74.61127631346676,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 74.61127631346676
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.656007821434339,
+                  0.595658570488079
+                ],
+                "gap": 7.534433995632776,
+                "seed": [
+                  0.6666666666666666,
+                  0.611111111111111
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.534433995632776
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.656007821434339,
+                  0.595658570488079
+                ],
+                "gap": 7.534433995632776,
+                "seed": [
+                  0.6666666666666666,
+                  0.611111111111111
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.534433995632776
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grid": 24,
+            "grid_min": 7.6833989595239025,
+            "minimum": {
+              "f": [
+                0.6560078206665528,
+                0.5956585709621145
+              ],
+              "gap": 7.534433995632522,
+              "seed": [
+                0.0,
+                1.0
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                  "value": 7.534433995632522
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.3440377030795125,
+                  0.0
+                ],
+                "gap": 63.26008090585482,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.26008090585482
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.3956614968751492
+                ],
+                "gap": 57.45824278196802,
+                "seed": [
+                  0.0,
+                  0.3956614968751492
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.45824278196802
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.3956614968751492
+                ],
+                "gap": 57.45824278196802,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.45824278196802
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206665528,
+                  0.5956585709621145
+                ],
+                "gap": 7.534433995632522,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632522
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34403770087966035,
+                  0.0
+                ],
+                "gap": 63.260080905854764,
+                "seed": [
+                  0.3440377008527993,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.260080905854764
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206548386,
+                  0.5956585709714491
+                ],
+                "gap": 7.534433995632821,
+                "seed": [
+                  0.3440377008527993,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632821
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34403770307955334,
+                  0.0
+                ],
+                "gap": 63.26008090585447,
+                "seed": [
+                  0.3440377030795125,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.26008090585447
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206556516,
+                  0.5956585709707357
+                ],
+                "gap": 7.534433995633048,
+                "seed": [
+                  0.3440377030795125,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995633048
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.3440377008527993,
+                  0.0
+                ],
+                "gap": 63.260080905854835,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.260080905854835
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078207067578,
+                  0.5956585709182428
+                ],
+                "gap": 7.5344339956327495,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.5344339956327495
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206565341,
+                  0.5956585709602721
+                ],
+                "gap": 7.534433995632668,
+                "seed": [
+                  0.6560078206565341,
+                  0.5956585709602721
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632668
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206665528,
+                  0.5956585709621145
+                ],
+                "gap": 7.534433995632522,
+                "seed": [
+                  0.6560078206665528,
+                  0.5956585709621145
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632522
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206703995,
+                  0.5956585709566764
+                ],
+                "gap": 7.534433995632888,
+                "seed": [
+                  0.6560078206703995,
+                  0.5956585709566764
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632888
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078207067578,
+                  0.5956585709182428
+                ],
+                "gap": 7.5344339956327495,
+                "seed": [
+                  0.6560078207067578,
+                  0.5956585709182428
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.5344339956327495
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078214343362,
+                  0.5956585704880774
+                ],
+                "gap": 7.534433995632693,
+                "seed": [
+                  0.656007821434339,
+                  0.595658570488079
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": false,
+                    "message": "ABNORMAL: ",
+                    "value": 7.53443399563251
+                  },
+                  {
+                    "method": "SLSQP",
+                    "success": true,
+                    "message": "Optimization terminated successfully",
+                    "value": 7.534433995632693
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206565341,
+                  0.5956585709602721
+                ],
+                "gap": 7.534433995632668,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632668
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078219493277,
+                  0.5956585688642207
+                ],
+                "gap": 7.534433995632835,
+                "seed": [
+                  1.0,
+                  0.3956614968751492
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": false,
+                    "message": "ABNORMAL: ",
+                    "value": 7.534433995632483
+                  },
+                  {
+                    "method": "SLSQP",
+                    "success": true,
+                    "message": "Optimization terminated successfully",
+                    "value": 7.534433995632835
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078206703995,
+                  0.5956585709566764
+                ],
+                "gap": 7.534433995632888,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 7.534433995632888
+                  }
+                ]
+              },
+              {
+                "f": [
+                  1.0,
+                  1.0
+                ],
+                "gap": 74.61127631346676,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 74.61127631346676
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078191629407,
+                  0.5956585721749541
+                ],
+                "gap": 7.534433995632707,
+                "seed": [
+                  0.6666666666666666,
+                  0.5833333333333333
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.534433995632707
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6560078191629407,
+                  0.5956585721749541
+                ],
+                "gap": 7.534433995632707,
+                "seed": [
+                  0.6666666666666666,
+                  0.5833333333333333
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 7.534433995632707
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "upper": [
+          {
+            "grid": 18,
+            "grid_min": 7.721702624814615,
+            "minimum": {
+              "f": [
+                0.6771335516866481,
+                0.7462587899263885
+              ],
+              "gap": 5.33784385412663,
+              "seed": [
+                0.7222222222222222,
+                0.7222222222222222
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": false,
+                  "message": "ABNORMAL: ",
+                  "value": 5.337843854126726
+                },
+                {
+                  "method": "SLSQP",
+                  "success": true,
+                  "message": "Optimization terminated successfully",
+                  "value": 5.33784385412663
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 84.2995981437937,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 84.2995981437937
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5139725910768806
+                ],
+                "gap": 43.31733431477207,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 43.31733431477207
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5139725889815181
+                ],
+                "gap": 43.31733431477254,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.31733431477254
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4738484533172217,
+                  0.0
+                ],
+                "gap": 45.979571662614276,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.979571662614276
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335522019534,
+                  0.7462587894847615
+                ],
+                "gap": 5.337843854126865,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 5.337843854126865
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47384845329824915,
+                  0.0
+                ],
+                "gap": 45.97957166261445,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.97957166261445
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335531499614,
+                  0.7462587884155274
+                ],
+                "gap": 5.337843854126678,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126678
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 84.2995981437937,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 84.2995981437937
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335516866481,
+                  0.7462587899263885
+                ],
+                "gap": 5.33784385412663,
+                "seed": [
+                  0.7222222222222222,
+                  0.7222222222222222
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": false,
+                    "message": "ABNORMAL: ",
+                    "value": 5.337843854126726
+                  },
+                  {
+                    "method": "SLSQP",
+                    "success": true,
+                    "message": "Optimization terminated successfully",
+                    "value": 5.33784385412663
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335516866481,
+                  0.7462587899263885
+                ],
+                "gap": 5.33784385412663,
+                "seed": [
+                  0.7222222222222222,
+                  0.7222222222222222
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": false,
+                    "message": "ABNORMAL: ",
+                    "value": 5.337843854126726
+                  },
+                  {
+                    "method": "SLSQP",
+                    "success": true,
+                    "message": "Optimization terminated successfully",
+                    "value": 5.33784385412663
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grid": 24,
+            "grid_min": 5.585845432864524,
+            "minimum": {
+              "f": [
+                0.6771335479272327,
+                0.7462587927280373
+              ],
+              "gap": 5.337843854126362,
+              "seed": [
+                1.0,
+                0.5139725910768806
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                  "value": 5.337843854126362
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 84.2995981437937,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 84.2995981437937
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5139725910768806
+                ],
+                "gap": 43.31733431477207,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 43.31733431477207
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5139725889815181
+                ],
+                "gap": 43.31733431477254,
+                "seed": [
+                  0.0,
+                  0.5139725889815181
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.31733431477254
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5139725910209973
+                ],
+                "gap": 43.31733431477184,
+                "seed": [
+                  0.0,
+                  0.5139725910768806
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 43.31733431477184
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5139725889815181
+                ],
+                "gap": 43.31733431477254,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.31733431477254
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47384845329824915,
+                  0.0
+                ],
+                "gap": 45.97957166261445,
+                "seed": [
+                  0.47384845329824915,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.97957166261445
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335521870493,
+                  0.74625878949942
+                ],
+                "gap": 5.337843854126474,
+                "seed": [
+                  0.47384845329824915,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 5.337843854126474
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4738484533172217,
+                  0.0
+                ],
+                "gap": 45.979571662614276,
+                "seed": [
+                  0.4738484533172217,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.979571662614276
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335521870485,
+                  0.7462587894994205
+                ],
+                "gap": 5.337843854126506,
+                "seed": [
+                  0.4738484533172217,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 5.337843854126506
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4738484533172217,
+                  0.0
+                ],
+                "gap": 45.979571662614276,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.979571662614276
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335522019534,
+                  0.7462587894847615
+                ],
+                "gap": 5.337843854126865,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 5.337843854126865
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.677133551776319,
+                  0.7462587899191631
+                ],
+                "gap": 5.337843854126447,
+                "seed": [
+                  0.6771335516866481,
+                  0.7462587899263885
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126447
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335522019534,
+                  0.7462587894847615
+                ],
+                "gap": 5.337843854126865,
+                "seed": [
+                  0.6771335522019534,
+                  0.7462587894847615
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 5.337843854126865
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335531500047,
+                  0.7462587884156475
+                ],
+                "gap": 5.337843854126481,
+                "seed": [
+                  0.6771335531499614,
+                  0.7462587884155274
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126481
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47384845329824915,
+                  0.0
+                ],
+                "gap": 45.97957166261445,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.97957166261445
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335531499614,
+                  0.7462587884155274
+                ],
+                "gap": 5.337843854126678,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126678
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335502635033,
+                  0.7462587909555556
+                ],
+                "gap": 5.337843854126643,
+                "seed": [
+                  1.0,
+                  0.5139725889815181
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126643
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335479272327,
+                  0.7462587927280373
+                ],
+                "gap": 5.337843854126362,
+                "seed": [
+                  1.0,
+                  0.5139725910768806
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126362
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 84.2995981437937,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 84.2995981437937
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335521045735,
+                  0.746258789504538
+                ],
+                "gap": 5.337843854126472,
+                "seed": [
+                  0.6666666666666666,
+                  0.75
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126472
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6771335521045735,
+                  0.746258789504538
+                ],
+                "gap": 5.337843854126472,
+                "seed": [
+                  0.6666666666666666,
+                  0.75
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 5.337843854126472
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "remote_gap": 5.337843854126362,
+      "diagnostics": {
+        "max_eigen_residual": 6.220541804971791e-16,
+        "max_reality": 5.6842288906326136e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "kind": "baseline",
+      "state": {
+        "A": 0,
+        "B": 0,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": -5.0,
+        "w_mode": "layer1"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.5801977187554159,
+              0.7230882792104718
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.7607942617278107,
+              0.6101788896413007
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          }
+        ],
+        "separation": 0.2129874211930434,
+        "label": "SAME",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.508267288968792,
+              "max_phase_step": 0.04399907117168922,
+              "min_chart_overlap": 0.9994494801892164
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.5036353530116947,
+              "max_phase_step": 0.04480577234855538,
+              "min_chart_overlap": 0.9994743699129809
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": 1.0000000000000002,
+              "charge": 1,
+              "min_loop_gap": 0.508267288968792,
+              "max_phase_step": 0.022004734234877022,
+              "min_chart_overlap": 0.9994494801892164
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.5035716359205619,
+              "max_phase_step": 0.02240323596998026,
+              "min_chart_overlap": 0.9994743699129809
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.2544320648827499,
+              "max_phase_step": 0.021978724460637773,
+              "min_chart_overlap": 0.999866047889316
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.2521105649797606,
+              "max_phase_step": 0.02237335580122495,
+              "min_chart_overlap": 0.9998716740367435
+            },
+            "label": "SAME"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.9999449939093852,
+            "min_external_gap": 19.28337791437184,
+            "samples": 161,
+            "located_gap_minima": [
+              {
+                "t": 0.3426104756405922,
+                "gap": 20.13924685847445,
+                "gap_index": 2
+              },
+              {
+                "t": 0.6493667976203858,
+                "gap": 19.28337791437184,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.9999862414784021,
+            "min_external_gap": 19.283377914371833,
+            "samples": 289,
+            "located_gap_minima": [
+              {
+                "t": 0.342610447704057,
+                "gap": 20.139246858474394,
+                "gap_index": 2
+              },
+              {
+                "t": 0.6493668111605557,
+                "gap": 19.283377914371833,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 5.41475897199393e-16,
+          "max_reality": 5.684054930387476e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "gaps": {
+        "lower": [
+          {
+            "grid": 18,
+            "grid_min": 9.239485109476533,
+            "minimum": {
+              "f": [
+                0.650613402590523,
+                0.601164962515447
+              ],
+              "gap": 6.752292040270277,
+              "seed": [
+                0.6666666666666666,
+                0.611111111111111
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                  "value": 6.752292040270277
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.3471925749193325,
+                  0.0
+                ],
+                "gap": 63.375191965059045,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.375191965059045
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.39437552886411514
+                ],
+                "gap": 57.28170921950863,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 57.28170921950863
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028827573,
+                  0.6011649624709248
+                ],
+                "gap": 6.752292040270799,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270799
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34719256404566673,
+                  0.0
+                ],
+                "gap": 63.375191965059045,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.375191965059045
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028416681,
+                  0.6011649625018436
+                ],
+                "gap": 6.752292040270515,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270515
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028440106,
+                  0.6011649625056642
+                ],
+                "gap": 6.752292040270397,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270397
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134002173614,
+                  0.6011649627437681
+                ],
+                "gap": 6.752292040270657,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270657
+                  }
+                ]
+              },
+              {
+                "f": [
+                  1.0,
+                  1.0
+                ],
+                "gap": 73.74049610832736,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 73.74049610832736
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.650613402590523,
+                  0.601164962515447
+                ],
+                "gap": 6.752292040270277,
+                "seed": [
+                  0.6666666666666666,
+                  0.611111111111111
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270277
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.650613402590523,
+                  0.601164962515447
+                ],
+                "gap": 6.752292040270277,
+                "seed": [
+                  0.6666666666666666,
+                  0.611111111111111
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270277
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grid": 24,
+            "grid_min": 7.064293405737725,
+            "minimum": {
+              "f": [
+                0.650613402590523,
+                0.601164962515447
+              ],
+              "gap": 6.752292040270277,
+              "seed": [
+                0.650613402590523,
+                0.601164962515447
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                  "value": 6.752292040270277
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.3471925749193325,
+                  0.0
+                ],
+                "gap": 63.375191965059045,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.375191965059045
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.3943755281213862
+                ],
+                "gap": 57.281709219508485,
+                "seed": [
+                  0.0,
+                  0.39437552886411514
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 57.281709219508485
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.39437552886411514
+                ],
+                "gap": 57.28170921950863,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 57.28170921950863
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028827573,
+                  0.6011649624709248
+                ],
+                "gap": 6.752292040270799,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270799
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34719256404572596,
+                  0.0
+                ],
+                "gap": 63.375191965059024,
+                "seed": [
+                  0.34719256404566673,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.375191965059024
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.650613402876558,
+                  0.6011649624746602
+                ],
+                "gap": 6.75229204027071,
+                "seed": [
+                  0.34719256404566673,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.75229204027071
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34719257491933253,
+                  0.0
+                ],
+                "gap": 63.375191965059045,
+                "seed": [
+                  0.3471925749193325,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.375191965059045
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028735264,
+                  0.6011649624769866
+                ],
+                "gap": 6.752292040270939,
+                "seed": [
+                  0.3471925749193325,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270939
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.34719256404566673,
+                  0.0
+                ],
+                "gap": 63.375191965059045,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 63.375191965059045
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028416681,
+                  0.6011649625018436
+                ],
+                "gap": 6.752292040270515,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270515
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134003440391,
+                  0.6011649628448652
+                ],
+                "gap": 6.752292040270344,
+                "seed": [
+                  0.6506134002173614,
+                  0.6011649627437681
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270344
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.650613402590523,
+                  0.601164962515447
+                ],
+                "gap": 6.752292040270277,
+                "seed": [
+                  0.650613402590523,
+                  0.601164962515447
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270277
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028416681,
+                  0.6011649625018436
+                ],
+                "gap": 6.752292040270515,
+                "seed": [
+                  0.6506134028416681,
+                  0.6011649625018436
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270515
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028440106,
+                  0.6011649625056642
+                ],
+                "gap": 6.752292040270397,
+                "seed": [
+                  0.6506134028440106,
+                  0.6011649625056642
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270397
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028827573,
+                  0.6011649624709248
+                ],
+                "gap": 6.752292040270799,
+                "seed": [
+                  0.6506134028827573,
+                  0.6011649624709248
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270799
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134028440106,
+                  0.6011649625056642
+                ],
+                "gap": 6.752292040270397,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 6.752292040270397
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134036393949,
+                  0.6011649634108707
+                ],
+                "gap": 6.752292040270948,
+                "seed": [
+                  1.0,
+                  0.39437552886411514
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": false,
+                    "message": "ABNORMAL: ",
+                    "value": 6.752292040270383
+                  },
+                  {
+                    "method": "SLSQP",
+                    "success": true,
+                    "message": "Optimization terminated successfully",
+                    "value": 6.752292040270948
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134002173614,
+                  0.6011649627437681
+                ],
+                "gap": 6.752292040270657,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270657
+                  }
+                ]
+              },
+              {
+                "f": [
+                  1.0,
+                  1.0
+                ],
+                "gap": 73.74049610832736,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 73.74049610832736
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134027436765,
+                  0.6011649625432736
+                ],
+                "gap": 6.752292040270486,
+                "seed": [
+                  0.6666666666666666,
+                  0.5833333333333333
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270486
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6506134027436765,
+                  0.6011649625432736
+                ],
+                "gap": 6.752292040270486,
+                "seed": [
+                  0.6666666666666666,
+                  0.5833333333333333
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 6.752292040270486
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "upper": [
+          {
+            "grid": 18,
+            "grid_min": 6.836190262315341,
+            "minimum": {
+              "f": [
+                0.6830107895018389,
+                0.7402835169788965
+              ],
+              "gap": 4.6214672322553945,
+              "seed": [
+                0.7222222222222222,
+                0.7222222222222222
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                  "value": 4.6214672322553945
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.33634647582667,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.33634647582667
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5150531791568792
+                ],
+                "gap": 43.62366334567044,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 43.62366334567044
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5150531749007877
+                ],
+                "gap": 43.623663345670614,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.623663345670614
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4748206104710801,
+                  0.0
+                ],
+                "gap": 45.62821410796334,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.62821410796334
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894925324,
+                  0.7402835169840248
+                ],
+                "gap": 4.621467232255629,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255629
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47482061044981083,
+                  0.0
+                ],
+                "gap": 45.628214107963515,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.628214107963515
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.683010789491348,
+                  0.7402835169841697
+                ],
+                "gap": 4.621467232255977,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255977
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.33634647582667,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.33634647582667
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107895018389,
+                  0.7402835169788965
+                ],
+                "gap": 4.6214672322553945,
+                "seed": [
+                  0.7222222222222222,
+                  0.7222222222222222
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.6214672322553945
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107895018389,
+                  0.7402835169788965
+                ],
+                "gap": 4.6214672322553945,
+                "seed": [
+                  0.7222222222222222,
+                  0.7222222222222222
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.6214672322553945
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grid": 24,
+            "grid_min": 4.938774488029827,
+            "minimum": {
+              "f": [
+                0.6830107894924591,
+                0.740283516983994
+              ],
+              "gap": 4.621467232255377,
+              "seed": [
+                0.47482061044981083,
+                1.0
+              ],
+              "attempts": [
+                {
+                  "method": "L-BFGS-B",
+                  "success": true,
+                  "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                  "value": 4.621467232255377
+                }
+              ]
+            },
+            "refinements": [
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.33634647582667,
+                "seed": [
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.33634647582667
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5150531791568792
+                ],
+                "gap": 43.62366334567044,
+                "seed": [
+                  0.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 43.62366334567044
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5150531749007877
+                ],
+                "gap": 43.623663345670614,
+                "seed": [
+                  0.0,
+                  0.5150531749007877
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.623663345670614
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5150531791568778
+                ],
+                "gap": 43.62366334567043,
+                "seed": [
+                  0.0,
+                  0.5150531791568792
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 43.62366334567043
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.5150531749007877
+                ],
+                "gap": 43.623663345670614,
+                "seed": [
+                  0.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 43.623663345670614
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47482061044981083,
+                  0.0
+                ],
+                "gap": 45.628214107963515,
+                "seed": [
+                  0.47482061044981083,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.628214107963515
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894924591,
+                  0.740283516983994
+                ],
+                "gap": 4.621467232255377,
+                "seed": [
+                  0.47482061044981083,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255377
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4748206104710801,
+                  0.0
+                ],
+                "gap": 45.62821410796334,
+                "seed": [
+                  0.4748206104710801,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.62821410796334
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894924576,
+                  0.7402835169839947
+                ],
+                "gap": 4.621467232255629,
+                "seed": [
+                  0.4748206104710801,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255629
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.4748206104710801,
+                  0.0
+                ],
+                "gap": 45.62821410796334,
+                "seed": [
+                  0.5,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.62821410796334
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894925324,
+                  0.7402835169840248
+                ],
+                "gap": 4.621467232255629,
+                "seed": [
+                  0.5,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255629
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.683010789491348,
+                  0.7402835169841697
+                ],
+                "gap": 4.621467232255977,
+                "seed": [
+                  0.683010789491348,
+                  0.7402835169841697
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255977
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894925324,
+                  0.7402835169840248
+                ],
+                "gap": 4.621467232255629,
+                "seed": [
+                  0.6830107894925324,
+                  0.7402835169840248
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255629
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107895018389,
+                  0.7402835169788965
+                ],
+                "gap": 4.6214672322553945,
+                "seed": [
+                  0.6830107895018389,
+                  0.7402835169788965
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.6214672322553945
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.47482061044981083,
+                  0.0
+                ],
+                "gap": 45.628214107963515,
+                "seed": [
+                  1.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 45.628214107963515
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.683010789491348,
+                  0.7402835169841697
+                ],
+                "gap": 4.621467232255977,
+                "seed": [
+                  1.0,
+                  0.5
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255977
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107945290089,
+                  0.7402835133288848
+                ],
+                "gap": 4.621467232255412,
+                "seed": [
+                  1.0,
+                  0.5150531749007877
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+                    "value": 4.621467232255412
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.683010789490362,
+                  0.7402835169805491
+                ],
+                "gap": 4.6214672322556964,
+                "seed": [
+                  1.0,
+                  0.5150531791568792
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.6214672322556964
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.0,
+                  0.0
+                ],
+                "gap": 83.33634647582667,
+                "seed": [
+                  1.0,
+                  1.0
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 83.33634647582667
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894920012,
+                  0.7402835169842948
+                ],
+                "gap": 4.621467232255828,
+                "seed": [
+                  0.6666666666666666,
+                  0.75
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255828
+                  }
+                ]
+              },
+              {
+                "f": [
+                  0.6830107894920012,
+                  0.7402835169842948
+                ],
+                "gap": 4.621467232255828,
+                "seed": [
+                  0.6666666666666666,
+                  0.75
+                ],
+                "attempts": [
+                  {
+                    "method": "L-BFGS-B",
+                    "success": true,
+                    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+                    "value": 4.621467232255828
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "remote_gap": 4.621467232255377,
+      "diagnostics": {
+        "max_eigen_residual": 5.41475897199393e-16,
+        "max_reality": 5.684054930387476e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "kind": "braid_endpoint",
+      "state": {
+        "A": 0.2,
+        "B": -0.25,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": 5.0,
+        "w_mode": "layer1"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.7478708322322084,
+              0.6098534325445746
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.51658474912594,
+              0.8297778926951713
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          }
+        ],
+        "separation": 0.31915516666845783,
+        "label": "SAME",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.8804066781865834,
+              "max_phase_step": 0.046771756315482735,
+              "min_chart_overlap": 0.9998203630803644
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.645267384449852,
+              "max_phase_step": 0.03286371619188235,
+              "min_chart_overlap": 0.9998240214883228
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.8804066781865834,
+              "max_phase_step": 0.023390898064587072,
+              "min_chart_overlap": 0.9998203630803644
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.6452603192037467,
+              "max_phase_step": 0.01643243933556151,
+              "min_chart_overlap": 0.9998240127792156
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.4416868748372098,
+              "max_phase_step": 0.023334428755930715,
+              "min_chart_overlap": 0.9999555032826849
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.32339003437447655,
+              "max_phase_step": 0.016400542204568932,
+              "min_chart_overlap": 0.9999563472104774
+            },
+            "label": "SAME"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.9979694915850909,
+            "min_external_gap": 3.853747963857657,
+            "samples": 169,
+            "located_gap_minima": [
+              {
+                "t": 0.3565633365789015,
+                "gap": 13.67383281580925,
+                "gap_index": 2
+              },
+              {
+                "t": 0.4355586176188685,
+                "gap": 3.853747963857657,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.9993541139089329,
+            "min_external_gap": 3.8537479638577565,
+            "samples": 297,
+            "located_gap_minima": [
+              {
+                "t": 0.35656335188952415,
+                "gap": 13.673832815809257,
+                "gap_index": 2
+              },
+              {
+                "t": 0.4355586175996677,
+                "gap": 3.8537479638577565,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 4.172210870936712e-16,
+          "max_reality": 5.684191041137903e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "diagnostics": {
+        "max_eigen_residual": 4.172210870936712e-16,
+        "max_reality": 5.684191041137903e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "kind": "braid_endpoint",
+      "state": {
+        "A": 0.2,
+        "B": -0.3,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": 5.0,
+        "w_mode": "layer1"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.7428047107304646,
+              0.6088532399279264
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.5188014121621565,
+              0.8297054916700375
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 5
+          }
+        ],
+        "separation": 0.31456826742226146,
+        "label": "OPPOSITE",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.9678201786951386,
+              "max_phase_step": 0.04455405151163698,
+              "min_chart_overlap": 0.9998360545154048
+            },
+            "b": {
+              "winding": 1.0000000000000002,
+              "charge": 1,
+              "min_loop_gap": 0.6941856729528483,
+              "max_phase_step": 0.031157840408195043,
+              "min_chart_overlap": 0.9998311502516356
+            },
+            "label": "OPPOSITE"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.9678201786951386,
+              "max_phase_step": 0.02228282970482763,
+              "min_chart_overlap": 0.9998360545154048
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.6941736356878998,
+              "max_phase_step": 0.015578999249688436,
+              "min_chart_overlap": 0.9998311502516356
+            },
+            "label": "OPPOSITE"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": -0.9999999999999999,
+              "charge": -1,
+              "min_loop_gap": 0.4855498448749668,
+              "max_phase_step": 0.022221656141642353,
+              "min_chart_overlap": 0.9999594662961913
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.34748940256080374,
+              "max_phase_step": 0.015547867881353874,
+              "min_chart_overlap": 0.9999581418854964
+            },
+            "label": "OPPOSITE"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.9918981663567329,
+            "min_external_gap": 0.7824979356406914,
+            "samples": 174,
+            "located_gap_minima": [
+              {
+                "t": 0.37440423719601157,
+                "gap": 12.684320388183096,
+                "gap_index": 2
+              },
+              {
+                "t": 0.4140268732071938,
+                "gap": 0.7824979356406914,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.9949221655884577,
+            "min_external_gap": 0.7824979356408903,
+            "samples": 302,
+            "located_gap_minima": [
+              {
+                "t": 0.3744042429299371,
+                "gap": 12.68432038818322,
+                "gap_index": 2
+              },
+              {
+                "t": 0.414026864174999,
+                "gap": 0.7824979356408903,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 4.866334644019278e-16,
+          "max_reality": 5.684237821853078e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "diagnostics": {
+        "max_eigen_residual": 4.866334644019278e-16,
+        "max_reality": 5.684237821853078e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "kind": "braid_endpoint",
+      "state": {
+        "A": 0.2,
+        "B": -0.25,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": -5.0,
+        "w_mode": "layer1"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.7438887727961073,
+              0.6147878779862658
+            ],
+            "gap": 3.872457909892546e-13,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.5178160817099338,
+              0.8257298465573074
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          }
+        ],
+        "separation": 0.30920118977709443,
+        "label": "SAME",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.8882125316685745,
+              "max_phase_step": 0.046560573784523246,
+              "min_chart_overlap": 0.9998100987206666
+            },
+            "b": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.6225559324314076,
+              "max_phase_step": 0.033324893396027906,
+              "min_chart_overlap": 0.9998130759297902
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.8881924852824814,
+              "max_phase_step": 0.02328563210311598,
+              "min_chart_overlap": 0.9998100913351519
+            },
+            "b": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.6225404466674471,
+              "max_phase_step": 0.016663431764081083,
+              "min_chart_overlap": 0.9998130492108224
+            },
+            "label": "SAME"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.44555259414439535,
+              "max_phase_step": 0.023225843103173008,
+              "min_chart_overlap": 0.999952922840775
+            },
+            "b": {
+              "winding": -1.0000000000000002,
+              "charge": -1,
+              "min_loop_gap": 0.31217883471215313,
+              "max_phase_step": 0.016628708825797724,
+              "min_chart_overlap": 0.9999537181802893
+            },
+            "label": "SAME"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.9978025706404517,
+            "min_external_gap": 3.628942996384289,
+            "samples": 169,
+            "located_gap_minima": [
+              {
+                "t": 0.3793374051995771,
+                "gap": 13.524218480412106,
+                "gap_index": 2
+              },
+              {
+                "t": 0.4058702378674298,
+                "gap": 3.628942996384289,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.9993106949271096,
+            "min_external_gap": 3.628942996384506,
+            "samples": 297,
+            "located_gap_minima": [
+              {
+                "t": 0.3793373685202177,
+                "gap": 13.524218480411982,
+                "gap_index": 2
+              },
+              {
+                "t": 0.40587022705741216,
+                "gap": 3.628942996384506,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 4.040039593799558e-16,
+          "max_reality": 5.684241200095045e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "diagnostics": {
+        "max_eigen_residual": 4.040039593799558e-16,
+        "max_reality": 5.684241200095045e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "kind": "braid_endpoint",
+      "state": {
+        "A": 0.2,
+        "B": -0.3,
+        "T": 0,
+        "phi": 0,
+        "ratio": 0.8,
+        "theta": 1.05,
+        "eps": 0.003,
+        "w_kappa": -5.0,
+        "w_mode": "layer1"
+      },
+      "pair": {
+        "nodes": [
+          {
+            "f": [
+              0.7386928330046707,
+              0.6132894220326816
+            ],
+            "gap": 3.907985046680551e-13,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.5207452448056338,
+              0.8255963182450022
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 4
+          }
+        ],
+        "separation": 0.30426200778455087,
+        "label": "OPPOSITE",
+        "trials": [
+          {
+            "radius": 0.004,
+            "points": 256,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.9752379589541463,
+              "max_phase_step": 0.044296276561678324,
+              "min_chart_overlap": 0.9998268092063077
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.6793747472967805,
+              "max_phase_step": 0.031179118221061612,
+              "min_chart_overlap": 0.9998194490645782
+            },
+            "label": "OPPOSITE"
+          },
+          {
+            "radius": 0.004,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.9751275806624483,
+              "max_phase_step": 0.02214821119538992,
+              "min_chart_overlap": 0.9998268092063077
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.6793587521498667,
+              "max_phase_step": 0.015590377665066163,
+              "min_chart_overlap": 0.9998194490645782
+            },
+            "label": "OPPOSITE"
+          },
+          {
+            "radius": 0.002,
+            "points": 512,
+            "a": {
+              "winding": -1.0,
+              "charge": -1,
+              "min_loop_gap": 0.4891619546445119,
+              "max_phase_step": 0.022085626896861575,
+              "min_chart_overlap": 0.9999571313733382
+            },
+            "b": {
+              "winding": 1.0,
+              "charge": 1,
+              "min_loop_gap": 0.3402427286679097,
+              "max_phase_step": 0.015557544528064354,
+              "min_chart_overlap": 0.9999553227462953
+            },
+            "label": "OPPOSITE"
+          }
+        ],
+        "spatial_transport": [
+          {
+            "min_overlap": 0.9918983373832906,
+            "min_external_gap": 0.9940483536718077,
+            "samples": 173,
+            "located_gap_minima": [
+              {
+                "t": 0.39757545130281585,
+                "gap": 12.31425428841417,
+                "gap_index": 2
+              },
+              {
+                "t": 0.3847462805798501,
+                "gap": 0.9940483536718077,
+                "gap_index": 4
+              }
+            ]
+          },
+          {
+            "min_overlap": 0.997297695985756,
+            "min_external_gap": 0.9940483536717757,
+            "samples": 301,
+            "located_gap_minima": [
+              {
+                "t": 0.39757543727740324,
+                "gap": 12.31425428841434,
+                "gap_index": 2
+              },
+              {
+                "t": 0.384746280439089,
+                "gap": 0.9940483536717757,
+                "gap_index": 4
+              }
+            ]
+          }
+        ],
+        "rejected_stages": [],
+        "diagnostics": {
+          "max_eigen_residual": 4.159051408594603e-16,
+          "max_reality": 5.6838446456370324e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      "diagnostics": {
+        "max_eigen_residual": 4.159051408594603e-16,
+        "max_reality": 5.6838446456370324e-14,
+        "max_hermitian": 0.0
+      }
+    }
+  ],
+  "seconds": 65.74888563156128
+}

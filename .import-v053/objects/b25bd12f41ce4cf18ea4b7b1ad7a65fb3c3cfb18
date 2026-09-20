@@ -1,0 +1,107 @@
+{
+  "version": "v048",
+  "scope": "Two late flat-pair folds and eight sampled gapped states per engine/cutoff",
+  "engines": {
+    "bm_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "linear",
+      "cutoff_tol": 1e-06
+    },
+    "ref_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "cutoff_tol": 1e-09
+    }
+  },
+  "cutoffs": [
+    4,
+    6
+  ],
+  "fold": {
+    "root_states": 9,
+    "derivative_steps": [
+      2e-05,
+      1e-05
+    ],
+    "curvature_steps": [
+      0.0002,
+      0.0001
+    ],
+    "offset": 0.001,
+    "charge_meshes": [
+      256,
+      512,
+      512
+    ],
+    "fallback_meshes": [
+      1024,
+      2048,
+      2048
+    ],
+    "open_grids": [
+      18,
+      24
+    ]
+  },
+  "gapped": {
+    "states": 8,
+    "grids": [
+      18,
+      24
+    ],
+    "gap_threshold": 1e-05,
+    "grid_agreement": 0.01,
+    "anchor_gap_agreement": 1e-06,
+    "cycle_meshes": [
+      64,
+      128
+    ],
+    "cycle_offsets": [
+      0,
+      0.5
+    ]
+  },
+  "source_sha256": {
+    "basis.py": "abde0c16c26a5cf22558dcbe2c2d18ba0dedc8390a1a65b9fe8fd4cf1c27bb1f",
+    "boundary_audit.py": "379491707c7ea3c9f5a0b07b01c547f42b2cd886a1b9872cd0fe3728c075210d",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "cycles.py": "0e193124b37fed649af0b643199ff9f778871849ce9572410755af19887b321e",
+    "fold_character.py": "60397d86fb9bf7e0825c249fd86baaab1fa9d0e8ee435e83d7b133cca088cf00",
+    "gapped_legs.py": "2daf826c4894a2b7b751b7cd3f083aa048c34efd2737444dc2d77ee532f08308",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "ee3b499fea95de2eec848abcd01aa800cce5e75d396a725b43a7a1c159a65837",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "replay_events.py": "43d419dc1e0faa149bba7b7dfa707557cf3356d393f32ef1c00b5485d86f427f",
+    "run_sequence.py": "24400ca61d13cdef2d716b184be559bbcbc1c18d41ed3b612b4cf97f1bf2f9de",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "engines/bm_strain.py": "ac51ed2a9ce6303131aa0aa6393289c53d859a752c33c29478d28a00ab363ca2",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d"
+  },
+  "anchor_sha256": {
+    "anchors/anchors_prep_N4.json": "728b365f52a472cf813187f259dde67470f0646330abc6d6e51190eb9291897a",
+    "anchors/bridge_bm_lab_N4.json": "b8edf4c9c1bf76b743838b95c15e2eb1bc1e5c7cd29432a788054123d341a88e",
+    "anchors/bridge_bm_lab_N6.json": "2967c8852788f2305373fce39c5a841f914310a77206a40474e521c717f39d6f",
+    "anchors/bridge_ref_lab_N4.json": "23b29a7aabcd43ab3450345b3ad1d3bcfb2918eb23eaccd5260e2879f7fb28f2",
+    "anchors/bridge_ref_lab_N6.json": "dc6e6607909cf4f5836bd62d5d358dfabe28e04085490f953dba33f50b2302fb",
+    "anchors/early_bm_lab_N4.json": "f4ed2b88ae799a0564f8a90cdd11df0e9e591d0d66232c7b559fe63a262007db",
+    "anchors/early_ref_lab_N4.json": "9f2077014d4ef841183417099e973681ae3045540b35b69994d3e67a85215c99",
+    "anchors/endpoint_bm_lab_N4.json": "dccecc7d42ccad1e51ab43664766ae61decf2a271be9eb1a67da7269b5363e33",
+    "anchors/endpoint_bm_lab_N6.json": "7bc07d6863f2d20f15697a53e7711eff559175c9a29e4bb49609af88900dbfc8",
+    "anchors/endpoint_ref_lab_N4.json": "0a60e56e9caec0b848e9eb885c10529e6600dcc00297ea854aa8152c35d9048d",
+    "anchors/endpoint_ref_lab_N6.json": "af7f0915499aceca82d358760dec5dcf359b36d95cdf21f71db89aa97f211294",
+    "anchors/second_bm_lab_N4.json": "55c12496dc8ddfb3ccb7f5a59b69dafed29ec658b46387b9eb8dbabfe726b26d",
+    "anchors/second_bm_lab_N6.json": "864ccd6c99b6dce4cbb51d5067a9e6ffdeee609a6c3076a6bfd033ba231ae94d",
+    "anchors/second_ref_lab_N4.json": "b5bda51bf861724ad2f071faf4b068790727d4d647656a09b6370414082fb171",
+    "anchors/second_ref_lab_N6.json": "d8aa60f428ebfbed801ff26b99d3e49a822a8fb70ef39122bf68dc99f1ef8ee5",
+    "anchors/upper_ann_bm_lab_N4_refined.json": "8d288784fc05a6a6ee81bef6e91ceda5898d13fcbcd7dc9cda9f003145cc6237",
+    "anchors/upper_ann_bm_lab_N6_refined.json": "6dab1968ccffc355a73b55805acf18bb698df291f7748a5da44b71d084f29af0",
+    "anchors/upper_ann_ref_lab_N4_refined.json": "00ca063a6167ac69a1797a06dd4822a51e2c52e41381cb33f4406eb9fbd41c96",
+    "anchors/upper_ann_ref_lab_N6_refined.json": "43bd297b8ec034702f7d52916bee7819fc02515a4ed744452936aec84bbccea0"
+  }
+}

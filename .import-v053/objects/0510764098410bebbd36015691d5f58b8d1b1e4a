@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "source_sha256": "ea44a0e7c042f2642cb6e5dbb0b175bfdd9cfc141a37e2e5a7fe7d4266d0cdb7",
+  "rows": [
+    {
+      "engine": "bm_lab",
+      "geometry": "linear",
+      "nodes": [
+        {
+          "f": [
+            0.7458770682779663,
+            0.6123375986324249
+          ],
+          "gap": 0.0,
+          "index": 3,
+          "nfev": 3
+        },
+        {
+          "f": [
+            0.5172350616762424,
+            0.8277664903308461
+          ],
+          "gap": 0.0,
+          "index": 3,
+          "nfev": 3
+        }
+      ],
+      "matched_anchor": "bm_lab",
+      "join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          1.2412670766236366e-15,
+          8.881784197001252e-16
+        ],
+        "max_distance": 1.2412670766236366e-15
+      },
+      "rounded_input_error": 4.849968111021058e-05,
+      "diagnostics": {
+        "max_eigen_residual": 2.923084839830402e-16,
+        "max_reality": 5.662876706891467e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "engine": "bm_exact",
+      "geometry": "exact",
+      "nodes": [
+        {
+          "f": [
+            0.7458774722154431,
+            0.6123369007260732
+          ],
+          "gap": 0.0,
+          "index": 3,
+          "nfev": 4
+        },
+        {
+          "f": [
+            0.5172349988768298,
+            0.8277661746548942
+          ],
+          "gap": 0.0,
+          "index": 3,
+          "nfev": 4
+        }
+      ],
+      "matched_anchor": "ref_lab",
+      "join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          1.8906416838689214e-15,
+          4.342661167468608e-15
+        ],
+        "max_distance": 4.342661167468608e-15
+      },
+      "rounded_input_error": 4.86731481546191e-05,
+      "diagnostics": {
+        "max_eigen_residual": 2.861794735416425e-16,
+        "max_reality": 5.6675293997665647e-14,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "engine": "ref_lab",
+      "geometry": "exact",
+      "nodes": [
+        {
+          "f": [
+            0.7458774722154422,
+            0.6123369007260737
+          ],
+          "gap": 3.836930773104541e-13,
+          "index": 3,
+          "nfev": 4
+        },
+        {
+          "f": [
+            0.517234998876832,
+            0.8277661746548908
+          ],
+          "gap": 7.478462293875054e-13,
+          "index": 3,
+          "nfev": 4
+        }
+      ],
+      "matched_anchor": "ref_lab",
+      "join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          8.671119018262734e-16,
+          2.482534153247273e-16
+        ],
+        "max_distance": 8.671119018262734e-16
+      },
+      "rounded_input_error": 4.86731481546191e-05,
+      "diagnostics": {
+        "max_eigen_residual": 2.707975293538601e-16,
+        "max_reality": 5.644128223180542e-14,
+        "max_hermitian": 0.0
+      }
+    }
+  ],
+  "exact_cross_engine_difference": 4.095805194048e-15,
+  "linear_exact_difference": 8.063738344719307e-07,
+  "scope": "Root identity at the common starting state only; no preparation-path replay"
+}

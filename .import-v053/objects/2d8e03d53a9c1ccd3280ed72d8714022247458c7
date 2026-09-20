@@ -1,0 +1,84 @@
+--- v045/v023_code/bm_strain.py
++++ v047/v023_code/bm_strain.py
+@@ -50,7 +50,10 @@
+ 
+ class BM:
+     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,
+-                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average'):
++                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average', cutoff_tol=1e-6):
++        # cutoff_tol (v046, team patch): padding on the plane-wave cutoff in 1/Angstrom; historical default 1e-6.
++        self.cutoff_tol = float(cutoff_tol)
++        if not np.isfinite(self.cutoff_tol) or self.cutoff_tol < 0: raise ValueError('cutoff_tol must be finite and nonnegative')
+         # tunnelling strain law (v045): T_j -> T_j (1 + w_kappa * e_j), e_j = strain along the K_j direction,
+         #   w_mode='average': mean of the two layers (vanishes for pure heterostrain, the first-order BM result)
+         #   w_mode='layer1' : layer-1 strain only (cancellation switched off; worst-case sensitivity bound)
+@@ -105,7 +108,7 @@
+             self.T.append((1.0 + w_kappa * eps_j) * (self.w0 * s0 + self.w1 * (np.cos(2 * np.pi * j / 3) * sx
+                                                                              + np.sin(2 * np.pi * j / 3) * sy)))
+         # plane-wave lattice
+-        gmax = N * np.linalg.norm(self.G1) + 1e-6
++        gmax = N * np.linalg.norm(self.G1) + self.cutoff_tol
+         idx = []
+         for m in range(-3 * N, 3 * N + 1):
+             for n in range(-3 * N, 3 * N + 1):
+--- v045/v023_code/tbg_ref.py
++++ v047/v023_code/tbg_ref.py
+@@ -6,9 +6,12 @@
+     each layer's Dirac point K_l enters its intralayer block. bm_strain instead offsets the
+     layer-2 grid by q_1. Same physics, different truncation.
+   * Strain: full (1+E_l) lattice deformation, reciprocal vectors b^(l) = (1+E_l)^{-T} R(theta_l) b,
+-    moiré vectors G^M = b^(1) - b^(2) exactly, and the velocity renormalisation
+-    h_l = hbar v [(1 - E_l) R(-theta_l)(p - K_l - A_l)] . sigma, which bm_strain dropped.
+-    Pseudo-gauge A_l = (sqrt3 beta / 2a)(E_xx - E_yy, -2 E_xy) with beta=3.14 (the physics, kept).
++    moiré vectors G^M = b^(1) - b^(2) exactly (geometry is fixed 'exact' here; bm_strain has linear|exact).
++    Kinetic term selected by `kinetic` (mandatory): 'none'; 'geom_wrong' (v036, (I-E)R^T, kept for the record);
++    'full' (v039, [I+(1-beta)E]R^T, lab gauge); 'lab_nn_full' (v041 declared, R^T[I+(1-beta)E], crystal-frame
++    gauge rotated to the lab; Oliva-Leyva & Naumis tensor). Pseudo-gauge a(E) = (sqrt3 beta/2a)(E_xx-E_yy,-2E_xy).
++  * cutoff_tol: padding on the plane-wave cutoff (default 1e-9; bm_strain default 1e-6). Name it with N, kinetic
++    and geometry in any matched-model comparison (v046).
+   * Tunnelling written as T(r) = sum_j T_j exp(i q_j . r) with q_j = K_j^(1) - K_j^(2) built from the
+     three equivalent K points of each strained, rotated layer (no small-angle formulas).
+   * C2zT real basis built NUMERICALLY from the antiunitary A = S_x K (eigenvectors of A with A^2=+1),
+@@ -37,10 +40,12 @@
+ 
+ 
+ class TBG:
+-    def __init__(self, theta=1.05, w1=110.0, w0=88.0, eps=0.0, phi=0.0, nu=0.16, beta=3.14, N=4, A=0.0, B=0.0, Bt=0.0, kinetic=None):
++    def __init__(self, theta=1.05, w1=110.0, w0=88.0, eps=0.0, phi=0.0, nu=0.16, beta=3.14, N=4, A=0.0, B=0.0, Bt=0.0, kinetic=None, cutoff_tol=1e-9):
+         # kinetic must be given explicitly (v041): 'none' | 'geom_wrong' (v036, retained for record) | 'full' (v039) | 'lab_nn_full' (v041 declared)
+         if kinetic not in ('none', 'geom_wrong', 'full', 'lab_nn_full'): raise ValueError('kinetic must be one of none/geom_wrong/full/lab_nn_full, got %r' % (kinetic,))
+         self.kinetic = kinetic; self.beta = beta
++        self.cutoff_tol = float(cutoff_tol)
++        if not np.isfinite(self.cutoff_tol) or self.cutoff_tol < 0: raise ValueError('cutoff_tol must be finite and nonnegative')
+         th = np.radians(theta); ph = np.radians(phi)
+         E = eps * np.array([[np.cos(ph)**2 - nu*np.sin(ph)**2, (1+nu)*np.sin(ph)*np.cos(ph)],
+                             [(1+nu)*np.sin(ph)*np.cos(ph), np.sin(ph)**2 - nu*np.cos(ph)**2]])
+@@ -60,7 +65,7 @@
+         self.w1, self.A, self.B, self.Bt, self.N = w1, A, B, Bt, N
+         # absolute-momentum grid centred on the layer-1 Dirac point K_0^(1), shared by both layers
+         self.origin = self.Kl[0][0]
+-        gmax = N*np.linalg.norm(self.G1) + 1e-9
++        gmax = N*np.linalg.norm(self.G1) + self.cutoff_tol
+         self.mn = [(a, b) for a in range(-3*N, 3*N+1) for b in range(-3*N, 3*N+1) if np.linalg.norm(a*self.G1 + b*self.G2) <= gmax]
+         self.ix = {t: i for i, t in enumerate(self.mn)}; self.nG = len(self.mn); self.dim = 4*self.nG
+         self.Gv = np.array([a*self.G1 + b*self.G2 for a, b in self.mn])
+--- v045/v023_code/test_tbg_ref.py
++++ v047/v023_code/test_tbg_ref.py
+@@ -80,3 +80,17 @@
+     m = TBG(N=3, eps=0.003, kinetic='none')
+     v = m.gap_min(2, n=8, keep=2)
+     assert np.isfinite(v) and v > 0
++
++def test_cutoff_padding_witness_and_common_tolerance():
++    """v046 (team witness): at phi=15.843560625048124 deg two indices sit between the historical paddings;
++    with a common cutoff_tol the bases and matrices match."""
++    kw = dict(N=4, eps=0.003, kinetic='lab_nn_full')
++    a = BM(phi_deg=15.843560625048124, geometry='exact', **kw); b = TBG(phi=15.843560625048124, **kw)
++    assert (a.dim, b.dim) == (196, 188)
++    for tol in (1e-9, 1e-6):
++        a2 = BM(phi_deg=15.843560625048124, geometry='exact', cutoff_tol=tol, **kw); b2 = TBG(phi=15.843560625048124, cutoff_tol=tol, **kw)
++        assert a2.dim == b2.dim
++        wa = a2.bands_near_zero(a2.frac_to_k(np.array([0.31, 0.27])), 3); wb = b2.bands(b2.k(np.array([0.31, 0.27])), 3)
++        assert np.abs(wa - wb).max() < 1e-10
++    with pytest.raises(ValueError):
++        TBG(cutoff_tol=-1.0, **kw)

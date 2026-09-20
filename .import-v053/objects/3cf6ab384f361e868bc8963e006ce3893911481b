@@ -1,0 +1,15 @@
+--- a/v023_code/bm_strain.py
++++ b/v023_code/bm_strain.py
+@@ -54,9 +54,9 @@
+         # cutoff_tol (v046, team patch): padding on the plane-wave cutoff in 1/Angstrom; historical default 1e-6.
+         self.cutoff_tol = float(cutoff_tol)
+         if not np.isfinite(self.cutoff_tol) or self.cutoff_tol < 0: raise ValueError('cutoff_tol must be finite and nonnegative')
+-        # tunnelling strain law (v045): T_j -> T_j (1 + w_kappa * e_j), e_j = strain along the K_j direction,
+-        #   w_mode='average': mean of the two layers (vanishes for pure heterostrain, the first-order BM result)
+-        #   w_mode='layer1' : layer-1 strain only (cancellation switched off; worst-case sensitivity bound)
++        # Declared common-direction tunneling ansatz, not a microscopic law.
++        # 'average' cancels identically for opposite strains; 'layer1' is a sensitivity scenario.
++        if not np.isfinite(w_kappa): raise ValueError('w_kappa must be finite')
+         if w_mode not in ('average', 'layer1'): raise ValueError(w_mode)
+         self.w_kappa, self.w_mode = w_kappa, w_mode
+         # geometry: 'linear' (campaign: K_l=(1-E_l)R K, q_j linearised) | 'exact' ((1+E_l)^{-T} R, as tbg_ref)
