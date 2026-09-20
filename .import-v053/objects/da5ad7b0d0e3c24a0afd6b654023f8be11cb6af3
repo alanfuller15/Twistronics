@@ -1,0 +1,108 @@
+{
+  "version": "our_v052",
+  "scope": "Lower-pair preparation birth; bounded root continuation and finite full-chart lower-gap searches",
+  "engines": {
+    "bm_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "linear",
+      "cutoff_tol": 1e-06
+    },
+    "ref_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "cutoff_tol": 1e-09
+    }
+  },
+  "cutoffs": [
+    4,
+    6
+  ],
+  "case": "prep_lower_birth",
+  "gap_index": 2,
+  "B_window": [
+    -0.25,
+    -0.1
+  ],
+  "held": {
+    "A": 0.2,
+    "T": 0,
+    "phi": 0,
+    "ratio": 0.8,
+    "eps": 0.003,
+    "theta": 1.05,
+    "w_kappa": 0
+  },
+  "chart": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "root_states": 9,
+  "charge_stations": 2,
+  "open_stations": 2,
+  "open_grids": [
+    18,
+    24
+  ],
+  "gap_threshold": 1e-05,
+  "grid_agreement": 0.01,
+  "root_separation": 0.001,
+  "root_boundary_margin": 0.005,
+  "max_root_jump": 0.06,
+  "fold_offset": 0.001,
+  "derivative_steps": [
+    2e-05,
+    1e-05
+  ],
+  "curvature_steps": [
+    0.0002,
+    0.0001
+  ],
+  "charge_meshes": [
+    256,
+    512,
+    512
+  ],
+  "phase_only_fallback": [
+    1024,
+    2048,
+    2048
+  ],
+  "root_join_tolerance": 1e-06,
+  "pilot": "Backward pair at B=-.22, unresolved at -.21; positive full-chart lower gap at -.10. Neither search failure nor pilot counted as accepted event.",
+  "source_sha256": {
+    "boundary_audit.py": "379491707c7ea3c9f5a0b07b01c547f42b2cd886a1b9872cd0fe3728c075210d",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "engines/bm_strain.py": "66498fc7de422d2680b3ebf6e8c63a137ed325684f1a5a3f9380a3d387c7f037",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "fold_character.py": "51f6778cc6d04175960e9f4b6aecc11aacf65d47b89475d17c5624ff6eb0fe6d",
+    "ledger_guard.py": "7f862f6a4a24b68125786c46bb778af552aacfc63b529330437e476d86f4d198",
+    "local_domain.py": "609f4e254530019d06a95805322aed8526a9f5c782b0f0dc924fb8f7627d1199",
+    "lower_case.py": "12d93be83959d38d3e83abdeda0e973f16ba6a6f62464dc9fbe2842e7a54638c",
+    "lower_fold.py": "2dd6828cec94f7256c021590c87a21f726eeb3851872d14590f7ea8528532718",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "pilot_backward.py": "4652183371c78231810c5ec594de8922b04400ae59d79a23c8d02801e10e19e3",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "run_lower.py": "bf096ae260a6473c7b1a029d0e0e45f571f303a001778879fef6307f9cb79356",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e"
+  },
+  "anchor_sha256": {
+    "anchors/early_bm_lab_N4.json": "f4ed2b88ae799a0564f8a90cdd11df0e9e591d0d66232c7b559fe63a262007db",
+    "anchors/early_bm_lab_N6.json": "7cc329a4a5631937327475617930ce186333256cf4207b8be1bb684bb63ee119",
+    "anchors/early_ref_lab_N4.json": "9f2077014d4ef841183417099e973681ae3045540b35b69994d3e67a85215c99",
+    "anchors/early_ref_lab_N6.json": "57796c8c279e47d61db53a975e476dba0e1a4d69396406aa462815d92f338ea9",
+    "anchors/lower_inventory_probe.json": "52c81390f2be276d94106ece9497be7e614d8c0796ac1b3e4c35a75df922225d"
+  }
+}

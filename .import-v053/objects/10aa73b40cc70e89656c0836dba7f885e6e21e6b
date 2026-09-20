@@ -1,0 +1,126 @@
+{
+  "version": "our_v051",
+  "scope": "Two local extra-flat-pair preparation folds; not global flat-gap closure",
+  "engines": {
+    "bm_lab": {
+      "geometry": "linear",
+      "kinetic": "lab_nn_full",
+      "cutoff_tol": 1e-06
+    },
+    "ref_lab": {
+      "geometry": "exact",
+      "kinetic": "lab_nn_full",
+      "cutoff_tol": 1e-09
+    }
+  },
+  "cutoffs": [
+    4,
+    6
+  ],
+  "cases": [
+    "extra_flat_birth",
+    "extra_flat_ann"
+  ],
+  "box": [
+    [
+      0.42,
+      0.63
+    ],
+    [
+      0.52,
+      0.63
+    ]
+  ],
+  "windows": {
+    "extra_flat_birth": {
+      "parameter": "A",
+      "pair_at": 0.2,
+      "open_at": 0.16
+    },
+    "extra_flat_ann": {
+      "parameter": "B",
+      "pair_at": 0.0,
+      "open_at": -0.05
+    }
+  },
+  "held": {
+    "T": 0,
+    "phi": 0,
+    "ratio": 0.8,
+    "eps": 0.003,
+    "theta": 1.05,
+    "w_kappa": 0
+  },
+  "station_counts": {
+    "root_states": 9,
+    "charge_stations": 2,
+    "boundary_stations": 12,
+    "original_pair_stations": 12,
+    "local_open_stations": 2
+  },
+  "local_grids": [
+    17,
+    25
+  ],
+  "boundary_grids": [
+    24,
+    48
+  ],
+  "gap_threshold": 1e-05,
+  "grid_agreement": 0.01,
+  "original_domain_distance": 0.02,
+  "root_boundary_margin": 0.005,
+  "root_separation": 0.001,
+  "max_root_jump": 0.06,
+  "fold_offset": 0.001,
+  "derivative_steps": [
+    2e-05,
+    1e-05
+  ],
+  "curvature_steps": [
+    0.0002,
+    0.0001
+  ],
+  "charge_meshes": [
+    256,
+    512,
+    512
+  ],
+  "charge_radii": [
+    "r",
+    "r",
+    "r/2"
+  ],
+  "phase_only_fallback": [
+    1024,
+    2048,
+    2048
+  ],
+  "source_sha256": {
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "engines/bm_strain.py": "66498fc7de422d2680b3ebf6e8c63a137ed325684f1a5a3f9380a3d387c7f037",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "fold_character.py": "7a1d0a76eb29b2fb3d8aa3eb9c2223c62142d36004ed5f7d1225bc3f1db58f9e",
+    "ledger_guard.py": "7f862f6a4a24b68125786c46bb778af552aacfc63b529330437e476d86f4d198",
+    "local_cases.py": "f5a467aadf94b1cb502dbe9e0f53ad01b3f86d843e4a1a1d09adb114175ce05a",
+    "local_domain.py": "609f4e254530019d06a95805322aed8526a9f5c782b0f0dc924fb8f7627d1199",
+    "local_fold.py": "0a604020c679bd46baf48d1958fb37e9ee6f1d6d1661cde6f905fbe811565227",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "pilot_locate.py": "0a6631827f2cc8d3ea02393e2a21eb70ce70ca02defdd1dd7a9b1811756a4975",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "run_local.py": "eb66207d2b6bf759fcc438e9a46ec4b425e27316771dd89cd1c55a96bb85c25d",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e"
+  },
+  "anchor_sha256": {
+    "anchors/anchors_prep_N4.json": "728b365f52a472cf813187f259dde67470f0646330abc6d6e51190eb9291897a"
+  },
+  "pilot": "BM N4 fold locations only; not counted as accepted results",
+  "tests_before_freeze": "10 local-domain tests passed"
+}

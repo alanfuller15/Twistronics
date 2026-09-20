@@ -1,0 +1,14 @@
+--- v023_code/endpoint_locate.py
++++ v023_code/endpoint_locate.py
+@@ -16,9 +16,9 @@
+     for s0 in starts:
+         r=minimize(lambda f: fn(np.array(f)),np.clip(s0,0,1),method='Nelder-Mead',bounds=[(0,1),(0,1)],options={'xatol':1e-7,'fatol':1e-9,'maxiter':400})
+         log.append(dict(start=np.asarray(s0).tolist(),success=bool(r.success),fun=float(r.fun),x=r.x.tolist(),nfev=int(r.nfev),message=str(r.message)))
+-        if r.success and np.isfinite(r.fun) and r.fun<best[0]: best=(r.fun,r.x)
++        if r.success and np.isfinite(r.fun) and np.isfinite(r.x).all() and r.fun<best[0]: best=(r.fun,r.x)
++    with open(f'endpoint_locate_N{N}_gap{i}_starts.json','w') as stream: json.dump(log,stream,indent=1)
+     nfail=sum(1 for l in log if not l['success'])
+     if best[1] is None: raise RuntimeError(f"all {len(log)} starts failed for gap {i}: {log}")
+     out[i]=best; print(f"N={N} {names[i]:12s}: {best[0]:.5f} meV at {tuple(np.round(best[1],5))} | starts {len(log)}, failed {nfail} ({time.time()-t:.0f}s)"); sys.stdout.flush()
+-    json.dump(log,open(f'endpoint_locate_N{N}_gap{i}_starts.json','w'),indent=1)
+ print("SEEDS",json.dumps({str(i):out[i][1].tolist() for i in out}))

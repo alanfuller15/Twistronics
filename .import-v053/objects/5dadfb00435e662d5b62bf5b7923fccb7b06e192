@@ -1,0 +1,17 @@
+# Lower-pair preparation birth — frozen method
+
+We follow the two lower-gap roots backward from the existing v044 start state A=0.2, B=−0.25, T=0, phi=0, ratio=0.8. The pilot resolves both at B=−0.22 and fails to resolve them at −0.21; failure is only a signal to bracket the fold. At B=−0.10, the pilot's 18/24 full-chart searches agree on a positive lower gap. This supports selecting the earlier full-chart opening gate, unlike v051's local flat-pair events where original flat nodes persist in the same gap.
+
+The claimed event concerns gap index 2 of the eight-central-band harness: the lower remote band and the first flat band. It is not a claim that the flat pair itself becomes gapped. Hamiltonian inputs are lab_nn_full, eps=0.003, theta=1.05 degrees, constant w0,w1 and the held parameters above. BM retains linear reciprocal geometry and cutoff_tol=1e−6; TBG retains exact reciprocal geometry and cutoff_tol=1e−9. Their sources are unchanged.
+
+PLAN.json freezes the scientific code and four v044 node-anchor files before the decisive runs. The fold solver is bounded to the full momentum chart [0,1]² and B∈[−0.25,−0.10]. It requires converged Hamiltonian components, a rank-one spatial Jacobian under derivative-step refinement (2e−5/1e−5), nonzero null curvature and transverse parameter slope under 2e−4/1e−4 refinement, and positive external-band separation. Derivative refinement must move the parameter by less than 1e−6; curvature and slope must agree within 1% and predict the correct pair-present side.
+
+Nine distinct-root states continue from B=−0.25 toward fold−0.001. Roots remain >0.005 inside the chart, separated by >0.001, with individual jumps <0.06. Their common pair-present roots must join the retained v044 lower nodes within 1e−6 for each engine/cutoff. That is a same-state root join, not a historical frame-orientation join.
+
+Charges are measured at the first and last root state using the inherited spatial-transport and loop gate: 128/256 comparison-path meshes, 256/512 same-radius loops, half-radius mesh 512, and only for an unresolved phase step the 1024/2048/2048 fallback. Both nodes must have opposite charges and agree across mesh/radius trials. No absolute charge carried along the parameter route is asserted.
+
+On the other side, full-chart gap searches at fold+0.001 and B=−0.10 use 18/24 grids, periodic-neighbor seed selection, explicit edge/corner seeds and the located fold momentum, followed by bounded gradient refinements. Each optimizer must succeed without worsening its seed (recorded SLSQP fallback permitted). The located gap must exceed 1e−5 meV and the two mesh estimates must agree within 0.01 meV. Coordinates are not silently wrapped because a finite-cutoff Hamiltonian is not exactly periodic.
+
+Both N4 engines must pass before N6 starts. At most two single-thread numerical workers run. Each completed station is saved; a failed window is REJECTED, never converted into an event verdict. A rerun skips an accepted window with matching protocol and recomputes an incomplete window from its start.
+
+A full-chart numerical search is still finite evidence, not a rigorous global lower bound or an exhaustive inventory. The claim is one lower-pair fold with sampled continuation and searched open-side gaps. It does not complete the original-flat-pair preparation/frame replay or the separate lower unlink event, establish infinite-cutoff convergence, or validate a physical bilayer.

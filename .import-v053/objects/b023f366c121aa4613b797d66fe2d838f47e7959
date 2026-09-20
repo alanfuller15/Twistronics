@@ -1,0 +1,173 @@
+{
+  "version": "v050",
+  "status": "ACCEPT",
+  "kinetic": "lab_nn_full",
+  "scope": "Preparation upper-pair birth only",
+  "fold_windows": 4,
+  "root_states": 36,
+  "charge_stations": 8,
+  "folds": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "case": "prep_upper_birth",
+      "A": 0.13681902965963652,
+      "node": [
+        0.6604773468055327,
+        0.8291006383659554
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "near_open_gap": 0.05815751512262324,
+      "far_open_gap": 0.9484256431645406,
+      "source": "results/prep_upper_birth_bm_lab_N4_refined.json"
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "case": "prep_upper_birth",
+      "A": 0.13696094267342046,
+      "node": [
+        0.6602709602981393,
+        0.8292768787761614
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "near_open_gap": 0.05853524436889046,
+      "far_open_gap": 0.9624013395590794,
+      "source": "results/prep_upper_birth_bm_lab_N6_refined.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "case": "prep_upper_birth",
+      "A": 0.1368222547412523,
+      "node": [
+        0.6604771077717084,
+        0.8291026807330767
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "near_open_gap": 0.058158188833900226,
+      "far_open_gap": 0.948613314604593,
+      "source": "results/prep_upper_birth_ref_lab_N4_refined.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "case": "prep_upper_birth",
+      "A": 0.1369641495057242,
+      "node": [
+        0.6602707243331738,
+        0.8292789095701317
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "near_open_gap": 0.058535916778581054,
+      "far_open_gap": 0.9625891414389471,
+      "source": "results/prep_upper_birth_ref_lab_N6_refined.json"
+    }
+  ],
+  "late_missing_partner": {
+    "status": "ACCEPT",
+    "scope": "two local roots only; no new charge claim",
+    "ratio": 1.054,
+    "seeds": [
+      [
+        0.6767770725243936,
+        0.9047176133459351
+      ],
+      [
+        0.6782595227042629,
+        0.9133596209012909
+      ]
+    ],
+    "rows": [
+      {
+        "engine": "bm_exact",
+        "N": 4,
+        "nodes": [
+          {
+            "f": [
+              0.6769516827328383,
+              0.9048660601578754
+            ],
+            "gap": 3.552713678800501e-13,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.6783890943118955,
+              0.9136369107081113
+            ],
+            "gap": 0.0,
+            "index": 3,
+            "nfev": 5
+          }
+        ],
+        "separation": 0.00888785527684718,
+        "diagnostics": {
+          "max_eigen_residual": 2.3667863454737713e-16,
+          "max_reality": 5.667900788512367e-14,
+          "max_hermitian": 0.0
+        }
+      },
+      {
+        "engine": "ref_lab",
+        "N": 4,
+        "nodes": [
+          {
+            "f": [
+              0.6769516827328403,
+              0.9048660601578725
+            ],
+            "gap": 3.552713678800501e-13,
+            "index": 3,
+            "nfev": 5
+          },
+          {
+            "f": [
+              0.6783890943118982,
+              0.9136369107081119
+            ],
+            "gap": 3.588240815588506e-13,
+            "index": 3,
+            "nfev": 5
+          }
+        ],
+        "separation": 0.008887855276850794,
+        "diagnostics": {
+          "max_eigen_residual": 2.260196462041015e-16,
+          "max_reality": 5.6810614911353096e-14,
+          "max_hermitian": 0.0
+        }
+      }
+    ],
+    "max_root_difference": 3.510833468576701e-15
+  },
+  "prior_our_v048": {
+    "status": "ACCEPT",
+    "fold_windows": 8,
+    "gapped_states": 32,
+    "sha256": "3c9afef91029c4c30671768f15108c7432dfc21fd5588bcf62c3241e843a2855"
+  },
+  "protocol_sha256": "cf3f6bdb846c3304f6423d53c37106230660fa4d7fb7d27f0469e453766584d0",
+  "source_sha256": {
+    "results/prep_upper_birth_bm_lab_N4_refined.json": "7c64cfc487895dbf8ca60841edeba272588befd8546c4f587d64b6ea47a28ec3",
+    "results/prep_upper_birth_bm_lab_N6_refined.json": "39069253c5e9299e2872ea6c8c5731437bc782ad14722544192d727ca79f326e",
+    "results/prep_upper_birth_ref_lab_N4_refined.json": "502f841daa3b94ca55e0c98534d1be225be019585ff856bfd00f3797085a3477",
+    "results/prep_upper_birth_ref_lab_N6_refined.json": "afaa8391e982439fef406a37693fc70871ff86410d18ab06672af4b126a84731",
+    "provenance/ratio_1054.json": "2cf0487a73ebcef2e7594c608da4724eab90b49c50a08959267bc8cee0d7160b"
+  },
+  "tests": {
+    "supplied": 31,
+    "report_guards": 14
+  },
+  "limits": [
+    "Remaining preparation not replayed",
+    "Separate lower unlink collision unmeasured",
+    "Finite parameter samples and momentum searches",
+    "Shared measurement harness; not physical validation"
+  ]
+}
