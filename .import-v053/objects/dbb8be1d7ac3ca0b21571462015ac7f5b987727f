@@ -1,0 +1,16 @@
+--- a/v023_code/bm_strain.py
++++ b/v023_code/bm_strain.py
+@@ -51,9 +51,10 @@
+ class BM:
+     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,
+                  nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average'):
+-        # tunnelling strain law (v045): T_j -> T_j (1 + w_kappa * e_j), e_j = strain along the K_j direction,
+-        #   w_mode='average': mean of the two layers (vanishes for pure heterostrain, the first-order BM result)
+-        #   w_mode='layer1' : layer-1 strain only (cancellation switched off; worst-case sensitivity bound)
++        # Declared tunneling ansatz: T_j -> T_j (1 + w_kappa * e_j).
++        # 'average' cancels identically for the opposite layer strains here.
++        # 'layer1' is a one-parameter sensitivity scenario, not a physical bound.
++        if not np.isfinite(w_kappa): raise ValueError('w_kappa must be finite')
+         if w_mode not in ('average', 'layer1'): raise ValueError(w_mode)
+         self.w_kappa, self.w_mode = w_kappa, w_mode
+         # geometry: 'linear' (campaign: K_l=(1-E_l)R K, q_j linearised) | 'exact' ((1+E_l)^{-T} R, as tbg_ref)

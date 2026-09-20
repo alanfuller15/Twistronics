@@ -1,0 +1,3 @@
+# Protocol metadata correction
+
+PLAN.json was frozen before the primary measurements and is retained unchanged. Its upper_fold.pair_loops and optional_phase_only_fallback arrays misstate the half-radius point counts as 256 and 1024. The frozen executing source, pair_measure.py, uses 512 and 2048 respectively at half radius: the actual trials are (r,256), (r,512), (r/2,512), with a phase-resolution-only fallback to (r,1024), (r,2048), (r/2,2048). Raw records contain the executed counts. The code used a finer half-radius mesh than the metadata listed; no gate was weakened. All other primary thresholds and source hashes remain unchanged.
