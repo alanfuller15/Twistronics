@@ -1,0 +1,126 @@
+{
+  "version": "our_v052",
+  "status": "ACCEPT",
+  "scope": "FULL_CHART_LOWER_GAP_SEARCH",
+  "kinetic": "lab_nn_full",
+  "protocol_sha256": "3b85e06ddece48f39338773e0400d1918fbc1b098795de71c3c8c20815432b75",
+  "fold_windows": 4,
+  "root_state_records": 36,
+  "charge_measurements": 8,
+  "full_chart_open_stations": 8,
+  "folds": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "geometry": "linear",
+      "B": -0.219665092921855,
+      "node": [
+        0.6760715079293901,
+        0.6162064694133835
+      ],
+      "near_open_B": -0.218665092921855,
+      "near_open_lower_gap": 0.05134579792532712,
+      "far_open_lower_gap": 3.937290498137068,
+      "root_join": 3.5335801979651357e-15,
+      "min_pair_separation": 0.011626054824886834,
+      "max_root_jump": 0.007334792477713283,
+      "source": "results/prep_lower_birth_bm_lab_N4.json"
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "geometry": "linear",
+      "B": -0.21967851110775008,
+      "node": [
+        0.6760704296463095,
+        0.6162064627549547
+      ],
+      "near_open_B": -0.21867851110775008,
+      "near_open_lower_gap": 0.05133879044298162,
+      "far_open_lower_gap": 3.937451557690162,
+      "root_join": 1.9100999153570945e-15,
+      "min_pair_separation": 0.01162535818343271,
+      "max_root_jump": 0.007331717726419418,
+      "source": "results/prep_lower_birth_bm_lab_N6.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "geometry": "exact",
+      "B": -0.21966989437688703,
+      "node": [
+        0.6760719595904366,
+        0.6162053684418936
+      ],
+      "near_open_B": -0.21866989437688703,
+      "near_open_lower_gap": 0.05134714949284103,
+      "far_open_lower_gap": 3.937517281586462,
+      "root_join": 1.897149936107019e-15,
+      "min_pair_separation": 0.011626186143913057,
+      "max_root_jump": 0.007333952755579516,
+      "source": "results/prep_lower_birth_ref_lab_N4.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "geometry": "exact",
+      "B": -0.2196833131704997,
+      "node": [
+        0.6760708812104392,
+        0.616205361846686
+      ],
+      "near_open_B": -0.2186833131704997,
+      "near_open_lower_gap": 0.05134014177612656,
+      "far_open_lower_gap": 3.9376783352365283,
+      "root_join": 3.4684476073050936e-15,
+      "min_pair_separation": 0.01162548951015724,
+      "max_root_jump": 0.007330877805683266,
+      "source": "results/prep_lower_birth_ref_lab_N6.json"
+    }
+  ],
+  "cutoff_shifts": [
+    {
+      "engine": "bm_lab",
+      "N6_minus_N4": -1.3418185895092138e-05
+    },
+    {
+      "engine": "ref_lab",
+      "N6_minus_N4": -1.341879361266285e-05
+    }
+  ],
+  "cross_engine_differences": [
+    {
+      "N": 4,
+      "ref_minus_bm": -4.8014550320385485e-06
+    },
+    {
+      "N": 6,
+      "ref_minus_bm": -4.802062749609259e-06
+    }
+  ],
+  "max_root_join": 3.5335801979651357e-15,
+  "min_open_lower_gap": 0.05133879044298162,
+  "charge_fallbacks": 0,
+  "tests_this_batch": 31,
+  "prior_v051": {
+    "sha256": "0d405f860a079db2093efe776d35ff66d81896406796f60c3bc66c9cb4c10127",
+    "scope": "LOCAL_DOMAIN_EVENTS_ONLY",
+    "fold_windows": 8
+  },
+  "source_sha256": {
+    "results/prep_lower_birth_bm_lab_N4.json": "6323686b48587f3bce5aace03bf4418865cc8bd52943ac545010a7384c00d54c",
+    "results/prep_lower_birth_bm_lab_N6.json": "bce2418008977b76b70e46fb0e8292350d6347e3e851798163fb996868bc6d34",
+    "results/prep_lower_birth_ref_lab_N4.json": "1cc34354e00c3174ad33680d8e39ff0a2409bc5f577b04f1f480f3b786f8e5b4",
+    "results/prep_lower_birth_ref_lab_N6.json": "f111ffcea357911c571e0f4564beb6233ce838001de96b6f2f0b68edd81d88f0"
+  },
+  "remaining": [
+    "original-flat-pair full preparation continuation with parameter frames and v044 join",
+    "separate lower unlink collision"
+  ],
+  "limits": [
+    "Finite full-chart searches, not analytic global gap bounds",
+    "Lower gap index 2, not flat-pair gap index 3",
+    "Two charge stations per window, no full parameter-frame replay",
+    "Shared measurement harness and unchanged engines, no physical validation"
+  ]
+}

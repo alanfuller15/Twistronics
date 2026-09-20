@@ -1,0 +1,97 @@
+{
+  "version": "v046",
+  "scope": "17-state post-braid-2 cleanup and upper-annihilation window, both engines N4/N6; separate v045 claim probes",
+  "kinetic": "lab_nn_full",
+  "geometry": {
+    "bm_lab": "linear",
+    "ref_lab": "exact"
+  },
+  "tunneling": "historical constant amplitudes; BM average mode with kappa=0",
+  "cutoff_padding": {
+    "bm_lab": 1e-06,
+    "ref_lab": 1e-09
+  },
+  "cleanup": {
+    "states": 17,
+    "loop_base_points": [
+      128,
+      512,
+      1024
+    ],
+    "radii": "min(.004,separation/8), half",
+    "spatial_steps": [
+      128,
+      256
+    ],
+    "temporal_coarsening": 2
+  },
+  "upper_fold": {
+    "derivative_steps": [
+      2e-05,
+      1e-05
+    ],
+    "nondegeneracy_steps": [
+      0.0002,
+      0.0001
+    ],
+    "pair_states": 9,
+    "pair_loops": [
+      256,
+      512,
+      256
+    ],
+    "optional_phase_only_fallback": [
+      1024,
+      2048,
+      1024
+    ],
+    "open_side_grid": 18,
+    "far_open_side_grids": [
+      18,
+      24
+    ],
+    "chart": "[0,1]^2 with explicit edge and corner seeds"
+  },
+  "source_sha256": {
+    "basis.py": "abde0c16c26a5cf22558dcbe2c2d18ba0dedc8390a1a65b9fe8fd4cf1c27bb1f",
+    "boundary_audit.py": "379491707c7ea3c9f5a0b07b01c547f42b2cd886a1b9872cd0fe3728c075210d",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "fold_character.py": "60397d86fb9bf7e0825c249fd86baaab1fa9d0e8ee435e83d7b133cca088cf00",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "3f3e57c5202f7c7da7df5b5d05f5226caedd03e61ef7a1ac9b4bfe5d017b1f64",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "replay.py": "278e261c976037939f874552433f5e5fffad867c07a613bcae40922f070b3588",
+    "replay_events.py": "4077465014f0e2018ce2b724e1923cf93925aeb61e0cdb4adfdd6253bceefa1a",
+    "routes.py": "27a1c42a1c37fb80d7c92d175daf3ff9b1b89638c26ed1d37db5b2bf60b85fe9",
+    "run_sequence.py": "1a2f0aba930a554dee3daac685ecbe2c0daadfc163b04098016c7867402f8ae3",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "engines/bm_strain.py": "b534f71529bd0ac580091918b5f095ddacb7e79b1e35ff1ddd5edef9728baeef",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "6e1b05916087482c0254037a1c257415524f3bf27300fe2604bcc1db8cc9c236"
+  },
+  "anchor_sha256": {
+    "anchors/bridge_bm_lab_N4.json": "b8edf4c9c1bf76b743838b95c15e2eb1bc1e5c7cd29432a788054123d341a88e",
+    "anchors/bridge_bm_lab_N6.json": "2967c8852788f2305373fce39c5a841f914310a77206a40474e521c717f39d6f",
+    "anchors/bridge_ref_lab_N4.json": "23b29a7aabcd43ab3450345b3ad1d3bcfb2918eb23eaccd5260e2879f7fb28f2",
+    "anchors/bridge_ref_lab_N6.json": "dc6e6607909cf4f5836bd62d5d358dfabe28e04085490f953dba33f50b2302fb",
+    "anchors/endpoint_bm_lab_N4.json": "dccecc7d42ccad1e51ab43664766ae61decf2a271be9eb1a67da7269b5363e33",
+    "anchors/endpoint_bm_lab_N6.json": "7bc07d6863f2d20f15697a53e7711eff559175c9a29e4bb49609af88900dbfc8",
+    "anchors/endpoint_ref_lab_N4.json": "0a60e56e9caec0b848e9eb885c10529e6600dcc00297ea854aa8152c35d9048d",
+    "anchors/endpoint_ref_lab_N6.json": "af7f0915499aceca82d358760dec5dcf359b36d95cdf21f71db89aa97f211294",
+    "anchors/second_bm_lab_N4.json": "55c12496dc8ddfb3ccb7f5a59b69dafed29ec658b46387b9eb8dbabfe726b26d",
+    "anchors/second_bm_lab_N6.json": "864ccd6c99b6dce4cbb51d5067a9e6ffdeee609a6c3076a6bfd033ba231ae94d",
+    "anchors/second_ref_lab_N4.json": "b5bda51bf861724ad2f071faf4b068790727d4d647656a09b6370414082fb171",
+    "anchors/second_ref_lab_N6.json": "d8aa60f428ebfbed801ff26b99d3e49a822a8fb70ef39122bf68dc99f1ef8ee5"
+  },
+  "limits": [
+    "Shared measurement harness",
+    "Finite spatial/parameter samples, no global completeness proof",
+    "No path N>6",
+    "No inference of physical-bilayer validity",
+    "Later flat birth and final annihilation not replayed in this batch"
+  ]
+}

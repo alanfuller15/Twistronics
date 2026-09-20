@@ -1,0 +1,476 @@
+{
+  "status": "ACCEPT",
+  "version": "v048",
+  "verification_tier": "self-tested",
+  "delivery_status": "unconfirmed",
+  "kinetic": "lab_nn_full",
+  "protocol_sha256": "e1b17761a1c2594a5164a1eb8478c01d11427f59c83f73cc2772a2f10995b542",
+  "folds": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "case": "flat_birth",
+      "parameter": 1.0529704127999227,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.1107020971316377,
+      "min_chart_overlap": 0.9993710930665354,
+      "loop_fallbacks": 0,
+      "birth_join": null
+    },
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "case": "final_ann",
+      "parameter": -0.3177787436075574,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.16271008144285304,
+      "min_chart_overlap": 0.9991598857225598,
+      "loop_fallbacks": 0,
+      "birth_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          0.0,
+          0.0
+        ],
+        "max_distance": 0.0
+      }
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "case": "flat_birth",
+      "parameter": 1.052096942558821,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.11131288281369578,
+      "min_chart_overlap": 0.9993661287874332,
+      "loop_fallbacks": 0,
+      "birth_join": null
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "case": "final_ann",
+      "parameter": -0.31714506038641105,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.16319311834242,
+      "min_chart_overlap": 0.9991562500337325,
+      "loop_fallbacks": 0,
+      "birth_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          0.0,
+          0.0
+        ],
+        "max_distance": 0.0
+      }
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "case": "flat_birth",
+      "parameter": 1.0529719221827458,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.11070060886272692,
+      "min_chart_overlap": 0.9993711180857928,
+      "loop_fallbacks": 0,
+      "birth_join": null
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "case": "final_ann",
+      "parameter": -0.31777996539472003,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.16271014320430766,
+      "min_chart_overlap": 0.9991598983477854,
+      "loop_fallbacks": 0,
+      "birth_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          0.0,
+          0.0
+        ],
+        "max_distance": 0.0
+      }
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "case": "flat_birth",
+      "parameter": 1.0520984612326516,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.11131142482991763,
+      "min_chart_overlap": 0.9993661540667556,
+      "loop_fallbacks": 0,
+      "birth_join": null
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "case": "final_ann",
+      "parameter": -0.3171462890902233,
+      "pair_label": "OPPOSITE",
+      "root_states": 9,
+      "charge_stations": 2,
+      "just_open_gap": 0.1631932128468918,
+      "min_chart_overlap": 0.9991562629573324,
+      "loop_fallbacks": 0,
+      "birth_join": {
+        "permutation": [
+          0,
+          1
+        ],
+        "distances": [
+          0.0,
+          0.0
+        ],
+        "max_distance": 0.0
+      }
+    }
+  ],
+  "gapped_cases": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "geometry": "linear",
+      "cutoff_tol": 1e-06,
+      "states": 8,
+      "min_gap": 0.05672344052945988,
+      "min_seam_overlap": 0.9991414599570037,
+      "w1": {
+        "lower_remote": [
+          0,
+          0
+        ],
+        "flat1": [
+          1,
+          0
+        ],
+        "flat2": [
+          0,
+          0
+        ],
+        "upper_remote": [
+          0,
+          0
+        ],
+        "flat_pair": [
+          1,
+          0
+        ]
+      },
+      "w1_constant": true,
+      "anchor_joins": [
+        {
+          "name": "bridge",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        },
+        {
+          "name": "endpoint",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        }
+      ],
+      "source": "results/gapped_bm_lab_N4/summary.json"
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "geometry": "linear",
+      "cutoff_tol": 1e-06,
+      "states": 8,
+      "min_gap": 0.056559492293615676,
+      "min_seam_overlap": 0.9999996183985413,
+      "w1": {
+        "lower_remote": [
+          0,
+          0
+        ],
+        "flat1": [
+          1,
+          0
+        ],
+        "flat2": [
+          0,
+          0
+        ],
+        "upper_remote": [
+          0,
+          0
+        ],
+        "flat_pair": [
+          1,
+          0
+        ]
+      },
+      "w1_constant": true,
+      "anchor_joins": [
+        {
+          "name": "bridge",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        },
+        {
+          "name": "endpoint",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        }
+      ],
+      "source": "results/gapped_bm_lab_N6/summary.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "geometry": "exact",
+      "cutoff_tol": 1e-09,
+      "states": 8,
+      "min_gap": 0.056723349732358486,
+      "min_seam_overlap": 0.9991414667492841,
+      "w1": {
+        "lower_remote": [
+          0,
+          0
+        ],
+        "flat1": [
+          1,
+          0
+        ],
+        "flat2": [
+          0,
+          0
+        ],
+        "upper_remote": [
+          0,
+          0
+        ],
+        "flat_pair": [
+          1,
+          0
+        ]
+      },
+      "w1_constant": true,
+      "anchor_joins": [
+        {
+          "name": "bridge",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        },
+        {
+          "name": "endpoint",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        }
+      ],
+      "source": "results/gapped_ref_lab_N4/summary.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "geometry": "exact",
+      "cutoff_tol": 1e-09,
+      "states": 8,
+      "min_gap": 0.05655939938912269,
+      "min_seam_overlap": 0.9999996184049739,
+      "w1": {
+        "lower_remote": [
+          0,
+          0
+        ],
+        "flat1": [
+          1,
+          0
+        ],
+        "flat2": [
+          0,
+          0
+        ],
+        "upper_remote": [
+          0,
+          0
+        ],
+        "flat_pair": [
+          1,
+          0
+        ]
+      },
+      "w1_constant": true,
+      "anchor_joins": [
+        {
+          "name": "bridge",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        },
+        {
+          "name": "endpoint",
+          "gap_differences": {
+            "lower": 0.0,
+            "flat": 0.0,
+            "upper": 0.0,
+            "next": 0.0,
+            "outer_lower": 0.0
+          },
+          "w1_agrees": true
+        }
+      ],
+      "source": "results/gapped_ref_lab_N6/summary.json"
+    }
+  ],
+  "fold_windows": 8,
+  "root_states": 72,
+  "charge_stations": 16,
+  "gapped_states": 32,
+  "minimum_sampled_gap": 0.05655939938912269,
+  "min_cycle_seam_overlap": 0.9991414599570037,
+  "max_anchor_gap_difference": 0.0,
+  "w1": {
+    "lower_remote": [
+      0,
+      0
+    ],
+    "flat1": [
+      1,
+      0
+    ],
+    "flat2": [
+      0,
+      0
+    ],
+    "upper_remote": [
+      0,
+      0
+    ],
+    "flat_pair": [
+      1,
+      0
+    ]
+  },
+  "supplied_tests": 31,
+  "targeted_guard_tests": 22,
+  "source_sha256": {
+    "history/v046_cleanup_bm_lab_N6.json": "89c65e2bccddca4cc0539fb7355ffef36febfd00c869744dcd447be2a6410627",
+    "history/v042.json": "2e38186e80951a52e43f465fb491e10995c64993337ef3f9bbd7ad6a2bc7fc7a",
+    "history/v042_PLAN.json": "794aa1a2ed302bbaedb97aaceea35bb6e68af054a5beec0d737cda623963cc2a",
+    "history/v046_cleanup_bm_lab_N4.json": "61c9bf7dd8ea1fec44753d6ca6619f351c966730556b5dd9247f2ace45166e71",
+    "history/v043.json": "d4d092bfe27644cc373e9ee4bf949f75a633730ef5353e2cfae2064ff4ea4744",
+    "history/v046_cleanup_ref_lab_N6.json": "7a3a2c289d875c923f5a1be03c382c57bcc2d678de15d25df7d47981f0820085",
+    "history/v044_PLAN.json": "583ac8f4324d9123f8516abd25655762924c529cf3d4a1674ee198cba8e2f424",
+    "history/v044.json": "39f38329b660a658490a341d4cf81cba5dcdfe25078f9847663e3591b4409aab",
+    "history/v046_cleanup_ref_lab_N4.json": "f7c1ec5eb80b718bfcbd59d75e78d1299bedad11c05bfd43ab28ea85b481802c",
+    "history/v046_PLAN.json": "245a4bf58d4e9d516c7dc22a12f7f53832e5a1c0e0f54c1024ff72bfcda40736",
+    "history/v043_PLAN.json": "224484a5781f78b35df59c87e35cdc5ebb6e24bf76de2ec9b5f783e055945956",
+    "history/v046.json": "84f8cfbdb7ac0d3cf7e6e13f92591c1a3a74ef020b3471be1785dcd21ec1476e",
+    "results/flat_birth_bm_lab_N4_refined.json": "ed6556570a09bc7d5da798dcfbfbc6abf881d2e880176695de38be1d440b8323",
+    "results/final_ann_bm_lab_N4_refined.json": "4394a33616be5d31c22d29b96543acb302c83b90635d346a6467bcd6bde164dd",
+    "results/gapped_bm_lab_N4/summary.json": "d7b20f8e03425e97f130d19b749d9f066e0db7ddf52d211406eea33c26a0207f",
+    "results/gapped_bm_lab_N4/state_000.json": "85c3906d48ea9f0355640afc2e3aa080558bd33f77cb2639555a77022e547a76",
+    "results/gapped_bm_lab_N4/state_001.json": "b46852165a8a8055f5fa1a15a5e1d2ccbd7be6db61b764c7ae605efb5a54128a",
+    "results/gapped_bm_lab_N4/state_002.json": "384b4208b53a3ccff63c0f3a8dc05b28c1d5ddd416e858beeaaf31fe84642450",
+    "results/gapped_bm_lab_N4/state_003.json": "6e76be54b3684fe68bd0644d95b0cba60297f0acab7373057ae37673dc88674f",
+    "results/gapped_bm_lab_N4/state_004.json": "ec8e942103fa8b0777e7fd1dda99d5c2ded8debb394ef90999a27ba3794add5a",
+    "results/gapped_bm_lab_N4/state_005.json": "fa8461cd6371ba705210b2f5dddf1c115defdc673dc7b5150ad4a339c691cf3e",
+    "results/gapped_bm_lab_N4/state_006.json": "02ced5f9ca1ed48b3fc2c2a515f1a5b9edcde1fc331bce6b6ab5eaf345fe927d",
+    "results/gapped_bm_lab_N4/state_007.json": "878ff6cf8ace99e63fd5c32fb8e68598eb05b71459dbe9c43970ca3aa6c8fac7",
+    "results/flat_birth_bm_lab_N6_refined.json": "fa80c18c3f8358e71e5e35e9ae42a4ee6a7d2d17910fe5fe2cbf9f08d3b3b58f",
+    "results/final_ann_bm_lab_N6_refined.json": "cf983df77cab9a2f993a99d7e1f5bb2dc8a5ebae77a72e78ae2a4c0c5f906c63",
+    "results/gapped_bm_lab_N6/summary.json": "f3da60b27a12eb35ef68d1875abd9406b87cc3a89c02af0953818a2cc9d0b6ef",
+    "results/gapped_bm_lab_N6/state_000.json": "ce7a01cb74a885a000ae0a9c94dc0fe2f5e983df8a766b46477de7399e3bcaf3",
+    "results/gapped_bm_lab_N6/state_001.json": "e2d7674ffa96234eea609425c6dffde5e48c3ba35ae2091da4b7f7ceea73af8f",
+    "results/gapped_bm_lab_N6/state_002.json": "890127d0977f7cc788317d292af96d10bbd4e89aefc36d033bcf961bfe272733",
+    "results/gapped_bm_lab_N6/state_003.json": "c864c9ece5ec8f02939a1c6c5fd8de09dfd84cf5d8c9fdfc169e5ef0613429de",
+    "results/gapped_bm_lab_N6/state_004.json": "f7431c7123cc367d8602c49a9c430616c3db70434673d16a139f6bf4815d701a",
+    "results/gapped_bm_lab_N6/state_005.json": "23b125f8f8ed5f629f260e30f0193e75813c20eb0794871a19698707d67d87a7",
+    "results/gapped_bm_lab_N6/state_006.json": "af34e1873166accd34fbf3d5cc8aeb6d8051f9358afefef13bb99398d2fa8250",
+    "results/gapped_bm_lab_N6/state_007.json": "cceafa8c5cd4d4e72bcb5f986c1929299302962a03dff08e9e0812db1ace382f",
+    "results/flat_birth_ref_lab_N4_refined.json": "50d7d534cd2a6fccd30e048598680864b6f6908ec079809d6cd1ddcf878f5d15",
+    "results/final_ann_ref_lab_N4_refined.json": "2c2282dced92454ffe7926a137b547a18aea350c03d31985fd381dfea8d63b53",
+    "results/gapped_ref_lab_N4/summary.json": "f4b0fa1a691e8157ef185b1f1689830c98e5b360f07280b4d419aaa13f3bfbaf",
+    "results/gapped_ref_lab_N4/state_000.json": "7f2b9f5418677613fd4dc2da8f4185f4134a5b28d933dd92fccf442f7af23403",
+    "results/gapped_ref_lab_N4/state_001.json": "0c5075d8b873989959d632cfdcdf250faedf1959f9ae21940139a9fc6af38d8e",
+    "results/gapped_ref_lab_N4/state_002.json": "d821f145b91c5b31e88d6845a6d9367c5a52f88354570dd3455a82edade06518",
+    "results/gapped_ref_lab_N4/state_003.json": "d80ce7d561ed1e5060731cb70f9692b4be0f78f3489fe40708cf8b62cf2772ad",
+    "results/gapped_ref_lab_N4/state_004.json": "e519beedef378e3eb510f691668f8bd5dbebb90dee483e79452d4271fe22293a",
+    "results/gapped_ref_lab_N4/state_005.json": "e37dd24a0e03d70d903502e61fe39079b38a2dda4b037db3b29e46858612c25e",
+    "results/gapped_ref_lab_N4/state_006.json": "53fc26e88cde80e43f63acbf79fb28a65dfb3772906296f102039766e5fb65f2",
+    "results/gapped_ref_lab_N4/state_007.json": "13a8b680ee58c1a2171850ffc38eaa515d71f72fd0e69de52b27ce4220ec8796",
+    "results/flat_birth_ref_lab_N6_refined.json": "9e09d895fabafae73761928eabb267aeee054b88a4a793edee565a73ed994ebf",
+    "results/final_ann_ref_lab_N6_refined.json": "ace56f7b6cb27fb709169ffa9d28415493ab644a88e8b190b19c6141d984a8b8",
+    "results/gapped_ref_lab_N6/summary.json": "9a4c4ad89de385d4e53092d92333840acb60f743641cac2d57c7659a266d4cbe",
+    "results/gapped_ref_lab_N6/state_000.json": "251ca2d5655df24d73d80e5c5a9cf459bbc8a809816cddb373e0ac5de514497e",
+    "results/gapped_ref_lab_N6/state_001.json": "a768a13588891dd7c529e63db1aa0a7b7b32f2d830cc53e534bbd9951e468353",
+    "results/gapped_ref_lab_N6/state_002.json": "c09e79a8e2f4d81f4bd45780cc488639cf7b6a15e26129062fa07180442c0395",
+    "results/gapped_ref_lab_N6/state_003.json": "8617e1fab15cf357dda26aabd8d44a114c782288c03813ccd7156a8527ac45b1",
+    "results/gapped_ref_lab_N6/state_004.json": "98a46d550b2e4f3342658bee27823f51d98dad6abe3c4a1e7689f65f57475d63",
+    "results/gapped_ref_lab_N6/state_005.json": "40f46c99001f34e551224264b29fd85891cbf85b501107c41e7b23b90a0c1bd2",
+    "results/gapped_ref_lab_N6/state_006.json": "a44941d91bf235f91a1150a9f1f5fcf706c3c5596b18013d40d61a3068bddf33",
+    "results/gapped_ref_lab_N6/state_007.json": "63ed4471a0abd1585cfdc2e57ed429d07856aae3d0c400377b070fd981cc11ce",
+    "PLAN.json": "e1b17761a1c2594a5164a1eb8478c01d11427f59c83f73cc2772a2f10995b542",
+    "provenance/preparation_join.json": "b56c76759a0832a99e84cc3dfd78a11243fc11bedacb91987afd8872d353bec4",
+    "provenance/lower_inventory_probe.json": "52c81390f2be276d94106ece9497be7e614d8c0796ac1b3e4c35a75df922225d"
+  }
+}

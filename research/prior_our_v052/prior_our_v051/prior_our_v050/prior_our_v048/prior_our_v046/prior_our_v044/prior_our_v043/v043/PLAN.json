@@ -1,0 +1,87 @@
+{
+  "version": "v043",
+  "kinetic": "lab_nn_full",
+  "scope": [
+    "v028 checkpoint to first-annihilation start",
+    "post-transfer checkpoint to second-braid start"
+  ],
+  "engines": [
+    "bm_lab",
+    "ref_lab"
+  ],
+  "cutoffs": [
+    4,
+    6
+  ],
+  "basis_identification": "Periodic envelope Fourier coefficients at fixed dimensionless moire-cell coordinates after removing declared Bloch/layer phases; label=(layer,m,n,real spinor). This is a numerical pullback, not physical laboratory-coordinate time evolution.",
+  "gates": {
+    "reality": 1e-09,
+    "hermiticity": 1e-09,
+    "eigen_residual": 1e-10,
+    "orthogonality": 1e-08,
+    "external_gap_meV": 1e-05,
+    "root_gap_meV": 1e-06,
+    "node_step_bound": 0.08,
+    "minimum_pair_separation": 0.001,
+    "loop_radius": "min(.004, separation/8)",
+    "loop_points": [
+      64,
+      128
+    ],
+    "phase_only_fallbacks": [
+      [
+        256,
+        512
+      ],
+      [
+        1024,
+        2048
+      ]
+    ],
+    "half_radius_check": true,
+    "spatial_meshes": [
+      128,
+      256
+    ],
+    "parameter_mesh": "every other fine step, within each leg",
+    "max_basis_norm_loss": 0.02,
+    "overlap": 0.1,
+    "orientation_determinant": 0.99,
+    "max_phase_step": "pi/2",
+    "minimum_loop_gap": 1e-06,
+    "endpoint_root_match": 1e-06
+  },
+  "finite_sampling_limit": "No interval proof or exhaustive node inventory; resolving sampled paths does not validate physical bilayers.",
+  "source_sha256": {
+    "basis.py": "1a28db041ccca90698440cc43dfbdc3991ec18341fcb16c71d043f7a32b34d87",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "engines/bm_strain.py": "61a4d9ec9dd3b047354a3b881f4f77beea1b17a5e684340c5a947deb1d9bd612",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "d60f5f3cf9a967302a875942bdc5425908e8f5580a306260a8d8a6fa10065755",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "93613ce79ccb7e6aa148fb64142bdacdeefb6ef25323914ef3628b79593240a3",
+    "replay.py": "1cc71a2437e3a7635771d240ccb1853613e955dfb6fa3cca93b09ac7bf8b2e06",
+    "routes.py": "206cc7ded0d8b92eacaf0f5edde74e6e5c52bf4b076fbeb0de923ff85470c9cd",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "tests/test_basis.py": "21dff87bf9c0cb21dbea4d031c5e9fa824dd6a716012a1e8ca1600cbf02e4429",
+    "tests/test_checkpoints.py": "dfa51b3ca640d38a9f81b79ee4083e86dbbb31c76014650ab009a61d259af1d7"
+  },
+  "anchor_sha256": {
+    "anchors/first_ann_bm_lab_N4.json": "2e0f6cfdbbb9ee5d497f504a36dae69a5a4e4676173f6d64db749dcbd05e68f8",
+    "anchors/first_ann_bm_lab_N6.json": "fe9a8d30fe625cf6b5988cee850afe3fe04a1bdde70ca042013ac3a71f4fadde",
+    "anchors/first_ann_ref_lab_N4.json": "76230a6d066011fdd87b29801a8af7a88380207a2d020b9e8b53c3fa1e7d85a0",
+    "anchors/first_ann_ref_lab_N6.json": "a927baaa52d7efcf2e11eeb584a8f5388230240aece565fb1cc99dccd97bc7b2",
+    "anchors/post_transfer_bm_lab_N4.json": "796b477fa81ab693683471fe706c72d1c3f646591b347337f8facdf82c064fa5",
+    "anchors/post_transfer_bm_lab_N6.json": "1968e94b4015ce08b4670201c07ecb62a4c5f379399adac53ee6535b0cb5b817",
+    "anchors/post_transfer_ref_lab_N4.json": "39607ef183af652b7c1c1a00e7dbd0f84e1802afb829f952f618bade043af92b",
+    "anchors/post_transfer_ref_lab_N6.json": "d872c9b45a6f4a8772efbb52072b4861810292f0bfdda57a900d76aec38cd13d",
+    "anchors/second_bm_lab_N4.json": "55c12496dc8ddfb3ccb7f5a59b69dafed29ec658b46387b9eb8dbabfe726b26d",
+    "anchors/second_bm_lab_N6.json": "864ccd6c99b6dce4cbb51d5067a9e6ffdeee609a6c3076a6bfd033ba231ae94d",
+    "anchors/second_ref_lab_N4.json": "b5bda51bf861724ad2f071faf4b068790727d4d647656a09b6370414082fb171",
+    "anchors/second_ref_lab_N6.json": "d8aa60f428ebfbed801ff26b99d3e49a822a8fb70ef39122bf68dc99f1ef8ee5"
+  }
+}

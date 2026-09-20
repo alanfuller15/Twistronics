@@ -1,0 +1,139 @@
+{
+  "verification_tier": "self-tested",
+  "delivery_status": "unconfirmed",
+  "status": "ACCEPT",
+  "version": "v046",
+  "primary_protocol_sha256": "245a4bf58d4e9d516c7dc22a12f7f53832e5a1c0e0f54c1024ff72bfcda40736",
+  "cleanup_states": 68,
+  "root_continuation_states": 36,
+  "upper_fold_windows": 4,
+  "cleanup_labels": [
+    "OPPOSITE"
+  ],
+  "cleanup_loop_fallbacks": 0,
+  "fold_loop_fallbacks": 0,
+  "min_parameter_overlap": 0.9725574010194598,
+  "min_spatial_overlap": 0.9857240476105636,
+  "min_sampled_path_gap": 0.3141197149780339,
+  "max_node_jump": 0.031201590341181668,
+  "max_cleanup_eigen_residual": 8.877899410523472e-16,
+  "endpoint_local_gaps": [
+    {
+      "gap": "lower",
+      "N6": 23.181347871965457,
+      "N8": 23.181387398225098,
+      "difference": 3.9526259641320394e-05,
+      "minimizer_shift": 5.720133816875807e-07,
+      "N8_f": [
+        0.9907319806723395,
+        0.28845415959327103
+      ]
+    },
+    {
+      "gap": "flat",
+      "N6": 2.7767262481843282,
+      "N8": 2.7766516596972437,
+      "difference": -7.458848708452592e-05,
+      "minimizer_shift": 3.8718248567220087e-07,
+      "N8_f": [
+        0.6767772967377076,
+        0.9188751955700208
+      ]
+    },
+    {
+      "gap": "upper",
+      "N6": 3.392497811456032,
+      "N8": 3.3925337386314,
+      "difference": 3.592717536804457e-05,
+      "minimizer_shift": 5.513996860164573e-07,
+      "N8_f": [
+        0.6123301645096291,
+        0.922155707958265
+      ]
+    },
+    {
+      "gap": "next",
+      "N6": 10.856087168577645,
+      "N8": 10.856086867722084,
+      "difference": -3.008555609085306e-07,
+      "minimizer_shift": 1.2231215699432211e-08,
+      "N8_f": [
+        0.1990029288976651,
+        0.7517067556785069
+      ]
+    }
+  ],
+  "sensitivity": [
+    {
+      "kappa": 0.0,
+      "remote_gap": 4.970921142912177,
+      "percent_change": 0.0,
+      "label": "SAME"
+    },
+    {
+      "kappa": 5.0,
+      "remote_gap": 5.337843854126362,
+      "percent_change": 7.381382658571534,
+      "label": "SAME"
+    },
+    {
+      "kappa": -5.0,
+      "remote_gap": 4.621467232255377,
+      "percent_change": -7.029962870263418,
+      "label": "SAME"
+    }
+  ],
+  "full_matrix_points": 16,
+  "supplied_tests": 30,
+  "new_guard_patch_tests": 9,
+  "folds": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "ratio": 1.020660396631543,
+      "node": [
+        0.6192358258674359,
+        0.8996157914915908
+      ],
+      "cleanup_join": 6.12235403661387e-15,
+      "just_open_gap": 0.05672344052975831,
+      "far_open_gap": 3.8024882805677507
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "ratio": 1.01947933068304,
+      "node": [
+        0.6202123323605482,
+        0.8982858949929912
+      ],
+      "cleanup_join": 3.078742732723249e-15,
+      "just_open_gap": 0.0565594922936512,
+      "far_open_gap": 3.8277522349554403
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "ratio": 1.0206664403063042,
+      "node": [
+        0.6192329235010291,
+        0.8996182679710357
+      ],
+      "cleanup_join": 1.0961449567756783e-14,
+      "just_open_gap": 0.056723349732358486,
+      "far_open_gap": 3.802235651244839
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "ratio": 1.019485404392482,
+      "node": [
+        0.6202094062926795,
+        0.8982884017822069
+      ],
+      "cleanup_join": 1.5895974606912448e-15,
+      "just_open_gap": 0.05655939938912269,
+      "far_open_gap": 3.8275012339965
+    }
+  ]
+}

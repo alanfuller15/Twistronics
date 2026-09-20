@@ -1,0 +1,180 @@
+{
+  "version": "our_v053",
+  "status": "ACCEPT",
+  "scope": "ORIGINAL_FLAT_PAIR_SAMPLED_FRAME_REPLAY",
+  "kinetic": "lab_nn_full",
+  "protocol_sha256": "5f868ca4f7f14e6c9b30f1445fe78e2ac15e3e4d9dfafcf00d3f34b40a273e4b",
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "geometry": "linear",
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "carried_charges": {
+        "a": [
+          1
+        ],
+        "b": [
+          1
+        ]
+      },
+      "min_parameter_overlap": 0.9954652459979348,
+      "min_coarse_parameter_overlap": 0.9820778040755455,
+      "max_basis_norm_loss": 1.4718884549418012e-15,
+      "min_spatial_overlap": 0.9977845534600689,
+      "min_spatial_external_gap": 3.7384507309642245,
+      "parameter_mesh_checks": 9,
+      "min_parameter_orientation_det": 0.9999999999999982,
+      "root_join": 9.992007221626409e-16,
+      "min_endpoint_plane_overlap": 0.9999999999999994,
+      "endpoint_relative_orientation": 1,
+      "endpoint_common_orientation": 1,
+      "loop_fallback_states": 0,
+      "source": "results/prep_bm_lab_N4/summary.json"
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "geometry": "linear",
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "carried_charges": {
+        "a": [
+          -1
+        ],
+        "b": [
+          -1
+        ]
+      },
+      "min_parameter_overlap": 0.9954685096811426,
+      "min_coarse_parameter_overlap": 0.982090447455352,
+      "max_basis_norm_loss": 2.08478183288158e-15,
+      "min_spatial_overlap": 0.9981191439677972,
+      "min_spatial_external_gap": 3.739247882468014,
+      "parameter_mesh_checks": 9,
+      "min_parameter_orientation_det": 0.9999999999999978,
+      "root_join": 1.577923392343183e-15,
+      "min_endpoint_plane_overlap": 0.9999999999999993,
+      "endpoint_relative_orientation": 1,
+      "endpoint_common_orientation": -1,
+      "loop_fallback_states": 0,
+      "source": "results/prep_bm_lab_N6/summary.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "geometry": "exact",
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "carried_charges": {
+        "a": [
+          -1
+        ],
+        "b": [
+          -1
+        ]
+      },
+      "min_parameter_overlap": 0.9954652856250218,
+      "min_coarse_parameter_overlap": 0.9820779801298545,
+      "max_basis_norm_loss": 2.05223994668719e-15,
+      "min_spatial_overlap": 0.9977825156774304,
+      "min_spatial_external_gap": 3.738597271311278,
+      "parameter_mesh_checks": 9,
+      "min_parameter_orientation_det": 0.9999999999999987,
+      "root_join": 1.7798229048217483e-15,
+      "min_endpoint_plane_overlap": 0.9999999999999992,
+      "endpoint_relative_orientation": 1,
+      "endpoint_common_orientation": 1,
+      "loop_fallback_states": 0,
+      "source": "results/prep_ref_lab_N4/summary.json"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "geometry": "exact",
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "carried_charges": {
+        "a": [
+          -1
+        ],
+        "b": [
+          -1
+        ]
+      },
+      "min_parameter_overlap": 0.995468549227085,
+      "min_coarse_parameter_overlap": 0.9820906231918667,
+      "max_basis_norm_loss": 1.834754194323683e-15,
+      "min_spatial_overlap": 0.9981194348690996,
+      "min_spatial_external_gap": 3.73939432613156,
+      "parameter_mesh_checks": 9,
+      "min_parameter_orientation_det": 0.9999999999999977,
+      "root_join": 2.638970003411226e-15,
+      "min_endpoint_plane_overlap": 0.999999999999999,
+      "endpoint_relative_orientation": 1,
+      "endpoint_common_orientation": -1,
+      "loop_fallback_states": 0,
+      "source": "results/prep_ref_lab_N6/summary.json"
+    }
+  ],
+  "accepted_states": 76,
+  "charged_states": 76,
+  "parameter_mesh_checks": 36,
+  "labels": [
+    "SAME"
+  ],
+  "all_carried_charges_constant": true,
+  "max_root_join": 2.638970003411226e-15,
+  "min_endpoint_plane_overlap": 0.999999999999999,
+  "min_parameter_overlap": 0.9954652459979348,
+  "min_coarse_parameter_overlap": 0.9820778040755455,
+  "min_spatial_overlap": 0.9977825156774304,
+  "min_sampled_path_external_gap": 3.7384507309642245,
+  "max_basis_norm_loss": 2.08478183288158e-15,
+  "loop_fallback_states": 0,
+  "tests_this_batch": 18,
+  "resume": {
+    "status": "ACCEPT",
+    "mode": "new-process stop/resume",
+    "paused_states": 3,
+    "finished_states": 19,
+    "committed_files_unchanged": 6,
+    "files": {
+      "results/prep_bm_lab_N4/step_000/frames.npz": "3aa9f14808853c5b6a4caeb294bb1e1025b3d5d305e22f40fbf7f20cb729d87a",
+      "results/prep_bm_lab_N4/step_000/record.json": "e4cf38f60fafaf22c823c8b08aa65f7b5d7d0d3dc5a1eae3e1fcfc94aff9cea6",
+      "results/prep_bm_lab_N4/step_001/frames.npz": "8bb9bf1ebaed2279832542687a3d6e36c42dae9e29962b745c1f289cff5e29b6",
+      "results/prep_bm_lab_N4/step_001/record.json": "60dd30667f1e0aec8f3b3ffaf052c751045ce3e309c333c9b47c5fc9770bfe79",
+      "results/prep_bm_lab_N4/step_002/frames.npz": "e6dec780a1d7bc32ff8294650b866be13407b2378489621a550b9603ee0dd7a7",
+      "results/prep_bm_lab_N4/step_002/record.json": "eb768f4846c6867a3e3032d958dd7993aad57064fa080f213f753dae5ca9b291"
+    },
+    "limit": "No separate uninterrupted numerical replay was performed for bitwise comparison."
+  },
+  "prior_v052": {
+    "sha256": "72d3f361e5f393e875e1c5ba68782361bc2329040dbdb2ceb4e2685cbd44f267",
+    "fold_windows": 4
+  },
+  "source_sha256": {
+    "results/prep_bm_lab_N4/summary.json": "c6d4c68ebee79105d05bede57d72f687f565cf40723038a8fb448c4ade7b1d89",
+    "results/prep_bm_lab_N6/summary.json": "4dcf502ed9f545e90bb61db197b8915df1ea81cd792c6b0d0e6e000e23d49c7e",
+    "results/prep_ref_lab_N4/summary.json": "1ec366c632410c986d4328f22c1d837222387a40168b2931e02f5359ced131e8",
+    "results/prep_ref_lab_N6/summary.json": "f40f7d8bd7e9b8ac4d83946d5c1eb977c8720cecb07e4786ede20ff388a48f73"
+  },
+  "remaining": [
+    "separate lower unlink collision"
+  ],
+  "limits": [
+    "Sampled parameter/spatial transport, not an interval certificate",
+    "Relative frame orientation, not a gauge-independent SO(2) rotation or laboratory time evolution",
+    "Flat pair is not globally isolated after remote-band contacts; no continued Euler class",
+    "Unchanged engines/shared measurement harness; no physical validation"
+  ]
+}

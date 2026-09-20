@@ -1,0 +1,84 @@
+{
+  "version": "v044",
+  "kinetic": "lab_nn_full",
+  "primary_engines": {
+    "bm_lab": "linear",
+    "ref_lab": "exact"
+  },
+  "diagnostic_engine": {
+    "bm_exact": "exact"
+  },
+  "cutoffs": [
+    4,
+    6
+  ],
+  "route": "A=.2, phi=0, ratio=.8: B=-.25 to -.30 (20 intervals), B=-.30 to -.40 (8), T=0 to -.40 (8)",
+  "total_primary_states": 148,
+  "scope": "flat/upper root continuation into accepted v043 start, lower roots tracked only through B deepening; no lower-pair collision or global node inventory claim",
+  "gates": {
+    "external_gap_meV": 1e-05,
+    "node_gap_meV": 1e-06,
+    "node_jump": 0.08,
+    "min_root_separation": 0.001,
+    "loop_radius": "min(.004,separation/8)",
+    "loop_meshes": [
+      64,
+      128
+    ],
+    "half_radius_check": true,
+    "phase_only_fallback_meshes": [
+      [
+        256,
+        512
+      ],
+      [
+        1024,
+        2048
+      ]
+    ],
+    "spatial_meshes": [
+      128,
+      256
+    ],
+    "parameter_coarse": "every other fine state in each leg",
+    "orientation_determinant": 0.99,
+    "min_overlap": 0.1,
+    "max_basis_norm_loss": 0.02,
+    "endpoint_match": 1e-06,
+    "endpoint_frame_overlap": 0.999999
+  },
+  "crossing_shifts": [
+    0.0,
+    0.012
+  ],
+  "finite_sampling_limit": "sampled continuation and finite cutoffs, not interval proof or physical-bilayer validation",
+  "source_sha256": {
+    "basis.py": "abde0c16c26a5cf22558dcbe2c2d18ba0dedc8390a1a65b9fe8fd4cf1c27bb1f",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "engines/bm_strain.py": "93b6ebf459587a2a5131190e0b677d31807dc0eed6a6769b0dbaa9a4ace9c7ec",
+    "engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "engines/tbg_ref.py": "6e1b05916087482c0254037a1c257415524f3bf27300fe2604bcc1db8cc9c236",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "2f05e411748c0bb7447c8c0fd231ad0a89b6c3714196f560e705645d095a98f7",
+    "provenance/baseline_v041_bm.py": "61a4d9ec9dd3b047354a3b881f4f77beea1b17a5e684340c5a947deb1d9bd612",
+    "replay.py": "d6261045ae1361e16f6f19826b9e43bccc72a10ce6955679947a7630e2b21a40",
+    "routes.py": "f80d7ac125529f64e985db9306471372214c4a811441ca547ffb86b4fd5e5d73",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "tests/test_adopted_guards.py": "7a1cb1de4682074883cb5e795341741bc705d631699ac6d596276f4400e3ac40",
+    "verify_geometry.py": "f682e11fa4c05fa07ded96a2cfbb80c29fde275a29c25504c9746f3b04eb59a9"
+  },
+  "anchor_sha256": {
+    "anchors/v043_start_bm_lab_N4.json": "6d70f3e128ea51b018f0a3cb7d14099d708ae3173ee74503dffb28f5f0b973a9",
+    "anchors/v043_start_bm_lab_N4.npz": "6e7a4e8949c21067ff0b612c21d21c8d10a95ccbc3ab48697e9acf966f66db95",
+    "anchors/v043_start_bm_lab_N6.json": "8e6a7473ee89678b20f4a879801b061de94e034a3c6121c5055f9353fdf2004c",
+    "anchors/v043_start_bm_lab_N6.npz": "4bd4697dde0f573b01773ddd04551f7258de0a594145aaf67edd3a30a57718fd",
+    "anchors/v043_start_ref_lab_N4.json": "ca75ec459822af8d7aea6b034301d589ebe976593ae771de3b7e7fd4f316db7f",
+    "anchors/v043_start_ref_lab_N4.npz": "1ba79338393460d2a3a6516c0f98b92c6860851910c2e8480052decbc7a20773",
+    "anchors/v043_start_ref_lab_N6.json": "5e36d191ded128e2f52ae96374b9c0b3ed5413a33ac8d122c9e93fb98d367629",
+    "anchors/v043_start_ref_lab_N6.npz": "fa44190e6bcd92df9df4f6ca64c8c25444e0b8c1184a32d8965a659b158819b7"
+  }
+}
