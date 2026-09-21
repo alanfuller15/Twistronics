@@ -4,11 +4,15 @@ This AI-assisted computational research project asks how band crossings and thei
 
 In plain language: two slightly rotated graphene sheets can have unusual electronic behavior. Here, we calculate where certain electron-energy bands meet, follow those meeting points as a model parameter changes, and check whether their topological relationships change consistently. These points live in **momentum space**, not at physical locations on a graphene sheet.
 
-**Start with the [illustrated research guide](docs/visual-guide/README.md).** It explains the question, terminology, evidence and open work without requiring you to reconstruct the version history.
+**Start with the [visual story](docs/visual-story/README.md): rotated layers, a band crossing, then the saved node measurements.** Download the [interactive explorer](docs/visual-story/explorer.html) and open it in a browser to adjust the explanatory models and step through either implementation.
 
-![Measured node locations through the v062 continuation in both implementations](docs/visual-guide/figures/node-paths.svg)
+![Explanatory geometry: rotated graphene layers and an idealized band crossing](docs/visual-story/visual-introduction.png)
 
-*Actual retained numerical data, not an artist's illustration. Markers are measured states; connecting lines guide the eye. This continuation segment alone is not a demonstration of a complete braid.*
+![Fifteen saved node states from the BM implementation](docs/visual-story/measured-nodes.gif)
+
+*The layer and cone illustrations are schematic. The animation uses retained v060/v062 numerical coordinates at N8, with one frame per saved state. Connecting tracks guide the eye; they do not resolve motion between samples. This segment alone does not demonstrate a complete braid.*
+
+For definitions, convergence checks and open questions, see the [research guide](docs/visual-guide/README.md).
 
 ## What the published evidence shows
 
