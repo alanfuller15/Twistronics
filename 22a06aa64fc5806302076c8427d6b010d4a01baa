@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "version": "our_v058_endpoint",
+  "frozen_utc": "2026-09-21T02:47:42.814681+00:00",
+  "model_root": "research/v055",
+  "inputs": {
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/results/gapped_bm_lab_N4/state_007.json": "878ff6cf8ace99e63fd5c32fb8e68598eb05b71459dbe9c43970ca3aa6c8fac7",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/results/gapped_bm_lab_N6/state_007.json": "cceafa8c5cd4d4e72bcb5f986c1929299302962a03dff08e9e0812db1ace382f",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/results/gapped_ref_lab_N4/state_007.json": "13a8b680ee58c1a2171850ffc38eaa515d71f72fd0e69de52b27ce4220ec8796",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/results/gapped_ref_lab_N6/state_007.json": "63ed4471a0abd1585cfdc2e57ed429d07856aae3d0c400377b070fd981cc11ce",
+    "research/incoming_partner_v054/v023_code/endpoint_locate.py": "8f19717c7f743b1e382c249fad6b6ca6ec90916c64f6f8c3ddf4002477dea322",
+    "research/incoming_partner_v054/v023_code/endpoint_N8_locate.txt": "b38dbefc5cb3aa4099217545744a8f7cbacec540cc87ebd1eb48dd94d38a58c9",
+    "research/incoming_partner_v054/v023_code/endpoint_N6_locate.txt": "8c39ef822e8e85e14d84bd6678d39c7c743ca6f29219b1023f66117c6171f66e",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v045.md": "624b95c8266069850751ced3055138c4cd5aded1e858c537e2f3afa9a13aa3e2",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v048.md": "a689e80095d393f79caf51e04e1ddcfbf737eb249eb81e4525b59d0b394a750f",
+    "research/v055/models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "research/v055/measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "research/v055/local_domain.py": "609f4e254530019d06a95805322aed8526a9f5c782b0f0dc924fb8f7627d1199",
+    "research/v055/engines/bm_strain.py": "fee8a2a2e0e83a77b25b894b6858ae57c84142ef4c7db5ae0b2f9e5f14599d63",
+    "research/v055/engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "research/v055/engines/knobs.py": "568960187c9e0098fa981f49bdf1384190cfb0877fdda08aca163ba9e14cf952",
+    "research/v055/engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "research/v058/HISTORICAL_TARGETS.json": "f6bdaaaef02004baa14a397e381fe3985f93f77c6bb68bdd6922076b8bd2e3fe"
+  },
+  "runner_sha256": {
+    "run_endpoint.py": "e668da2bbd05229c99900ea774e4745c46604e3393ce13770966477308f37ffb",
+    "search.py": "169bb30059047fc985a9193d5a00c5e14dc64a76f2f067d26395bed94adb2ec8",
+    "evidence.py": "7c54d5b3470bf5dc09c361a90c6155029ab7f479698d1e1e86e6339d29b312ee",
+    "test_evidence.py": "4e706a8a547aac764355d2c766610beff272f8db4ceb26431b9fcf32fe6e9366"
+  },
+  "engines": [
+    "bm_lab",
+    "ref_lab"
+  ],
+  "cutoffs": [
+    8
+  ],
+  "kinetic": "lab_nn_full",
+  "state": {
+    "A": -0.3,
+    "B": -0.4,
+    "T": -1.8,
+    "phi": 80,
+    "ratio": 1.1,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "grids": [
+    12,
+    24
+  ],
+  "edge_grids": [
+    24,
+    48
+  ],
+  "seeds": {
+    "bm_lab": {
+      "lower": [
+        [
+          0.9907325971166254,
+          0.2884553345680606
+        ],
+        [
+          0.9919549014574862,
+          0.29204017998516923
+        ],
+        [
+          0.9907320309820474,
+          0.2884541967921645
+        ],
+        [
+          0.9927325971166254,
+          0.2904553345680606
+        ],
+        [
+          0.9887325971166254,
+          0.2864553345680606
+        ],
+        [
+          0.0,
+          0.2884553345680606
+        ]
+      ],
+      "flat": [
+        [
+          0.6767770939555249,
+          0.9188757361854508
+        ],
+        [
+          0.6751686402765009,
+          0.9203433769548891
+        ],
+        [
+          0.676777278520368,
+          0.9188752106131894
+        ],
+        [
+          0.6787770939555249,
+          0.9208757361854508
+        ],
+        [
+          0.6747770939555249,
+          0.9168757361854508
+        ],
+        [
+          0.6767770939555249,
+          0.0
+        ]
+      ],
+      "upper": [
+        [
+          0.6123303519288436,
+          0.9221560758419357
+        ],
+        [
+          0.6116389650375529,
+          0.9230823082659422
+        ],
+        [
+          0.6123301546504822,
+          0.9221556945736826
+        ],
+        [
+          0.6143303519288436,
+          0.9241560758419357
+        ],
+        [
+          0.6103303519288436,
+          0.9201560758419357
+        ],
+        [
+          0.6123303519288436,
+          0.0
+        ]
+      ],
+      "next": [
+        [
+          0.19900375154135172,
+          0.7517072499449685
+        ],
+        [
+          0.19897173297701964,
+          0.7517353076745187
+        ],
+        [
+          0.19900292134320305,
+          0.7517067582378154
+        ],
+        [
+          0.20100375154135172,
+          0.7537072499449685
+        ],
+        [
+          0.19700375154135172,
+          0.7497072499449685
+        ]
+      ]
+    },
+    "ref_lab": {
+      "lower": [
+        [
+          0.9907325482665127,
+          0.28845422123695286
+        ],
+        [
+          0.9919548316662095,
+          0.29203901826429945
+        ],
+        [
+          0.9907320309820474,
+          0.2884541967921645
+        ],
+        [
+          0.9927325482665127,
+          0.29045422123695286
+        ],
+        [
+          0.9887325482665127,
+          0.28645422123695286
+        ],
+        [
+          0.0,
+          0.28845422123695286
+        ]
+      ],
+      "flat": [
+        [
+          0.676777626106056,
+          0.9188749988804508
+        ],
+        [
+          0.6751692156728064,
+          0.92034263336143
+        ],
+        [
+          0.676777278520368,
+          0.9188752106131894
+        ],
+        [
+          0.678777626106056,
+          0.9208749988804508
+        ],
+        [
+          0.674777626106056,
+          0.9168749988804508
+        ],
+        [
+          0.676777626106056,
+          0.0
+        ]
+      ],
+      "upper": [
+        [
+          0.612330661581172,
+          0.9221554769330507
+        ],
+        [
+          0.6116393166303407,
+          0.9230816983985155
+        ],
+        [
+          0.6123301546504822,
+          0.9221556945736826
+        ],
+        [
+          0.614330661581172,
+          0.9241554769330507
+        ],
+        [
+          0.610330661581172,
+          0.9201554769330507
+        ],
+        [
+          0.612330661581172,
+          0.0
+        ]
+      ],
+      "next": [
+        [
+          0.19900291678260895,
+          0.7517067649328062
+        ],
+        [
+          0.19897090587362568,
+          0.7517348152440543
+        ],
+        [
+          0.19900292134320305,
+          0.7517067582378154
+        ],
+        [
+          0.20100291678260895,
+          0.7537067649328062
+        ],
+        [
+          0.19700291678260895,
+          0.7497067649328062
+        ]
+      ]
+    }
+  },
+  "thresholds": {
+    "nonworsening": 1e-07,
+    "value_consistency": 1e-08,
+    "projected_gradient": 0.0001,
+    "curvature_steps": [
+      0.0001,
+      5e-05
+    ],
+    "positive_gap": 1e-05,
+    "mesh_gap": 0.001,
+    "affine_residual": 1e-09,
+    "gradient_check": 0.001
+  },
+  "max_workers": 2,
+  "geometry": {
+    "bm_lab": "linear",
+    "ref_lab": "exact"
+  },
+  "cutoff_tol": {
+    "bm_lab": 1e-06,
+    "ref_lab": 1e-09
+  },
+  "scope": "Fresh finite whole-chart meshes and bounded interior/edge multistart at one N8 endpoint in each engine; saved N4/N6 comparison only. Neither continuous isolation nor infinite-cutoff accuracy nor new w1/path labels is established.",
+  "comparison_tolerances": {
+    "partner_printed_gap": 5.1e-06,
+    "partner_coordinate": 2e-06
+  },
+  "rejection_policy": "Retain failed attempts and reject the case if any seed has no acceptable fallback, curvature fails, runtime changes, or two search meshes disagree. Do not force agreement with historical targets."
+}

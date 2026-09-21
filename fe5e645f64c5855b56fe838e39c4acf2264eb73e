@@ -1,0 +1,302 @@
+{
+  "version": "our_v058",
+  "status": "BOUNDED_N8_ENDPOINT_COMPARISON_COMPLETE",
+  "numerical_plan_sha256": "d23a0e6e4ffb8bc0cc51534a7a167a6414d7b4d81838ad832f7211307e7d540e",
+  "kinetic": "lab_nn_full",
+  "state": {
+    "A": -0.3,
+    "B": -0.4,
+    "T": -1.8,
+    "phi": 80,
+    "ratio": 1.1,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 8,
+      "dimension": 1060,
+      "geometry": "linear",
+      "cutoff_tol": 1e-06,
+      "gaps": {
+        "lower": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 23.181591471740703,
+          "mesh_difference": 1.8474111129762605e-13,
+          "boundary_minimum": 23.199057899092807,
+          "boundary_mesh_difference": 9.947598300641403e-14,
+          "f": [
+            0.9907320294353072,
+            0.28845527291602846
+          ],
+          "projected_gradient": 8.744085455703043e-10,
+          "curvature_min": 355.00863441605134
+        },
+        "flat": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 2.776452274929003,
+          "mesh_difference": 4.973799150320701e-14,
+          "boundary_minimum": 9.157546007121802,
+          "boundary_mesh_difference": 6.075140390748857e-13,
+          "f": [
+            0.6767767621333428,
+            0.9188759359999774
+          ],
+          "projected_gradient": 7.3072293460541e-07,
+          "curvature_min": 5675.326378758585
+        },
+        "upper": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 3.3928546308964442,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 14.679548947125646,
+          "boundary_mesh_difference": 1.8118839761882555e-13,
+          "f": [
+            0.6123298554413934,
+            0.9221563070805744
+          ],
+          "projected_gradient": 2.0317756366239337e-09,
+          "curvature_min": 1128.4937341973746
+        },
+        "next": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 10.856037917202798,
+          "mesh_difference": 1.1368683772161603e-13,
+          "boundary_minimum": 20.030241254728054,
+          "boundary_mesh_difference": 2.8421709430404007e-13,
+          "f": [
+            0.19900375967454317,
+            0.751707244664825
+          ],
+          "projected_gradient": 1.6713661565859184e-06,
+          "curvature_min": 317.24957998492937
+        }
+      },
+      "refinements": 243,
+      "optimizer_attempts": 258,
+      "fallback_attempts": 15,
+      "sampled_points": 3657,
+      "seconds": 365.2679121494293,
+      "diagnostics": {
+        "max_eigen_residual": 7.338124364934746e-16,
+        "max_reality": 1.1368669533699892e-13,
+        "max_hermitian": 0.0
+      }
+    },
+    {
+      "engine": "ref_lab",
+      "N": 8,
+      "dimension": 1060,
+      "geometry": "exact",
+      "cutoff_tol": 1e-09,
+      "gaps": {
+        "lower": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 23.181387398224942,
+          "mesh_difference": 1.4210854715202004e-14,
+          "boundary_minimum": 23.19885414544106,
+          "boundary_mesh_difference": 5.684341886080802e-14,
+          "f": [
+            0.9907319827664438,
+            0.2884541609498088
+          ],
+          "projected_gradient": 7.828189438896516e-07,
+          "curvature_min": 355.0106846363648
+        },
+        "flat": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 2.7766516596971726,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 9.15788278510685,
+          "boundary_mesh_difference": 2.8421709430404007e-13,
+          "f": [
+            0.6767772966072543,
+            0.9188751955099465
+          ],
+          "projected_gradient": 1.173326324988011e-09,
+          "curvature_min": 5675.627675541316
+        },
+        "upper": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 3.3925337386315277,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 14.679327030652125,
+          "boundary_mesh_difference": 3.659295089164516e-13,
+          "f": [
+            0.6123301545343492,
+            0.9221557070805096
+          ],
+          "projected_gradient": 1.1482787002137229e-05,
+          "curvature_min": 1128.5045760982177
+        },
+        "next": {
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 10.85608686772197,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 20.030307718946943,
+          "boundary_mesh_difference": 1.1368683772161603e-13,
+          "f": [
+            0.19900292134814868,
+            0.7517067582414915
+          ],
+          "projected_gradient": 3.428358706969448e-05,
+          "curvature_min": 317.2507382027002
+        }
+      },
+      "refinements": 243,
+      "optimizer_attempts": 256,
+      "fallback_attempts": 13,
+      "sampled_points": 3633,
+      "seconds": 361.50150871276855,
+      "diagnostics": {
+        "max_eigen_residual": 7.029591684907086e-16,
+        "max_reality": 1.1368665950721842e-13,
+        "max_hermitian": 0.0
+      }
+    }
+  ],
+  "cutoff_comparisons": [
+    {
+      "engine": "bm_lab",
+      "gap": "lower",
+      "N4_saved": 23.0293926983384,
+      "N6_saved": 23.18155194465595,
+      "N8_fresh": 23.181591471740703,
+      "N8_minus_N6": 3.952708475196687e-05,
+      "N6_minus_N4": 0.1521592463175523,
+      "N8_N6_coordinate_distance": 5.710193097200199e-07
+    },
+    {
+      "engine": "bm_lab",
+      "gap": "flat",
+      "N4_saved": 2.869727102107909,
+      "N6_saved": 2.7765268652044313,
+      "N8_fresh": 2.776452274929003,
+      "N8_minus_N6": -7.459027542822128e-05,
+      "N6_minus_N4": -0.09320023690347767,
+      "N8_N6_coordinate_distance": 3.8733939322914893e-07
+    },
+    {
+      "engine": "bm_lab",
+      "gap": "upper",
+      "N4_saved": 3.335680871132098,
+      "N6_saved": 3.3928187031154913,
+      "N8_fresh": 3.3928546308964442,
+      "N8_minus_N6": 3.592778095296012e-05,
+      "N6_minus_N4": 0.057137831983393284,
+      "N8_N6_coordinate_distance": 5.476961714107874e-07
+    },
+    {
+      "engine": "bm_lab",
+      "gap": "next",
+      "N4_saved": 10.821556105969222,
+      "N6_saved": 10.856038218124382,
+      "N8_fresh": 10.856037917202798,
+      "N8_minus_N6": -3.0092158453953743e-07,
+      "N6_minus_N4": 0.034482112155160394,
+      "N8_N6_coordinate_distance": 9.696840674854809e-09
+    },
+    {
+      "engine": "ref_lab",
+      "gap": "lower",
+      "N4_saved": 23.02919135160227,
+      "N6_saved": 23.1813478719654,
+      "N8_fresh": 23.181387398224942,
+      "N8_minus_N6": 3.952625954184441e-05,
+      "N6_minus_N4": 0.15215652036312832,
+      "N8_N6_coordinate_distance": 5.687045521578704e-07
+    },
+    {
+      "engine": "ref_lab",
+      "gap": "flat",
+      "N4_saved": 2.8699238446081115,
+      "N6_saved": 2.7767262481843744,
+      "N8_fresh": 2.7766516596971726,
+      "N8_minus_N6": -7.458848720176547e-05,
+      "N6_minus_N4": -0.09319759642373704,
+      "N8_N6_coordinate_distance": 3.837090289363346e-07
+    },
+    {
+      "engine": "ref_lab",
+      "gap": "upper",
+      "N4_saved": 3.335359139744064,
+      "N6_saved": 3.3924978114562947,
+      "N8_fresh": 3.3925337386315277,
+      "N8_minus_N6": 3.592717523304145e-05,
+      "N6_minus_N4": 0.05713867171223086,
+      "N8_N6_coordinate_distance": 5.568342063275119e-07
+    },
+    {
+      "engine": "ref_lab",
+      "gap": "next",
+      "N4_saved": 10.821605530243687,
+      "N6_saved": 10.856087168577602,
+      "N8_fresh": 10.85608686772197,
+      "N8_minus_N6": -3.008556319628042e-07,
+      "N6_minus_N4": 0.03448163833391504,
+      "N8_N6_coordinate_distance": 8.100484288892973e-09
+    }
+  ],
+  "partner_comparisons": [
+    {
+      "gap": "lower",
+      "printed_gap": 23.18139,
+      "fresh_gap": 23.181387398224942,
+      "difference": -2.6017750585083377e-06,
+      "coordinate_distance": 6.007843951244214e-08,
+      "agrees_with_rounded_output": true
+    },
+    {
+      "gap": "flat",
+      "printed_gap": 2.77665,
+      "fresh_gap": 2.7766516596971726,
+      "difference": 1.6596971725846288e-06,
+      "coordinate_distance": 2.3563603409222258e-08,
+      "agrees_with_rounded_output": true
+    },
+    {
+      "gap": "upper",
+      "printed_gap": 3.39253,
+      "fresh_gap": 3.3925337386315277,
+      "difference": 3.738631527916425e-06,
+      "coordinate_distance": 1.2507366187249881e-08,
+      "agrees_with_rounded_output": true
+    },
+    {
+      "gap": "next",
+      "printed_gap": 10.85609,
+      "fresh_gap": 10.85608686772197,
+      "difference": -3.132278029838176e-06,
+      "coordinate_distance": 6.162194571564416e-12,
+      "agrees_with_rounded_output": true
+    }
+  ],
+  "maximum_abs_N8_N6_gap_change": 7.459027542822128e-05,
+  "maximum_cross_engine_gap_difference": 0.0003208922649164947,
+  "input_sha256": {
+    "results/bm_lab_N8.json": "f572bf942da2b1957711c3fd562dc21dcc39bb36306e91058f6bf72e7f1ec9be",
+    "results/ref_lab_N8.json": "1f5a51bc5ae392334c389020db43c201935e218f294d832b9365aab315e1e726"
+  },
+  "partner_run_binding": "Original stdout lacks starts/failed fields added in v048; no per-start JSON supplied. Source/run identity and historical optimizer outcomes not independently established.",
+  "limits": [
+    "N8 alone is freshly executed. N4/N6 values are read from hashed retained v048 endpoint records, not rerun here.",
+    "Whole-chart grids, edge brackets and multistart cover finite samples; they do not certify a global minimum, continuous isolation or infinite-cutoff error.",
+    "Both engines use lab_nn_full with constant w1=110 meV, w0=121 meV, kappa=0; BM uses linear and reference exact reciprocal geometry. They share this measurement harness.",
+    "No N8 path replay, node-charge, Euler or w1 measurement is performed. Previous topology labels are retained without a new N8 certification.",
+    "The supplied historical stdout is not bound to the current instrumented source or an independently established runtime; no original optimizer-failure claim is inferred.",
+    "Physical-bilayer validation and a microscopic tunnelling strain law remain outside the measured model."
+  ],
+  "protocol_sha256": "66528b467701210e89cab765e6c28d2f00708c22989fcbc543d0a7b568ef829f",
+  "tests": {
+    "passed": 58,
+    "run_id": "20260921T025546Z_b2dbd1e0",
+    "started_utc": "2026-09-21T02:55:46.078594+00:00",
+    "record_sha256": "b172f32b1741ffd33284233e4425ab3b3c154416683f6111b026d0301e0f8638",
+    "source_and_input_files": 25
+  },
+  "test_evidence": "provenance/test_runs/20260921T025546Z_b2dbd1e0/result.json",
+  "impact_sha256": "eae736e916f9776e8437fd6a86a69182960f8d955cd7c2cf1ffb03d4f4243932"
+}
