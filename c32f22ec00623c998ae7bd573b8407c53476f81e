@@ -1,0 +1,511 @@
+{
+  "collected": [
+    "tests/test_coverage.py::test_coverage_keeps_all_historical_families_and_open_limits",
+    "tests/test_coverage.py::test_incomplete_braid_chain_cannot_get_full_sampled_extent",
+    "tests/test_evidence_binding.py::test_matching_evidence_provides_measured_count",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[module.py]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[tests/test_case.py]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[requirements.txt]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[results/state.json]",
+    "tests/test_evidence_binding.py::test_changed_runtime_rejects_evidence",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[failed_exit]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[wrong_count]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[tampered_junit]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_artifact]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[skipped]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_call]",
+    "tests/test_evidence_binding.py::test_missing_evidence_stops_report_before_any_write",
+    "tests/test_evidence_binding.py::test_builder_checks_evidence_before_replay_claims",
+    "tests/test_joins.py::test_join_keeps_temporal_gauge_and_unwrapped_roots",
+    "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[wrapped]",
+    "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[moved]",
+    "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[wrong_subspace]",
+    "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[reflected_temporal]",
+    "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[rotated_temporal]",
+    "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[wrong_coarse_subspace]",
+    "tests/test_numerical_guards.py::test_unwrapped_root_is_preserved",
+    "tests/test_numerical_guards.py::test_invalid_final_root_rejected[failed]",
+    "tests/test_numerical_guards.py::test_invalid_final_root_rejected[nonfinite]",
+    "tests/test_numerical_guards.py::test_invalid_final_root_rejected[outside]",
+    "tests/test_numerical_guards.py::test_invalid_final_root_rejected[residual]",
+    "tests/test_numerical_guards.py::test_crossing_tolerance_agreement",
+    "tests/test_numerical_guards.py::test_unbracketed_crossing_rejected",
+    "tests/test_numerical_guards.py::test_failed_crossing_does_not_return_a_root",
+    "tests/test_numerical_guards.py::test_unrelated_error_is_not_isolation_evidence[eigen residual]",
+    "tests/test_numerical_guards.py::test_unrelated_error_is_not_isolation_evidence[projection/transport overlap too small]",
+    "tests/test_numerical_guards.py::test_unrelated_error_is_not_isolation_evidence[None]",
+    "tests/test_numerical_guards.py::test_explicit_isolation_failure_is_retained",
+    "tests/test_numerical_guards.py::test_both_exterior_minima_located",
+    "tests/test_numerical_guards.py::test_failed_exterior_minimizer_is_rejected",
+    "tests/test_numerical_guards.py::test_wrong_rectangle_cannot_certify_spatial_charge",
+    "tests/test_numerical_guards.py::test_only_phase_resolution_allows_retry",
+    "tests/test_packaging.py::test_preservation_errors_rejected[changed]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[missing]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[symlink]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[manifest]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[escape]",
+    "tests/test_packaging.py::test_archive_deterministic_and_no_overwrite",
+    "tests/test_packaging.py::test_changed_repository_readme_cannot_pass_publication_freeze",
+    "tests/test_reconciliation.py::test_completed_window_reconciles_with_saved_frames[bm_lab]",
+    "tests/test_reconciliation.py::test_completed_window_reconciles_with_saved_frames[ref_lab]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[rejected]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[missing_state]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[wrong_state]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[wrong_plan]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[runtime]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[node_failure]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[node_gap]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[node_seed]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[root_jump]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[rectangle]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[mesh]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[charge]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[radius]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[retry]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[gap_minimum]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[coarse]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[anchor]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[missing_join]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[join_root]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[join_basis]",
+    "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[join_gauge]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[hash]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[record]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[shape]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[nonfinite]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[orthogonality]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[rectangle]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[spatial_mesh]",
+    "tests/test_reconciliation.py::test_saved_frame_failures_reject[initial_frame]",
+    "tests/test_reconciliation.py::test_reconciliation_matches_hashed_historical_targets",
+    "tests/test_reconciliation.py::test_reflected_temporal_frame_is_not_a_valid_polar_transport",
+    "tests/test_reconciliation.py::test_actual_runtime_alias_join_preserves_original_records",
+    "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[package]",
+    "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[native_binary]",
+    "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[thread_environment]",
+    "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[executable]"
+  ],
+  "calls": [
+    {
+      "nodeid": "tests/test_coverage.py::test_coverage_keeps_all_historical_families_and_open_limits",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_coverage.py::test_incomplete_braid_chain_cannot_get_full_sampled_extent",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_matching_evidence_provides_measured_count",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[module.py]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[tests/test_case.py]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[requirements.txt]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[results/state.json]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_runtime_rejects_evidence",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[failed_exit]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[wrong_count]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[tampered_junit]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_artifact]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[skipped]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_call]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_missing_evidence_stops_report_before_any_write",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_builder_checks_evidence_before_replay_claims",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_keeps_temporal_gauge_and_unwrapped_roots",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[wrapped]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[moved]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[wrong_subspace]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[reflected_temporal]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[rotated_temporal]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_joins.py::test_join_rejects_wrong_seed_basis_or_gauge[wrong_coarse_subspace]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_unwrapped_root_is_preserved",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_invalid_final_root_rejected[failed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_invalid_final_root_rejected[nonfinite]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_invalid_final_root_rejected[outside]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_invalid_final_root_rejected[residual]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_crossing_tolerance_agreement",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_unbracketed_crossing_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_failed_crossing_does_not_return_a_root",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_unrelated_error_is_not_isolation_evidence[eigen residual]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_unrelated_error_is_not_isolation_evidence[projection/transport overlap too small]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_unrelated_error_is_not_isolation_evidence[None]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_explicit_isolation_failure_is_retained",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_both_exterior_minima_located",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_failed_exterior_minimizer_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_wrong_rectangle_cannot_certify_spatial_charge",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_numerical_guards.py::test_only_phase_resolution_allows_retry",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[changed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[missing]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[symlink]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[manifest]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[escape]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_archive_deterministic_and_no_overwrite",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_changed_repository_readme_cannot_pass_publication_freeze",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_completed_window_reconciles_with_saved_frames[bm_lab]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_completed_window_reconciles_with_saved_frames[ref_lab]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[rejected]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[missing_state]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[wrong_state]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[wrong_plan]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[runtime]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[node_failure]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[node_gap]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[node_seed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[root_jump]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[rectangle]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[charge]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[radius]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[retry]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[gap_minimum]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[coarse]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[anchor]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[missing_join]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[join_root]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[join_basis]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupted_evidence_cannot_be_promoted[join_gauge]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[hash]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[record]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[shape]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[nonfinite]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[orthogonality]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[rectangle]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[spatial_mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_saved_frame_failures_reject[initial_frame]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_reconciliation_matches_hashed_historical_targets",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_reflected_temporal_frame_is_not_a_valid_polar_transport",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_actual_runtime_alias_join_preserves_original_records",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[package]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[native_binary]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[thread_environment]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_runtime_alias_does_not_hide_real_environment_change[executable]",
+      "outcome": "passed",
+      "xfail": false
+    }
+  ],
+  "exit_code": 0
+}
