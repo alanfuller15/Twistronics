@@ -1,0 +1,65 @@
+"""Static call-site inventory; presence and name resolution are not reachability."""
+import ast
+from pathlib import Path
+from evidence import read,sha,safe,write,require
+ROOT=Path(__file__).resolve().parent
+REPO=ROOT.parents[1]
+SUSPECTS={'refine','find_nodes','min_remote','real_frame','euler','node_winding','adjacent_nodes','analyse'}
+
+def inspect_source(source):
+    tree=ast.parse(source);aliases={};parents={c:p for p in ast.walk(tree) for c in ast.iter_child_nodes(p)}
+    for n in ast.walk(tree):
+        if isinstance(n,ast.Import):
+            for a in n.names:aliases[a.asname or a.name.split('.')[0]]=a.name
+        elif isinstance(n,ast.ImportFrom):
+            for a in n.names:aliases[a.asname or a.name]=(n.module or '')+'.'+a.name
+    def name(n,seen=()):
+        if isinstance(n,ast.Name):
+            x=n.id
+            if x in aliases and x not in seen:return aliases[x]
+            return x
+        if isinstance(n,ast.Attribute):return name(n.value)+'.'+n.attr
+        return '<dynamic>'
+    # Simple assigned callable aliases only; no execution or receiver type inference.
+    for n in ast.walk(tree):
+        if isinstance(n,ast.Assign) and isinstance(n.value,(ast.Name,ast.Attribute)):
+            for t in n.targets:
+                if isinstance(t,ast.Name):aliases[t.id]=name(n.value)
+    calls=[];reads=[];imports=[]
+    for n in ast.walk(tree):
+        if isinstance(n,(ast.Import,ast.ImportFrom)):
+            imports.append(dict(line=n.lineno,statement=ast.unparse(n)))
+        if isinstance(n,ast.Call):
+            target=name(n.func)
+            if target.split('.')[-1] in SUSPECTS:calls.append(dict(line=n.lineno,call=ast.unparse(n.func),resolved_name=target))
+        if isinstance(n,ast.Subscript) and isinstance(n.slice,ast.Constant) and n.slice.value=='success':
+            p=n;contexts=[]
+            while p in parents:
+                p=parents[p]
+                if isinstance(p,(ast.Assert,ast.If,ast.Return)):contexts.append(type(p).__name__)
+                if isinstance(p,(ast.FunctionDef,ast.AsyncFunctionDef)):break
+            reads.append(dict(line=n.lineno,expression=ast.unparse(n),enclosing_control=contexts))
+    return dict(calls=sorted(calls,key=lambda r:r['line']),success_reads=sorted(reads,key=lambda r:r['line']),imports=imports)
+
+def build():
+    idx=read(ROOT/'SOURCE_INDEX.json');rows=[]
+    for ver,name in sorted(idx['batches'].items()):
+        folder=safe(REPO,name)
+        for p in sorted(folder.glob('*.py')):
+            rows.append(dict(scope='canonical_top_level',batch=ver,path=p.relative_to(REPO).as_posix(),sha256=sha(p),**inspect_source(p.read_text())))
+        for p in sorted((folder/'engines').glob('*.py')):
+            rows.append(dict(scope='engine_library',batch=ver,path=p.relative_to(REPO).as_posix(),sha256=sha(p),**inspect_source(p.read_text())))
+    for p in sorted(safe(REPO,idx['partner']).glob('*.py')):
+        rows.append(dict(scope='partner_legacy_scripts',batch='partner_v054',path=p.relative_to(REPO).as_posix(),sha256=sha(p),**inspect_source(p.read_text())))
+    script=next(r for r in rows if r['path'].endswith('/v023_code/gated_rerun.py'))
+    require(any('Assert' in x['enclosing_control'] for x in script['success_reads']),'known success assertion missing from trace')
+    modern=[x for r in rows if r['scope']=='canonical_top_level' for x in r['calls']]
+    return dict(schema=1,status='STATIC_INVENTORY_COMPLETE',files=len(rows),canonical_top_level_calls=len(modern),records=rows,
+      reviewed_findings=[dict(file=script['path'],finding="pair() asserts ia['success'] and ib['success'] from BM.refine. The blanket historical no-consumer claim is contradicted by source; actual past execution is not proven by presence."),
+        dict(file=idx['partner']+'/lowergap_check.py',finding='BM.refine success is printed, not used by this script as an acceptance condition.'),
+        dict(file=idx['partner']+'/run_baseline_convergence.py',finding='BM.find_nodes/min_remote call refinement internally; broader historical impact remains open.'),
+        dict(file=idx['partner']+'/ref_v023.py',finding='The receiver is TBG, not BM. Same-named refine calls must not be attributed to the BM defect.')],
+      limits=['AST inventory is mechanical, not full-file semantic review.','Imported/assigned callable aliases are resolved without scope or control-flow analysis; shadowing and dynamic dispatch can cause errors.','Receiver types and transitive reachability are not inferred. Engine-library and partner-script scopes are separate from canonical top-level modules; tests and probes within files are not independently classified.','Zero direct name matches do not prove runtime nonuse. The v054 dynamically instrumented preparation replay provides a separate, narrower runtime observation.'])
+
+if __name__=='__main__':
+    r=build();write(ROOT/'results/legacy_trace.json',r);print({k:r[k] for k in ['status','files','canonical_top_level_calls']})

@@ -1,0 +1,120 @@
+{
+  "version": "our_v056",
+  "status": "CONSISTENT_SAVED_EVIDENCE_AND_CONTROLLED_PROBE",
+  "protocol_sha256": "1b94334dc3d4ef4f7b9a428884b9d1b72fc986a69c5a6acdf2672ecf801d21ce",
+  "scope": "versioned claim map plus five historical helper-only comparisons",
+  "outputs": {
+    "results/campaign_map.json": "e455a98ee79d6af8ebf9f42007e48d7119b72169f3a6fedc0d2ca40f46ae6594",
+    "results/legacy_trace.json": "1ae490b1c8274d30f8e80be949122816777cfcc612d8fe2f86c261d273473133",
+    "IMPACT.json": "98ee0bd67759f606e67c29bc2b3968a727a0469af69564fd13d084c2113a1f5c"
+  },
+  "canonical_batches": 11,
+  "claim_rows": 80,
+  "frozen_checks": 331,
+  "frame_files": 528,
+  "root_links": 44,
+  "max_root_join": 4.387404178217532e-14,
+  "counts_by_role": {
+    "primary": {
+      "frame_stations": 496,
+      "root_stations": 324,
+      "charge_stations": 572,
+      "gapped_stations": 32,
+      "open_stations": 72
+    },
+    "superseded_replay": {
+      "frame_stations": 76,
+      "root_stations": 0,
+      "charge_stations": 76,
+      "gapped_stations": 0,
+      "open_stations": 0
+    },
+    "corroborating_checkpoint": {
+      "frame_stations": 0,
+      "root_stations": 0,
+      "charge_stations": 0,
+      "gapped_stations": 8,
+      "open_stations": 0
+    }
+  },
+  "historical_probe_label_changes": 0,
+  "historical_probe_cases": [
+    {
+      "recipe": "v026_B_-0.25",
+      "old_label": "SAME",
+      "new_label": "SAME",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v026_B_-0.3",
+      "old_label": "OPPOSITE",
+      "new_label": "OPPOSITE",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v029_pre_ann",
+      "old_label": "OPPOSITE",
+      "new_label": "OPPOSITE",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v031_ratio_0.99",
+      "old_label": "SAME",
+      "new_label": "SAME",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v031_ratio_1.0",
+      "old_label": "OPPOSITE",
+      "new_label": "OPPOSITE",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    }
+  ],
+  "second_attempt_calls": {
+    "defective": 0,
+    "repaired": 0
+  },
+  "trace_files": 343,
+  "canonical_direct_suspect_calls": 0,
+  "tests": {
+    "passed": 63,
+    "run_id": "20260921T015037Z_b66bc326",
+    "started_utc": "2026-09-21T01:50:37.829609+00:00",
+    "record_sha256": "02f5f722fc6e1e4b75d1b4c5c642c340873300dfdecc0b43b5707ee943f586cc",
+    "source_and_input_files": 28
+  },
+  "test_evidence": "provenance/test_runs/20260921T015037Z_b66bc326/result.json",
+  "limits": [
+    "No historical numerical engine or report builder was executed to construct this map.",
+    "Frame arrays were hashed as opaque bytes, not numerically re-evaluated.",
+    "Same-state root joins are not proof of absolute frame continuity.",
+    "Counts describe overlapping recorded observations, not unique physical states.",
+    "v042 PLAN linkage and braid held-parameter state are contextual; later raw records embed the protocol hash.",
+    "The map validates selected saved diagnostics against explicit version schemas, not every historical gate or summary field. Older first/upper/late folds have only grid 18 at the near-open station; local folds use grids 17/25 and a bounded domain.",
+    "Source/data consistency does not establish authenticity, timing, continuous-path completeness, infinite-cutoff accuracy or physical truth.",
+    "The original historical runtime was not reproduced.",
+    "The five recipes use the retained v041 engine, N4 and kinetic=none; this is separate from the modern lab_nn_full campaign.",
+    "The historical recipe assertion is exercised, but its winding gate does not provide all modern isolation/refinement guarantees.",
+    "Absence of a second attempt in this probe cannot exclude its use in other historical runs.",
+    "Zero changes here do not establish that every recorded historical conclusion was unaffected.",
+    "AST inventory is mechanical, not full-file semantic review.",
+    "Imported/assigned callable aliases are resolved without scope or control-flow analysis; shadowing and dynamic dispatch can cause errors.",
+    "Receiver types and transitive reachability are not inferred. Engine-library and partner-script scopes are separate from canonical top-level modules; tests and probes within files are not independently classified.",
+    "Zero direct name matches do not prove runtime nonuse. The v054 dynamically instrumented preparation replay provides a separate, narrower runtime observation."
+  ]
+}
