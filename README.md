@@ -1,22 +1,21 @@
 # Twistronics research
 
-Numerical toolkit and recorded research through **our v053**. This repository preserves the complete reconciled release, including the partner logs, both Hamiltonian engines, tests, measurement scripts, numerical results and frame checkpoints.
+Current batch: **our v054 — audit repairs and measured impact**. Start with the [team share](research/v054/TEAM_SHARE_v054.md), [report](research/v054/REPORT.md), [impact comparison](research/v054/IMPACT.json), and [reproduction instructions](research/v054/README.md).
 
-Start with [current report](research/v053/REPORT.md), [accepted coverage ledger](research/v053/LEDGER.md), [team share](research/v053/TEAM_SHARE_v053.md), and [reproduction instructions](research/v053/README.md).
+The v053 preparation route has been recomputed in both engines at N=4/N=6: 76 fresh accepted states, all SAME, 36 fine/coarse parameter checks and four endpoint frame joins. No label changed. Roots and sampled comparison-path external gaps match the original records exactly. Eleven suspect/legacy entry points were instrumented to fail if reached; all four complete replays recorded zero calls.
 
-The latest batch completes a sampled preparation frame replay: 76 accepted states in both engines at N=4/N=6, all SAME, with four root/relative-frame joins into v044. The v053 records include an 18-pass test log and a production stop/resume check; these are historical evidence, not fresh checks performed by this publication. The **separate lower unlink collision remains open**; see [next sequence](research/v053/NEXT_SEQUENCE.md).
+**61 tests passed in the source/input/environment-bound run `20260921T001901Z_99cfc67a`.** The report verifies the collection, execution and JUnit evidence before publishing that count. This is a recorded test run for the declared identity, not a claim that a later report regeneration automatically reruns tests.
 
-## Subsequent inspection-only audit
-
-Read the [supplied audit](audits/v053/twistronics_v053_audit.md) and [response / repair priorities](audits/v053/RESPONSE.md). Confirmed source issues concern optimizer termination metadata, publication of test-pass claims, standalone packaging inputs and legacy acceptance guards. No patches or fresh numerical replay are included here; their effect on accepted measurements remains to be established. The frozen research files are preserved unchanged.
+The new version repairs optimizer termination metadata, binds publication to test evidence, adopts an explicit verified prior-tree packaging contract, and restricts legacy Euler/braid routines to exploratory opt-in. The [supplied inspection-only audit](audits/v053/twistronics_v053_audit.md), [original response](audits/v053/RESPONSE.md) and [v054 follow-up](audits/v053/FOLLOWUP_v054.md) retain the distinction between the original findings and the subsequent work. Frozen v053 files are unchanged.
 
 ## Layout
 
-- `research/v053/`: latest code, protocol, reports, tests and raw checkpoints.
-- `research/prior_our_v052/`: complete prior delivery, retaining earlier batches and incoming partner packages.
-- `research/MANIFEST.json`: hashes of the original release contents.
-- `RELEASE.json`: provenance of the ZIP used to initialize this repository.
+- `research/v054/`: repairs, tests, fresh raw checkpoints, protocol and impact/publication evidence.
+- `research/v053/`: unchanged original preparation-frame release.
+- `research/prior_our_v052/`: complete prior delivery and earlier partner packages.
+- `audits/v053/`: supplied audit, evidence and separately recorded follow-up.
+- `research/MANIFEST.json` and `RELEASE.json`: provenance of the original v053 import, retained unchanged.
 
-To reproduce, follow the instructions inside the selected batch directory. Preserve its relative paths: historical records are retained in their delivered locations so source hashes, frame anchors and report rebuilding remain reproducible. Run at most two numerical workers with single-thread BLAS.
+The **separate lower unlink collision remains open**. Earlier campaigns that actually used legacy helpers still need their own impact review; zero calls on this preparation route do not clear all history. Follow the [next bounded sequence](research/v054/NEXT_SEQUENCE.md). Use at most two single-thread numerical workers and qualify both N4 engines before N6.
 
-These are self-tested results for a declared numerical model. Finite sampling is not an interval proof, infinite-cutoff bound or physical-bilayer validation. No new license or third-party permissions are assigned by this repository snapshot.
+These are self-tested results for a declared numerical model. Finite sampling is not a continuous-interval proof, infinite-cutoff bound or physical-bilayer validation. Two engines sharing a harness can share conceptual errors. No new license or third-party permissions are assigned by this snapshot.
