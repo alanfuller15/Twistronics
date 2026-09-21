@@ -1,0 +1,659 @@
+{
+  "schema": 1,
+  "status": "CONTROLLED_REPLAYS_RECONCILED",
+  "numerical_plan_sha256": "d6d1e05c5b12adeaa788e97ec7f2a356f00e56323931e3a46cbff193d7376b8d",
+  "cases": [
+    {
+      "N": 4,
+      "variants": [
+        {
+          "variant": "defective",
+          "node_candidates": 3,
+          "resolved_nodes": [
+            [
+              1.353868128717295e-10,
+              [
+                0.7564101603149912,
+                0.6085676529335293
+              ]
+            ],
+            [
+              2.6268587305366964e-10,
+              [
+                0.578688500518898,
+                0.7284811094094575
+              ]
+            ]
+          ],
+          "remote_gap": 5.457836008037834,
+          "bandwidth": 24.259107463868276,
+          "endpoint_gap": 22.537986131952394,
+          "endpoint_coordinate": [
+            0.9921494427034944,
+            0.29365559141639014
+          ],
+          "refinement_calls": 7,
+          "second_attempt_calls": 1,
+          "second_attempt_records": [
+            {
+              "stage": "endpoint_lower",
+              "seed": [
+                0.0,
+                0.29166666666666663
+              ],
+              "return_result": true,
+              "status": "RETURNED",
+              "coordinate": [
+                0.9921494427034944,
+                0.29365559141639014
+              ],
+              "returned_value": 22.537986131952394,
+              "recomputed_value": 22.537986131952394,
+              "attempts": [
+                {
+                  "seed": [
+                    0.0,
+                    0.29166666666666663
+                  ],
+                  "x": [
+                    -0.00896983502723863,
+                    0.29010986663398447
+                  ],
+                  "value": 22.679586257620798,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 94
+                },
+                {
+                  "seed": [
+                    0.9910301649727614,
+                    0.29010986663398447
+                  ],
+                  "x": [
+                    0.9921494427034944,
+                    0.29365559141639014
+                  ],
+                  "value": 22.537986131952394,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 81
+                }
+              ],
+              "metadata": {
+                "success": true,
+                "status": 0,
+                "message": "Optimization terminated successfully.",
+                "nfev": 175,
+                "wrap_shift": 0.003718191344065071
+              }
+            }
+          ],
+          "reported_metadata_mismatches": 0
+        },
+        {
+          "variant": "repaired",
+          "node_candidates": 3,
+          "resolved_nodes": [
+            [
+              1.353868128717295e-10,
+              [
+                0.7564101603149912,
+                0.6085676529335293
+              ]
+            ],
+            [
+              2.6268587305366964e-10,
+              [
+                0.578688500518898,
+                0.7284811094094575
+              ]
+            ]
+          ],
+          "remote_gap": 5.457836008037834,
+          "bandwidth": 24.259107463868276,
+          "endpoint_gap": 22.537986131952394,
+          "endpoint_coordinate": [
+            0.9921494427034944,
+            0.29365559141639014
+          ],
+          "refinement_calls": 7,
+          "second_attempt_calls": 1,
+          "second_attempt_records": [
+            {
+              "stage": "endpoint_lower",
+              "seed": [
+                0.0,
+                0.29166666666666663
+              ],
+              "return_result": true,
+              "status": "RETURNED",
+              "coordinate": [
+                0.9921494427034944,
+                0.29365559141639014
+              ],
+              "returned_value": 22.537986131952394,
+              "recomputed_value": 22.537986131952394,
+              "attempts": [
+                {
+                  "seed": [
+                    0.0,
+                    0.29166666666666663
+                  ],
+                  "x": [
+                    -0.00896983502723863,
+                    0.29010986663398447
+                  ],
+                  "value": 22.679586257620798,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 94
+                },
+                {
+                  "seed": [
+                    0.9910301649727614,
+                    0.29010986663398447
+                  ],
+                  "x": [
+                    0.9921494427034944,
+                    0.29365559141639014
+                  ],
+                  "value": 22.537986131952394,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 81
+                }
+              ],
+              "metadata": {
+                "success": true,
+                "optimizer_success": true,
+                "status": 0,
+                "message": "Optimization terminated successfully.",
+                "nfev": 175,
+                "final_nfev": 81,
+                "wrap_shift": 0.003718191344065071,
+                "attempts": [
+                  {
+                    "stage": "initial",
+                    "success": true,
+                    "status": 0,
+                    "message": "Optimization terminated successfully.",
+                    "nfev": 94,
+                    "x": [
+                      -0.00896983502723863,
+                      0.29010986663398447
+                    ],
+                    "value": 22.679586257620798,
+                    "finite": true
+                  },
+                  {
+                    "stage": "canonical_retry",
+                    "success": true,
+                    "status": 0,
+                    "message": "Optimization terminated successfully.",
+                    "nfev": 81,
+                    "x": [
+                      0.9921494427034944,
+                      0.29365559141639014
+                    ],
+                    "value": 22.537986131952394,
+                    "finite": true
+                  }
+                ],
+                "rejection_reasons": [],
+                "canonical_value": 22.537986131952394
+              }
+            }
+          ],
+          "reported_metadata_mismatches": 0
+        }
+      ],
+      "differences": {
+        "root_coordinates": 0.0,
+        "remote_gap": 0.0,
+        "bandwidth": 0.0,
+        "endpoint_gap": 0.0
+      },
+      "comparison_changed": false,
+      "euler": {
+        "raw_winding": -0.9999999999999999,
+        "raw_closure": 0.9965951161687552,
+        "raw_min_determinant": 0.9999999999999993,
+        "gated": [
+          {
+            "mesh": [
+              24,
+              40
+            ],
+            "euler": -1,
+            "min_external_gap": 5.670115190158038,
+            "min_overlap": 0.8776417396905488,
+            "min_seam_overlap": 0.9994809431921868,
+            "max_phase_increment": 1.0531318757457593,
+            "points": 1009
+          },
+          {
+            "mesh": [
+              32,
+              56
+            ],
+            "euler": -1,
+            "min_external_gap": 5.574482133366466,
+            "min_overlap": 0.92203382390008,
+            "min_seam_overlap": 0.9994556214318873,
+            "max_phase_increment": 0.8212031899376167,
+            "points": 1857
+          }
+        ],
+        "raw_absolute_label_agrees": true
+      },
+      "runtime_sha256": "3eb4932c37f1cdbaee8efb2ea9228fecd03e6dda12675402337b55a34f7441de"
+    },
+    {
+      "N": 6,
+      "variants": [
+        {
+          "variant": "defective",
+          "node_candidates": 3,
+          "resolved_nodes": [
+            [
+              1.3413981037047051e-10,
+              [
+                0.7564555011915189,
+                0.6085911629165124
+              ]
+            ],
+            [
+              1.4894352418082235e-10,
+              [
+                0.5787429318685786,
+                0.7284756142216586
+              ]
+            ]
+          ],
+          "remote_gap": 5.500315971029824,
+          "bandwidth": 24.259607291961494,
+          "endpoint_gap": 22.6919847500713,
+          "endpoint_coordinate": [
+            0.9909525016642431,
+            0.29008372638724844
+          ],
+          "refinement_calls": 7,
+          "second_attempt_calls": 2,
+          "second_attempt_records": [
+            {
+              "stage": "endpoint_lower",
+              "seed": [
+                0.0,
+                0.29166666666666663
+              ],
+              "return_result": true,
+              "status": "RETURNED",
+              "coordinate": [
+                0.9909525016642431,
+                0.29008372638724844
+              ],
+              "returned_value": 22.6919847500713,
+              "recomputed_value": 22.6919847500713,
+              "attempts": [
+                {
+                  "seed": [
+                    0.0,
+                    0.29166666666666663
+                  ],
+                  "x": [
+                    -0.009048088414232918,
+                    0.2900837410872693
+                  ],
+                  "value": 22.69201996546338,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 98
+                },
+                {
+                  "seed": [
+                    0.9909519115857671,
+                    0.2900837410872693
+                  ],
+                  "x": [
+                    0.9909525016642431,
+                    0.29008372638724844
+                  ],
+                  "value": 22.6919847500713,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 79
+                }
+              ],
+              "metadata": {
+                "success": true,
+                "status": 0,
+                "message": "Optimization terminated successfully.",
+                "nfev": 177,
+                "wrap_shift": 5.902615508544837e-07
+              }
+            },
+            {
+              "stage": "endpoint_lower",
+              "seed": [
+                0.0,
+                0.3055555555555555
+              ],
+              "return_result": true,
+              "status": "RETURNED",
+              "coordinate": [
+                0.9909525271574589,
+                0.29008372490831935
+              ],
+              "returned_value": 22.69198475007134,
+              "recomputed_value": 22.69198475007134,
+              "attempts": [
+                {
+                  "seed": [
+                    0.0,
+                    0.3055555555555555
+                  ],
+                  "x": [
+                    -0.009048069015668982,
+                    0.2900837336625056
+                  ],
+                  "value": 22.69201996546328,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 97
+                },
+                {
+                  "seed": [
+                    0.990951930984331,
+                    0.2900837336625056
+                  ],
+                  "x": [
+                    0.9909525271574589,
+                    0.29008372490831935
+                  ],
+                  "value": 22.69198475007134,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 79
+                }
+              ],
+              "metadata": {
+                "success": true,
+                "status": 0,
+                "message": "Optimization terminated successfully.",
+                "nfev": 176,
+                "wrap_shift": 5.962373974896245e-07
+              }
+            }
+          ],
+          "reported_metadata_mismatches": 0
+        },
+        {
+          "variant": "repaired",
+          "node_candidates": 3,
+          "resolved_nodes": [
+            [
+              1.3413981037047051e-10,
+              [
+                0.7564555011915189,
+                0.6085911629165124
+              ]
+            ],
+            [
+              1.4894352418082235e-10,
+              [
+                0.5787429318685786,
+                0.7284756142216586
+              ]
+            ]
+          ],
+          "remote_gap": 5.500315971029824,
+          "bandwidth": 24.259607291961494,
+          "endpoint_gap": 22.6919847500713,
+          "endpoint_coordinate": [
+            0.9909525016642431,
+            0.29008372638724844
+          ],
+          "refinement_calls": 7,
+          "second_attempt_calls": 2,
+          "second_attempt_records": [
+            {
+              "stage": "endpoint_lower",
+              "seed": [
+                0.0,
+                0.29166666666666663
+              ],
+              "return_result": true,
+              "status": "RETURNED",
+              "coordinate": [
+                0.9909525016642431,
+                0.29008372638724844
+              ],
+              "returned_value": 22.6919847500713,
+              "recomputed_value": 22.6919847500713,
+              "attempts": [
+                {
+                  "seed": [
+                    0.0,
+                    0.29166666666666663
+                  ],
+                  "x": [
+                    -0.009048088414232918,
+                    0.2900837410872693
+                  ],
+                  "value": 22.69201996546338,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 98
+                },
+                {
+                  "seed": [
+                    0.9909519115857671,
+                    0.2900837410872693
+                  ],
+                  "x": [
+                    0.9909525016642431,
+                    0.29008372638724844
+                  ],
+                  "value": 22.6919847500713,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 79
+                }
+              ],
+              "metadata": {
+                "success": true,
+                "optimizer_success": true,
+                "status": 0,
+                "message": "Optimization terminated successfully.",
+                "nfev": 177,
+                "final_nfev": 79,
+                "wrap_shift": 5.902615508544837e-07,
+                "attempts": [
+                  {
+                    "stage": "initial",
+                    "success": true,
+                    "status": 0,
+                    "message": "Optimization terminated successfully.",
+                    "nfev": 98,
+                    "x": [
+                      -0.009048088414232918,
+                      0.2900837410872693
+                    ],
+                    "value": 22.69201996546338,
+                    "finite": true
+                  },
+                  {
+                    "stage": "canonical_retry",
+                    "success": true,
+                    "status": 0,
+                    "message": "Optimization terminated successfully.",
+                    "nfev": 79,
+                    "x": [
+                      0.9909525016642431,
+                      0.29008372638724844
+                    ],
+                    "value": 22.6919847500713,
+                    "finite": true
+                  }
+                ],
+                "rejection_reasons": [],
+                "canonical_value": 22.6919847500713
+              }
+            },
+            {
+              "stage": "endpoint_lower",
+              "seed": [
+                0.0,
+                0.3055555555555555
+              ],
+              "return_result": true,
+              "status": "RETURNED",
+              "coordinate": [
+                0.9909525271574589,
+                0.29008372490831935
+              ],
+              "returned_value": 22.69198475007134,
+              "recomputed_value": 22.69198475007134,
+              "attempts": [
+                {
+                  "seed": [
+                    0.0,
+                    0.3055555555555555
+                  ],
+                  "x": [
+                    -0.009048069015668982,
+                    0.2900837336625056
+                  ],
+                  "value": 22.69201996546328,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 97
+                },
+                {
+                  "seed": [
+                    0.990951930984331,
+                    0.2900837336625056
+                  ],
+                  "x": [
+                    0.9909525271574589,
+                    0.29008372490831935
+                  ],
+                  "value": 22.69198475007134,
+                  "success": true,
+                  "status": 0,
+                  "message": "Optimization terminated successfully.",
+                  "nfev": 79
+                }
+              ],
+              "metadata": {
+                "success": true,
+                "optimizer_success": true,
+                "status": 0,
+                "message": "Optimization terminated successfully.",
+                "nfev": 176,
+                "final_nfev": 79,
+                "wrap_shift": 5.962373974896245e-07,
+                "attempts": [
+                  {
+                    "stage": "initial",
+                    "success": true,
+                    "status": 0,
+                    "message": "Optimization terminated successfully.",
+                    "nfev": 97,
+                    "x": [
+                      -0.009048069015668982,
+                      0.2900837336625056
+                    ],
+                    "value": 22.69201996546328,
+                    "finite": true
+                  },
+                  {
+                    "stage": "canonical_retry",
+                    "success": true,
+                    "status": 0,
+                    "message": "Optimization terminated successfully.",
+                    "nfev": 79,
+                    "x": [
+                      0.9909525271574589,
+                      0.29008372490831935
+                    ],
+                    "value": 22.69198475007134,
+                    "finite": true
+                  }
+                ],
+                "rejection_reasons": [],
+                "canonical_value": 22.69198475007134
+              }
+            }
+          ],
+          "reported_metadata_mismatches": 0
+        }
+      ],
+      "differences": {
+        "root_coordinates": 0.0,
+        "remote_gap": 0.0,
+        "bandwidth": 0.0,
+        "endpoint_gap": 0.0
+      },
+      "comparison_changed": false,
+      "euler": {
+        "raw_winding": -1.0,
+        "raw_closure": 0.9965969638488257,
+        "raw_min_determinant": 0.9999999999999994,
+        "gated": [
+          {
+            "mesh": [
+              24,
+              40
+            ],
+            "euler": -1,
+            "min_external_gap": 5.707129975236343,
+            "min_overlap": 0.8791745921027012,
+            "min_seam_overlap": 0.9999999994972305,
+            "max_phase_increment": 1.052857902753921,
+            "points": 1009
+          },
+          {
+            "mesh": [
+              32,
+              56
+            ],
+            "euler": -1,
+            "min_external_gap": 5.613736994444196,
+            "min_overlap": 0.922703465405598,
+            "min_seam_overlap": 0.9999999994661788,
+            "max_phase_increment": 0.8210577378229067,
+            "points": 1857
+          }
+        ],
+        "raw_absolute_label_agrees": true
+      },
+      "runtime_sha256": "3eb4932c37f1cdbaee8efb2ea9228fecd03e6dda12675402337b55a34f7441de"
+    }
+  ],
+  "sources": {
+    "results/probe_N4.json": "e9d8b620b593eca3945110e1d1e14a8f0698b8d159e99b741bce437ded217b16",
+    "results/probe_N6.json": "ba10a39d6b88d69bc650fcdc753b759a9d6c92de407422e6a2675e984efe6f43"
+  },
+  "changed_comparisons": 0,
+  "refinement_calls": 28,
+  "second_attempt_calls": 6,
+  "limits": [
+    "Only the baseline and lower|flat1 endpoint recipes at N4/N6 were repeated; other historical scalar, mass, angle and braid sweeps remain unverified.",
+    "Successful first and second attempts cannot test the stale-status failure when their termination metadata disagree. Synthetic regression tests cover that failure separately.",
+    "Baseline find_nodes includes gapped local-minimum candidates; only two returned candidates pass the stated root-residual threshold.",
+    "Euler gates certify finite sampled diagnostics and two meshes, not global isolation, continuous topology, infinite-cutoff accuracy or physical truth.",
+    "No exact original-source/runtime execution provenance is inferred from agreement with rounded historical logs."
+  ]
+}

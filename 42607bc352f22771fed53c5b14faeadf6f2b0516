@@ -1,0 +1,24 @@
+# Our v057: historical consumers and branch-exercised replay
+
+The historical impact check now reaches the real wrapped re-refinement branch that v056 did not exercise. We repeated the retained baseline search and the endpoint lower-remote|flat1 search at N4 and N6, changing only BM.refine between the defective and repaired variants. The static Hamiltonian bytes match, and both variants share the Hamiltonian-building code and parameters. This is the historical kinetic='none' model, with constant tunnelling amplitudes; the current lab_nn_full campaign remains a separately recorded model.
+
+| N | Baseline remote gap (meV) | Endpoint lower gap (meV) | Second attempts per variant | Gated baseline e2, both meshes |
+|---:|---:|---:|---:|---:|
+| 4 | 5.457836008038 | 22.537986131952 | 1 | -1 |
+| 6 | 5.500315971030 | 22.691984750071 | 2 | -1 |
+
+Across both variants there are **28 recorded refinement calls, including 6 second-attempt calls**. The same selected seed/cutoff cases are repeated under each helper, so repeated helper variants are not independent physical events. Changed comparisons above the frozen tolerances: **0**; maximum root-coordinate/gap/bandwidth difference: **0**. All observed first/second attempts in the wrapped cases succeeded: **True**. The stale metadata therefore happens to describe the final outcome correctly in these cases. This closes the scoped branch-exercised comparison; it does not establish that a failed second attempt never affected another historical result. Synthetic tests separately force differing first/final outcomes and confirm the repaired helper follows the final attempt.
+
+The N4 endpoint search starts at a grid seed on f1=0, first locates a minimum outside the cell, then re-refines its canonical representative. It reproduces the v035 correction from the roughly 22.68 meV first minimum to 22.537986 meV. Difference from the retained machine-readable v035 N4 lower-gap result: 1.28e-13 meV. Rounded historical target disagreements across the two cutoffs: 0. This is numerical agreement with identified sources, not proof of their original execution history.
+
+The baseline Euler result was computed separately: the original exploratory Wilson routine and the retained numerical gate at 24×40 and 32×56 meshes. Both cutoffs pass finite-sample reality, Hermiticity, eigen-residual, external-isolation, link-overlap, sewing, orientability and phase-resolution checks; both gated meshes return the values in the table. No BM.refine call occurs in the Euler computation. The global sign depends on orientation convention; |e2| is the meaningful comparison here. Baseline local-minimum candidate counts (N4/N6, repaired variant): [3, 3]; only two per cutoff have root residual below 1e-6 meV. Positive-gap candidates are not counted as nodes.
+
+The **8-row source-to-log ledger** distinguishes the remaining consumers. `transfer.py` and `flat_e2.py` define their own Euler routines, so repairing `euler.py` alone does not gate those routines. `transfer.py` also has a local frame helper that drops the imaginary part without a guard. However, v029 explicitly withholds an Euler-class conclusion because isolation fails, and v032–v033 explicitly correct the earlier e2=0 prediction to undefined for the nonorientable pair. Those recorded refusals and corrections are preserved. The broader scalar/mass/angle sweeps and braid detours remain impact-unverified.
+
+**62 tests passed in bound run `20260921T023426Z_a4ce516a`**, evidence SHA256 `591d6e416c268a81819c0cc6bc3d3fa5bf562df3c78090bb7779c052e0be4e05`. The count is read from actual collection, execution and JUnit, bound to source/tests/inputs/runtime. The two numerical workers record matching before/after runtime identities and run under the separately frozen numerical plan. All prior tracked files are preserved; the previous top-level README is retained in provenance.
+
+Limits: retained snapshots are not proven to be the precise source used for early log entries. v034 declares a different runtime; retained v035 endpoint direct package versions match this session but lack complete native-build provenance. Finite searches and two meshes do not prove global isolation, continuous-path completeness, infinite-cutoff accuracy or physical-bilayer validity. No comprehensive security clearance or whole-history no-impact claim is made.
+
+Next: a bounded N>6 endpoint-gap comparison under the modern declared lab_nn_full model, with explicit boundary seeds and reference-engine comparison. Physical magnitude claims still require the inventor's intended acceptance target and a named microscopic tunnelling strain law. Preserve the remaining historical attribution gaps instead of treating repeated agreement as universal clearance.
+
+Start in `research/v057/` with REPORT.md, ATTRIBUTION.md, SUMMARY.json, IMPACT.json, NUMERICAL_PLAN.json and README.md. The ZIP includes prior campaign evidence, audits and partner shares.

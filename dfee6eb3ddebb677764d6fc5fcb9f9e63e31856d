@@ -1,0 +1,689 @@
+{
+  "schema": 1,
+  "status": "BOUNDED_ATTRIBUTION_COMPLETE",
+  "rows": [
+    {
+      "id": "B1",
+      "source": "research/incoming_partner_v054/v023_code/run_baseline_convergence.py",
+      "source_sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+      "log_claim": "v023 \u00a73: baseline dimensions, bandwidth, two near-zero roots and remote minimum",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v023.md",
+          "sha256": "2964898b2d7dd2e16132cf2d2b65a5e2156acc0c1ac44e98d99d75ceb6b72a59"
+        }
+      ],
+      "consumer": "find_nodes and min_remote call BM.refine without return_result and do not inspect last_refine. find_nodes returns all refined local minima, including positive-gap candidates; it is not a certified node count.",
+      "disposition": "Fresh controlled baseline comparison at N4/N6; original N3/N5/N7 and phi sweeps not replayed.",
+      "call_sites": [
+        {
+          "line": 6,
+          "call": "m.find_nodes"
+        },
+        {
+          "line": 7,
+          "call": "m.min_remote"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/run_baseline_convergence.py",
+          "sha256": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a"
+        }
+      ],
+      "distinct_source_hashes": 1,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "B2",
+      "source": "research/incoming_partner_v054/v023_code/run_scalar_sweep.py",
+      "source_sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+      "log_claim": "v023 \u00a74: scalar-amplitude sweep",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v023.md",
+          "sha256": "2964898b2d7dd2e16132cf2d2b65a5e2156acc0c1ac44e98d99d75ceb6b72a59"
+        }
+      ],
+      "consumer": "Uses find_nodes/min_remote; filters candidates by value below 1e-3, without checking optimizer metadata.",
+      "disposition": "Only A=0 is shared with this batch baseline. Other scalar amplitudes remain impact-unverified.",
+      "call_sites": [
+        {
+          "line": 8,
+          "call": "m.find_nodes"
+        },
+        {
+          "line": 9,
+          "call": "m.min_remote"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/run_scalar_sweep.py",
+          "sha256": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586"
+        }
+      ],
+      "distinct_source_hashes": 1,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "B3",
+      "source": "research/incoming_partner_v054/v023_code/lowergap_check.py",
+      "source_sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+      "log_claim": "v035 \u00a72: edge minimum correction; lower|flat1 22.537986/22.691985 meV",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v035.md",
+          "sha256": "35ed11a149e6d4bf12e5297bb5967080c34889f98b858056c350fc66c4d16fe9"
+        }
+      ],
+      "consumer": "Calls refine(return_result=True), recomputes the selected gap and prints success. It does not reject success=False before selecting or printing the minimum.",
+      "disposition": "Fresh controlled lower|flat1 search at N4/N6, all selected seeds on grids 24/36. The separate below-lower gap is not replayed.",
+      "call_sites": [
+        {
+          "line": 13,
+          "call": "m.refine"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/lowergap_check.py",
+          "sha256": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000"
+        }
+      ],
+      "distinct_source_hashes": 1,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "E1",
+      "source": "research/incoming_partner_v054/v023_code/euler.py",
+      "source_sha256": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271",
+      "log_claim": "v023 \u00a75 baseline e2=-1; v035 reports two gated Euler comparisons",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v023.md",
+          "sha256": "2964898b2d7dd2e16132cf2d2b65a5e2156acc0c1ac44e98d99d75ceb6b72a59"
+        },
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v035.md",
+          "sha256": "35ed11a149e6d4bf12e5297bb5967080c34889f98b858056c350fc66c4d16fe9"
+        }
+      ],
+      "consumer": "Raw Wilson routine returns winding, determinants and closure without a fail-closed acceptance decision. The current reality guard differs from the retained older assertion; neither supplies the missing isolation/orientability gate.",
+      "disposition": "Baseline raw value compared with two gated meshes at N4/N6. N4 A=0.1 and unstrained cases not replayed; no original Euler JSON run record was located by the stated search.",
+      "call_sites": [
+        {
+          "line": 53,
+          "call": "euler"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/euler.py",
+          "sha256": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/v043/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/v044/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/v046/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/v050/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/v051/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/prior_our_v052/v052/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/v053/engines/euler.py",
+          "sha256": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9"
+        },
+        {
+          "path": "research/v054/engines/euler.py",
+          "sha256": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974"
+        },
+        {
+          "path": "research/v055/engines/euler.py",
+          "sha256": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974"
+        }
+      ],
+      "distinct_source_hashes": 3,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "E2",
+      "source": "research/incoming_partner_v054/v023_code/nodewind.py",
+      "source_sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+      "log_claim": "v023 \u00a75 per-node eigenvector rotation and shared handedness",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v023.md",
+          "sha256": "2964898b2d7dd2e16132cf2d2b65a5e2156acc0c1ac44e98d99d75ceb6b72a59"
+        }
+      ],
+      "consumer": "Uses find_nodes, takes the first two filtered roots, prints rounded raw windings and their sum. Raw output is not a modern acceptance certificate.",
+      "disposition": "Source-to-log relationship is contextual. This batch does not rerun this node-winding driver.",
+      "call_sites": [
+        {
+          "line": 27,
+          "call": "m.find_nodes"
+        },
+        {
+          "line": 32,
+          "call": "node_winding"
+        },
+        {
+          "line": 38,
+          "call": "node_winding"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/nodewind.py",
+          "sha256": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3"
+        }
+      ],
+      "distinct_source_hashes": 1,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "E3",
+      "source": "research/incoming_partner_v054/v023_code/braid.py",
+      "source_sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+      "log_claim": "v024 path-dependent charge diagnostics; v034 remediation claims",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v024.md",
+          "sha256": "bc9c9883f71b887e7cfe2ad29f6961af969ae0283201e074d52a3eab26bf5baf"
+        },
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v034.md",
+          "sha256": "5fa66939ce249685bc201f401da0cb44a26ef9abca7c657e6d01eafc0f2c39e2"
+        }
+      ],
+      "consumer": "Direct driver exposes fixed-radius windings and path detours. adjacent_nodes reaches BM.refine. Importing classify does not show that the CLI uses it to gate its printed winding.",
+      "disposition": "The whole driver and all detours remain impact-unverified. v024 already records a failed detour construction; v056 only tested its five explicitly selected later recipes.",
+      "call_sites": [
+        {
+          "line": 33,
+          "call": "m.refine"
+        },
+        {
+          "line": 41,
+          "call": "m.find_nodes"
+        },
+        {
+          "line": 51,
+          "call": "node_winding"
+        },
+        {
+          "line": 53,
+          "call": "node_winding"
+        },
+        {
+          "line": 66,
+          "call": "node_winding"
+        },
+        {
+          "line": 66,
+          "call": "node_winding"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/v043/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/v044/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/v046/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/v050/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/v051/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/prior_our_v052/v052/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/v053/engines/braid.py",
+          "sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+        },
+        {
+          "path": "research/v054/engines/braid.py",
+          "sha256": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae"
+        },
+        {
+          "path": "research/v055/engines/braid.py",
+          "sha256": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae"
+        }
+      ],
+      "distinct_source_hashes": 2,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "E4",
+      "source": "research/incoming_partner_v054/v023_code/transfer.py",
+      "source_sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+      "log_claim": "v029 \u00a74: obstruction transfer and blocked Euler readout",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v029.md",
+          "sha256": "d3404f35e84835432c5c5fddfe344821352e69ccb8ef2ed82d6ac78b432b3fcb"
+        }
+      ],
+      "consumer": "Defines its own Euler routine and a local frame() that takes HR.real without a reality guard. A fix in euler.real_frame does not repair this local function.",
+      "disposition": "v029 explicitly withholds an Euler-class conclusion because the relevant bundle is not isolated; it also warns that the 21-point gap grid misses U nodes. The printed raw Euler numbers are not adopted as valid invariants by that entry.",
+      "call_sites": [
+        {
+          "line": 31,
+          "call": "euler"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/transfer.py",
+          "sha256": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a"
+        }
+      ],
+      "distinct_source_hashes": 1,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    },
+    {
+      "id": "E5",
+      "source": "research/incoming_partner_v054/v023_code/flat_e2.py",
+      "source_sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+      "log_claim": "v032\u2013v033 revise the earlier prediction e2=0 to undefined for the nonorientable flat pair",
+      "logs": [
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v032.md",
+          "sha256": "9afac63422ef5eb1ecdf68d42e415ae18fe98e1e0ec5e29417d3c56a76c7aa3b"
+        },
+        {
+          "path": "research/incoming_partner_v054/TWISTRONICS_LOG_v033.md",
+          "sha256": "e3599dfd37557e0cb7a30f34f622a24b70461db26a82bc6f9aaae6c00aef887c"
+        }
+      ],
+      "consumer": "Defines a separate Euler routine and prints winding, closure and minimum determinant. These diagnostics are not enforced as an acceptance gate inside that routine.",
+      "disposition": "The logs already reject e2=0 as the endpoint statement and use per-band w1. This is a preserved correction, not a newly discovered label change.",
+      "call_sites": [
+        {
+          "line": 11,
+          "call": "m.find_nodes"
+        },
+        {
+          "line": 24,
+          "call": "euler"
+        }
+      ],
+      "retained_copies": [
+        {
+          "path": "research/incoming_partner_v054/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        },
+        {
+          "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/flat_e2.py",
+          "sha256": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0"
+        }
+      ],
+      "distinct_source_hashes": 1,
+      "attribution": "contextual code/parameter/log agreement; not original execution provenance"
+    }
+  ],
+  "sources": {
+    "research/incoming_partner_v054/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/run_baseline_convergence.py": "0f89ada2d48b42a9c6c4fc96d08f382a0dfc16348724cc710f0338ddfe6ff49a",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v023.md": "2964898b2d7dd2e16132cf2d2b65a5e2156acc0c1ac44e98d99d75ceb6b72a59",
+    "research/incoming_partner_v054/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/run_scalar_sweep.py": "d119aceec5ba39f96f07a1e4a1533440013520611471942dc824168903fa1586",
+    "research/incoming_partner_v054/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/lowergap_check.py": "50e8f96463b17da298315a8f6baaf90ce3b534aa8298a28ca2552e8082a57000",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v035.md": "35ed11a149e6d4bf12e5297bb5967080c34889f98b858056c350fc66c4d16fe9",
+    "research/incoming_partner_v054/v023_code/euler.py": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/v043/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/v044/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/v046/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/v050/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/prior_our_v051/v051/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/prior_our_v052/v052/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/v053/engines/euler.py": "4af64c1f67169295d86554e9fd3dff20d2a7974b2d2d9f90a81426821f6aa7c9",
+    "research/v054/engines/euler.py": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974",
+    "research/v055/engines/euler.py": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974",
+    "research/incoming_partner_v054/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/nodewind.py": "55cdc737fb0571f698a866a4aa6410f30865baa3a81d03466db79aaff22695d3",
+    "research/incoming_partner_v054/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/v043/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/v044/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/v046/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/v048/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/v050/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/prior_our_v051/v051/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/prior_our_v052/v052/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/v053/engines/braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "research/v054/engines/braid.py": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae",
+    "research/v055/engines/braid.py": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v024.md": "bc9c9883f71b887e7cfe2ad29f6961af969ae0283201e074d52a3eab26bf5baf",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v034.md": "5fa66939ce249685bc201f401da0cb44a26ef9abca7c657e6d01eafc0f2c39e2",
+    "research/incoming_partner_v054/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/transfer.py": "74ce2dddd86655e76ff8ad26f075b9a5a952063534a5c2a0effa8d931951158a",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v029.md": "d3404f35e84835432c5c5fddfe344821352e69ccb8ef2ed82d6ac78b432b3fcb",
+    "research/incoming_partner_v054/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/incoming_v049/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/incoming_v047/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/incoming_v045/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/team_v039/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/team_v041/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/team_v043/v023_code/flat_e2.py": "32295e9b4218acef1c69899c789e6f83206cae935ef6a6a9cf17d1c86437d0a0",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v032.md": "9afac63422ef5eb1ecdf68d42e415ae18fe98e1e0ec5e29417d3c56a76c7aa3b",
+    "research/incoming_partner_v054/TWISTRONICS_LOG_v033.md": "e3599dfd37557e0cb7a30f34f622a24b70461db26a82bc6f9aaae6c00aef887c",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/engines/numerical_gate.py": "5f6ba0bd59c9ca802194d708f1048923027a651a554ca81411fddf93d3bff113",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/engines/bm_strain.py": "2a0f64bd63bbfa867e85d82b86556ab91fd02d170f77df96757b7ea56556b89c",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/engines/tbg_ref.py": "5503229a4b1e921fdd2740328038e5a579d9a69c1e15b5ca19e31f7d5c645208",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/engines/independent_model.py": "1d803d518b8ff4df76bc7740d9a91af6da1535c03de3764c9f5238f89195f585",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/sources/input_manifest.json": "cce1b10201c899fdf300562fda47c1c633e13ccb53ffb6436a0c1a04bbdf83f0",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/sources/v035_endpoint_gaps_N4.json": "f248052a8277c632074b600040508d78a63fdb8dc8ab52d7ac134948ceda02ee"
+  },
+  "retained_v035_endpoint": {
+    "path": "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/sources/v035_endpoint_gaps_N4.json",
+    "sha256": "f248052a8277c632074b600040508d78a63fdb8dc8ab52d7ac134948ceda02ee",
+    "lower_gap": 22.537986131952522,
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "provenance_engine_checks": {
+      "numerical_gate.py": true,
+      "bm_strain.py": true,
+      "independent_measurement.py": true,
+      "tbg_ref.py": true,
+      "independent_model.py": true
+    },
+    "limit": "A saved endpoint replay record; no original Euler run record is inferred from it."
+  },
+  "search": {
+    "scope": "preserved repository manifest paths only",
+    "euler_key_json_hits": [
+      "audits/v053/evidence-checks.json",
+      "research/prior_our_v052/prior_our_v051/prior_our_v050/v050/provenance/inventory.json",
+      "research/v056/results/legacy_trace.json"
+    ],
+    "baseline_scalar_euler_nodewind_stdout_names": []
+  },
+  "limits": [
+    "Retained snapshots need not be the exact source present when an early log was written.",
+    "No original v023 execution timestamp/source/runtime binding was recovered. v034 declares different Python/NumPy/SciPy versions; retained v035 endpoint direct versions match this session but do not specify its full native build.",
+    "Log text and code presence do not prove execution or scientific correctness.",
+    "Sibling exploratory drivers and arbitrary ZIP contents were not comprehensively traced. No claim that every historical consumer or conclusion is cleared."
+  ]
+}
