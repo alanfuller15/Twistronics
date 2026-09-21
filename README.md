@@ -1,22 +1,24 @@
 # Twistronics research
 
-Current batch: **our v056 — campaign evidence map and historical helper probe**. Start with the [team share](research/v056/TEAM_SHARE_v056.md), [claim map](research/v056/CLAIM_MAP.md), [report](research/v056/REPORT.md), [summary](research/v056/SUMMARY.json) and [reproduction instructions](research/v056/README.md).
+Current batch: **our v057 — historical consumers and controlled re-refinement replay**. Start with the [team share](research/v057/TEAM_SHARE_v057.md), [report](research/v057/REPORT.md), [attribution ledger](research/v057/ATTRIBUTION.md), [summary](research/v057/SUMMARY.json) and [reproduction instructions](research/v057/README.md).
 
-The selected primary campaign families have 80 checked case records across eleven canonical batches. All 331 frozen source/anchor checks and 528 saved frame-file hashes match; 44 paired-root joins agree within 4.4e-14. Superseded and corroborating records remain separate. This is saved-evidence reconciliation with explicit historical gate differences, not a fresh numerical replay of the whole campaign.
+The historical kinetic='none' baseline and endpoint lower-gap recipes now reproduce at N4/N6 with both the defective and repaired BM.refine helpers. All 28 recorded calls return supported values; six calls reach the wrapped second attempt, covering three seed/cutoff cases repeated under both helpers. No root, gap or bandwidth value changes. All observed first/final optimizer attempts succeed, so broader historical impact involving a failed second attempt remains unresolved.
 
-A targeted source review corrects the blanket historical no-consumer claim: gated_rerun.py asserts BM.refine's success field. Five controlled N4, kinetic='none' recipes produce identical roots, values, windings and labels with the defective and repaired helpers. All ten refinements per variant finish on the first attempt, so the faulty second-attempt branch and broader historical conclusion impact remain unverified by this probe.
+The endpoint lower gaps are 22.537986131952 meV (N4) and 22.691984750071 meV (N6), reproducing the recorded v035 correction. Separate baseline Euler calculations pass the retained numerical gate at 24×40 and 32×56 meshes, returning e2=-1 at both cutoffs. These are finite sampled checks for a declared historical model, not a global isolation proof or physical-bilayer validation.
 
-**63 tests passed in source/input/environment-bound run `20260921T015037Z_b66bc326`.** Report publication verifies that run and rechecks the saved outputs. Prior tracked campaign, audit and partner evidence is preserved; the prior top-level README is retained in v056 provenance.
+**62 tests passed in source/input/environment-bound run `20260921T023426Z_a4ce516a`**, including forced optimizer failures and corrupted-evidence rejection. Numerical workers also record matching before/after runtime identities. Publication rechecks the saved measurements, source-to-log attribution and test evidence. Prior tracked campaign, audit and partner evidence is preserved.
 
-Prior [v055 lower unlink fold](research/v055/REPORT.md) contains the two-engine N4/N6 event replay and its 65-test bound run. Its [handoff addendum](research/v055/ADDENDUM_v055.md) corrects the coarse-versus-refined gap attribution without changing any numerical result. Prior [v054 audit repairs](research/v054/REPORT.md) reproduced 76 preparation states with zero label/root/gap changes and zero calls to eleven instrumented legacy interfaces. Its 61-test run is separate historical evidence.
+The attribution ledger records eight consumer relationships. Legacy transfer.py and flat_e2.py define their own Euler routines; repairs in euler.py alone do not gate them. The logs already withhold invalid Euler conclusions for nonisolated/nonorientable bundles and correct the earlier e2=0 prediction. Other historical sweeps and braid detours are not cleared by this batch.
+
+Prior [v056](research/v056/REPORT.md) reconciles 80 selected campaign case records across eleven batches and identifies the success-field consumer. Prior [v055](research/v055/REPORT.md) contains the modern-model lower unlink fold and its [handoff correction](research/v055/ADDENDUM_v055.md). Prior [v054](research/v054/REPORT.md) contains audit repairs and the instrumented 76-state preparation replay. Their test runs remain separately labeled historical evidence.
 
 ## Layout
 
-- `research/v056/`: claim map, historical trace, controlled probe, new tests and publication records.
-- `research/v055/`: lower unlink event and partner reconciliation.
-- `research/incoming_partner_v054/`: preserved latest partner files.
-- `research/v054/`, `research/v053/`, `research/prior_our_v052/`: prior versioned evidence.
-- `audits/v053/`: [original inspection audit](audits/v053/twistronics_v053_audit.md) and separately recorded responses.
+- `research/v057/`: current numerical probes, source-to-log ledger, tests and frozen publication records.
+- `research/v056/`, `research/v055/`, `research/v054/`: previous checked batches.
+- `research/incoming_partner_v054/`: preserved latest partner delivery.
+- `research/v053/`, `research/prior_our_v052/`: earlier versioned campaign evidence.
+- `audits/v053/`: original inspection audit and recorded responses.
 - `research/MANIFEST.json` and `RELEASE.json`: original v053 import provenance, unchanged.
 
-The [next bounded sequence](research/v056/NEXT_SEQUENCE.md) attributes remaining historical consumers to outputs, then addresses the physical acceptance target, microscopic tunnelling strain law and a separately planned N>6/reference comparison. No continuous-path proof, infinite-cutoff bound, comprehensive security clearance or physical-bilayer validation is claimed. No new license or third-party permissions are assigned by this snapshot.
+The [next bounded sequence](research/v057/NEXT_SEQUENCE.md) is an N8 endpoint-gap comparison under the modern lab_nn_full model in both engines, with explicit edge seeds and comparison to the supplied N8 record. A physical acceptance target, microscopic tunnelling strain law and independent validation remain necessary before physical magnitude claims. No complete security clearance, continuous-path proof, infinite-cutoff bound or new license is claimed.
