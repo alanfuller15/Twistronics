@@ -1,0 +1,45 @@
+{
+  "parameters": {
+    "gamma": -24.8,
+    "v_meV_A": -4300.0,
+    "M": 3.7,
+    "Mf": 4380.0,
+    "strain": 0.0015,
+    "poisson": 0.16,
+    "U1": 58.0,
+    "U2": 2.3,
+    "W3": 50.2,
+    "J": 16.4,
+    "cpp": -3362.0
+  },
+  "Q_range": [
+    0,
+    1.2
+  ],
+  "Q_count": 61,
+  "grid_n": 25,
+  "extent": 0.8,
+  "refine_grid_n": 41,
+  "refine_extent": 1.0,
+  "scope": "Projected one-spin nu=-2 spectrum and finite-domain nodes; no quaternion-charge or complete Figure 5 replication claim",
+  "source": "https://arxiv.org/html/2502.08700v2",
+  "references": [
+    "Eq73/74/85 projection",
+    "Eq77 axis spectrum",
+    "Eq87 Gamma spectrum",
+    "Eq23 approximate thresholds"
+  ],
+  "acceptance": {
+    "spectral_error_meV": 1e-10,
+    "node_gap_meV": 1e-07,
+    "refined_position_shift": 1e-06,
+    "expected_probe_counts": [
+      2,
+      0,
+      2,
+      2,
+      0,
+      2
+    ]
+  }
+}

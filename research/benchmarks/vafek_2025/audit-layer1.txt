@@ -1,0 +1,16 @@
+AUDIT LAYER 1 — mechanical sweep of v067-benchmark/twistronics_v067_cleanup3
+  stack: python  |  tests: not-run (use --run-tests to execute; SAFE DEFAULT is no execution)
+  1411 code files, 67923 LOC, 175 test files, 0 fixture files
+  FLAGS: 0 secret(s), 817 untested file(s), 16 TODO/FIXME
+
+  RISK-RANKED (Layer 2 deep-reads the top of this list, not the whole repo):
+    risk=17  audits/v053/audit-plugin/audit-main/src/audit.py python  16todo 878loc
+    risk= 4  audits/v053/audit-plugin/audit-main/src/tool_quality_weighting.py python  no-test 0todo 367loc
+    risk= 4  research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038/engines/numerical_gate.py [research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/prior_v040/our_v038] python  no-test 0todo 345loc
+    risk= 4  research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/v044/provenance/baseline_v041_bm.py [research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/v044] python  no-test 0todo 275loc
+    risk= 4  research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/v046/provenance/prior_bm_strain.py [research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/v046] python  no-test 0todo 280loc
+    risk= 3  audits/v053/verify_evidence.py     python  no-test 0todo 106loc
+    risk= 3  audits/v053/audit-plugin/audit-main/examples/sample_c/demo.c c/cpp   no-test 0todo 26loc
+    risk= 3  audits/v053/audit-plugin/audit-main/src/audit_html_report.py python  no-test 0todo 189loc
+    risk= 3  audits/v053/audit-plugin/audit-main/src/cppcheck_xml_to_sarif.py python  no-test 0todo 29loc
+    risk= 3  audits/v053/audit-plugin/audit-main/src/audit_dedup_display.py python  no-test 0todo 95loc
