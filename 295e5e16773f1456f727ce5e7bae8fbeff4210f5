@@ -1,0 +1,170 @@
+{
+  "version": "our_v060",
+  "status": "BOUNDED_N8_BRAID2_WINDOW_COMPLETE",
+  "numerical_plan_sha256": "48c0789e7e5824c2d49c38a2ae211939af0d02be45ce5bca7df2eaf508014be9",
+  "state": {
+    "A": 0.0,
+    "B": -0.4,
+    "T": -0.8,
+    "phi": 80.0,
+    "ratio": 0.99,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "ratios": [
+    0.99,
+    0.99025,
+    0.9905,
+    0.99075,
+    0.991
+  ],
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 8,
+      "dimension": 1060,
+      "crossing_ratio": 0.9907661311878196,
+      "crossing_t": 0.19649881190306578,
+      "crossing_external_gap": 7.389644451905042e-13,
+      "crossing_tolerance_difference": 4.3303138852479606e-12,
+      "states": 5,
+      "roots": 30,
+      "coarse_checks": 2,
+      "labels": [
+        "SAME",
+        "SAME",
+        "SAME",
+        "SAME",
+        "OPPOSITE"
+      ],
+      "temporal_charges": [
+        1,
+        1
+      ],
+      "frame_checkpoints": 5,
+      "min_comparison_gap": 0.001588573218214151,
+      "min_comparison_overlap": 0.9856141089626321,
+      "loop_retry_stages": 0,
+      "seconds": 502.2329957485199
+    },
+    {
+      "engine": "ref_lab",
+      "N": 8,
+      "dimension": 1060,
+      "crossing_ratio": 0.9907687907886084,
+      "crossing_t": 0.19650106801981218,
+      "crossing_external_gap": 7.389644451905042e-13,
+      "crossing_tolerance_difference": 4.328759573013485e-12,
+      "states": 5,
+      "roots": 30,
+      "coarse_checks": 2,
+      "labels": [
+        "SAME",
+        "SAME",
+        "SAME",
+        "SAME",
+        "OPPOSITE"
+      ],
+      "temporal_charges": [
+        -1,
+        -1
+      ],
+      "frame_checkpoints": 5,
+      "min_comparison_gap": 0.001850483212805898,
+      "min_comparison_overlap": 0.9856140209657435,
+      "loop_retry_stages": 0,
+      "seconds": 500.7053678035736
+    }
+  ],
+  "cutoff_comparisons": [
+    {
+      "engine": "bm_lab",
+      "N4_saved_ratio": 0.9905387373261566,
+      "N6_saved_ratio": 0.9907661313477584,
+      "N8_fresh_ratio": 0.9907661311878196,
+      "N8_minus_N6": -1.5993872892750005e-10,
+      "common_states": [
+        {
+          "ratio": 0.99,
+          "N6_label": "SAME",
+          "N8_label": "SAME",
+          "max_node_displacement": 2.3929194918841537e-09
+        },
+        {
+          "ratio": 0.991,
+          "N6_label": "OPPOSITE",
+          "N8_label": "OPPOSITE",
+          "max_node_displacement": 1.8468080833238864e-09
+        }
+      ]
+    },
+    {
+      "engine": "ref_lab",
+      "N4_saved_ratio": 0.99054139817297,
+      "N6_saved_ratio": 0.9907687909485474,
+      "N8_fresh_ratio": 0.9907687907886084,
+      "N8_minus_N6": -1.5993906199440744e-10,
+      "common_states": [
+        {
+          "ratio": 0.99,
+          "N6_label": "SAME",
+          "N8_label": "SAME",
+          "max_node_displacement": 2.3957062283373353e-09
+        },
+        {
+          "ratio": 0.991,
+          "N6_label": "OPPOSITE",
+          "N8_label": "OPPOSITE",
+          "max_node_displacement": 1.8478043958665054e-09
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "results/bm_lab_N8/step_000/frames.npz": "5a14cb854814b2d799344c36547183f13392f4ca7fd812c1f830560fb3f51a61",
+    "results/bm_lab_N8/step_000/record.json": "e07c1c263e0263175ec74ab474fdb679373bbea343af2f7ccdde1a337e05d542",
+    "results/bm_lab_N8/step_001/frames.npz": "33cae37c851e13217ce956a5ed41708da31ed5b5f85854cdaa987bebe74bc729",
+    "results/bm_lab_N8/step_001/record.json": "c6dc8f1905b2852ae019ff5d0976a44b2c8d396290321593ccbcee6afc0a526c",
+    "results/bm_lab_N8/step_002/frames.npz": "825f021ccb4719f872afd91547db4d5ac0c538ac47c990754f20172fef7d1399",
+    "results/bm_lab_N8/step_002/record.json": "f65949de61abc8fd93d7327e7b84620ccdfdf7f3343894784c40f8b33277031b",
+    "results/bm_lab_N8/step_003/frames.npz": "71d7f428068b51724ee14eb926b85a02841a860efb213a773319bab65e25892b",
+    "results/bm_lab_N8/step_003/record.json": "6e80639c1ee7311e5f9a2f6f43d9c3e1d8c324e4e4429d6a8f07cea762541022",
+    "results/bm_lab_N8/step_004/frames.npz": "a03aac73f1242e986cee15e516f28e59d1d1dcb8331db7b73c9f98662659b5a6",
+    "results/bm_lab_N8/step_004/record.json": "66aa93b187fa52ac44c64bef7210f46a6b6b8fa78880487462be5bc21150c638",
+    "results/ref_lab_N8/step_000/frames.npz": "3fa81223546bc6c19e6f84ae49b3ed5eeeaa6bca9940e51a7f71a1ae6bc44b3a",
+    "results/ref_lab_N8/step_000/record.json": "a19d503a3fb21baed4cf1de217a989edf98a575990f2fe37135d5c1070f71526",
+    "results/ref_lab_N8/step_001/frames.npz": "9ecf71feab64d21beb833506365987f2b7f88036f8aea22ff713e995679a5398",
+    "results/ref_lab_N8/step_001/record.json": "3fd2fe7240679d0970748a23a01d196c231908c6217cc0f1a3beef225c1de59e",
+    "results/ref_lab_N8/step_002/frames.npz": "814f4658271588aeb423cce2faf2ffbdf7a6e7bf6a1691ee1771d0ca1bc1213f",
+    "results/ref_lab_N8/step_002/record.json": "41b234baf20174354e74ed292c444826bd84f71b6b2c9dfe1eba9499158f25a5",
+    "results/ref_lab_N8/step_003/frames.npz": "b076e291e4fcc6d987ca0f16dccea16e01256fce2f34095bb60046faf2fca37f",
+    "results/ref_lab_N8/step_003/record.json": "cfa0a4c00c56c4efc3d790f0855bc22947ac83a998099723d46c362faff36508",
+    "results/ref_lab_N8/step_004/frames.npz": "d4ad19d99d639bb6c6cff298f394d8863af55dd69fb3229268ff5adbf174a37a",
+    "results/ref_lab_N8/step_004/record.json": "af7c00d39fa00382c5d9ece09e8270dbb2d635a066fcd52c22301cff5e5870bb",
+    "results/second_bm_lab_N8.json": "d91324d3634895455a0260988dcc52b72b1ac6228609ebbe57672360ac2ba22f",
+    "results/second_ref_lab_N8.json": "90bed1b2232129b6ab979e77ffb73aed3e127493c1ca502f751a6f89ed7f31cc"
+  },
+  "max_abs_N8_N6_crossing_shift": 1.5993906199440744e-10,
+  "cross_engine_N8_ratio_difference": -2.659600788712524e-06,
+  "limits": [
+    "Five finite states per engine cover ratio 0.99000 to 0.99100, not the full historical 0.99 to 1.00 braid-2 leg, a continuous interval or the entire N8 campaign.",
+    "The spatial comparison changes SAME to OPPOSITE; the two temporally carried individual charges remain constant. At the crossing the spatial comparison loses isolation and is rejected.",
+    "Retained v042 accepted results; held-state linkage is contextual through replay_second.py -> models.State, not embedded in the old raw records. N4/N6 are not freshly executed in v060.",
+    "The engines share this measurement harness and a constant-tunnelling lab_nn_full approximation; BM linear and reference exact reciprocal geometry remain distinct.",
+    "Located gap minima, frame overlaps and mesh/radius agreement are finite numerical evidence, not global gap bounds or an independent scientific reference.",
+    "This does not extend the flat-pair frame path, Euler class, endpoint w1, first-annihilation event or all connecting legs to N8. Infinite-cutoff accuracy, microscopic tunnelling strain dependence and physical validation remain open.",
+    "Source/test/result hashes establish internal consistency, not independent authenticity, chronology or physical truth."
+  ],
+  "protocol_sha256": "4d5eaf43edd1a6313a2f4670a39de7731f31527da557f816d89b5b5a167abec2",
+  "tests": {
+    "passed": 67,
+    "run_id": "20260921T034451Z_53fc8635",
+    "started_utc": "2026-09-21T03:44:51.802361+00:00",
+    "record_sha256": "72a0d83b5a0cfdd0f7d1dce86d64ff04b36fa3074f691fac82c81088409727d6",
+    "source_and_input_files": 46
+  },
+  "test_evidence": "provenance/test_runs/20260921T034451Z_53fc8635/result.json",
+  "impact_sha256": "bad0ab58d48aaccb7b2ea471435c95485285d45bfd9ef33d36a550511ab1731f"
+}

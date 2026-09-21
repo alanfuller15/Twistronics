@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "version": "our_v060_braid2_N8",
+  "frozen_utc": "2026-09-21T03:35:50.527269+00:00",
+  "model_root": "research/v055",
+  "inputs": {
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/results/second_bm_lab_N4.json": "55c12496dc8ddfb3ccb7f5a59b69dafed29ec658b46387b9eb8dbabfe726b26d",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/results/second_bm_lab_N6.json": "864ccd6c99b6dce4cbb51d5067a9e6ffdeee609a6c3076a6bfd033ba231ae94d",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/results/second_ref_lab_N4.json": "b5bda51bf861724ad2f071faf4b068790727d4d647656a09b6370414082fb171",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/results/second_ref_lab_N6.json": "d8aa60f428ebfbed801ff26b99d3e49a822a8fb70ef39122bf68dc99f1ef8ee5",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/models.py": "93613ce79ccb7e6aa148fb64142bdacdeefb6ef25323914ef3628b79593240a3",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/replay_second.py": "3cdc9de20d964ee3f8ea7ac4db0d988eb1fe032399995c01538d5a97724306ea",
+    "research/prior_our_v052/prior_our_v051/prior_our_v050/prior_our_v048/prior_our_v046/prior_our_v044/prior_our_v043/prior_v042/v042/PLAN.json": "794aa1a2ed302bbaedb97aaceea35bb6e68af054a5beec0d737cda623963cc2a",
+    "research/v055/models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "research/v055/measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "research/v055/checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "research/v055/engines/bm_strain.py": "fee8a2a2e0e83a77b25b894b6858ae57c84142ef4c7db5ae0b2f9e5f14599d63",
+    "research/v055/engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "research/v055/engines/knobs.py": "568960187c9e0098fa981f49bdf1384190cfb0877fdda08aca163ba9e14cf952",
+    "research/v055/engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "research/v060/HISTORICAL_TARGETS.json": "10039c70bfd4a1f0f6c74cf3084ed12088e8af4459047c98eb33205dc5fddc65"
+  },
+  "runner_sha256": {
+    "run_window.py": "62f617c86dede066fff8b6027e2da2001690b0d9d8e7dcae2c67580dcfd9b065",
+    "numerics.py": "996939cecbd03a65219b85c8c3cf3e3c954b2692e8d0b66f89bb29b3663ef5a2",
+    "transport.py": "318f0f4a692b40d9f1ba3741948b16c086a6909485c46aa924ad03b72b47345b",
+    "evidence.py": "7c54d5b3470bf5dc09c361a90c6155029ab7f479698d1e1e86e6339d29b312ee",
+    "test_evidence.py": "4e706a8a547aac764355d2c766610beff272f8db4ceb26431b9fcf32fe6e9366"
+  },
+  "engines": [
+    "bm_lab",
+    "ref_lab"
+  ],
+  "cutoffs": [
+    8
+  ],
+  "case": "braid2_critical_window",
+  "kinetic": "lab_nn_full",
+  "state": {
+    "A": 0.0,
+    "B": -0.4,
+    "T": -0.8,
+    "phi": 80.0,
+    "ratio": 0.99,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "geometry": {
+    "bm_lab": "linear",
+    "ref_lab": "exact"
+  },
+  "cutoff_tol": {
+    "bm_lab": 1e-06,
+    "ref_lab": 1e-09
+  },
+  "box": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.1
+    ]
+  ],
+  "ratios": [
+    0.99,
+    0.99025,
+    0.9905,
+    0.99075,
+    0.991
+  ],
+  "node_indices": {
+    "U1": 4,
+    "U2": 4,
+    "X1": 5,
+    "X2": 5,
+    "X3": 5,
+    "X4": 5
+  },
+  "radius": 0.006,
+  "loop_meshes": [
+    [
+      64,
+      128,
+      128
+    ],
+    [
+      256,
+      512,
+      512
+    ]
+  ],
+  "spatial_steps": [
+    128,
+    256
+  ],
+  "coarse_stride": 2,
+  "crossing_bracket": [
+    0.9905,
+    0.991
+  ],
+  "crossing_xtols": [
+    1e-10,
+    5e-12
+  ],
+  "max_root_jump": 0.035,
+  "minimum_separation": 0.003,
+  "max_workers": 2,
+  "seeds": {
+    "bm_lab": {
+      "U1": [
+        0.5313090054369709,
+        0.7676194861084757
+      ],
+      "U2": [
+        0.4675176734782921,
+        1.0128274685515493
+      ],
+      "X1": [
+        0.51314994012382,
+        0.818479230731246
+      ],
+      "X2": [
+        0.47370872750835663,
+        0.8338994526927032
+      ],
+      "X3": [
+        0.5596746779086409,
+        0.6174112904602154
+      ],
+      "X4": [
+        0.2612971255617776,
+        0.965209737813495
+      ]
+    },
+    "ref_lab": {
+      "U1": [
+        0.5313086936801513,
+        0.7676191184985522
+      ],
+      "U2": [
+        0.46751828189865463,
+        1.0128268921109382
+      ],
+      "X1": [
+        0.5131258018992777,
+        0.8184903743474833
+      ],
+      "X2": [
+        0.47374402832965856,
+        0.8338872758885713
+      ],
+      "X3": [
+        0.5596793802252762,
+        0.6174103835934841
+      ],
+      "X4": [
+        0.2612924037627595,
+        0.9652153280845338
+      ]
+    }
+  },
+  "scope": "Five states per engine over ratio .99000 to .99100; six continued roots, two spatial meshes with located exterior minima, three loop/radius trials, two coarse/fine frame checks and one crossing solve at two tolerances. No full historical .99 to 1.00 N8 replay or physical validation.",
+  "rejection_policy": "Preserve all completed checkpoints, rejected attempts and failures. No numerical source, threshold or bracket change during a run. Phase-only loop retry uses the declared second mesh. Reject singular comparison specifically for selected-group isolation loss. Historical labels and roots are comparisons, not forced optimizer targets."
+}
