@@ -1,0 +1,205 @@
+{
+  "status": "ACCEPT",
+  "pilot": false,
+  "step": 8,
+  "protocol_sha256": "46afff62966a9a6c5ae9a96d2d3c3b513045f93b63778d4f3570f76239483435",
+  "engine": "ref_lab",
+  "N": 4,
+  "geometry": "exact",
+  "kinetic": "lab_nn_full",
+  "cutoff_tol": 1e-09,
+  "state": {
+    "A": 0.2,
+    "B": 0,
+    "T": 0,
+    "phi": 0,
+    "ratio": 0.8,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "leg": 1,
+  "leg_step": 8,
+  "varying": "A",
+  "nodes": [
+    {
+      "f": [
+        0.7745041218611841,
+        0.6506832999980457
+      ],
+      "gap": 7.887024366937112e-13,
+      "index": 3,
+      "nfev": 6
+    },
+    {
+      "f": [
+        0.5923718365734505,
+        0.7995048785868237
+      ],
+      "gap": 3.836930773104541e-13,
+      "index": 3,
+      "nfev": 5
+    }
+  ],
+  "node_jumps": [
+    0.005833572275630909,
+    0.0095973492950867
+  ],
+  "separation": 0.23520210797904897,
+  "basis_dimension": 196,
+  "temporal_transport": [
+    {
+      "min_overlap": 0.9987512097428448,
+      "old_norm_loss": 1.258142247095604e-16,
+      "new_norm_loss": 6.662897477739637e-16,
+      "old_dimension": 196,
+      "new_dimension": 196,
+      "common_dimension": 196,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "min_overlap": 0.9988058210119904,
+      "old_norm_loss": 7.176686684180228e-16,
+      "new_norm_loss": 1.0293136090450956e-15,
+      "old_dimension": 196,
+      "new_dimension": 196,
+      "common_dimension": 196,
+      "removed": 0,
+      "added": 0
+    }
+  ],
+  "parameter_mesh_check": {
+    "orientation": [
+      0.9999999999999987,
+      1.0000000000000007
+    ],
+    "transport": [
+      {
+        "min_overlap": 0.9944957618217407,
+        "old_norm_loss": 1.185037185678858e-17,
+        "new_norm_loss": 6.662897477739637e-16,
+        "old_dimension": 196,
+        "new_dimension": 196,
+        "common_dimension": 196,
+        "removed": 0,
+        "added": 0
+      },
+      {
+        "min_overlap": 0.9949252150539051,
+        "old_norm_loss": 9.682984395531123e-16,
+        "new_norm_loss": 1.0293136090450956e-15,
+        "old_dimension": 196,
+        "new_dimension": 196,
+        "common_dimension": 196,
+        "removed": 0,
+        "added": 0
+      }
+    ]
+  },
+  "spatial_transport": [
+    {
+      "min_overlap": 0.9999709730821347,
+      "min_external_gap": 26.10004381717367,
+      "samples": 144,
+      "located_gap_minima": [
+        {
+          "t": 0.4038222995180164,
+          "gap": 36.882110107949636,
+          "gap_index": 2
+        }
+      ]
+    },
+    {
+      "min_overlap": 0.9999927431424942,
+      "min_external_gap": 26.10004381717367,
+      "samples": 272,
+      "located_gap_minima": [
+        {
+          "t": 0.403822273500514,
+          "gap": 36.88211010794998,
+          "gap_index": 2
+        }
+      ]
+    }
+  ],
+  "spatial_mesh_determinant": 1.0000000000000007,
+  "temporal_trials": [
+    {
+      "radius": 0.004,
+      "points": 64,
+      "a": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.3248772460898905,
+        "max_phase_step": 0.23444131993222367,
+        "min_chart_overlap": 0.9998071211901989
+      },
+      "b": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.40013162418457465,
+        "max_phase_step": 0.23057927527854294,
+        "min_chart_overlap": 0.9998629552143761
+      },
+      "label": "SAME"
+    },
+    {
+      "radius": 0.004,
+      "points": 128,
+      "a": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.32408061931202786,
+        "max_phase_step": 0.11736054707915126,
+        "min_chart_overlap": 0.9998071211901989
+      },
+      "b": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.3980804160265025,
+        "max_phase_step": 0.11551324002411022,
+        "min_chart_overlap": 0.9998627393386871
+      },
+      "label": "SAME"
+    },
+    {
+      "radius": 0.002,
+      "points": 128,
+      "a": {
+        "winding": -1.0000000000000002,
+        "charge": -1,
+        "min_loop_gap": 0.162953323129763,
+        "max_phase_step": 0.11680777592481356,
+        "min_chart_overlap": 0.9999523518922511
+      },
+      "b": {
+        "winding": -1.0,
+        "charge": -1,
+        "min_loop_gap": 0.19973798109330687,
+        "max_phase_step": 0.1153882238970847,
+        "min_chart_overlap": 0.9999663062633493
+      },
+      "label": "SAME"
+    }
+  ],
+  "rejected_loop_stages": [],
+  "rectangle_orientation": 1,
+  "spatial_direct_charge": {
+    "winding": -1.0,
+    "charge": -1,
+    "min_loop_gap": 0.3980804160265026,
+    "max_phase_step": 0.11551324002411001,
+    "min_chart_overlap": 0.9998627393386874
+  },
+  "label": "SAME",
+  "diagnostics": {
+    "max_eigen_residual": 4.2407336599378467e-16,
+    "max_reality": 5.684263005305233e-14,
+    "max_hermitian": 0.0
+  },
+  "sampled_points": 855,
+  "seconds": 2.4655327796936035,
+  "frames_sha256": "c20aa02f1bb94b5347602f220bfd093d852c7ae3e10e3539246959cfd3a9f167"
+}
