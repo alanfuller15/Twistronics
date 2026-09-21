@@ -1,0 +1,114 @@
+{
+  "version": "our_v055",
+  "frozen_utc": "2026-09-21T00:50:28.872929+00:00",
+  "scope": "lower unlink fold, bounded roots and finite full-chart opening",
+  "kinetic": "lab_nn_full",
+  "engines": {
+    "bm_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "linear",
+      "cutoff_tol": 1e-06
+    },
+    "ref_lab": {
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "cutoff_tol": 1e-09
+    }
+  },
+  "cutoffs": [
+    4,
+    6
+  ],
+  "case": "lower_unlink",
+  "gap_index": 2,
+  "T_window": [
+    0.0,
+    -0.4
+  ],
+  "held": {
+    "A": 0.2,
+    "B": -0.4,
+    "phi": 0.0,
+    "ratio": 0.8,
+    "eps": 0.003,
+    "theta": 1.05,
+    "w_kappa": 0.0
+  },
+  "chart": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "root_states": 9,
+  "charge_stations": 2,
+  "open_stations": 2,
+  "open_grids": [
+    18,
+    24
+  ],
+  "boundary_grids": [
+    24,
+    48
+  ],
+  "fold_offset": 0.001,
+  "root_join_tolerance": 1e-06,
+  "max_workers": 2,
+  "N4_before_N6": true,
+  "source_sha256": {
+    "BASELINE.json": "e93f86d4d6559be914ed9027276c077d997a20ae126d73d25332b373af89cb73",
+    "ENVIRONMENT.txt": "9627042657cc3aa8157abc64f130d81da9e16e09ec379ca441e13b9fb21608c6",
+    "METHOD.md": "7b57ef92666e8c2133865d669effc37088e2f9ca60e46cf0c7d143231a232697",
+    "NEXT_SEQUENCE.md": "73de73cf6da7f3b6d20df19c7d1aeec484f88ef69698fa0eb37b30a6bfce9b13",
+    "README.md": "d80b42f86fb0c7c0d578ba8e42125deffe1afa5dc07b80692ede3b94468b6452",
+    "RECONCILIATION.md": "2b78609b0c5310eddf633e3f6002ab7b009840b623a81a0806826488252cf7c9",
+    "_test_worker.py": "84cd059172e78e29cfa41208ed06abd7e799aa3d8ced48d9f655d4c031e71a46",
+    "boundary_audit.py": "379491707c7ea3c9f5a0b07b01c547f42b2cd886a1b9872cd0fe3728c075210d",
+    "build_report.py": "4a1fcda07225b72d2fc26102d109926f98fd7b08b79841ad34d72f4afe79b927",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "engines/bm_strain.py": "fee8a2a2e0e83a77b25b894b6858ae57c84142ef4c7db5ae0b2f9e5f14599d63",
+    "engines/braid.py": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae",
+    "engines/euler.py": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "568960187c9e0098fa981f49bdf1384190cfb0877fdda08aca163ba9e14cf952",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "fold_character.py": "51f6778cc6d04175960e9f4b6aecc11aacf65d47b89475d17c5624ff6eb0fe6d",
+    "ledger_guard.py": "7f862f6a4a24b68125786c46bb778af552aacfc63b529330437e476d86f4d198",
+    "local_domain.py": "609f4e254530019d06a95805322aed8526a9f5c782b0f0dc924fb8f7627d1199",
+    "lower_case.py": "c26cc57c7fc7de4c893ed8a2c8c04c35d91a4a3b32d5194e08c68e7b0c3d0a78",
+    "lower_fold.py": "2dd6828cec94f7256c021590c87a21f726eeb3851872d14590f7ea8528532718",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "package_release.py": "19a0660dd86be12ca110ef61cbd5a0f16ebdddab41d19cbb0bab96afd535411f",
+    "pair_measure.py": "ab3228a021d91f312103341ca7bbb9a4bdd723dd1b15e81287083da94fced4a8",
+    "pilot_unlink.py": "cd1c6c5d2506c678f234b021776eeeb7ed719338e6ac54f7fb606fd050ae2765",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "requirements.txt": "6884886b345a698ac877c5995ca871a47f09913a0a831a94132adac752d36a89",
+    "run_tests.py": "a45ea02a35d4f1bdc1793c36b7a09154292b959b988a86592efcd264b0f27e32",
+    "run_unlink.py": "4f9484bb9d450db3414a2f35528822ae9b1d6be9ed429896c72f9bbf361c55c1",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "test_evidence.py": "2adc67c72bcc6c2b07d3921e415ebeeb0578f2110186972021c3af2ac11420cb",
+    "tests/test_evidence_binding.py": "638353611adc0a33ad1e9026f06656c0b73ff828ec1279989a6606065e5f29d0",
+    "tests/test_fold_normal_form.py": "e89b2de34892a9f6cbf9c044090a560a3bf918bd842e19071714e3206d38b46c",
+    "tests/test_legacy_guards.py": "64abe2f565f517f09d0621be43642bc2744b9944ba36027cf74abf57c6cf93e7",
+    "tests/test_optimizer_metadata.py": "c0aec9fa3e257432ed1ef1f6adc805b97e3447508f516b33655e5e21441eb9b4",
+    "tests/test_packaging_contract.py": "444d95a37274b5af3d5c1efe1de18a02fbca34d58dca037dd7a56509196ad533",
+    "tests/test_unlink_acceptance.py": "5adb987f8b678a9b767d34a093f14cdfc4d0f8484af29b6a426bcfe643232c8f",
+    "unlink_acceptance.py": "ab38f55c16e1ee8f08f9ddd6b2207480ec56cccd9ba06600b6f4aecf853c4176"
+  },
+  "anchor_sha256": {
+    "anchors/unlink_bm_lab_N4.json": "eaf6f447b31d0bffb777b268dd8d02ec783fd95e8d31355955ed9eed110469bc",
+    "anchors/unlink_bm_lab_N6.json": "53504818b7bd73b21c5a8e23128144cb6cec9d4d8626184c70a9344ce0304a80",
+    "anchors/unlink_ref_lab_N4.json": "c0a87d98cc18d8f67b119446fb7cada0b4ff27b9c5795aefab1a04c8ecd6f4d3",
+    "anchors/unlink_ref_lab_N6.json": "360e63bdfb4c20cc4a8b95e6cc8f87bb3bd2f251d3ddf40a518b1b27d079f684",
+    "provenance/anchor_sources.json": "7956c444fb767372c461463ed31d557c6a11f6b6223cd3eb9511caec91bcf86e",
+    "provenance/incoming_partner_v054.zip": "619fc1b091fd6510872099b124cd5da2f6de570625b1741fe6beb21275c870ae",
+    "provenance/pilot_bm_lab_N4.json": "abd5d55338da1463d206d29e66025c293844a02a62f9ba5e06a586a79d485306",
+    "provenance/pilot_ref_lab_N4.json": "7ca47f92e0003cf181beea6d0e8f77f45fb4c068f4c8b6c0b9efdbb9c69aac49"
+  }
+}

@@ -1,0 +1,87 @@
+# Historical ledger tables (formatter output of ledger.py; superseded by the team LEDGER.md from v048)
+
+Numbers are read from the recorded JSON summaries named on the command line; acceptance status, schema and hashes are not validated by this script. Model tag as recorded in each summary.
+
+## v044 (team): braid 1 → deepening → un-linking
+
+| engine | geometry | N | states | center crossing B* | shifted-path B* | final label | min param overlap | min spatial overlap |
+|---|---|---:|---:|---:|---:|---|---:|---:|
+| bm_lab | linear | 4 | 37 | -0.2901737962 | -0.2799795363 | OPPOSITE | 0.994310 | 0.985820 |
+| bm_lab | linear | 6 | 37 | -0.2901702643 | -0.2799791809 | OPPOSITE | 0.994305 | 0.985738 |
+| ref_lab | exact | 4 | 37 | -0.2901753967 | -0.2799809816 | OPPOSITE | 0.994310 | 0.985819 |
+| ref_lab | exact | 6 | 37 | -0.2901718633 | -0.2799806247 | OPPOSITE | 0.994305 | 0.985740 |
+
+Cross-engine: N=4: max node diff 3.44e-06, labels agree True, ref−bm center root -1.60e-06; N=6: max node diff 3.44e-06, labels agree True, ref−bm center root -1.60e-06
+
+## v043 (team): v028 → annihilation window; post-transfer → braid-2 window
+
+| case | engine | N | states | labels | min pair sep | min param overlap | max basis loss | min spatial overlap | min spatial ext. gap (meV) |
+|---|---|---:|---:|---|---:|---:|---:|---:|---:|
+| pre_ann | bm_lab | 4 | 19 | OPPOSITE | 0.0193 | 0.898280 | 5.30e-04 | 0.993025 | 1.58841 |
+| pre_ann | bm_lab | 6 | 19 | OPPOSITE | 0.0192 | 0.898285 | 4.20e-08 | 0.996132 | 1.54267 |
+| pre_ann | ref_lab | 4 | 19 | OPPOSITE | 0.0193 | 0.898284 | 5.30e-04 | 0.993032 | 1.58838 |
+| pre_ann | ref_lab | 6 | 19 | OPPOSITE | 0.0192 | 0.898288 | 4.20e-08 | 0.996132 | 1.54264 |
+| post_ann | bm_lab | 4 | 21 | SAME | 0.2533 | 0.986560 | 5.13e-05 | 0.985534 | 0.05313 |
+| post_ann | bm_lab | 6 | 21 | SAME | 0.2534 | 0.986615 | 4.92e-10 | 0.987001 | 0.07547 |
+| post_ann | ref_lab | 4 | 21 | SAME | 0.2533 | 0.986560 | 5.13e-05 | 0.985534 | 0.05339 |
+| post_ann | ref_lab | 6 | 21 | SAME | 0.2534 | 0.986615 | 4.92e-10 | 0.987001 | 0.07573 |
+
+## v042: braid-2 window; first-annihilation window; gapped checkpoints
+
+| engine | N | braid-2 crossing ratio | first-annihilation B_tau |
+|---|---:|---:|---:|
+| bm_lab | 4 | 0.990538737 | -0.713373536 |
+| bm_lab | 6 | 0.990766131 | -0.713301013 |
+| ref_lab | 4 | 0.990541398 | -0.713386736 |
+| ref_lab | 6 | 0.990768791 | -0.713314259 |
+
+Cross-engine: N=4: braid diff 2.66e-06, annihilation diff -1.32e-05, max gapped-checkpoint diff 3.24e-04 meV, labels agree True; N=6: braid diff 2.66e-06, annihilation diff -1.32e-05, max gapped-checkpoint diff 3.24e-04 meV, labels agree True
+
+## v046 (team): post-braid-2 cleanup and upper collision
+
+cleanup states 68, root-continuation states 36, fold windows 4; cleanup labels ['OPPOSITE']; loop fallbacks cleanup/fold 0/0; min param overlap 0.972557, min spatial overlap 0.985724, min sampled path gap 0.31412 meV, max node jump 3.12e-02
+
+| engine | N | upper-annihilation ratio | node | cleanup join | just-open gap | far-open gap |
+|---|---:|---:|---|---:|---:|---:|
+| bm_lab | 4 | 1.0206603966 | [0.6192358258674359, 0.8996157914915908] | 6.12e-15 | 0.05672 | 3.80249 |
+| bm_lab | 6 | 1.0194793307 | [0.6202123323605482, 0.8982858949929912] | 3.08e-15 | 0.05656 | 3.82775 |
+| ref_lab | 4 | 1.0206664403 | [0.6192329235010291, 0.8996182679710357] | 1.10e-14 | 0.05672 | 3.80224 |
+| ref_lab | 6 | 1.0194854044 | [0.6202094062926795, 0.8982884017822069] | 1.59e-15 | 0.05656 | 3.82750 |
+
+Endpoint local gaps (team three-start probe):
+
+| gap | N6 | N8 | difference | minimiser shift |
+|---|---:|---:|---:|---:|
+| lower | 23.181348 | 23.181387 | 3.95e-05 | 5.72e-07 |
+| flat | 2.776726 | 2.776652 | -7.46e-05 | 3.87e-07 |
+| upper | 3.392498 | 3.392534 | 3.59e-05 | 5.51e-07 |
+| next | 10.856087 | 10.856087 | -3.01e-07 | 1.22e-08 |
+
+Sampled tunnelling sensitivity (team gate): kappa 0.0: remote gap 4.9709 meV (+0.000%), SAME; kappa 5.0: remote gap 5.3378 meV (+7.381%), SAME; kappa -5.0: remote gap 4.6215 meV (-7.030%), SAME
+
+## v047 anchors (mine): preparation leg A: 0 → 0.2 at B=T=0 (fixed-parameter, N=4)
+
+| A | flat pair label (bm / ref) | root diff | min remote gap (meV) | upper nodes (bm) |
+|---:|---|---:|---:|---|
+| 0.00 | SAME / SAME | 8.7e-12 | 4.9709 | 0 |
+| 0.05 | SAME / SAME | 1.1e-12 | 4.0295 | 0 |
+| 0.10 | SAME / SAME | 1.8e-12 | 1.9860 | 0 |
+| 0.14 | SAME / SAME | 1.8e-12 | 0.0000 | 2 |
+| 0.16 | SAME / SAME | 1.4e-12 | 0.0000 | 2 |
+| 0.20 | SAME / SAME | 1.9e-12 | 0.0000 | 2 |
+## v049 anchors (mine): flat-birth and final-annihilation windows (fixed-parameter, N=4, bm exact / ref)
+
+| window | ratio | A | bm roots | sep | label | ref root diff |
+|---|---:|---:|---|---:|---|---:|
+| flat_birth | 1.100 | -0.35 | (0.68048, 0.96618) (0.68196, 0.87264) | 0.0936 | OPPOSITE | 7.8e-13 |
+| flat_birth | 1.080 | -0.35 | (0.68135, 0.94509) (0.67919, 0.88473) | 0.0604 | OPPOSITE | 9.8e-12 |
+| flat_birth | 1.060 | -0.35 | (0.68001, 0.92294) (0.68001, 0.92294) | 0.0000 | None | 6.6e-13 |
+| flat_birth | 1.050 | -0.35 | (0.67735, 0.90829) (0.67735, 0.90829) | 0.0000 | None | 5.8e-08 |
+| final_ann | 1.100 | -0.35 | (0.68048, 0.96618) (0.68196, 0.87264) | 0.0936 | OPPOSITE | 7.8e-13 |
+| final_ann | 1.100 | -0.34 | (0.6796, 0.95599) (0.68091, 0.88364) | 0.0724 | OPPOSITE | 1.1e-12 |
+| final_ann | 1.100 | -0.33 | (0.67868, 0.94493) (0.67969, 0.89533) | 0.0496 | OPPOSITE | 1.5e-12 |
+| final_ann | 1.100 | -0.32 | (0.67779, 0.93003) (0.67824, 0.91068) | 0.0194 | OPPOSITE | 1.3e-11 |
+| final_ann | 1.100 | -0.31 | (0.67659, 0.92037) (0.67659, 0.92037) | 0.0000 | None | 2.4e-08 |
+
+
+Coverage status is NOT computed here (v050): see the team COVERAGE.json. Preparation rows above are provisional candidates (brackets / extrapolations), not gate-accepted events.
