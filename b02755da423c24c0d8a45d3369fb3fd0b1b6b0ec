@@ -1,0 +1,244 @@
+{
+  "version": "our_v059",
+  "status": "BOUNDED_N8_LOWER_UNLINK_COMPLETE",
+  "numerical_plan_sha256": "52a1f2f7f5885fa11cb4f116391fec193affff6c6b930de6607c7fb973523711",
+  "state": {
+    "A": 0.2,
+    "B": -0.4,
+    "T": 0,
+    "phi": 0,
+    "ratio": 0.8,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 8,
+      "dimension": 796,
+      "geometry": "linear",
+      "fold_parameter": -0.3121541970572391,
+      "fold_f": [
+        0.6662066365501995,
+        0.6319341395192138
+      ],
+      "fold_external_gap": 33.16417171542218,
+      "fold_derivative_difference": 2.942091015256665e-13,
+      "normal_form_coefficient": 0.25150206636356803,
+      "root_states": 11,
+      "separation_law": [
+        {
+          "offset": 0.0040000000000000036,
+          "separation": 0.03161433486627331,
+          "predicted_squared_separation": 0.001006008265454273,
+          "observed_to_predicted_ratio": 0.993496975480162,
+          "relative_error": 0.006503024519837974
+        },
+        {
+          "offset": 0.0010000000000000009,
+          "separation": 0.015845887255064528,
+          "predicted_squared_separation": 0.00025150206636356825,
+          "observed_to_predicted_ratio": 0.998370099024319,
+          "relative_error": 0.0016299009756810534
+        },
+        {
+          "offset": 0.00024999999999997247,
+          "separation": 0.007927791063093407,
+          "predicted_squared_separation": 6.287551659088508e-05,
+          "observed_to_predicted_ratio": 0.9995921234176373,
+          "relative_error": 0.0004078765823627428
+        }
+      ],
+      "charges": [
+        {
+          "T": 0,
+          "label": "OPPOSITE",
+          "root_join": 0.0,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "min_comparison_gap": 12.582391630834602,
+          "min_overlap": 0.9997347236138152
+        },
+        {
+          "T": -0.3111541970572391,
+          "label": "OPPOSITE",
+          "root_join": 1.6512864750560404e-14,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "min_comparison_gap": 32.89387074522046,
+          "min_overlap": 0.9999997838269805
+        }
+      ],
+      "openings": [
+        {
+          "T": -0.3131541970572391,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 0.05221747408969435,
+          "mesh_difference": 3.836930773104541e-13,
+          "boundary_minimum": 61.38315144333521,
+          "boundary_mesh_difference": 6.679101716144942e-13,
+          "optimizer_attempts": 62,
+          "fallback_attempts": 7,
+          "sampled_points": 1911
+        },
+        {
+          "T": -0.4,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 4.780530700291989,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 64.76235386763334,
+          "boundary_mesh_difference": 1.9895196601282805e-13,
+          "optimizer_attempts": 54,
+          "fallback_attempts": 0,
+          "sampled_points": 1731
+        }
+      ],
+      "seconds": 397.8121757507324
+    },
+    {
+      "engine": "ref_lab",
+      "N": 8,
+      "dimension": 796,
+      "geometry": "exact",
+      "fold_parameter": -0.31214914420825235,
+      "fold_f": [
+        0.6662070935359576,
+        0.631933035734202
+      ],
+      "fold_external_gap": 33.164003993715326,
+      "fold_derivative_difference": 4.384270724244743e-13,
+      "normal_form_coefficient": 0.25149821129799577,
+      "root_states": 11,
+      "separation_law": [
+        {
+          "offset": 0.0040000000000000036,
+          "separation": 0.03161409139568028,
+          "predicted_squared_separation": 0.001005992845191984,
+          "observed_to_predicted_ratio": 0.9934969016441565,
+          "relative_error": 0.006503098355843506
+        },
+        {
+          "offset": 0.0010000000000000009,
+          "separation": 0.01584576540615893,
+          "predicted_squared_separation": 0.000251498211297996,
+          "observed_to_predicted_ratio": 0.9983700480856018,
+          "relative_error": 0.0016299519143981867
+        },
+        {
+          "offset": 0.00024999999999997247,
+          "separation": 0.007927730124272673,
+          "predicted_squared_separation": 6.287455282449202e-05,
+          "observed_to_predicted_ratio": 0.9995920781931731,
+          "relative_error": 0.00040792180682691637
+        }
+      ],
+      "charges": [
+        {
+          "T": 0,
+          "label": "OPPOSITE",
+          "root_join": 0.0,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "min_comparison_gap": 12.582555968938948,
+          "min_overlap": 0.9997347346212585
+        },
+        {
+          "T": -0.31114914420825235,
+          "label": "OPPOSITE",
+          "root_join": 2.0740974864503768e-14,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "min_comparison_gap": 32.893704740969184,
+          "min_overlap": 0.999999783826806
+        }
+      ],
+      "openings": [
+        {
+          "T": -0.31314914420825235,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 0.05221718775024087,
+          "mesh_difference": 3.552713678800501e-14,
+          "boundary_minimum": 61.38322926575908,
+          "boundary_mesh_difference": 1.1368683772161603e-13,
+          "optimizer_attempts": 68,
+          "fallback_attempts": 13,
+          "sampled_points": 2258
+        },
+        {
+          "T": -0.4,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 4.780792736646317,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 64.76261686095629,
+          "boundary_mesh_difference": 5.684341886080802e-14,
+          "optimizer_attempts": 57,
+          "fallback_attempts": 3,
+          "sampled_points": 1789
+        }
+      ],
+      "seconds": 421.03545331954956
+    }
+  ],
+  "cutoff_comparisons": [
+    {
+      "engine": "bm_lab",
+      "N4_saved_fold": -0.31229815648103443,
+      "N6_saved_fold": -0.3121542064362122,
+      "N8_fresh_fold": -0.3121541970572391,
+      "N8_minus_N6_fold": 9.378973098161936e-09,
+      "N6_minus_N4_fold": 0.0001439500448222053,
+      "initial_N8_N6_root_distance": 1.1777693462617601e-10,
+      "near_open_gap_N6_saved": 0.052217470652287545,
+      "near_open_gap_N8_fresh": 0.05221747408969435,
+      "near_open_gap_difference": 3.437406803641352e-09,
+      "far_open_gap_N6_saved": 4.780529759497947,
+      "far_open_gap_N8_fresh": 4.780530700291989,
+      "far_open_gap_difference": 9.407940417816008e-07,
+      "charge_labels_match_saved": true
+    },
+    {
+      "engine": "ref_lab",
+      "N4_saved_fold": -0.3122931033029228,
+      "N6_saved_fold": -0.3121491535872318,
+      "N8_fresh_fold": -0.31214914420825235,
+      "N8_minus_N6_fold": 9.378979426433176e-09,
+      "N6_minus_N4_fold": 0.00014394971569103854,
+      "initial_N8_N6_root_distance": 1.1777714144280361e-10,
+      "near_open_gap_N6_saved": 0.05221718433582012,
+      "near_open_gap_N8_fresh": 0.05221718775024087,
+      "near_open_gap_difference": 3.4144207461395126e-09,
+      "far_open_gap_N6_saved": 4.780791795861104,
+      "far_open_gap_N8_fresh": 4.780792736646317,
+      "far_open_gap_difference": 9.407852132881089e-07,
+      "charge_labels_match_saved": true
+    }
+  ],
+  "input_sha256": {
+    "results/lower_unlink_bm_lab_N8.json": "df1a72ee6057fe77dd394c6b6dcf3af96ef9607031b48551b35b730d0deedc07",
+    "results/lower_unlink_ref_lab_N8.json": "2281d984b72e61d017dfb8cae7d8567b85548c92fbc8b89677eadb5a16f79571"
+  },
+  "max_abs_N8_N6_fold_shift": 9.378979426433176e-09,
+  "cross_engine_N8_fold_difference": -5.05284898677516e-06,
+  "limits": [
+    "N8 is fresh; N4/N6 are hashed retained v055 evidence. Near-event charge/opening stations use each cutoff's own fold offset, not identical absolute T.",
+    "This covers one N8 event with finite root, loop, transport and gap samples, not the complete N8 campaign or a continuous-interval proof.",
+    "Positive finite chart/edge searches do not certify a global zero count; square-root agreement and derivative refinement are local numerical evidence.",
+    "Both engines share the measurement harness and constant-tunnelling lab_nn_full approximation; BM linear and reference exact reciprocal geometry are kept distinct.",
+    "Absolute charge is not transported through the collision. The flat-pair frame path, Euler class and endpoint w1 are not remeasured here.",
+    "Infinite-cutoff accuracy, microscopic tunnelling strain dependence, physical-bilayer validation and remaining historical consumer impact are not established."
+  ]
+}
