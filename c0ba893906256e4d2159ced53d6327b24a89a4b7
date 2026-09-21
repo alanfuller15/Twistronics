@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "status": "CONTROLLED_COMPARISON_COMPLETE",
+  "impact_plan_sha256": "9d90bad6ced24509e147dd3c4d279f81c502340175ed5bd6869c442f2339ed5e",
+  "cases": [
+    {
+      "recipe": "v026_B_-0.25",
+      "old_label": "SAME",
+      "new_label": "SAME",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v026_B_-0.3",
+      "old_label": "OPPOSITE",
+      "new_label": "OPPOSITE",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v029_pre_ann",
+      "old_label": "OPPOSITE",
+      "new_label": "OPPOSITE",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v031_ratio_0.99",
+      "old_label": "SAME",
+      "new_label": "SAME",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    },
+    {
+      "recipe": "v031_ratio_1.0",
+      "old_label": "OPPOSITE",
+      "new_label": "OPPOSITE",
+      "label_changed": false,
+      "max_coordinate_change": 0.0,
+      "max_value_change": 0.0,
+      "max_winding_change": 0.0
+    }
+  ],
+  "label_changes": 0,
+  "calls_by_variant": {
+    "defective": 10,
+    "repaired": 10
+  },
+  "second_attempt_calls_by_variant": {
+    "defective": 0,
+    "repaired": 0
+  },
+  "scope": "Controlled old-versus-repaired BM.refine at five historical kinetic=none N4 charge recipes. Not a byte-identical replay of the original environment or a fresh modern scientific acceptance certificate.",
+  "limits": [
+    "The original historical runtime was not reproduced.",
+    "The five recipes use the retained v041 engine, N4 and kinetic=none; this is separate from the modern lab_nn_full campaign.",
+    "The historical recipe assertion is exercised, but its winding gate does not provide all modern isolation/refinement guarantees.",
+    "Absence of a second attempt in this probe cannot exclude its use in other historical runs.",
+    "Zero changes here do not establish that every recorded historical conclusion was unaffected."
+  ],
+  "record_sha256": {
+    "legacy_defective.json": "0bc591f499f15c8078e1bafb0f3fd506193f13131fcd2f028fd3ccd5676d4069",
+    "legacy_repaired.json": "daf3b58f83b7ef3286e6c7b258a94c3dfd2b0c73f0cb7ecc3a1835f541878a76"
+  }
+}
