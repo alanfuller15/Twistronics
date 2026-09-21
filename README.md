@@ -1,22 +1,22 @@
 # Twistronics research
 
-Current batch: **our v058 — N8 endpoint gaps in both modern engines**. Start with the [team share](research/v058/TEAM_SHARE_v058.md), [report](research/v058/REPORT.md), [summary](research/v058/SUMMARY.json) and [reproduction instructions](research/v058/README.md).
+Current batch: **our v059 — the lower unlink event at N8 in both engines**. Start with the [team share](research/v059/TEAM_SHARE_v059.md), [report](research/v059/REPORT.md), [summary](research/v059/SUMMARY.json) and [reproduction instructions](research/v059/README.md).
 
-Both lab_nn_full engines pass the declared checks for all four endpoint gaps at N8. Fresh chart meshes, explicit edge searches and bounded multistart refinements reproduce the partner's four rounded N8 reference values. Across both engines, the largest difference from retained N6 gap measurements is **7.45902754e-05 meV**. The BM/reference N8 difference is at most **0.000320892265 meV** with their retained linear/exact reciprocal geometry conventions.
+Both lab_nn_full engines pass the bounded lower-unlink event checks at N8: an opposite-charge pair approaches a nondegenerate fold and positive lower-gap searches follow. The maximum fold-parameter change from retained N6 evidence is **9.37897943e-09**. At fixed T=-0.4 the gap changes by less than 1e-6 meV in each engine. Their linear/exact reciprocal geometry conventions remain explicit.
 
-The workers record 486 refinements and 514 optimizer attempts; 28 rejected attempts precede successful fallbacks. Both meshes agree, selected local minima pass stationarity and curvature checks, and runtime identities match before/after each run. These are finite sampled gap checks: no global-minimum certificate, infinite-cutoff error bound, N8 topology/path replay or physical-bilayer validation is claimed.
+There are 22 root-continuation states, four mesh/radius charge stations and four post-event chart/edge searches. Six near-fold checks reproduce the local square-root closing law within 0.6503%; the discrepancy decreases toward the fold. Positive finite gap searches and derivative refinement are sampled numerical evidence, not continuous-path or global root-count proofs.
 
-**58 assertion tests passed in source/input/environment-bound run `20260921T025546Z_b2dbd1e0`.** Report publication reconciles the stored numerical records and verifies actual collected/executed/JUnit test evidence. Prior files and the previous README are preserved. N4/N6 values and original partner output are explicitly historical evidence.
+**85 assertion tests passed in source/input/environment-bound run `20260921T031515Z_8e5cfaca`.** Reporting revalidates numerical records and reads actual collected/executed/JUnit test outcomes. Both numerical workers preserve matching before/after runtime identities. All earlier tracked evidence and the previous README are retained.
 
-Prior [v057](research/v057/REPORT.md) contains the historical kinetic='none' branch-exercised metadata comparison and [consumer attribution](research/v057/ATTRIBUTION.md); remaining scalar/mass/angle sweeps and exploratory braid detours are impact-unverified. [v056](research/v056/REPORT.md) reconciles 80 selected campaign case records. [v055](research/v055/REPORT.md) contains the modern-model lower unlink fold and its [handoff correction](research/v055/ADDENDUM_v055.md). [v054](research/v054/REPORT.md) contains audit repairs and the 76-state preparation replay. Their test runs remain separate historical evidence.
+Prior [v058](research/v058/REPORT.md) contains the N8 endpoint-gap comparison. [v057](research/v057/REPORT.md) contains the historical kinetic='none' optimizer comparison and [consumer attribution](research/v057/ATTRIBUTION.md). [v056](research/v056/REPORT.md) reconciles 80 selected campaign case records. [v055](research/v055/REPORT.md) contains the N4/N6 lower unlink replay and its [handoff correction](research/v055/ADDENDUM_v055.md). [v054](research/v054/REPORT.md) contains audit repairs and the 76-state preparation replay. Those test runs and numerical records remain separate historical evidence.
 
 ## Layout
 
-- `research/v058/`: current N8 workers, full optimizer records, tests and frozen plans.
-- `research/v057/`, `research/v056/`, `research/v055/`, `research/v054/`: earlier checked batches.
-- `research/incoming_partner_v054/`: preserved latest partner delivery.
-- `research/v053/`, `research/prior_our_v052/`: original versioned campaign evidence.
-- `audits/v053/`: inspection audit and recorded responses.
+- `research/v059/`: current N8 event records, frozen plans, gates, tests and handoff.
+- `research/v058/` through `research/v054/`: previous checked batches.
+- `research/incoming_partner_v054/`: preserved partner delivery.
+- `research/v053/`, `research/prior_our_v052/`: earlier versioned campaign evidence.
+- `audits/v053/`: inspection audit and responses.
 - `research/MANIFEST.json` and `RELEASE.json`: original v053 import provenance, unchanged.
 
-The [next bounded sequence](research/v058/NEXT_SEQUENCE.md) is a separately planned N8 continuation through one previously gated critical event. Physical magnitude claims require the inventor's intended acceptance target, a named microscopic tunnelling strain law and independent validation. No complete security clearance or new license is claimed.
+The [next bounded sequence](research/v059/NEXT_SEQUENCE.md) is the braid-2 critical window at N8. The complete N8 campaign, infinite-cutoff accuracy, remaining historical consumer impact and physical-bilayer validation remain open. Physical magnitude claims require the inventor's intended acceptance target and a microscopic tunnelling strain law. No complete security clearance or new license is claimed.
