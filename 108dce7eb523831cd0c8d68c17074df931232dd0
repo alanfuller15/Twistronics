@@ -1,0 +1,331 @@
+{
+  "recovery_plan_sha256": "0a40ad03a631be2a5a22fb864331bfe50424c36bc772b57257902a61e04a8b9b",
+  "version": "our_v061",
+  "status": "BOUNDED_N8_FIRST_ANN_COMPLETE",
+  "numerical_plan_sha256": "bcea3ca9fad481b858298514e24a6b4e47ef2eef6d6168cfe492295ed922f6b6",
+  "state": {
+    "A": 0.0,
+    "B": -0.4,
+    "T": -0.7,
+    "phi": 65.0,
+    "ratio": 0.8,
+    "theta": 1.05,
+    "eps": 0.003,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 8,
+      "dimension": 972,
+      "geometry": "linear",
+      "fold_parameter": -0.7133010080278004,
+      "fold_f": [
+        0.6362045957367728,
+        0.8356098646862434
+      ],
+      "fold_external_gap": 23.463191619268088,
+      "fold_derivative_difference": 2.856603842360528e-13,
+      "normal_form_coefficient": 0.025958154928587926,
+      "root_states": 11,
+      "separation_law": [
+        {
+          "offset": 0.0020000000000000018,
+          "separation": 0.0072421694258709216,
+          "predicted_squared_separation": 5.19163098571759e-05,
+          "observed_to_predicted_ratio": 1.0102609013874284,
+          "relative_error": 0.010260901387428412
+        },
+        {
+          "offset": 0.0010000000000000009,
+          "separation": 0.005107924979874168,
+          "predicted_squared_separation": 2.595815492858795e-05,
+          "observed_to_predicted_ratio": 1.0051137175118858,
+          "relative_error": 0.005113717511885829
+        },
+        {
+          "offset": 0.00024999999999997247,
+          "separation": 0.0025490818322245635,
+          "predicted_squared_separation": 6.489538732146267e-06,
+          "observed_to_predicted_ratio": 1.0012758156739334,
+          "relative_error": 0.0012758156739334225
+        }
+      ],
+      "charges": [
+        {
+          "T": -0.7,
+          "root_join": 0.0,
+          "label": "OPPOSITE",
+          "separation": 0.01922967670591691,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "rejected_stages": 0,
+          "min_comparison_gap": 21.62332085088611,
+          "min_overlap": 0.9999990956789649,
+          "sampled_points": 2309
+        },
+        {
+          "T": -0.7123010080278004,
+          "root_join": 0.0,
+          "label": "OPPOSITE",
+          "separation": 0.005107924979874168,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "rejected_stages": 0,
+          "min_comparison_gap": 22.8805674211628,
+          "min_overlap": 0.999999948641361,
+          "sampled_points": 2309
+        }
+      ],
+      "openings": [
+        {
+          "T": -0.7143010080278004,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 0.006770054280742954,
+          "mesh_difference": 3.552713678800501e-15,
+          "boundary_minimum": 20.00036310993766,
+          "boundary_mesh_difference": 3.730349362740526e-13,
+          "optimizer_attempts": 71,
+          "fallback_attempts": 17,
+          "newton_polishes": 3,
+          "sampled_points": 2590
+        },
+        {
+          "T": -0.74,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 0.16501243370959884,
+          "mesh_difference": 0.0,
+          "boundary_minimum": 19.840863251470967,
+          "boundary_mesh_difference": 1.1368683772161603e-13,
+          "optimizer_attempts": 62,
+          "fallback_attempts": 8,
+          "newton_polishes": 0,
+          "sampled_points": 2082
+        }
+      ],
+      "post_transfer": {
+        "T": -0.74,
+        "label": "SAME",
+        "separation": 0.2814467617010713,
+        "meshes": [
+          256,
+          512,
+          512
+        ],
+        "rejected_stages": 0,
+        "min_comparison_gap": 11.557530181570453,
+        "min_overlap": 0.9996534817733315,
+        "sampled_points": 2387
+      },
+      "recovery": {
+        "initial_status": "REJECT",
+        "initial_failure": "all optimizer attempts rejected",
+        "initial_result_sha256": "209359757b49e4fad2f0f88b2e85be129f34419e6dbfc91701605d57b3ddd8ab",
+        "recovery_status": "ACCEPT_RECOVERED_WITNESSES",
+        "recovery_result_sha256": "de1a716a5981ca5bad03fd847085ac62c6086996b3b6297e5a1151fd52460128",
+        "recovery_plan_sha256": "0a40ad03a631be2a5a22fb864331bfe50424c36bc772b57257902a61e04a8b9b",
+        "initial_seconds": 458.0339574813843,
+        "recovery_seconds": 543.1719148159027
+      },
+      "seconds": 1001.205872297287
+    },
+    {
+      "engine": "ref_lab",
+      "N": 8,
+      "dimension": 972,
+      "geometry": "exact",
+      "fold_parameter": -0.7133142542374,
+      "fold_f": [
+        0.636204428840186,
+        0.8356097681123501
+      ],
+      "fold_external_gap": 23.46301035610328,
+      "fold_derivative_difference": 3.043121310497554e-13,
+      "normal_form_coefficient": 0.025954250780254845,
+      "root_states": 11,
+      "separation_law": [
+        {
+          "offset": 0.0020000000000000018,
+          "separation": 0.007241626303733532,
+          "predicted_squared_separation": 5.190850156050974e-05,
+          "observed_to_predicted_ratio": 1.0102613241839535,
+          "relative_error": 0.010261324183953535
+        },
+        {
+          "offset": 0.0010000000000000009,
+          "separation": 0.005107541446182702,
+          "predicted_squared_separation": 2.595425078025487e-05,
+          "observed_to_predicted_ratio": 1.0051139539855334,
+          "relative_error": 0.0051139539855333815
+        },
+        {
+          "offset": 0.00024999999999997247,
+          "separation": 0.002548890251873684,
+          "predicted_squared_separation": 6.488562695062996e-06,
+          "observed_to_predicted_ratio": 1.0012759098467208,
+          "relative_error": 0.0012759098467207686
+        }
+      ],
+      "charges": [
+        {
+          "T": -0.7,
+          "root_join": 0.0,
+          "label": "OPPOSITE",
+          "separation": 0.01923848849744739,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "rejected_stages": 0,
+          "min_comparison_gap": 21.62252582247018,
+          "min_overlap": 0.9999990947304411,
+          "sampled_points": 2310
+        },
+        {
+          "T": -0.7123142542374,
+          "root_join": 3.0008375429864056e-13,
+          "label": "OPPOSITE",
+          "separation": 0.005107541446482767,
+          "meshes": [
+            256,
+            512,
+            512
+          ],
+          "rejected_stages": 0,
+          "min_comparison_gap": 22.88043218650735,
+          "min_overlap": 0.9999999486491221,
+          "sampled_points": 2313
+        }
+      ],
+      "openings": [
+        {
+          "T": -0.7143142542374,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 0.006769126643051848,
+          "mesh_difference": 1.8918200339612667e-13,
+          "boundary_minimum": 20.000293549933204,
+          "boundary_mesh_difference": 2.842170943040401e-14,
+          "optimizer_attempts": 62,
+          "fallback_attempts": 8,
+          "newton_polishes": 1,
+          "sampled_points": 2279
+        },
+        {
+          "T": -0.74,
+          "status": "ACCEPT_SAMPLED_GAP",
+          "gap": 0.16491370192722243,
+          "mesh_difference": 1.4566126083082054e-13,
+          "boundary_minimum": 19.840891487212783,
+          "boundary_mesh_difference": 4.298783551348606e-13,
+          "optimizer_attempts": 67,
+          "fallback_attempts": 13,
+          "newton_polishes": 0,
+          "sampled_points": 2268
+        }
+      ],
+      "post_transfer": {
+        "T": -0.74,
+        "label": "SAME",
+        "separation": 0.2814463301712284,
+        "meshes": [
+          256,
+          512,
+          512
+        ],
+        "rejected_stages": 0,
+        "min_comparison_gap": 11.557591746102762,
+        "min_overlap": 0.9996534893580008,
+        "sampled_points": 2374
+      },
+      "recovery": {
+        "initial_status": "REJECT",
+        "initial_failure": "selected minimum fails positive curvature",
+        "initial_result_sha256": "e69537aafbecb8aa6d7bc44f50911e7dde41023e1cbbf1a4a81a6f04dd1687fa",
+        "recovery_status": "ACCEPT_RECOVERED_WITNESSES",
+        "recovery_result_sha256": "d382e57ed714c744b8d63c1c70dc19d44998d2084ba14f9fb6a84f7fdaa74337",
+        "recovery_plan_sha256": "0a40ad03a631be2a5a22fb864331bfe50424c36bc772b57257902a61e04a8b9b",
+        "initial_seconds": 480.7018971443176,
+        "recovery_seconds": 534.493745803833
+      },
+      "seconds": 1015.1956429481506
+    }
+  ],
+  "cutoff_comparisons": [
+    {
+      "engine": "bm_lab",
+      "N4_saved_fold": -0.7133735360747707,
+      "N6_saved_fold": -0.7133010132154757,
+      "N8_fresh_fold": -0.7133010080278004,
+      "N8_minus_N6_fold": 5.187675289342053e-09,
+      "N6_minus_N4_fold": 7.252285929504332e-05,
+      "initial_N8_N6_root_distance": 1.8488865707739654e-09,
+      "near_open_gap_N6_saved": 0.0067700537258534865,
+      "near_open_gap_N8_fresh": 0.006770054280742954,
+      "near_open_gap_difference": 5.548894677076532e-10,
+      "far_open_gap_N6_saved": 0.16501238890712777,
+      "far_open_gap_N8_fresh": 0.16501243370959884,
+      "far_open_gap_difference": 4.480247106641855e-08,
+      "charge_labels_match_saved": true,
+      "post_transfer_label_N6_saved": "SAME",
+      "post_transfer_label_N8": "SAME",
+      "post_transfer_N8_N6_root_distance": 2.994071060423921e-10
+    },
+    {
+      "engine": "ref_lab",
+      "N4_saved_fold": -0.7133867357918164,
+      "N6_saved_fold": -0.7133142594263037,
+      "N8_fresh_fold": -0.7133142542374,
+      "N8_minus_N6_fold": 5.188903640096498e-09,
+      "N6_minus_N4_fold": 7.24763655127747e-05,
+      "initial_N8_N6_root_distance": 1.8481930639842254e-09,
+      "near_open_gap_N6_saved": 0.006769126087776911,
+      "near_open_gap_N8_fresh": 0.006769126643051848,
+      "near_open_gap_difference": 5.552749371418031e-10,
+      "far_open_gap_N6_saved": 0.16491365712491302,
+      "far_open_gap_N8_fresh": 0.16491370192722243,
+      "far_open_gap_difference": 4.480230941794616e-08,
+      "charge_labels_match_saved": true,
+      "post_transfer_label_N6_saved": "SAME",
+      "post_transfer_label_N8": "SAME",
+      "post_transfer_N8_N6_root_distance": 2.9939337542437925e-10
+    }
+  ],
+  "input_sha256": {
+    "results/first_ann_bm_lab_N8.json": "209359757b49e4fad2f0f88b2e85be129f34419e6dbfc91701605d57b3ddd8ab",
+    "results/first_ann_ref_lab_N8.json": "e69537aafbecb8aa6d7bc44f50911e7dde41023e1cbbf1a4a81a6f04dd1687fa",
+    "results/opening_diagnostic_bm_lab_N8.json": "5288ca499d5783a341fe0b8ebe59c4f9a73c284a002c5cb8981b636aa62d97ce",
+    "results/opening_diagnostic_ref_lab_N8.json": "3ad98ab85d65a943d8dae6346c81c1e6b553a19bef9d90e131ff685f95aa0aab",
+    "results/opening_recovery_bm_lab_N8.json": "de1a716a5981ca5bad03fd847085ac62c6086996b3b6297e5a1151fd52460128",
+    "results/opening_recovery_ref_lab_N8.json": "d382e57ed714c744b8d63c1c70dc19d44998d2084ba14f9fb6a84f7fdaa74337"
+  },
+  "max_abs_N8_N6_fold_shift": 5.188903640096498e-09,
+  "cross_engine_N8_fold_difference": 1.3246209599637737e-05,
+  "limits": [
+    "Both initial frozen runs were rejected at the opening gate. The accepted summary combines their unchanged fold/root/flat-pair evidence with separately planned, freshly measured opening and upper-pair recovery; original REJECT records are retained.",
+    "N4/N6 are retained accepted v042 records, not freshly run in v061. Their event definitions embed the held state; lab_nn_full engine linkage is verified through the retained models source. Historical opening searches used weaker edge and optimizer guards than v061.",
+    "Near-event charge/opening stations follow each cutoff own fold offset. The fixed T=-0.74 comparison uses the same parameter. Retained N4/N6 environments and numerical searches are not rerun here, so these differences are not an isolated error bound on cutoff alone.",
+    "Eleven root states, finite charge loops, sampled/located comparison gaps and chart/edge searches establish a bounded numerical event witness, not a continuous-interval or global node-count proof.",
+    "The upper pair is measured independently at T=-0.74. SAME there does not by itself prove a continuous transfer of topological charge across the collision.",
+    "Both engines share this measurement harness and constant-tunnelling lab_nn_full approximation. BM linear and reference exact reciprocal geometry are kept distinct.",
+    "Absolute charge is not transported through the collision. No new full N8 campaign, flat-pair frame path, Euler class or endpoint w1 is claimed.",
+    "Infinite-cutoff accuracy, microscopic tunnelling strain dependence, physical-bilayer validation and remaining historical consumer impact remain open. Source/test/result hashes are internal consistency evidence, not independent authenticity or physical truth."
+  ],
+  "protocol_sha256": "3342d276adf963f44821e541b32c858adb7c8b3b2240aad92042a5dc8d8bc82b",
+  "tests": {
+    "passed": 120,
+    "run_id": "20260921T041853Z_c108fe1d",
+    "started_utc": "2026-09-21T04:18:53.096268+00:00",
+    "record_sha256": "4929732d8840e5d41a7f53ddfedb6d18ff785e9c7290b21605b041407844936e",
+    "source_and_input_files": 38
+  },
+  "test_evidence": "provenance/test_runs/20260921T041853Z_c108fe1d/result.json",
+  "impact_sha256": "c2bcc42f2938b074929d791087f7fb88cfb9e8e6da83dbdf632b9b6caa14b6fd"
+}

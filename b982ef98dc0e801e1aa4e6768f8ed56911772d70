@@ -1,0 +1,46 @@
+{
+  "version": "our_v061_opening_recovery",
+  "frozen_utc": "2026-09-21T04:07:58.527689+00:00",
+  "source_sha256": {
+    "recovery/run_recovery.py": "0ec116422b1e09ead3d6093a317dbd895c2288787b5e8bb587a70412361d2032",
+    "recovery/search_recovery.py": "2a2f4ccff15f9bd51a754da1acf841a35d9213e6dee76d2840625f4715f78268",
+    "pair_measure.py": "2ef286e079964835c3cbd45d6a84e578fe0905a38d95f8e8e08b9a70d5d29f2f",
+    "transport.py": "318f0f4a692b40d9f1ba3741948b16c086a6909485c46aa924ad03b72b47345b",
+    "fold.py": "9aa8c52b0631743d7421243c78ab2ebf79564dbb1b6ad3ff2751b0b96bd4e07f",
+    "run_event.py": "51e5f3840393888db2b9974e9f54c5eb560d92c158abcb62f5887ebff25f387d",
+    "evidence.py": "7c54d5b3470bf5dc09c361a90c6155029ab7f479698d1e1e86e6339d29b312ee",
+    "test_evidence.py": "4e706a8a547aac764355d2c766610beff272f8db4ceb26431b9fcf32fe6e9366"
+  },
+  "input_sha256": {
+    "NUMERICAL_PLAN.json": "bcea3ca9fad481b858298514e24a6b4e47ef2eef6d6168cfe492295ed922f6b6",
+    "recovery/DIAGNOSTIC_PLAN.json": "2feb44ba3af1eae0dcdc7c3fbde805315bb1120fc224b086928f4a994b829b7a",
+    "results/first_ann_bm_lab_N8.json": "209359757b49e4fad2f0f88b2e85be129f34419e6dbfc91701605d57b3ddd8ab",
+    "results/first_ann_ref_lab_N8.json": "e69537aafbecb8aa6d7bc44f50911e7dde41023e1cbbf1a4a81a6f04dd1687fa",
+    "results/opening_diagnostic_bm_lab_N8.json": "5288ca499d5783a341fe0b8ebe59c4f9a73c284a002c5cb8981b636aa62d97ce",
+    "results/opening_diagnostic_ref_lab_N8.json": "3ad98ab85d65a943d8dae6346c81c1e6b553a19bef9d90e131ff685f95aa0aab"
+  },
+  "expected_rejections": {
+    "bm_lab": "all optimizer attempts rejected",
+    "ref_lab": "selected minimum fails positive curvature"
+  },
+  "thresholds": {
+    "nonworsening": 1e-07,
+    "value_consistency": 1e-08,
+    "projected_gradient": 0.0001,
+    "curvature_steps": [
+      1e-06,
+      5e-07
+    ],
+    "positive_gap": 1e-05,
+    "mesh_gap": 0.001,
+    "curvature_relative": 0.001,
+    "curvature_symmetry_relative": 0.001,
+    "newton_max_steps": 8,
+    "newton_jacobian_step": 1e-07,
+    "newton_trust_radius": 0.001,
+    "newton_line_steps": 8
+  },
+  "reuse": "Original frozen N8 fold, root and flat-pair charge measurements are retained unchanged, with exact rejected-result hashes and matching runtime required. Rerun both opening stations and the previously unmeasured upper pair in each engine.",
+  "scope": "Resolved opening searches and upper-pair checkpoints only. This is an explicitly separate recovery after diagnosis, not the original predeclared run. Original stationarity, positive-gap and positive-curvature gates are unchanged; use finer curvature derivatives and add resolution/asymmetry checks, plus bounded Newton gradient polishing after original optimizer fallbacks.",
+  "max_workers": 2
+}

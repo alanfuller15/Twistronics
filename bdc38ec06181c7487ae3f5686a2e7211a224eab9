@@ -1,0 +1,727 @@
+{
+  "collected": [
+    "tests/test_evidence_binding.py::test_matching_evidence_provides_measured_count",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[module.py]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[tests/test_case.py]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[requirements.txt]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[results/state.json]",
+    "tests/test_evidence_binding.py::test_changed_runtime_rejects_evidence",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[failed_exit]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[wrong_count]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[tampered_junit]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_artifact]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[skipped]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_call]",
+    "tests/test_evidence_binding.py::test_missing_evidence_stops_report_before_any_write",
+    "tests/test_evidence_binding.py::test_builder_checks_evidence_before_replay_claims",
+    "tests/test_fold.py::test_quadratic_normal_form_has_expected_separation",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[quartic]",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[no_parameter]",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[wrong_side]",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[nan]",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[incomplete]",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[mesh]",
+    "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[coefficient]",
+    "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values0]",
+    "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values1]",
+    "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values2]",
+    "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values3]",
+    "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values4]",
+    "tests/test_fold.py::test_root_records_current_optimizer_status",
+    "tests/test_fold.py::test_bad_root_attempt_is_retained[failed]",
+    "tests/test_fold.py::test_bad_root_attempt_is_retained[nonfinite]",
+    "tests/test_fold.py::test_bad_root_attempt_is_retained[unresolved]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[changed]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[missing]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[symlink]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[manifest]",
+    "tests/test_packaging.py::test_preservation_errors_rejected[escape]",
+    "tests/test_packaging.py::test_archive_deterministic_and_no_overwrite",
+    "tests/test_pair_guards.py::test_invalid_radius_rejected[0.0]",
+    "tests/test_pair_guards.py::test_invalid_radius_rejected[-0.01]",
+    "tests/test_pair_guards.py::test_invalid_radius_rejected[1.0]",
+    "tests/test_pair_guards.py::test_invalid_radius_rejected[nan]",
+    "tests/test_pair_guards.py::test_spatial_orientation_disagreement_rejects",
+    "tests/test_pair_guards.py::test_phase_only_retry_uses_declared_meshes",
+    "tests/test_pair_guards.py::test_other_failure_never_gets_phase_retry[unresolved loop gap]",
+    "tests/test_pair_guards.py::test_other_failure_never_gets_phase_retry[selected group loses isolation]",
+    "tests/test_pair_guards.py::test_other_failure_never_gets_phase_retry[projection/transport overlap too small]",
+    "tests/test_pair_guards.py::test_charge_mismatch_across_mesh_rejects",
+    "tests/test_pair_guards.py::test_both_exterior_minima_are_located",
+    "tests/test_pair_guards.py::test_failed_spatial_optimizer_is_rejected",
+    "tests/test_reconciliation.py::test_fresh_event_reconciles[bm_lab]",
+    "tests/test_reconciliation.py::test_fresh_event_reconciles[ref_lab]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[status]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[cutoff]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[state]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[plan]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[geometry]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[runtime]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_success]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_gap]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_rank]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_isolation]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[character]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[missing_state]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[root_gap]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[root_jump]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[law]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[charge_label]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[loop_mesh]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[loop_winding]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[transport_gap]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[radius]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[missing_open]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_value]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_optimizer]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_grid]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_edge]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_gradient]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_missing]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_label]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_index]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_T]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_seed]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_loop]",
+    "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[spatial_optimizer]",
+    "tests/test_recovery.py::test_polishing_resolves_stiff_stationarity_without_relaxing_gate",
+    "tests/test_recovery.py::test_underresolved_curvature_rejected_and_refinement_agrees",
+    "tests/test_recovery.py::test_stationary_saddle_is_not_a_positive_minimum",
+    "tests/test_recovery.py::test_newton_failure_is_retained",
+    "tests/test_recovery.py::test_newton_stencil_cannot_leave_chart",
+    "tests/test_recovery.py::test_curvature_resolution_guards[asymmetry]",
+    "tests/test_recovery.py::test_curvature_resolution_guards[disagreement]",
+    "tests/test_recovery.py::test_curvature_resolution_guards[missing]",
+    "tests/test_recovery.py::test_failed_curvature_retains_the_search_evidence",
+    "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[recovery_status]",
+    "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[initial_status]",
+    "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[initial_reason]",
+    "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[initial_hash]",
+    "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[recovery_plan]",
+    "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[runtime]",
+    "tests/test_recovery.py::test_recovery_preserves_original_acceptance_thresholds",
+    "tests/test_search.py::test_bounded_chart_search_recovers_near_edge_minimum",
+    "tests/test_search.py::test_invalid_chart_points_rejected[point0]",
+    "tests/test_search.py::test_invalid_chart_points_rejected[point1]",
+    "tests/test_search.py::test_invalid_chart_points_rejected[point2]",
+    "tests/test_search.py::test_invalid_chart_points_rejected[point3]",
+    "tests/test_search.py::test_nonfinite_objective_rejected",
+    "tests/test_search.py::test_projected_gradient_respects_inward_descent",
+    "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[failed]",
+    "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[nonfinite]",
+    "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[escaped]",
+    "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[stale_value]",
+    "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[not_stationary]",
+    "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[worsened]",
+    "tests/test_search.py::test_all_failed_attempts_are_retained",
+    "tests/test_search.py::test_unresolved_mesh_evidence_rejected[one_mesh]",
+    "tests/test_search.py::test_unresolved_mesh_evidence_rejected[negative]",
+    "tests/test_search.py::test_unresolved_mesh_evidence_rejected[nan]",
+    "tests/test_search.py::test_unresolved_mesh_evidence_rejected[mesh]",
+    "tests/test_search.py::test_unresolved_mesh_evidence_rejected[edge_mesh]",
+    "tests/test_search.py::test_edge_optimizer_failure_is_not_promoted"
+  ],
+  "calls": [
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_matching_evidence_provides_measured_count",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[module.py]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[tests/test_case.py]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[requirements.txt]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[results/state.json]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_runtime_rejects_evidence",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[failed_exit]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[wrong_count]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[tampered_junit]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_artifact]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[skipped]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_call]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_missing_evidence_stops_report_before_any_write",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_builder_checks_evidence_before_replay_claims",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_quadratic_normal_form_has_expected_separation",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[quartic]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[no_parameter]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[wrong_side]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[nan]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[incomplete]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_degenerate_or_inconsistent_fold_rejected[coefficient]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values0]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values1]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values2]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values3]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_separation_law_rejects_unresolved_or_wrong_scaling[values4]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_root_records_current_optimizer_status",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_bad_root_attempt_is_retained[failed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_bad_root_attempt_is_retained[nonfinite]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_fold.py::test_bad_root_attempt_is_retained[unresolved]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[changed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[missing]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[symlink]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[manifest]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_preservation_errors_rejected[escape]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging.py::test_archive_deterministic_and_no_overwrite",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_invalid_radius_rejected[0.0]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_invalid_radius_rejected[-0.01]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_invalid_radius_rejected[1.0]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_invalid_radius_rejected[nan]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_spatial_orientation_disagreement_rejects",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_phase_only_retry_uses_declared_meshes",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_other_failure_never_gets_phase_retry[unresolved loop gap]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_other_failure_never_gets_phase_retry[selected group loses isolation]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_other_failure_never_gets_phase_retry[projection/transport overlap too small]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_charge_mismatch_across_mesh_rejects",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_both_exterior_minima_are_located",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_pair_guards.py::test_failed_spatial_optimizer_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_fresh_event_reconciles[bm_lab]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_fresh_event_reconciles[ref_lab]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[status]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[cutoff]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[state]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[plan]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[geometry]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[runtime]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_success]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_gap]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_rank]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[fold_isolation]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[character]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[missing_state]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[root_gap]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[root_jump]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[law]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[charge_label]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[loop_mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[loop_winding]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[transport_gap]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[radius]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[missing_open]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_value]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_optimizer]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_grid]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_edge]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[open_gradient]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_missing]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_label]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_index]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_T]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_seed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[post_loop]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_reconciliation.py::test_corrupt_event_cannot_publish[spatial_optimizer]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_polishing_resolves_stiff_stationarity_without_relaxing_gate",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_underresolved_curvature_rejected_and_refinement_agrees",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_stationary_saddle_is_not_a_positive_minimum",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_newton_failure_is_retained",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_newton_stencil_cannot_leave_chart",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_curvature_resolution_guards[asymmetry]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_curvature_resolution_guards[disagreement]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_curvature_resolution_guards[missing]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_failed_curvature_retains_the_search_evidence",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[recovery_status]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[initial_status]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[initial_reason]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[initial_hash]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[recovery_plan]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_incomplete_or_mismatched_recovery_cannot_promote_original[runtime]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_recovery.py::test_recovery_preserves_original_acceptance_thresholds",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_bounded_chart_search_recovers_near_edge_minimum",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_invalid_chart_points_rejected[point0]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_invalid_chart_points_rejected[point1]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_invalid_chart_points_rejected[point2]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_invalid_chart_points_rejected[point3]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_nonfinite_objective_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_projected_gradient_respects_inward_descent",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[failed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[nonfinite]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[escaped]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[stale_value]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[not_stationary]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_failed_first_attempt_preserved_and_final_metadata_used[worsened]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_all_failed_attempts_are_retained",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_unresolved_mesh_evidence_rejected[one_mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_unresolved_mesh_evidence_rejected[negative]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_unresolved_mesh_evidence_rejected[nan]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_unresolved_mesh_evidence_rejected[mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_unresolved_mesh_evidence_rejected[edge_mesh]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_search.py::test_edge_optimizer_failure_is_not_promoted",
+      "outcome": "passed",
+      "xfail": false
+    }
+  ],
+  "exit_code": 0
+}
