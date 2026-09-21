@@ -1,0 +1,80 @@
+{
+  "version": "our_v054",
+  "status": "ACCEPT",
+  "scope": "V053_PREPARATION_ROUTE_AUDIT_IMPACT_REPLAY",
+  "protocol_sha256": "46afff62966a9a6c5ae9a96d2d3c3b513045f93b63778d4f3570f76239483435",
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "parameter_mesh_checks": 9,
+      "min_external_gap": 3.7384507309642245,
+      "legacy_calls": 0,
+      "endpoint_relative_orientation": 1
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "parameter_mesh_checks": 9,
+      "min_external_gap": 3.738597271311278,
+      "legacy_calls": 0,
+      "endpoint_relative_orientation": 1
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "parameter_mesh_checks": 9,
+      "min_external_gap": 3.739247882468014,
+      "legacy_calls": 0,
+      "endpoint_relative_orientation": 1
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "states": 19,
+      "labels": [
+        "SAME"
+      ],
+      "parameter_mesh_checks": 9,
+      "min_external_gap": 3.73939432613156,
+      "legacy_calls": 0,
+      "endpoint_relative_orientation": 1
+    }
+  ],
+  "accepted_states": 76,
+  "parameter_mesh_checks": 36,
+  "tests": {
+    "passed": 61,
+    "run_id": "20260921T001901Z_99cfc67a",
+    "started_utc": "2026-09-21T00:19:01.054888+00:00",
+    "record_sha256": "9130ef4fd5c8089a6754c5e9a73787d235af9325d9a1ea10e6d786f6eb10f5b2",
+    "source_and_input_files": 208
+  },
+  "test_evidence": "provenance/test_runs/20260921T001901Z_99cfc67a/result.json",
+  "impact_sha256": "b08ef85995552fc85da2b7b2e84563f22f67aadd800f0e03a44906ec5bba24d3",
+  "label_changes": [],
+  "max_root_difference": 0.0,
+  "max_external_gap_difference": 0.0,
+  "min_frame_overlap": 0.9999999999999978,
+  "remaining": [
+    "separate lower unlink collision",
+    "effect of legacy helper defects on historical campaigns outside this preparation replay"
+  ],
+  "limits": [
+    "Impact conclusion covers the 76-state v053 preparation replay, not every historical measurement",
+    "Forbidden-call instrumentation and shared-engine agreement do not establish physical correctness",
+    "Finite sampled replay does not prove continuous-path or infinite-cutoff behavior"
+  ]
+}

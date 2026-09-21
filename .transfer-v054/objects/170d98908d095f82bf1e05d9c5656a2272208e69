@@ -1,0 +1,808 @@
+{
+  "schema": 1,
+  "scope": "complete tests directory",
+  "run_id": "20260921T001901Z_99cfc67a",
+  "started_utc": "2026-09-21T00:19:01.054888+00:00",
+  "finished_utc": "2026-09-21T00:19:04.132003+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/a33d2a3950a1/github-staging/twistronics/research/v054/_test_worker.py",
+    "/workspace/scratch/a33d2a3950a1/github-staging/twistronics/research/v054/provenance/test_runs/20260921T001901Z_99cfc67a"
+  ],
+  "exit_code": 0,
+  "identity_before": {
+    "BASELINE.json": "c62dec796870593b591158cf7037f1071ec6e9202b7e6a383d3c66321d8a0d67",
+    "ENVIRONMENT.txt": "9627042657cc3aa8157abc64f130d81da9e16e09ec379ca441e13b9fb21608c6",
+    "IMPACT.json": "b08ef85995552fc85da2b7b2e84563f22f67aadd800f0e03a44906ec5bba24d3",
+    "PLAN.json": "46afff62966a9a6c5ae9a96d2d3c3b513045f93b63778d4f3570f76239483435",
+    "_test_worker.py": "84cd059172e78e29cfa41208ed06abd7e799aa3d8ced48d9f655d4c031e71a46",
+    "anchors/v044_start_bm_lab_N4.json": "f4ed2b88ae799a0564f8a90cdd11df0e9e591d0d66232c7b559fe63a262007db",
+    "anchors/v044_start_bm_lab_N4.npz": "79f976f0b382ef556471f6a88522f336f596f2f404bce750775640f90128d6de",
+    "anchors/v044_start_bm_lab_N6.json": "7cc329a4a5631937327475617930ce186333256cf4207b8be1bb684bb63ee119",
+    "anchors/v044_start_bm_lab_N6.npz": "ec1314dc0fbadcfe75bbc1b4646cf2885408efda6154ea8c4ece92bd252358d4",
+    "anchors/v044_start_ref_lab_N4.json": "9f2077014d4ef841183417099e973681ae3045540b35b69994d3e67a85215c99",
+    "anchors/v044_start_ref_lab_N4.npz": "d1aaf2cc6a15bddcf309bc44d5b382e0437998ff6f99696c655bddebc9c7da2b",
+    "anchors/v044_start_ref_lab_N6.json": "57796c8c279e47d61db53a975e476dba0e1a4d69396406aa462815d92f338ea9",
+    "anchors/v044_start_ref_lab_N6.npz": "c61e50e80f4d8ad33b0085c0211e47dd07aee07eafb031825ceb738835fa6e30",
+    "basis.py": "abde0c16c26a5cf22558dcbe2c2d18ba0dedc8390a1a65b9fe8fd4cf1c27bb1f",
+    "build_report.py": "59956cf156d09fc4a557e226ce600d365ea45869857fc575e93040f085e4d1bb",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "compare_results.py": "4dc33adf945c7df4e777ea30a868cb78813909d203e51dca15bdebbe797b7605",
+    "engines/bm_strain.py": "fee8a2a2e0e83a77b25b894b6858ae57c84142ef4c7db5ae0b2f9e5f14599d63",
+    "engines/braid.py": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae",
+    "engines/euler.py": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "568960187c9e0098fa981f49bdf1384190cfb0877fdda08aca163ba9e14cf952",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "frame_checks.py": "ba969e29e607c8d639b9e8e7d6484b0ce0791305ed4736a42cb403ce50248716",
+    "frame_join.py": "c2992b691b995be725f92d7b07a1e9deff751713b22f87ae03661fc11973db2f",
+    "impact_replay.py": "b50c413e1d1400e73562e4d453e57c933bce7a5720c90bd8dbcbd95323e09727",
+    "ledger_guard.py": "7f862f6a4a24b68125786c46bb778af552aacfc63b529330437e476d86f4d198",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "package_release.py": "419a260cb5b7173c3eaef30ab3e8c4b5d84e81b7f852d0ea61e9123212f43a6d",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "prep_acceptance.py": "9ed986f1835c7485b92ae3c0dcd9fb17c24ec9a43880d5600d1c87bb7364b0a1",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "replay_prep.py": "b974d8db4004985345814c5b6262d6243d8eb99f41b6b9433e4b773b56449c2a",
+    "requirements.txt": "6884886b345a698ac877c5995ca871a47f09913a0a831a94132adac752d36a89",
+    "results/prep_bm_lab_N4/guard_summary.json": "b03adbddceb3f09350cf9ff930ecaeb8ac5b1cca90764884d6ef8692b1ae3662",
+    "results/prep_bm_lab_N4/step_000/frames.npz": "3aa9f14808853c5b6a4caeb294bb1e1025b3d5d305e22f40fbf7f20cb729d87a",
+    "results/prep_bm_lab_N4/step_000/record.json": "ee7a58bd95872dbaf39eafba7404d7d721e73fbbe03626ecba0b351b5b2daa88",
+    "results/prep_bm_lab_N4/step_001/frames.npz": "8bb9bf1ebaed2279832542687a3d6e36c42dae9e29962b745c1f289cff5e29b6",
+    "results/prep_bm_lab_N4/step_001/record.json": "42190a9924f6a735404cf574036963cbe9ff61ebb72a4385ac16bc502063f030",
+    "results/prep_bm_lab_N4/step_002/frames.npz": "e6dec780a1d7bc32ff8294650b866be13407b2378489621a550b9603ee0dd7a7",
+    "results/prep_bm_lab_N4/step_002/record.json": "1a872ff73a4c9887a9e1061a9ba6c3691ddde5168344a05f5b4a513829529fd5",
+    "results/prep_bm_lab_N4/step_003/frames.npz": "55307a6f4e863b27baa1682bc7c3ddc332c70e3bc20c51f1e4316eb7b801347c",
+    "results/prep_bm_lab_N4/step_003/record.json": "be70eb751efdf606fd2cf953696ea31e82d725812b585ca4f488534a081f6bce",
+    "results/prep_bm_lab_N4/step_004/frames.npz": "241b2eb0dfa1d8105ce92aa440f1ed597d287a6d570efd5e3ea3786d21016354",
+    "results/prep_bm_lab_N4/step_004/record.json": "290ac9149357421b9d7791876fba2409329496ca01cb1953f91da553a214bae8",
+    "results/prep_bm_lab_N4/step_005/frames.npz": "dbb51f3eb943c901811d07cfd311e72edd5d22901c028e2462cc3abed352def1",
+    "results/prep_bm_lab_N4/step_005/record.json": "415dd38fcb489a2ffff20dab369adc19e405afcc895a4613c863cb2ef5725a42",
+    "results/prep_bm_lab_N4/step_006/frames.npz": "7be17601d007460f9207ade7ae878a9d4b8cd8d6a30d46dc600a8d6d5339d288",
+    "results/prep_bm_lab_N4/step_006/record.json": "23945badecdbe028197f9d933937dc08250fe06aa7bb5c647db39e787544fdbd",
+    "results/prep_bm_lab_N4/step_007/frames.npz": "fa8e6fba00c3afa59419d1b0d5ee3f3452e68c8949487e395c2ee8a3cd92f55e",
+    "results/prep_bm_lab_N4/step_007/record.json": "981132883820c2813f258f27e50964e4e73c10e1491936c57eae3035b3578573",
+    "results/prep_bm_lab_N4/step_008/frames.npz": "2fe178dbf57e12842ae127b14fb21847c6ef44b252435c84a438402cea99210a",
+    "results/prep_bm_lab_N4/step_008/record.json": "59c1352b2e75c6c79c068dd1260ac60e81edceb973026de4392828552f002ccc",
+    "results/prep_bm_lab_N4/step_009/frames.npz": "f7f8207be22554922b3a45db3976fa494fa26b6a55d78877625d022a5b6015d5",
+    "results/prep_bm_lab_N4/step_009/record.json": "127a8554be494a9cea3508dbcab4ce9cefc66d742398bd5936ee3c03f2a1a33b",
+    "results/prep_bm_lab_N4/step_010/frames.npz": "71db0a04070908ccff7de89bcd7ef8f32226d15b80436a5a9d37a5db6b1e5fe6",
+    "results/prep_bm_lab_N4/step_010/record.json": "c22fcb74c69d4d05ed105264d0e9ae362c7316a4bb5d910e04464acc6e88fc3e",
+    "results/prep_bm_lab_N4/step_011/frames.npz": "3d31bb117519b1e064fdbec9ff3ba0ebc4d10365a5835a4d02c24d302d168fcf",
+    "results/prep_bm_lab_N4/step_011/record.json": "95976e6d02734fb15ba7d874e74aa10058ba97a4900076dc9d8014c65efcc0e1",
+    "results/prep_bm_lab_N4/step_012/frames.npz": "2333744a5c2726a27f535db512f56577a3ac0cce76282a751426126ea0fb3e99",
+    "results/prep_bm_lab_N4/step_012/record.json": "fd8676d10b4545ccb42bfa5304e4a32bbb88a1d7e96c1afab40ee7dcb3ec39e1",
+    "results/prep_bm_lab_N4/step_013/frames.npz": "4fd056a7b80c112c01352e7e4f49fd930681c5455aa0e99aa9d870a2b8a1524f",
+    "results/prep_bm_lab_N4/step_013/record.json": "33b0c006d4ac8894a36301bc65bc4956344bb5bc596064c37cd267e6588a354b",
+    "results/prep_bm_lab_N4/step_014/frames.npz": "a750624418505f35132aa95c7205816542910329f849eda8d0e969e76a0527de",
+    "results/prep_bm_lab_N4/step_014/record.json": "9faf389bd45f0ac87443b3a60e10ec430fbb991831844a3d50533690744166c9",
+    "results/prep_bm_lab_N4/step_015/frames.npz": "e24daffc76f40fd025bda66c924586d996631db20a3f72d64ccf7e83cced8f8d",
+    "results/prep_bm_lab_N4/step_015/record.json": "1d39f36064fd7d40d694d936eecc4a0d691fb8c08e819d76a91abdea3827e167",
+    "results/prep_bm_lab_N4/step_016/frames.npz": "d101e5fad0d638669cd82bccc61cb7759505924ca4f6a894945d26ace97fec8e",
+    "results/prep_bm_lab_N4/step_016/record.json": "da3b611fec640d2fd695a14884dad649bf01b582607ffdc0b5184b7618dcc5fc",
+    "results/prep_bm_lab_N4/step_017/frames.npz": "a9aaebbdb6618bc151e1b2752feb6687e421ec61e7674a1b9fdae70704b3b2ec",
+    "results/prep_bm_lab_N4/step_017/record.json": "41594b75f9743b945cb191cafd1bf7da469d4da955663b3c379a58b3320c5c5c",
+    "results/prep_bm_lab_N4/step_018/frames.npz": "6968d90f396ec040c3fa247e479dcc52dd32f0129c7780f2973ab03c59179d82",
+    "results/prep_bm_lab_N4/step_018/record.json": "ba7136f183d7a354d87f566393b1713d61cf0ea6263edca80672e691ee6ac698",
+    "results/prep_bm_lab_N4/summary.json": "aab0038932c97f878e79e8a97d248f20c36943ad419a8cfea97f8a66dd55d610",
+    "results/prep_bm_lab_N6/guard_summary.json": "d74fbecb19e220c6e46023d0a29a14787f5130d9f943ed00da5acf27a7c62abf",
+    "results/prep_bm_lab_N6/step_000/frames.npz": "8d1a91f25f29d6e5b769e745d5b6fafb2d42f3a67579f2b2f38770c55dd1e8da",
+    "results/prep_bm_lab_N6/step_000/record.json": "c58a130db28785b24244100b85d99c7cf7ae52f9960b45ef76aba30f06c9de46",
+    "results/prep_bm_lab_N6/step_001/frames.npz": "10a775c4d51b49db517fc2d865f4185dc0504785fd8db049490f98cc2212fe74",
+    "results/prep_bm_lab_N6/step_001/record.json": "16a2585f4c01b5ef97683eedcf388f614086af10f187350f82af5927cb816f81",
+    "results/prep_bm_lab_N6/step_002/frames.npz": "83fc18b85faa27a00d3a50cf6b4a4bf7c8e23d46fc7004149ae47ef146365978",
+    "results/prep_bm_lab_N6/step_002/record.json": "58ae667bd360cf923abb1c8aa54604c9042fdeedebb3fcd7387e695c9a0f2399",
+    "results/prep_bm_lab_N6/step_003/frames.npz": "90e6cead8b2575bd95f93fb31ec8b402b12b6db60064d540935b94aac3a727be",
+    "results/prep_bm_lab_N6/step_003/record.json": "0197a6fe0dffaa7b0da3989366c19b5c5fa177487a932372b295629b97f54594",
+    "results/prep_bm_lab_N6/step_004/frames.npz": "6da1ae8363ecb6c52576658dd330f48458e6a26a030373e0d01a083076c6c889",
+    "results/prep_bm_lab_N6/step_004/record.json": "34ca694a064a13af9fa35243b6c832245aa5cecd198bbedb9b465aa54cdc4e03",
+    "results/prep_bm_lab_N6/step_005/frames.npz": "6211a564ceec432283194de49ad19e7ecc4e401ec374b024e4db218ddbfdf4c8",
+    "results/prep_bm_lab_N6/step_005/record.json": "ebd052099ff2b378b461978ba18d7ace2f0926f454e465a35c4ddb59598a8ab0",
+    "results/prep_bm_lab_N6/step_006/frames.npz": "6b20edafd043277fa86cfb111ae78fdbdbcedeb5fea0a2124154192ba8b602e6",
+    "results/prep_bm_lab_N6/step_006/record.json": "8bf7c4878fb1f93ac0da4e26f46679b6fd0e5ef687f5e6d2551d5468ef5837a5",
+    "results/prep_bm_lab_N6/step_007/frames.npz": "cfe63ec2fc4f79ac00f98edf5b80c94de11c0820c0fd6f80ef9cc7348614fef2",
+    "results/prep_bm_lab_N6/step_007/record.json": "cc2a1b62e69da702e1ff10791325403404fa4cc592cd64fee8e9cf24b71880d5",
+    "results/prep_bm_lab_N6/step_008/frames.npz": "169e13d0cd1ec7d0add84ad714108081f53e3061b79e32860464c236df257cc4",
+    "results/prep_bm_lab_N6/step_008/record.json": "9af71c1224fe45ed6603e9e35cbc9fecbba5cff8a0e7eede2f3dc40763a5c0ae",
+    "results/prep_bm_lab_N6/step_009/frames.npz": "63db9a71949f82f0450361c616a82f6441ccffe7fa0ce5565e38994f70ddde03",
+    "results/prep_bm_lab_N6/step_009/record.json": "c8bcbec5a90b1307982ec05024d437c8f04f8890df96a64892a8275a26715b18",
+    "results/prep_bm_lab_N6/step_010/frames.npz": "0768190ec9ff561971dfe373b85cf2f5537c3140c58ea0f3c61911568127c651",
+    "results/prep_bm_lab_N6/step_010/record.json": "054a1bea602729375b115dc595035beefffeb53de4785a4adf57e8293a171831",
+    "results/prep_bm_lab_N6/step_011/frames.npz": "691941e6d0a8f0cab411d9d39f1a3105de9ad8de23cb57c449e3a9e896013063",
+    "results/prep_bm_lab_N6/step_011/record.json": "11048904a216095e806384988dcec5d29389e85e7fb1a57ca9edd535280459b9",
+    "results/prep_bm_lab_N6/step_012/frames.npz": "7822388b32f3e57f5fc7acf36891b4ea47f94878f09a2295155ab8db107dca0e",
+    "results/prep_bm_lab_N6/step_012/record.json": "35266c1647d9eff8e8ae02c8a9550c988ea53f71c4208b71782e33a683bd2b7c",
+    "results/prep_bm_lab_N6/step_013/frames.npz": "965c57f77633cbb2c62a9f15fea553385e7a75eec28d89068b07fdda9caff580",
+    "results/prep_bm_lab_N6/step_013/record.json": "f5319f7fad749c708f5c0cedfe7267ee4a58771c9ee59df043cdba9591e3d6e8",
+    "results/prep_bm_lab_N6/step_014/frames.npz": "f1cdd22aee9928f8d79ddb83e6c572ad4d3e33ce84b82809380f98103bd35cca",
+    "results/prep_bm_lab_N6/step_014/record.json": "a144acf158e9e3d21d872078575778e101fb1c9ceb0a9b366082be3a853db110",
+    "results/prep_bm_lab_N6/step_015/frames.npz": "b280b6979650745eb2e77c5b22972b556d3f9aa6ffb2cb6918cf50d0e3e21d84",
+    "results/prep_bm_lab_N6/step_015/record.json": "f32ce0e172e3150339b740e7b268e1919a62e4446b043730e6464f89fe261331",
+    "results/prep_bm_lab_N6/step_016/frames.npz": "a118b7c7696891fe1a61da97ad09ade1cf7598a33d3a099aa96f3cabd09a0ae6",
+    "results/prep_bm_lab_N6/step_016/record.json": "d48d41dd2899ab7e493405b53cf029ffe103f7360bfe7b458daa5010abfd7c81",
+    "results/prep_bm_lab_N6/step_017/frames.npz": "8031ee79b33e0b488cdfa50bb89f2a154351b35ffd2aa26b4011dc200c16ab51",
+    "results/prep_bm_lab_N6/step_017/record.json": "2c8ebe506588aed91119460d827ddbd86329085b558d5c2d7df6b8654ed559e0",
+    "results/prep_bm_lab_N6/step_018/frames.npz": "6996312b9f19ab1fbc62be3d6f9d6c51ac2995b611158dc1328af6ecbb92a870",
+    "results/prep_bm_lab_N6/step_018/record.json": "605b1d3913745bb146e8353f8b4578c5e58d5742db73d919f077bf85ddb1fd6f",
+    "results/prep_bm_lab_N6/summary.json": "7fe55c29e9ffa4e27cc4b74cb70c09a3cbf89de55a4404817bdd2bfc546343ce",
+    "results/prep_ref_lab_N4/guard_summary.json": "08ec322d93a94009b4afd0b0be798c8a95be034094966f6525820a32b8a1f7cd",
+    "results/prep_ref_lab_N4/step_000/frames.npz": "a8d609d0550705aed5a441394fb40362fb287627541ea78a1878a1cd8c9f5bd3",
+    "results/prep_ref_lab_N4/step_000/record.json": "349d50598be807293fac1f40ca24429e09bc237d4a36ffb8abc140796de01ee0",
+    "results/prep_ref_lab_N4/step_001/frames.npz": "079fe281d5399b88033cd3088bd23970fdffd47ccb73787afda4ce2a3807855c",
+    "results/prep_ref_lab_N4/step_001/record.json": "2e4719ba7c395e19939de357057684a72b5732f35b5b352f92364c8cace1bfbb",
+    "results/prep_ref_lab_N4/step_002/frames.npz": "83071cc4d62aa819f5e1a064f7019e03f8e94e0c0410dc89d4e5ae13ec16cdd5",
+    "results/prep_ref_lab_N4/step_002/record.json": "bce69f3d4848fb013a806edc1aa768d093b5d1be5609e2ae0e43a4c9e2cf389e",
+    "results/prep_ref_lab_N4/step_003/frames.npz": "c5a1762ae98c6518e395929fddb082e7676f7bdb4ea7daa5e94ac7359912aba8",
+    "results/prep_ref_lab_N4/step_003/record.json": "2aa41fb6885c329d8fa9569e87fdad70ecc37d4fdfff756515a258b5dffb3c27",
+    "results/prep_ref_lab_N4/step_004/frames.npz": "b6d0ebdb26d0f0e106c69a355f22e23f7f2502dd7591730683184a1e9465bb4f",
+    "results/prep_ref_lab_N4/step_004/record.json": "b312b5ed314e0b2f580dacc302e0e5aeb677ef36583e1f0da6126580a5417607",
+    "results/prep_ref_lab_N4/step_005/frames.npz": "60e460d759aa9a7f15fef0e422b48fd553de97c46a49bbac4ee60d474647ad33",
+    "results/prep_ref_lab_N4/step_005/record.json": "a19bf0bee0a08a4164bb92d3adc254585497aa972b822fad95d95dc79b6a6716",
+    "results/prep_ref_lab_N4/step_006/frames.npz": "cce0027f5a97f8c8fccb9c2206d39e4c5c3baed8cc553180c649388c91f99880",
+    "results/prep_ref_lab_N4/step_006/record.json": "4318afd9e71a71e57b24ca8bf59a5af8a9b63e7b589b809883d4fe0270d9ca09",
+    "results/prep_ref_lab_N4/step_007/frames.npz": "e4134d67846cb26e95ae681d40d8457606ef9dce9048ca6e65860f01a4affce1",
+    "results/prep_ref_lab_N4/step_007/record.json": "a050f10fed19dfca472e1e55e691f37148358d5acca9e4f1a45a384462cbae84",
+    "results/prep_ref_lab_N4/step_008/frames.npz": "c20aa02f1bb94b5347602f220bfd093d852c7ae3e10e3539246959cfd3a9f167",
+    "results/prep_ref_lab_N4/step_008/record.json": "8f71391ae701af1dafa072a2c47421c26a39e404fafe0dc6b879506e7b8e548d",
+    "results/prep_ref_lab_N4/step_009/frames.npz": "ad39498b7f70947f30ebd094af9c469baed7ac116587c80a8eb6eb180cfddda1",
+    "results/prep_ref_lab_N4/step_009/record.json": "f042862c01deeec00890b8f27d4449a03d5a3469d75bc9bb052d9724843c487c",
+    "results/prep_ref_lab_N4/step_010/frames.npz": "0131f1eabfa744e41541a9ded042bc0b5e599840e92effa1cb43e44884293a0d",
+    "results/prep_ref_lab_N4/step_010/record.json": "b6590b765c85b537b9dad0e9712d471fe9a8f48b9326cf139aa296cc4caa154d",
+    "results/prep_ref_lab_N4/step_011/frames.npz": "efe26a177e24f8c5be23cd8c5b9991aed70067dfaae6fa3c37565e4a92916354",
+    "results/prep_ref_lab_N4/step_011/record.json": "fb569c77f3036c75234057d9d89e417fa9218b06d6e3cec2323a33cd6a285f95",
+    "results/prep_ref_lab_N4/step_012/frames.npz": "333c862614843e8f1a4db1548b7954ca5c8ca3df9ef488ebf6bc40caabd695e5",
+    "results/prep_ref_lab_N4/step_012/record.json": "e6679a43fe2bf1af4296e6cc7ad141f7f4af1a2ef29785947bc858fc45ca34eb",
+    "results/prep_ref_lab_N4/step_013/frames.npz": "bcb0384e01b2f2df543ea28f8244dd911c2f1816846887f5ee8126ade17b4e58",
+    "results/prep_ref_lab_N4/step_013/record.json": "628afe19d0a9a28cadc0155fb5da4c8409a0e20fd854cfa2de055309ff9c99eb",
+    "results/prep_ref_lab_N4/step_014/frames.npz": "96315b0ae29f65d6fa37010da8aa648f83e27c0dbd4a1e33459c03148184f9a1",
+    "results/prep_ref_lab_N4/step_014/record.json": "a43d51430e5abaa871f97e3c7e91abe764acb9c69febe2e75e9fbb52b396235b",
+    "results/prep_ref_lab_N4/step_015/frames.npz": "412c106c7bb930a85975d7668f86118e6a50b56cbebe32bead53afcbac8ea308",
+    "results/prep_ref_lab_N4/step_015/record.json": "a82741ae430d65a6fe2e54e50549c913edc5fc670662bbb706d731b018b4f827",
+    "results/prep_ref_lab_N4/step_016/frames.npz": "98a417b7403d899acad290110b6491c74092d565c19218f54136a0c7c09d44d5",
+    "results/prep_ref_lab_N4/step_016/record.json": "575aef70a9506915abb9e9af9440a027146cafb44eac10e9408d89d51beb5f64",
+    "results/prep_ref_lab_N4/step_017/frames.npz": "fddd6d87652fa705133705e6ebb018af884c5c4468e938248a6d033f37ecc972",
+    "results/prep_ref_lab_N4/step_017/record.json": "4c4021832d726b719000dc43ab4d42b5c06849a7fb5aba6f35834c731c37250a",
+    "results/prep_ref_lab_N4/step_018/frames.npz": "040203c75f45771f1fb07b9ad395af10e2e98193c2764e3474638dce76cba267",
+    "results/prep_ref_lab_N4/step_018/record.json": "6daf011b491a93d27ba1acbee61fdfb827d442dab1d55d1b8fb4e21ae68c3fe6",
+    "results/prep_ref_lab_N4/summary.json": "4831dd119929f6afcac4b2283a761aa3a727d67d3670eba982b09529b1a10da9",
+    "results/prep_ref_lab_N6/guard_summary.json": "7df3065f64183ec27283cbf8e9f3eabda55b8180be2964796cd0afd4947b463f",
+    "results/prep_ref_lab_N6/step_000/frames.npz": "903654f54475311cab584ceab1d88231fc579da5dcf96eaeaa2457d87b7dc02f",
+    "results/prep_ref_lab_N6/step_000/record.json": "b05967605c2cd5022852664b0482d907e5e788474f726d3a1cf43e20c24a7c73",
+    "results/prep_ref_lab_N6/step_001/frames.npz": "ef57f61c7c61f7698e26efe9a9b98e659be81fe71551038b44534f4b93eee4e5",
+    "results/prep_ref_lab_N6/step_001/record.json": "a71cdbdf0168d06ad2f186c5059b55fffc372c574495ba9eef73d90849e2a19f",
+    "results/prep_ref_lab_N6/step_002/frames.npz": "a5ec45983c1ae2309ac2b078dda2b5fe8b5dda298306047e6118d14a789433ff",
+    "results/prep_ref_lab_N6/step_002/record.json": "62dcb7011b89d2d3e494acfbe130d664584984bf83b8ca8cb2941bbb12a2dcca",
+    "results/prep_ref_lab_N6/step_003/frames.npz": "9814920d3b9eb10baf4d792dc030b9cb8957eb8800e9c5f12b98cf6236e284f3",
+    "results/prep_ref_lab_N6/step_003/record.json": "8b6b81bfc1d9b41f6d33ea4a6bccffeaa4a2960d911593acd902875df81dea69",
+    "results/prep_ref_lab_N6/step_004/frames.npz": "7202fec454fdc2806118536a2e531716e943ec84ec979be382493fd257bc60a2",
+    "results/prep_ref_lab_N6/step_004/record.json": "d22c541832c771e86e62cbb71316cc633c2cc07f3e40f2847dd06e915c182812",
+    "results/prep_ref_lab_N6/step_005/frames.npz": "f75e257a7c61ee87cfcd691a5154a11f6efcdfe8e32652b9f8560d443c90e945",
+    "results/prep_ref_lab_N6/step_005/record.json": "0f1d4b42fd67792b9cc2f1d98d89850bed5890ccae4df9f252633c3b12d16261",
+    "results/prep_ref_lab_N6/step_006/frames.npz": "be4a4299d73eea0ae3560e03d1ee5aa4dc566baba69d4042c0c8923088357e5f",
+    "results/prep_ref_lab_N6/step_006/record.json": "5235fb8457812ca82d98de719a9c520b095787a7d533003a7ae88f7f06500a99",
+    "results/prep_ref_lab_N6/step_007/frames.npz": "539e3118d81f88836af296fa90c713d53b01bcfa0dc801664cd8d669c457af72",
+    "results/prep_ref_lab_N6/step_007/record.json": "dd86d104d5cefaf095cb78f721f8f632ed59fb765882d9aee7bb8b30ee893a6d",
+    "results/prep_ref_lab_N6/step_008/frames.npz": "549186942f2d0d0ae742a37e0a2ae7c385615869ff3ca6223cd9f81918e2e15e",
+    "results/prep_ref_lab_N6/step_008/record.json": "c27712409c22bcb32d5ad67963059292e1eb86f3b7dc8cd8a5587c5a961dd22c",
+    "results/prep_ref_lab_N6/step_009/frames.npz": "735d003ddcea4e887e96138b7ae3b3f52938fa4dc9049874a919191864726443",
+    "results/prep_ref_lab_N6/step_009/record.json": "e5e6b972d11a588d69df5f292f37c9cf4c2ab7c98da0a5d9107436324de8e2a1",
+    "results/prep_ref_lab_N6/step_010/frames.npz": "776c419425e55e40f741d71bf2a0d49371f456bb1f38ac1e4bd667eda4f88547",
+    "results/prep_ref_lab_N6/step_010/record.json": "65e1a084c419bfef79acdd9feafb372db1bec3fcdf33bdd2d1c2df1414f27c4a",
+    "results/prep_ref_lab_N6/step_011/frames.npz": "40430576286054d97650fd82d00c431369e9c4ce83446cc4f64140f3f9ae2735",
+    "results/prep_ref_lab_N6/step_011/record.json": "9c6f43d199b1fafe5c048908cff20a6ec98bfcf6521ae214a7b4aee7b5dcbd51",
+    "results/prep_ref_lab_N6/step_012/frames.npz": "c34bbabaef83a1809fd20c7bce7a91af8509bd2467549d7c88d3c7013d638fbf",
+    "results/prep_ref_lab_N6/step_012/record.json": "97b271e5cc2d9c8ddf132d7786beea29d37499652605d93ad5511c5aee0b398b",
+    "results/prep_ref_lab_N6/step_013/frames.npz": "e7aa8ac1c4f2a333ce77bc1cd2376e97e70fee5729e43def6f202fe48edb2200",
+    "results/prep_ref_lab_N6/step_013/record.json": "6abfb6d4c9897c1a8ca2d6db5cc2e1d98ccd6f6cb05c6952c560a4199b8b2f70",
+    "results/prep_ref_lab_N6/step_014/frames.npz": "f940c775661532a2039ff74f3e53b3db002affd395e2ca8a7527e7db58117d58",
+    "results/prep_ref_lab_N6/step_014/record.json": "1dbebbc225f64d3facf6e47e991bda930a32e1cf839b2f7b52cbc3c563e32999",
+    "results/prep_ref_lab_N6/step_015/frames.npz": "7731cbd3ac6b72022552c9fadd28b93358bee718e82608598b4681016e0b0f4a",
+    "results/prep_ref_lab_N6/step_015/record.json": "ddcd7ef8746f7ee0a875bd7745b630525f5f7e3c4189a5d70018f634c74d6f08",
+    "results/prep_ref_lab_N6/step_016/frames.npz": "edfa69e52fe1870fe9e70a80969a024dfcd22ac06886b74ef11b3fa25af4bf75",
+    "results/prep_ref_lab_N6/step_016/record.json": "62323cff7c32b3e5d40bad7203eb302eefe73c7f6d463c48965fe2708d19a60f",
+    "results/prep_ref_lab_N6/step_017/frames.npz": "93c01cb835982e1a57c8d8afd72ca56240a49bb729735117b5b203f8056015a8",
+    "results/prep_ref_lab_N6/step_017/record.json": "5fe00fc765efe3892d3b2aea3df3af8c5e8d4bfa59968837be1eedbadf735523",
+    "results/prep_ref_lab_N6/step_018/frames.npz": "6305be739a092b43148621b40e39161998b548f56f7819d1921ac992f88ccdd0",
+    "results/prep_ref_lab_N6/step_018/record.json": "f594b60608e6255ec1e7025ad14790d647cd375e23690480465d3b1c1f7840d7",
+    "results/prep_ref_lab_N6/summary.json": "ea42aaa9d43aeb33513d50b3f6a79665c28db749efb760e3a1324fd221ad6040",
+    "routes.py": "531de5f864bd39eb3d7aa4e463ef30f97be1297baf6691fbcd28246537f2b68a",
+    "run_tests.py": "a45ea02a35d4f1bdc1793c36b7a09154292b959b988a86592efcd264b0f27e32",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "test_evidence.py": "2adc67c72bcc6c2b07d3921e415ebeeb0578f2110186972021c3af2ac11420cb",
+    "tests/test_checkpoint_guards.py": "bf001d4bce81ae8167cbd1b98d9d6631290ac7ea3547c42b8e0fa0e6917f9ece",
+    "tests/test_evidence_binding.py": "638353611adc0a33ad1e9026f06656c0b73ff828ec1279989a6606065e5f29d0",
+    "tests/test_frame_join.py": "2afaa43f9c0fe25b63a6760b71d0b27f004bb6ea02ccf4f7defc591b1d4f19bd",
+    "tests/test_impact_instrumentation.py": "b3a6c075fa3f86ba5bb71518cf89c6e7d9e6c280750151a153cf5c7998145892",
+    "tests/test_legacy_guards.py": "64abe2f565f517f09d0621be43642bc2744b9944ba36027cf74abf57c6cf93e7",
+    "tests/test_optimizer_metadata.py": "c0aec9fa3e257432ed1ef1f6adc805b97e3447508f516b33655e5e21441eb9b4",
+    "tests/test_packaging_contract.py": "f79c91eec40de7f17818d50b14c6003e6a4dafe04426eed7c5d8089bd740ef3c",
+    "tests/test_prep_acceptance.py": "731256ee55b827db39ed5aeb9250135693d787f02bfc902b65960c396333f39a"
+  },
+  "identity_after": {
+    "BASELINE.json": "c62dec796870593b591158cf7037f1071ec6e9202b7e6a383d3c66321d8a0d67",
+    "ENVIRONMENT.txt": "9627042657cc3aa8157abc64f130d81da9e16e09ec379ca441e13b9fb21608c6",
+    "IMPACT.json": "b08ef85995552fc85da2b7b2e84563f22f67aadd800f0e03a44906ec5bba24d3",
+    "PLAN.json": "46afff62966a9a6c5ae9a96d2d3c3b513045f93b63778d4f3570f76239483435",
+    "_test_worker.py": "84cd059172e78e29cfa41208ed06abd7e799aa3d8ced48d9f655d4c031e71a46",
+    "anchors/v044_start_bm_lab_N4.json": "f4ed2b88ae799a0564f8a90cdd11df0e9e591d0d66232c7b559fe63a262007db",
+    "anchors/v044_start_bm_lab_N4.npz": "79f976f0b382ef556471f6a88522f336f596f2f404bce750775640f90128d6de",
+    "anchors/v044_start_bm_lab_N6.json": "7cc329a4a5631937327475617930ce186333256cf4207b8be1bb684bb63ee119",
+    "anchors/v044_start_bm_lab_N6.npz": "ec1314dc0fbadcfe75bbc1b4646cf2885408efda6154ea8c4ece92bd252358d4",
+    "anchors/v044_start_ref_lab_N4.json": "9f2077014d4ef841183417099e973681ae3045540b35b69994d3e67a85215c99",
+    "anchors/v044_start_ref_lab_N4.npz": "d1aaf2cc6a15bddcf309bc44d5b382e0437998ff6f99696c655bddebc9c7da2b",
+    "anchors/v044_start_ref_lab_N6.json": "57796c8c279e47d61db53a975e476dba0e1a4d69396406aa462815d92f338ea9",
+    "anchors/v044_start_ref_lab_N6.npz": "c61e50e80f4d8ad33b0085c0211e47dd07aee07eafb031825ceb738835fa6e30",
+    "basis.py": "abde0c16c26a5cf22558dcbe2c2d18ba0dedc8390a1a65b9fe8fd4cf1c27bb1f",
+    "build_report.py": "59956cf156d09fc4a557e226ce600d365ea45869857fc575e93040f085e4d1bb",
+    "checkpoints.py": "60016b4d0ee009445c5c2ff39bcfc94a57e01ba6eadf33c6e209b79f22a69d38",
+    "compare_results.py": "4dc33adf945c7df4e777ea30a868cb78813909d203e51dca15bdebbe797b7605",
+    "engines/bm_strain.py": "fee8a2a2e0e83a77b25b894b6858ae57c84142ef4c7db5ae0b2f9e5f14599d63",
+    "engines/braid.py": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae",
+    "engines/euler.py": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974",
+    "engines/gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "engines/independent_measurement.py": "e1f2e940eb040d46e692789779e7361136bc33c001b64632a11cff93d93806e3",
+    "engines/knobs.py": "568960187c9e0098fa981f49bdf1384190cfb0877fdda08aca163ba9e14cf952",
+    "engines/tbg_ref.py": "8526a6347ee7f1e084644f8159450bed49538df197449959f811e292b3fb3f7d",
+    "frame_checks.py": "ba969e29e607c8d639b9e8e7d6484b0ce0791305ed4736a42cb403ce50248716",
+    "frame_join.py": "c2992b691b995be725f92d7b07a1e9deff751713b22f87ae03661fc11973db2f",
+    "impact_replay.py": "b50c413e1d1400e73562e4d453e57c933bce7a5720c90bd8dbcbd95323e09727",
+    "ledger_guard.py": "7f862f6a4a24b68125786c46bb778af552aacfc63b529330437e476d86f4d198",
+    "measure.py": "5d3b037f45ed563626db0c1c36a5f554350dab50b6f27d5371e72c033fe6d2d2",
+    "models.py": "beb90732c6bb404be443982f4b84ce552cd7c3fa7aebd9b35cd461631fc4119f",
+    "package_release.py": "419a260cb5b7173c3eaef30ab3e8c4b5d84e81b7f852d0ea61e9123212f43a6d",
+    "pair_measure.py": "c337e2213173dc60f75b98d82acda65d6a297211ecdffebec9dde015cfdc958e",
+    "prep_acceptance.py": "9ed986f1835c7485b92ae3c0dcd9fb17c24ec9a43880d5600d1c87bb7364b0a1",
+    "protocol.py": "9218660cedbb46c180d54ecead547b6859ec8202b1c6218a1ea4f7a9aea6f927",
+    "replay_prep.py": "b974d8db4004985345814c5b6262d6243d8eb99f41b6b9433e4b773b56449c2a",
+    "requirements.txt": "6884886b345a698ac877c5995ca871a47f09913a0a831a94132adac752d36a89",
+    "results/prep_bm_lab_N4/guard_summary.json": "b03adbddceb3f09350cf9ff930ecaeb8ac5b1cca90764884d6ef8692b1ae3662",
+    "results/prep_bm_lab_N4/step_000/frames.npz": "3aa9f14808853c5b6a4caeb294bb1e1025b3d5d305e22f40fbf7f20cb729d87a",
+    "results/prep_bm_lab_N4/step_000/record.json": "ee7a58bd95872dbaf39eafba7404d7d721e73fbbe03626ecba0b351b5b2daa88",
+    "results/prep_bm_lab_N4/step_001/frames.npz": "8bb9bf1ebaed2279832542687a3d6e36c42dae9e29962b745c1f289cff5e29b6",
+    "results/prep_bm_lab_N4/step_001/record.json": "42190a9924f6a735404cf574036963cbe9ff61ebb72a4385ac16bc502063f030",
+    "results/prep_bm_lab_N4/step_002/frames.npz": "e6dec780a1d7bc32ff8294650b866be13407b2378489621a550b9603ee0dd7a7",
+    "results/prep_bm_lab_N4/step_002/record.json": "1a872ff73a4c9887a9e1061a9ba6c3691ddde5168344a05f5b4a513829529fd5",
+    "results/prep_bm_lab_N4/step_003/frames.npz": "55307a6f4e863b27baa1682bc7c3ddc332c70e3bc20c51f1e4316eb7b801347c",
+    "results/prep_bm_lab_N4/step_003/record.json": "be70eb751efdf606fd2cf953696ea31e82d725812b585ca4f488534a081f6bce",
+    "results/prep_bm_lab_N4/step_004/frames.npz": "241b2eb0dfa1d8105ce92aa440f1ed597d287a6d570efd5e3ea3786d21016354",
+    "results/prep_bm_lab_N4/step_004/record.json": "290ac9149357421b9d7791876fba2409329496ca01cb1953f91da553a214bae8",
+    "results/prep_bm_lab_N4/step_005/frames.npz": "dbb51f3eb943c901811d07cfd311e72edd5d22901c028e2462cc3abed352def1",
+    "results/prep_bm_lab_N4/step_005/record.json": "415dd38fcb489a2ffff20dab369adc19e405afcc895a4613c863cb2ef5725a42",
+    "results/prep_bm_lab_N4/step_006/frames.npz": "7be17601d007460f9207ade7ae878a9d4b8cd8d6a30d46dc600a8d6d5339d288",
+    "results/prep_bm_lab_N4/step_006/record.json": "23945badecdbe028197f9d933937dc08250fe06aa7bb5c647db39e787544fdbd",
+    "results/prep_bm_lab_N4/step_007/frames.npz": "fa8e6fba00c3afa59419d1b0d5ee3f3452e68c8949487e395c2ee8a3cd92f55e",
+    "results/prep_bm_lab_N4/step_007/record.json": "981132883820c2813f258f27e50964e4e73c10e1491936c57eae3035b3578573",
+    "results/prep_bm_lab_N4/step_008/frames.npz": "2fe178dbf57e12842ae127b14fb21847c6ef44b252435c84a438402cea99210a",
+    "results/prep_bm_lab_N4/step_008/record.json": "59c1352b2e75c6c79c068dd1260ac60e81edceb973026de4392828552f002ccc",
+    "results/prep_bm_lab_N4/step_009/frames.npz": "f7f8207be22554922b3a45db3976fa494fa26b6a55d78877625d022a5b6015d5",
+    "results/prep_bm_lab_N4/step_009/record.json": "127a8554be494a9cea3508dbcab4ce9cefc66d742398bd5936ee3c03f2a1a33b",
+    "results/prep_bm_lab_N4/step_010/frames.npz": "71db0a04070908ccff7de89bcd7ef8f32226d15b80436a5a9d37a5db6b1e5fe6",
+    "results/prep_bm_lab_N4/step_010/record.json": "c22fcb74c69d4d05ed105264d0e9ae362c7316a4bb5d910e04464acc6e88fc3e",
+    "results/prep_bm_lab_N4/step_011/frames.npz": "3d31bb117519b1e064fdbec9ff3ba0ebc4d10365a5835a4d02c24d302d168fcf",
+    "results/prep_bm_lab_N4/step_011/record.json": "95976e6d02734fb15ba7d874e74aa10058ba97a4900076dc9d8014c65efcc0e1",
+    "results/prep_bm_lab_N4/step_012/frames.npz": "2333744a5c2726a27f535db512f56577a3ac0cce76282a751426126ea0fb3e99",
+    "results/prep_bm_lab_N4/step_012/record.json": "fd8676d10b4545ccb42bfa5304e4a32bbb88a1d7e96c1afab40ee7dcb3ec39e1",
+    "results/prep_bm_lab_N4/step_013/frames.npz": "4fd056a7b80c112c01352e7e4f49fd930681c5455aa0e99aa9d870a2b8a1524f",
+    "results/prep_bm_lab_N4/step_013/record.json": "33b0c006d4ac8894a36301bc65bc4956344bb5bc596064c37cd267e6588a354b",
+    "results/prep_bm_lab_N4/step_014/frames.npz": "a750624418505f35132aa95c7205816542910329f849eda8d0e969e76a0527de",
+    "results/prep_bm_lab_N4/step_014/record.json": "9faf389bd45f0ac87443b3a60e10ec430fbb991831844a3d50533690744166c9",
+    "results/prep_bm_lab_N4/step_015/frames.npz": "e24daffc76f40fd025bda66c924586d996631db20a3f72d64ccf7e83cced8f8d",
+    "results/prep_bm_lab_N4/step_015/record.json": "1d39f36064fd7d40d694d936eecc4a0d691fb8c08e819d76a91abdea3827e167",
+    "results/prep_bm_lab_N4/step_016/frames.npz": "d101e5fad0d638669cd82bccc61cb7759505924ca4f6a894945d26ace97fec8e",
+    "results/prep_bm_lab_N4/step_016/record.json": "da3b611fec640d2fd695a14884dad649bf01b582607ffdc0b5184b7618dcc5fc",
+    "results/prep_bm_lab_N4/step_017/frames.npz": "a9aaebbdb6618bc151e1b2752feb6687e421ec61e7674a1b9fdae70704b3b2ec",
+    "results/prep_bm_lab_N4/step_017/record.json": "41594b75f9743b945cb191cafd1bf7da469d4da955663b3c379a58b3320c5c5c",
+    "results/prep_bm_lab_N4/step_018/frames.npz": "6968d90f396ec040c3fa247e479dcc52dd32f0129c7780f2973ab03c59179d82",
+    "results/prep_bm_lab_N4/step_018/record.json": "ba7136f183d7a354d87f566393b1713d61cf0ea6263edca80672e691ee6ac698",
+    "results/prep_bm_lab_N4/summary.json": "aab0038932c97f878e79e8a97d248f20c36943ad419a8cfea97f8a66dd55d610",
+    "results/prep_bm_lab_N6/guard_summary.json": "d74fbecb19e220c6e46023d0a29a14787f5130d9f943ed00da5acf27a7c62abf",
+    "results/prep_bm_lab_N6/step_000/frames.npz": "8d1a91f25f29d6e5b769e745d5b6fafb2d42f3a67579f2b2f38770c55dd1e8da",
+    "results/prep_bm_lab_N6/step_000/record.json": "c58a130db28785b24244100b85d99c7cf7ae52f9960b45ef76aba30f06c9de46",
+    "results/prep_bm_lab_N6/step_001/frames.npz": "10a775c4d51b49db517fc2d865f4185dc0504785fd8db049490f98cc2212fe74",
+    "results/prep_bm_lab_N6/step_001/record.json": "16a2585f4c01b5ef97683eedcf388f614086af10f187350f82af5927cb816f81",
+    "results/prep_bm_lab_N6/step_002/frames.npz": "83fc18b85faa27a00d3a50cf6b4a4bf7c8e23d46fc7004149ae47ef146365978",
+    "results/prep_bm_lab_N6/step_002/record.json": "58ae667bd360cf923abb1c8aa54604c9042fdeedebb3fcd7387e695c9a0f2399",
+    "results/prep_bm_lab_N6/step_003/frames.npz": "90e6cead8b2575bd95f93fb31ec8b402b12b6db60064d540935b94aac3a727be",
+    "results/prep_bm_lab_N6/step_003/record.json": "0197a6fe0dffaa7b0da3989366c19b5c5fa177487a932372b295629b97f54594",
+    "results/prep_bm_lab_N6/step_004/frames.npz": "6da1ae8363ecb6c52576658dd330f48458e6a26a030373e0d01a083076c6c889",
+    "results/prep_bm_lab_N6/step_004/record.json": "34ca694a064a13af9fa35243b6c832245aa5cecd198bbedb9b465aa54cdc4e03",
+    "results/prep_bm_lab_N6/step_005/frames.npz": "6211a564ceec432283194de49ad19e7ecc4e401ec374b024e4db218ddbfdf4c8",
+    "results/prep_bm_lab_N6/step_005/record.json": "ebd052099ff2b378b461978ba18d7ace2f0926f454e465a35c4ddb59598a8ab0",
+    "results/prep_bm_lab_N6/step_006/frames.npz": "6b20edafd043277fa86cfb111ae78fdbdbcedeb5fea0a2124154192ba8b602e6",
+    "results/prep_bm_lab_N6/step_006/record.json": "8bf7c4878fb1f93ac0da4e26f46679b6fd0e5ef687f5e6d2551d5468ef5837a5",
+    "results/prep_bm_lab_N6/step_007/frames.npz": "cfe63ec2fc4f79ac00f98edf5b80c94de11c0820c0fd6f80ef9cc7348614fef2",
+    "results/prep_bm_lab_N6/step_007/record.json": "cc2a1b62e69da702e1ff10791325403404fa4cc592cd64fee8e9cf24b71880d5",
+    "results/prep_bm_lab_N6/step_008/frames.npz": "169e13d0cd1ec7d0add84ad714108081f53e3061b79e32860464c236df257cc4",
+    "results/prep_bm_lab_N6/step_008/record.json": "9af71c1224fe45ed6603e9e35cbc9fecbba5cff8a0e7eede2f3dc40763a5c0ae",
+    "results/prep_bm_lab_N6/step_009/frames.npz": "63db9a71949f82f0450361c616a82f6441ccffe7fa0ce5565e38994f70ddde03",
+    "results/prep_bm_lab_N6/step_009/record.json": "c8bcbec5a90b1307982ec05024d437c8f04f8890df96a64892a8275a26715b18",
+    "results/prep_bm_lab_N6/step_010/frames.npz": "0768190ec9ff561971dfe373b85cf2f5537c3140c58ea0f3c61911568127c651",
+    "results/prep_bm_lab_N6/step_010/record.json": "054a1bea602729375b115dc595035beefffeb53de4785a4adf57e8293a171831",
+    "results/prep_bm_lab_N6/step_011/frames.npz": "691941e6d0a8f0cab411d9d39f1a3105de9ad8de23cb57c449e3a9e896013063",
+    "results/prep_bm_lab_N6/step_011/record.json": "11048904a216095e806384988dcec5d29389e85e7fb1a57ca9edd535280459b9",
+    "results/prep_bm_lab_N6/step_012/frames.npz": "7822388b32f3e57f5fc7acf36891b4ea47f94878f09a2295155ab8db107dca0e",
+    "results/prep_bm_lab_N6/step_012/record.json": "35266c1647d9eff8e8ae02c8a9550c988ea53f71c4208b71782e33a683bd2b7c",
+    "results/prep_bm_lab_N6/step_013/frames.npz": "965c57f77633cbb2c62a9f15fea553385e7a75eec28d89068b07fdda9caff580",
+    "results/prep_bm_lab_N6/step_013/record.json": "f5319f7fad749c708f5c0cedfe7267ee4a58771c9ee59df043cdba9591e3d6e8",
+    "results/prep_bm_lab_N6/step_014/frames.npz": "f1cdd22aee9928f8d79ddb83e6c572ad4d3e33ce84b82809380f98103bd35cca",
+    "results/prep_bm_lab_N6/step_014/record.json": "a144acf158e9e3d21d872078575778e101fb1c9ceb0a9b366082be3a853db110",
+    "results/prep_bm_lab_N6/step_015/frames.npz": "b280b6979650745eb2e77c5b22972b556d3f9aa6ffb2cb6918cf50d0e3e21d84",
+    "results/prep_bm_lab_N6/step_015/record.json": "f32ce0e172e3150339b740e7b268e1919a62e4446b043730e6464f89fe261331",
+    "results/prep_bm_lab_N6/step_016/frames.npz": "a118b7c7696891fe1a61da97ad09ade1cf7598a33d3a099aa96f3cabd09a0ae6",
+    "results/prep_bm_lab_N6/step_016/record.json": "d48d41dd2899ab7e493405b53cf029ffe103f7360bfe7b458daa5010abfd7c81",
+    "results/prep_bm_lab_N6/step_017/frames.npz": "8031ee79b33e0b488cdfa50bb89f2a154351b35ffd2aa26b4011dc200c16ab51",
+    "results/prep_bm_lab_N6/step_017/record.json": "2c8ebe506588aed91119460d827ddbd86329085b558d5c2d7df6b8654ed559e0",
+    "results/prep_bm_lab_N6/step_018/frames.npz": "6996312b9f19ab1fbc62be3d6f9d6c51ac2995b611158dc1328af6ecbb92a870",
+    "results/prep_bm_lab_N6/step_018/record.json": "605b1d3913745bb146e8353f8b4578c5e58d5742db73d919f077bf85ddb1fd6f",
+    "results/prep_bm_lab_N6/summary.json": "7fe55c29e9ffa4e27cc4b74cb70c09a3cbf89de55a4404817bdd2bfc546343ce",
+    "results/prep_ref_lab_N4/guard_summary.json": "08ec322d93a94009b4afd0b0be798c8a95be034094966f6525820a32b8a1f7cd",
+    "results/prep_ref_lab_N4/step_000/frames.npz": "a8d609d0550705aed5a441394fb40362fb287627541ea78a1878a1cd8c9f5bd3",
+    "results/prep_ref_lab_N4/step_000/record.json": "349d50598be807293fac1f40ca24429e09bc237d4a36ffb8abc140796de01ee0",
+    "results/prep_ref_lab_N4/step_001/frames.npz": "079fe281d5399b88033cd3088bd23970fdffd47ccb73787afda4ce2a3807855c",
+    "results/prep_ref_lab_N4/step_001/record.json": "2e4719ba7c395e19939de357057684a72b5732f35b5b352f92364c8cace1bfbb",
+    "results/prep_ref_lab_N4/step_002/frames.npz": "83071cc4d62aa819f5e1a064f7019e03f8e94e0c0410dc89d4e5ae13ec16cdd5",
+    "results/prep_ref_lab_N4/step_002/record.json": "bce69f3d4848fb013a806edc1aa768d093b5d1be5609e2ae0e43a4c9e2cf389e",
+    "results/prep_ref_lab_N4/step_003/frames.npz": "c5a1762ae98c6518e395929fddb082e7676f7bdb4ea7daa5e94ac7359912aba8",
+    "results/prep_ref_lab_N4/step_003/record.json": "2aa41fb6885c329d8fa9569e87fdad70ecc37d4fdfff756515a258b5dffb3c27",
+    "results/prep_ref_lab_N4/step_004/frames.npz": "b6d0ebdb26d0f0e106c69a355f22e23f7f2502dd7591730683184a1e9465bb4f",
+    "results/prep_ref_lab_N4/step_004/record.json": "b312b5ed314e0b2f580dacc302e0e5aeb677ef36583e1f0da6126580a5417607",
+    "results/prep_ref_lab_N4/step_005/frames.npz": "60e460d759aa9a7f15fef0e422b48fd553de97c46a49bbac4ee60d474647ad33",
+    "results/prep_ref_lab_N4/step_005/record.json": "a19bf0bee0a08a4164bb92d3adc254585497aa972b822fad95d95dc79b6a6716",
+    "results/prep_ref_lab_N4/step_006/frames.npz": "cce0027f5a97f8c8fccb9c2206d39e4c5c3baed8cc553180c649388c91f99880",
+    "results/prep_ref_lab_N4/step_006/record.json": "4318afd9e71a71e57b24ca8bf59a5af8a9b63e7b589b809883d4fe0270d9ca09",
+    "results/prep_ref_lab_N4/step_007/frames.npz": "e4134d67846cb26e95ae681d40d8457606ef9dce9048ca6e65860f01a4affce1",
+    "results/prep_ref_lab_N4/step_007/record.json": "a050f10fed19dfca472e1e55e691f37148358d5acca9e4f1a45a384462cbae84",
+    "results/prep_ref_lab_N4/step_008/frames.npz": "c20aa02f1bb94b5347602f220bfd093d852c7ae3e10e3539246959cfd3a9f167",
+    "results/prep_ref_lab_N4/step_008/record.json": "8f71391ae701af1dafa072a2c47421c26a39e404fafe0dc6b879506e7b8e548d",
+    "results/prep_ref_lab_N4/step_009/frames.npz": "ad39498b7f70947f30ebd094af9c469baed7ac116587c80a8eb6eb180cfddda1",
+    "results/prep_ref_lab_N4/step_009/record.json": "f042862c01deeec00890b8f27d4449a03d5a3469d75bc9bb052d9724843c487c",
+    "results/prep_ref_lab_N4/step_010/frames.npz": "0131f1eabfa744e41541a9ded042bc0b5e599840e92effa1cb43e44884293a0d",
+    "results/prep_ref_lab_N4/step_010/record.json": "b6590b765c85b537b9dad0e9712d471fe9a8f48b9326cf139aa296cc4caa154d",
+    "results/prep_ref_lab_N4/step_011/frames.npz": "efe26a177e24f8c5be23cd8c5b9991aed70067dfaae6fa3c37565e4a92916354",
+    "results/prep_ref_lab_N4/step_011/record.json": "fb569c77f3036c75234057d9d89e417fa9218b06d6e3cec2323a33cd6a285f95",
+    "results/prep_ref_lab_N4/step_012/frames.npz": "333c862614843e8f1a4db1548b7954ca5c8ca3df9ef488ebf6bc40caabd695e5",
+    "results/prep_ref_lab_N4/step_012/record.json": "e6679a43fe2bf1af4296e6cc7ad141f7f4af1a2ef29785947bc858fc45ca34eb",
+    "results/prep_ref_lab_N4/step_013/frames.npz": "bcb0384e01b2f2df543ea28f8244dd911c2f1816846887f5ee8126ade17b4e58",
+    "results/prep_ref_lab_N4/step_013/record.json": "628afe19d0a9a28cadc0155fb5da4c8409a0e20fd854cfa2de055309ff9c99eb",
+    "results/prep_ref_lab_N4/step_014/frames.npz": "96315b0ae29f65d6fa37010da8aa648f83e27c0dbd4a1e33459c03148184f9a1",
+    "results/prep_ref_lab_N4/step_014/record.json": "a43d51430e5abaa871f97e3c7e91abe764acb9c69febe2e75e9fbb52b396235b",
+    "results/prep_ref_lab_N4/step_015/frames.npz": "412c106c7bb930a85975d7668f86118e6a50b56cbebe32bead53afcbac8ea308",
+    "results/prep_ref_lab_N4/step_015/record.json": "a82741ae430d65a6fe2e54e50549c913edc5fc670662bbb706d731b018b4f827",
+    "results/prep_ref_lab_N4/step_016/frames.npz": "98a417b7403d899acad290110b6491c74092d565c19218f54136a0c7c09d44d5",
+    "results/prep_ref_lab_N4/step_016/record.json": "575aef70a9506915abb9e9af9440a027146cafb44eac10e9408d89d51beb5f64",
+    "results/prep_ref_lab_N4/step_017/frames.npz": "fddd6d87652fa705133705e6ebb018af884c5c4468e938248a6d033f37ecc972",
+    "results/prep_ref_lab_N4/step_017/record.json": "4c4021832d726b719000dc43ab4d42b5c06849a7fb5aba6f35834c731c37250a",
+    "results/prep_ref_lab_N4/step_018/frames.npz": "040203c75f45771f1fb07b9ad395af10e2e98193c2764e3474638dce76cba267",
+    "results/prep_ref_lab_N4/step_018/record.json": "6daf011b491a93d27ba1acbee61fdfb827d442dab1d55d1b8fb4e21ae68c3fe6",
+    "results/prep_ref_lab_N4/summary.json": "4831dd119929f6afcac4b2283a761aa3a727d67d3670eba982b09529b1a10da9",
+    "results/prep_ref_lab_N6/guard_summary.json": "7df3065f64183ec27283cbf8e9f3eabda55b8180be2964796cd0afd4947b463f",
+    "results/prep_ref_lab_N6/step_000/frames.npz": "903654f54475311cab584ceab1d88231fc579da5dcf96eaeaa2457d87b7dc02f",
+    "results/prep_ref_lab_N6/step_000/record.json": "b05967605c2cd5022852664b0482d907e5e788474f726d3a1cf43e20c24a7c73",
+    "results/prep_ref_lab_N6/step_001/frames.npz": "ef57f61c7c61f7698e26efe9a9b98e659be81fe71551038b44534f4b93eee4e5",
+    "results/prep_ref_lab_N6/step_001/record.json": "a71cdbdf0168d06ad2f186c5059b55fffc372c574495ba9eef73d90849e2a19f",
+    "results/prep_ref_lab_N6/step_002/frames.npz": "a5ec45983c1ae2309ac2b078dda2b5fe8b5dda298306047e6118d14a789433ff",
+    "results/prep_ref_lab_N6/step_002/record.json": "62dcb7011b89d2d3e494acfbe130d664584984bf83b8ca8cb2941bbb12a2dcca",
+    "results/prep_ref_lab_N6/step_003/frames.npz": "9814920d3b9eb10baf4d792dc030b9cb8957eb8800e9c5f12b98cf6236e284f3",
+    "results/prep_ref_lab_N6/step_003/record.json": "8b6b81bfc1d9b41f6d33ea4a6bccffeaa4a2960d911593acd902875df81dea69",
+    "results/prep_ref_lab_N6/step_004/frames.npz": "7202fec454fdc2806118536a2e531716e943ec84ec979be382493fd257bc60a2",
+    "results/prep_ref_lab_N6/step_004/record.json": "d22c541832c771e86e62cbb71316cc633c2cc07f3e40f2847dd06e915c182812",
+    "results/prep_ref_lab_N6/step_005/frames.npz": "f75e257a7c61ee87cfcd691a5154a11f6efcdfe8e32652b9f8560d443c90e945",
+    "results/prep_ref_lab_N6/step_005/record.json": "0f1d4b42fd67792b9cc2f1d98d89850bed5890ccae4df9f252633c3b12d16261",
+    "results/prep_ref_lab_N6/step_006/frames.npz": "be4a4299d73eea0ae3560e03d1ee5aa4dc566baba69d4042c0c8923088357e5f",
+    "results/prep_ref_lab_N6/step_006/record.json": "5235fb8457812ca82d98de719a9c520b095787a7d533003a7ae88f7f06500a99",
+    "results/prep_ref_lab_N6/step_007/frames.npz": "539e3118d81f88836af296fa90c713d53b01bcfa0dc801664cd8d669c457af72",
+    "results/prep_ref_lab_N6/step_007/record.json": "dd86d104d5cefaf095cb78f721f8f632ed59fb765882d9aee7bb8b30ee893a6d",
+    "results/prep_ref_lab_N6/step_008/frames.npz": "549186942f2d0d0ae742a37e0a2ae7c385615869ff3ca6223cd9f81918e2e15e",
+    "results/prep_ref_lab_N6/step_008/record.json": "c27712409c22bcb32d5ad67963059292e1eb86f3b7dc8cd8a5587c5a961dd22c",
+    "results/prep_ref_lab_N6/step_009/frames.npz": "735d003ddcea4e887e96138b7ae3b3f52938fa4dc9049874a919191864726443",
+    "results/prep_ref_lab_N6/step_009/record.json": "e5e6b972d11a588d69df5f292f37c9cf4c2ab7c98da0a5d9107436324de8e2a1",
+    "results/prep_ref_lab_N6/step_010/frames.npz": "776c419425e55e40f741d71bf2a0d49371f456bb1f38ac1e4bd667eda4f88547",
+    "results/prep_ref_lab_N6/step_010/record.json": "65e1a084c419bfef79acdd9feafb372db1bec3fcdf33bdd2d1c2df1414f27c4a",
+    "results/prep_ref_lab_N6/step_011/frames.npz": "40430576286054d97650fd82d00c431369e9c4ce83446cc4f64140f3f9ae2735",
+    "results/prep_ref_lab_N6/step_011/record.json": "9c6f43d199b1fafe5c048908cff20a6ec98bfcf6521ae214a7b4aee7b5dcbd51",
+    "results/prep_ref_lab_N6/step_012/frames.npz": "c34bbabaef83a1809fd20c7bce7a91af8509bd2467549d7c88d3c7013d638fbf",
+    "results/prep_ref_lab_N6/step_012/record.json": "97b271e5cc2d9c8ddf132d7786beea29d37499652605d93ad5511c5aee0b398b",
+    "results/prep_ref_lab_N6/step_013/frames.npz": "e7aa8ac1c4f2a333ce77bc1cd2376e97e70fee5729e43def6f202fe48edb2200",
+    "results/prep_ref_lab_N6/step_013/record.json": "6abfb6d4c9897c1a8ca2d6db5cc2e1d98ccd6f6cb05c6952c560a4199b8b2f70",
+    "results/prep_ref_lab_N6/step_014/frames.npz": "f940c775661532a2039ff74f3e53b3db002affd395e2ca8a7527e7db58117d58",
+    "results/prep_ref_lab_N6/step_014/record.json": "1dbebbc225f64d3facf6e47e991bda930a32e1cf839b2f7b52cbc3c563e32999",
+    "results/prep_ref_lab_N6/step_015/frames.npz": "7731cbd3ac6b72022552c9fadd28b93358bee718e82608598b4681016e0b0f4a",
+    "results/prep_ref_lab_N6/step_015/record.json": "ddcd7ef8746f7ee0a875bd7745b630525f5f7e3c4189a5d70018f634c74d6f08",
+    "results/prep_ref_lab_N6/step_016/frames.npz": "edfa69e52fe1870fe9e70a80969a024dfcd22ac06886b74ef11b3fa25af4bf75",
+    "results/prep_ref_lab_N6/step_016/record.json": "62323cff7c32b3e5d40bad7203eb302eefe73c7f6d463c48965fe2708d19a60f",
+    "results/prep_ref_lab_N6/step_017/frames.npz": "93c01cb835982e1a57c8d8afd72ca56240a49bb729735117b5b203f8056015a8",
+    "results/prep_ref_lab_N6/step_017/record.json": "5fe00fc765efe3892d3b2aea3df3af8c5e8d4bfa59968837be1eedbadf735523",
+    "results/prep_ref_lab_N6/step_018/frames.npz": "6305be739a092b43148621b40e39161998b548f56f7819d1921ac992f88ccdd0",
+    "results/prep_ref_lab_N6/step_018/record.json": "f594b60608e6255ec1e7025ad14790d647cd375e23690480465d3b1c1f7840d7",
+    "results/prep_ref_lab_N6/summary.json": "ea42aaa9d43aeb33513d50b3f6a79665c28db749efb760e3a1324fd221ad6040",
+    "routes.py": "531de5f864bd39eb3d7aa4e463ef30f97be1297baf6691fbcd28246537f2b68a",
+    "run_tests.py": "a45ea02a35d4f1bdc1793c36b7a09154292b959b988a86592efcd264b0f27e32",
+    "spatial.py": "dde941247bd52481a20066649f76b9560bdcc15509cba088af530311c3ee629e",
+    "test_evidence.py": "2adc67c72bcc6c2b07d3921e415ebeeb0578f2110186972021c3af2ac11420cb",
+    "tests/test_checkpoint_guards.py": "bf001d4bce81ae8167cbd1b98d9d6631290ac7ea3547c42b8e0fa0e6917f9ece",
+    "tests/test_evidence_binding.py": "638353611adc0a33ad1e9026f06656c0b73ff828ec1279989a6606065e5f29d0",
+    "tests/test_frame_join.py": "2afaa43f9c0fe25b63a6760b71d0b27f004bb6ea02ccf4f7defc591b1d4f19bd",
+    "tests/test_impact_instrumentation.py": "b3a6c075fa3f86ba5bb71518cf89c6e7d9e6c280750151a153cf5c7998145892",
+    "tests/test_legacy_guards.py": "64abe2f565f517f09d0621be43642bc2744b9944ba36027cf74abf57c6cf93e7",
+    "tests/test_optimizer_metadata.py": "c0aec9fa3e257432ed1ef1f6adc805b97e3447508f516b33655e5e21441eb9b4",
+    "tests/test_packaging_contract.py": "f79c91eec40de7f17818d50b14c6003e6a4dafe04426eed7c5d8089bd740ef3c",
+    "tests/test_prep_acceptance.py": "731256ee55b827db39ed5aeb9250135693d787f02bfc902b65960c396333f39a"
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "packages": [
+      [
+        "PyMuPDF",
+        "1.26.6"
+      ],
+      [
+        "PyYAML",
+        "6.0.3"
+      ],
+      [
+        "Pygments",
+        "2.21.0"
+      ],
+      [
+        "aiohappyeyeballs",
+        "2.7.1"
+      ],
+      [
+        "aiohttp",
+        "3.13.5"
+      ],
+      [
+        "aiosignal",
+        "1.4.0"
+      ],
+      [
+        "annotated-types",
+        "0.8.0"
+      ],
+      [
+        "artifact_tool_v2",
+        "2.8.59"
+      ],
+      [
+        "attrs",
+        "26.1.0"
+      ],
+      [
+        "cadquery",
+        "2.7.0"
+      ],
+      [
+        "cadquery-ocp",
+        "7.8.1.1.post1"
+      ],
+      [
+        "casadi",
+        "3.7.2"
+      ],
+      [
+        "cffi",
+        "1.17.1"
+      ],
+      [
+        "charset-normalizer",
+        "3.4.4"
+      ],
+      [
+        "contourpy",
+        "1.3.3"
+      ],
+      [
+        "cryptography",
+        "46.0.0"
+      ],
+      [
+        "cycler",
+        "0.12.1"
+      ],
+      [
+        "et_xmlfile",
+        "2.0.0"
+      ],
+      [
+        "ezdxf",
+        "1.4.4"
+      ],
+      [
+        "fonttools",
+        "4.61.1"
+      ],
+      [
+        "frozenlist",
+        "1.8.0"
+      ],
+      [
+        "idna",
+        "3.19"
+      ],
+      [
+        "iniconfig",
+        "2.3.0"
+      ],
+      [
+        "joblib",
+        "1.5.3"
+      ],
+      [
+        "kiwisolver",
+        "1.4.9"
+      ],
+      [
+        "lxml",
+        "6.1.1"
+      ],
+      [
+        "matplotlib",
+        "3.10.8"
+      ],
+      [
+        "more-itertools",
+        "11.1.0"
+      ],
+      [
+        "msgpack",
+        "1.2.1"
+      ],
+      [
+        "multidict",
+        "6.7.1"
+      ],
+      [
+        "multimethod",
+        "1.12"
+      ],
+      [
+        "nlopt",
+        "2.11.0"
+      ],
+      [
+        "numpy",
+        "2.3.5"
+      ],
+      [
+        "openpyxl",
+        "3.1.5"
+      ],
+      [
+        "packaging",
+        "26.3"
+      ],
+      [
+        "pandas",
+        "2.2.3"
+      ],
+      [
+        "path",
+        "17.1.1"
+      ],
+      [
+        "pdf2image",
+        "1.17.0"
+      ],
+      [
+        "pdfminer.six",
+        "20251107"
+      ],
+      [
+        "pdfplumber",
+        "0.11.8"
+      ],
+      [
+        "pillow",
+        "12.3.0"
+      ],
+      [
+        "pip",
+        "26.2.1"
+      ],
+      [
+        "pluggy",
+        "1.6.0"
+      ],
+      [
+        "propcache",
+        "0.5.2"
+      ],
+      [
+        "pycparser",
+        "2.23"
+      ],
+      [
+        "pydantic",
+        "2.13.5"
+      ],
+      [
+        "pydantic_core",
+        "2.46.5"
+      ],
+      [
+        "pyhumps",
+        "3.8.0"
+      ],
+      [
+        "pyparsing",
+        "3.3.2"
+      ],
+      [
+        "pypdf",
+        "6.10.0"
+      ],
+      [
+        "pypdfium2",
+        "5.3.0"
+      ],
+      [
+        "pytest",
+        "9.1.1"
+      ],
+      [
+        "python-dateutil",
+        "2.9.0.post0"
+      ],
+      [
+        "python-docx",
+        "1.2.0"
+      ],
+      [
+        "python-pptx",
+        "1.0.2"
+      ],
+      [
+        "pytz",
+        "2026.3.post1"
+      ],
+      [
+        "reportlab",
+        "4.4.9"
+      ],
+      [
+        "runtype",
+        "0.5.3"
+      ],
+      [
+        "scikit-learn",
+        "1.8.0"
+      ],
+      [
+        "scipy",
+        "1.17.0"
+      ],
+      [
+        "seaborn",
+        "0.13.2"
+      ],
+      [
+        "setuptools",
+        "84.0.0"
+      ],
+      [
+        "six",
+        "1.17.0"
+      ],
+      [
+        "threadpoolctl",
+        "3.6.0"
+      ],
+      [
+        "trame",
+        "3.13.2"
+      ],
+      [
+        "trame-client",
+        "3.13.6"
+      ],
+      [
+        "trame-common",
+        "1.2.7"
+      ],
+      [
+        "trame-components",
+        "2.5.0"
+      ],
+      [
+        "trame-server",
+        "3.14.0"
+      ],
+      [
+        "trame-vtk",
+        "2.11.16"
+      ],
+      [
+        "trame-vuetify",
+        "3.2.5"
+      ],
+      [
+        "typing-inspection",
+        "0.4.4"
+      ],
+      [
+        "typing_extensions",
+        "4.16.0"
+      ],
+      [
+        "tzdata",
+        "2026.3"
+      ],
+      [
+        "uv",
+        "0.12.15"
+      ],
+      [
+        "vtk",
+        "9.3.1"
+      ],
+      [
+        "websockets",
+        "16.0"
+      ],
+      [
+        "wheel",
+        "0.48.0"
+      ],
+      [
+        "wslink",
+        "2.5.7"
+      ],
+      [
+        "xlrd",
+        "2.0.1"
+      ],
+      [
+        "xlsxwriter",
+        "3.2.9"
+      ],
+      [
+        "yarl",
+        "1.24.5"
+      ],
+      [
+        "zstandard",
+        "0.25.0"
+      ]
+    ],
+    "native_libraries": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX",
+        "binary_sha256": "ee2039cf13a45e1e89f04d0cea9585657d93ffaa425594e1935161013fdf4e12"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX",
+        "binary_sha256": "8fb864c29cac4b25f6e2c139491ea96f2724dde42d51394f84e9c4a622e34790"
+      }
+    ],
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "passed": 61,
+  "artifacts": {
+    "junit.xml": "266b4e410dd6a88660930988079dba6ffc52ec7c2a7fcf7bae45fb4c5cb8fe9c",
+    "execution.json": "962fe47c5620a41b8c32f9be090272e22376b267f37353c041d9af12525cd7e3",
+    "stdout.txt": "a22f63b5edea602a38758598f7b085b2e0da89abc41e7b640599e35b8951a62f"
+  }
+}

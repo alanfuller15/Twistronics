@@ -1,0 +1,373 @@
+{
+  "collected": [
+    "tests/test_checkpoint_guards.py::test_frame_corruption_is_rejected",
+    "tests/test_checkpoint_guards.py::test_missing_checkpoint_is_rejected",
+    "tests/test_checkpoint_guards.py::test_wrong_protocol_is_rejected",
+    "tests/test_evidence_binding.py::test_matching_evidence_provides_measured_count",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[module.py]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[tests/test_case.py]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[requirements.txt]",
+    "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[results/state.json]",
+    "tests/test_evidence_binding.py::test_changed_runtime_rejects_evidence",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[failed_exit]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[wrong_count]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[tampered_junit]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_artifact]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[skipped]",
+    "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_call]",
+    "tests/test_evidence_binding.py::test_missing_evidence_stops_report_before_any_write",
+    "tests/test_evidence_binding.py::test_builder_checks_evidence_before_replay_claims",
+    "tests/test_frame_join.py::test_identical_endpoint_frames_join",
+    "tests/test_frame_join.py::test_common_orientation_flip_is_allowed",
+    "tests/test_frame_join.py::test_one_sided_flip_is_not_a_relative_frame_join",
+    "tests/test_frame_join.py::test_misreported_charge_is_rejected",
+    "tests/test_frame_join.py::test_root_permutation_is_matched_with_frames",
+    "tests/test_frame_join.py::test_basis_mismatch_is_rejected",
+    "tests/test_frame_join.py::test_incompatible_parameter_state_is_rejected",
+    "tests/test_frame_join.py::test_anchor_frame_bytes_must_match_record",
+    "tests/test_impact_instrumentation.py::test_legacy_trap_counts_and_refuses_calls_then_restores",
+    "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[euler-args0]",
+    "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[adjacent_nodes-args1]",
+    "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[transport-args2]",
+    "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[node_winding-args3]",
+    "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[analyse-args4]",
+    "tests/test_legacy_guards.py::test_runtime_guards_survive_python_optimization[False]",
+    "tests/test_legacy_guards.py::test_runtime_guards_survive_python_optimization[True]",
+    "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[True-False]",
+    "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[False-True]",
+    "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[True-True]",
+    "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[False-False]",
+    "tests/test_optimizer_metadata.py::test_plain_call_rejects_failed_final_attempt",
+    "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad0]",
+    "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad1]",
+    "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad2]",
+    "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad3]",
+    "tests/test_optimizer_metadata.py::test_nonfinite_canonical_evaluation_rejected",
+    "tests/test_optimizer_metadata.py::test_wrap_value_mismatch_is_rejected",
+    "tests/test_optimizer_metadata.py::test_returned_value_belongs_to_returned_coordinate",
+    "tests/test_optimizer_metadata.py::test_real_optimizer_smoke",
+    "tests/test_packaging_contract.py::test_preserved_tree_requires_no_reconstructed_zip",
+    "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[file_changed]",
+    "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[manifest_changed]",
+    "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[missing]",
+    "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[escape]",
+    "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[symlink]",
+    "tests/test_packaging_contract.py::test_output_parent_created_and_payload_preserved",
+    "tests/test_packaging_contract.py::test_unsafe_archive_names_are_rejected",
+    "tests/test_prep_acceptance.py::test_complete_n4_frame_replay_is_publishable",
+    "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[pilot]",
+    "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[partial]",
+    "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[missing_coarse]",
+    "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[wrong_gap]",
+    "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[missing_frame_transport]",
+    "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[wrong_endpoint_orientation]"
+  ],
+  "calls": [
+    {
+      "nodeid": "tests/test_checkpoint_guards.py::test_frame_corruption_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_checkpoint_guards.py::test_missing_checkpoint_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_checkpoint_guards.py::test_wrong_protocol_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_matching_evidence_provides_measured_count",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[module.py]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[tests/test_case.py]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[requirements.txt]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_code_tests_dependencies_or_measurements_reject_evidence[results/state.json]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_changed_runtime_rejects_evidence",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[failed_exit]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[wrong_count]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[tampered_junit]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_artifact]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[skipped]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_failed_or_incomplete_evidence_cannot_publish[missing_call]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_missing_evidence_stops_report_before_any_write",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_evidence_binding.py::test_builder_checks_evidence_before_replay_claims",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_identical_endpoint_frames_join",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_common_orientation_flip_is_allowed",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_one_sided_flip_is_not_a_relative_frame_join",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_misreported_charge_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_root_permutation_is_matched_with_frames",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_basis_mismatch_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_incompatible_parameter_state_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_frame_join.py::test_anchor_frame_bytes_must_match_record",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_impact_instrumentation.py::test_legacy_trap_counts_and_refuses_calls_then_restores",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[euler-args0]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[adjacent_nodes-args1]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[transport-args2]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[node_winding-args3]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_legacy_entries_refuse_unqualified_acceptance[analyse-args4]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_runtime_guards_survive_python_optimization[False]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_legacy_guards.py::test_runtime_guards_survive_python_optimization[True]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[True-False]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[False-True]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[True-True]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_wrapped_retry_controls_metadata[False-False]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_plain_call_rejects_failed_final_attempt",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad0]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad1]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad2]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_nonfinite_final_result_is_explicitly_rejected[bad3]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_nonfinite_canonical_evaluation_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_wrap_value_mismatch_is_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_returned_value_belongs_to_returned_coordinate",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_optimizer_metadata.py::test_real_optimizer_smoke",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_preserved_tree_requires_no_reconstructed_zip",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[file_changed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[manifest_changed]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[missing]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[escape]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_prior_provenance_errors_are_rejected[symlink]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_output_parent_created_and_payload_preserved",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_packaging_contract.py::test_unsafe_archive_names_are_rejected",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_complete_n4_frame_replay_is_publishable",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[pilot]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[partial]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[missing_coarse]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[wrong_gap]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[missing_frame_transport]",
+      "outcome": "passed",
+      "xfail": false
+    },
+    {
+      "nodeid": "tests/test_prep_acceptance.py::test_incomplete_or_misreported_replay_rejected[wrong_endpoint_orientation]",
+      "outcome": "passed",
+      "xfail": false
+    }
+  ],
+  "exit_code": 0
+}
