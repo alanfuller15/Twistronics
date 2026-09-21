@@ -1,4 +1,4 @@
-# TEAM SHARE — our v055: lower unlink fold
+# Our v055: lower unlink fold
 
 Partner v054 is preserved and reconciled with our published repair batch. BM.refine is byte-identical in both trees; the reference engine and gate also match. The partner supplied no new numerical result. Their 33-test statement remains a supplied historical claim in this batch. Their Euler/braid opt-in is policy only in the supplied source, and the copied v048 ledger/COVERAGE are historical snapshots; our active runtime guards and versioned records remain authoritative for this batch. See RECONCILIATION.md.
 
@@ -20,3 +20,7 @@ All sampled lower-node offsets from the flat pair's straight segment are positiv
 The remaining work changes from locating this candidate to reviewing the complete campaign's claim/evidence links and historical legacy-helper consumers. No continuous-path proof, infinite-cutoff bound, microscopic tunnelling strain law, comprehensive security clearance or physical-bilayer validation is claimed. Frozen v053/v054 evidence is unchanged.
 
 Start in research/v055 with REPORT.md, SUMMARY.json, METHOD.md, PLAN.json and the four raw results; the complete incoming partner ZIP and reconciliation are included.
+
+## Post-freeze handoff correction
+
+See [ADDENDUM_v055.md](ADDENDUM_v055.md): the partner’s 0.438 meV is a coarse grid value; their own refined reference record already agrees with our 0.4038517861 meV result. The earlier search-domain attribution in frozen RECONCILIATION.md was too strong. This separate annotation changes no numerical result, gate or bound test identity. Regenerating the historical report body does not regenerate this separately retained addendum.
