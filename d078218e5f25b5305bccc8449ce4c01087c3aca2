@@ -1,0 +1,116 @@
+{
+  "version": "our_v055",
+  "status": "ACCEPT",
+  "scope": "lower unlink fold with sampled two-root continuation and finite full-chart lower-gap searches",
+  "kinetic": "lab_nn_full",
+  "protocol_sha256": "87bfa46a36c3885bbc8315d1d0ff193dc99b403231903aef5204f408e927bfda",
+  "cases": [
+    {
+      "engine": "bm_lab",
+      "N": 4,
+      "geometry": "linear",
+      "parameter": -0.31229815648103443,
+      "momentum": [
+        0.6662387355519919,
+        0.6319461962092032
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "label": "OPPOSITE",
+      "just_open_gap": 0.0522215382583866,
+      "endpoint_lower_gap": 4.773238908302407,
+      "minimum_boundary_gap": 61.366201697003646,
+      "anchor_join": 1.3414875847488985e-15,
+      "minimum_sampled_segment_offset": 0.03195070071531037,
+      "loop_fallbacks": 0,
+      "seconds": 27.1626718044281,
+      "record": "results/lower_unlink_bm_lab_N4.json",
+      "record_sha256": "8b553cc2c8db70f175985cb08b8785dedd0301220c6b4c511fbb28de052abc63"
+    },
+    {
+      "engine": "bm_lab",
+      "N": 6,
+      "geometry": "linear",
+      "parameter": -0.3121542064362122,
+      "momentum": [
+        0.6662066370526374,
+        0.6319341404194606
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "label": "OPPOSITE",
+      "just_open_gap": 0.052217470652287545,
+      "endpoint_lower_gap": 4.780529759497947,
+      "minimum_boundary_gap": 61.3831511047715,
+      "anchor_join": 9.155133597044475e-16,
+      "minimum_sampled_segment_offset": 0.03198560026561379,
+      "loop_fallbacks": 0,
+      "seconds": 121.47185206413269,
+      "record": "results/lower_unlink_bm_lab_N6.json",
+      "record_sha256": "8275cd03e18f840a33531adf3da1c89c40376f056310cbbbde6e6fc291e20a97"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 4,
+      "geometry": "exact",
+      "parameter": -0.3122931033029228,
+      "momentum": [
+        0.6662391914753506,
+        0.6319450927813988
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "label": "OPPOSITE",
+      "just_open_gap": 0.05222125126609001,
+      "endpoint_lower_gap": 4.77350097253759,
+      "minimum_boundary_gap": 61.36627986960862,
+      "anchor_join": 1.7377739072730912e-15,
+      "minimum_sampled_segment_offset": 0.03195074179779733,
+      "loop_fallbacks": 0,
+      "seconds": 27.12494134902954,
+      "record": "results/lower_unlink_ref_lab_N4.json",
+      "record_sha256": "0d44754956b7fba13cdb8ebb0c372f1588619e7d1efc22718cc6259dad529b03"
+    },
+    {
+      "engine": "ref_lab",
+      "N": 6,
+      "geometry": "exact",
+      "parameter": -0.3121491535872318,
+      "momentum": [
+        0.6662070940362793,
+        0.6319330366367165
+      ],
+      "root_states": 9,
+      "charge_stations": 2,
+      "label": "OPPOSITE",
+      "just_open_gap": 0.05221718433583078,
+      "endpoint_lower_gap": 4.780791795861104,
+      "minimum_boundary_gap": 61.38322892722797,
+      "anchor_join": 2.8457249041605285e-15,
+      "minimum_sampled_segment_offset": 0.03198564060746248,
+      "loop_fallbacks": 0,
+      "seconds": 119.83267760276794,
+      "record": "results/lower_unlink_ref_lab_N6.json",
+      "record_sha256": "aea2a2d51bcd0f4971217a08e7d5acbbbb8f6f93af7d3d266a7624e6e1e726a9"
+    }
+  ],
+  "root_states": 36,
+  "charge_stations": 8,
+  "open_stations": 8,
+  "tests": {
+    "passed": 65,
+    "run_id": "20260921T005345Z_c8283b9c",
+    "started_utc": "2026-09-21T00:53:45.500678+00:00",
+    "record_sha256": "7ebff5a3cad4dabf48243c1a26e1aa885260b3b7f09f9d2e8d2ef4b25155e277",
+    "source_and_input_files": 45
+  },
+  "test_evidence": "provenance/test_runs/20260921T005345Z_c8283b9c/result.json",
+  "partner_archive_sha256": "619fc1b091fd6510872099b124cd5da2f6de570625b1741fe6beb21275c870ae",
+  "limits": [
+    "Finite numerical searches are not rigorous global gap bounds or continuous-interval proofs.",
+    "Only the first and last root stations have loop charges; root stations are not all charge stations.",
+    "The two engines share a measurement harness; no independent conceptual or physical validation.",
+    "N4/N6 agreement does not establish infinite-cutoff accuracy.",
+    "Historical legacy-helper consumers outside v054 preparation remain impact-unverified."
+  ]
+}
