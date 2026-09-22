@@ -1,0 +1,19 @@
+{
+ "status":"FROZEN_N8_LOCAL_MERGER_CUTOFF_FOLLOWUP",
+ "parent_commit":"f85425196e096ecd5cdc7f1ca84247aa1e69d437",
+ "N":8,"engines":["bm","ref"],
+ "unchanged_sources":"../r1_merger/study.py Local and helpers; ../r1_merger/refine.py eigenvalue-gradient/Hessian checks; their plans and all underlying continuum-model sources remain unchanged",
+ "model":"Same epsilon=0.007, phi=15 degrees, theta=1 degree, w1=110 meV, w0=88 meV; layer potentials plus/minus D in meV; N alone increases",
+ "initial_seeds":"Same-engine D=40 accepted local pair in ../r1_merger/N6.json; re-refine with N8 and require two accepted distinct roots before continuing",
+ "fold":"Same anchor seed and three derivative steps as parent; require every fold criterion and parent derivative-refinement tolerances; independently check the final fold's six-band spectrum against the original complex Hamiltonian",
+ "sweep":"Same 27 D stations and both directions as parent; last accepted pair retained across failed stations; reverse also starts from the N8 D40 pair",
+ "node_loops":[{"D":"40.0","points":[128,256]},{"D":"N8 finest-fold D minus 0.01 meV","points":[1024,2048]}],
+ "radius_fractions_of_pair_separation":[0.2,0.1],
+ "enclosing_loops":[{"D":40.0,"points":[1024,2048]},{"D":40.5,"points":[128,256]}],
+ "local_minima":{"D":"N8 finest-fold D plus 0.01 and 0.05 meV, and fixed D=40.5","seeds":"anchor and both N8 D40 roots","candidate_method":"bounded least squares on the actual two-component map using Local.root; above the fold a positive-gap output is deliberately a rejected root candidate, not a claimed root","acceptance":"Reuse check_minimum's exact eigenvalue gradient, Hessian refinement, positivity, conditioning and displacement criteria on every candidate, including optimizer failures. Candidate status is retained separately. Compare resulting coordinates across three starts with the parent's 1e-5 tolerance."},
+ "grid_scope":"No new broad inventory or box grid: this checkpoint tests cutoff sensitivity of the previously located local event",
+ "comparison":"Report N4,N6,N8 fold D and coordinates, fixed-D=40.5 gap, absolute successive changes and their ratios for each engine. Also match N8 engines and forward/reverse roots. No fitted infinite-cutoff extrapolation or convergence certificate from two increments.",
+ "engine_match_thresholds":{"fold_D_meV":0.00001,"coordinates":0.00001,"fixed_D_gap_meV":0.000001},
+ "stop":"Stop an engine on computation, affine/native-spectrum failure, or loss of the initial pair. Preserve partial data. Numerical criterion failures remain warnings without threshold changes.",
+ "claims_limit":"Finite-model local numerical evidence and observed cutoff sensitivity only. No rigorous root exclusion, full braid acceptance, global Euler removal, novelty, or experimental calibration. The earlier segment crossing and endpoint relative charges are not rerun at N8 here."
+}
