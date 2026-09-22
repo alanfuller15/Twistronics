@@ -1,0 +1,37 @@
+{
+  "status": "FROZEN_AFTER_RETAINED_DESIGN_SURVEY_BEFORE_CHARGE_CALCULATIONS",
+  "parent_commit": "0c855a80e8f654b96491af98a00255e73168f862",
+  "N": 8,
+  "engines": ["bm", "ref"],
+  "D_meV": [38.0, 39.0],
+  "bands_zero_based": [297, 298, 299],
+  "roots": "Reuse flat_q and upper from the 16-interval r1_holonomy continuation, endpoints D38 and D39; retain source hashes. No new root claim.",
+  "base": "(flat_q + upper)/2 + (0,0.012), independently at each D",
+  "radii": [0.003, 0.0015],
+  "contours": "From common base to node+(radius,0), counterclockwise regular polygon around node, retrace straight stem. Every edge is affine in fractional momentum at fixed D. Test A=flat_q, B=upper and sampled concatenations AB, BA, ABA^-1B^-1.",
+  "region": "Smallest axis-aligned rectangle containing base and both disks of radius 0.003. Cover full rectangle by 8x8 and 16x16 equal cells. Evaluate the center of every cell, including cells containing internal nodes.",
+  "trivialization": "B is the three-band eigenframe at the common base. Q(f)=polar(B.T F(f)); this is a canonical fixed-reference chart if projection has full rank. Bound its rank over the full rectangle, not just the contour.",
+  "region_bounds": "For cell halfwidths h_j, delta=sum h_j*||A_j||_2. Exterior lower=g_center-2*delta-allowance. Projector displacement <= sqrt(3)*delta/exterior_lower (see METHOD.md derivation). Squared anchor singular value lower = s_center^2 - projector_displacement - allowance. Require both exterior and chart thresholds.",
+  "mesh_levels": [
+    {"name":"coarse", "polygon_edges":64, "stem_subintervals":16, "variation_over_lower_max":0.2, "maximum_frame_step_radians":0.15, "region_cells_per_axis":8},
+    {"name":"fine", "polygon_edges":128, "stem_subintervals":32, "variation_over_lower_max":0.1, "maximum_frame_step_radians":0.075, "region_cells_per_axis":16}
+  ],
+  "thresholds": {
+    "gap_margin_meV": 0.001,
+    "floating_allowance_meV": 1e-7,
+    "chart_smin": 0.6,
+    "max_depth": 16,
+    "quaternion_distance": 1e-7,
+    "cross_check_error": 1e-7,
+    "native_spectrum_meV": 1e-8,
+    "orthogonality": 1e-8
+  },
+  "edge_rule": "For affine interval delta=||H_right-H_left||, all four gaps (two internal, two exterior) have lower estimate min(g_left,g_right)-delta-allowance. Bisect until lower>margin, delta/lower is below the level threshold, chart_smin>=0.6, and sign-aligned projected eigenframe step is a proper rotation below the angle cap. Retain unresolved leaves and suppress labels.",
+  "lift": "Track individual eigenvector signs in Q, retaining failures of proper orientation. Lift each small proper rotation to a unit quaternion with positive scalar part, multiply in order, and invert the cumulative lift so chronological concatenation has charge(AB)=charge(A)*charge(B). Compare with continuous sign-unwrapped absolute rotation quaternions.",
+  "cross_checks": ["reverse path gives inverse", "random local eigenvector signs preserve the conjugacy class", "constant reference rotation preserves the charge", "two lift constructions agree", "AB and BA match direct quaternion products", "commutator is measured on the concatenated samples, not inferred only from labels", "radius and mesh agree in conjugacy class", "both engines agree in conjugacy class"],
+  "gauge_seed": 20260922,
+  "hypotheses": {"A_class":"+-k", "B_class":"+-i", "AB_class":"+-j", "BA_class":"+-j", "commutator":"-1"},
+  "hypothesis_policy": "Predictions are separate from validity. Report valid unexpected values; never adjust thresholds to obtain expected labels. Signed i/j/k depend on the chosen base eigenframe; compare conjugacy classes across engines and endpoints.",
+  "controls": ["constant frame +1", "pi rotations about x/y/z give the corresponding imaginary class", "2pi rotation -1 and 4pi rotation +1", "affine analytic three-band model with two adjacent-gap nodes: both generators, AB, BA, commutator", "contour through an internal node rejected", "rank-deficient anchor rejected"],
+  "scope": "Local based-loop frame-charge diagnostic in a conditionally isolated and trivialized three-band region at two fixed D values. No temporal charge conjugation or full braid acceptance, Euler-class change, experimental control calibration, novelty, or infinite-cutoff conclusion. Both engines share this measurement framework. Bounds use floating-point norms/eigensolutions, not interval arithmetic."
+}
