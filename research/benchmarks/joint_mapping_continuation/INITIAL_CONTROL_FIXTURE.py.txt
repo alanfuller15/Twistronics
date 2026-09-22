@@ -1,0 +1,101 @@
+"""Analytic coupled-event and adversarial controls before production."""
+import hashlib,json
+from pathlib import Path
+import numpy as np
+from deformation import ROOT,CFG,make_family,model
+from coupled import center_data,certificate,containment,enclosure,symnorm
+
+class Toy:
+    dim=6
+    def __init__(self,k,s=0.,rotation=None,closure=False,singular=False,outside=False):
+        self.k,self.s=k,s;self.D0=s*s;self.lo=2+int(k==2)
+        lo=self.lo;self.xmat=np.zeros((6,6));self.ymat=np.zeros((6,6));self.cmat=np.zeros((6,6))
+        self.xmat[lo,lo]=1;self.xmat[lo+1,lo+1]=-1
+        self.ymat[lo,lo+1]=self.ymat[lo+1,lo]=1
+        self.cmat[lo,lo+2]=self.cmat[lo+2,lo]=1
+        self.base=np.diag([-20.,-10.,0.,0.,10.,20.] if k<2 else [-30.,-20.,-10.,0.,0.,10.])
+        self.rotation=rotation if rotation is not None else np.eye(6)
+        self.closure,self.singular,self.outside=closure,singular,outside
+        self.A=[self.xmat,self.ymat,(-.1*self.ymat if k==2 and not singular else np.zeros((6,6)))]
+        self.A=[self.rotation.T@a@self.rotation for a in self.A]
+        self.h0=self.H([0.,0.,self.D0])
+    def origin(self,s,D):
+        if self.k==0:return np.array([.2+.1*s,.3])
+        if self.k==1:return np.array([.8,.3+.1*s])
+        return np.array([(.9 if self.outside else .5)+.05*s,.3+.05*s+(.1*(D-s*s) if not self.singular else 0)])
+    def H(self,v):
+        s=self.s;o=self.origin(s,v[2]);H=self.base+(v[0]-o[0])*self.xmat+(v[1]-o[1])*self.ymat+s*self.cmat
+        if self.closure:H[self.lo+2,self.lo+2]-=1000*s
+        return self.rotation.T@H@self.rotation
+    def derivative(self,f):
+        dx=[.1,0,.05][self.k];dy=[0,.1,.05-.2*self.s][self.k]
+        H=-dx*self.xmat-dy*self.ymat+self.cmat
+        if self.closure:H[self.lo+2,self.lo+2]-=1000
+        return self.rotation.T@H@self.rotation
+    def remainder_bounds(self,f,v,h):return dict(second_norm=.2 if self.k==2 else 0.,axis_derivative_norms=[0.,0.])
+    def exact(self,s):
+        delta=np.sqrt(25+.5*s*s)-5;o=self.origin(s,s*s)
+        return np.r_[o+[delta,0],-delta]
+
+def build_toy(s=0.,**kw):
+    fs=[Toy(k,s,**kw) for k in range(3)];roots=[f.exact(s)[:2] for f in fs]
+    raw,frames=center_data(fs,s,s*s,roots)
+    return fs,raw,frames
+
+def rem(fs,raw,h):
+    return [f.remainder_bounds(raw['y'][3*k:3*k+2],raw['velocity'][3*k:3*k+3],h) for k,f in enumerate(fs)]
+
+def main():
+    checks=[]
+    def add(name,passed,**evidence):
+        checks.append(dict(name=name,pass_check=bool(passed),**evidence));print(name,passed,flush=True)
+    rng=np.random.default_rng(65537);R=np.linalg.qr(rng.normal(size=(6,6)))[0]
+    for name,rotation in [('curved_coupled_event',None),('orthogonal_basis_covariance',R)]:
+        fs,raw,F=build_toy(rotation=rotation);cert=certificate(raw,.02,rem(fs,raw,.02));margins=[]
+        if cert['pass_check']:
+            for s in np.linspace(-.02,.02,81):
+                exact=np.r_[np.concatenate([f.exact(s) for f in fs]),s*s]
+                lo,hi=enclosure(raw,cert,s);margins.append(float(min(np.r_[exact-lo,hi-exact])))
+        add(name,cert['pass_check'] and min(margins,default=-1)>0,raw=raw,certificate=cert,analytic_containment_min=min(margins,default=None))
+    fs,raw,F=build_toy();cert=certificate(raw,.02,rem(fs,raw,.02))
+    tiny=certificate(raw,.02,rem(fs,raw,.02),np.array(cert['radii'])*1e-4)
+    add('undersized_radius_rejected',not tiny['pass_check'],certificate=tiny)
+    fs,raw,F=build_toy(closure=True);bad=certificate(raw,.02,rem(fs,raw,.02))
+    add('complement_closure_rejected',not bad['pass_check'] and bad['reason']=='complement_line_or_inertia',certificate=bad)
+    err=None
+    try:build_toy(singular=True)
+    except ValueError as e:err=str(e)
+    add('singular_coupled_map_rejected',err=='singular_coupled_map',reason=err)
+    fs,raw,F=build_toy(outside=True);bad=certificate(raw,0,rem(fs,raw,0))
+    add('outside_segment_rejected',not bad['pass_check'] and not bad.get('geometry',{}).get('pass_check',True),certificate=bad)
+    pfs,point,_=build_toy();pc=certificate(point,0,rem(pfs,point,0));joins=[]
+    for s in [-.01,.01]:
+        fs,raw,F=build_toy(s);tc=certificate(raw,.01,rem(fs,raw,.01));joins.append(containment(point,pc,raw,tc,0))
+    add('independent_point_links_incident_tubes',all(j['pass_check'] for j in joins),joins=joins)
+    fake=dict(s=0.,y=[0.]*10,velocity=[0.]*10);other=dict(fake,y=[1.5]+[0.]*9)
+    bad=containment(fake,dict(pass_check=True,inner_radii=[.1]*10),other,dict(pass_check=True,radii=[1.]*10),0)
+    add('outer_overlap_alone_rejected',not bad['pass_check'],containment=bad)
+
+    records=[]
+    for engine in ['bm','ref']:
+        s=.00705;D=38.45;f=np.array([.77,.63]);vel=np.array([20.,-12.,0.]);vD=7450.
+        family=make_family(engine,s,D);H0=family.H([*f,D]);T=family.derivative(f)+vel[0]*family.A[0]+vel[1]*family.A[1]+vD*family.A[2]
+        for h in [1e-5,5e-6]:
+            bound=family.remainder_bounds(f,vel,h);errors=[];axes=[];native=[]
+            for sign in [-1,1]:
+                ds=sign*h;ff=f+ds*vel[:2];dd=D+ds*vD
+                other=make_family(engine,s+ds,dd)
+                k=other.m.frac_to_k(ff) if engine=='bm' else other.m.k(ff)
+                H=model.realify(other.m.H(k)).real
+                errors.append(symnorm(H-H0-ds*T));axes.append([symnorm(other.A[j]-family.A[j]) for j in range(2)])
+                native.append(float(np.max(abs(H-other.H([*ff,dd])))))
+            limit=.5*h*h*bound['second_norm']+CFG['energy_allowance_meV']
+            ok=max(errors)<=limit and np.all(np.array(axes)<=h*np.array(bound['axis_derivative_norms'])+CFG['energy_allowance_meV']) and max(native)<CFG['matrix_tolerance_meV']
+            records.append(dict(engine=engine,h=h,remainder_errors=errors,remainder_bound=limit,axis_changes=axes,bounds=bound,native_errors=native,pass_check=bool(ok)))
+    add('analytic_strain_remainder_against_native_engines',all(r['pass_check'] for r in records),records=records)
+    source={n:__import__('hashlib').sha256((ROOT/n).read_bytes()).hexdigest() for n in ['PLAN.json','deformation.py','coupled.py','controls.py']}
+    out=dict(all_controls_pass=all(c['pass_check'] for c in checks),controls=checks,source_hashes=source)
+    (ROOT/'CONTROLS.json').write_text(json.dumps(out,indent=2,allow_nan=False)+'\n')
+    return 0 if out['all_controls_pass'] else 1
+
+if __name__=='__main__':raise SystemExit(main())

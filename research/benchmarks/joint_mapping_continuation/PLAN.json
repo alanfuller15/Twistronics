@@ -1,0 +1,68 @@
+{
+  "status": "FROZEN_BEFORE_NEW_CONTROLS_AND_PRODUCTION",
+  "parent_commit": "ef82a53d4b15e768ea748e028aa597c632fd1d9b",
+  "N_label": 6,
+  "basis": "87-vector union from joint_mapping_guarded/BASIS.json, fixed at every strain",
+  "engines": [
+    "bm",
+    "ref"
+  ],
+  "strain_interval": [
+    0.007,
+    0.0071
+  ],
+  "initial_intervals": [
+    4,
+    8
+  ],
+  "max_bisection_depth": 5,
+  "max_unique_centers_per_engine": 513,
+  "model": {
+    "theta": 1.0,
+    "phi": 15.0,
+    "P": 1.0,
+    "kinetic": "lab_nn_full",
+    "geometry": "exact",
+    "tunnelling": "constant"
+  },
+  "locator": {
+    "D_bracket_halfwidth_meV": 0.05,
+    "D_xtol_meV": 1e-10,
+    "event_offset_tolerance": 1e-10,
+    "max_iterations": 40,
+    "root_box_radius": 0.02
+  },
+  "bounds": {
+    "energy_allowance_meV": 1e-07,
+    "norm_allowance": 1e-07,
+    "dimensionless_allowance": 1e-12,
+    "geometry_allowance": 1e-12,
+    "geometry_residual_scale": 1000.0,
+    "minimum_rho_meV": 1e-06,
+    "radius_factor": 4.0,
+    "contraction_max": 0.5,
+    "self_map_max": 0.8,
+    "complement_margin_meV": 0.001,
+    "inverse_smin_min": 1e-09,
+    "orthogonality_tolerance": 1e-08,
+    "matrix_tolerance_meV": 1e-09,
+    "native_gap_tolerance_meV": 1e-08,
+    "segment_margin": 1e-05,
+    "reconciliation_tolerance": 1e-08
+  },
+  "equation": "Ten unknowns: (f1,f2,E) for each of p,q,upper, plus D. Nine fixed-frame Schur equations and one scaled signed-area equation place upper on the finite p-q segment. Strain is the continuation parameter.",
+  "derivative_bounds": "Analytic first strain derivative plus uniform second-derivative norm bound from inverse-deformation resolvent norms. All reciprocal indices are fixed; no finite-difference derivative is used as a continuum bound. Momentum coefficients have uniform first-derivative norm bounds. Retain projection, inverse and center cross-block residuals.",
+  "seeds": "Linear interpolation between retained fixed-union BM states at eps .007/.0071; same seeds for both engines. Locate each new center inside a fixed +/- .05 meV D bracket and fixed +/- .02 seed-coordinate boxes. No rescue changes.",
+  "joins": "Independent 10D point certificate at every accepted leaf endpoint, with inner enclosure strictly contained in each incident full tube; overlapping outer tubes alone never passes. Check all root labels remain spatially separated, periodic-image lifts unchanged, unit-square domains and finite-segment interior throughout each accepted tube.",
+  "controls": [
+    "Analytically known coupled event D(s)=s^2 with nonlinear Schur roots",
+    "Constant orthogonal frame covariance",
+    "Undersized radius rejects curved solution",
+    "Complement closure rejects",
+    "Singular coupled Jacobian rejects",
+    "Supporting-line crossing outside finite segment rejects",
+    "Independent endpoint containment and rejected outer-only overlap",
+    "Analytic strain derivative and remainder checked against both native engines at fixed-basis controls"
+  ],
+  "scope": "Conditional floating-point local continuous event branch in a fixed 348-dimensional model over strain .007 to .0071, if all interval and join gates pass. Numerical allowances are not outward-rounded certificates. No complete inventory, global surface, braid, Euler-class change, infinite-cutoff accuracy, physical validation or novelty."
+}
