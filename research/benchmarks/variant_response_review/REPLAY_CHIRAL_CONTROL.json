@@ -1,0 +1,218 @@
+{
+ "producer": {
+  "file": "producers.py",
+  "sha256": "3fba5508df1c22c223387022ed80e356f9c9be97c11c10b9de12eebdd6663ffc",
+  "engines": {
+   "bm_strain.py": "2b763c6a4400497a453229586f45f9d2e24371ed0957265d6c53eb161cfe1eef",
+   "fast_engine.py": "03e7b87889c1483f92ed591d0bf4231550e5154c362695aeeca351d011501822",
+   "topo.py": "b35766c37d0278761a9b4ac40c5a77afc816c7785850459811ac689b35a7748f"
+  }
+ },
+ "model": {
+  "kinetic": "none",
+  "ratio": 0.0,
+  "eps": 0.0,
+  "w1": 110.0,
+  "note": "chiral limit w0 = 0, unstrained"
+ },
+ "reference": {
+  "magic_alpha": 0.586,
+  "source": "Tarnopolsky, Kruchkov & Vishwanath arXiv:1808.05250",
+  "caveat": "0.586 is their reported approximate first magic coupling, not an exact analytic constant"
+ },
+ "bandwidth_scan": [
+  {
+   "N": 6,
+   "theta_deg": 1.03,
+   "alpha": 0.6045770231392581,
+   "bandwidth_meV": 8.600103365501461,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.04,
+   "alpha": 0.5987639398477465,
+   "bandwidth_meV": 6.040283595896978,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.05,
+   "alpha": 0.5930615834578031,
+   "bandwidth_meV": 3.4581119509909093,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.06,
+   "alpha": 0.5874668201891973,
+   "bandwidth_meV": 0.8543653645577204,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.07,
+   "alpha": 0.5819766334123601,
+   "bandwidth_meV": 1.7702111269049552,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.08,
+   "alpha": 0.5765881182247439,
+   "bandwidth_meV": 4.414902919730904,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.09,
+   "alpha": 0.5712984763257298,
+   "bandwidth_meV": 7.079024451073259,
+   "grid_points": 100
+  },
+  {
+   "N": 6,
+   "theta_deg": 1.1,
+   "alpha": 0.5661050111710848,
+   "bandwidth_meV": 9.76191787522328,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.03,
+   "alpha": 0.6045770231392581,
+   "bandwidth_meV": 8.600103365501367,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.04,
+   "alpha": 0.5987639398477465,
+   "bandwidth_meV": 6.040283595897231,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.05,
+   "alpha": 0.5930615834578031,
+   "bandwidth_meV": 3.458111950991047,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.06,
+   "alpha": 0.5874668201891973,
+   "bandwidth_meV": 0.8543653645576528,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.07,
+   "alpha": 0.5819766334123601,
+   "bandwidth_meV": 1.7702111269054088,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.08,
+   "alpha": 0.5765881182247439,
+   "bandwidth_meV": 4.414902919731601,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.09,
+   "alpha": 0.5712984763257298,
+   "bandwidth_meV": 7.079024451073389,
+   "grid_points": 100
+  },
+  {
+   "N": 8,
+   "theta_deg": 1.1,
+   "alpha": 0.5661050111710848,
+   "bandwidth_meV": 9.761917875223858,
+   "grid_points": 100
+  }
+ ],
+ "sampled_minimum_N6": {
+  "N": 6,
+  "theta_deg": 1.06,
+  "alpha": 0.5874668201891973,
+  "bandwidth_meV": 0.8543653645577204,
+  "grid_points": 100,
+  "neighbours_alpha": [
+   0.5819766334123601,
+   0.5930615834578031
+  ],
+  "statement": "sampled minimum on a 0.01 deg grid; the neighbouring samples bracket it, which is a sampled bracket, not a certified one"
+ },
+ "sampled_minimum_N8": {
+  "N": 8,
+  "theta_deg": 1.06,
+  "alpha": 0.5874668201891973,
+  "bandwidth_meV": 0.8543653645576528,
+  "grid_points": 100,
+  "neighbours_alpha": [
+   0.5819766334123601,
+   0.5930615834578031
+  ],
+  "statement": "sampled minimum on a 0.01 deg grid; the neighbouring samples bracket it, which is a sampled bracket, not a certified one"
+ },
+ "chiral_symmetry": {
+  "N": 8,
+  "theta_deg": 1.06,
+  "residual_meV": 1.4097167877480388e-11,
+  "k": [
+   0.31,
+   0.27
+  ]
+ },
+ "euler": {
+  "N": 6,
+  "theta_deg": 1.06,
+  "e2": -1.0,
+  "orientation_closure": 0.9930375880529355,
+  "min_polar_det": 0.9999999999999998,
+  "min_overlap_singular_value": 0.9957034209671969,
+  "max_sewing_loss": 0.0022690734908239474,
+  "max_reality_residual": 1.1357822970629468e-13,
+  "min_external_gap_meV": 101.83433290382145,
+  "mesh": [
+   18,
+   30
+  ],
+  "lo": 253,
+  "valley": 1
+ },
+ "nodes": {
+  "found": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.3333333333333333,
+    0.3333333333333333
+   ]
+  ],
+  "windings": [
+   0.999438158001428,
+   0.999438158001571
+  ],
+  "label": "SAME",
+  "conventions": {
+   "start_offset": [
+    0.012,
+    0.0
+   ],
+   "image": [
+    0.33333333333333326,
+    0.33333333333333326
+   ]
+  },
+  "sum_of_windings": 1.998876316002999,
+  "magnitude_statement": "|sum| = 2 |e2| = 2 (magnitudes agree)",
+  "signed_statement": "NOT asserted: Ahn-Park-Yang write the total winding as -2 e2 in their convention (arXiv:1808.05375); the PRX version writes +2 e2, and this estimator fixes frame orientation from an arbitrary base frame, so no signed comparison is made here",
+  "inventory_caveat": "node discovery on a 12x12 grid is not a complete inventory"
+ }
+}

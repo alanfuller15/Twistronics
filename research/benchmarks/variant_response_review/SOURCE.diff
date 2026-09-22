@@ -1,0 +1,213 @@
+--- v073p/fast_engine.py
++++ v074p/fast_engine.py
+@@ -19,7 +19,13 @@
+ class RealEngine:
+     def __init__(self, m, tol=1e-9):
+         self.m = m; self.kind = 'bm' if hasattr(m, 'Hstat') else 'ref'
+-        Rs = realify(m.Hstat if self.kind == 'bm' else m.Hs); res = float(np.abs(Rs.imag).max())
++        # valley (v074p, review finding V01): the K' model is H_{K'}(k) = conj(H_K(-k)). The real-basis assembly must
++        # transform the static part and evaluate the kinetic blocks at -k with the sigma_x coefficient sign flipped;
++        # before this fix the engine silently assembled the K matrix for a K' model.
++        self.valley = int(getattr(m, 'valley', 1))
++        Hstat = m.Hstat if self.kind == 'bm' else m.Hs
++        if self.valley == -1: Hstat = np.conj(Hstat)
++        Rs = realify(Hstat); res = float(np.abs(Rs.imag).max())
+         if not res < tol: raise NotReal(f'static Hamiltonian not real in the C2zT basis: max|Im|={res:.2e} meV')
+         self.static_residual = res; self.HRs = np.ascontiguousarray(Rs.real); self.D = m.dim; nG = m.nG; self.layers = []
+         for l in range(2):
+@@ -36,9 +42,10 @@
+         self.G = [m.G1, m.G2]; self.nH = 0
+     def kc(self, f): return self.m.frac_to_k(np.asarray(f, float)) if self.kind == 'bm' else self.m.k(np.asarray(f, float))
+     def HR_k(self, k):
+-        self.nH += 1; H = self.HRs.copy()
++        self.nH += 1; H = self.HRs.copy(); s = self.valley
+         for L in self.layers:
+-            pp = L['ppf'](k); i = L['idx']; a = L['hv'] * pp[:, 0]; b = L['hv'] * pp[:, 1]
++            pp = L['ppf'](s * np.asarray(k, float)); i = L['idx']
++            a = L['hv'] * pp[:, 0]; b = s * L['hv'] * pp[:, 1]
+             H[i, i] += a; H[i + 1, i + 1] -= a; H[i, i + 1] -= b; H[i + 1, i] -= b
+         return H
+     def HR(self, f): return self.HR_k(self.kc(f))
+@@ -51,10 +58,10 @@
+         return eigh(self.HR_k(k), subset_by_index=(lo, lo + nb - 1), overwrite_a=True, check_finite=False)[1]
+     def dHR_proj(self, F, a):
+         """F^T (dHR/df_a) F; dHR/df_a is block diagonal with the same 2x2 block per layer: hv*(dpp_x sz - dpp_y sx), dpp = M G_a"""
+-        out = np.zeros((F.shape[1], F.shape[1]))
++        out = np.zeros((F.shape[1], F.shape[1])); s = self.valley
+         for L in self.layers:
+             dpp = L['M'] @ self.G[a]; i = L['idx']; Fa = F[i]; Fb = F[i + 1]
+-            out += L['hv'] * (dpp[0] * (Fa.T @ Fa - Fb.T @ Fb) - dpp[1] * (Fa.T @ Fb + Fb.T @ Fa))
++            out += L['hv'] * (s * dpp[0] * (Fa.T @ Fa - Fb.T @ Fb) - dpp[1] * (Fa.T @ Fb + Fb.T @ Fa))
+         return out
+     def newton_node(self, f0, lo, maxit=40, tol=1e-11, trust=0.02, ext_min=1e-5):
+         """Newton on the fixed-frame effective 2x2 d-vector of bands (lo, lo+1); H is affine in k, so the only
+--- v073p/topo.py
++++ v074p/topo.py
+@@ -1,37 +1,77 @@
+-"""Shared topology measurements for the valley and chiral controls (partner v073p)."""
++"""topo.py — topology measurements with the guards the v073p review required (partner v074p).
++
++V03: the Wilson diagnostic formerly called `min_det` is the minimum determinant of the polar factor of a whole
++     k2 loop product; it is renamed `min_polar_det` and reported alongside the quantities it was mistaken for:
++     the minimum overlap singular value along the loop, the sewing norm loss, and the reality residual.
++V04: every frame is built through a reality-enforcing path; a non-real model (e.g. a C2zT-breaking mass) is refused
++     rather than silently projected, and band degeneracy along a sign-holonomy path is rejected.
++V05: `lo` selects the band pair; it is no longer ignored.
++Valley-aware periodic sewing (v073p) is retained."""
+ import numpy as np
+ from scipy.linalg import eigh
+-from bm_strain import frac_dist
+ from gate import real_basis, classify
+-from euler import real_frame, shift_matrix
++from euler import shift_matrix
+ from braid import node_winding, transport
+-def euler_wilson(m, U, lo=None, nf1=24, nf2=40):
+-    """periodic sewing follows the valley: H_{K'}(k)=conj(H_K(-k)) identifies k+G with the OPPOSITE index shift"""
+-    D = m.dim; lo = D // 2 - 1 if lo is None else lo; v = getattr(m, 'valley', 1)
+-    S2 = shift_matrix(m, (0, -v)); S1 = shift_matrix(m, (-v, 0)); bp = b0 = None; ph = []; dets = []
++REAL_TOL = 1e-9
++class RealityError(RuntimeError): pass
++class DegeneracyError(RuntimeError): pass
++def frame_at(m, U, k, lo, n=2):
++    """real-basis frame of ABSOLUTE bands lo..lo+n-1, with the reality precondition enforced (V04, V05)"""
++    HR = U.conj().T @ m.H(k) @ U; res = float(np.abs(HR.imag).max())
++    if not res < REAL_TOL: raise RealityError(f'model is not real in the C2zT basis: max|Im| = {res:.2e} meV')
++    w, v = eigh(HR.real, subset_by_index=(lo, lo + n - 1)); return w, v
++def euler_wilson(m, U, lo=None, nf1=24, nf2=40, gap_tol=0.0):
++    """Wilson-loop Euler estimate for the pair (lo, lo+1). Returns a dict of diagnostics, each named for what it is."""
++    D = m.dim; lo = D // 2 - 1 if lo is None else int(lo); v = int(getattr(m, 'valley', 1))
++    if lo < 0 or lo + 1 >= D: raise ValueError(f'band pair (lo, lo+1) = ({lo}, {lo+1}) outside 0..{D-1}')
++    S2 = shift_matrix(m, (0, -v)); S1 = shift_matrix(m, (-v, 0))
++    bp = b0 = None; ph = []; polar = []; svmin = 1.0; sew = 0.0; realres = 0.0; extmin = np.inf
+     for f1 in np.linspace(0, 1, nf1, endpoint=False):
+-        fr = [real_frame(m, U, m.frac_to_k(np.array([f1, f2]))) for f2 in np.linspace(0, 1, nf2, endpoint=False)]
++        fr = []
++        for f2 in np.linspace(0, 1, nf2, endpoint=False):
++            k = m.frac_to_k(np.array([f1, f2])); HR = U.conj().T @ m.H(k) @ U
++            realres = max(realres, float(np.abs(HR.imag).max()))
++            if not realres < REAL_TOL: raise RealityError(f'model is not real in the C2zT basis: max|Im| = {realres:.2e} meV')
++            w4, vv = eigh(HR.real, subset_by_index=(max(lo - 1, 0), min(lo + 2, D - 1)))
++            j = lo - max(lo - 1, 0)
++            if len(w4) >= j + 3: extmin = min(extmin, float(min(w4[j] - w4[j - 1] if j > 0 else np.inf, w4[j + 2] - w4[j + 1])))
++            fr.append(vv[:, j:j + 2])
+         b = fr[0]
+         if bp is not None and np.linalg.det(bp.T @ b) < 0: b = b @ np.diag([1, -1]); fr[0] = b
+         if b0 is None: b0 = b
+         bp = b; W = np.eye(2)
+-        for j in range(nf2 - 1): W = W @ (fr[j].T @ fr[j + 1])
+-        W = W @ (fr[-1].T @ (S2 @ fr[0])); u, s, vt = np.linalg.svd(W); O = u @ vt
+-        dets.append(np.linalg.det(O)); ph.append(np.arctan2(O[1, 0], O[0, 0]))
++        for j in range(nf2 - 1):
++            M = fr[j].T @ fr[j + 1]; svmin = min(svmin, float(np.linalg.svd(M, compute_uv=False).min())); W = W @ M
++        Msew = fr[-1].T @ (S2 @ fr[0]); sew = max(sew, float(abs(1.0 - np.linalg.svd(Msew, compute_uv=False).min())))
++        svmin = min(svmin, float(np.linalg.svd(Msew, compute_uv=False).min())); W = W @ Msew
++        u, s, vt = np.linalg.svd(W); O = u @ vt
++        polar.append(float(np.linalg.det(O))); ph.append(float(np.arctan2(O[1, 0], O[0, 0])))
+     ext = np.unwrap(np.append(np.unwrap(ph), ph[0]))
+-    return (ext[-1] - ext[0]) / (2 * np.pi), float(np.linalg.det(bp.T @ (S1 @ b0))), float(min(dets))
+-def pair_charges(m, U, nodes, r=0.012):
+-    d = ((nodes[1] - nodes[0]) + 0.5) % 1 - 0.5; sa = nodes[0] + np.array([r, 0]); sb = nodes[0] + d + np.array([r, 0])
+-    base = real_frame(m, U, m.frac_to_k(sa))
++    return dict(e2=float((ext[-1] - ext[0]) / (2 * np.pi)), orientation_closure=float(np.linalg.det(bp.T @ (S1 @ b0))),
++                min_polar_det=float(min(polar)), min_overlap_singular_value=float(svmin), max_sewing_loss=float(sew),
++                max_reality_residual=float(realres), min_external_gap_meV=(None if not np.isfinite(extmin) else float(extmin)),
++                mesh=[nf1, nf2], lo=lo, valley=v)
++def pair_charges(m, U, nodes, r=0.012, start_offset=np.array([1.0, 0.0]), image=None):
++    """Relative charge along the straight segment. `start_offset` and the periodic `image` are explicit, because a
++    mirrored measurement must mirror them too (v073p finding V02)."""
++    d = ((nodes[1] - nodes[0]) + 0.5) % 1 - 0.5 if image is None else np.asarray(image, float)
++    off = r * np.asarray(start_offset, float) / np.linalg.norm(start_offset)
++    sa = nodes[0] + off; sb = nodes[0] + d + off
++    base = frame_at(m, U, m.frac_to_k(sa), m.dim // 2 - 1)[1]
+     w1 = node_winding(m, U, nodes[0], r, 96, base)
+     w2 = node_winding(m, U, nodes[0] + d, r, 96, transport(m, U, [sa, sb], base, nstep=300))
+-    return w1, w2, classify(w1, w2)
+-def band_sign_holonomy(m, U, band, axis, c, n=100):
+-    v = getattr(m, 'valley', 1); S = shift_matrix(m, (-v, 0)) if axis == 0 else shift_matrix(m, (0, -v)); prev = first = None
++    return float(w1), float(w2), classify(w1, w2), dict(start_offset=list(map(float, off)), image=list(map(float, d)))
++def band_sign_holonomy(m, U, band, axis, c, n=100, min_gap=1e-6):
++    """Sign holonomy of one real band around a cycle, with reality enforced and degeneracy along the path refused (V04)."""
++    v = int(getattr(m, 'valley', 1)); S = shift_matrix(m, (-v, 0)) if axis == 0 else shift_matrix(m, (0, -v))
++    prev = first = None; gmin = np.inf
+     for t in np.linspace(0, 1, n + 1):
+         q = np.array([t, c]) if axis == 0 else np.array([c, t])
+-        HR = U.conj().T @ m.H(m.frac_to_k(q)) @ U; w, v = eigh(HR.real, subset_by_index=(band, band)); v = v[:, :1]
+-        if prev is not None and prev[:, 0] @ v[:, 0] < 0: v = -v
+-        if first is None: first = v
+-        prev = v
+-    return float(prev[:, 0] @ (S @ first)[:, 0])
++        w3, v3 = frame_at(m, U, m.frac_to_k(q), max(band - 1, 0), 3)
++        j = band - max(band - 1, 0); gmin = min(gmin, float(min(w3[j] - w3[j - 1] if j > 0 else np.inf, w3[j + 1] - w3[j])))
++        if gmin < min_gap: raise DegeneracyError(f'band {band} is degenerate along the cycle (gap {gmin:.2e} meV)')
++        vv = v3[:, j:j + 1]
++        if prev is not None and prev[:, 0] @ vv[:, 0] < 0: vv = -vv
++        if first is None: first = vv
++        prev = vv
++    return float(prev[:, 0] @ (S @ first)[:, 0]), float(gmin)
+--- v073p/test_valley_chiral.py
++++ v074p/test_valley_chiral.py
+@@ -1,31 +1,45 @@
+-"""Assertions for the K' valley variant and the chiral-limit control (partner v073p)."""
++"""Assertions for the valley variant and the chiral control, including the v073p review findings (partner v074p)."""
+ import numpy as np, pytest
+-from bm_strain import BM, HBARV, frac_dist
++from bm_strain import BM, HBARV
+ from gate import real_basis
+-from topo import euler_wilson
++from fast_engine import RealEngine
++from sparse_mode_v2 import CertifiedSparse, Ledger, ComparisonPolicy
++from topo import euler_wilson, band_sign_holonomy, frame_at, RealityError
+ def test_valley_is_the_exact_time_reversal_partner():
+     kw = dict(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact')
+     K, P = BM(valley=+1, **kw), BM(valley=-1, **kw); k = K.frac_to_k(np.array([0.31, 0.27]))
+     assert np.array_equal(P.H(k), np.conj(K.H(-k)))
+     assert np.abs(P.bands_near_zero(k, 3) - K.bands_near_zero(-k, 3)).max() == 0.0
+-def test_c2zt_holds_in_both_valleys_in_the_same_basis():
+-    for v in (+1, -1):
+-        m = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact', valley=v); U = real_basis(m.nG)
+-        assert np.abs((U.conj().T @ m.H(m.frac_to_k(np.array([0.31, 0.27]))) @ U).imag).max() < 1e-9
+ def test_valley_rejects_bad_input():
+     with pytest.raises(ValueError): BM(N=3, valley=0)
+-def test_euler_magnitude_is_one_in_both_valleys_and_the_sewing_closes():
+-    """|e2| = 1 in both valleys; the closure must be +-1, since a value near zero is the wrong sewing shift.
+-    The SIGN is not asserted: this estimator fixes the frame orientation by continuity from an arbitrary base
+-    frame, so the sign is run/convention dependent (recorded in v036 and reconfirmed here: N=3 gives the same
+-    sign in both valleys, N=4 opposite). A signed comparison needs a declared global orientation convention."""
+-    for v in (+1, -1):
+-        m = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact', valley=v)
+-        e, cl, md = euler_wilson(m, real_basis(m.nG), nf1=12, nf2=20)
+-        assert abs(abs(cl) - 1) < 0.05, 'orientation closure must be +-1; near zero means the sewing shift is wrong'
+-        assert abs(abs(e) - 1) < 0.05 and md > 0
+-def test_chiral_limit_has_sublattice_symmetry_and_the_magic_alpha_brackets_the_analytic_value():
++@pytest.mark.parametrize('v', [+1, -1])
++def test_V01_fast_and_sparse_engines_follow_the_valley(v):
++    """v073p V01: the fast engine assembled the K matrix for a K' model; both paths must now match the native one."""
++    m = BM(N=4, eps=0.003, kinetic='lab_nn_full', geometry='exact', valley=v); U = real_basis(m.nG); E = RealEngine(m)
++    led = Ledger(); C = CertifiedSparse(m, led, ComparisonPolicy(led))
++    for f in ([0.31, 0.27], [0.11, 0.43], [-0.31, -0.27]):
++        k = m.frac_to_k(np.array(f)); dense = U.conj().T @ m.H(k) @ U
++        assert np.abs(dense.imag).max() < 1e-9
++        assert np.abs(dense.real - E.HR_k(k)).max() < 1e-10
++        assert np.abs(E.bands(np.array(f), 3) - m.bands_near_zero(k, 3)).max() < 1e-10
++        w, _, _ = C.window(np.array(f), m.dim // 2 - 3, 6, where='test')
++        assert np.abs(np.sort(w) - m.bands_near_zero(k, 3)).max() < 1e-10
++def test_V04_non_real_model_is_refused_by_the_frame_path():
++    m = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact', mass=1.0); U = real_basis(m.nG)
++    with pytest.raises(RealityError): frame_at(m, U, m.frac_to_k(np.array([0.31, 0.27])), m.dim // 2 - 1)
++    with pytest.raises(RealityError): band_sign_holonomy(m, U, m.dim // 2 - 1, 0, 0.0, n=8)
++def test_V05_band_selection_is_honoured_and_out_of_range_is_refused():
++    m = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact'); U = real_basis(m.nG)
++    with pytest.raises(ValueError): euler_wilson(m, U, lo=999, nf1=6, nf2=8)
++    d = euler_wilson(m, U, lo=m.dim // 2 - 1, nf1=8, nf2=12); assert d['lo'] == m.dim // 2 - 1
++def test_V03_diagnostics_are_named_for_what_they_are():
++    m = BM(N=3, eps=0.003, kinetic='lab_nn_full', geometry='exact'); U = real_basis(m.nG)
++    d = euler_wilson(m, U, nf1=10, nf2=16)
++    for key in ('min_polar_det', 'min_overlap_singular_value', 'max_sewing_loss', 'max_reality_residual', 'min_external_gap_meV'):
++        assert key in d
++    assert 'min_det' not in d and d['min_overlap_singular_value'] <= 1.0 and abs(abs(d['e2']) - 1) < 0.05
++def test_chiral_limit_sublattice_symmetry_and_alpha_at_the_sampled_minimum():
+     m = BM(N=4, theta_deg=1.06, ratio=0.0, eps=0.0, kinetic='none')
+     w = np.linalg.eigvalsh(m.H(m.frac_to_k(np.array([0.31, 0.27]))))
+     assert np.abs(w + w[::-1]).max() < 1e-8
+-    assert abs(m.w1 / (HBARV * m.ktheta) - 0.586) < 0.01
++    assert abs(m.w1 / (HBARV * m.ktheta) - 0.586) < 0.01     # sampled bracket, not an accuracy claim

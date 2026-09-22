@@ -1,0 +1,42 @@
+{
+  "parent_commit": "9dc401fc14ab331dbde0aabe26a0e373f9153b6c",
+  "source_sha256": {
+    "figure.py": "5ab5f8b55fd33d8c712b0e43a413a204097d28b488e64a3063b3286ce59a2ab3",
+    "producer_worker.py": "f14ea074153a634da8e6e1add2b47061d19b53a461dddad6ea08aa7d534444af",
+    "probes.py": "8b57b3bcca62ad940ae64aacc990a323199960b9342e5b172912985c2e1eff26",
+    "clean_smoke.py": "10d1f63eb8056bfc0ebe90e9d19a3a893d608db559d71605390c3f92bf16884c",
+    "run_review.py": "499194c73baee3c2f3145f2442656dd37f3d6b1a03dd612d54193d478fc55a81",
+    "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+    "report.py": "0ce52936b0cb4b9bc9ec0e6a0e524da378abe02f60a8b1fbd7201fd93479d986"
+  },
+  "plan_sha256": "7dbb9dcbb632c6c60ca2011e11cbb6e17843ff1d806739f44dc7aec485fc3b8d",
+  "partner_sha256": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "scope": "Source-preserving review; no partner code patched and no campaign integration."
+}

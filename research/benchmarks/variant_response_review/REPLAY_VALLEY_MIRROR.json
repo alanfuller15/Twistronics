@@ -1,0 +1,213 @@
+{
+ "producer": {
+  "file": "producers.py",
+  "sha256": "3fba5508df1c22c223387022ed80e356f9c9be97c11c10b9de12eebdd6663ffc",
+  "engines": {
+   "bm_strain.py": "2b763c6a4400497a453229586f45f9d2e24371ed0957265d6c53eb161cfe1eef",
+   "fast_engine.py": "03e7b87889c1483f92ed591d0bf4231550e5154c362695aeeca351d011501822",
+   "topo.py": "b35766c37d0278761a9b4ac40c5a77afc816c7785850459811ac689b35a7748f"
+  }
+ },
+ "model": {
+  "N": 4,
+  "eps": 0.003,
+  "phi_deg": 0.0,
+  "theta_deg": 1.05,
+  "kinetic": "lab_nn_full",
+  "geometry": "exact"
+ },
+ "baseline_valley_1": {
+  "e2": -1.0,
+  "orientation_closure": 0.9965927681671959,
+  "min_polar_det": 0.9999999999999992,
+  "min_overlap_singular_value": 0.854627525951783,
+  "max_sewing_loss": 0.0027649475929987233,
+  "max_reality_residual": 5.684288752155273e-14,
+  "min_external_gap_meV": 5.249125596333368,
+  "mesh": [
+   24,
+   40
+  ],
+  "lo": 97,
+  "valley": 1
+ },
+ "baseline_valley_-1": {
+  "e2": 1.0,
+  "orientation_closure": 0.9964029153365188,
+  "min_polar_det": 0.999999999999999,
+  "min_overlap_singular_value": 0.8565382585889213,
+  "max_sewing_loss": 0.007534120123754207,
+  "max_reality_residual": 5.684288752155273e-14,
+  "min_external_gap_meV": 5.284422113915598,
+  "mesh": [
+   24,
+   40
+  ],
+  "lo": 97,
+  "valley": -1
+ },
+ "braid_-0.25": {
+  "K": {
+   "nodes": [
+    [
+     0.517234998877193,
+     0.8277661746554233
+    ],
+    [
+     0.7458774722154928,
+     0.6123369007264259
+    ]
+   ],
+   "windings": [
+    0.9996122455415392,
+    0.9989713570574862
+   ],
+   "label": "SAME",
+   "conventions": {
+    "start_offset": [
+     0.012,
+     0.0
+    ],
+    "image": [
+     0.2286424733382998,
+     -0.21542927392899747
+    ]
+   }
+  },
+  "Kprime_unmirrored_start": {
+   "windings": [
+    -0.9997023906727625,
+    -0.9989916774287058
+   ],
+   "label": "SAME",
+   "conventions": {
+    "start_offset": [
+     0.012,
+     0.0
+    ],
+    "image": [
+     -0.2286424733382998,
+     0.21542927392899747
+    ]
+   }
+  },
+  "Kprime_fully_mirrored": {
+   "windings": [
+    0.9997023906727625,
+    0.9989916774287058
+   ],
+   "label": "SAME",
+   "conventions": {
+    "start_offset": [
+     -0.012,
+     0.0
+    ],
+    "image": [
+     -0.2286424733382998,
+     0.21542927392899747
+    ]
+   }
+  },
+  "statement": "the fully mirrored measurement reproduces the K label; leaving the start offset unmirrored changes it, so that difference is a convention artefact of the measurement, not a valley disagreement"
+ },
+ "braid_-0.3": {
+  "K": {
+   "nodes": [
+    [
+     0.5198006168952296,
+     0.827664346807825
+    ],
+    [
+     0.7407545453881446,
+     0.611085278645868
+    ]
+   ],
+   "windings": [
+    -0.9996325297373616,
+    1.0000543883638233
+   ],
+   "label": "OPPOSITE",
+   "conventions": {
+    "start_offset": [
+     0.012,
+     0.0
+    ],
+    "image": [
+     0.22095392849291495,
+     -0.21657906816195693
+    ]
+   }
+  },
+  "Kprime_unmirrored_start": {
+   "windings": [
+    -0.9997150621539638,
+    -1.0000623609502197
+   ],
+   "label": "SAME",
+   "conventions": {
+    "start_offset": [
+     0.012,
+     0.0
+    ],
+    "image": [
+     -0.22095392849291495,
+     0.21657906816195693
+    ]
+   }
+  },
+  "Kprime_fully_mirrored": {
+   "windings": [
+    0.9997150621539638,
+    -1.0000623609502197
+   ],
+   "label": "OPPOSITE",
+   "conventions": {
+    "start_offset": [
+     -0.012,
+     0.0
+    ],
+    "image": [
+     -0.22095392849291495,
+     0.21657906816195693
+    ]
+   }
+  },
+  "statement": "the fully mirrored measurement reproduces the K label; leaving the start offset unmirrored changes it, so that difference is a convention artefact of the measurement, not a valley disagreement"
+ },
+ "endpoint_valley_1": {
+  "flat1 k1": {
+   "sign": -1.0,
+   "min_band_gap_meV": 24.8262
+  },
+  "flat1 k2": {
+   "sign": 1.0,
+   "min_band_gap_meV": 17.4929
+  },
+  "flat2 k1": {
+   "sign": 0.9999,
+   "min_band_gap_meV": 4.5233
+  },
+  "flat2 k2": {
+   "sign": 1.0,
+   "min_band_gap_meV": 39.8254
+  }
+ },
+ "endpoint_valley_-1": {
+  "flat1 k1": {
+   "sign": -1.0,
+   "min_band_gap_meV": 24.7878
+  },
+  "flat1 k2": {
+   "sign": 1.0,
+   "min_band_gap_meV": 17.4964
+  },
+  "flat2 k1": {
+   "sign": 0.9999,
+   "min_band_gap_meV": 4.5082
+  },
+  "flat2 k2": {
+   "sign": 1.0,
+   "min_band_gap_meV": 39.8296
+  }
+ }
+}

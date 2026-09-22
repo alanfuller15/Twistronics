@@ -1,0 +1,106 @@
+{
+  "frozen_utc": "2026-09-22T23:28:16.110489+00:00",
+  "parent_commit": "9dc401fc14ab331dbde0aabe26a0e373f9153b6c",
+  "archive_sha256": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+  "scope": "Response review, native/fast valley checks and exploratory producer replay; no sparse integration acceptance or continuous topology claim.",
+  "threads": 1,
+  "supplied_tests_timeout_s": 120,
+  "matrix_checks": {
+    "N": [
+      3,
+      4,
+      6
+    ],
+    "valleys": [
+      1,
+      -1
+    ],
+    "f": [
+      [
+        0.31,
+        0.27
+      ],
+      [
+        0.11,
+        0.43
+      ],
+      [
+        -0.31,
+        -0.27
+      ]
+    ],
+    "model": {
+      "eps": 0.003,
+      "kinetic": "lab_nn_full",
+      "geometry": "exact"
+    },
+    "matrix_tol_meV": 1e-09,
+    "spectrum_tol_meV": 1e-08,
+    "derivative_tol_meV": 1e-07,
+    "frame_projector_tol": 1e-08,
+    "derivative_step_fractional": 0.125
+  },
+  "sparse_smoke": {
+    "N": 4,
+    "valleys": [
+      1,
+      -1
+    ],
+    "f": [
+      [
+        0.31,
+        0.27
+      ],
+      [
+        0.11,
+        0.43
+      ],
+      [
+        -0.31,
+        -0.27
+      ]
+    ],
+    "ordered_bands": "central six",
+    "matrix_tol_meV": 1e-09,
+    "spectrum_tol_meV": 1e-08,
+    "acceptance_scope": "These samples test valley assembly only; do not establish general window identity."
+  },
+  "controls": [
+    "native mass=1 realness rejection",
+    "synthetic isolated frames with zero overlaps",
+    "native gap_tol=1000000 enforcement",
+    "synthetic topmost-pair external-gap reporting",
+    "synthetic degenerate single band rejection",
+    "synthetic smooth isolated band with near-orthogonal adjacent samples",
+    "instrumented pair_charges start/loop coordinates with held-constant frames",
+    "synthetic symmetric 2x2 LU inertia counterexample"
+  ],
+  "mirrored_centers": {
+    "B": [
+      -0.25,
+      -0.3
+    ],
+    "seed_source": "supplied VALLEY_MIRROR.json K nodes",
+    "actions": "Reproduce p0 refinement and measure native gaps at p0 and p0-d; retain coordinates and convergence status."
+  },
+  "replay": {
+    "entrypoint": "producers.py",
+    "arguments": [
+      "chiral",
+      "valley"
+    ],
+    "timeouts_s": [
+      420,
+      300
+    ],
+    "inputs": "fresh extraction; both supplied result JSON files removed from disposable producer directory before execution",
+    "instrumentation": "Record BM construction/model bases, native/fast matrix states, SciPy eigenvalues and bandwidth calls without altering returned numerical values. Original sources remain byte-identical."
+  },
+  "interpretation": [
+    "Synthetic controls exercise contracts, not physical counterexamples.",
+    "Source-level findings are separate from replayed numerical outputs.",
+    "No post-run threshold relaxation.",
+    "No mesh-refinement or continuous-path campaign is planned.",
+    "Topology diagnostics alone do not implement acceptance gates."
+  ]
+}

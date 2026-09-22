@@ -1,0 +1,253 @@
+{
+  "matrix_rows": 18,
+  "passing_rows": 18,
+  "max_spectrum_error_meV": 4.689582056016661e-13,
+  "max_derivative_error_meV": 1.634328175780355e-13,
+  "sparse_status": [
+    "RETURNED",
+    "RETURNED",
+    "RETURNED",
+    "RETURNED",
+    "RETURNED",
+    "RETURNED"
+  ],
+  "controls": {
+    "native_mass_reality": {
+      "rejected": true,
+      "error_type": "RealityError",
+      "error": "model is not real in the C2zT basis: max|Im| = 1.00e+00 meV"
+    },
+    "native_gap_tol_ignored": {
+      "requested_gap_tol": 1000000.0,
+      "returned": {
+        "e2": 0.0,
+        "orientation_closure": 0.897018191219072,
+        "min_polar_det": 0.9999999999999993,
+        "min_overlap_singular_value": 0.17726459805021205,
+        "max_sewing_loss": 0.588507248646251,
+        "max_reality_residual": 5.5763692639991845e-14,
+        "min_external_gap_meV": 16.38141498519102,
+        "mesh": [
+          4,
+          4
+        ],
+        "lo": 57,
+        "valley": 1
+      }
+    },
+    "synthetic_zero_overlap": {
+      "kind": "piecewise constant synthetic Hamiltonian; API counterexample, not a physical result",
+      "returned": {
+        "e2": 0.0,
+        "orientation_closure": 1.0,
+        "min_polar_det": 1.0,
+        "min_overlap_singular_value": 0.0,
+        "max_sewing_loss": 1.0,
+        "max_reality_residual": 0.0,
+        "min_external_gap_meV": 2.0,
+        "mesh": [
+          4,
+          4
+        ],
+        "lo": 1,
+        "valley": 1
+      }
+    },
+    "synthetic_band_selection": {
+      "lowest_pair": {
+        "e2": 0.0,
+        "orientation_closure": 1.0,
+        "min_polar_det": 1.0,
+        "min_overlap_singular_value": 1.0,
+        "max_sewing_loss": 0.0,
+        "max_reality_residual": 0.0,
+        "min_external_gap_meV": 2.0,
+        "mesh": [
+          4,
+          4
+        ],
+        "lo": 0,
+        "valley": 1
+      },
+      "highest_pair": {
+        "e2": 0.0,
+        "orientation_closure": 1.0,
+        "min_polar_det": 1.0,
+        "min_overlap_singular_value": 1.0,
+        "max_sewing_loss": 0.0,
+        "max_reality_residual": 0.0,
+        "min_external_gap_meV": null,
+        "mesh": [
+          4,
+          4
+        ],
+        "lo": 2,
+        "valley": 1
+      },
+      "expected_external_gap_meV_for_both": 2.0
+    },
+    "out_of_range_rejected": true,
+    "degenerate_band_rejected": true,
+    "synthetic_smooth_band_overlap": {
+      "kind": "smooth periodic real isolated band, coarsely sampled",
+      "returned_value": 0.9999999999999999,
+      "min_band_gap_meV": 2.0,
+      "min_adjacent_abs_overlap": 0.0,
+      "n": 4
+    },
+    "instrumented_loop_geometry": {
+      "kind": "held-constant eigenframes; tests coordinate plumbing only, no charge prediction",
+      "runs": [
+        {
+          "start_offset_direction": [
+            1.0,
+            0.0
+          ],
+          "base_start": [
+            0.312,
+            0.4
+          ],
+          "transport": [
+            [
+              0.312,
+              0.4
+            ],
+            [
+              0.6120000000000001,
+              0.6
+            ]
+          ],
+          "first_loop_start": [
+            0.312,
+            0.4
+          ],
+          "second_loop_start": [
+            0.6120000000000001,
+            0.6
+          ],
+          "base_to_first_loop_distance": 0.0,
+          "transport_end_to_second_loop_distance": 0.0,
+          "loop_samples": 194
+        },
+        {
+          "start_offset_direction": [
+            -1.0,
+            0.0
+          ],
+          "base_start": [
+            0.288,
+            0.4
+          ],
+          "transport": [
+            [
+              0.288,
+              0.4
+            ],
+            [
+              0.5880000000000001,
+              0.6
+            ]
+          ],
+          "first_loop_start": [
+            0.312,
+            0.4
+          ],
+          "second_loop_start": [
+            0.6120000000000001,
+            0.6
+          ],
+          "base_to_first_loop_distance": 0.02400000000000002,
+          "transport_end_to_second_loop_distance": 0.02400000000000002,
+          "loop_samples": 194
+        }
+      ]
+    },
+    "synthetic_inertia": {
+      "kind": "nonsingular symmetric 2x2 kernel counterexample; not an accepted physical sparse window",
+      "matrix": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "mu": 0.0,
+      "true_eigenvalues": [
+        -1.0,
+        1.0
+      ],
+      "returned_negative_count": 0,
+      "true_negative_count": 1,
+      "U_diagonal": [
+        1.0,
+        1.0
+      ],
+      "row_permutation": [
+        1,
+        0
+      ],
+      "column_permutation": [
+        0,
+        1
+      ],
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.0006860149987915065,
+          "mu": 0.0,
+          "seconds": 0.000378861997887725,
+          "where": "synthetic inertia"
+        }
+      ]
+    }
+  },
+  "mirrored_centers": [
+    {
+      "B": -0.25,
+      "seed": [
+        0.48276500112280696,
+        0.17223382534457665
+      ],
+      "p0": [
+        0.48260150170307153,
+        0.17219105496103856
+      ],
+      "p1_used": [
+        0.25395902836477174,
+        0.38762032889003606
+      ],
+      "first_native_gap_meV": 1.723030607081455e-10,
+      "second_native_gap_meV": 0.03618128497993567,
+      "refiner_returned_gap_meV": 1.723030607081455e-10,
+      "image": [
+        -0.2286424733382998,
+        0.21542927392899747
+      ]
+    },
+    {
+      "B": -0.3,
+      "seed": [
+        0.4801993831047704,
+        0.17233565319217503
+      ],
+      "p0": [
+        0.4800678310399759,
+        0.172279858915047
+      ],
+      "p1_used": [
+        0.25911390254706096,
+        0.3888589270770039
+      ],
+      "first_native_gap_meV": 3.1608493600288057e-10,
+      "second_native_gap_meV": 0.03858644112203535,
+      "refiner_returned_gap_meV": 3.1608493600288057e-10,
+      "image": [
+        -0.22095392849291495,
+        0.21657906816195693
+      ]
+    }
+  ]
+}

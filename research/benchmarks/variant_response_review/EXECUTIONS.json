@@ -1,0 +1,58 @@
+[
+  {
+    "name": "SUPPLIED_TESTS",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "test_valley_chiral.py",
+      "--junitxml=<review>/SUPPLIED_TESTS.xml"
+    ],
+    "timeout_s": 120,
+    "elapsed_s": 2.323520271002053,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  {
+    "name": "PROBES",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "<review>/probes.py"
+    ],
+    "timeout_s": 120,
+    "elapsed_s": 5.28652553700158,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  {
+    "name": "CHIRAL",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "<review>/producer_worker.py",
+      "<review>/replay_work",
+      "<review>",
+      "chiral"
+    ],
+    "timeout_s": 420,
+    "elapsed_s": 169.91518832899965,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  {
+    "name": "VALLEY",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "<review>/producer_worker.py",
+      "<review>/replay_work",
+      "<review>",
+      "valley"
+    ],
+    "timeout_s": 300,
+    "elapsed_s": 83.25320474100226,
+    "exit_code": 0,
+    "timed_out": false
+  }
+]
