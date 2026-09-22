@@ -1,0 +1,25 @@
+--- v071p/bm_strain.py
++++ v073p/bm_strain.py
+@@ -50,7 +50,11 @@
+ 
+ class BM:
+     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,
+-                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average', cutoff_tol=1e-6, Dfield=0.0, index_set=None):
++                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average', cutoff_tol=1e-6, Dfield=0.0, index_set=None, valley=+1):
++        # valley (v073p): +1 = K (all prior work); -1 = K' as the exact time-reversal partner, H_{K'}(k) = conj(H_K(-k)).
++        # C2zT holds in the same sigma_x basis in both valleys, so every downstream tool applies unchanged.
++        if valley not in (+1, -1): raise ValueError('valley must be +1 (K) or -1 (K prime)')
++        self.valley = int(valley)
+         # index_set (v070p): explicit list of (m, n) reciprocal indices. When given, the basis is EXACTLY that set and
+         # does not depend on the knobs, so a sweep or trace keeps one matrix dimension and one vector ordering.
+         # When None the historical |G| <= N|G1| + cutoff_tol membership rule applies (dimension can jump with knobs).
+@@ -175,6 +179,9 @@
+ 
+     # ---- k-dependent Dirac part -------------------------------------------
+     def H(self, k):
++        if self.valley == -1: return np.conj(self._H_K(-np.asarray(k, float)))
++        return self._H_K(k)
++    def _H_K(self, k):
+         H = self.Hstat.copy()
+         nG = self.nG
+         for lay in range(2):

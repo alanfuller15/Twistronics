@@ -1,0 +1,96 @@
+{
+  "status": "EXPLORATORY_NATIVE_CONTROLS_USEFUL_FAST_VALLEY_INTEGRATION_WITHHELD",
+  "supplied_tests_passed": 5,
+  "comparison_rows": 18,
+  "native_time_reversal_exact_rows": 9,
+  "positive_valley": {
+    "rows": 9,
+    "max_matrix_error_meV": 4.562664835702585e-13,
+    "max_spectrum_error_meV": 4.369837824924616e-13
+  },
+  "negative_valley": {
+    "rows": 9,
+    "min_spectrum_error_meV": 43.24988477943808,
+    "max_spectrum_error_meV": 100.18805548442795,
+    "max_matrix_error_meV": 3739.9849235001207
+  },
+  "partner_chiral_record": {
+    "node_winding_sum": 1.998876316002999,
+    "twice_euler": -2.0,
+    "reference_convention": "Ahn\u2013Park\u2013Yang uses total winding = -2 e2. This record is compatible in sign with that relation but does not establish common gauge orientation or mesh convergence."
+  },
+  "partner_replay_completed": true,
+  "partner_replay_exit": {
+    "name": "PARTNER_REPLAY",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "replay_worker.py",
+      "replay_work",
+      "REPLAY_CALLS.json"
+    ],
+    "timeout_s": 300,
+    "elapsed_s": 192.64143150200107,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  "replay_differences": {
+    "CHIRAL_CONTROL.json": [
+      {
+        "path": "/chiral_euler/w1",
+        "status": "changed",
+        "before": 0.9994381580014283,
+        "after": 0.999438158001428
+      },
+      {
+        "path": "/chiral_euler/w2",
+        "status": "changed",
+        "before": 0.9994381580015708,
+        "after": 0.999438158001571
+      }
+    ],
+    "VALLEY_MIRROR.json": [
+      {
+        "path": "/braid_-0.3_-1_fully_mirrored",
+        "status": "missing_after_replay",
+        "before": "OPPOSITE"
+      },
+      {
+        "path": "/braid_-0.3_-1_mirrored_image",
+        "status": "missing_after_replay",
+        "before": "SAME (start offset not mirrored - convention artefact)"
+      },
+      {
+        "path": "/e2_-1_closure",
+        "status": "missing_after_replay",
+        "before": 0.9964029153365193
+      },
+      {
+        "path": "/note",
+        "status": "missing_after_replay",
+        "before": "Under k -> -k every ingredient must be mirrored: node seeds, the periodic image of the segment, the loop start offset, and the periodic sewing shift used by Wilson loops and sign holonomies."
+      }
+    ]
+  },
+  "chiral_fields_inherited_not_recomputed_by_runner": [
+    "magic_N6",
+    "magic_N8",
+    "chiral_symmetry_residual",
+    "note"
+  ],
+  "scope": [
+    "Native BM only for valley extension; no independent K-prime TBG implementation added.",
+    "No complete node inventory, continuous topology certificate, full sparse acceptance or physical validation.",
+    "Signed Euler comparisons remain convention-dependent.",
+    "Replay call counts include profiler overhead and are not performance benchmarks."
+  ],
+  "input_sha256": {
+    "partner_v073p.zip": "5144c4d01620720a882d90ac191dff684b76d68213532cb1c741e08c2c60d382",
+    "PLAN.json": "39f79d3eec36e5645b8a538f0bb7725d869097615a36f0239daa8673eabb1c94",
+    "PROBES.json": "c7b44eb8542f030ca6cf4ef9dcaddeb3bdf6ded888d2b33de5d3da1eb27f1b14",
+    "BASIS.json": "fb2922ea0dd89e0c560ebef0994cb1edc50c32e9b384cbec1c0b0343fe16f9b6",
+    "SUPPLIED_TESTS.xml": "082987d7aa93a5be879c28ee9986039f441aa616a1b2e58874f108e9f2cb07be",
+    "EXECUTIONS.json": "6e6d88dd2343f4ae46c0fa43dc521bc96b3335cb25d38804b34e55992983ff85",
+    "REPLAY_CHIRAL_CONTROL.json": "555c25831c38644c45392e838d1c1344ece88319ec5790a7861dbc648cb60dbc",
+    "REPLAY_VALLEY_MIRROR.json": "2efafc846bcde33048c90a5b72ee8d0648db1e75f22244d562f2d85d0443c990"
+  }
+}

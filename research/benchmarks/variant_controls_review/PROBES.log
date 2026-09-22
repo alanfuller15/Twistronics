@@ -1,0 +1,75 @@
+{
+  "rows": 18,
+  "K_max_matrix_error_meV": 4.562664835702585e-13,
+  "Kprime_max_matrix_error_meV": 3739.9849235001207,
+  "Kprime_max_spectrum_error_meV": 100.18805548442795,
+  "contract_probes": {
+    "synthetic_rank_zero_W": {
+      "kind": "synthetic contract counterexample",
+      "frame_orthogonality_residual": 0.0,
+      "loop_product_singular_values": [
+        0,
+        0
+      ],
+      "returned_euler_estimate": 0.0,
+      "returned_closure": 1.0,
+      "returned_min_polar_det": 1.0,
+      "interpretation": "The returned determinant does not diagnose a singular Wilson product; this does not reproduce |e2|=1 or invalidate a physical run."
+    },
+    "synthetic_unused_lo": {
+      "kind": "synthetic API probe",
+      "runs": [
+        {
+          "lo": 0,
+          "return": [
+            0.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "lo": 1,
+          "return": [
+            0.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "lo": 999,
+          "return": [
+            0.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "interpretation": "lo is assigned but never supplied to real_frame. The original helper always selects the central pair."
+    },
+    "native_broken_reality": {
+      "kind": "native BM negative control",
+      "model": {
+        "N": 3,
+        "eps": 0.003,
+        "kinetic": "lab_nn_full",
+        "geometry": "exact",
+        "mass": 1.0
+      },
+      "probe_f": [
+        0.31,
+        0.27
+      ],
+      "imaginary_residual_meV": 1.0000000000000309,
+      "real_frame_outcome": "Hamiltonian not real in the C2zT basis: max|Im|=1.00e+00 meV (v053 audit target 4: runtime guard, not assert)",
+      "band_sign_holonomy": {
+        "status": "RETURNED",
+        "value": 0.9999979244861115
+      },
+      "holonomy_axis": 0,
+      "holonomy_c": 0.27,
+      "holonomy_n": 8,
+      "interpretation": "Sign-holonomy helper must enforce its real-Hamiltonian precondition; the massless supplied controls are not disproved by this negative control."
+    }
+  },
+  "elapsed_s": 1.6356395580005483
+}

@@ -1,0 +1,42 @@
+{
+  "base_commit": "f9b7219091eb23b8ea7423611cea4f8e88438ceb",
+  "source_sha256": {
+    "figure.py": "dfc56e6ed3f2bfac38f0452fe81f2e69ea581bf379470ca41fe2cc05c301cd3c",
+    "variant_inputs.py": "401449bd41147f4176c2d644b4f9c79c3c21799034933bc94de88843579d00bb",
+    "probes.py": "b7f9ea8098540964f257c0d082c749feaadedf2136ba001901d66b771fa8b026",
+    "clean_smoke.py": "81f51565b3eac662d8fc9671ba319b96aa4b5ab92ff071343a8154b7556616b3",
+    "replay_worker.py": "b97c3e98f61d702c8f10469bb90db76c78eb52d3f9a5a5abd3c1aeb3f9a9b212",
+    "run_review.py": "2576a65b7eac01882bbd4f965c671e9356977e816e9d51267f16b9e4a3ab7119",
+    "report.py": "5be57dd3e1e7008915e0b1952b959bc382e48776dc763b1ede32ec498b2d748e"
+  },
+  "plan_sha256": "39f79d3eec36e5645b8a538f0bb7725d869097615a36f0239daa8673eabb1c94",
+  "partner_sha256": "5144c4d01620720a882d90ac191dff684b76d68213532cb1c741e08c2c60d382",
+  "native_probe_environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "scope": "Code and review records; no partner sources patched. Temporary extractions and caches excluded."
+}

@@ -1,0 +1,77 @@
+{
+  "frozen_utc": "2026-09-22T23:04:02.261990+00:00",
+  "base_commit": "f9b7219091eb23b8ea7423611cea4f8e88438ceb",
+  "input_sha256": "5144c4d01620720a882d90ac191dff684b76d68213532cb1c741e08c2c60d382",
+  "scope": "Review the supplied exploratory variants; no new strained campaign and no acceptance of the outstanding sparse integration requirements.",
+  "supplied_tests": {
+    "file": "test_valley_chiral.py",
+    "timeout_s": 180,
+    "unchanged": true
+  },
+  "native_fast_comparison": {
+    "N": [
+      3,
+      4,
+      6
+    ],
+    "valleys": [
+      1,
+      -1
+    ],
+    "f": [
+      [
+        0.31,
+        0.27
+      ],
+      [
+        0.11,
+        0.43
+      ],
+      [
+        -0.31,
+        -0.27
+      ]
+    ],
+    "model": {
+      "eps": 0.003,
+      "kinetic": "lab_nn_full",
+      "geometry": "exact"
+    },
+    "matrix_tol_meV": 1e-09,
+    "spectrum_tol_meV": 1e-08,
+    "bands": "D//2-3 through D//2+2",
+    "separate_native_time_reversal_check": true
+  },
+  "contract_probes": [
+    "unused lo argument (synthetic frames)",
+    "rank-zero Wilson product (synthetic frames)",
+    "band_sign_holonomy reality guard (native BM mass=1 meV)"
+  ],
+  "replay": {
+    "entrypoint": "run_controls.py",
+    "unchanged": true,
+    "directory": "disposable extraction seeded with supplied JSON",
+    "timeout_s": 300,
+    "retain_stdout_and_all_output_JSON": true,
+    "profile_call_counts": true
+  },
+  "threads": 1,
+  "interpretation": [
+    "Supplied aggregate records remain attributed to the partner until regenerated.",
+    "Synthetic contract probes are not physical counterexamples.",
+    "A returned polar determinant is not a singular-value or band-isolation bound.",
+    "No threshold relaxation after execution.",
+    "Absolute Euler signs require a common orientation convention.",
+    "Missing sparse fixes are not regressions caused by these variants."
+  ],
+  "references": [
+    {
+      "url": "https://arxiv.org/abs/1808.05250",
+      "purpose": "First chiral magic coupling approximately 0.586, with analytic and numerical analysis; not an exact decimal."
+    },
+    {
+      "url": "https://arxiv.org/abs/1808.05375",
+      "purpose": "Ahn\u2013Park\u2013Yang convention has total node winding -2 e2; align conventions before a signed comparison."
+    }
+  ]
+}

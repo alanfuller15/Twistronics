@@ -1,0 +1,43 @@
+[
+  {
+    "name": "SUPPLIED_TESTS",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "test_valley_chiral.py",
+      "SUPPLIED_TESTS.xml"
+    ],
+    "timeout_s": 180,
+    "elapsed_s": 2.4811785139972926,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  {
+    "name": "PROBES",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "probes.py"
+    ],
+    "timeout_s": 120,
+    "elapsed_s": 2.625398583997594,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  {
+    "name": "PARTNER_REPLAY",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "replay_worker.py",
+      "replay_work",
+      "REPLAY_CALLS.json"
+    ],
+    "timeout_s": 300,
+    "elapsed_s": 192.64143150200107,
+    "exit_code": 0,
+    "timed_out": false
+  }
+]
