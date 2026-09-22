@@ -1,0 +1,17 @@
+{
+ "status":"FROZEN_FOLLOWUP_NOT_FULL_BRAID_ACCEPTANCE",
+ "parent_commit":"fe02fc1ae9383b8663a28e55d7497059478840ca",
+ "model_source":"../r1_reproduction/PLAN.json (unchanged explicit model)",
+ "N_values":[4,6],"D_stations_meV":[36.0,42.0],"engines":["bm","ref"],
+ "trials":[
+  {"name":"baseline","bm_radius":0.006,"ref_radius":0.005,"bm_loop_points":96,"ref_loop_points":72,"transport_points":301},
+  {"name":"radius_only","bm_radius":0.003,"ref_radius":0.0025,"bm_loop_points":96,"ref_loop_points":72,"transport_points":301},
+  {"name":"loop_mesh_only","bm_radius":0.006,"ref_radius":0.005,"bm_loop_points":192,"ref_loop_points":144,"transport_points":301},
+  {"name":"transport_mesh_only","bm_radius":0.006,"ref_radius":0.005,"bm_loop_points":96,"ref_loop_points":72,"transport_points":601}
+ ],
+ "thresholds":{"root_gap_meV":1e-6,"root_separation":1e-4,"winding_abs_error":0.15,"step_overlap_smin":0.9,"ref_fixed_frame_smin":0.9,"isolation_margin_meV":0.001,"floating_allowance_meV":1e-7,"affine_residual_meV":1e-9,"max_isolation_depth":16},
+ "expected_labels":{"36.0":"SAME","42.0":"OPPOSITE"},
+ "isolation":"Adaptively subdivide each actual transport segment and both circular loops. For an interval of length h and exterior-gap Lipschitz constant L, lower estimate = min(endpoint gaps) - L*h/2 - floating_allowance. Use Weyl's bound L=2*Hamiltonian derivative norm. Both exterior gaps are included. Require estimate > margin on all leaf intervals. This is a numerical bound conditional on the declared finite affine Hamiltonian and eigensolver accuracy, not interval arithmetic or full BZ isolation.",
+ "stop":"Retain all evidence. Stop that cutoff run on first failed criterion. Do not change thresholds to obtain PASS. N6 may execute independently because it has no dependency on fresh N4 outcomes; neither can confer acceptance on a failure at the other cutoff.",
+ "scope":"Separate endpoint radius/loop-mesh/transport-mesh sensitivity, conditioning and adaptive isolation. No new adjacent-node inventory, continuous tracking through the D event, annihilation proof, Euler removal or experimental calibration."
+}
