@@ -1,0 +1,887 @@
+{
+  "status": "RECONCILED_TEMPORAL_GRID_AND_CONJUGATION_NOT_FULL_BRAID",
+  "all_numerical_checks_pass": true,
+  "new_analytic_controls": 10,
+  "core_analytic_controls": 8,
+  "supplementary_D_axis_controls": 2,
+  "reused_parent_analytic_controls": 18,
+  "counts": {
+    "transported_station_loops": 104,
+    "temporal_edges": 2752,
+    "base_edges": 48,
+    "endpoint_comparisons": 16,
+    "volume_leaves": 2478,
+    "guarded_edge_leaves": 59632
+  },
+  "minimum_conditional_estimates": {
+    "volume_exterior_gap_meV": 7.255602958706833,
+    "volume_chart_smin": 0.6003897568999733,
+    "spatial_gap_meV": 0.012585140667234037,
+    "temporal_gap_meV": 0.20071193175845276
+  },
+  "reconstruction_errors": {
+    "bounds": 0.0,
+    "coordinates": 0.0,
+    "frame_lift": 2.334590853969587e-14,
+    "unit_quaternion": 2.220446049250313e-16,
+    "carried_frame": 0.0,
+    "shared_base_frames": 2.4450095743689197e-14,
+    "SU2_conjugation": 7.386080586512103e-15,
+    "cover_volume_relative": 1.6209256159527285e-14,
+    "frame_step_angle": 0.0
+  },
+  "grid_comparisons": [
+    {
+      "engine": "bm",
+      "D_meV": 38.0,
+      "radius": 0.003,
+      "error": 6.940520207165956e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.0,
+      "radius": 0.0015,
+      "error": 7.908712747195511e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.125,
+      "radius": 0.003,
+      "error": 1.3912482277334e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.125,
+      "radius": 0.0015,
+      "error": 2.280966553331632e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.25,
+      "radius": 0.003,
+      "error": 5.418300356996306e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.25,
+      "radius": 0.0015,
+      "error": 1.223847412301637e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.375,
+      "radius": 0.003,
+      "error": 2.0634535746744112e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.375,
+      "radius": 0.0015,
+      "error": 1.7538054342125512e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.5,
+      "radius": 0.003,
+      "error": 6.605366210596375e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.5,
+      "radius": 0.0015,
+      "error": 8.502855537717569e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.625,
+      "radius": 0.003,
+      "error": 1.4116312285761272e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.625,
+      "radius": 0.0015,
+      "error": 1.9888604652074097e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.75,
+      "radius": 0.003,
+      "error": 3.0470417855532617e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.75,
+      "radius": 0.0015,
+      "error": 1.829265905417543e-15,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.875,
+      "radius": 0.003,
+      "error": 7.949370328663719e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 38.875,
+      "radius": 0.0015,
+      "error": 7.732529894166618e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 39.0,
+      "radius": 0.003,
+      "error": 4.991666802123262e-16,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "D_meV": 39.0,
+      "radius": 0.0015,
+      "error": 1.3309665869432052e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.0,
+      "radius": 0.003,
+      "error": 3.17801340798951e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.0,
+      "radius": 0.0015,
+      "error": 1.2325210296815207e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.125,
+      "radius": 0.003,
+      "error": 1.77115266897232e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.125,
+      "radius": 0.0015,
+      "error": 1.4909948276020657e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.25,
+      "radius": 0.003,
+      "error": 2.2447321779139868e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.25,
+      "radius": 0.0015,
+      "error": 5.866075854232821e-16,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.375,
+      "radius": 0.003,
+      "error": 1.794571435898007e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.375,
+      "radius": 0.0015,
+      "error": 1.4493614641786223e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.5,
+      "radius": 0.003,
+      "error": 1.2932363513407097e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.5,
+      "radius": 0.0015,
+      "error": 1.7078352620991666e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.625,
+      "radius": 0.003,
+      "error": 4.4183406933129285e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.625,
+      "radius": 0.0015,
+      "error": 2.3779264148038336e-16,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.75,
+      "radius": 0.003,
+      "error": 1.1934897514720425e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.75,
+      "radius": 0.0015,
+      "error": 2.0591167659844692e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.875,
+      "radius": 0.003,
+      "error": 2.2143745170843943e-15,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 38.875,
+      "radius": 0.0015,
+      "error": 3.8163916471489717e-16,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 39.0,
+      "radius": 0.003,
+      "error": 4.2934406030425976e-16,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "D_meV": 39.0,
+      "radius": 0.0015,
+      "error": 2.299809648276252e-15,
+      "pass": true
+    }
+  ],
+  "engine_class_comparisons": [
+    {
+      "key": "coarse_D38.0_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.0_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.125_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.125_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.25_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.25_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.375_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.375_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.5_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.5_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.625_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.625_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.75_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.75_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.875_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D38.875_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D39.0_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "coarse_D39.0_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.0_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.0_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.0625_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.0625_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.125_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.125_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.1875_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.1875_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.25_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.25_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.3125_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.3125_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.375_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.375_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.4375_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.4375_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.5_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.5_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.5625_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.5625_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.625_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.625_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.6875_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.6875_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.75_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.75_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.8125_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.8125_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.875_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.875_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.9375_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D38.9375_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D39.0_r0.003",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    },
+    {
+      "key": "fine_D39.0_r0.0015",
+      "classes": [
+        "+-k",
+        "+-k"
+      ],
+      "pass": true
+    }
+  ],
+  "crossing_D_meV": {
+    "bm": 38.07790673717849,
+    "ref": 38.077906737177294
+  },
+  "all_hypotheses_match": true,
+  "sequences": {
+    "bm": [
+      {
+        "mesh": "coarse",
+        "radius": 0.003,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      },
+      {
+        "mesh": "coarse",
+        "radius": 0.0015,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      },
+      {
+        "mesh": "fine",
+        "radius": 0.003,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      },
+      {
+        "mesh": "fine",
+        "radius": 0.0015,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      }
+    ],
+    "ref": [
+      {
+        "mesh": "coarse",
+        "radius": 0.003,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      },
+      {
+        "mesh": "coarse",
+        "radius": 0.0015,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      },
+      {
+        "mesh": "fine",
+        "radius": 0.003,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      },
+      {
+        "mesh": "fine",
+        "radius": 0.0015,
+        "labels": [
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k",
+          "+k"
+        ],
+        "constant": true
+      }
+    ]
+  },
+  "scope": "Refined sampled temporal transport and endpoint conjugation in an isolated, trivialized finite-model three-band box. Every recorded spatial and temporal grid edge is guarded; moving-contour face interiors and continuous root identity are not certified. This is not full braid acceptance, an Euler-class computation, novelty, an infinite-cutoff conclusion, or an experimental control calibration. Strain remains fixed; layer potentials are +/-D. The two engines share the measurement framework.",
+  "source_hashes": {
+    "PLAN.json": "a4905db126c8f610b6163c3a13ebc848cb9121c96ad5cd72fe313f4ad030a142",
+    "BM.json": "ecaac9297d77c29ca79235cfeddc61056bfcc7557467039433338783e357fc9c",
+    "REF.json": "c3ea28326e9b3867faa5c866ddbf047a30400a55787f83161529df2d169b491a",
+    "BM.npz": "d9c48fc5645f2b6eea3c8107912f2245bd0c711f5c9fd58c380b7011e994a63d",
+    "REF.npz": "d51f1956083742939db7418fda453ebe671703fdbd061c9d7d7c1119b615d484",
+    "CONTROLS.json": "985b6858073f3e5a20a1c25189cace8514ee9789921bb67237ae70f9bc9a3a19",
+    "TEMPORAL_AXIS_CONTROLS.json": "d5eb7afbf804a5ac410f0d69c2b23978cba7896bfd4650db9fbff3adf79306de",
+    "report.py": "76640417fdc827e84c8ed72d7caa8668915e74d238c771e93adbf532a7facc69"
+  }
+}

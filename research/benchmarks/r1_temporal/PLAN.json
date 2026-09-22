@@ -1,0 +1,25 @@
+{
+  "status": "FROZEN_AFTER_RETAINED_GEOMETRY_SURVEY_BEFORE_TEMPORAL_CHARGES",
+  "parent_commit": "d32b6f728afabc4a80b71389f99e77f69548e723",
+  "N": 8,
+  "engines": ["bm", "ref"],
+  "D_interval_meV": [38.0,39.0],
+  "source_tracks": "r1_holonomy: use the existing 8- and 16-interval continued p,q,upper roots. No new root-identity claim between those stations.",
+  "radii": [0.003,0.0015],
+  "geometry": "Let d=q-p, e=d/|d|, n=(-e_y,e_x). Base b=p+0.55d. Moving kink k=upper-0.006n. Circle anchor a=q-r*e. Transported loop T: b,k,a, counterclockwise circle polygon around q, a,k,b. Nominal loop S: b,a, same polygon,a,b. Comparison C: transported stem b,k,a followed by reversed nominal stem a,b.",
+  "reference_chart": "Use one fixed 596x3 reference B at the center of a 3D coordinate box containing all planned contour vertices at both radii and all fine D stations. Select energy-ordered bands 297..299; check exterior neighbors 296 and 300. The chart is Q=polar(B.T F).",
+  "volume": "Check exterior isolation and chart rank throughout the box with the earlier projector bound, extended to affine (f1,f2,D). Initial covers 8x8x2 and 16x16x4. Bisect cells along their largest halfwidth_j*||A_j|| if their lower estimates fail; stop at depth 12 or an actual center violation. Retain unresolved cells.",
+  "base_transport": "Start one properly oriented ordered base eigenframe at D38, then carry its column signs along every adaptively checked affine base edge. Each station's closed loops start in that carried frame. Check the shared station frames and signed charges between the two D grids.",
+  "temporal_grid": "For every neighboring D pair, check affine temporal edges at the base, kink, and 16/32 equally spaced circle vertices. Check the whole polygon and both stems at each D station. These certify the selected grid edges conditionally; the intervening two-dimensional moving-contour faces are NOT certified.",
+  "mesh_levels": [
+    {"name":"coarse","track_intervals":8,"polygon_edges":64,"temporal_circle_vertices":16,"stem_subintervals":8,"variation_over_lower_max":0.2,"maximum_frame_step_radians":0.15,"volume_grid":[8,8,2]},
+    {"name":"fine","track_intervals":16,"polygon_edges":128,"temporal_circle_vertices":32,"stem_subintervals":16,"variation_over_lower_max":0.1,"maximum_frame_step_radians":0.075,"volume_grid":[16,16,4]}
+  ],
+  "thresholds": {"gap_margin_meV":0.001,"chart_smin":0.6,"floating_allowance":1e-7,"maximum_volume_depth":12,"cross_check_error":1e-7,"root_gap_meV":1e-6,"crossing_offset":1e-9,"base_frame_overlap":0.999},
+  "charge_measurement": "Use unchanged r1_three_band lift and adaptive edge routines with the new 3D chart, the same thresholds, and carried base signs. Preserve their inverse-lift chronological multiplication convention.",
+  "endpoint_checks": "At both endpoints, measure S, T and C in the carried base frame, directly traverse C S C^-1, and compare its charge with T and with q_C q_S q_C^-1. T charge should stay fixed across D; S should change sign; C should change from +1 at D38 to the upper-gap class +-i at D39.",
+  "crossing_control": "Refine the known crossing within [38.0625,38.125] using the upper-root solver and signed offset from the linearly interpolated fine p-q segment. Include the refined upper root as an exact vertex in a nominal stem at that D; the all-band-gap edge gate must reject it. Never present the nominal path as continuously gapped through this event.",
+  "hypothesis_policy": "Separate predicted charge relations from numerical validity. Unexpected valid charges or failed checks remain visible; do not change thresholds or paths to force agreement.",
+  "controls": ["Reuse and verify source bindings of the 18 parent analytic controls", "Affine translating three-band node model: carried charge stays fixed", "Repeat with coordinate-dependent random eigenvector signs", "Direct C S C^-1 on toy adjacent-node loops flips the charge", "Temporal edge through an internal degeneracy must be rejected"],
+  "scope": "Refined sampled temporal transport and endpoint conjugation in an isolated, trivialized finite-model three-band box. Every recorded spatial and temporal grid edge is guarded; moving-contour face interiors and continuous root identity are not certified. This is not full braid acceptance, an Euler-class computation, novelty, an infinite-cutoff conclusion, or an experimental control calibration. Strain remains fixed; layer potentials are +/-D. The two engines share the measurement framework."
+}
