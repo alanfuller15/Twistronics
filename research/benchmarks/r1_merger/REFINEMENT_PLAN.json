@@ -1,0 +1,18 @@
+{
+ "status":"FROZEN_TARGETED_RESOLUTION_AFTER_OBSERVED_INITIAL_WARNINGS",
+ "reason":"Initial N4 and first N6-engine records show phase-step failures near the fold and some Nelder-Mead iteration limits despite agreeing candidate locations. Preserve the original outputs and criteria. This supplement evaluates denser loops and directly checks stationarity using eigenvalue derivatives.",
+ "loop_points":[1024,2048],
+ "loop_selection":"Both radii and both nodes at the parent finest-fold D minus 0.01; enclosing ellipse at D=40. Keep the parent's overlap, exterior gap, loop-gap and phase-step thresholds. Require both new meshes to pass and have the same integer indices.",
+ "minimum_selection":"All three candidate minimizer outputs at each of the three post-event D stations in the parent run, including failed attempts. These are candidate checks, not independent global searches.",
+ "gradient":"Exact eigenvalue first derivative for the affine family: v_upper^T H_i v_upper minus v_lower^T H_i v_lower; the gap is strictly positive at the candidate minima.",
+ "gradient_norm_max_meV_per_fractional":0.00001,
+ "gradient_solve_J_step":0.00000025,
+ "Hessian_steps":[0.000001,0.0000005],
+ "Hessian_min_eigenvalue":1.0,
+ "Hessian_relative_refinement_max":0.01,
+ "Hessian_relative_asymmetry_max":0.001,
+ "candidate_displacement_max":0.00001,
+ "max_gradient_solve_evaluations":100,
+ "positive_gap_min_meV":0.0001,
+ "claims_limit":"Numerical phase sampling and local stationarity/curvature only. No root-absence certificate, full braid acceptance, or change to original failed optimizer results."
+}

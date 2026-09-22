@@ -1,0 +1,19 @@
+{
+ "status":"FROZEN_LOCAL_MERGER_FOLLOWUP_NOT_ANNIHILATION_CERTIFICATE",
+ "parent_commit":"f3e4d70be97df9aae5939e7b8f1e6360c5d291e0",
+ "model_source":"../r1_reproduction/PLAN.json; unchanged model; layer potentials plus/minus D in meV",
+ "N_values":[4,6],"engines":["bm","ref"],
+ "box_fractional":[[0.765,0.793],[0.585,0.632]],
+ "anchor_f":[0.779,0.6075],"anchor_D_meV":40.25,
+ "D_interval_meV":[40.0,40.5],
+ "scan":"Union of D=40..40.5 step0.05 and D=40.25..40.45 step0.01; forward and reverse. Initial seeds are the two local upper roots recovered at D=40 in the parent report. Keep the last accepted pair across failed stations; reverse starts from the same D=40 seeds, not from claimed roots above the event.",
+ "root_gap_meV":1e-6,"root_separation":1e-5,"minimum_anchor_overlap":0.9,
+ "max_root_evaluations":100,"coordinate_agreement":1e-5,
+ "fold":{"equations":"two components of the actual upper two-band Hamiltonian plus det(momentum Jacobian)/10000","derivative_steps":[1e-5,5e-6,2.5e-6],"max_evaluations":100,"gap_meV":1e-6,"singular_value_ratio_max":1e-5,"D_spread_max_meV":0.0005,"f_spread_max":0.00005,"large_singular_value_min":1.0,"parameter_coefficient_abs_min":0.001,"curvature_coefficient_abs_min":1.0,"parameter_difference_meV":0.0001},
+ "indices":{"D":"40 and finest-step fold D minus 0.01 meV","radius_fractions_of_pair_separation":[0.2,0.1],"loop_points":[128,256],"max_phase_step_radians":0.7853981633974483,"integer_tolerance":1e-8,"sampled_exterior_gap_min_meV":0.001,"enclosing_ellipse_center":[0.779,0.6075],"enclosing_ellipse_axes":[0.012,0.019],"enclosing_D_meV":[40.0,40.5]},
+ "post_event_minima":{"D":"finest-step fold D plus 0.01 and 0.05 meV, and D=40.5","method":"bounded Nelder-Mead on squared exact two-band gap; three starts: anchor and both parent D40 roots","positive_gap_min_meV":0.0001,"Hessian_step_fractional":0.00001,"minimum_Hessian_eigenvalue":0.001,"max_iterations":600},
+ "gap_maps":{"points_per_axis":41,"D_meV":[40.0,40.5],"scope":"sampled local box only; not a global minimum or exclusion certificate"},
+ "affine_matrix_tolerance_meV":1e-9,"affine_spectrum_tolerance_meV":1e-8,
+ "stop":"Stop a cutoff on computation/affine failure; retain partial results. Retain failed root and minimum attempts. Failed diagnostics mark unresolved evidence rather than relaxing thresholds.",
+ "claims_limit":"Numerical local fold/annihilation evidence conditional on the finite model, a smooth isolated upper two-band subspace, finite differences and bounded searches. No interval-arithmetic or exhaustive root-absence certificate, full braid acceptance, Euler removal, novelty, or experimental calibration."
+}
