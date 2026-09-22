@@ -1,0 +1,32 @@
+{
+  "status": "FROZEN_AFTER_SOURCE_REVIEW_BEFORE_REGRESSIONS_AND_NUMERICAL_CHECKS",
+  "parent_commit": "b946a848a83ddfb6002ec78624f91a8dc52fcbc3",
+  "input_archive_sha256": "a73d14e0d877f115788da34c0c93d85c0353e96b1ba7a4d6a0890490f77f4538",
+  "preservation": "Retain the supplied ZIP and every extracted file unchanged. Run tests in disposable directories. Do not run nodewind.py, whose top-level body launches a calculation. Inspected imports used by atlas, sweep and trace have no network, deletion or subprocess operations; the CLI writers append sweep JSONL or overwrite explicitly supplied seed/trace output paths.",
+  "tooling_regressions": [
+    "Resume keys collide when N or grid changes",
+    "Error rows are treated as completed on resume",
+    "Truncated final JSONL records are not repaired before append",
+    "Supporting-line crossing outside the segment is returned as an event",
+    "Secant iteration may leave its supplied bracket",
+    "Iteration exhaustion relaxes requested event tolerance to 1e-5",
+    "Changing N in seed metadata does not change the tracer default",
+    "Returned per-point solve count omits earlier bracket and secant evaluations"
+  ],
+  "candidate_scope": "Deduplicate the seven supplied trace rows by their full five-knob coordinates, giving six distinct states. Evaluate both separately coded native complex Hamiltonians at those supplied coordinates, then refine p, q and the upper node with the published guarded Newton solver. Use N4 and N6 with matching cutoff padding 1e-6. These are bounded sampled checks, not continuous identity certificates.",
+  "event_refinement": "At each supplied state, preserve strain, angle, twist and tunnelling scale. Search for a geometric event only within the fixed D interval supplied_D plus/minus 0.1 meV, with a scalar bracketed Brent solver. Every node refinement is constrained to the original supplied node's plus/minus 0.02 fractional-coordinate box. Require successful guarded roots, interior segment parameter, unchanged periodic image lift and opposite endpoint offsets. Retain failures; no range, seed or tolerance changes to force recovery.",
+  "thresholds": {
+    "coordinate_seed_radius": 0.02,
+    "event_D_halfwidth_meV": 0.1,
+    "event_xtol_meV": 1e-8,
+    "event_offset_tolerance": 1e-7,
+    "segment_interior_margin": 1e-5,
+    "native_matrix_tolerance_meV": 1e-9,
+    "native_gap_tolerance_meV": 1e-8,
+    "cross_engine_coordinate_tolerance": 1e-7,
+    "cross_engine_event_tolerance_meV": 1e-5,
+    "scalar_max_iterations": 40
+  },
+  "recording": "Store source hashes, input references, all guarded solver histories, event brackets and evaluation histories, matrix/spectrum comparisons, actual basis index lists and hashes, wall time from run start and total solver eigensolves. Recompute original demo stored-coordinate gaps and offsets. Report cutoff dependence and basis membership changes separately from implementation agreement.",
+  "scope": "Exploratory partner-tool review and sampled event-candidate verification. A successful result does not certify complete inventories, continuous identity in varying strain/angle, a continuous event surface, charge transport, a full braid, Euler-class change, experimental feasibility or infinite-cutoff accuracy. P is a dimensionless tunnelling scale; D remains the opposite layer potential amplitude."
+}

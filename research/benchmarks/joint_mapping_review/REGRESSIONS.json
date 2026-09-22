@@ -1,0 +1,189 @@
+{
+  "status": "EIGHT_CONSEQUENTIAL_PARTNER_TOOL_FINDINGS_REPRODUCED",
+  "source_hashes": {
+    "PLAN.json": "9edf5f1df2dd7188c2ef27a14c88fd4d80e67635e5d5aa0f12fa78174b2d260f",
+    "INPUT_MANIFEST.json": "8cf5a07e59e04b699b017330705379048c92f15ca75c4d0f3e9183c5276afc85",
+    "partner_joint_mapping.zip": "a73d14e0d877f115788da34c0c93d85c0353e96b1ba7a4d6a0890490f77f4538",
+    "inputs.py": "b80efc2e8d2628988640a80ba492e644d2f073274f60f844da0a2ae4329b3039",
+    "regressions.py": "5af8eb8e8d1e955cb9405d06831deff766cacaa016885c4631de6bb6a65a9fbc"
+  },
+  "findings": [
+    {
+      "name": "resume_ignores_N_and_grid",
+      "finding_reproduced": true,
+      "evidence": {
+        "requested_second_N": 6,
+        "requested_second_grid": 48,
+        "worker_calls": 1,
+        "retained_rows": [
+          {
+            "key": "3a309cb52472b305",
+            "x": {
+              "eps": 0.007,
+              "phi": 15.0,
+              "theta": 1.0,
+              "D": 38.0,
+              "P": 1.0
+            },
+            "N": 4,
+            "grid": 24,
+            "status": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "name": "error_rows_are_not_retried",
+      "finding_reproduced": true,
+      "evidence": {
+        "worker_calls": 1,
+        "retained_output": "{\"key\": \"3a309cb52472b305\", \"status\": \"error\", \"error\": \"synthetic transient failure\"}\n"
+      }
+    },
+    {
+      "name": "append_after_truncated_tail_loses_new_record",
+      "finding_reproduced": true,
+      "evidence": {
+        "worker_calls": 1,
+        "parseable_records": 0,
+        "retained_output": "{\"key\":\"interrupted\"{\"key\": \"3a309cb52472b305\", \"x\": {\"eps\": 0.007, \"phi\": 15.0, \"theta\": 1.0, \"D\": 38.0, \"P\": 1.0}, \"N\": 4, \"grid\": 24, \"status\": \"ok\"}\n"
+      }
+    },
+    {
+      "name": "outside_segment_accepted_as_event",
+      "finding_reproduced": true,
+      "evidence": {
+        "event_value": 1.0,
+        "t": 2.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "name": "secant_leaves_valid_sign_bracket",
+      "finding_reproduced": true,
+      "evidence": {
+        "initial_bracket": [
+          -3.0,
+          0.0
+        ],
+        "endpoint_offsets": [
+          -19.0,
+          2.0
+        ],
+        "evaluations": [
+          {
+            "D": -3.0,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.0,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": -0.2857142857142857,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 1.042553191489362,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 1.9705985814674543,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.8339681580233942,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.6179443619147158,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 3.073349458182874,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.5151244903457992,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.3960753795534625,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 1.3205451785058195,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": -2.600931641683027,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.7799763920339995,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.5065291538889631,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 2.015889335956781,
+            "N": 4,
+            "solves": 3
+          },
+          {
+            "D": 0.1722760683238489,
+            "N": 4,
+            "solves": 3
+          }
+        ],
+        "event_returned": false
+      }
+    },
+    {
+      "name": "event_tolerance_relaxed_on_budget_exhaustion",
+      "finding_reproduced": true,
+      "evidence": {
+        "requested_tolerance": 1e-07,
+        "maxit": 1,
+        "accepted_offset": -7.500000000000001e-06
+      }
+    },
+    {
+      "name": "seed_cutoff_ignored_by_default",
+      "finding_reproduced": true,
+      "evidence": {
+        "seed_N": 6,
+        "default_argument": 4,
+        "output_N": 4,
+        "evaluation_count": 5
+      }
+    },
+    {
+      "name": "point_cost_omits_prior_event_evaluations",
+      "finding_reproduced": true,
+      "evidence": {
+        "measure_calls": 3,
+        "returned_solves": 3,
+        "total_fake_solves": 9,
+        "bracketing_cost_not_included": true
+      }
+    }
+  ],
+  "all_findings_reproduced": true
+}
