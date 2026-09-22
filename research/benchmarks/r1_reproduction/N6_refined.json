@@ -1,0 +1,315 @@
+{
+  "status": "ENDPOINT_DIAGNOSTICS_PASS_NOT_BRAID_ACCEPTANCE",
+  "plan_sha256": "e2d72b3ccc46374ffbf018d3a5b9ae70629b3ed10743e652b3200e99cb9526cd",
+  "source_sha256": {
+    "braid.py": "81760abb01882e97fe48a5ec062de688be51f8e29497050ecf44dddcfab6f3ae",
+    "bm_strain.py": "ba6bc77976af5fed5c1904954aa8c4c6cdf36f07dd998617002b8b59cd907bc6",
+    "gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "tbg_ref.py": "e050cf48ae9c93b6f007ca2c33d1b2e94c003dc3b6ffa946cbd32c3b4197dcf5",
+    "run.py": "2fec3dc9da31a2d923d1dc302b038c4628381a64d45e1d8c8de5e7ef38732ac3",
+    "knobs.py": "568960187c9e0098fa981f49bdf1384190cfb0877fdda08aca163ba9e14cf952",
+    "euler.py": "bd01081ecb7c1b0639f9445f8ba36cc50429c20f38c7512412f1d0948330d974"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "configuration": {
+    "name": "N6_refined",
+    "N": 6,
+    "bm_radius": 0.006,
+    "ref_radius": 0.005,
+    "bm_loop_points": 192,
+    "ref_loop_points": 144,
+    "transport_points": 600
+  },
+  "rows": [
+    {
+      "engine": "bm",
+      "stage": "N6_refined",
+      "N": 6,
+      "D_meV": 36.0,
+      "layer_difference_meV": 72.0,
+      "dimension": 348,
+      "nG": 87,
+      "flat": [
+        [
+          0.47375882759163035,
+          0.742151095100306
+        ],
+        [
+          0.8818226149013455,
+          0.5862196928144259
+        ]
+      ],
+      "root_gaps_meV": [
+        6.050981937733013e-11,
+        9.35855837269628e-11
+      ],
+      "optimizer": [
+        {
+          "success": true,
+          "optimizer_success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "nfev": 155,
+          "final_nfev": 155,
+          "wrap_shift": 0.0,
+          "attempts": [
+            {
+              "stage": "initial",
+              "success": true,
+              "status": 0,
+              "message": "Optimization terminated successfully.",
+              "nfev": 155,
+              "x": [
+                0.47375882759163035,
+                0.742151095100306
+              ],
+              "value": 6.050981937733013e-11,
+              "finite": true
+            }
+          ],
+          "rejection_reasons": [],
+          "canonical_value": 6.050981937733013e-11
+        },
+        {
+          "success": true,
+          "optimizer_success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "nfev": 154,
+          "final_nfev": 154,
+          "wrap_shift": 0.0,
+          "attempts": [
+            {
+              "stage": "initial",
+              "success": true,
+              "status": 0,
+              "message": "Optimization terminated successfully.",
+              "nfev": 154,
+              "x": [
+                0.8818226149013455,
+                0.5862196928144259
+              ],
+              "value": 9.35855837269628e-11,
+              "finite": true
+            }
+          ],
+          "rejection_reasons": [],
+          "canonical_value": 9.35855837269628e-11
+        }
+      ],
+      "windings": [
+        -0.9989965472657599,
+        -0.9987705351570105
+      ],
+      "label": "SAME",
+      "ref_fixed_frame_overlap": null,
+      "diagnostics": {
+        "frames": 986,
+        "min_sampled_exterior_gap_meV": 0.2625533053655431,
+        "max_imag_meV": 2.1757742053512583e-13,
+        "max_hermiticity_meV": 2.874514926067946e-13
+      },
+      "diagnostic_pass": true,
+      "seconds": 58.680415868759155
+    },
+    {
+      "engine": "ref",
+      "stage": "N6_refined",
+      "N": 6,
+      "D_meV": 36.0,
+      "layer_difference_meV": 72.0,
+      "dimension": 348,
+      "nG": 87,
+      "flat": [
+        [
+          0.4737588275916293,
+          0.742151095100192
+        ],
+        [
+          0.8818226149009688,
+          0.5862196928143857
+        ]
+      ],
+      "root_gaps_meV": [
+        6.981082378842984e-12,
+        4.813927034774679e-12
+      ],
+      "optimizer": [
+        {
+          "success": true,
+          "detail": "native ref.refine raises on optimizer failure"
+        },
+        {
+          "success": true,
+          "detail": "native ref.refine raises on optimizer failure"
+        }
+      ],
+      "windings": [
+        1,
+        1
+      ],
+      "label": "SAME",
+      "ref_fixed_frame_overlap": 0.9948532376280103,
+      "diagnostics": {
+        "frames": 888,
+        "min_sampled_exterior_gap_meV": 0.382422019153978,
+        "max_imag_meV": 2.1751664041659728e-13,
+        "max_hermiticity_meV": 2.8726033724303736e-13
+      },
+      "diagnostic_pass": true,
+      "seconds": 47.11145377159119
+    },
+    {
+      "engine": "bm",
+      "stage": "N6_refined",
+      "N": 6,
+      "D_meV": 42.0,
+      "layer_difference_meV": 84.0,
+      "dimension": 348,
+      "nG": 87,
+      "flat": [
+        [
+          0.46771664324671014,
+          0.7455738859567841
+        ],
+        [
+          0.8879645821078801,
+          0.5826100050916869
+        ]
+      ],
+      "root_gaps_meV": [
+        6.539480068568082e-11,
+        1.1551648526619829e-10
+      ],
+      "optimizer": [
+        {
+          "success": true,
+          "optimizer_success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "nfev": 158,
+          "final_nfev": 158,
+          "wrap_shift": 0.0,
+          "attempts": [
+            {
+              "stage": "initial",
+              "success": true,
+              "status": 0,
+              "message": "Optimization terminated successfully.",
+              "nfev": 158,
+              "x": [
+                0.46771664324671014,
+                0.7455738859567841
+              ],
+              "value": 6.539480068568082e-11,
+              "finite": true
+            }
+          ],
+          "rejection_reasons": [],
+          "canonical_value": 6.539480068568082e-11
+        },
+        {
+          "success": true,
+          "optimizer_success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "nfev": 153,
+          "final_nfev": 153,
+          "wrap_shift": 0.0,
+          "attempts": [
+            {
+              "stage": "initial",
+              "success": true,
+              "status": 0,
+              "message": "Optimization terminated successfully.",
+              "nfev": 153,
+              "x": [
+                0.8879645821078801,
+                0.5826100050916869
+              ],
+              "value": 1.1551648526619829e-10,
+              "finite": true
+            }
+          ],
+          "rejection_reasons": [],
+          "canonical_value": 1.1551648526619829e-10
+        }
+      ],
+      "windings": [
+        -0.9986055639367034,
+        0.998532028668977
+      ],
+      "label": "OPPOSITE",
+      "ref_fixed_frame_overlap": null,
+      "diagnostics": {
+        "frames": 986,
+        "min_sampled_exterior_gap_meV": 0.7185394754917027,
+        "max_imag_meV": 2.1739511272679134e-13,
+        "max_hermiticity_meV": 2.5462121390494903e-13
+      },
+      "diagnostic_pass": true,
+      "seconds": 66.36835432052612
+    },
+    {
+      "engine": "ref",
+      "stage": "N6_refined",
+      "N": 6,
+      "D_meV": 42.0,
+      "layer_difference_meV": 84.0,
+      "dimension": 348,
+      "nG": 87,
+      "flat": [
+        [
+          0.46771664324682516,
+          0.7455738859566429
+        ],
+        [
+          0.8879645821085472,
+          0.582610005091365
+        ]
+      ],
+      "root_gaps_meV": [
+        1.70139458077756e-11,
+        7.87281351222191e-12
+      ],
+      "optimizer": [
+        {
+          "success": true,
+          "detail": "native ref.refine raises on optimizer failure"
+        },
+        {
+          "success": true,
+          "detail": "native ref.refine raises on optimizer failure"
+        }
+      ],
+      "windings": [
+        1,
+        -1
+      ],
+      "label": "OPPOSITE",
+      "ref_fixed_frame_overlap": 0.9947972326350052,
+      "diagnostics": {
+        "frames": 888,
+        "min_sampled_exterior_gap_meV": 0.6380149374959743,
+        "max_imag_meV": 2.1760737788835942e-13,
+        "max_hermiticity_meV": 2.550457442280852e-13
+      },
+      "diagnostic_pass": true,
+      "seconds": 47.55699586868286
+    }
+  ],
+  "matched_engine_root_distances": [
+    {
+      "D": 36.0,
+      "distance": 3.7883655009273365e-13
+    },
+    {
+      "D": 42.0,
+      "distance": 7.407615768202083e-13
+    }
+  ]
+}

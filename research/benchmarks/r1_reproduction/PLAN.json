@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_REPRODUCTION_PLAN_NOT_ACCEPTED_BRAID",
+  "model": {"eps": 0.007, "phi_deg": 15.0, "theta_deg": 1.0, "w1_meV": 110.0, "ratio": 0.8, "kinetic": "lab_nn_full", "geometry": "exact", "Dfield_convention": "layer energies +D and -D meV; energy difference 2D; no electric-field calibration", "cutoff_tol_bm": 1e-6, "cutoff_tol_ref": 1e-9},
+  "stations_D_meV": [36.0, 42.0],
+  "flat_seeds": [[0.4779,0.7396],[0.8769,0.589]],
+  "stages": [{"name":"N4_baseline","N":4,"bm_radius":0.012,"ref_radius":0.01,"bm_loop_points":96,"ref_loop_points":72,"transport_points":300},{"name":"N4_refined","N":4,"bm_radius":0.006,"ref_radius":0.005,"bm_loop_points":192,"ref_loop_points":144,"transport_points":600},{"name":"N6_refined","N":6,"bm_radius":0.006,"ref_radius":0.005,"bm_loop_points":192,"ref_loop_points":144,"transport_points":600}],
+  "diagnostic_thresholds": {"root_gap_meV":1e-6,"root_separation_min":1e-4,"winding_abs_error":0.15,"sampled_exterior_gap_min_meV":0.001,"matched_engine_root_distance":0.0001},
+  "expected_labels": {"36.0":"SAME","42.0":"OPPOSITE"},
+  "stop": "Do not advance stages if any station is unresolved or differs from the expected label; retain every run and error. These are diagnostic thresholds, not the archived campaign acceptance gate.",
+  "scope": "Endpoint reproduction and combined radius/mesh sensitivity followed by cutoff check. No global node inventory, annihilation proof, experimental feasibility or full braid acceptance. Combined radius and mesh change does not isolate individual errors. Original candidate was found outside draft bounds; no retroactive preregistration claim."
+}
