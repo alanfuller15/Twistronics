@@ -1,0 +1,44 @@
+{
+  "status": "FROZEN_BEFORE_GUARDED_RUNNER_CONTROLS_AND_NEW_NUMERICAL_RUN",
+  "parent_commit": "cf8c1071c87fa465ed9a19d79b4e7d8b63207ada",
+  "numerics": {
+    "N": 6,
+    "engines": [
+      "bm",
+      "ref"
+    ],
+    "basis_modes": [
+      "radial",
+      "union",
+      "intersection"
+    ],
+    "eps": [
+      0.007,
+      0.0071,
+      0.0072,
+      0.0074,
+      0.0076
+    ],
+    "phi": 15.0,
+    "theta": 1.0,
+    "P": 1.0,
+    "D_halfwidth_meV": 0.2,
+    "coordinate_radius": 0.02,
+    "event_offset_tol": 1e-09,
+    "D_xtol_meV": 1e-09,
+    "max_bisections": 40,
+    "segment_margin": 1e-05
+  },
+  "seed_rule": "Use retained rechecked N6 candidates at the four supplied strains. At 0.0071 use arithmetic midpoint of 0.0070/0.0072 seed coordinates and D. Each of 30 rows independently refines within original fixed seed boxes; no acceptance-based reseeding, bracket expansion or tolerance relaxation. Fixed basis is an explicitly recorded model conversion.",
+  "controls": [
+    "Eight prior failure mechanisms with success/failure controls on repaired code",
+    "Manifest mismatch and source/settings binding",
+    "Partial-tail recovery preserves quarantined bytes; invalid interior and hash tampering rejected",
+    "One sweep writer and bounded failure retry; multiprocessing smoke",
+    "Failed measurement retains work; trace writes stopping record",
+    "No modulo wrapping; merged carried/grid candidate search",
+    "Fixed-basis native reconstruction matches radial model when indices match and native submatrix otherwise"
+  ],
+  "scope": "Guarded exploratory tools and sampled common-basis sensitivity. Fixed index sets remove the discrete dimension jump; they do not prove continuous root identity, event uniqueness, complete node inventory, a braid, Euler-class change, physical validation or infinite-cutoff convergence.",
+  "trace_smoke": "After controls, run the five declared strain stations with carried seeds in the fixed union basis, in both engines. Use the same frozen per-station brackets, tolerances and root boxes. Ten additional sampled trace stations; retain any stopping reason. This tests the CLI path, not continuous identity."
+}

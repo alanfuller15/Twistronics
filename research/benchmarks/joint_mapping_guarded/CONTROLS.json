@@ -1,0 +1,689 @@
+{
+  "status": "ALL_GUARDED_RUNNER_CONTROLS_PASS",
+  "checks": [
+    {
+      "name": "resume_rejects_cutoff_grid_and_solver_changes",
+      "pass_check": true,
+      "evidence": {
+        "rejections": [
+          "resume rejected: plan, model or source binding differs",
+          "resume rejected: plan, model or source binding differs",
+          "resume rejected: plan, model or source binding differs"
+        ],
+        "unchanged_resume": {
+          "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+          "attempted": 0,
+          "retained_rows": 1,
+          "recovery": null,
+          "successes": 1,
+          "seconds": 0.0010582719987723976
+        }
+      }
+    },
+    {
+      "name": "source_binding_changes_rejected",
+      "pass_check": true,
+      "evidence": "resume rejected: plan, model or source binding differs"
+    },
+    {
+      "name": "failed_state_retried_then_success_skipped",
+      "pass_check": true,
+      "evidence": [
+        {
+          "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+          "attempted": 1,
+          "retained_rows": 1,
+          "recovery": null,
+          "successes": 0,
+          "seconds": 0.0014115160010987893
+        },
+        {
+          "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+          "attempted": 1,
+          "retained_rows": 2,
+          "recovery": null,
+          "successes": 1,
+          "seconds": 0.0009911750021274202
+        },
+        {
+          "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+          "attempted": 0,
+          "retained_rows": 2,
+          "recovery": null,
+          "successes": 1,
+          "seconds": 0.000904207001440227
+        }
+      ]
+    },
+    {
+      "name": "retry_budget_is_bounded",
+      "pass_check": true,
+      "evidence": {
+        "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+        "attempted": 0,
+        "retained_rows": 2,
+        "recovery": null,
+        "successes": 0,
+        "seconds": 0.0008511960004398134
+      }
+    },
+    {
+      "name": "partial_tail_quarantined_before_append",
+      "pass_check": true,
+      "evidence": {
+        "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+        "attempted": 0,
+        "retained_rows": 1,
+        "recovery": {
+          "quarantined": "/tmp/joint_mapping_guard_controls_atc6ycve/tail.jsonl.tail.e81191e1c8bf7d90dc10155b07f1d6eee508f40522b53c00abb4c09ffac3d3e5.bin",
+          "bytes": 15
+        },
+        "successes": 1,
+        "seconds": 0.0012040059991704766
+      }
+    },
+    {
+      "name": "retry_after_tail_remains_parseable",
+      "pass_check": true,
+      "evidence": {
+        "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+        "attempted": 1,
+        "retained_rows": 2,
+        "recovery": {
+          "quarantined": "/tmp/joint_mapping_guard_controls_atc6ycve/tail_retry.jsonl.tail.e81191e1c8bf7d90dc10155b07f1d6eee508f40522b53c00abb4c09ffac3d3e5.bin",
+          "bytes": 15
+        },
+        "successes": 1,
+        "seconds": 0.0011113170003227424
+      }
+    },
+    {
+      "name": "complete_final_record_gets_newline",
+      "pass_check": true,
+      "evidence": {
+        "run_id": "02db66a0fb3fa9307ce4d715c3305b9c3ff725d439a637a1aa2b788e34857493",
+        "attempted": 0,
+        "retained_rows": 1,
+        "recovery": {
+          "added_final_newline": true
+        },
+        "successes": 1,
+        "seconds": 0.0009616839997761417
+      }
+    },
+    {
+      "name": "interior_corruption_refuses_mutation",
+      "pass_check": true,
+      "evidence": "malformed interior/terminated JSONL record"
+    },
+    {
+      "name": "complete_record_hash_tampering_rejected",
+      "pass_check": true,
+      "evidence": "ledger schema, binding or hash-chain mismatch"
+    },
+    {
+      "name": "second_writer_rejected",
+      "pass_check": true,
+      "evidence": "another sweep writer holds this ledger"
+    },
+    {
+      "name": "supporting_line_outside_segment_rejected",
+      "pass_check": true,
+      "evidence": {
+        "status": "failed",
+        "reason": "left_endpoint_rejected",
+        "bracket": [
+          0.0,
+          2.0
+        ],
+        "tolerance": 1e-09,
+        "xtol": 1e-09,
+        "maxit": 40,
+        "measurements": [
+          {
+            "D_meV": 0.0,
+            "measurement": {
+              "ok": true,
+              "offset": -1.0,
+              "t": 2,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          }
+        ],
+        "event": null,
+        "cost": 3,
+        "cost_complete": true,
+        "seconds": 3.75420022464823e-05
+      }
+    },
+    {
+      "name": "all_scalar_trials_stay_in_bracket",
+      "pass_check": true,
+      "evidence": {
+        "reason": "sampled_event_candidate",
+        "evaluations": [
+          -3.0,
+          0.0,
+          -1.5,
+          -2.25,
+          -1.875,
+          -1.6875,
+          -1.78125,
+          -1.734375,
+          -1.7578125,
+          -1.76953125,
+          -1.763671875,
+          -1.7666015625,
+          -1.76806640625,
+          -1.768798828125,
+          -1.7691650390625,
+          -1.76934814453125,
+          -1.769256591796875,
+          -1.7693023681640625,
+          -1.7692794799804688,
+          -1.7692909240722656,
+          -1.769296646118164,
+          -1.7692937850952148,
+          -1.7692923545837402
+        ],
+        "offset": -2.5507631562504685e-09
+      }
+    },
+    {
+      "name": "exhaustion_keeps_requested_tolerance",
+      "pass_check": true,
+      "evidence": {
+        "status": "failed",
+        "reason": "iteration_budget_exhausted",
+        "bracket": [
+          0.0,
+          2.0
+        ],
+        "tolerance": 1e-07,
+        "xtol": 1e-09,
+        "maxit": 1,
+        "measurements": [
+          {
+            "D_meV": 0.0,
+            "measurement": {
+              "ok": true,
+              "offset": -2.5e-06,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 2.0,
+            "measurement": {
+              "ok": true,
+              "offset": 3.7500000000000003e-05,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 1.0,
+            "measurement": {
+              "ok": true,
+              "offset": 7.500000000000001e-06,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          }
+        ],
+        "event": null,
+        "cost": 9,
+        "cost_complete": true,
+        "seconds": 1.991000317502767e-05
+      }
+    },
+    {
+      "name": "seed_cutoff_inherited_and_mismatch_rejected",
+      "pass_check": true,
+      "evidence": {
+        "inherited": 6,
+        "rejection": "seed/request cutoff mismatch"
+      }
+    },
+    {
+      "name": "seed_model_mismatch_rejected",
+      "pass_check": true,
+      "evidence": "seed model metadata missing or mismatched"
+    },
+    {
+      "name": "total_cost_includes_endpoints",
+      "pass_check": true,
+      "evidence": {
+        "status": "candidate",
+        "reason": "sampled_event_candidate",
+        "bracket": [
+          -1.0,
+          1.0
+        ],
+        "tolerance": 1e-09,
+        "xtol": 1e-09,
+        "maxit": 40,
+        "measurements": [
+          {
+            "D_meV": -1.0,
+            "measurement": {
+              "ok": true,
+              "offset": -1.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 1.0,
+            "measurement": {
+              "ok": true,
+              "offset": 1.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 0.0,
+            "measurement": {
+              "ok": true,
+              "offset": 0.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          }
+        ],
+        "event": {
+          "D_meV": 0.0,
+          "measurement_index": 2,
+          "offset": 0.0,
+          "t": 0.5,
+          "seeds": {
+            "flat": [
+              [
+                0.47169298223104594,
+                0.7433286756653397
+              ],
+              [
+                0.8839226601621408,
+                0.5849755276445725
+              ]
+            ],
+            "node": [
+              0.7706798438414122,
+              0.6284764142016112
+            ],
+            "gap": "upper"
+          }
+        },
+        "cost": 9,
+        "cost_complete": true,
+        "seconds": 5.9285001043463126e-05
+      }
+    },
+    {
+      "name": "failed_measurement_work_retained",
+      "pass_check": true,
+      "evidence": {
+        "status": "failed",
+        "reason": "interior_evaluation_rejected",
+        "bracket": [
+          -1.0,
+          1.0
+        ],
+        "tolerance": 1e-09,
+        "xtol": 1e-09,
+        "maxit": 40,
+        "measurements": [
+          {
+            "D_meV": -1.0,
+            "measurement": {
+              "ok": true,
+              "offset": -1.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 1.0,
+            "measurement": {
+              "ok": true,
+              "offset": 1.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 0.0,
+            "measurement": {
+              "ok": false,
+              "reason": "synthetic_root_loss",
+              "cost": 5
+            }
+          }
+        ],
+        "event": null,
+        "cost": 11,
+        "cost_complete": true,
+        "seconds": 5.7096000091405585e-05
+      }
+    },
+    {
+      "name": "same_sign_no_root_not_accepted",
+      "pass_check": true,
+      "evidence": {
+        "status": "failed",
+        "reason": "no_sign_bracket",
+        "bracket": [
+          -1.0,
+          1.0
+        ],
+        "tolerance": 1e-09,
+        "xtol": 1e-09,
+        "maxit": 40,
+        "measurements": [
+          {
+            "D_meV": -1.0,
+            "measurement": {
+              "ok": true,
+              "offset": 2.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          },
+          {
+            "D_meV": 1.0,
+            "measurement": {
+              "ok": true,
+              "offset": 2.0,
+              "t": 0.5,
+              "sep": 1.0,
+              "cost": 3,
+              "seeds": {
+                "flat": [
+                  [
+                    0.47169298223104594,
+                    0.7433286756653397
+                  ],
+                  [
+                    0.8839226601621408,
+                    0.5849755276445725
+                  ]
+                ],
+                "node": [
+                  0.7706798438414122,
+                  0.6284764142016112
+                ],
+                "gap": "upper"
+              }
+            }
+          }
+        ],
+        "event": null,
+        "cost": 6,
+        "cost_complete": true,
+        "seconds": 1.692300065769814e-05
+      }
+    },
+    {
+      "name": "trace_persists_stopping_reason",
+      "pass_check": true,
+      "evidence": {
+        "status": "stopped",
+        "reason": "left_endpoint_rejected",
+        "cost": 3
+      }
+    },
+    {
+      "name": "radial_trace_stops_on_basis_change",
+      "pass_check": true,
+      "evidence": {
+        "reason": "basis_changed_between_stations",
+        "dimensions": [
+          348,
+          340
+        ]
+      }
+    },
+    {
+      "name": "fixed_basis_rebuild_matches_native_and_submatrix",
+      "pass_check": true,
+      "evidence": {
+        "matrix_errors_meV": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "invalid_index_set_rejected",
+      "pass_check": true,
+      "evidence": "indices must be sorted, unique and contain origin"
+    },
+    {
+      "name": "grid_plus_tracked_seeds_recovers_known_node",
+      "pass_check": true,
+      "evidence": {
+        "distance": 0.0,
+        "found_counts": {
+          "flat": 2,
+          "upper": 3,
+          "lower": 4
+        },
+        "cost": 2398,
+        "attempt_sources": {
+          "grid": 20,
+          "tracked": 3,
+          "segment_strip": 18
+        }
+      }
+    },
+    {
+      "name": "two_process_sweep_and_resume_smoke",
+      "pass_check": true,
+      "evidence": {
+        "run_id": "6dbb48ad7eb9e15a6da28f1f2f172ef9d9d10613c701444717a8a6f591340fd6",
+        "attempted": 2,
+        "retained_rows": 2,
+        "recovery": null,
+        "successes": 2,
+        "seconds": 0.37136149299840326
+      }
+    }
+  ],
+  "source_hashes": {
+    "joint_mapping_guarded/jm_model.py": "62dc7322e8499285d48a1a31eb83d5524b6aa9b93167214db82f0567bb52749d",
+    "joint_mapping_guarded/jm_sweep.py": "024ef538f69272785706a466af1ed35fb96416dd445a2b55f9f56f19d16f286d",
+    "joint_mapping_guarded/jm_trace.py": "10c310921db69ed7bf3a94955a2b4b60bf82db9f72a76024b602cc20f70441c3",
+    "r1_newton/solver.py": "4223ef02ecc22423eb5700e101be26a0e645e60e29c6c2b442632cd1f5350e2e",
+    "r1_newton/PLAN.json": "bff167165e0b5d35e0cc164b247b204d322d8dc7cd6381cd6bac4722bccdb24e",
+    "joint_mapping_review/inputs.py": "b80efc2e8d2628988640a80ba492e644d2f073274f60f844da0a2ae4329b3039",
+    "joint_mapping_review/PLAN.json": "9edf5f1df2dd7188c2ef27a14c88fd4d80e67635e5d5aa0f12fa78174b2d260f",
+    "joint_mapping_review/INPUT_MANIFEST.json": "8cf5a07e59e04b699b017330705379048c92f15ca75c4d0f3e9183c5276afc85",
+    "joint_mapping_review/partner_joint_mapping.zip": "a73d14e0d877f115788da34c0c93d85c0353e96b1ba7a4d6a0890490f77f4538"
+  },
+  "control_sha256": "6a00f6bb18b97ccb7e4d11f38c26a5b856b85b16d2fc7b7bac2e38afa7fa1a5b"
+}
