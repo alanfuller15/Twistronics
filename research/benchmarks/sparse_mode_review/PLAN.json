@@ -1,0 +1,73 @@
+{
+  "status": "FROZEN_AFTER_SOURCE_REVIEW_BEFORE_EXECUTION",
+  "parent_commit": "d963faf0b114751045c49c6f28d711593b49ce47",
+  "input_archive_sha256": "5d7799246b0dd7fcf7021c63e22c38498836380fe159501dce69527ce9b49e38",
+  "source_safety": "No network, subprocess or deletion calls in the inspected imported path. solver_probe.py has top-level numerical work. locate_event.py main reads an absent /home/claude/joint/seeds_legA.json and overwrites locate_event_results.json; that CLI will not be executed. Unrelated legacy charge routines are not run.",
+  "controls": {
+    "supplied_pytest_files": [
+      "test_sparse_engine.py",
+      "test_fixed_basis.py"
+    ],
+    "grid_f": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "grid_N": 6,
+    "grid_eps": 0.007,
+    "grid_D": 38.0,
+    "shift_counterexample_meV": 100.0,
+    "numeric_tolerance_meV": 1e-10,
+    "mock_cases": [
+      "upper root moves outside box",
+      "cumulative count overcount",
+      "last evaluation does not match returned Brent parameter"
+    ],
+    "other_cases": [
+      "fractional reciprocal indices silently coerced",
+      "exhausted Newton returns stale gap",
+      "certify returns disagreement without enforcing it",
+      "no solve-state recertification in locator"
+    ]
+  },
+  "candidate_check": {
+    "N": [
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "engines": [
+      "bm",
+      "ref"
+    ],
+    "state": {
+      "eps": 0.0071,
+      "phi": 15.0,
+      "theta": 1.0,
+      "P": 1.0
+    },
+    "union_strains": [
+      0.0068,
+      0.007,
+      0.0071,
+      0.0072,
+      0.0074,
+      0.0076,
+      0.0078
+    ],
+    "D_halfwidth_meV": 0.03,
+    "D_xtol_meV": 1e-09,
+    "scalar_max_iterations": 40,
+    "offset_tolerance": 1e-09,
+    "root_radius": 0.02,
+    "gap_tolerance_meV": 1e-08,
+    "matrix_tolerance_meV": 1e-09,
+    "t_margin": 0.02,
+    "seeds": "Use the supplied N10 record for N4/N6/N8/N10, and the supplied N12 record for N12; no private missing seed file is reconstructed. Rebuild sampled-union index sets from the stated seven strain values. Use published guarded dense solver and native complex checks."
+  },
+  "scope": "Review and sampled two-engine event checks in declared finite models. No accepted sparse-mode integration, continuous high-cutoff path, complete inventory, braid, Euler-class change, infinite-cutoff accuracy, physical validation or novelty."
+}

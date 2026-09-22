@@ -1,0 +1,42 @@
+{
+  "source_log_sha256": "9b256926933fc159269b4239633ab25d29278ef64e48b204e06bd5c11d1e482a",
+  "rows": [
+    {
+      "N": 6,
+      "dimension": 348,
+      "build_seconds": 0.06,
+      "density_percent": 1.87,
+      "nnz_per_row_floor": 6,
+      "dense_ms": 8.9,
+      "sparse_ms": 4.6,
+      "error_meV": 1.21e-13,
+      "dense_to_csr_ms": 1.1,
+      "ratio": 1.9347826086956523
+    },
+    {
+      "N": 8,
+      "dimension": 596,
+      "build_seconds": 0.11,
+      "density_percent": 1.11,
+      "nnz_per_row_floor": 6,
+      "dense_ms": 26.7,
+      "sparse_ms": 4.6,
+      "error_meV": 1.99e-13,
+      "dense_to_csr_ms": 2.6,
+      "ratio": 5.804347826086957
+    },
+    {
+      "N": 10,
+      "dimension": 932,
+      "build_seconds": 0.17,
+      "density_percent": 0.72,
+      "nnz_per_row_floor": 6,
+      "dense_ms": 85.1,
+      "sparse_ms": 7.6,
+      "error_meV": 3.48e-13,
+      "dense_to_csr_ms": 6.2,
+      "ratio": 11.197368421052632
+    }
+  ],
+  "scope": "Two calls per kernel on one preassembled matrix, one BLAS thread. Values are parsed from the rounded supplied probe output. Sparse solve uses that CSR matrix; setup, per-k sparse update and acceptance checks are excluded. No end-to-end campaign speedup or scaling forecast."
+}

@@ -1,0 +1,82 @@
+{
+  "previous_archive_sha256": "a73d14e0d877f115788da34c0c93d85c0353e96b1ba7a4d6a0890490f77f4538",
+  "new_archive_sha256": "5d7799246b0dd7fcf7021c63e22c38498836380fe159501dce69527ce9b49e38",
+  "comparison": {
+    "braid.py": {
+      "status": "identical",
+      "old_sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+      "new_sha256": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423"
+    },
+    "test_fixed_basis.py": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "8e55d85a4a96976297c310fb66ea365cd6b24cde33fee610e896aeea43107632"
+    },
+    "locate_event_results.json": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "02775a351b166249eb03abb737e279a9bd9f07490101277e1a9c1babe88b78ed"
+    },
+    "atlas.py": {
+      "status": "changed",
+      "old_sha256": "c3a049fc7f682c819b0aebf6ebb48edda806dd07116912413b1efa6d1b39f5cb",
+      "new_sha256": "a893e5d267d8f1a5e2eea6eb5f13988db315e6d66707780db87fbfb805ff2e60",
+      "diff": "--- previous/atlas.py\n+++ v071p/atlas.py\n@@ -5,10 +5,10 @@\n from bm_strain import BM, frac_dist, segment_geometry\n from fast_engine import RealEngine\n KNOBS = ('eps', 'phi', 'theta', 'D', 'P')\n-def build(x, N=4):\n-    return BM(N=N, theta_deg=x['theta'], w1=110.0 * x['P'], ratio=0.8, eps=x['eps'], phi_deg=x['phi'],\n+def build(x, N=4, index_set=None):\n+    return BM(N=N, index_set=index_set, theta_deg=x['theta'], w1=110.0 * x['P'], ratio=0.8, eps=x['eps'], phi_deg=x['phi'],\n               kinetic='lab_nn_full', geometry='exact', Dfield=x['D'])\n-def engine(x, N=4): return RealEngine(build(x, N))\n+def engine(x, N=4, index_set=None): return RealEngine(build(x, N, index_set))\n def lo_of(E, gap):   # 'flat' = bands (D/2-1, D/2); 'upper' = (D/2, D/2+1); 'lower' = (D/2-2, D/2-1)\n     D = E.D; return {'flat': D // 2 - 1, 'upper': D // 2, 'lower': D // 2 - 2}[gap]\n def nodes_from_grid(E, gap, n=24, keep=10, tol=1e-9):\n@@ -33,10 +33,17 @@\n         rec['closest_interior'] = min([abs(o) for _, _, o in inter], default=None)\n     rec['solves'] = E.nH\n     return rec\n-def measure(x, seeds, N=4, tol=1e-9):\n+def native_index_set(x, N=4):\n+    return list(build(x, N).idx)\n+def common_index_set(states, N=4, mode='union'):\n+    \"\"\"union (superset of every state's native basis) or intersection (subset of all) over a region\"\"\"\n+    sets = [set(map(tuple, native_index_set(x, N))) for x in states]\n+    out = set.union(*sets) if mode == 'union' else set.intersection(*sets)\n+    return sorted(out)\n+def measure(x, seeds, N=4, tol=1e-9, index_set=None):\n     \"\"\"carried-identity measurement: refine the tracked flat pair and the tracked adjacent node, return geometry.\n     Returns None if any tracked root is lost \u2014 the caller must not silently continue.\"\"\"\n-    E = engine(x, N); F = []\n+    E = engine(x, N, index_set); F = []\n     for s in seeds['flat']:\n         f, g, info = E.newton_node(np.array(s), lo_of(E, 'flat'))\n         if not (info['converged'] and g < tol): return None\n"
+    },
+    "knobs.py": {
+      "status": "identical",
+      "old_sha256": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+      "new_sha256": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539"
+    },
+    "tbg_ref.py": {
+      "status": "changed",
+      "old_sha256": "e050cf48ae9c93b6f007ca2c33d1b2e94c003dc3b6ffa946cbd32c3b4197dcf5",
+      "new_sha256": "4972974b7690684779f537067fc3af445dcfe53931d19beac17f3a30d409fb92",
+      "diff": "--- previous/tbg_ref.py\n+++ v071p/tbg_ref.py\n@@ -40,7 +40,8 @@\n \n \n class TBG:\n-    def __init__(self, theta=1.05, w1=110.0, w0=88.0, eps=0.0, phi=0.0, nu=0.16, beta=3.14, N=4, A=0.0, B=0.0, Bt=0.0, kinetic=None, cutoff_tol=1e-9, Dfield=0.0):\n+    def __init__(self, theta=1.05, w1=110.0, w0=88.0, eps=0.0, phi=0.0, nu=0.16, beta=3.14, N=4, A=0.0, B=0.0, Bt=0.0, kinetic=None, cutoff_tol=1e-9, Dfield=0.0, index_set=None):\n+        self.index_set_fixed = index_set is not None   # see bm_strain: fixed reciprocal-index basis (v070p)\n         self.Dfield = float(Dfield)   # literal displacement field: uniform +D (layer 1) / -D (layer 2), C2zT-preserving\n         # kinetic must be given explicitly (v041): 'none' | 'geom_wrong' (v036, retained for record) | 'full' (v039) | 'lab_nn_full' (v041 declared)\n         if kinetic not in ('none', 'geom_wrong', 'full', 'lab_nn_full'): raise ValueError('kinetic must be one of none/geom_wrong/full/lab_nn_full, got %r' % (kinetic,))\n@@ -66,8 +67,12 @@\n         self.w1, self.A, self.B, self.Bt, self.N = w1, A, B, Bt, N\n         # absolute-momentum grid centred on the layer-1 Dirac point K_0^(1), shared by both layers\n         self.origin = self.Kl[0][0]\n-        gmax = N*np.linalg.norm(self.G1) + self.cutoff_tol\n-        self.mn = [(a, b) for a in range(-3*N, 3*N+1) for b in range(-3*N, 3*N+1) if np.linalg.norm(a*self.G1 + b*self.G2) <= gmax]\n+        if index_set is not None:\n+            self.mn = [(int(a), int(b)) for a, b in index_set]\n+            if len(set(self.mn)) != len(self.mn): raise ValueError('index_set contains duplicates')\n+        else:\n+            gmax = N*np.linalg.norm(self.G1) + self.cutoff_tol\n+            self.mn = [(a, b) for a in range(-3*N, 3*N+1) for b in range(-3*N, 3*N+1) if np.linalg.norm(a*self.G1 + b*self.G2) <= gmax]\n         self.ix = {t: i for i, t in enumerate(self.mn)}; self.nG = len(self.mn); self.dim = 4*self.nG\n         self.Gv = np.array([a*self.G1 + b*self.G2 for a, b in self.mn])\n         self._static()\n"
+    },
+    "test_sparse_engine.py": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "dc1de613054ce071a3dd5c685c934430dde18af2d8605c3aea8d097529f25dfa"
+    },
+    "fast_engine.py": {
+      "status": "identical",
+      "old_sha256": "ec7ed834785475e75fe9e0965150d207cca15f01eda46db445114710e4f63f2d",
+      "new_sha256": "ec7ed834785475e75fe9e0965150d207cca15f01eda46db445114710e4f63f2d"
+    },
+    "euler.py": {
+      "status": "identical",
+      "old_sha256": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271",
+      "new_sha256": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271"
+    },
+    "gate.py": {
+      "status": "identical",
+      "old_sha256": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+      "new_sha256": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e"
+    },
+    "final_check.py": {
+      "status": "identical",
+      "old_sha256": "e35480d7c339259a9c5c5761fc494b802bb844241319a55f15fe86c926a3a902",
+      "new_sha256": "e35480d7c339259a9c5c5761fc494b802bb844241319a55f15fe86c926a3a902"
+    },
+    "solver_probe.py": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "85b9333a273ff6d1e3e9eedd20cdaddbf5fcf2064b39e14aa3605ec83ea5667a"
+    },
+    "ENGINE_TUNING_TIER2.md": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "d202df1ea352c24919a1521f7a47d2994c051b7081d545e6f73fc53dfcb60926"
+    },
+    "locate_event.py": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "c56f8a8e7ce388e173542043bd8615bc3f60d23d4f6146571471d9d9a5c552b0"
+    },
+    "bm_strain.py": {
+      "status": "changed",
+      "old_sha256": "ba6bc77976af5fed5c1904954aa8c4c6cdf36f07dd998617002b8b59cd907bc6",
+      "new_sha256": "c2527a94f61ebc3ac5d76c80069e35eddf652899ce8a4f2b85a32ba0c5f34fa1",
+      "diff": "--- previous/bm_strain.py\n+++ v071p/bm_strain.py\n@@ -50,7 +50,11 @@\n \n class BM:\n     def __init__(self, theta_deg=1.05, w1=110.0, ratio=0.8, eps=0.0, phi_deg=0.0,\n-                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average', cutoff_tol=1e-6, Dfield=0.0):\n+                 nu=0.16, beta=3.14, N=4, A_scalar=0.0, mass=0.0, kinetic='none', geometry='linear', w_kappa=0.0, w_mode='average', cutoff_tol=1e-6, Dfield=0.0, index_set=None):\n+        # index_set (v070p): explicit list of (m, n) reciprocal indices. When given, the basis is EXACTLY that set and\n+        # does not depend on the knobs, so a sweep or trace keeps one matrix dimension and one vector ordering.\n+        # When None the historical |G| <= N|G1| + cutoff_tol membership rule applies (dimension can jump with knobs).\n+        self.index_set_fixed = index_set is not None\n         # Dfield (meV, R1 campaign): literal interlayer displacement field, a UNIFORM layer-antisymmetric potential\n         # +Dfield on layer 1, -Dfield on layer 2 (tau_z x identity). Real and momentum-diagonal: C2zT-preserving.\n         self.Dfield = float(Dfield)\n@@ -114,12 +118,16 @@\n             self.T.append((1.0 + w_kappa * eps_j) * (self.w0 * s0 + self.w1 * (np.cos(2 * np.pi * j / 3) * sx\n                                                                              + np.sin(2 * np.pi * j / 3) * sy)))\n         # plane-wave lattice\n-        gmax = N * np.linalg.norm(self.G1) + self.cutoff_tol\n-        idx = []\n-        for m in range(-3 * N, 3 * N + 1):\n-            for n in range(-3 * N, 3 * N + 1):\n-                if np.linalg.norm(m * self.G1 + n * self.G2) <= gmax:\n-                    idx.append((m, n))\n+        if index_set is not None:\n+            idx = [(int(a), int(b)) for a, b in index_set]\n+            if len(set(idx)) != len(idx): raise ValueError('index_set contains duplicates')\n+        else:\n+            gmax = N * np.linalg.norm(self.G1) + self.cutoff_tol\n+            idx = []\n+            for m in range(-3 * N, 3 * N + 1):\n+                for n in range(-3 * N, 3 * N + 1):\n+                    if np.linalg.norm(m * self.G1 + n * self.G2) <= gmax:\n+                        idx.append((m, n))\n         self.idx = idx\n         self.pos = {mn: i for i, mn in enumerate(idx)}\n         self.nG = len(idx)\n"
+    },
+    "sparse_engine.py": {
+      "status": "new_to_this_comparison",
+      "new_sha256": "b7bd330e6f71907ada06d971497f9e42047deb72ecc1e422822e012cd808dbce"
+    }
+  }
+}
