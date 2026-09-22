@@ -1,0 +1,55 @@
+{
+  "status": "FROZEN_BEFORE_NEW_SOLVER_CONTROLS_AND_PRODUCTION_COMPARISON",
+  "parent_commit": "0a8561d63524925f85e3a2c71e79b6553fb4df17",
+  "N": 8,
+  "engines": [
+    "bm",
+    "ref"
+  ],
+  "variant": "guarded_projected_newton_v1; existing affine real Family and Hamiltonians unchanged; no adoption of partner assembly optimization in this checkpoint",
+  "partner_source": {
+    "archive_sha256": "eb7cfe1772f8b1af5742b19c36af7be59e7d6fcb0f5a04358ef9db1c70297846",
+    "fast_engine_sha256": "ec7ed834785475e75fe9e0965150d207cca15f01eda46db445114710e4f63f2d",
+    "credit": "Partner engine study supplied by Alan Fuller; preserve original bytes. Adapt the projected-derivative Newton idea with explicit safeguards; keep the original failure behavior as a regression comparison."
+  },
+  "primary_cases": "17 retained D stations from 38 to 39, three roots p/q/upper, two seed choices per root, both engines: 204 cases. Offset seed = retained root + (0.002,-0.001). Carried seed = previous retained station root; at first station use retained root + (-0.002,0.001). These are sampled comparisons, not continuous node identity.",
+  "reference": "Unchanged r1_events Solver.root via r1_holonomy Family.solver. Count every eig invocation, including numerical Jacobian evaluations. Compare identical input seeds, alternate execution order to reduce systematic timing bias. Timing is descriptive, never an acceptance gate.",
+  "newton": "Use current isolated pair eigenframe F, projected matrices F.T A_j F, and the local two-component traceless Jacobian. This is a frozen-frame linearization at each step, not the exact Jacobian of the existing anchor-aligned residual. Limit steps and require actual-gap decrease by backtracking. Check finite real symmetric coefficients, finite inputs/eigensolutions, frame orthogonality, local box, exterior gaps and anchor overlap. Reject non-simple final roots with a singular-value and condition-number gate.",
+  "fallback": "On Newton iteration/conditioning/step failure use bounded least squares on the unchanged anchor-aligned two-component residual formula within the original seed box. Keep the original seed anchor. Guard every fallback evaluation for domain, isolation and overlap; final acceptance additionally checks the Jacobian. Invalid model/input and an invalid initial pair do not fall back. Preserve all attempts and failure reasons.",
+  "solver": {
+    "newton_iterations": 32,
+    "newton_stop_gap_meV": 1e-10,
+    "acceptance_gap_meV": 1e-08,
+    "exterior_gap_min_meV": 0.001,
+    "anchor_smin_min": 0.1,
+    "jacobian_smin_min": 0.0001,
+    "jacobian_condition_max": 100000000.0,
+    "trust_radius": 0.02,
+    "local_box_radius": 0.08,
+    "backtracking_steps": 12,
+    "armijo": 0.0001,
+    "fallback_max_nfev": 80,
+    "matrix_tolerance_meV": 1e-09,
+    "orthogonality_tolerance": 1e-08
+  },
+  "validation": {
+    "root_distance_max": 1e-09,
+    "native_gap_max_meV": 1e-08,
+    "matrix_error_max_meV": 1e-09,
+    "native_spectrum_max_meV": 1e-08,
+    "reconciliation_error": 1e-08
+  },
+  "forced_fallback": "Six extra N8 cases: D38 p/q/upper in both engines with Newton iteration budget zero. All must use and pass the guarded fallback.",
+  "stress": "Reuse the local N8 merger box [0.765,0.793] x [0.585,0.632]. Test both stored D40.38 upper roots at D40.38 and the stored fold coordinate at D40.40 in both engines. At D40.40 a failed root is retained as a failed search, never root absence. Native matrix checks at both D values verify the affine extrapolation. Stress results are reported separately from primary coverage.",
+  "controls": [
+    "Known affine node and sign/constant-basis covariance",
+    "Reported gap matches returned point after exhausted Newton budget",
+    "Successful bounded fallback with Newton disabled",
+    "Nonisolated initial pair rejected",
+    "Singular root and ill-conditioned final root rejected",
+    "Root outside local box is never accepted or evaluated outside bounds",
+    "Nonfinite input, complex nonsymmetric and nonreal coefficients rejected",
+    "Original partner maxit mismatch reproduced and retained as a regression comparison"
+  ],
+  "scope": "Solver-equivalence and bounded-search diagnostics in the finite R1 model. No new topology measurement, continuous node-identity proof, full braid acceptance, Euler-class change, physical validation or infinite-cutoff conclusion. Both engines share the diagnostic. Exact Hamiltonian derivatives do not by themselves provide uniform uniqueness bounds."
+}

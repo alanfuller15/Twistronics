@@ -1,0 +1,2775 @@
+{
+  "plan_sha256": "bff167165e0b5d35e0cc164b247b204d322d8dc7cd6381cd6bac4722bccdb24e",
+  "source_hashes": {
+    "solver.py": "4223ef02ecc22423eb5700e101be26a0e645e60e29c6c2b442632cd1f5350e2e",
+    "controls.py": "96dab430f99e48ffb86a6ffb35096b227dee35a58d4544aaf1ed5838b3aa109d",
+    "partner_fast_engine.py": "ec7ed834785475e75fe9e0965150d207cca15f01eda46db445114710e4f63f2d"
+  },
+  "controls": [
+    {
+      "name": "known_node",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.43,
+          0.58
+        ],
+        "box": [
+          [
+            0.35,
+            0.49999999999999994
+          ],
+          [
+            0.51,
+            0.6599999999999999
+          ]
+        ],
+        "accepted": true,
+        "method": "newton",
+        "reason": "converged",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": [
+          0.4,
+          0.6
+        ],
+        "gap_meV": 0.0,
+        "returned_evaluation": 2,
+        "eigensolves": 3,
+        "history": [
+          {
+            "f": [
+              0.43,
+              0.58
+            ],
+            "w": [
+              -10.0,
+              -0.03605551275463986,
+              0.036055512754639876,
+              10.0
+            ],
+            "gap_meV": 0.07211102550927974,
+            "exterior_gap_meV": 9.96394448724536,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.832050294337843,
+                0.55470019622523
+              ],
+              [
+                0.5547001962252299,
+                0.832050294337843
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4133589941132431,
+              0.5910940039245045
+            ],
+            "w": [
+              -10.0,
+              -0.016055512754639886,
+              0.016055512754639897,
+              10.0
+            ],
+            "gap_meV": 0.032111025509279786,
+            "exterior_gap_meV": 9.98394448724536,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.8320502943378414,
+                0.5547001962252323
+              ],
+              [
+                0.5547001962252324,
+                0.8320502943378415
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "newton_trial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          }
+        ],
+        "steps": [
+          {
+            "iteration": 0,
+            "from_evaluation": 0,
+            "raw_step": [
+              -0.029999999999999957,
+              0.02000000000000002
+            ],
+            "scale": 0.5547001962252295,
+            "target": [
+              0.4133589941132431,
+              0.5910940039245045
+            ],
+            "accepted": true,
+            "trial_evaluation": 1,
+            "failure": null
+          },
+          {
+            "iteration": 1,
+            "from_evaluation": 1,
+            "raw_step": [
+              -0.013358994113243093,
+              0.008905996075495472
+            ],
+            "scale": 1.0,
+            "target": [
+              0.4,
+              0.6
+            ],
+            "accepted": true,
+            "trial_evaluation": 2,
+            "failure": null
+          }
+        ],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 0.0,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "signs",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.43,
+          0.58
+        ],
+        "box": [
+          [
+            0.35,
+            0.49999999999999994
+          ],
+          [
+            0.51,
+            0.6599999999999999
+          ]
+        ],
+        "accepted": true,
+        "method": "newton",
+        "reason": "converged",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": [
+          0.4,
+          0.6
+        ],
+        "gap_meV": 0.0,
+        "returned_evaluation": 2,
+        "eigensolves": 3,
+        "history": [
+          {
+            "f": [
+              0.43,
+              0.58
+            ],
+            "w": [
+              -10.0,
+              -0.03605551275463986,
+              0.036055512754639876,
+              10.0
+            ],
+            "gap_meV": 0.07211102550927974,
+            "exterior_gap_meV": 9.96394448724536,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.832050294337843,
+                0.55470019622523
+              ],
+              [
+                -0.5547001962252299,
+                -0.832050294337843
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4133589941132431,
+              0.5910940039245045
+            ],
+            "w": [
+              -10.0,
+              -0.016055512754639886,
+              0.016055512754639897,
+              10.0
+            ],
+            "gap_meV": 0.032111025509279786,
+            "exterior_gap_meV": 9.98394448724536,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.8320502943378414,
+                0.5547001962252323
+              ],
+              [
+                -0.5547001962252324,
+                -0.8320502943378415
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "newton_trial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                -1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          }
+        ],
+        "steps": [
+          {
+            "iteration": 0,
+            "from_evaluation": 0,
+            "raw_step": [
+              -0.029999999999999957,
+              0.02000000000000002
+            ],
+            "scale": 0.5547001962252295,
+            "target": [
+              0.4133589941132431,
+              0.5910940039245045
+            ],
+            "accepted": true,
+            "trial_evaluation": 1,
+            "failure": null
+          },
+          {
+            "iteration": 1,
+            "from_evaluation": 1,
+            "raw_step": [
+              -0.013358994113243093,
+              0.008905996075495472
+            ],
+            "scale": 1.0,
+            "target": [
+              0.4,
+              0.6
+            ],
+            "accepted": true,
+            "trial_evaluation": 2,
+            "failure": null
+          }
+        ],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 0.0,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "constant_basis",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.43,
+          0.58
+        ],
+        "box": [
+          [
+            0.35,
+            0.49999999999999994
+          ],
+          [
+            0.51,
+            0.6599999999999999
+          ]
+        ],
+        "accepted": true,
+        "method": "newton",
+        "reason": "converged",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": [
+          0.40000000000000513,
+          0.5999999999999986
+        ],
+        "gap_meV": 6.025198785472363e-15,
+        "returned_evaluation": 2,
+        "eigensolves": 3,
+        "history": [
+          {
+            "f": [
+              0.43,
+              0.58
+            ],
+            "w": [
+              -9.999999999999995,
+              -0.03605551275462382,
+              0.03605551275464158,
+              9.999999999999998
+            ],
+            "gap_meV": 0.0721110255092654,
+            "exterior_gap_meV": 9.963944487245357,
+            "anchor_smin": 0.9999999999999949,
+            "orthogonality_error": 4.958441233446284e-15,
+            "jacobian": [
+              [
+                -0.832050294337803,
+                0.5547001962252893
+              ],
+              [
+                0.5547001962252892,
+                0.8320502943378031
+              ]
+            ],
+            "jacobian_singular_values": [
+              0.9999999999999997,
+              0.9999999999999994
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.41335899411324395,
+              0.5910940039245057
+            ],
+            "w": [
+              -9.999999999999991,
+              -0.0160555127546278,
+              0.01605551275464201,
+              10.000000000000004
+            ],
+            "gap_meV": 0.03211102550926981,
+            "exterior_gap_meV": 9.983944487245362,
+            "anchor_smin": 0.9999999999999974,
+            "orthogonality_error": 4.440892098500626e-16,
+            "jacobian": [
+              [
+                -0.8320502943378344,
+                0.554700196225242
+              ],
+              [
+                0.554700196225242,
+                0.8320502943378344
+              ]
+            ],
+            "jacobian_singular_values": [
+              0.9999999999999994,
+              0.9999999999999993
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "newton_trial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40000000000000513,
+              0.5999999999999986
+            ],
+            "w": [
+              -9.999999999999991,
+              3.5277038732690082e-15,
+              9.552902658741371e-15,
+              10.0
+            ],
+            "gap_meV": 6.025198785472363e-15,
+            "exterior_gap_meV": 9.999999999999991,
+            "anchor_smin": 0.9999999999999973,
+            "orthogonality_error": 2.220446049250313e-16,
+            "jacobian": [
+              [
+                0.9999098642235715,
+                -0.01342622167245543
+              ],
+              [
+                0.013426221672455425,
+                0.9999098642235715
+              ]
+            ],
+            "jacobian_singular_values": [
+              0.9999999999999996,
+              0.9999999999999996
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          }
+        ],
+        "steps": [
+          {
+            "iteration": 0,
+            "from_evaluation": 0,
+            "raw_step": [
+              -0.029999999999992578,
+              0.019999999999998196
+            ],
+            "scale": 0.5547001962253395,
+            "target": [
+              0.41335899411324395,
+              0.5910940039245057
+            ],
+            "accepted": true,
+            "trial_evaluation": 1,
+            "failure": null
+          },
+          {
+            "iteration": 1,
+            "from_evaluation": 1,
+            "raw_step": [
+              -0.013358994113238841,
+              0.008905996075492868
+            ],
+            "scale": 1.0,
+            "target": [
+              0.40000000000000513,
+              0.5999999999999986
+            ],
+            "accepted": true,
+            "trial_evaluation": 2,
+            "failure": null
+          }
+        ],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 7.171379216419697e-15,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "exhausted_budget_pair_consistency",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.46,
+          0.62
+        ],
+        "box": [
+          [
+            0.38,
+            0.54
+          ],
+          [
+            0.54,
+            0.7
+          ]
+        ],
+        "accepted": false,
+        "method": "newton",
+        "reason": "iteration_budget",
+        "newton_reason": "iteration_budget",
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": [
+          0.4410263340389897,
+          0.6136754446796633
+        ],
+        "gap_meV": 0.08649110640673516,
+        "returned_evaluation": 1,
+        "eigensolves": 2,
+        "history": [
+          {
+            "f": [
+              0.46,
+              0.62
+            ],
+            "w": [
+              -10.0,
+              -0.06324555320336758,
+              0.0632455532033676,
+              10.0
+            ],
+            "gap_meV": 0.12649110640673517,
+            "exterior_gap_meV": 9.936754446796632,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 3.06669341056066e-17,
+            "jacobian": [
+              [
+                -0.9486832980505138,
+                -0.3162277660168382
+              ],
+              [
+                -0.3162277660168383,
+                0.9486832980505138
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4410263340389897,
+              0.6136754446796633
+            ],
+            "w": [
+              -10.0,
+              -0.04324555320336757,
+              0.043245553203367586,
+              10.0
+            ],
+            "gap_meV": 0.08649110640673516,
+            "exterior_gap_meV": 9.956754446796632,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 3.2037227186612413e-17,
+            "jacobian": [
+              [
+                -0.9486832980505133,
+                -0.31622776601683955
+              ],
+              [
+                -0.31622776601683955,
+                0.9486832980505133
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          }
+        ],
+        "steps": [
+          {
+            "iteration": 0,
+            "from_evaluation": 0,
+            "raw_step": [
+              -0.05999999999999999,
+              -0.020000000000000018
+            ],
+            "scale": 0.31622776601683794,
+            "target": [
+              0.4410263340389897,
+              0.6136754446796633
+            ],
+            "accepted": true,
+            "trial_evaluation": 1,
+            "failure": null
+          }
+        ],
+        "config": {
+          "newton_iterations": 1,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 0.08649110640673517,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "forced_fallback_success",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.43,
+          0.58
+        ],
+        "box": [
+          [
+            0.35,
+            0.49999999999999994
+          ],
+          [
+            0.51,
+            0.6599999999999999
+          ]
+        ],
+        "accepted": true,
+        "method": "bounded_least_squares",
+        "reason": "converged",
+        "newton_reason": "iteration_budget",
+        "fallback_attempted": true,
+        "fallback_optimizer": {
+          "success": true,
+          "status": 1,
+          "nfev": 6,
+          "message": "`gtol` termination condition is satisfied."
+        },
+        "f": [
+          0.4000000000000012,
+          0.6
+        ],
+        "gap_meV": 2.3314683517128287e-15,
+        "returned_evaluation": 19,
+        "eigensolves": 20,
+        "history": [
+          {
+            "f": [
+              0.43,
+              0.58
+            ],
+            "w": [
+              -10.0,
+              -0.03605551275463986,
+              0.036055512754639876,
+              10.0
+            ],
+            "gap_meV": 0.07211102550927974,
+            "exterior_gap_meV": 9.96394448724536,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.832050294337843,
+                0.55470019622523
+              ],
+              [
+                0.5547001962252299,
+                0.832050294337843
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.43,
+              0.58
+            ],
+            "w": [
+              -10.0,
+              -0.03605551275463986,
+              0.036055512754639876,
+              10.0
+            ],
+            "gap_meV": 0.07211102550927974,
+            "exterior_gap_meV": 9.96394448724536,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.832050294337843,
+                0.55470019622523
+              ],
+              [
+                0.5547001962252299,
+                0.832050294337843
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4300000149011612,
+              0.58
+            ],
+            "w": [
+              -10.0,
+              -0.03605552515315637,
+              0.03605552515315638,
+              10.0
+            ],
+            "gap_meV": 0.07211105030631275,
+            "exterior_gap_meV": 9.963944474846844,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 2.220446049250313e-16,
+            "jacobian": [
+              [
+                -0.8320504215020397,
+                0.5547000054788878
+              ],
+              [
+                0.5547000054788879,
+                0.8320504215020397
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.43,
+              0.5800000149011612
+            ],
+            "w": [
+              -10.0,
+              -0.036055504488964954,
+              0.036055504488964975,
+              10.0
+            ],
+            "gap_meV": 0.07211100897792994,
+            "exterior_gap_meV": 9.963944495511035,
+            "anchor_smin": 0.9999999999999998,
+            "orthogonality_error": 3.7389779279156745e-18,
+            "jacobian": [
+              [
+                -0.832050485084231,
+                0.5546999101055416
+              ],
+              [
+                0.5546999101055416,
+                0.832050485084231
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4081818181809872,
+              0.5959999999936888
+            ],
+            "w": [
+              -10.0,
+              -0.009107258028474959,
+              0.009107258028474967,
+              10.0
+            ],
+            "gap_meV": 0.018214516056949924,
+            "exterior_gap_meV": 9.990892741971525,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.8983843606281617,
+                0.43921013260024966
+              ],
+              [
+                0.4392101326002497,
+                0.8983843606281617
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4081818330821484,
+              0.5959999999936888
+            ],
+            "w": [
+              -10.0,
+              -0.009107271415447486,
+              0.00910727141544749,
+              10.0
+            ],
+            "gap_meV": 0.018214542830894978,
+            "exterior_gap_meV": 9.990892728584553,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.8983846762566647,
+                0.43920948699590684
+              ],
+              [
+                0.43920948699590684,
+                0.8983846762566646
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4081818181809872,
+              0.59600001489485
+            ],
+            "w": [
+              -10.0,
+              -0.00910725148374382,
+              0.009107251483743821,
+              10.0
+            ],
+            "gap_meV": 0.01821450296748764,
+            "exterior_gap_meV": 9.990892748516256,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.220446049250313e-16,
+            "jacobian": [
+              [
+                -0.8983850062328338,
+                0.4392088120427819
+              ],
+              [
+                0.4392088120427819,
+                0.8983850062328338
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0000000000000002,
+              1.0000000000000002
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4010087173111199,
+              0.5997647058814091
+            ],
+            "w": [
+              -10.0,
+              -0.001035796281126957,
+              0.0010357962811269575,
+              10.0
+            ],
+            "gap_meV": 0.0020715925622539146,
+            "exterior_gap_meV": 9.998964203718874,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 2.2234426937380446e-18,
+            "jacobian": [
+              [
+                -0.9738568572793143,
+                0.2271625442938542
+              ],
+              [
+                0.2271625442938542,
+                0.9738568572793143
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4010087322122811,
+              0.5997647058814091
+            ],
+            "w": [
+              -10.0,
+              -0.0010358107927304983,
+              0.0010358107927304985,
+              10.0
+            ],
+            "gap_meV": 0.0020716215854609966,
+            "exterior_gap_meV": 9.99896418920727,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.276768931034371e-17,
+            "jacobian": [
+              [
+                -0.9738575996316634,
+                0.22715936176978196
+              ],
+              [
+                0.22715936176978196,
+                0.9738575996316634
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4010087173111199,
+              0.5997647207825703
+            ],
+            "w": [
+              -10.0,
+              -0.0010357928962429221,
+              0.0010357928962429225,
+              10.0
+            ],
+            "gap_meV": 0.0020715857924858447,
+            "exterior_gap_meV": 9.998964207103757,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.805065194549471e-17,
+            "jacobian": [
+              [
+                -0.9738600397615851,
+                0.22714890040579944
+              ],
+              [
+                0.22714890040579944,
+                0.9738600397615851
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40001956095337016,
+              0.599999084458689
+            ],
+            "w": [
+              -10.0,
+              -1.958236739111755e-05,
+              1.9582367391117552e-05,
+              10.0
+            ],
+            "gap_meV": 3.9164734782235104e-05,
+            "exterior_gap_meV": 9.999980417632608,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.1102230246251565e-16,
+            "jacobian": [
+              [
+                -0.99890646413913,
+                0.046753351762848686
+              ],
+              [
+                0.04675335176284869,
+                0.99890646413913
+              ]
+            ],
+            "jacobian_singular_values": [
+              0.9999999999999999,
+              0.9999999999999998
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40001957585453135,
+              0.599999084458689
+            ],
+            "w": [
+              -10.0,
+              -1.9597252269740686e-05,
+              1.9597252269740683e-05,
+              10.0
+            ],
+            "gap_meV": 3.9194504539481366e-05,
+            "exterior_gap_meV": 9.999980402747731,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.7289578227107557e-19,
+            "jacobian": [
+              [
+                -0.9989081255822155,
+                0.04671784076586628
+              ],
+              [
+                0.04671784076586628,
+                0.9989081255822155
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40001956095337016,
+              0.5999990993598502
+            ],
+            "w": [
+              -10.0,
+              -1.9581676369197803e-05,
+              1.9581676369197806e-05,
+              10.0
+            ],
+            "gap_meV": 3.916335273839561e-05,
+            "exterior_gap_meV": 9.99998041832363,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 1.2737965192597566e-18,
+            "jacobian": [
+              [
+                -0.9989417147606543,
+                0.04599402690615019
+              ],
+              [
+                0.04599402690615019,
+                0.9989417147606543
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.9999999999999999
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40000000764663496,
+              0.5999999999860302
+            ],
+            "w": [
+              -10.0,
+              -7.646647697251472e-09,
+              7.646647697251473e-09,
+              10.0
+            ],
+            "gap_meV": 1.5293295394502943e-08,
+            "exterior_gap_meV": 9.999999992353352,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.220446049250313e-16,
+            "jacobian": [
+              [
+                -0.9999983311774726,
+                0.0018269215281851196
+              ],
+              [
+                0.0018269215281851196,
+                0.9999983311774726
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0000000000000002,
+              1.0000000000000002
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40000002254779615,
+              0.5999999999860302
+            ],
+            "w": [
+              -10.0,
+              -2.2547800457808183e-08,
+              2.254780045780818e-08,
+              10.0
+            ],
+            "gap_meV": 4.509560091561636e-08,
+            "exterior_gap_meV": 9.9999999774522,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 7.521079089956131e-20,
+            "jacobian": [
+              [
+                -0.999999808069661,
+                0.0006195648805166808
+              ],
+              [
+                0.0006195648805166808,
+                0.999999808069661
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.40000000764663496,
+              0.6000000148871913
+            ],
+            "w": [
+              -10.0,
+              -1.6736173179485333e-08,
+              1.6736173179485352e-08,
+              10.0
+            ],
+            "gap_meV": 3.3472346358970685e-08,
+            "exterior_gap_meV": 9.999999983263827,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 2.220446049250313e-16,
+            "jacobian": [
+              [
+                -0.4568926751861364,
+                -0.8895218284905971
+              ],
+              [
+                0.8895218284905971,
+                -0.4568926751861364
+              ]
+            ],
+            "jacobian_singular_values": [
+              0.9999999999999999,
+              0.9999999999999998
+            ],
+            "jacobian_condition": 1.0000000000000002,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4000000000000012,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -1.1657341758564144e-15,
+              1.1657341758564144e-15,
+              10.0
+            ],
+            "gap_meV": 2.3314683517128287e-15,
+            "exterior_gap_meV": 9.999999999999998,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4000000149011624,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -1.4901162359581832e-08,
+              1.4901162359581832e-08,
+              10.0
+            ],
+            "gap_meV": 2.9802324719163664e-08,
+            "exterior_gap_meV": 9.999999985098837,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4000000000000012,
+              0.6000000149011612
+            ],
+            "w": [
+              -10.0,
+              -1.4901161193847683e-08,
+              1.4901161193847703e-08,
+              10.0
+            ],
+            "gap_meV": 2.9802322387695385e-08,
+            "exterior_gap_meV": 9.999999985098839,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.220446049250313e-16,
+            "jacobian": [
+              [
+                -7.823109582425574e-08,
+                -0.9999999999999971
+              ],
+              [
+                -0.9999999999999971,
+                7.823109583144199e-08
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0000000000000002,
+              1.0000000000000002
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4000000000000012,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -1.1657341758564144e-15,
+              1.1657341758564144e-15,
+              10.0
+            ],
+            "gap_meV": 2.3314683517128287e-15,
+            "exterior_gap_meV": 9.999999999999998,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback_final",
+            "guard_failure": null
+          }
+        ],
+        "steps": [],
+        "config": {
+          "newton_iterations": 0,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 2.3314683517128287e-15,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "nonisolated_initial_rejected",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.4,
+          0.6
+        ],
+        "box": [
+          [
+            0.32,
+            0.52
+          ],
+          [
+            0.48000000000000004,
+            0.6799999999999999
+          ]
+        ],
+        "accepted": false,
+        "method": "rejected_input_or_initial_pair",
+        "reason": "pair_not_isolated",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": null,
+        "gap_meV": null,
+        "returned_evaluation": null,
+        "eigensolves": 1,
+        "history": [
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 0.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "initial",
+            "guard_failure": "pair_not_isolated"
+          }
+        ],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": null,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "singular_final_root",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.4,
+          0.6
+        ],
+        "box": [
+          [
+            0.32,
+            0.52
+          ],
+          [
+            0.48000000000000004,
+            0.6799999999999999
+          ]
+        ],
+        "accepted": false,
+        "method": "bounded_least_squares",
+        "reason": "final_jacobian_rejected",
+        "newton_reason": "ill_conditioned_jacobian",
+        "fallback_attempted": true,
+        "fallback_optimizer": {
+          "success": true,
+          "status": 1,
+          "nfev": 1,
+          "message": "`gtol` termination condition is satisfied."
+        },
+        "f": [
+          0.4,
+          0.6
+        ],
+        "gap_meV": 0.0,
+        "returned_evaluation": 4,
+        "eigensolves": 5,
+        "history": [
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.0
+            ],
+            "jacobian_condition": null,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.0
+            ],
+            "jacobian_condition": null,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4000000149011612,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -1.4901161193847656e-08,
+              1.4901161193847656e-08,
+              10.0
+            ],
+            "gap_meV": 2.9802322387695312e-08,
+            "exterior_gap_meV": 9.999999985098839,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.0
+            ],
+            "jacobian_condition": null,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6000000149011612
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.0
+            ],
+            "jacobian_condition": null,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              0.0
+            ],
+            "jacobian_condition": null,
+            "phase": "fallback_final",
+            "guard_failure": null
+          }
+        ],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 0.0,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "ill_conditioned_final_root",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.4,
+          0.6
+        ],
+        "box": [
+          [
+            0.32,
+            0.52
+          ],
+          [
+            0.48000000000000004,
+            0.6799999999999999
+          ]
+        ],
+        "accepted": false,
+        "method": "bounded_least_squares",
+        "reason": "final_jacobian_rejected",
+        "newton_reason": "ill_conditioned_jacobian",
+        "fallback_attempted": true,
+        "fallback_optimizer": {
+          "success": true,
+          "status": 1,
+          "nfev": 1,
+          "message": "`gtol` termination condition is satisfied."
+        },
+        "f": [
+          0.4,
+          0.6
+        ],
+        "gap_meV": 0.0,
+        "returned_evaluation": 4,
+        "eigensolves": 5,
+        "history": [
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1e-07
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1e-07
+            ],
+            "jacobian_condition": 10000000.0,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1e-07
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1e-07
+            ],
+            "jacobian_condition": 10000000.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4000000149011612,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -1.4901161193847656e-08,
+              1.4901161193847656e-08,
+              10.0
+            ],
+            "gap_meV": 2.9802322387695312e-08,
+            "exterior_gap_meV": 9.999999985098839,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1e-07
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1e-07
+            ],
+            "jacobian_condition": 10000000.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6000000149011612
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1e-07
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1e-07
+            ],
+            "jacobian_condition": 10000000.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.4,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              0.0,
+              0.0,
+              10.0
+            ],
+            "gap_meV": 0.0,
+            "exterior_gap_meV": 10.0,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1e-07
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1e-07
+            ],
+            "jacobian_condition": 10000000.0,
+            "phase": "fallback_final",
+            "guard_failure": null
+          }
+        ],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 0.0,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "outside_box_root_rejected",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.55,
+          0.6
+        ],
+        "box": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.6,
+            0.7
+          ]
+        ],
+        "accepted": false,
+        "method": "bounded_least_squares",
+        "reason": "final_gap_or_optimizer_rejected",
+        "newton_reason": "blocked_at_box",
+        "fallback_attempted": true,
+        "fallback_optimizer": {
+          "success": true,
+          "status": 3,
+          "nfev": 5,
+          "message": "`xtol` termination condition is satisfied."
+        },
+        "f": [
+          0.5000000000000001,
+          0.5999999998137354
+        ],
+        "gap_meV": 0.2000000000000002,
+        "returned_evaluation": 13,
+        "eigensolves": 14,
+        "history": [
+          {
+            "f": [
+              0.55,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -0.15000000000000002,
+              0.15000000000000002,
+              10.0
+            ],
+            "gap_meV": 0.30000000000000004,
+            "exterior_gap_meV": 9.85,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "initial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.53,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -0.13,
+              0.13,
+              10.0
+            ],
+            "gap_meV": 0.26,
+            "exterior_gap_meV": 9.87,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.51,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -0.10999999999999999,
+              0.10999999999999999,
+              10.0
+            ],
+            "gap_meV": 0.21999999999999997,
+            "exterior_gap_meV": 9.89,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -0.09999999999999998,
+              0.09999999999999998,
+              10.0
+            ],
+            "gap_meV": 0.19999999999999996,
+            "exterior_gap_meV": 9.9,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "newton_trial",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000001,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -0.10000000009999999,
+              0.10000000009999999,
+              10.0
+            ],
+            "gap_meV": 0.20000000019999997,
+            "exterior_gap_meV": 9.8999999999,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000150011612,
+              0.6
+            ],
+            "w": [
+              -10.0,
+              -0.10000001500116118,
+              0.10000001500116118,
+              10.0
+            ],
+            "gap_meV": 0.20000003000232236,
+            "exterior_gap_meV": 9.89999998499884,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000001,
+              0.6000000149011612
+            ],
+            "w": [
+              -10.0,
+              -0.10000000010000112,
+              0.1000000001000011,
+              10.0
+            ],
+            "gap_meV": 0.20000000020000222,
+            "exterior_gap_meV": 9.899999999899999,
+            "anchor_smin": 0.9999999999999999,
+            "orthogonality_error": 4.963083882114989e-24,
+            "jacobian": [
+              [
+                -0.9999999999999889,
+                -1.4901161178946332e-07
+              ],
+              [
+                -1.4901161178946332e-07,
+                0.9999999999999889
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000000000001,
+              0.5999999998137354
+            ],
+            "w": [
+              -10.0,
+              -0.10000000000000012,
+              0.10000000000000009,
+              10.0
+            ],
+            "gap_meV": 0.2000000000000002,
+            "exterior_gap_meV": 9.9,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.0679515313825692e-25,
+            "jacobian": [
+              [
+                -1.0,
+                1.8626455933201652e-09
+              ],
+              [
+                1.8626455933201652e-09,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000149011613,
+              0.5999999998137354
+            ],
+            "w": [
+              -10.0,
+              -0.10000001490116131,
+              0.10000001490116128,
+              10.0
+            ],
+            "gap_meV": 0.2000000298023226,
+            "exterior_gap_meV": 9.89999998509884,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 0.0,
+            "jacobian": [
+              [
+                -1.0,
+                1.8626453157643847e-09
+              ],
+              [
+                1.8626453157643847e-09,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000000000001,
+              0.6000000147148966
+            ],
+            "w": [
+              -10.0,
+              -0.1000000000000012,
+              0.10000000000000117,
+              10.0
+            ],
+            "gap_meV": 0.20000000000000237,
+            "exterior_gap_meV": 9.899999999999999,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.4815424293064547e-24,
+            "jacobian": [
+              [
+                -0.9999999999999892,
+                -1.4714896634515473e-07
+              ],
+              [
+                -1.4714896634515473e-07,
+                0.9999999999999892
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000000000001,
+              0.5999999999068677
+            ],
+            "w": [
+              -10.0,
+              -0.10000000000000012,
+              0.10000000000000009,
+              10.0
+            ],
+            "gap_meV": 0.2000000000000002,
+            "exterior_gap_meV": 9.9,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 1.0339757656912846e-25,
+            "jacobian": [
+              [
+                -1.0,
+                9.313227966600826e-10
+              ],
+              [
+                9.313227966600826e-10,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000000000001,
+              0.5999999998370185
+            ],
+            "w": [
+              -10.0,
+              -0.10000000000000012,
+              0.10000000000000009,
+              10.0
+            ],
+            "gap_meV": 0.2000000000000002,
+            "exterior_gap_meV": 9.9,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 1.0339757656912846e-25,
+            "jacobian": [
+              [
+                -1.0,
+                1.6298151717109014e-09
+              ],
+              [
+                1.6298151717109014e-09,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000000000001,
+              0.5999999998195562
+            ],
+            "w": [
+              -10.0,
+              -0.10000000000000012,
+              0.10000000000000009,
+              10.0
+            ],
+            "gap_meV": 0.2000000000000002,
+            "exterior_gap_meV": 9.9,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 1.0339757656912846e-25,
+            "jacobian": [
+              [
+                -1.0,
+                1.8044377103620933e-09
+              ],
+              [
+                1.8044377103620933e-09,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback",
+            "guard_failure": null
+          },
+          {
+            "f": [
+              0.5000000000000001,
+              0.5999999998137354
+            ],
+            "w": [
+              -10.0,
+              -0.10000000000000012,
+              0.10000000000000009,
+              10.0
+            ],
+            "gap_meV": 0.2000000000000002,
+            "exterior_gap_meV": 9.9,
+            "anchor_smin": 1.0,
+            "orthogonality_error": 2.0679515313825692e-25,
+            "jacobian": [
+              [
+                -1.0,
+                1.8626455933201652e-09
+              ],
+              [
+                1.8626455933201652e-09,
+                1.0
+              ]
+            ],
+            "jacobian_singular_values": [
+              1.0,
+              1.0
+            ],
+            "jacobian_condition": 1.0,
+            "phase": "fallback_final",
+            "guard_failure": null
+          }
+        ],
+        "steps": [
+          {
+            "iteration": 0,
+            "from_evaluation": 0,
+            "raw_step": [
+              -0.15000000000000002,
+              0.0
+            ],
+            "scale": 0.1333333333333333,
+            "target": [
+              0.53,
+              0.6
+            ],
+            "accepted": true,
+            "trial_evaluation": 1,
+            "failure": null
+          },
+          {
+            "iteration": 1,
+            "from_evaluation": 1,
+            "raw_step": [
+              -0.13,
+              0.0
+            ],
+            "scale": 0.15384615384615385,
+            "target": [
+              0.51,
+              0.6
+            ],
+            "accepted": true,
+            "trial_evaluation": 2,
+            "failure": null
+          },
+          {
+            "iteration": 2,
+            "from_evaluation": 2,
+            "raw_step": [
+              -0.10999999999999999,
+              0.0
+            ],
+            "scale": 0.090909090909091,
+            "target": [
+              0.5,
+              0.6
+            ],
+            "accepted": true,
+            "trial_evaluation": 3,
+            "failure": null
+          }
+        ],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": 0.2000000000000002,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "nonfinite_input_rejected",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": null,
+        "box": null,
+        "accepted": false,
+        "method": "rejected_input_or_initial_pair",
+        "reason": "nonfinite_or_invalid_input",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": null,
+        "gap_meV": null,
+        "returned_evaluation": null,
+        "eigensolves": 0,
+        "history": [],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": null,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "nonfinite_coefficients_rejected",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.4,
+          0.6
+        ],
+        "box": [
+          [
+            0.32,
+            0.52
+          ],
+          [
+            0.48000000000000004,
+            0.6799999999999999
+          ]
+        ],
+        "accepted": false,
+        "method": "rejected_input_or_initial_pair",
+        "reason": "nonfinite_or_invalid_coefficients",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": null,
+        "gap_meV": null,
+        "returned_evaluation": null,
+        "eigensolves": 0,
+        "history": [],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": null,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "nonreal_coefficients_rejected",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.4,
+          0.6
+        ],
+        "box": [
+          [
+            0.32,
+            0.52
+          ],
+          [
+            0.48000000000000004,
+            0.6799999999999999
+          ]
+        ],
+        "accepted": false,
+        "method": "rejected_input_or_initial_pair",
+        "reason": "nonreal_coefficients",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": null,
+        "gap_meV": null,
+        "returned_evaluation": null,
+        "eigensolves": 0,
+        "history": [],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": null,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "nonsymmetric_coefficients_rejected",
+      "result": {
+        "variant": "guarded_projected_newton_v1",
+        "D_meV": 38.0,
+        "lo": 1,
+        "seed": [
+          0.4,
+          0.6
+        ],
+        "box": [
+          [
+            0.32,
+            0.52
+          ],
+          [
+            0.48000000000000004,
+            0.6799999999999999
+          ]
+        ],
+        "accepted": false,
+        "method": "rejected_input_or_initial_pair",
+        "reason": "nonsymmetric_coefficients",
+        "newton_reason": null,
+        "fallback_attempted": false,
+        "fallback_optimizer": null,
+        "f": null,
+        "gap_meV": null,
+        "returned_evaluation": null,
+        "eigensolves": 0,
+        "history": [],
+        "steps": [],
+        "config": {
+          "newton_iterations": 32,
+          "newton_stop_gap_meV": 1e-10,
+          "acceptance_gap_meV": 1e-08,
+          "exterior_gap_min_meV": 0.001,
+          "anchor_smin_min": 0.1,
+          "jacobian_smin_min": 0.0001,
+          "jacobian_condition_max": 100000000.0,
+          "trust_radius": 0.02,
+          "local_box_radius": 0.08,
+          "backtracking_steps": 12,
+          "armijo": 0.0001,
+          "fallback_max_nfev": 80,
+          "matrix_tolerance_meV": 1e-09,
+          "orthogonality_tolerance": 1e-08
+        }
+      },
+      "fresh_gap_meV": null,
+      "gap_consistent": true,
+      "within_box": true,
+      "pass": true
+    },
+    {
+      "name": "original_partner_maxit_bug_reproduced",
+      "reported_gap_meV": 0.12649110640673517,
+      "actual_gap_meV": 0.08649110640673517,
+      "mismatch_meV": 0.039999999999999994,
+      "converged": false,
+      "pass": true
+    }
+  ],
+  "all_controls_pass": true
+}

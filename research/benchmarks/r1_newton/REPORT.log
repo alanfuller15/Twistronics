@@ -1,0 +1,115 @@
+{
+  "status": "RECONCILED_GUARDED_NEWTON_VARIANT_PASS",
+  "all_checks_pass": true,
+  "primary_cases": 204,
+  "forced_fallback_cases": 6,
+  "analytic_controls": 14,
+  "stress_cases": [
+    {
+      "engine": "bm",
+      "case": "pre_fold_0",
+      "D_meV": 40.38,
+      "accepted": true,
+      "method": "newton",
+      "reason": "converged",
+      "gap_meV": 0.0,
+      "matches_expected_behavior": true
+    },
+    {
+      "engine": "bm",
+      "case": "pre_fold_1",
+      "D_meV": 40.38,
+      "accepted": true,
+      "method": "newton",
+      "reason": "converged",
+      "gap_meV": 5.044853423896711e-13,
+      "matches_expected_behavior": true
+    },
+    {
+      "engine": "bm",
+      "case": "post_fold_search",
+      "D_meV": 40.4,
+      "accepted": false,
+      "method": "bounded_least_squares",
+      "reason": "final_jacobian_rejected",
+      "gap_meV": 0.0026313505350756827,
+      "matches_expected_behavior": true
+    },
+    {
+      "engine": "ref",
+      "case": "pre_fold_0",
+      "D_meV": 40.38,
+      "accepted": true,
+      "method": "newton",
+      "reason": "converged",
+      "gap_meV": 0.0,
+      "matches_expected_behavior": true
+    },
+    {
+      "engine": "ref",
+      "case": "pre_fold_1",
+      "D_meV": 40.38,
+      "accepted": true,
+      "method": "newton",
+      "reason": "converged",
+      "gap_meV": 4.973799150320701e-13,
+      "matches_expected_behavior": true
+    },
+    {
+      "engine": "ref",
+      "case": "post_fold_search",
+      "D_meV": 40.4,
+      "accepted": false,
+      "method": "bounded_least_squares",
+      "reason": "final_jacobian_rejected",
+      "gap_meV": 0.0026313505352391076,
+      "matches_expected_behavior": true
+    }
+  ],
+  "performance": [
+    {
+      "engine": "bm",
+      "cases": 102,
+      "reference_total_eigensolves": 1543,
+      "variant_total_eigensolves": 376,
+      "reference_median_eigensolves": 14.0,
+      "variant_median_eigensolves": 4.0,
+      "reference_total_seconds": 42.42273623602523,
+      "variant_total_seconds": 11.463929608973558,
+      "median_per_case_speedup": 3.844280588652306,
+      "primary_fallbacks": 0
+    },
+    {
+      "engine": "ref",
+      "cases": 102,
+      "reference_total_eigensolves": 1555,
+      "variant_total_eigensolves": 376,
+      "reference_median_eigensolves": 14.0,
+      "variant_median_eigensolves": 4.0,
+      "reference_total_seconds": 42.39852382213576,
+      "variant_total_seconds": 11.331784483933006,
+      "median_per_case_speedup": 3.9320532651241713,
+      "primary_fallbacks": 0
+    }
+  ],
+  "maximum_root_difference": 7.824095493688761e-13,
+  "maximum_retained_root_difference": 7.590925508252128e-13,
+  "maximum_native_gap_meV": 3.5342395676707383e-11,
+  "maximum_native_spectrum_error_meV": 1.1997070004099442e-12,
+  "recorded_evaluations": 987,
+  "newton_trials": 584,
+  "maximum_newton_step": 0.020000000000000014,
+  "reconstruction_errors": {
+    "stored_gap": 0.0,
+    "stored_exterior_gap": 0.0,
+    "stored_jacobian_singular_values": 0.0,
+    "returned_gap": 0.0,
+    "returned_position": 0.0,
+    "step_equation": 2.8042580008414873e-15,
+    "step_position": 0.0,
+    "reevaluated_spectrum_meV": 0.0,
+    "reevaluated_jacobian_singular_values": 0.0,
+    "case_distance": 0.0
+  },
+  "scope": "Solver-equivalence and bounded-search diagnostics in the finite R1 model. No new topology measurement, continuous node-identity proof, full braid acceptance, Euler-class change, physical validation or infinite-cutoff conclusion. Both engines share the diagnostic. Exact Hamiltonian derivatives do not by themselves provide uniform uniqueness bounds."
+}
