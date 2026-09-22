@@ -1,0 +1,40 @@
+{
+  "status": "FROZEN_BEFORE_CONTROLS_AND_GEOMETRIC_BOUND_RUN",
+  "parent_commit": "b1501df66461fd721fda8aa03f95b51926ad403e",
+  "N": 8,
+  "engines": ["bm", "ref"],
+  "mesh_levels": [
+    {"name": "coarse", "track_intervals": 8, "polygon_edges": 64},
+    {"name": "fine", "track_intervals": 16, "polygon_edges": 128}
+  ],
+  "radii": [0.003, 0.0015],
+  "D_interval_meV": [38.0, 39.0],
+  "nodes": ["p", "q", "upper"],
+  "inside_node": "q",
+  "thresholds": {
+    "area_allowance": 1e-14,
+    "length_allowance": 1e-10,
+    "minimum_clearance": 1e-7,
+    "minimum_axis_length": 1e-12,
+    "maximum_depth": 8,
+    "geometry_reconstruction_tolerance": 1e-14,
+    "reconciliation_tolerance": 1e-11
+  },
+  "inputs": "Use the published r1_surface face corners, check them against retained r1_temporal station geometry, and use r1_continuation accepted outer (f1,f2,E) tubes. Project only their momentum coordinates. Match coarse/fine contour cases to their respective continuation campaigns. Do not refit nodes, change contours or recalculate charges.",
+  "geometry": "At each D the ring is a closed polygon with vertices interpolated linearly between the original stations. The full based contour traverses base-to-kink-to-ring-anchor, the counterclockwise polygon, then the same stem in reverse. Partition D at every contour station and every node-tube endpoint before testing.",
+  "polygon_bound": "For affine moving edge endpoints and affine moving points, their oriented cross product is quadratic in normalized D. Its three Bernstein coefficients bound it throughout the interval. First require every nonincident polygon vertex strictly left of every oriented edge, ensuring a simple convex counterclockwise polygon. For q require all four corners of its projected tube strictly left of every edge. For p and upper require one fixed edge per interval for which all tube corners are strictly right. Normalize positive area bounds by an upper edge-length bound to report conservative fractional-coordinate clearances.",
+  "stem_bound": "For each of two outgoing stem segments and each node, choose a fixed separating axis from the midpoint closest segment point to the node-box center. Bound the axis projection over both D endpoints, both segment endpoints and the full box support radius. A positive lower bound excludes the whole moving segment from the whole node box. The return stem has the same geometry.",
+  "refinement": "Bisect only failed D intervals, retain all attempts, and stop at the frozen depth. A failed bound is unresolved geometry, not a detected physical crossing. Never accept merely because sampled endpoints pass.",
+  "controls": [
+    "Known static polygon interior and exterior box clearances",
+    "Moving rotating polygon and time reversal with analytic dense comparisons",
+    "Node inside at both parameter endpoints but outside midway is rejected",
+    "Box straddling polygon boundary is rejected despite interior center",
+    "Moving stem avoids node at both endpoints but crosses midway: reject",
+    "Stem endpoint separation succeeds when a side-of-line test is inconclusive",
+    "Self-intersecting, reversed and degenerate polygons are rejected",
+    "Nonfinite geometry is rejected"
+  ],
+  "reconciliation": "Verify hashes and acceptance of the three inherited checkpoints and their bound inputs. Independently reconstruct every polynomial extremum using a power-basis quadratic and direct endpoint projection bounds, check exact partitions and parent-child coverage, and compare retained witnesses and numerical margins. Reuse inherited spectral and charge evidence explicitly; this is a new geometric calculation, not a new Hamiltonian batch.",
+  "scope": "Conditional floating-point attachment of a gapped based contour to three already continued local nodes over D38-39 in the N8 finite model. A passing result gives geometric winding +1 about q and 0 about p and upper, and stem avoidance of those node neighborhoods. Geometric winding is not an Euler invariant or a freshly measured band charge. Unknown nodes inside the contour are not excluded, so the inherited +k loop charge is not uniquely attributed to q. No complete braid, global inventory, novelty, experimental calibration or infinite-cutoff claim."
+}

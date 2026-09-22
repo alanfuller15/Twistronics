@@ -1,0 +1,186 @@
+{
+  "status": "RECONCILED_CONDITIONAL_TRACKED_NODE_ATTACHMENT_PASS",
+  "all_checks_pass": true,
+  "analytic_controls": 11,
+  "totals": {
+    "interval_attempts": 140,
+    "accepted_leaves": 140,
+    "failed_parents": 0,
+    "unresolved_leaves": 0,
+    "polygon_convexity_tests": 140,
+    "convexity_side_polynomials": 1406720,
+    "node_polygon_tests": 420,
+    "box_side_polynomials": 161280,
+    "node_stem_tests": 840
+  },
+  "cases": [
+    {
+      "engine": "bm",
+      "mesh": "coarse",
+      "radius": 0.003,
+      "accepted_leaves": 17,
+      "minimum_clearances": {
+        "q_inside": 0.0029546626910588888,
+        "p_outside": 0.4378489896298459,
+        "upper_outside": 0.11699602724034106,
+        "stem_p": 0.2427386518257431,
+        "stem_q": 0.002958274782494951,
+        "stem_upper": 0.005725770434413631,
+        "convex_area": 8.495617763919807e-09
+      },
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "mesh": "coarse",
+      "radius": 0.0015,
+      "accepted_leaves": 17,
+      "minimum_clearances": {
+        "q_inside": 0.0014564694869565885,
+        "p_outside": 0.43934703303968986,
+        "upper_outside": 0.11849417963325484,
+        "stem_p": 0.2427386518257431,
+        "stem_q": 0.0014582747852835995,
+        "stem_upper": 0.005725770434413631,
+        "convex_area": 2.123896940953088e-09
+      },
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "mesh": "fine",
+      "radius": 0.003,
+      "accepted_leaves": 17,
+      "minimum_clearances": {
+        "q_inside": 0.0029886970797490166,
+        "p_outside": 0.43827611395857863,
+        "upper_outside": 0.11700775656114384,
+        "stem_p": 0.24276998364604951,
+        "stem_q": 0.0029896009742872687,
+        "stem_upper": 0.005724430448508604,
+        "convex_area": 1.0638649260227588e-09
+      },
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "mesh": "fine",
+      "radius": 0.0015,
+      "accepted_leaves": 17,
+      "minimum_clearances": {
+        "q_inside": 0.0014891487908543252,
+        "p_outside": 0.4397753624363199,
+        "upper_outside": 0.11850722322121898,
+        "stem_p": 0.24276998364604951,
+        "stem_q": 0.0014896009749285047,
+        "stem_upper": 0.005724430448508604,
+        "convex_area": 2.6595873149962164e-10
+      },
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "mesh": "coarse",
+      "radius": 0.003,
+      "accepted_leaves": 18,
+      "minimum_clearances": {
+        "q_inside": 0.0029546354698372023,
+        "p_outside": 0.4378488853938864,
+        "upper_outside": 0.11699430022469323,
+        "stem_p": 0.24273860076483178,
+        "stem_q": 0.0029582488485061747,
+        "stem_upper": 0.005720514237141553,
+        "convex_area": 8.495617763907121e-09
+      },
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "mesh": "coarse",
+      "radius": 0.0015,
+      "accepted_leaves": 18,
+      "minimum_clearances": {
+        "q_inside": 0.0014564422657441089,
+        "p_outside": 0.4393469288037509,
+        "upper_outside": 0.11849245261819362,
+        "stem_p": 0.24273860076483178,
+        "stem_q": 0.001458248849044448,
+        "stem_upper": 0.005720514237141553,
+        "convex_area": 2.1238969409811476e-09
+      },
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "mesh": "fine",
+      "radius": 0.003,
+      "accepted_leaves": 18,
+      "minimum_clearances": {
+        "q_inside": 0.0029886954296991296,
+        "p_outside": 0.43827606360278676,
+        "upper_outside": 0.11700610307397319,
+        "stem_p": 0.24276993677783845,
+        "stem_q": 0.0029896004006126275,
+        "stem_upper": 0.005719317272124934,
+        "convex_area": 1.0638649260227588e-09
+      },
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "mesh": "fine",
+      "radius": 0.0015,
+      "accepted_leaves": 18,
+      "minimum_clearances": {
+        "q_inside": 0.0014891471418923936,
+        "p_outside": 0.4397753120804393,
+        "upper_outside": 0.11850556973517126,
+        "stem_p": 0.24276993677783845,
+        "stem_q": 0.0014896004012512386,
+        "stem_upper": 0.005719317272124934,
+        "convex_area": 2.6595873149962164e-10
+      },
+      "pass": true
+    }
+  ],
+  "global_minimum_clearances": {
+    "q_inside": 0.0014564422657441089,
+    "p_outside": 0.4378488853938864,
+    "upper_outside": 0.11699430022469323,
+    "stem_p": 0.24273860076483178,
+    "stem_q": 0.001458248849044448,
+    "stem_upper": 0.005719317272124934,
+    "convex_area": 2.6595873149962164e-10
+  },
+  "maximum_Bernstein_vs_analytic_extremum_violation": 0.0,
+  "reconstruction_errors": {
+    "convex_witness": 5.51878361083129e-20,
+    "convex_minimum": 1.4227506535912076e-20,
+    "edge_length": 1.0619760279495516e-16,
+    "polygon_margin": 1.1984857550828565e-13,
+    "polygon_witness": 1.1984857550828565e-13,
+    "outside_fixed_edge": 1.1984857550828565e-13,
+    "stem_margin": 1.1666015375944028e-16,
+    "stem_witness": 1.1666015375944028e-16
+  },
+  "geometric_winding": {
+    "p": 0,
+    "q": 1,
+    "upper": 0
+  },
+  "inherited_loop_charge": "+k; reused, not remeasured and not uniquely attributed to q",
+  "new_hamiltonian_evaluations": 0,
+  "new_charge_measurements": 0,
+  "source_hashes": {
+    "PLAN.json": "7912c198eefb2971ec482e34b655ffa34419c926bb6f2129c41871cb20b9394f",
+    "geometry.py": "d445a07537aa0f1a4ff98d0581e715f6f9e64d4fe604d4808dc75479d01167ae",
+    "inputs.py": "a6c31206e05784d9d9188c0ea63f2d1d27ceb08a35251e70d5b6c2d5346a0085",
+    "controls.py": "d1266d0f84912c9d9eb366e8fb19e01f94568fe5e3f233243a9908e1df5f4d33",
+    "CONTROLS.json": "66102010a113f067c3e08d00c58e9587b0a5449a1cb2f4c02fa7c4d1a42b4119",
+    "run.py": "02f7866c62c5920bb77a5bf804fe224813df2af641d0ff79695a4e6e16e25082",
+    "RESULTS.json": "a7381dadfa47aec0e87cbb998d82902b86aa7a6515a094bdedf740bb1c12da2c",
+    "METHOD.md": "0f5d455c3ea8263166f2c627c305e27610c80bff3f290f531ae585048135cf5b",
+    "report.py": "f24718b39943fb11190b90a47a2031e988524d05d4f23b9684c48ce6d2f7d2c6"
+  },
+  "scope": "Conditional floating-point attachment of a gapped based contour to three already continued local nodes over D38-39 in the N8 finite model. A passing result gives geometric winding +1 about q and 0 about p and upper, and stem avoidance of those node neighborhoods. Geometric winding is not an Euler invariant or a freshly measured band charge. Unknown nodes inside the contour are not excluded, so the inherited +k loop charge is not uniquely attributed to q. No complete braid, global inventory, novelty, experimental calibration or infinite-cutoff claim."
+}
