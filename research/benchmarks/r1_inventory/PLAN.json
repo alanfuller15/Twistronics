@@ -1,0 +1,40 @@
+{
+  "status": "FROZEN_AFTER_METHOD_DERIVATION_AND_PARENT_PRIMITIVE_INSPECTION_BEFORE_CONTROLS_AND_NEW_CALCULATIONS",
+  "parent_commit": "6930684fbdc0160cbf45d1a325060e9e89d9a655",
+  "N": 8,
+  "engines": ["bm", "ref"],
+  "continuation_grids": [8, 16],
+  "D_interval_meV": [38.0, 39.0],
+  "selected_bands_zero_based": [297, 298, 299],
+  "thresholds": {
+    "energy_allowance_meV": 1e-7,
+    "weighted_norm_allowance_sqrt_meV": 1e-7,
+    "geometry_padding": 1e-10,
+    "norm_allowance": 1e-7,
+    "gap_margin_meV": 0.001,
+    "exclusion_margin_meV": 1e-7,
+    "eta_max": 0.9,
+    "maximum_depth": 24,
+    "maximum_split_nodes_per_reference": 10000,
+    "matrix_tolerance_meV": 1e-9,
+    "orthogonality_tolerance": 1e-8,
+    "reconciliation_tolerance": 1e-8
+  },
+  "domain": "For each accepted q tube in each inherited 8- or 16-interval campaign, form a moving rectangle centered on its affine momentum predictor. Set each outer halfwidth to the maximum absolute displacement of every ring vertex from both contour meshes and both radii, at every clipped contour-station endpoint in that D interval, plus geometry_padding. Affine interpolation and convexity then enclose the complete polygon interiors. Inventory this containing rectangle, not merely sampled points or the boundary.",
+  "core": "Keep exactly the parent q momentum box and energy radius. Any candidate flat-band double eigenvalue in its momentum projection first receives a Weyl energy window, then a weighted Schur trace bound. Require that entire candidate-energy bound to fit strictly inside the parent energy radius. Combine this with parent existence/uniqueness and endpoint joins. Do not assume momentum projection alone inherits three-variable uniqueness.",
+  "weighted_schur": "At the fixed parent midpoint frame F and complement Q, K0=Q.T H0 Q-E0 I. Use R=abs(K0)^(-1/2). Retain Gram blocks B_i.T abs(K0)^(-1) B_j for B0, B_f1, B_f2 and B_Dpredictor. A Weyl bound |E-Ebar|<=W and matrix bound L give eta=(L+W)/G0. For eta<1, ||B.T K^-1 B|| <= ||R B||^2/(1-eta). Bound ||R B|| by its maximum at the eight vertices of each affine cell, with a fixed norm allowance.",
+  "exclusion": "Outside the unchanged core, compute the exact minimum Euclidean norm of the projected traceless affine residual on the momentum rectangle by its four edges or an interior zero, and subtract the bounded D variation and energy allowance. A lower residual exceeding the weighted Schur correction plus the frozen margin excludes any flat-band double eigenvalue in that entire cell and its full candidate-energy window.",
+  "other_gaps": "Freshly evaluate five ordered center eigenvalues 296..300. Weyl bounds over each entire outer rectangle must keep gaps 296/297, 298/299 and 299/300 above the frozen gap margin. Together with flat-band exclusion this inventories crossings of the isolated selected three-band block, not every remote band in the 596-dimensional matrix.",
+  "cover": "Four rectangular strips tile the outer rectangle minus the closed core, extruded through the complete D interval. Test every cell; bisect failed cells along their largest width times the inherited Hamiltonian derivative norm. Retain all attempts, parent/child indices and unresolved leaves. Stop at maximum depth or after the fixed number of split nodes per reference. No path, core or threshold changes to force acceptance.",
+  "controls": [
+    "Known isolated linear and translating node, including a constant real basis change",
+    "Nonzero remote-band coupling with a known unique node in the tested domain",
+    "Affine multiband model containing a second analytic double eigenvalue: inventory must remain unresolved there",
+    "Energy window too narrow for the projected core: reject the energy-capture gate",
+    "Complement closes within the D interval: reject the resolvent bound",
+    "Exhausted subdivision budget retains unresolved cells",
+    "Four-strip partition has complete coverage without a hidden hole"
+  ],
+  "reconciliation": "Bind inherited attachment, surface, chart and continuation evidence. Independently reconstruct all weighted Gram blocks and five-band spectra, every cell inequality, the energy-capture bridge, contour/domain containment and complete four-strip subdivision trees. Check native complex matrices and spectra at every reference midpoint. No dense sampled search substitutes for a bound.",
+  "scope": "Conditional floating-point interior inventory for the isolated bands 297..299 inside the tested moving contours over D38-39 at N8, fixed strain and constant tunnelling. A passing inventory plus inherited attachment and chart evidence supports a single-node interpretation of the existing +k based-loop charge in its declared convention. No new charge measurement, full braid, Euler-class change, global Brillouin-zone inventory, novelty, experimental calibration or infinite-cutoff claim. Numerical allowances are not outward-rounded error enclosures."
+}

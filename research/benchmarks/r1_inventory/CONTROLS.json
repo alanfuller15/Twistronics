@@ -1,0 +1,251 @@
+{
+  "plan_sha256": "5fcb5fd8ce52532be93fe0e596c9dd7f16632b60d2722021c9f1f007e5e7de6d",
+  "source_hashes": {
+    "inventory.py": "e3bffcb9f5f5877e5db5aa4a3f57c21974d8263d405efd330363b6be926586d7",
+    "controls.py": "62b56582bbb8829a65b99316b7d5f1bb7efaf378b75d83b33cfce3a6a3f63b5c"
+  },
+  "controls": [
+    {
+      "name": "isolated_linear_node",
+      "pass": true,
+      "cover": {
+        "root_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "attempts": 4,
+        "leaves": 4,
+        "split_nodes": 0,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_accepted_exclusion_margin_meV": 0.019999799999989583,
+        "maximum_depth": 0
+      },
+      "core": {
+        "L": 0.040000029000000006,
+        "W": 0.04000012900000001,
+        "eta": 0.00800001588000016,
+        "weighted_B_norm": 1e-07,
+        "correction_upper": 1.0000001008064532e-07,
+        "projected_trace_upper": 0.0,
+        "candidate_energy_upper": 1.0000001008064532e-07,
+        "parent_energy_radius": 0.1,
+        "capture_margin": 0.09999979999998992,
+        "pass": true
+      },
+      "other_gaps": {
+        "L": 0.20000004500000002,
+        "other_gap_lower_meV": [
+          19.59999981,
+          9.59999981,
+          19.59999981
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "translating_node",
+      "pass": true,
+      "cover": {
+        "root_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "attempts": 4,
+        "leaves": 4,
+        "split_nodes": 0,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_accepted_exclusion_margin_meV": 0.019999799999989583,
+        "maximum_depth": 0
+      },
+      "core": {
+        "L": 0.040000029000000006,
+        "W": 0.04000012900000001,
+        "eta": 0.00800001588000016,
+        "weighted_B_norm": 1e-07,
+        "correction_upper": 1.0000001008064532e-07,
+        "projected_trace_upper": 0.0,
+        "candidate_energy_upper": 1.0000001008064532e-07,
+        "parent_energy_radius": 0.1,
+        "capture_margin": 0.09999979999998992,
+        "pass": true
+      },
+      "other_gaps": {
+        "L": 0.20000004500000002,
+        "other_gap_lower_meV": [
+          19.59999981,
+          9.59999981,
+          19.59999981
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "constant_real_basis_change",
+      "pass": true,
+      "cover": {
+        "root_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "attempts": 4,
+        "leaves": 4,
+        "split_nodes": 0,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_accepted_exclusion_margin_meV": 0.01999979999998956,
+        "maximum_depth": 0
+      },
+      "core": {
+        "L": 0.04000002900000001,
+        "W": 0.0400001290000023,
+        "eta": 0.008000015880000362,
+        "weighted_B_norm": 1.000000116000869e-07,
+        "correction_upper": 1.0000001008064765e-07,
+        "projected_trace_upper": 1.6653345369377347e-18,
+        "candidate_energy_upper": 1.0000001008231299e-07,
+        "parent_energy_radius": 0.1,
+        "capture_margin": 0.09999979999998992,
+        "pass": true
+      },
+      "other_gaps": {
+        "L": 0.200000045,
+        "other_gap_lower_meV": [
+          19.599999809999993,
+          9.599999809999996,
+          19.59999981
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "nonzero_remote_coupling",
+      "pass": true,
+      "cover": {
+        "root_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "attempts": 4,
+        "leaves": 4,
+        "split_nodes": 0,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_accepted_exclusion_margin_meV": 0.015693010070210185,
+        "maximum_depth": 0
+      },
+      "core": {
+        "L": 0.07123108525617661,
+        "W": 0.07123118525617661,
+        "eta": 0.014246227193697593,
+        "weighted_B_norm": 0.012649210640673517,
+        "correction_upper": 0.00016241490484345133,
+        "projected_trace_upper": 0.0,
+        "candidate_energy_upper": 0.00016241490484345133,
+        "parent_energy_radius": 0.1,
+        "capture_margin": 0.09983748509515655,
+        "pass": true
+      },
+      "other_gaps": {
+        "L": 0.3561553262808831,
+        "other_gap_lower_meV": [
+          19.287689247438234,
+          9.287689247438234,
+          19.287689247438234
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "second_analytic_node_not_excluded",
+      "pass": true,
+      "cover": {
+        "root_indices": [
+          0,
+          801,
+          802,
+          803
+        ],
+        "attempts": 804,
+        "leaves": 404,
+        "split_nodes": 400,
+        "unresolved_leaves": 402,
+        "pass": false,
+        "minimum_accepted_exclusion_margin_meV": 0.008923337958385678,
+        "maximum_depth": 10
+      },
+      "second_node_offset": [
+        0.20408163265306123,
+        0.0,
+        0.0
+      ],
+      "second_node_gap_meV": 4.163336342344337e-16,
+      "containing_leaf_states": [
+        -2.0
+      ]
+    },
+    {
+      "name": "projected_core_requires_energy_capture",
+      "pass": true,
+      "core": {
+        "L": 0.07123108525617661,
+        "W": 0.07123118525617661,
+        "eta": 0.014246227193697593,
+        "weighted_B_norm": 0.012649210640673517,
+        "correction_upper": 0.00016241490484345133,
+        "projected_trace_upper": 0.0,
+        "candidate_energy_upper": 0.00016241490484345133,
+        "parent_energy_radius": 1e-12,
+        "capture_margin": -0.00016251490384345133,
+        "pass": false
+      }
+    },
+    {
+      "name": "closing_complement_rejected",
+      "pass": true,
+      "bound": {
+        "L": 12.20000005,
+        "W": 12.20000015,
+        "eta": 2.4400000444000005,
+        "weighted_B_norm": 1e-07,
+        "correction_upper": null
+      }
+    },
+    {
+      "name": "exhausted_budget_retains_unresolved",
+      "pass": true,
+      "cover": {
+        "root_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "attempts": 4,
+        "leaves": 4,
+        "split_nodes": 0,
+        "unresolved_leaves": 2,
+        "pass": false,
+        "minimum_accepted_exclusion_margin_meV": 0.008923337958385678,
+        "maximum_depth": 0
+      }
+    },
+    {
+      "name": "four_strip_partition",
+      "pass": true,
+      "reconstructed_volume": 0.0374,
+      "exact_volume": 0.0374,
+      "disjoint_interiors": true
+    }
+  ],
+  "all_controls_pass": true
+}

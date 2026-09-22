@@ -1,0 +1,107 @@
+{
+  "status": "RECONCILED_CONDITIONAL_SINGLE_NODE_INTERIOR_INVENTORY_PASS",
+  "all_checks_pass": true,
+  "analytic_controls": 9,
+  "totals": {
+    "references": 48,
+    "attempts": 2304,
+    "accepted_leaves": 1248,
+    "failed_parents": 1056,
+    "unresolved_leaves": 0
+  },
+  "campaigns": [
+    {
+      "engine": "bm",
+      "grid": 8,
+      "references": 8,
+      "attempts": 288,
+      "accepted_leaves": 160,
+      "unresolved_leaves": 0,
+      "pass": true
+    },
+    {
+      "engine": "bm",
+      "grid": 16,
+      "references": 16,
+      "attempts": 860,
+      "accepted_leaves": 462,
+      "unresolved_leaves": 0,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "grid": 8,
+      "references": 8,
+      "attempts": 284,
+      "accepted_leaves": 158,
+      "unresolved_leaves": 0,
+      "pass": true
+    },
+    {
+      "engine": "ref",
+      "grid": 16,
+      "references": 16,
+      "attempts": 872,
+      "accepted_leaves": 468,
+      "unresolved_leaves": 0,
+      "pass": true
+    }
+  ],
+  "extrema": {
+    "minimum_exclusion_margin_meV": 2.524793804636015e-06,
+    "minimum_energy_capture_margin_meV": 0.00042560615007673243,
+    "minimum_other_gap_meV": 5.307917490081807,
+    "maximum_accepted_eta": 0.41483319121931495,
+    "maximum_depth": 7,
+    "maximum_native_matrix_error_meV": 2.501269345547004e-12,
+    "maximum_native_spectrum_error_meV": 1.0587086762825493e-12
+  },
+  "reconstruction_errors": {
+    "outer_domain": 0.0,
+    "primitive_G0": 0.0,
+    "primitive_gram": 2.1600499167107046e-12,
+    "primitive_w5": 0.0,
+    "primitive_J": 0.0,
+    "primitive_g0": 0.0,
+    "primitive_predictor_residual": 0.0,
+    "primitive_axis_norms": 0.0,
+    "primitive_complement_velocity": 0.0,
+    "primitive_center_energy_offset": 0.0,
+    "primitive_orthogonality_error": 0.0,
+    "complement_spectrum": 1.8189894035458565e-11,
+    "native_w5": 0.0,
+    "core_L": 0.0,
+    "core_W": 0.0,
+    "core_eta": 0.0,
+    "core_weighted_B_norm": 4.336808689942018e-18,
+    "core_correction_upper": 3.7269449679189215e-20,
+    "core_capture_margin": 2.168404344971009e-19,
+    "other_gap_lower": 0.0,
+    "cell_0": 0.0,
+    "cell_1": 0.0,
+    "cell_2": 0.0,
+    "cell_3": 1.6653345369377348e-16,
+    "cell_4": 7.28583859910259e-17,
+    "cell_5": 1.1102230246251565e-16,
+    "cell_6": 1.1102230246251565e-16,
+    "partition_volume": 1.6940658945086007e-21
+  },
+  "single_node_scope": "Only q among degeneracies of the selected isolated bands 297..299 in both tested ring interiors, for all D38-39, conditional on the numerical bounds.",
+  "charge_interpretation": "Inherited +k based-loop label can be assigned to the enclosed q branch in the existing fixed-chart and stem convention; no new charge measurement.",
+  "source_hashes": {
+    "PLAN.json": "5fcb5fd8ce52532be93fe0e596c9dd7f16632b60d2722021c9f1f007e5e7de6d",
+    "inventory.py": "e3bffcb9f5f5877e5db5aa4a3f57c21974d8263d405efd330363b6be926586d7",
+    "controls.py": "62b56582bbb8829a65b99316b7d5f1bb7efaf378b75d83b33cfce3a6a3f63b5c",
+    "CONTROLS.json": "f2aacda878c2c2477d4aa877ee989649755fbb83a8ae430dae726d35f0f94ceb",
+    "sources.py": "25f211c9560c4d5003298821ad3e55457a7d4cd46019bb74f410ba885d23ebc9",
+    "run.py": "abee2f9b81530d29f4b79cfd201fbcca92419964c92244906bfc0707abd55be0",
+    "RESULTS.json": "7db66655db739670bccb1b9efd2e655d9e404ebb88fddec970777e0f28507e4b",
+    "METHOD.md": "54d1de0ccd8eeb6825788ba12122011f2916b571af2493c0f84a91c345e66382",
+    "report.py": "b587af6386baf3cf8d4dc2a9b5f8cb6472d3cd33831aa33481421eb2fab03e03",
+    "BM_8.npz": "5572a6cf1f9cf1f23fe6072ff1d02b0b0728e539ac819f60707cfb804428e8ee",
+    "BM_16.npz": "9cc62f8eb3fc9f5b4ca3c153ecc50e973c7c07e677a8b2e78c3c69c7011ddee3",
+    "REF_8.npz": "b7d1ddb9f4d8d9cfeefa0887c8614b57a95f7fe5f3cc483c18d386c08dd0bc48",
+    "REF_16.npz": "f25675dfe75e7d06542e49abc9e674fa5222308fabf84a67ccb87180d113b9b2"
+  },
+  "scope": "Conditional floating-point interior inventory for the isolated bands 297..299 inside the tested moving contours over D38-39 at N8, fixed strain and constant tunnelling. A passing inventory plus inherited attachment and chart evidence supports a single-node interpretation of the existing +k based-loop charge in its declared convention. No new charge measurement, full braid, Euler-class change, global Brillouin-zone inventory, novelty, experimental calibration or infinite-cutoff claim. Numerical allowances are not outward-rounded error enclosures."
+}
