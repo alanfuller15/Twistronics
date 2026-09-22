@@ -1,0 +1,8 @@
+{
+  "status": "FROZEN_AFTER_PRODUCTION_BEFORE_SUPPLEMENTAL_ANALYTIC_CHECKS",
+  "reason": "The initial analytic velocity controls have zero physical coupling to the complementary bands. Add a known curved root to exercise the nonlinear Schur derivative term directly; preserve the initial controls and production unchanged.",
+  "intervals_meV": [[37.75, 38.25], [38.125, 38.375]],
+  "model": "Four real bands with energies -10, x, -x, 10, off-diagonal pair coupling y, and coupling d=D-38 between the x state and the +10 state. x=f1-0.4, y=f2-0.6.",
+  "analytic_root": "x=sqrt(25+d^2/2)-5, y=0, E=-x. dx/dD=d/(2*sqrt(25+d^2/2)); its derivative is strictly positive, so endpoint values enclose the exact velocity on each interval.",
+  "acceptance": "Unchanged inherited root certificate must pass. The new componentwise velocity enclosure must contain the analytic velocity extrema throughout each interval. No production rerun, thresholds or geometry changes."
+}

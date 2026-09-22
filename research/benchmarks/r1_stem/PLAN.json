@@ -1,0 +1,31 @@
+{
+  "status": "FROZEN_AFTER_DERIVATION_AND_PARENT_INSPECTION_BEFORE_NEW_CONTROLS_OR_CALCULATIONS",
+  "parent_commit": "becb9a666e23350f8c03c722be6fcf517691c030",
+  "engines": ["bm", "ref"],
+  "N": 8,
+  "D_interval_meV": [38.0, 39.0],
+  "event_window_meV": [38.0625, 38.125],
+  "meshes": ["coarse", "fine"],
+  "radii": [0.003, 0.0015],
+  "maximum_depth": 12,
+  "maximum_event_steps": 24,
+  "target_event_width_meV": 0.0001,
+  "thresholds": {
+    "geometry_allowance": 1e-12,
+    "derivative_allowance": 1e-12,
+    "strict_side_margin": 1e-12,
+    "strict_slope_margin": 1e-10,
+    "segment_interior_margin": 1e-6,
+    "identity_margin": 1e-12,
+    "reconstruction_tolerance": 1e-8
+  },
+  "geometry": "Use exactly the inherited piecewise-affine stem S from base to ring anchor (vertices 0 and 2); do not renormalize an interpolated p-q direction. Test all original engine/mesh/radius cases. The path definition is distinct from the earlier crossing-control geometry.",
+  "node": "Use the continuously identified upper-gap root from each matching continuation campaign. Retain its fixed-frame Schur certificate. Refined tubes and point certificates must fit strictly inside the matching inherited full (f1,f2,E) tube over their full D interval, ensuring the same root. Keep all failed attempts.",
+  "derivative": "Differentiate the exact Schur equation in coordinates y=ybar(D)+u. Bound the nonlinear moving-D derivative by 2*cross_velocity*B/G+B^2*complement_velocity/G^2. The inherited weighted contraction bound q implies componentwise |y'-v| <= radii*max((abs(C*projected_residual)+abs(C).sum(axis=1)*nonlinear_D)/radii)/(1-q), with derivative allowance. This is not the frozen projected Newton Jacobian used as an exact derivative.",
+  "side_bounds": "For e=b-a and w=fbar-a, the predicted side cross(e,w) is quadratic in D. Bound its entire interval by degree-two Bernstein coefficients; add cross(e,root enclosure error). Differentiate the exact side function including both moving endpoints and the enclosed actual root velocity. Bound along-segment parameter via quadratic dot products and positive squared segment length.",
+  "event_count": "Outside the fixed event window require strict separation from the entire supporting line. Inside require strictly negative side derivative and strictly interior segment parameter. Certified opposite endpoint signs then imply exactly one transverse crossing by this tracked root. Bisect failed bounds only, with unchanged margins and inherited parent tubes. Report unresolved leaves explicitly.",
+  "location": "Use independently bounded point roots and an interval-Newton enclosure with the uniform derivative interval over the event window. Each intersection encloses the already established unique event. Stop when width <= target, when progress fails, or at the frozen iteration limit; retain every step.",
+  "controls": ["Known transverse affine root", "Constant real basis and coordinate rotations", "Reversed parameter orientation", "Tangency must fail transversality", "Two crossings with equal endpoint signs must not be declared absent", "Supporting-line crossing outside segment rejected", "Complement closes inside interval rejected", "Point root not inside inherited tube rejected", "Interval Newton encloses an analytic event"],
+  "reconciliation": "Bind all inherited source and result hashes, retain new center frames, full solver histories, native matrices/spectra comparisons, geometric polynomial coefficients and failed subdivisions. Independently reconstruct fresh center primitives, derivative bounds, polynomial extrema, identity containment, coverage, event existence/count and interval-Newton intersections. Reuse prior charge labels explicitly; do not count them as new measurements.",
+  "scope": "Conditional floating-point crossing-count and location result for the already continued upper-gap node and exactly the declared straight comparison stems, N8, fixed strain and constant tunnelling, D38-39. Not an inventory of other nodes along the stem, a new charge measurement, a full braid or Euler-class change, a verified interval certificate, experimental calibration, novelty or infinite-cutoff claim. Both Hamiltonians share the diagnostic framework."
+}
