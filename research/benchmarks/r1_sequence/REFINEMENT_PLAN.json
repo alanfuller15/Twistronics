@@ -1,0 +1,25 @@
+{
+  "status": "FROZEN_AFTER_ORIGINAL_D38_BM_CONDITIONING_FAILURE_BEFORE_REFINEMENT",
+  "trigger": "BM D38 transport smin 0.79083940657196 shifted and 0.4121827790699222 collinear at 601 points; adaptive exterior isolation passed. Reference and D39 original trials may still be running when this plan is frozen.",
+  "original_plan_sha256": "ee289fbac6d860c6adfe4af9de696337e72d3b86868755229afa93f98c643ca6",
+  "N": 8,
+  "engines": [
+    "bm",
+    "ref"
+  ],
+  "D_stations_meV": [
+    38.0
+  ],
+  "additional_station_rule": "Include D39 only if either engine has any failed original matched-path diagnostic there. Select using completed original reports, before new calculations. Run both paths in both engines at every selected station.",
+  "paths": [
+    "shifted_x",
+    "collinear"
+  ],
+  "transport_points": [
+    4801,
+    9601
+  ],
+  "unchanged": "r=0.003, 192 loop points, model, original accepted root coordinates, native winding/transport functions, adaptive isolation, and all numerical thresholds. Only number of transport samples changes.",
+  "acceptance": "Require every refined row to satisfy original diagnostic gates, equal relative labels across the two meshes per path/engine, and equal relative labels between engines at matching D/path/mesh. Preserve original failures and any new failure; do not promote a coarse failed row.",
+  "scope": "Resolves sampled transport-conditioning failure on actual specified paths; not an error bound on topological invariants or full braid acceptance."
+}

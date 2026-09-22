@@ -1,0 +1,18 @@
+START bm endpoints 36.0
+RESULT bm endpoints 36.0 baseline SAME pass True seconds 14.0
+RESULT bm endpoints 36.0 radius_only SAME pass True seconds 14.8
+RESULT bm endpoints 36.0 loop_mesh_only SAME pass True seconds 6.3
+RESULT bm endpoints 36.0 transport_mesh_only SAME pass True seconds 8.5
+START bm endpoints 42.0
+RESULT bm endpoints 42.0 baseline OPPOSITE pass True seconds 14.2
+RESULT bm endpoints 42.0 radius_only OPPOSITE pass True seconds 13.8
+RESULT bm endpoints 42.0 loop_mesh_only OPPOSITE pass True seconds 5.3
+RESULT bm endpoints 42.0 transport_mesh_only OPPOSITE pass True seconds 8.1
+START bm matched_path_stations 38.0
+RESULT bm matched_path_stations 38.0 shifted_x OPPOSITE pass False seconds 28.0
+RESULT bm matched_path_stations 38.0 collinear SAME pass False seconds 18.5
+START bm matched_path_stations 39.0
+RESULT bm matched_path_stations 39.0 shifted_x OPPOSITE pass True seconds 27.4
+RESULT bm matched_path_stations 39.0 collinear OPPOSITE pass True seconds 17.5
+CROSSING bm [38.0703125, 38.078125]
+STATUS UNRESOLVED_CHECKS_RETAINED

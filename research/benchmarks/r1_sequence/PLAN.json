@@ -1,0 +1,84 @@
+{
+  "status": "FROZEN_BEFORE_COMPUTATION_NOT_FULL_BRAID_ACCEPTANCE",
+  "parent_commit": "5e4a6b09a6fd2888b40a3729ddf09890f619217f",
+  "N": 8,
+  "engines": [
+    "bm",
+    "ref"
+  ],
+  "endpoint_D_meV": [
+    36.0,
+    42.0
+  ],
+  "endpoint_trials": [
+    {
+      "name": "baseline",
+      "bm_radius": 0.006,
+      "ref_radius": 0.005,
+      "bm_loop_points": 96,
+      "ref_loop_points": 72,
+      "transport_points": 301
+    },
+    {
+      "name": "radius_only",
+      "bm_radius": 0.003,
+      "ref_radius": 0.0025,
+      "bm_loop_points": 96,
+      "ref_loop_points": 72,
+      "transport_points": 301
+    },
+    {
+      "name": "loop_mesh_only",
+      "bm_radius": 0.006,
+      "ref_radius": 0.005,
+      "bm_loop_points": 192,
+      "ref_loop_points": 144,
+      "transport_points": 301
+    },
+    {
+      "name": "transport_mesh_only",
+      "bm_radius": 0.006,
+      "ref_radius": 0.005,
+      "bm_loop_points": 96,
+      "ref_loop_points": 72,
+      "transport_points": 601
+    }
+  ],
+  "expected_endpoint_labels": {
+    "36.0": "SAME",
+    "42.0": "OPPOSITE"
+  },
+  "thresholds": {
+    "root_gap_meV": 1e-06,
+    "root_separation": 0.0001,
+    "winding_abs_error": 0.15,
+    "step_overlap_smin": 0.9,
+    "ref_fixed_frame_smin": 0.9,
+    "isolation_margin_meV": 0.001,
+    "floating_allowance_meV": 1e-07,
+    "affine_residual_meV": 1e-09,
+    "max_isolation_depth": 16
+  },
+  "crossing": "Call unchanged r1_events.track.crossing(N=8, engine), including its D=38/39 initial bracket, root and continuation gates, and maximum width 0.0078125 meV. This is the geometric center segment, not each engine-specific displaced transport path.",
+  "matched_path_D_meV": [
+    38.0,
+    39.0
+  ],
+  "matched_paths": [
+    "shifted_x",
+    "collinear"
+  ],
+  "matched_path_config": {
+    "radius": 0.003,
+    "loop_points": 192,
+    "transport_points": 601
+  },
+  "matched_path_definitions": {
+    "shifted_x": "p+(r,0) to q+(r,0)",
+    "collinear": "p-1.5*r*d/||d|| to q+1.5*r*d/||d||; d=wrap(q-p), q=p+d"
+  },
+  "matched_path_gates": "Same root, conditioning and adaptive numerical isolation thresholds as endpoints. No predetermined intermediate label. Compare relative labels across engines only for identical paths. Distinct paths may have distinct relative labels.",
+  "retention": "Save each completed row and retain failed diagnostics. Endpoint and matched-path failures do not erase independent results. Crossing exceptions are retained. No threshold changes.",
+  "scope": "N8 endpoint sensitivity, targeted center-segment crossing, and intermediate matched-path diagnostics. Reuses shared measurement framework; not external validation, full D-continuous tracking, exhaustive root counting, a braid certificate, Euler obstruction removal, novelty, or experimental feasibility. The local merger is cited from parent checkpoint, not recomputed here.",
+  "D_convention": "Uniform layer potentials +/-D meV; difference 2D. D is not a calibrated experimental displacement field."
+}
