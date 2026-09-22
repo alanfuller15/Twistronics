@@ -1,0 +1,42 @@
+{
+  "status": "FROZEN_BEFORE_CONTROLS_AND_PRODUCTION",
+  "parent_commit": "8b23a45adc0699fb7990dc28a181630d21cda659",
+  "N": 8,
+  "engines": ["bm", "ref"],
+  "nodes": ["p", "q", "upper"],
+  "D_interval_meV": [38.0, 39.0],
+  "initial_intervals": [8, 16],
+  "max_bisection_depth": 8,
+  "root_seed_box_radius": 0.02,
+  "bounds": {
+    "energy_allowance_meV": 1e-7,
+    "norm_allowance": 1e-7,
+    "dimensionless_allowance": 1e-12,
+    "minimum_rho_meV": 1e-6,
+    "radius_factor": 4.0,
+    "contraction_max": 0.5,
+    "self_map_max": 0.8,
+    "complement_margin_meV": 0.001,
+    "inverse_smin_min": 1e-8,
+    "matrix_tolerance_meV": 1e-9,
+    "orthogonality_tolerance": 1e-8,
+    "native_spectrum_tolerance_meV": 1e-8,
+    "reconciliation_tolerance": 1e-8
+  },
+  "construction": "Fixed real orthogonal frame at each midpoint; 2x2 Schur complement in y=(f1,f2,E). Bound its nonlinear derivative throughout a moving box about an affine predictor. Use Banach self-map and contraction conditions with complement inertia fixing the band indices. Do not identify the projected Newton Jacobian with a moving-frame derivative.",
+  "radii": "C is the numerical inverse of the three-component projected Jacobian. c_i is the absolute row sum of C; rho=max(minimum_rho, radius_factor*max_i(Y_i/c_i)); r_i=rho*c_i. Y uses only predictor-line bounds. Retain inverse residual and all nonzero center cross coupling.",
+  "joins": "Independently bound a unique point root at every leaf endpoint with halfwidth zero. Its tighter a-posteriori enclosure must be contained in every incident interval cross section. Overlap of outer boxes alone never passes. Check each node pair has disjoint momentum tubes on every common parameter subinterval.",
+  "refinement": "Start from each declared grid, retain every attempted cell. Bisect only failed interval certificates to the frozen depth. A failed endpoint certificate or containment remains unresolved; do not alter radii or thresholds to rescue it.",
+  "seeds": "Interpolate the retained r1_holonomy fine-grid roots, then refine with the published guarded Newton solver inside a fixed seed-centered box. Retained stations are seeds, not continuity evidence.",
+  "controls": [
+    "Known translating isolated affine node and constant real basis change",
+    "Four-band affine family with analytically curved Schur root",
+    "Deliberately undersized radius fails self mapping",
+    "Complement closure inside an interval fails",
+    "Singular momentum map is rejected",
+    "Endpoint root enclosure contained in adjacent tubes passes",
+    "Overlapping outer boxes with incompatible point enclosure fail"
+  ],
+  "reconciliation": "Bind sources and parent records by SHA256. Retain full Newton histories, midpoint frames, complementary spectra, primitives and scalar bounds. Independently recompute all center primitives, scalar bounds, interval partitions, endpoint containment and node separation. Check original complex matrices and four-band spectra at every distinct center.",
+  "scope": "Conditional floating-point local existence, uniqueness and continuation only inside the declared tubes at N8 and fixed strain with constant tunnelling. Numerical norm/eigensolution allowances are not outward-rounded error enclosures. No global root inventory, complete braid, Euler-class change, physical validation, novelty or infinite-cutoff claim. The two engines share this diagnostic framework."
+}
