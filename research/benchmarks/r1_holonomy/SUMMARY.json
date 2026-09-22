@@ -1,0 +1,149 @@
+{
+  "scope": "Closed-contour orientation holonomy and sampled continuation, not full braid acceptance",
+  "engines": {
+    "bm": {
+      "status": "CLOSED_CONTOUR_DIAGNOSTICS_PASS_NOT_FULL_BRAID",
+      "dimension": 596,
+      "errors": [],
+      "continuation_station_evaluations": 26,
+      "unique_D_stations": 17,
+      "root_refinements": 78,
+      "maximum_root_gap_meV": 1.3358203432289883e-12,
+      "maximum_root_step": 0.0007117419728471119,
+      "maximum_coarse_fine_root_difference": 3.73214973646432e-14,
+      "minimum_coarse_fine_frame_determinant": 0.9999999999999973,
+      "minimum_temporal_step_smin": 0.9999988789702942,
+      "minimum_contour_step_smin": 0.9984918422854014,
+      "minimum_contour_isolation_lower_meV": 0.01157078687155954,
+      "maximum_holonomy_cross_check_error": 1.0480505352461478e-13,
+      "maximum_native_affine_matrix_error_meV": 9.111698076976963e-13,
+      "maximum_native_affine_spectrum_error_meV": 7.460698725481052e-13,
+      "contours_passed": 8,
+      "contours_total": 8,
+      "all_hypotheses_match": true
+    },
+    "ref": {
+      "status": "CLOSED_CONTOUR_DIAGNOSTICS_PASS_NOT_FULL_BRAID",
+      "dimension": 596,
+      "errors": [],
+      "continuation_station_evaluations": 26,
+      "unique_D_stations": 17,
+      "root_refinements": 78,
+      "maximum_root_gap_meV": 1.3216094885137863e-12,
+      "maximum_root_step": 0.0007117419729089791,
+      "maximum_coarse_fine_root_difference": 3.409324809970779e-14,
+      "minimum_coarse_fine_frame_determinant": 0.999999999999998,
+      "minimum_temporal_step_smin": 0.9999988789702937,
+      "minimum_contour_step_smin": 0.9984918422853747,
+      "minimum_contour_isolation_lower_meV": 0.011570786857491492,
+      "maximum_holonomy_cross_check_error": 9.769962616701378e-14,
+      "maximum_native_affine_matrix_error_meV": 2.2737572393255487e-12,
+      "maximum_native_affine_spectrum_error_meV": 5.506706202140776e-13,
+      "contours_passed": 8,
+      "contours_total": 8,
+      "all_hypotheses_match": true
+    }
+  },
+  "loop_comparisons": [
+    {
+      "name": "static_D38",
+      "signs": {
+        "bm": [
+          -1,
+          -1
+        ],
+        "ref": [
+          -1,
+          -1
+        ]
+      },
+      "hypothesis_sign": -1,
+      "meshes_and_engines_agree": true,
+      "all_diagnostics_pass": true,
+      "minimum_isolation_lower_meV": 0.011570786857491492
+    },
+    {
+      "name": "static_D39",
+      "signs": {
+        "bm": [
+          1,
+          1
+        ],
+        "ref": [
+          1,
+          1
+        ]
+      },
+      "hypothesis_sign": 1,
+      "meshes_and_engines_agree": true,
+      "all_diagnostics_pass": true,
+      "minimum_isolation_lower_meV": 0.14857243291865402
+    },
+    {
+      "name": "center_ribbon",
+      "signs": {
+        "bm": [
+          -1,
+          -1
+        ],
+        "ref": [
+          -1,
+          -1
+        ]
+      },
+      "hypothesis_sign": -1,
+      "meshes_and_engines_agree": true,
+      "all_diagnostics_pass": true,
+      "minimum_isolation_lower_meV": 0.011634566650280707
+    },
+    {
+      "name": "shifted_ribbon",
+      "signs": {
+        "bm": [
+          1,
+          1
+        ],
+        "ref": [
+          1,
+          1
+        ]
+      },
+      "hypothesis_sign": 1,
+      "meshes_and_engines_agree": true,
+      "all_diagnostics_pass": true,
+      "minimum_isolation_lower_meV": 0.03595981855709007
+    }
+  ],
+  "controls_passed": 8,
+  "controls_total": 8,
+  "reconciliation": {
+    "bm": {
+      "stored_frame_arrays": 180,
+      "maximum_frame_orthogonality_error": 6.439293542825908e-15,
+      "maximum_frame_comparison_record_error": 7.771561172376096e-16,
+      "maximum_link_product_record_error": 0.0,
+      "maximum_bound_record_error_meV": 0.0,
+      "resolved_leaf_intervals": 8022,
+      "pass": true
+    },
+    "ref": {
+      "stored_frame_arrays": 180,
+      "maximum_frame_orthogonality_error": 2.220446049250313e-15,
+      "maximum_frame_comparison_record_error": 7.771561172376096e-16,
+      "maximum_link_product_record_error": 0.0,
+      "maximum_bound_record_error_meV": 0.0,
+      "resolved_leaf_intervals": 8022,
+      "pass": true
+    }
+  },
+  "input_sha256": {
+    "PLAN.json": "c3d90411b582394c893927223748aa75a33f85c9e04de9b7c684366d97dc9fc7",
+    "BM.json": "edcd8232ad94b1cb575e720b5006c2041a98c98a89daa0c73ddcc97c4c1fb077",
+    "REF.json": "83e95b742b6051194b76e6b8089207acf5d30914f76bcae7040e747272007542",
+    "BM.npz": "b39c70b9f7761cc4e8f944edcde7555515cec679e0af88194ae527fb5d020573",
+    "REF.npz": "2ca159fc2f8d84e20b85b3cb920307c023ed91d64ddf2f5237d6ed5b2b70d644",
+    "CONTROLS.json": "6186dc9e6f7483cfb1c98dd37ce2d69139e752108a1d29b15726167cc99f92ab"
+  },
+  "maximum_engine_root_difference": 5.325657802619916e-14,
+  "all_diagnostics_pass": true
+}

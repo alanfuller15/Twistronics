@@ -1,0 +1,78 @@
+{
+  "status": "FROZEN_BEFORE_NEW_CALCULATIONS_AFTER_N8_PATH_RESULTS",
+  "parent_commit": "10139156d7202d6f1021061e502a5054311c251c",
+  "N": 8,
+  "engines": [
+    "bm",
+    "ref"
+  ],
+  "model_source": "../r1_reproduction/run.py model: unchanged; fixed strain, variable layer potentials +/-D",
+  "D_interval_meV": [
+    38.0,
+    39.0
+  ],
+  "continuation_intervals": [
+    8,
+    16
+  ],
+  "tracked_nodes": [
+    "flat_p",
+    "flat_q",
+    "upper"
+  ],
+  "root_method": "Unchanged r1_events.Solver.root, supplied the checked affine fractional-momentum/D Hamiltonian; carry each previous root as the next seed. Both grids start from original D38 roots.",
+  "root_max_step": 0.05,
+  "shared_root_match_tolerance": 1e-07,
+  "minimum_flat_pair_separation": 0.0001,
+  "temporal_step_smin": 0.99,
+  "coarse_fine_orientation_det": 0.99,
+  "path_radius": 0.003,
+  "paths": {
+    "static_D38": "Shifted a to shifted b, connector to collinear b, collinear b to collinear a, connector back to shifted a, all at D38.",
+    "static_D39": "Same closed path at D39.",
+    "center_ribbon": "p38 to q38; sampled q(D) to q39; q39 to p39; sampled p(D) back to p38. Each boundary edge is affine in (f1,f2,D).",
+    "shifted_ribbon": "Add (r,0) to every momentum vertex of center_ribbon."
+  },
+  "mesh_levels": [
+    {
+      "name": "coarse",
+      "initial_subintervals": 8,
+      "variation_over_lower_gap_max": 0.25,
+      "target_step_smin": 0.98,
+      "continuation_intervals": 8
+    },
+    {
+      "name": "fine",
+      "initial_subintervals": 16,
+      "variation_over_lower_gap_max": 0.125,
+      "target_step_smin": 0.995,
+      "continuation_intervals": 16
+    }
+  ],
+  "thresholds": {
+    "exterior_gap_margin_meV": 0.001,
+    "floating_allowance_meV": 1e-07,
+    "max_depth": 16,
+    "affine_matrix_meV": 1e-09,
+    "native_spectrum_meV": 1e-08,
+    "holonomy_tolerance": 1e-08,
+    "orthogonality_tolerance": 1e-08
+  },
+  "adaptive_rule": "For each affine edge and interval h, delta = h*||H_end-H_start||_2. Exterior-gap lower estimate=min(g_left,g_right)-delta-floating_allowance. Require lower>margin, delta/lower<=level threshold, and subspace overlap>=level threshold. Otherwise bisect; retain unresolved leaves. No holonomy label is accepted if any leaf fails.",
+  "holonomy": "Multiply O(2) polar factors of F_i.T F_(i+1), including closure without forcing determinant +1. Compare with iterative projector transport, reversed traversal, and reproducible independent local O(2) gauge changes.",
+  "gauge_seed": 20260922,
+  "hypotheses": {
+    "static_D38": -1,
+    "static_D39": 1,
+    "center_ribbon": -1,
+    "shifted_ribbon": 1
+  },
+  "hypothesis_policy": "Predictions from prior charge/path data are separate from numerical validity. Report disagreement rather than changing thresholds or replacing evidence. Require matching signs across meshes and engines.",
+  "analytic_controls": [
+    "Adjacent-band cone enclosed: determinant -1",
+    "Same cone excluded: determinant +1",
+    "Internal flat-pair cone enclosed: determinant +1",
+    "Contour through adjacent degeneracy: isolation rejection, no accepted sign"
+  ],
+  "scope": "Numerical orientation holonomy of the isolated flat-band pair on explicitly specified closed contours, plus sampled node continuation. This does not certify continuous root identity, a full non-Abelian braid, Euler-class removal, novelty, infinite-cutoff accuracy, or experimental realization. Isolation estimates remain conditional floating-point bounds, not interval arithmetic."
+}
