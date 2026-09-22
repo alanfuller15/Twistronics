@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN_BEFORE_CONTROLS_AND_SURFACE_CALCULATIONS",
+  "parent_commit": "cc6d0ad4ae19682763eced8e64d874a06c79a638",
+  "N": 8,
+  "engines": [
+    "bm",
+    "ref"
+  ],
+  "geometry": "Reuse r1_temporal geometry without modification. Each surface patch is the bilinear interpolation of corresponding oriented spatial edges at neighboring D stations. Include base-to-kink, kink-to-circle-anchor, and every polygon edge. The return stem traverses the same surface in reverse and needs no duplicate gap test.",
+  "mesh_levels": [
+    {
+      "name": "coarse",
+      "track_intervals": 8,
+      "polygon_edges": 64
+    },
+    {
+      "name": "fine",
+      "track_intervals": 16,
+      "polygon_edges": 128
+    }
+  ],
+  "radii": [
+    0.003,
+    0.0015
+  ],
+  "bound": "For each dyadic parameter rectangle, evaluate the five consecutive eigenvalues 296..300 at its center. Because the map is bilinear, every point is a convex combination of its four corners. Let delta=max_corner sum_j abs(v_corner_j-v_center_j)*||A_j||_2. Each of the four adjacent gaps is at least its center value minus 2*delta minus the floating allowance. Accept only if all four lower estimates exceed the frozen gap margin.",
+  "subdivision": "Bisect along the parameter direction with the larger maximum weighted coordinate variation on its two opposite edges. Retain all parent evaluations, leaf rectangles and explicit child indices. No corner-only acceptance. Stop at a center gap violation, maximum depth, or a per-face evaluation budget; retain any unresolved leaf.",
+  "reference_chart": "Reuse and hash-bind the prior full-box exterior isolation and fixed-chart rank checks. Explicitly require every face corner inside that same convex box, so the complete bilinear face is covered. No new chart or quaternion convention.",
+  "thresholds": {
+    "gap_margin_meV": 0.001,
+    "floating_allowance_meV": 1e-07,
+    "maximum_depth": 28,
+    "maximum_evaluations_per_face": 200000,
+    "reconciliation_error": 1e-09
+  },
+  "controls": [
+    "Affine five-band internal node strictly inside a face with all boundary edges gapped: reject.",
+    "Same interior node at an off-center dyadic point: reject after refinement.",
+    "Gapped affine five-band surface: accept and compare bounds with exact interior gaps.",
+    "Bilinear saddle surface: accept and compare every leaf lower estimate to analytic gaps on a dense interior grid.",
+    "Finite subdivision budget: retain unresolved leaves rather than silently accept.",
+    "Reverse either face parameter: same validity and sampled minimum."
+  ],
+  "node_identity_assessment": "Audit the existing sampled root continuation and final Jacobian diagnostics. These are not uniform derivative or uniqueness bounds between stations. Do not label interpolated root curves as certified worldlines or claim a full braid.",
+  "hypothesis_policy": "No path, threshold or model changes to obtain passing evidence. Any unresolved or failed face remains in the published result.",
+  "scope": "Conditional floating-point isolation of the entire declared piecewise bilinear swept contour, in the N=8 finite continuum model with fixed strain and uniform layer potentials +/-D. Not interval arithmetic, continuous node-identity certification, full braid acceptance, Euler-class change, novelty, infinite-cutoff convergence or experimental calibration. Hamiltonian implementations share the diagnostic framework."
+}

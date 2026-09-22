@@ -1,0 +1,120 @@
+{
+  "plan_sha256": "73eb8d0ab78fdd7879122f7d6660d69ccf69ad1f95f5fe60af70c2389d7cfc92",
+  "source_hashes": {
+    "surface.py": "ad1d723a441a76f3ad61a53eed221250ddca4bcb9079562f3c4802e7a0d4353e",
+    "controls.py": "5feab9df02c5de329f06d827b0d433b197daf1e7984f5df4d012152198d4a36f"
+  },
+  "controls": [
+    {
+      "name": "center_hidden_node",
+      "summary": {
+        "evaluations": 1,
+        "leaves": 1,
+        "unresolved_leaves": 1,
+        "pass": false,
+        "minimum_lower_meV": -4.0000001,
+        "minimum_center_gap_meV": 0.0,
+        "maximum_depth": 0,
+        "leaf_parameter_area": 1.0
+      },
+      "boundary_minimum_gap_meV": 2.0,
+      "maximum_bound_violation_meV": 0.0,
+      "spectrum_error_meV": 0.0,
+      "pass": true
+    },
+    {
+      "name": "offcenter_hidden_node",
+      "summary": {
+        "evaluations": 33,
+        "leaves": 17,
+        "unresolved_leaves": 1,
+        "pass": false,
+        "minimum_lower_meV": -1.0000001,
+        "minimum_center_gap_meV": 0.0,
+        "maximum_depth": 6,
+        "leaf_parameter_area": 1.0
+      },
+      "boundary_minimum_gap_meV": 1.500133327407934,
+      "maximum_bound_violation_meV": 0.0,
+      "spectrum_error_meV": 2.220446049250313e-16,
+      "pass": true
+    },
+    {
+      "name": "gapped_affine",
+      "summary": {
+        "evaluations": 1,
+        "leaves": 1,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_lower_meV": 0.9059927172283339,
+        "minimum_center_gap_meV": 2.505992817228334,
+        "maximum_depth": 0,
+        "leaf_parameter_area": 1.0
+      },
+      "boundary_minimum_gap_meV": 2.039607805437114,
+      "maximum_bound_violation_meV": 0.0,
+      "spectrum_error_meV": 0.0,
+      "pass": true
+    },
+    {
+      "name": "gapped_bilinear",
+      "summary": {
+        "evaluations": 3,
+        "leaves": 2,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_lower_meV": 0.22239746990830273,
+        "minimum_center_gap_meV": 3.047397569908303,
+        "maximum_depth": 1,
+        "leaf_parameter_area": 1.0
+      },
+      "boundary_minimum_gap_meV": 2.0267862505362992,
+      "maximum_bound_violation_meV": 0.0,
+      "spectrum_error_meV": 0.0,
+      "pass": true
+    },
+    {
+      "name": "reverse_parameter_0",
+      "summary": {
+        "evaluations": 3,
+        "leaves": 2,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_lower_meV": 0.22239746990830273,
+        "minimum_center_gap_meV": 3.047397569908303,
+        "maximum_depth": 1,
+        "leaf_parameter_area": 1.0
+      },
+      "pass": true
+    },
+    {
+      "name": "reverse_parameter_1",
+      "summary": {
+        "evaluations": 3,
+        "leaves": 2,
+        "unresolved_leaves": 0,
+        "pass": true,
+        "minimum_lower_meV": 0.22239746990830273,
+        "minimum_center_gap_meV": 3.047397569908303,
+        "maximum_depth": 1,
+        "leaf_parameter_area": 1.0
+      },
+      "pass": true
+    },
+    {
+      "name": "unresolved_budget_retained",
+      "summary": {
+        "evaluations": 1,
+        "leaves": 1,
+        "unresolved_leaves": 1,
+        "pass": false,
+        "minimum_lower_meV": -0.8750001000000004,
+        "minimum_center_gap_meV": 3.275,
+        "maximum_depth": 0,
+        "leaf_parameter_area": 1.0
+      },
+      "pass": true
+    }
+  ],
+  "all_controls_pass": true
+}

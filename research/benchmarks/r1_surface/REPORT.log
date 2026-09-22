@@ -1,0 +1,54 @@
+{
+  "status": "RECONCILED_FULL_DECLARED_SURFACES_CONDITIONAL",
+  "all_surface_checks_pass": true,
+  "new_analytic_controls": 7,
+  "engine_comparisons": [
+    {
+      "mesh": "coarse",
+      "radius": 0.003,
+      "same_leaf_count": true,
+      "minimum_lower_difference_meV": 6.570854971243989e-13,
+      "both_pass": true
+    },
+    {
+      "mesh": "coarse",
+      "radius": 0.0015,
+      "same_leaf_count": true,
+      "minimum_lower_difference_meV": 2.0250467969162855e-12,
+      "both_pass": true
+    },
+    {
+      "mesh": "fine",
+      "radius": 0.003,
+      "same_leaf_count": true,
+      "minimum_lower_difference_meV": 2.2426505097428162e-13,
+      "both_pass": true
+    },
+    {
+      "mesh": "fine",
+      "radius": 0.0015,
+      "same_leaf_count": true,
+      "minimum_lower_difference_meV": 1.3756218386618002e-12,
+      "both_pass": true
+    }
+  ],
+  "totals": {
+    "faces": 10432,
+    "evaluations": 30584,
+    "leaves": 20508,
+    "unresolved_leaves": 0
+  },
+  "minimum_lower_meV": 0.0010773223009653582,
+  "minimum_center_gap_meV": 0.18677796669095414,
+  "reconstruction_errors": {
+    "center": 3.3306690738754696e-16,
+    "delta": 1.6017742687779446e-13,
+    "gap_lower": 3.232969447708456e-13,
+    "operator_norm": 0.0,
+    "native_spectrum_meV": 8.313350008393172e-13,
+    "summary": 0.0,
+    "cross_engine_affine_spectrum_meV": 7.389644451905042e-13
+  },
+  "prior_charge_result_reused": "+k on transported contours; no new charge measurement",
+  "scope": "Conditional floating-point isolation of the entire declared piecewise bilinear swept contour, in the N=8 finite continuum model with fixed strain and uniform layer potentials +/-D. Not interval arithmetic, continuous node-identity certification, full braid acceptance, Euler-class change, novelty, infinite-cutoff convergence or experimental calibration. Hamiltonian implementations share the diagnostic framework."
+}
