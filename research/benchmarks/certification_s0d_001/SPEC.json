@@ -1,0 +1,30 @@
+{
+  "schema": "twistronics_s0d_spec_v1",
+  "id": "FC49-77-S0D-001",
+  "date": "2026-09-23",
+  "scope": "Fixed synthetic projector, seam-map and continuous phase-lift primitives plus reviewed H1-H4 corrections; no physical model execution",
+  "source_review": 5294252575,
+  "previous_evidence_sha": "9fe81378158b51314ae0aff104b2f4c01cfc2ed9",
+  "frozen_before_execution": true,
+  "backend": {"python_flint": "0.9.0", "flint": "3.6.0", "threads": 1, "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"},
+  "limits": {"global_wall_seconds": 180, "job_wall_seconds": 30, "worker_address_bytes": 1073741824, "workers": 1, "retries": 0},
+  "ledger": {"frame_error": "1/16", "seam_map_error": "1/128", "repair_angle_error": "3/16", "additional_phase_error": "1/64", "q_halfwidth": "1/8"},
+  "windows": [["-5/4", "-3/4"], ["3/4", "5/4"]],
+  "jobs": [
+    {"id": "budget_named", "kind": "budget", "precision": 128, "expected_status": "CERTIFIED", "expected_reason": "BUDGET_CONDITIONALLY_SUFFICIENT"},
+    {"id": "branch_gate_pass", "kind": "branch", "precision": 128, "distance": "15/16", "expected_status": "CERTIFIED", "expected_reason": "APPROXIMATE_BRANCH_GATE"},
+    {"id": "branch_gate_approx_only", "kind": "branch", "precision": 128, "distance": "63/64", "expected_status": "INCONCLUSIVE", "expected_reason": "APPROXIMATE_BRANCH_MARGIN_NOT_CERTIFIED"},
+    {"id": "internal_congruence", "kind": "congruence", "precision": 128, "expected_status": "CERTIFIED", "expected_reason": "DECLARED_PAIR_WINDOWS"},
+    {"id": "nonfinite_growth", "kind": "nonfinite", "precision": 128, "expected_status": "INCONCLUSIVE", "expected_reason": "NONFINITE_ENCLOSURE"},
+    {"id": "shape_fault", "kind": "shape_fault", "precision": 128, "expected_status": "EXECUTION_ERROR", "expected_reason": "WORKER_EXCEPTION", "expected_error_type": "ValueError"},
+    {"id": "projector_good", "kind": "projector", "precision": 128, "nodes": 8, "inner_ratio": "0", "outer_ratio": "2", "target_error": "1/64", "expected_status": "CERTIFIED", "expected_reason": "RIESZ_PROJECTOR_ENCLOSURE"},
+    {"id": "projector_underresolved", "kind": "projector", "precision": 128, "nodes": 4, "inner_ratio": "0", "outer_ratio": "5/4", "target_error": "1/64", "expected_status": "INCONCLUSIVE", "expected_reason": "PROJECTOR_ERROR_BUDGET"},
+    {"id": "seam_good", "kind": "seam", "precision": 128, "entry_radius": "1/1048576", "target_error": "1/128", "expected_status": "CERTIFIED", "expected_reason": "SEAM_MAP_ENCLOSURE"},
+    {"id": "polar_singular", "kind": "polar_singular", "precision": 128, "expected_status": "INCONCLUSIVE", "expected_reason": "POLAR_DENOMINATOR_NOT_CERTIFIED"},
+    {"id": "phase_winding", "kind": "phase", "precision": 128, "samples": 16, "entry_radius": "1/1048576", "expected_status": "CERTIFIED", "expected_reason": "CONTINUOUS_PHASE_LIFT"},
+    {"id": "phase_branch_bad", "kind": "phase_branch", "precision": 128, "expected_status": "INCONCLUSIVE", "expected_reason": "PHASE_STEP_BRANCH_NOT_SEPARATED"},
+    {"id": "phase_integer_ambiguous", "kind": "phase_ambiguous", "precision": 128, "samples": 16, "entry_radius": "1/16", "expected_status": "INCONCLUSIVE", "expected_reason": "UNIQUE_INTEGER_NOT_CERTIFIED"}
+  ],
+  "interpretation": "CERTIFIED applies only to the named synthetic implication. Expected INCONCLUSIVE and EXECUTION_ERROR controls remain raw outcomes and are not certificates. The harness stops on the first unexpected status/reason and does not retry or adapt a fixture.",
+  "physical_evaluations": 0
+}

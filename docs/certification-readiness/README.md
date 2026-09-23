@@ -7,7 +7,9 @@ record the audit. The fixed-case audit is recorded in Claude comment
 [5792152685](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5792152685)
 and Codex review [5289043968](https://github.com/alanfuller15/Twistronics/pull/2#pullrequestreview-5289043968).
 The [v2 declaration](CASE.md) and [bounded implementation design](IMPLEMENTATION_PLAN.md)
-incorporate its qualifications and remain pending independent review. No physical run was performed.
+incorporate its qualifications. Synthetic arithmetic has advanced through
+[S0d](S0D_PRIMITIVES.md) and [PLAN_005](PLAN_005.json); physical S1-S4 remain
+unimplemented and no physical run has been performed.
 
 This note follows q008 at `4b01d0867a85a92e9bc634cc852c32b4c219cef3`,
 Claude comment [5791531635](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791531635),
@@ -186,8 +188,11 @@ They also retain two qualifications: general Sylvester residual bounds use
 the Frobenius norm, and partial-shift overlap needs deletion loss as well as
 off-target leakage. These bounds are conditional mathematics, not case results.
 
-The next implementation slice is S0: lock the backend build and validate
-arithmetic and enclosure primitives on bounded synthetic examples. That
-slice begins after the declaration/design audit and produces reviewable code
-before any physical-model execution. Current status is NOT_IMPLEMENTED.
-The v078 correction owner retains that work; frozen q001-q008 are unchanged.
+S0a-S0c are independently reproduced. S0d adds fixed synthetic circular Riesz
+quadrature, oriented polar/seam-map and continuous phase-lift primitives, plus
+the reviewed branch-margin, congruence-provenance, nonfinite-outcome and naming
+corrections. Its first fixed run passed all 13 expected behaviors and 10
+protocol controls; independent review is pending. The next bounded slice is
+composition of these primitives with the exact principal repair and joint
+relative integer enclosure before any physical-model execution. The v078
+correction owner retains that work; frozen q001-q008 are unchanged.
