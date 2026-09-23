@@ -1,6 +1,6 @@
 {
-  "schema": "twistronics_fixed_case_declaration_v1",
-  "case_id": "FC49-77-K-Bm025-v1",
+  "schema": "twistronics_fixed_case_declaration_v2",
+  "case_id": "FC49-77-K-Bm025-v2",
   "status": "DECLARED_UNEXECUTED",
   "date": "2026-09-23",
   "basis_of_declaration": {
@@ -10,7 +10,11 @@
     "archive_path": "research/benchmarks/migration_contract_review/partner_v078p.zip",
     "archive_sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
     "retained_basis_member": "RUN/BASIS.json",
-    "retained_basis_member_sha256": "71aa4ec545a745741b83e1bb985641cdba8f27295ec40507d065bcc96605240b"
+    "retained_basis_member_sha256": "71aa4ec545a745741b83e1bb985641cdba8f27295ec40507d065bcc96605240b",
+    "fixed_case_audit": {
+      "claude_source_comment": 5792152685,
+      "codex_completed_review": 5289043968
+    }
   },
   "parameter_semantics": "Decimal strings are exact rationals. Real k only. No physical execution or certificate has occurred.",
   "model": {
@@ -889,12 +893,27 @@
     "column_to_row_sha256": "d5d7b9a899054737d10dbb1b9d1820b5c1d0b15d5db485dbe373460e957add92"
   },
   "orientation": {
-    "a_base_rule": "lexicographically first i<j with P_a(p0)e_i and P_a(p0)e_j independent; ordered Gram-Schmidt with positive roots; certify pivot selection or refuse",
+    "a_base_rule": "At p0 project fixed real coordinates [48,49], then ordered Gram-Schmidt with positive roots; certify Gram determinant >= 1e-12. No pivot search or fallback.",
     "b_base_rule": "F_b0=Q(p0)F_a0",
     "rectangle_transport": "Kato W'=[P',P]W, first along bottom edge to (x,0), then vertical to (x,y)",
     "seam_sign_required": 1,
     "raw_eigenframe_link_sign_is_not_gate": true,
-    "base_frames_status": "NOT_COMPUTED"
+    "base_frames_status": "NOT_COMPUTED",
+    "fixed_pivot": {
+      "layer": 0,
+      "reciprocal_index": [
+        0,
+        0
+      ],
+      "index_position": 24,
+      "real_coordinates": [
+        48,
+        49
+      ],
+      "gram_determinant_lower": "0.000000000001",
+      "failure_meaning": "Orientation convention insufficient; not evidence of absence of a rank-two bundle."
+    },
+    "b_base_dependency": "Q(p0) must be certified before F_b0 and oriented q_b are available. A later whole-domain Q failure need not erase independently certified integers."
   },
   "identification": {
     "map": "T=P_b*iota*P_a restricted to E_a; Q=T*(T^T*T)^(-1/2)",
@@ -930,9 +949,11 @@
       -15,
       6
     ],
-    "modified_map": "J2(x)*exp(delta*chi(x)*I_source); J1 unchanged",
+    "modified_map": "J2_repaired(x)=J2(x)*R_rep(x); R_rep=exp(delta*chi(x)*I_source)",
     "I_source": "positive 90-degree complex structure on oriented source plane; matrix [[0,-1],[1,0]], not identity",
-    "source": "research/benchmarks/research_questions_007/DERIVATION.md"
+    "source": "research/benchmarks/research_questions_007/DERIVATION.md",
+    "rotation_name": "R_rep",
+    "exact_delta_semantics": "The exact principal delta defines the system; interval enclosures certify that value. A midpoint delta must not replace it."
   },
   "targets": {
     "norm": "spectral operator norm; proved Frobenius upper bounds allowed",
@@ -953,32 +974,86 @@
     "target_status": "PREDECLARED_NOT_OBSERVED"
   },
   "arithmetic": {
-    "method": "Exact rational interval endpoints and outward enclosures of every operation",
-    "elementary_functions": "rational pi enclosure; rational remainder bounds for trig and roots",
-    "matrix_inverse": "verified residual bounds",
-    "spectral_ordering": "verified inertia or independently reviewed spectral enclosure",
-    "projectors_polar_transport": "validated enclosures under separately certified gaps and overlap margins",
+    "method": "Outward Arb ball arithmetic; exact rational input, dyadic/rational endpoint export",
+    "backend": "python-flint==0.9.0",
+    "python": "CPython 3.12.14",
+    "native_build_lock": "Required before implementation acceptance; NOT_RESOLVED in this design packet",
+    "elementary_functions": "Certified Arb pi, trig, roots and inverses; no binary float input for decimal model constants",
+    "spectral_ordering": "Interval LDL^T inertia with certified nonzero pivots, deterministic rational bracketing and Weyl cell extension",
+    "projectors_polar_transport": "Riesz contour enclosures, rank-two positive polar formula and parametric validated Kato transport",
     "backend_status": "NOT_IMPLEMENTED",
-    "execution_precision_and_subdivision_budget": "required in a separately reviewed bounded implementation plan"
+    "execution_precision_and_subdivision_budget": "PLAN.json; IMPLEMENTATION_PLAN.md"
   },
-  "terminal_outcomes": [
-    "CERTIFIED_RELATIVE_FINITE_CLASS",
-    "REFUSED_HYPOTHESIS",
-    "INCONCLUSIVE",
-    "EXECUTION_ERROR"
-  ],
-  "current_outcome": null,
   "no_after_the_fact_changes": [
     "Do not change parameters, clusters, bases, orientation rule, seams, identification or thresholds after observing results",
     "Failed sufficient comparison screen is inconclusive about unequal classes",
     "No silent pivot fallback, numerical evidence substitution, second case or sweep"
   ],
-  "next_gate": "Independent static declaration review, then a bounded implementation plan before any physical execution",
+  "next_gate": "Independent revision/plan review, then bounded S0 arithmetic and synthetic validation implementation. No physical execution in this packet.",
   "limits": [
     "No gap, frame, overlap, seam, integer or two-cutoff result exists for this case",
     "No physical/infinite-cutoff class or experimental validation",
     "No changes to archived production/v078 sources",
-    "Only declaration and finite-set/index-map checks in this pass"
+    "Only declaration, implementation design and static integrity/index checks in this pass"
   ],
-  "hash_encoding": "SHA256 of UTF-8 json.dumps(value,separators=(',',':'),ensure_ascii=True), without trailing newline"
+  "hash_encoding": "SHA256 of UTF-8 json.dumps(value,separators=(',',':'),ensure_ascii=True), without trailing newline",
+  "freeze_status": "REVIEW_PENDING",
+  "supersedes": {
+    "case_id": "FC49-77-K-Bm025-v1",
+    "commit": "bb159404c1286387b1e0f2125b295b7d586042a9",
+    "reason": "Pre-execution audit amendment: fixed pivot, arithmetic backend, Kato phase reduction and outcome vector. No physical outcomes were observed."
+  },
+  "integer_extraction": {
+    "vertical_connection": "F^T*d_y F=0 for the declared exact vertical Kato frame",
+    "edge1_lift": "alpha is a continuous lift of J1 in the declared frames",
+    "edge2_lift": "beta is a continuous lift of repaired J2 in the declared frames",
+    "formula": "q=(Delta beta-Delta alpha)/(2*pi)",
+    "quadrature": "No independent connection quadrature in this gauge; both complete phase paths and all transport errors require certification"
+  },
+  "residual_bounds": {
+    "norm": "Frobenius residual / certified cross-spectrum separation; operator-norm replacement with constant 1 is not assumed",
+    "nested_identity": "iota^T H_b iota=H_a, subject to source-to-exact-model assembly proof",
+    "embedding": "smin(P_b iota F_a)^2 >= 1-r^2; r bounds ||(I-P_b)iota F_a||_2 via Frobenius residual",
+    "seam": "smin(P_1 S F_0)^2 >= 1-ell-r^2; ell bounds ||F_0^T(I-S^T S)F_0||_2; r bounds off-target leakage",
+    "seam_target": "ell+r^2 <= 39/400 is sufficient for smin >= 19/20",
+    "meaning": "Optional sufficient bounds, not measured values; failure of a sufficient bound is inconclusive"
+  },
+  "outcome_contract": {
+    "individual_statuses": [
+      "NOT_RUN",
+      "CERTIFIED_FINITE_CLASS",
+      "REFUSED_HYPOTHESIS",
+      "REFUSED_ORIENTATION_CONVENTION",
+      "INCONCLUSIVE",
+      "EXECUTION_ERROR"
+    ],
+    "relative_statuses": [
+      "NOT_RUN",
+      "CERTIFIED_RELATIVE_FINITE_CLASS",
+      "INCONCLUSIVE",
+      "REFUSED_HYPOTHESIS",
+      "EXECUTION_ERROR"
+    ],
+    "rules": [
+      "Certified violation is distinct from failure to prove a bound",
+      "Budget exhaustion is INCONCLUSIVE/BUDGET",
+      "Preserve individually certified q when only the relative sufficient screen fails",
+      "Certified joint conditions and unequal certified q imply EXECUTION_ERROR",
+      "Negative seam determinant refuses the chosen oriented hypothesis; no global nonorientable torus claim before compatible O(2) gluing exists"
+    ]
+  },
+  "current_outcomes": {
+    "q_a": {
+      "status": "NOT_RUN",
+      "integer": null
+    },
+    "q_b": {
+      "status": "NOT_RUN",
+      "integer": null
+    },
+    "relative": {
+      "status": "NOT_RUN",
+      "reason": null
+    }
+  }
 }

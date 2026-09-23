@@ -1,5 +1,5 @@
 {
-  "schema": "twistronics_static_readiness_sources_v2",
+  "schema": "twistronics_static_readiness_sources_v3",
   "date": "2026-09-23",
   "evidence_commit": "4b01d0867a85a92e9bc634cc852c32b4c219cef3",
   "migration_baseline_commit": "44dc66951057a995ee0999c785aca3e0e6c67092",
@@ -11,8 +11,8 @@
   "files": [
     {
       "path": "docs/certification-readiness/README.md",
-      "sha256": "2504e2989237b25b3a9c5c3aca00b2f55cf8b5360bf4d421ae98a655425a0513",
-      "bytes": 12048
+      "sha256": "2a6ae91bcabfd7f5e6daac693813cdfdd813e4919a73828b911ec4c343890437",
+      "bytes": 12830
     },
     {
       "path": "research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json",
@@ -31,18 +31,33 @@
     },
     {
       "path": "docs/certification-readiness/CASE.md",
-      "sha256": "7ab2d084f9023a85546c837e42f48feb08d3f14a3b8638c13cdbee03b55c596f",
-      "bytes": 9498
+      "sha256": "ca0e29e30fb6f7405ec721c033f97ad620a29b761107c5029a722b7fc461edc9",
+      "bytes": 11061
     },
     {
       "path": "docs/certification-readiness/CASE.json",
-      "sha256": "845d99071f2bfe148f19bc3974b9d2108defbcc8df7bf205f1238dfc885fc723",
-      "bytes": 16356
+      "sha256": "72c0a5801955777d041ae706f2356b9cf5c4a1941f366fe922b738e0bb099216",
+      "bytes": 19853
     },
     {
       "path": "research/benchmarks/research_questions_007/DERIVATION.md",
       "sha256": "b681e9aee4e8d57cf59a382b0879cf51647991b89929a5046d79907681347c42",
       "bytes": 9700
+    },
+    {
+      "path": "docs/certification-readiness/IMPLEMENTATION_PLAN.md",
+      "sha256": "8420357fb115480c93cf354f0f38a8947617230abe9b42bb0147228397eaad9e",
+      "bytes": 14808
+    },
+    {
+      "path": "docs/certification-readiness/PLAN.json",
+      "sha256": "b0c41faef08b372b2bb65d96e6f67081d8bb7e381f9190c9016c98bfb185c16f",
+      "bytes": 4524
+    },
+    {
+      "path": "docs/certification-readiness/verify_declaration.py",
+      "sha256": "d78259cdc21aa2eabfc37c7d97d3a72827bd9d14908e6ef19865206e3e25b336",
+      "bytes": 9124
     }
   ],
   "archive_members": [
@@ -199,14 +214,20 @@
     "definition_spans_located_with_ast": true,
     "archived_modules_imported": false,
     "physical_or_synthetic_numerical_runs": 0,
-    "meaning": "Integrity and static source inspection only. No mathematical or physical certification is inferred from hashes."
+    "meaning": "Integrity and static source inspection only. No mathematical or physical certification is inferred from hashes.",
+    "method": "Reproduced by verify_declaration.py for the v2 packet; static integrity and finite-set checks only."
   },
-  "partner_review_status": "source_proof_audit_complete; fixed_case_declaration_review_pending",
+  "partner_review_status": "source_proof_and_v1_audits_complete; v2_and_implementation_design_review_pending",
   "prior_readiness_commit": "838be1b7fba2dba38c99769a150b3d2af7c121b5",
   "source_proof_audit": {
     "claude_source_comment": 5791880416,
     "codex_completed_review": 5288846821,
     "qualifications_incorporated": true
   },
-  "declaration_receipt": "docs/certification-readiness/DECLARATION_CHECKS.json"
+  "declaration_receipt": "docs/certification-readiness/DECLARATION_CHECKS.json",
+  "fixed_case_audit": {
+    "claude_source_comment": 5792152685,
+    "codex_completed_review": 5289043968,
+    "reviewed_commit": "bb159404c1286387b1e0f2125b295b7d586042a9"
+  }
 }

@@ -3,8 +3,11 @@
 Date: 2026-09-23. Status: source-level proof independently audited for the
 declared case. Claude comment [5791880416](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791880416)
 and Codex review [5288846821](https://github.com/alanfuller15/Twistronics/pull/2#pullrequestreview-5288846821)
-record the audit. This revision incorporates its qualifications and adds a
-[fixed, unexecuted case declaration](CASE.md). No physical run was performed.
+record the audit. The fixed-case audit is recorded in Claude comment
+[5792152685](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5792152685)
+and Codex review [5289043968](https://github.com/alanfuller15/Twistronics/pull/2#pullrequestreview-5289043968).
+The [v2 declaration](CASE.md) and [bounded implementation design](IMPLEMENTATION_PLAN.md)
+incorporate its qualifications and remain pending independent review. No physical run was performed.
 
 This note follows q008 at `4b01d0867a85a92e9bc634cc852c32b4c219cef3`,
 Claude comment [5791531635](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791531635),
@@ -155,7 +158,7 @@ using a cross-cutoff comparison. Orientation precedes principal repair.
 | Corner repair | q007 principal construction; q008 audit composition warning | Certified margin below 2 for each unrepaired corner discrepancy, then the specified principal repair and continuous maps for the repaired system. |
 | Cross-cutoff identification | No such object is supplied by this reviewed N=4 migration package | Explicit continuous oriented isometry between the selected fibres over the whole rectangle. Ordered ambient index inclusion alone does not identify the selected eigenspaces. |
 | Joint class comparison | q008 equations (6)-(7) | Certify the joint lifted-corner condition or uniform sufficient bound for the repaired systems under that single identification. Endpoint agreement is insufficient. |
-| Integer extraction | q008 section 5 conditional contract | Certified phase variation, seam-defect quadrature, endpoint errors, pi and directed arithmetic; exactly one integer candidate in the final enclosure. |
+| Integer extraction | q008 section 5 conditional contract | Certified phase variation, endpoint errors, pi and directed arithmetic; exactly one integer candidate in the final enclosure. The declared vertical Kato gauge reduces the defect integral to an edge-phase increment; see CASE.md. |
 | Physical/infinite-cutoff interpretation | Not established by this packet | Separate physical reference and controlled finite-to-infinite comparison. Agreement of two finite classes is insufficient. |
 
 The migration ledger has 5,944 frame, 8,224 link and 2,304 angle records.
@@ -170,15 +173,21 @@ are not being assessed or promoted into continuous certificates here.
 
 ## 5. Next bounded handoff
 
-The real-structure source audit is complete. The next review concerns the
-explicit [CASE.md](CASE.md) and [CASE.json](CASE.json) declaration: model,
-two ordered bases, two selected band pairs, rectangle, seam directions,
-orientation construction, continuous fibre identification and arithmetic
-targets. These are newly declared choices, not inferred retained results.
-Claude should test their consistency and identify any missing condition
-before a bounded numerical certificate implementation is designed.
+The source-level and v1 declaration audits are complete. The pre-execution
+[v2 amendment](CASE.md) fixes a certifiable pivot, keeps the principal repair
+exact, uses both complete edge-phase lifts in the Kato gauge, and records
+individual and relative outcomes separately. No model parameters, bases,
+band pairs or existing numerical targets were changed.
 
-That review requires no Hamiltonian run, eigensolver, sweep, production
-change or v078 correction. The existing v078 owner retains that work.
-The source map is inspectable now; physical implementation remains gated
-on a declared case and the missing uniform/error evidence above.
+[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) and [PLAN.json](PLAN.json)
+choose a ball-arithmetic backend, certified inertia method, projector and
+transport enclosure strategy, hard work limits, and an evidence contract.
+They also retain two qualifications: general Sylvester residual bounds use
+the Frobenius norm, and partial-shift overlap needs deletion loss as well as
+off-target leakage. These bounds are conditional mathematics, not case results.
+
+The next implementation slice is S0: lock the backend build and validate
+arithmetic and enclosure primitives on bounded synthetic examples. That
+slice begins after the declaration/design audit and produces reviewable code
+before any physical-model execution. Current status is NOT_IMPLEMENTED.
+The v078 correction owner retains that work; frozen q001-q008 are unchanged.

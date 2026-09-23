@@ -1,173 +1,213 @@
-# Fixed declaration FC49-77-K-Bm025-v1
+# Fixed declaration FC49-77-K-Bm025-v2
 
-Status: DECLARED_UNEXECUTED; independent specification review pending.
-This is one finite-model feasibility case. No gap, orientation, seam,
-class agreement or integer outcome has been measured or certified.
-`CASE.json` is the machine-readable declaration. `DECLARATION_CHECKS.json`
-checks its source bindings, finite sets and index maps only.
+Date: 2026-09-23. Status: DECLARED_UNEXECUTED; revision/design review pending.
+No gap, frame, seam or class outcome has been measured or certified.
+[CASE.json](CASE.json) is the machine-readable declaration.
+[DECLARATION_CHECKS.json](DECLARATION_CHECKS.json) records static integrity
+and finite-set checks only.
 
-## Purpose and chosen inputs
+This version explicitly supersedes unexecuted v1 at
+`bb159404c1286387b1e0f2125b295b7d586042a9`, following Claude source comment
+[5792152685](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5792152685)
+and Codex review [5289043968](https://github.com/alanfuller15/Twistronics/pull/2#pullrequestreview-5289043968).
+It changes the orientation pivot convention and arithmetic design before
+any outcome is observed, clarifies integer extraction, and separates
+individual from relative outcomes. The model, bases, band pairs, seams,
+identification and previous numerical targets are unchanged.
 
-Choose the archived real, massless K-valley model at B="-0.25", with the
-exact decimal parameters in CASE.json and the sine-sigma_z harmonic.
-This reuses one retained parameter value, while specifying a new whole-cell
-problem. All decimal strings designate exact rational input values;
-trigonometric constants and geometry are mathematical values to enclose,
-not exact values of a prior NumPy evaluation. The archived formulas and
-operation conventions are the model reference. Floating execution would
-need an explicit error bridge to these values.
+## 1. Exact model and finite systems
 
-The rectangle is fractional [0,1] x [0,1], with base orientation dx wedge dy,
-and k=x G1+y G2. Positive coordinate direction is the traversal convention
-on both edges. This is a proposed full-cell finite gluing problem; it is
-not the pair of local circles used by the migration consumer.
+Use the archived real, massless K-valley model at B="-0.25", with all
+constructor constants in CASE.json interpreted as exact rationals and the
+sine-sigma_z harmonic on all three directions. Trigonometric and geometric
+values are mathematical functions of those inputs, not stored NumPy
+approximations. The archived formulas are the source reference; a later
+floating execution needs an error bridge to this exact model.
 
-Lambda_a is the ordered 49-vector basis from the retained RUN/BASIS.json.
-Define D={(0,0),(1,0),(-1,0),(0,1),(0,-1),(-1,1),(1,-1)} and
-Lambda_b=sort_lex(Lambda_a+D). This is a deliberate one-neighbor-shell
-enlargement with 77 reciprocal indices, not a radial N=6 cutoff or a
-claim of cutoff convergence. Both explicit ordered lists and their hashes
-are retained in CASE.json. Both constructors receive those lists via
-index_set; N=4 remains only the archived constructor argument and must not
-be used to regenerate either list.
+The domain is the whole fractional rectangle [0,1]² with k=x G1+y G2,
+base orientation dx wedge dy, and increasing coordinate parameters on both
+edge pairs. This is a proposed abstract finite gluing problem, not the
+migration consumer's local-circle calculation.
 
-Both layers contain the same index list with two sublattices at each index.
-Thus dimensions are 196 and 308. Select zero-based ordered eigenvalue
-indices [97,98] and [153,154], respectively. These are explicit candidate
-clusters, not an assertion that two middle pairs represent the same
-physical bands. Certify their rank, ordering and uniform external gaps
-separately. Refuse this case if they fail; do not silently move the pair.
+Lambda_a is the ordered 49-vector RUN/BASIS.json list. With
+D={(0,0),(1,0),(-1,0),(0,1),(0,-1),(-1,1),(1,-1)}, define
+Lambda_b=sort_lex(Lambda_a+D), removing duplicates. Its 77 indices form one
+neighbor shell, not an N=6 radial cutoff. Both explicit lists and their
+canonical hashes are in CASE.json. Both constructors receive index_set;
+the unchanged N=4 argument must not regenerate either list.
 
-The ambient inclusion iota maps
+The real dimensions are 196 and 308. The chosen zero-based ordered
+eigenvalue pairs are [97,98] and [153,154]. These candidate clusters are
+not asserted to be the same physical bands. Certify each pair's rank,
+ordering and external gaps without changing its indices.
 
-```
-e_(2*49*layer + 2*i + s) -> e_(2*77*layer + 2*j(i) + s),
-```
+The ambient inclusion is the exact isometry
+e_(2*49*layer+2*i+s) -> e_(2*77*layer+2*j(i)+s),
+where j preserves the reciprocal index and s is the adjacent component
+in the fixed realify basis. CASE.json retains all 196 target row indices.
+It intertwines the declared ambient real structures. It does not by
+itself identify spectral fibres.
 
-where j(i) is the position of the same reciprocal index in Lambda_b.
-The explicit 196-entry column-to-row map is retained. It preserves layers
-and sublattice pairs and satisfies iota^T iota=I exactly. It is not a
-selected-fibre identification until the projector condition below holds.
+## 2. Projectors, fixed orientation and identification
 
-## Selected fibres, orientation and reference identification
+Let P_a,P_b be the exact real rank-two projectors for those pairs.
+Certify external gaps >=1e-5 meV on the whole closed rectangle.
+Internal degeneracy within the pair is allowed. The affine Hamiltonian
+and gap hypotheses give smooth pair projectors; that conclusion is
+conditional on geometry being well-defined and the gaps being certified.
 
-Let P_a(k),P_b(k) be exact real rank-two spectral projectors for the
-declared clusters in their fixed realify bases. First certify uniform
-external gaps at least 1e-5 meV on the closed rectangle for each system.
-The selected pair may have an internal degeneracy; no internal-gap gate
-is imposed for this pair-projector problem.
+At p0=(0,0), use the two real coordinates [48,49] in system a: layer 0,
+reciprocal index (0,0), position 24 in the retained list. Set
+v=P_a(p0)e_48, w=P_a(p0)e_49 and G=[v,w]^T[v,w].
+Require det G >= 1e-12, then use ordered Gram-Schmidt with positive
+normalizing roots to define F_a0. This threshold is a newly declared
+dimensionless convention target, not an expected observed value.
+There is no pivot search or fallback. A certified failure refuses this
+orientation convention; an unresolved interval is inconclusive. Neither
+implies absence of a rank-two bundle. V1's lexicographic rule is removed:
+ordinary intervals cannot generally certify all preceding determinants
+to be exactly zero.
 
-Use p0=(0,0). In the real ambient coordinates for system a, choose the
-lexicographically first i<j for which P_a(p0)e_i and P_a(p0)e_j are
-independent. Ordered Gram-Schmidt with positive normalizing square roots
-defines F_a0 and its orientation. This is a fixed conditional construction,
-not a retained numerical frame. A future implementation must identify and
-certify that pivot pair, retain its vectors, and refuse if it cannot prove
-the selection; it must not orient each sample independently.
+Define T=P_b iota P_a restricted to E_a, and Q=polar(T).
+Require its restricted smallest singular value >=1/2 over the rectangle.
+Set F_b0=Q(p0)F_a0. Thus b's declared orientation depends on certifying Q
+at p0; if that cannot be established, q_b is unavailable in this convention.
 
-Propagate the oriented frame over the rectangle by exact Kato transport:
-first along (0,0)->(x,0), then (x,0)->(x,y), with W'=[P',P]W.
-This declared path family defines a continuous rectangle frame when the
-regularity and gap hypotheses hold. It does not assert path independence
-or periodicity, and does not assume a trivial torus bundle.
+For each system transport its base frame first along (0,0)->(x,0),
+then vertically to (x,y), by F'=[P',P]F. This exact Kato path family
+defines continuous oriented rectangle frames. It asserts neither path
+independence nor a periodic torus frame. Q's continuous invertibility
+and its positive orientation at p0 ensure its orientation throughout
+the connected rectangle. Full-domain Q certification remains a separate
+gate even when its basepoint value is known.
 
-Define T(k)=P_b(k) iota P_a(k): E_a(k)->E_b(k). Require the smallest
-singular value of this restricted map to be at least 1/2 everywhere on
-the rectangle. The intended identification is its polar isometry
+## 3. Partial seams, corner repair and comparison
 
-```
-Q=T (T^T T restricted to E_a)^(-1/2).
-```
+Use the archived valley +1 shifts d1=(-1,0), d2=(0,-1).
+They represent k->k+G_i with index n->n-e_i in infinite indexing, but
+their finite restrictions are partial shifts; finite covariance is not
+assumed. Define
+J1(y)=polar(P(1,y) S_d1 P(0,y)) on E(0,y), and
+J2(x)=polar(P(x,1) S_d2 P(x,0)) on E(x,0).
 
-Set F_b0=Q(p0)F_a0, then use the same coordinate path family for system b.
-Q is orientation-preserving at p0 by this definition. Its continuous,
-everywhere-invertible extension preserves that sign over the connected
-rectangle; this conclusion depends on certifying those hypotheses. A
-whole-rectangle margin is required, not just a base-point overlap.
+For each system separately:
 
-No numerical frames, pivots or projector fields exist in this declaration.
-Their construction is fully specified conditionally; the resulting
-objects must be retained and certified during a future approved execution.
-If lexicographic pivot selection cannot be resolved by the chosen exact
-and interval reasoning, report that failure rather than changing the rule.
+1. Certify restricted seam singular values >=19/20 along both complete edges.
+2. In the continuous oriented rectangle frames, certify positive seam
+   determinant. Raw independently chosen eigenframe signs are not this
+   gate. A certified negative determinant refuses the chosen oriented
+   hypothesis. Before compatible O(2) gluing exists, it does not establish
+   a global nonorientable torus bundle.
+3. Form A=J2(1)J1(0), B=J1(1)J2(0), and certify ||A-B||_2<=1<2.
+   Define the exact principal delta=Arg(A^T B) in (-pi,pi).
+   With chi(x)=10x³-15x⁴+6x⁵, set
+   R_rep(x)=exp(delta chi(x) I_source) and
+   J2_repaired(x)=J2(x) R_rep(x); leave J1 unchanged.
+   I_source is the positive 90-degree structure [[0,-1],[1,0]]
+   on the oriented source plane, not an identity matrix.
 
-## Seam directions, repair and joint comparison
+The exact delta defines the repaired system. An interval encloses that
+delta; replacing it by its midpoint defines a different system and does
+not satisfy the exact corner identity. The declared principal construction
+and C² endpoint-flat collar are those of q007/q008.
 
-For each finite basis use the archived valley +1 shifts d1=(-1,0) and
-d2=(0,-1). In the infinite plane-wave indexing convention these represent
-k->k+G1 and k->k+G2, respectively: the same total momentum is indexed by
-n-e_i at the translated k. Their finite restrictions are partial shifts,
-so exact finite Hamiltonian covariance is not assumed.
+Only after each individual repair is valid, compare
+Q(target)^T J_i^b Q(source) with J_i^a along the complete repaired edges.
+Require each uniform operator-norm distance <=1. The resulting angular
+bounds rho_i<=pi/3 satisfy rho1+rho2<=2pi/3<pi, giving q008's joint
+sufficient condition. Endpoint agreement alone is inadequate.
+Failure of this conservative screen is inconclusive about class equality;
+do not substitute a new reference, threshold or homotopy after observing it.
 
-On the left/right edge define J1(y)=polar(P(1,y) S_d1 P(0,y)) as a map
-between the selected fibres. Define J2(x) similarly from (x,0) to (x,1).
-For EACH finite system, separately:
+## 4. Residual bounds: norms and lost components
 
-1. Certify the restricted overlap singular value is at least 19/20 on
-   every complete edge. This adopts the old 0.05 loss tolerance as a
-   new continuous target; its satisfaction has not been observed here.
-2. In the consistently oriented rectangle frames above, certify every
-   seam map has positive determinant. A negative raw eigenframe-link
-   determinant is irrelevant to this condition. Stop if orientation fails.
-3. Let A=J2(1)J1(0), B=J1(1)J2(0). Require ||A-B||_2<=1, a declared
-   strict margin from the antipodal threshold 2. Define delta=Arg(A^T B)
-   in (-pi,pi), and repair J2(x) by right composition with
-   exp(delta*chi(x)*I_source), chi(t)=10t^3-15t^4+6t^5, as in q007.
-   Retain the exact repair rule, delta enclosure and corner relation.
+These are optional sufficient routes for a future implementation.
+They are not retained numerical evidence.
 
-Here I_source is the positive 90-degree complex structure on the oriented
-source two-plane, not the identity operator. In an oriented orthonormal
-frame it is [[0,-1],[1,0]].
+For an orthonormal selected source frame F0, A0=F0^T H0 F0 and target
+projector P1, define R=(I-P1)S F0. The exact Sylvester identity is
 
-Only then compare the two repaired systems under Q. Pull the large
-system's map back as Q(target)^T J_i^b Q(source), and require its uniform
-operator-norm distance from J_i^a to be at most 1 for each edge.
-Then rho1+rho2<=2*pi/3<pi, so q008's joint sufficient condition applies.
-This v1 declaration uses that conservative screen only. A failed screen
-does not prove different classes; it returns INCONCLUSIVE and cannot be
-replaced after seeing results by another reference or threshold.
+H1_perp R - R A0 = Bperp,
+Bperp=(I-P1)(H1 S-S H0)F0.
 
-These choices define candidate abstract finite gluing systems. Repair and
-class agreement do not prove preservation of physical reciprocal sewing
-or select the infinite-basis graphene reference class.
+A certified separation delta_cross between spec(A0) and the whole target
+complement gives ||R||_2 <= ||R||_F <= ||Bperp||_F/delta_cross.
+The safe general bound uses a Frobenius residual. An operator-norm
+residual with the same constant is not assumed for arbitrary two-sided
+spectra. Same-system gap bounds are not automatically cross-system
+spectral separation bounds.
 
-## Arithmetic, refusal policy and staged execution boundary
+For the nested inclusion, index-local coefficients and the shared
+coupling stencil give iota^T H_b iota=H_a for the exact source formulas.
+This identity must also be checked in the independent assembly bridge.
+Since iota is an isometry, smin(P_b iota F_a)^2 >=1-r² when r bounds
+||(I-P_b)iota F_a||_2. Thus r²<=3/4 suffices for the identification target.
 
-Use the spectral operator norm for perturbation, overlap and map bounds,
-with a Frobenius upper bound permitted when proved. The exact-input target
-Hamiltonian assembly error is at most 1e-8 meV in operator norm per system.
-Gap certificates must already include assembly and spectral error; meeting
-an assembly target alone does not certify a gap or projector.
+For a partial seam shift let L=F0^T(I-S^T S)F0 and M=P1 S F0. Exactly,
 
-The arithmetic design is exact rational intervals with outward enclosure
-at every step. Elementary real functions require rational remainder bounds
-(including a rational pi enclosure); inverse matrices require validated
-residual bounds; ordered eigenvalue enclosures require verified inertia
-or another reviewed spectral method. Inverse square roots, projectors and
-Kato transport require reviewed enclosures derived from certified margins.
-This specifies a method contract, not an implemented interval backend.
-No double-precision diagnostic may be substituted as a certificate.
+M^T M = I-L-R^T R.
 
-For EACH cutoff use q=(Delta phi-K1)/(2*pi), with phi, K1 and their sign
-conventions defined in q008 DERIVATION.md sections 1-2 for the repaired
-maps and projector connection. Require each sampling step's variation plus
-its endpoint errors to be at most pi/2. Enclose K1 quadrature, endpoint
-phase, transport/discretization and arithmetic errors together. Each final
-q interval must have half-width at most 1/8 and contain exactly one integer;
-otherwise refuse integer certification. The two integers must agree,
-consistent with the independently certified joint comparison. These are
-predeclared targets, not reported error bounds. Mathematical integrality
-is used only after the continuous oriented repaired-gluing hypotheses
-have been established.
+If ell>=||L||_2 and r>=||R||_2, then smin(M)^2>=1-ell-r².
+The seam target follows from ell+r²<=39/400.
+Off-target residual control alone is insufficient: deletion loss L must
+also be bounded. Covariance on a surviving index window is not covariance
+of the entire truncated Hamiltonian. A failed sufficient bound alone
+cannot be reported as a failed exact overlap hypothesis.
 
-Possible future terminal results are CERTIFIED_RELATIVE_FINITE_CLASS,
-REFUSED_HYPOTHESIS, INCONCLUSIVE or EXECUTION_ERROR. Only the first requires
-all the conditions above plus retained exact inputs, source identities,
-frame/projector evidence, enclosures, logs and a complete error budget.
-No outcome is currently selected. Failure remains a useful recorded result.
+## 5. Arithmetic and integer extraction
 
-Before any physical execution, independently review this declaration,
-then retain an implementation plan with a finite work budget, interval
-backend/version, spectral method, subdivision limit and termination rules.
-Those execution choices are still open. This packet authorizes no sweep
-and supplies no runtime estimate. The v078 correction owner is unaffected.
+Use operator norms with proved Frobenius upper bounds where appropriate.
+The assembly target is <=1e-8 meV per system; spectral and projector
+certificates must include assembly error, not merely meet that target.
+
+The proposed backend is python-flint 0.9.0 with Arb outward ball arithmetic.
+Decimal inputs enter as exact rationals, never binary floats. Export
+certified dyadic/rational endpoints, including pi and elementary-function
+enclosures. The native build and artifact hashes remain to be locked in
+stage S0; no backend is implemented in this packet.
+[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) specifies the methods,
+[PLAN.json](PLAN.json) their finite budgets. Rounded diagnostics do not
+replace outward enclosures.
+
+Let alpha be a continuous angle lift of J1 in the declared frames, and
+beta a continuous lift of repaired J2. The vertical Kato equation gives
+F^T partial_y F=0: the commutator maps the selected plane into its
+orthogonal complement, so its compression vanishes. Hence q008's
+K1=Delta alpha and phi=beta, giving
+
+q=(Delta beta-Delta alpha)/(2pi).
+
+No separate seam-connection quadrature is needed in this gauge. Both
+complete lifts must still be certified, including the repair angle and
+validated transport errors. The vertical transport is parameterized by
+all x; checking isolated vertical paths is insufficient.
+Each accepted phase step must bound variation plus endpoint errors by
+pi/2. Each final q interval must have half-width <=1/8 and exactly one
+integer candidate. Integrality is invoked only after continuous oriented
+repaired gluing has been established.
+
+## 6. Outcomes and execution boundary
+
+Retain a result vector (q_a, q_b, relative), not one destructive status.
+Possible individual statuses are CERTIFIED_FINITE_CLASS,
+REFUSED_HYPOTHESIS, REFUSED_ORIENTATION_CONVENTION, INCONCLUSIVE and
+EXECUTION_ERROR; all are currently NOT_RUN with null integer fields.
+
+- A proved violation of an exact hypothesis is a refusal; inability to
+  prove it is INCONCLUSIVE, with the unresolved enclosure retained.
+- Budget exhaustion is INCONCLUSIVE/BUDGET, not a hypothesis failure.
+- Individually certified integers remain valid if a later full-domain Q
+  or relative sufficient screen is inconclusive. Their own orientation
+  prerequisites, including Q(p0) for b, must already hold.
+- CERTIFIED_RELATIVE_FINITE_CLASS requires all joint gates and equal
+  individually certified integers. Unequal integers with all joint gates
+  certified imply EXECUTION_ERROR in the certification chain.
+- A negative seam sign retains the local obstruction evidence without
+  claiming a global bundle exists.
+
+This v2/design packet awaits independent review. The next implementation
+slice is S0 arithmetic and synthetic validation, followed by code review
+before physical execution. No archived module was imported, Hamiltonian
+assembled, eigensolver run or sweep performed here. No physical or
+infinite-cutoff result follows from the declaration. The v078 owner and
+frozen q001-q008 work are unchanged.
