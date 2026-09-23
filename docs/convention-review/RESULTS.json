@@ -1,0 +1,401 @@
+{
+  "status": "Q_REVERSAL_EQUIVALENCE_REPRODUCED_CONVENTION_UNRESOLVED",
+  "sources": {
+    "research/benchmarks/vafek_2025/model.py": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3",
+    "docs/convention-review/reproduce.py": "f8432d312946bf76c4ab0449da27d8522a47fc586fe8786d573442bc132f62af"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.3.5"
+  },
+  "tolerance": 1e-10,
+  "unitary": "tau_x (x) sigma_x = kron(X, X)",
+  "invariance_checks": {
+    "U_unitary": 0.0,
+    "U_hc_Udag_minus_hc": 0.0,
+    "U_hf_Udag_minus_hf": 0.0
+  },
+  "block_identities": [
+    {
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "U_C_Udag_minus_C_minusQ": 0.0,
+      "U_F_Udag_plus_F_minusQ": 0.0,
+      "restated_blocks_reproduce_model_h_cc_ff_terms": 4.440892098500626e-16
+    },
+    {
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "U_C_Udag_minus_C_minusQ": 0.0,
+      "U_F_Udag_plus_F_minusQ": 0.0,
+      "restated_blocks_reproduce_model_h_cc_ff_terms": 0.0
+    },
+    {
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "U_C_Udag_minus_C_minusQ": 0.0,
+      "U_F_Udag_plus_F_minusQ": 0.0,
+      "restated_blocks_reproduce_model_h_cc_ff_terms": 2.220446049250313e-16
+    },
+    {
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "U_C_Udag_minus_C_minusQ": 0.0,
+      "U_F_Udag_plus_F_minusQ": 0.0,
+      "restated_blocks_reproduce_model_h_cc_ff_terms": 0.0
+    }
+  ],
+  "Q_reversal_identity": [
+    {
+      "parameters": {},
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "same_Q_matrix_difference_meV": 1.9323415913727757,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {},
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "same_Q_matrix_difference_meV": 1.9844263524370547,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {},
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "same_Q_matrix_difference_meV": 0.556654296317447,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {},
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "same_Q_matrix_difference_meV": 3.199934358974417,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 5.684341886080802e-14
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "same_Q_matrix_difference_meV": 5.152910910327407,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 4.577566798522237e-16
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "same_Q_matrix_difference_meV": 5.291803606498831,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "same_Q_matrix_difference_meV": 1.4844114568465017,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4212589332811784e-14
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "same_Q_matrix_difference_meV": 8.533158290598351,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 5.684341886080802e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "same_Q_matrix_difference_meV": 0.5747595453220669,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "same_Q_matrix_difference_meV": 0.5902517407605927,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "same_Q_matrix_difference_meV": 0.16557236654296048,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "same_Q_matrix_difference_meV": 0.9517948717949309,
+      "U_Hlit_Udag_minus_Hdir_minusQ_meV": 5.695433295429594e-14
+    }
+  ],
+  "cpp_sign_identity": [
+    {
+      "parameters": {},
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {},
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {},
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {},
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 5.684341886080802e-14
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 4.577566798522237e-16
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4212589332811784e-14
+    },
+    {
+      "parameters": {
+        "strain": 0.004
+      },
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 5.684341886080802e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 1.4210854715202004e-14
+    },
+    {
+      "parameters": {
+        "cpp": 1000.0,
+        "M": -2.0
+      },
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "Hlit_cpp_minus_Hdir_neg_cpp_meV": 5.695433295429594e-14
+    }
+  ],
+  "spectral_comparisons": [
+    {
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "spec_lit_KQ_vs_dir_K_minusQ_meV": 7.105427357601002e-14,
+      "spec_lit_KQ_vs_dir_minusK_minusQ_meV": 7.105427357601002e-14,
+      "spec_lit_KQ_vs_lit_K_minusQ_meV": 1.2986822492731136,
+      "max_adjacent_gap_difference_same_KQ_meV": 1.5320713555991716
+    },
+    {
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "spec_lit_KQ_vs_dir_K_minusQ_meV": 5.684341886080802e-14,
+      "spec_lit_KQ_vs_dir_minusK_minusQ_meV": 8.526512829121202e-14,
+      "spec_lit_KQ_vs_lit_K_minusQ_meV": 1.3773642305661298,
+      "max_adjacent_gap_difference_same_KQ_meV": 1.486751661974651
+    },
+    {
+      "K": [
+        0.37,
+        0.05
+      ],
+      "Q": -0.3,
+      "spec_lit_KQ_vs_dir_K_minusQ_meV": 7.105427357601002e-14,
+      "spec_lit_KQ_vs_dir_minusK_minusQ_meV": 2.842170943040401e-14,
+      "spec_lit_KQ_vs_lit_K_minusQ_meV": 0.29738570510704676,
+      "max_adjacent_gap_difference_same_KQ_meV": 0.26092725986045195
+    },
+    {
+      "K": [
+        0.0,
+        0.4
+      ],
+      "Q": 1.1,
+      "spec_lit_KQ_vs_dir_K_minusQ_meV": 7.105427357601002e-14,
+      "spec_lit_KQ_vs_dir_minusK_minusQ_meV": 5.684341886080802e-14,
+      "spec_lit_KQ_vs_lit_K_minusQ_meV": 2.0800696726886514,
+      "max_adjacent_gap_difference_same_KQ_meV": 3.1214837640401925
+    }
+  ],
+  "pauli_product_search": {
+    "same_KQ": [],
+    "Q_reversed": [
+      "XI with complex conjugation",
+      "XX"
+    ]
+  },
+  "predicates": {
+    "U_unitary_and_hc_hf_invariant": true,
+    "block_identities": true,
+    "Q_reversed_unitary_identity": true,
+    "same_Q_matrices_differ_off_axis": true,
+    "cpp_sign_identity": true,
+    "Q_reversal_not_a_symmetry_of_literal": true,
+    "retained_same_Q_gap_witness_reproduced": true,
+    "no_same_KQ_pauli_product_equivalence": true,
+    "tau_x_sigma_x_found_for_Q_reversal": true
+  },
+  "limitations": [
+    "Implemented model only; the paper's signed boost/coordinate/coupling convention is not checked (primary source not reachable from the reviewing environment).",
+    "Both assemblies were authored within this project; not independent validation.",
+    "No root search, transport, braid, Euler-class or sweep; 4x4 matrices at fixed points only."
+  ]
+}

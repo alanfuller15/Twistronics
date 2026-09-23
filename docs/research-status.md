@@ -56,6 +56,13 @@ The eight retained classifications agree in the supplied and replayed v078p reco
 - [Correction intake](correction-intake.md): maps each correction to its existing probe and closing evidence, and lists what an incoming package must contain.
 - [Checker readiness receipt](intake-evidence/README.md): shows this workspace can run the baseline checker.
 
+### 5. Separate diagnostic: the projected-model convention
+
+This is not part of the migration corrections. The [`vafek_2025`](../research/benchmarks/vafek_2025/README.md) paper benchmark has two in-project assemblies of the projected Hamiltonian.
+- **Same boost:** at the same (K, Q) their spectra differ. PR #4, commit [`caa700b`](https://github.com/alanfuller15/Twistronics/commit/caa700bfa285b889502bc902779b114b868b1aad), draft and not merged, shows this.
+- **Opposite boost:** they are unitarily equivalent once Q is reversed. [Convention review note](convention-review/README.md) gives the derivation and the hash-bound reproduction.
+- **Open question:** which signed boost, coordinate or coupling convention the paper uses remains **UNRESOLVED**. The next gate is a signed-convention table checked against the primary source.
+
 ## Evidence and status
 
 | Category | Item | Status | Where it is recorded |
@@ -65,6 +72,7 @@ The eight retained classifications agree in the supplied and replayed v078p reco
 | Observed baseline behavior | A returned `status='REJECTED'` is recorded as ACCEPTED, and a duplicate plan reports COMPLETE | Observed defect (synthetic controls) | [v078p review](../research/benchmarks/migration_contract_review/README.md#other-retained-controls) |
 | Observed baseline behavior | A geometry-stage error leaves rows but no model or geometry context, summary or manifest | Observed defect (synthetic control) | Same section |
 | Observed baseline behavior | The linter falsely accepts two claims, and the failure-control suite does not enforce its outcomes | Observed defect | [`LINT_PROBES.json`](../research/benchmarks/migration_contract_review/LINT_PROBES.json), [`FABLE_NEXT_PASS.md`](../research/benchmarks/migration_contract_review/FABLE_NEXT_PASS.md) |
+| Separate diagnostic | For the `vafek_2025` projected model, U·H_literal(K,Q)·U† = H_direct(K,−Q) with U = τx⊗σx; the same-Q gap difference of 1.53207 meV is reproduced | Verified for the implemented model; the paper's convention is **UNRESOLVED** | [Convention review](convention-review/README.md) |
 | Verified intake tooling | The baseline checker accepts the intact run (exit 0) and refuses `wrong_label` for exactly the intended error (exit 1). The runner enforces exact outcomes, with 12/12 synthetic regressions passing. | Verified at `8281f9e`; confirmed by Codex review 5286522495 | [Receipt](intake-evidence/README.md) |
 | Implementation corrections | Content-consistency checking in the delivery gate | **UNREVIEWED** | [Correction intake](correction-intake.md#correction-map), item 1 |
 | Implementation corrections | Returned status/schema and a unique case inventory | **UNREVIEWED** | Items 2a and 2b |
