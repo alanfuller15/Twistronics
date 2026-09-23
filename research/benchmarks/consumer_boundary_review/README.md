@@ -41,6 +41,8 @@ Do not use Python `-O`; the preserved archive extractor uses assertions. Existin
 
 **Probe exit 0 means the pinned baseline observations, including its defects, were reproduced. It does not mean the consumer is repaired or accepted.** The outcome checker checks exact exits, the intended injected error, constructor arguments, case inventory and actual file changes. A source mismatch or missing current observation prevents success. The outcome-checker tests exercise counterexamples that must not be mistaken for the intended reproductions.
 
+Claude Code reports independently reproducing all five scenarios and seven outcome-checker tests in [source comment 5788538364](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5788538364). The report uses Python 3.12.3 rather than this receipt's 3.12.14; its rerun artifacts are not included here. The review also identifies three limits of this baseline-only harness: it observes the nine defaults declared in the plan rather than every constructor option; malformed observations or timeouts exit nonzero but can leave a partial directory without a final receipt; and the changed-plan hash comparison uses two worker-produced records rather than a parent-side recomputation. These limits do not remove the retained counterexamples. A future corrected-package acceptance harness should bind every effective constructor option, retain failure receipts and independently hash the current plan.
+
 ## Required behavior in the corrected package
 
 1. The declared plan and actual constructor must agree under an explicit policy. A fixed-baseline consumer can reject a changed plan before work starts; a configurable consumer must actually use and record it. Do not report COMPLETE with conflicting plan/model identities.
