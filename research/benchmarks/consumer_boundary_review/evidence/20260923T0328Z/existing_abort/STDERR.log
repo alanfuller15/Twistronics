@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/81af9997e272/Twistronics-consumer-boundary/research/benchmarks/consumer_boundary_review/probe_consumer.py", line 95, in worker
+    rc = mv.main(str(out), discovery=lambda model: [np.array([.3, .4]),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/twistronics-boundary-ixwxbw_2/source/migrated_valley_control.py", line 55, in main
+    frozen = list(BM(**MODEL_DEFAULTS).idx)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/81af9997e272/Twistronics-consumer-boundary/research/benchmarks/consumer_boundary_review/probe_consumer.py", line 80, in observed_BM
+    raise RuntimeError(ABORT_MESSAGE)
+RuntimeError: synthetic constructor failure after Run initialization

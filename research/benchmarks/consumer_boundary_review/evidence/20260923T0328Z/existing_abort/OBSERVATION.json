@@ -1,0 +1,117 @@
+{
+  "after_files": {
+    "DIAGNOSTICS.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ROWS.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "SUMMARY.json": {
+      "bytes": 33,
+      "sha256": "7a34aae53137cf211bca15bd9d29180daafec8572f85a5cc1850e134171f2f1b"
+    }
+  },
+  "after_prior_file_contents": {
+    "DIAGNOSTICS.jsonl": "",
+    "ROWS.jsonl": "",
+    "SUMMARY.json": "{\"run_status\":\"SYNTHETIC_PRIOR\"}\n"
+  },
+  "before_contents": {
+    "DIAGNOSTICS.jsonl": "{\"synthetic_prior_diagnostic\":\"retain-me\"}\n",
+    "ROWS.jsonl": "{\"synthetic_prior_row\":\"retain-me\"}\n",
+    "SUMMARY.json": "{\"run_status\":\"SYNTHETIC_PRIOR\"}\n"
+  },
+  "before_files": {
+    "DIAGNOSTICS.jsonl": {
+      "bytes": 43,
+      "sha256": "9fd226f6ae28fac38c598304ae4d854f60e341c65337c2620000d7d35c59aa46"
+    },
+    "ROWS.jsonl": {
+      "bytes": 36,
+      "sha256": "733cce60d947722e6a12ca685f27651f7a95eba1389435d93996b58e6ba87cb8"
+    },
+    "SUMMARY.json": {
+      "bytes": 33,
+      "sha256": "7a34aae53137cf211bca15bd9d29180daafec8572f85a5cc1850e134171f2f1b"
+    }
+  },
+  "constructor_calls": [
+    {
+      "args_count": 0,
+      "defaults": {
+        "A_scalar": 0.2,
+        "N": 4,
+        "eps": 0.003,
+        "geometry": "exact",
+        "kinetic": "lab_nn_full",
+        "phi_deg": 0.0,
+        "ratio": 0.8,
+        "theta_deg": 1.05,
+        "w1": 110.0
+      },
+      "frozen_index_count": null,
+      "valley": null
+    }
+  ],
+  "declared_plan_defaults": {
+    "A_scalar": 0.2,
+    "N": 4,
+    "eps": 0.003,
+    "geometry": "exact",
+    "kinetic": "lab_nn_full",
+    "phi_deg": 0.0,
+    "ratio": 0.8,
+    "theta_deg": 1.05,
+    "w1": 110.0
+  },
+  "exception": {
+    "message": "synthetic constructor failure after Run initialization",
+    "type": "RuntimeError"
+  },
+  "expected_cases": [
+    "B-0.25_v+1_r0.012",
+    "B-0.25_v-1_r0.012",
+    "B-0.25_v+1_r0.008",
+    "B-0.25_v-1_r0.008",
+    "B-0.30_v+1_r0.012",
+    "B-0.30_v-1_r0.012",
+    "B-0.30_v+1_r0.008",
+    "B-0.30_v-1_r0.008"
+  ],
+  "limitations": "Synthetic discovery and measure; real constructor/geometry only. No scientific gate result.",
+  "mode": "existing_abort",
+  "model_record_defaults": {},
+  "original_plan_defaults": {
+    "A_scalar": 0.2,
+    "N": 4,
+    "eps": 0.003,
+    "geometry": "exact",
+    "kinetic": "lab_nn_full",
+    "phi_deg": 0.0,
+    "ratio": 0.8,
+    "theta_deg": 1.05,
+    "w1": 110.0
+  },
+  "returncode": 1,
+  "rows": [],
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "source_sha256": {
+    "PLAN_MIGRATION.json": "1d36e8cae984b55110a64a80760b08b9330fc0d1e01e1467cabccd8d2d90ddd9",
+    "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4",
+    "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+    "migrated_valley_control.py": "548219d961af1c57763a890f1f9d787b3e1e1ffae4c087c2af082e19ab146e2a",
+    "partner_v074p.zip": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+    "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d"
+  },
+  "summary": {
+    "run_status": "SYNTHETIC_PRIOR"
+  },
+  "synthetic_measurement_cases": [],
+  "synthetic_only": true
+}
