@@ -1,0 +1,175 @@
+{
+  "schema": "twistronics_boundary_review_v1",
+  "passed": true,
+  "source_sha256": "ed775e839e75542e093c5a5d149fa77c90e8a600b5e9533900634db30d062e48",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.3.5"
+  },
+  "corner_cases": [
+    {
+      "c": 0.5,
+      "commute": 0.0,
+      "link_loss": [
+        0.2928932188134523,
+        0.2928932188134523,
+        0.3876275643042053,
+        0.3876275643042054
+      ],
+      "max_link_loss": 0.3876275643042054,
+      "epsilon": [
+        0.2928932188134527,
+        0.29289321881345265,
+        0.38762756430420564,
+        0.38762756430420553
+      ],
+      "defect_norm": 0.08143307034369249,
+      "telescoping_bound": 1.3610415662353166,
+      "corner_angle": 0.08145558759534512,
+      "corner_det": 1.0000000000000018
+    },
+    {
+      "c": 0.95,
+      "commute": 0.0,
+      "link_loss": [
+        0.03304601970931431,
+        0.03304601970931431,
+        0.03363033943753457,
+        0.033630339437534684
+      ],
+      "max_link_loss": 0.033630339437534684,
+      "epsilon": [
+        0.03304601970931426,
+        0.033046019709314166,
+        0.03363033943753435,
+        0.03363033943753438
+      ],
+      "defect_norm": 0.0005059667692761248,
+      "telescoping_bound": 0.13335271829369716,
+      "corner_angle": 0.0005059667746729307,
+      "corner_det": 0.9999999999999986
+    }
+  ],
+  "orthogonal_control_defect": 4.518979695706721e-16,
+  "residual_counterexample": {
+    "theta": 0.2,
+    "projected_residual": 0.0,
+    "offtarget": 0.19866933079506122,
+    "sewing_loss": 0.019933422158758374,
+    "complementary_residual": 0.19866933079506122
+  },
+  "checks": [
+    {
+      "name": "commuting_maps_c0.5",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "corner_defect_nonzero_c0.5",
+      "passed": true,
+      "angle": 0.08145558759534512
+    },
+    {
+      "name": "exact_image_epsilon_le_lambda_c0.5",
+      "passed": true,
+      "epsilon": [
+        0.2928932188134527,
+        0.29289321881345265,
+        0.38762756430420564,
+        0.38762756430420553
+      ],
+      "link_loss": [
+        0.2928932188134523,
+        0.2928932188134523,
+        0.3876275643042053,
+        0.3876275643042054
+      ]
+    },
+    {
+      "name": "epsilon_le_sqrt2lambda_c0.5",
+      "passed": true
+    },
+    {
+      "name": "telescoping_bound_c0.5",
+      "passed": true,
+      "defect_norm": 0.08143307034369249,
+      "bound": 1.3610415662353166
+    },
+    {
+      "name": "commuting_maps_c0.95",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "corner_defect_nonzero_c0.95",
+      "passed": true,
+      "angle": 0.0005059667746729307
+    },
+    {
+      "name": "exact_image_epsilon_le_lambda_c0.95",
+      "passed": true,
+      "epsilon": [
+        0.03304601970931426,
+        0.033046019709314166,
+        0.03363033943753435,
+        0.03363033943753438
+      ],
+      "link_loss": [
+        0.03304601970931431,
+        0.03304601970931431,
+        0.03363033943753457,
+        0.033630339437534684
+      ]
+    },
+    {
+      "name": "epsilon_le_sqrt2lambda_c0.95",
+      "passed": true
+    },
+    {
+      "name": "telescoping_bound_c0.95",
+      "passed": true,
+      "defect_norm": 0.0005059667692761248,
+      "bound": 0.13335271829369716
+    },
+    {
+      "name": "c095_passes_0.05_sewing_gate",
+      "passed": true,
+      "value": 0.033630339437534684
+    },
+    {
+      "name": "orthogonal_commuting_control_closes",
+      "passed": true,
+      "value": 4.518979695706721e-16
+    },
+    {
+      "name": "projected_residual_zero",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "offtarget_mismatch_nonzero",
+      "passed": true,
+      "value": 0.19866933079506122
+    },
+    {
+      "name": "sewing_loss_small",
+      "passed": true,
+      "value": 0.019933422158758374
+    },
+    {
+      "name": "complementary_residual_detects",
+      "passed": true,
+      "value": 0.19866933079506122
+    },
+    {
+      "name": "sylvester_bound_random",
+      "passed": true,
+      "max_violation": 0.0
+    }
+  ],
+  "limits": [
+    "Synthetic fixed matrices and seeded random spectral data only",
+    "No repository Hamiltonian, production API, cutoff comparison or physical claim",
+    "Floating-point checks of stated identities; not interval enclosures"
+  ]
+}

@@ -63,6 +63,10 @@ This is not part of the migration corrections. The [`vafek_2025`](../research/be
 - **Opposite boost:** they are unitarily equivalent once Q is reversed. [Convention review note](convention-review/README.md) gives the derivation and the hash-bound reproduction.
 - **Open question:** which signed boost, coordinate or coupling convention the paper uses remains **UNRESOLVED**. The next gate is a signed-convention table checked against the primary source.
 
+### 6. Boundary gluing (review note)
+
+The [boundary review note](boundary-review/README.md) records a counterexample from the PR #5 review exchange. Commuting ambient contractions do not make polar-projected sewing maps satisfy the corner cocycle, even when every link passes the 0.05 sewing gate. The note also records the corrected off-target residual. The gluing-repair step is **OPEN**.
+
 ## Evidence and status
 
 | Category | Item | Status | Where it is recorded |
