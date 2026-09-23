@@ -1,0 +1,20 @@
+  B=-0.25 valley +1 r=0.012 n=96: SYNTHETIC_RETURN SAME (0 ledger rows)
+  B=-0.25 valley -1 r=0.012 n=96: SYNTHETIC_RETURN SAME (0 ledger rows)
+  B=-0.25 valley +1 r=0.008 n=192: SYNTHETIC_RETURN SAME (0 ledger rows)
+  B=-0.25 valley -1 r=0.008 n=192: SYNTHETIC_RETURN SAME (0 ledger rows)
+Traceback (most recent call last):
+  File "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/failure_worker.py", line 48, in <module>
+    runpy.run_path(str(work/target), run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/v077-review-3xpqhfi6/partner/migrated_valley_control.py", line 74, in <module>
+    r = run()
+        ^^^^^
+  File "/tmp/v077-review-3xpqhfi6/partner/migrated_valley_control.py", line 45, in run
+    nk = [f for q, f in mK.find_nodes(ngrid=15, nkeep=6) if q < 1e-6]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/failure_worker.py", line 42, in find
+    if counter[0] == 2: raise RuntimeError('review injected discovery error after first B')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: review injected discovery error after first B

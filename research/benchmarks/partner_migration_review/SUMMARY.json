@@ -1,0 +1,291 @@
+{
+  "scope": "Reviewer replay and contract findings; supplied sources unchanged. All numerical checks are finite, sampled checks.",
+  "comparisons": {
+    "supplied_vs_replay": {
+      "numeric_leaves": 138,
+      "numeric_exact": 127,
+      "max_abs_difference": 3.3306690738754696e-16,
+      "differences": [],
+      "within_declared_tolerance": true
+    },
+    "replay_vs_clean": {
+      "numeric_leaves": 138,
+      "numeric_exact": 138,
+      "max_abs_difference": 0.0,
+      "differences": [],
+      "within_declared_tolerance": true
+    },
+    "metamorphic": {
+      "numeric_leaves": 18,
+      "numeric_exact": 18,
+      "max_abs_difference": 0.0,
+      "differences": [],
+      "within_declared_tolerance": true
+    },
+    "negative_controls": {
+      "numeric_leaves": 1486,
+      "numeric_exact": 1486,
+      "max_abs_difference": 0.0,
+      "differences": [],
+      "within_declared_tolerance": true
+    }
+  },
+  "source_bindings": {
+    "guarded_topology.py": true,
+    "guarded_sparse.py": true,
+    "migrated_valley_control.py": true,
+    "response_inputs.py": true,
+    "partner_v074p.zip": true
+  },
+  "checks": 5995,
+  "failed_checks": [],
+  "rows": [
+    {
+      "call_id": 0,
+      "B": -0.25,
+      "valley": 1,
+      "radius": 0.012,
+      "intervals": 96,
+      "transport_intervals": 300,
+      "label": "SAME",
+      "windings": [
+        0.9996566818073052,
+        0.9989749897085514
+      ],
+      "max_node_gap_meV": 1.4705570094974973e-10,
+      "min_external_gap_meV": 2.9009084271499184,
+      "min_loop_internal_gap_meV": 1.8802309411112645,
+      "min_link_overlap": 0.9980288393920885,
+      "max_phase_increment_rad": 0.06271098670851405,
+      "ledger_counts": {
+        "frame": 497,
+        "link": 686,
+        "angle": 192
+      }
+    },
+    {
+      "call_id": 1,
+      "B": -0.25,
+      "valley": -1,
+      "radius": 0.012,
+      "intervals": 96,
+      "transport_intervals": 300,
+      "label": "SAME",
+      "windings": [
+        -0.9996566818073048,
+        -0.9989749897085506
+      ],
+      "max_node_gap_meV": 1.4705570094974973e-10,
+      "min_external_gap_meV": 2.9009084271499184,
+      "min_loop_internal_gap_meV": 1.8802309411112645,
+      "min_link_overlap": 0.9980288393920885,
+      "max_phase_increment_rad": 0.0627109867085136,
+      "ledger_counts": {
+        "frame": 497,
+        "link": 686,
+        "angle": 192
+      }
+    },
+    {
+      "call_id": 2,
+      "B": -0.25,
+      "valley": 1,
+      "radius": 0.008,
+      "intervals": 192,
+      "transport_intervals": 600,
+      "label": "SAME",
+      "windings": [
+        0.9998482887830098,
+        0.9995467743890334
+      ],
+      "max_node_gap_meV": 1.4705570094974973e-10,
+      "min_external_gap_meV": 3.1778061992970734,
+      "min_loop_internal_gap_meV": 1.2609985503896297,
+      "min_link_overlap": 0.999511301335805,
+      "max_phase_increment_rad": 0.03124539025484996,
+      "ledger_counts": {
+        "frame": 989,
+        "link": 1370,
+        "angle": 384
+      }
+    },
+    {
+      "call_id": 3,
+      "B": -0.25,
+      "valley": -1,
+      "radius": 0.008,
+      "intervals": 192,
+      "transport_intervals": 600,
+      "label": "SAME",
+      "windings": [
+        0.9998482887830102,
+        0.9995467743890332
+      ],
+      "max_node_gap_meV": 1.4705570094974973e-10,
+      "min_external_gap_meV": 3.1778061992970734,
+      "min_loop_internal_gap_meV": 1.2609985503896297,
+      "min_link_overlap": 0.999511301335805,
+      "max_phase_increment_rad": 0.03124539025484996,
+      "ledger_counts": {
+        "frame": 989,
+        "link": 1370,
+        "angle": 384
+      }
+    },
+    {
+      "call_id": 4,
+      "B": -0.3,
+      "valley": 1,
+      "radius": 0.012,
+      "intervals": 96,
+      "transport_intervals": 300,
+      "label": "OPPOSITE",
+      "windings": [
+        -0.9996733356039645,
+        1.000056154430831
+      ],
+      "max_node_gap_meV": 1.5259260521816032e-10,
+      "min_external_gap_meV": 1.8959241268134406,
+      "min_loop_internal_gap_meV": 2.0475992932605003,
+      "min_link_overlap": 0.9978580671941947,
+      "max_phase_increment_rad": 0.059819696226885544,
+      "ledger_counts": {
+        "frame": 497,
+        "link": 686,
+        "angle": 192
+      }
+    },
+    {
+      "call_id": 5,
+      "B": -0.3,
+      "valley": -1,
+      "radius": 0.012,
+      "intervals": 96,
+      "transport_intervals": 300,
+      "label": "OPPOSITE",
+      "windings": [
+        0.9996733356039642,
+        -1.000056154430832
+      ],
+      "max_node_gap_meV": 1.5259260521816032e-10,
+      "min_external_gap_meV": 1.8959241268134406,
+      "min_loop_internal_gap_meV": 2.0475992932605003,
+      "min_link_overlap": 0.997858067194195,
+      "max_phase_increment_rad": 0.059819696226885544,
+      "ledger_counts": {
+        "frame": 497,
+        "link": 686,
+        "angle": 192
+      }
+    },
+    {
+      "call_id": 6,
+      "B": -0.3,
+      "valley": 1,
+      "radius": 0.008,
+      "intervals": 192,
+      "transport_intervals": 600,
+      "label": "OPPOSITE",
+      "windings": [
+        0.9998554033169332,
+        -1.0000203408880535
+      ],
+      "max_node_gap_meV": 1.5259260521816032e-10,
+      "min_external_gap_meV": 1.5673062992438958,
+      "min_loop_internal_gap_meV": 1.3694374519661405,
+      "min_link_overlap": 0.9992016920217024,
+      "max_phase_increment_rad": 0.02975842813005425,
+      "ledger_counts": {
+        "frame": 989,
+        "link": 1370,
+        "angle": 384
+      }
+    },
+    {
+      "call_id": 7,
+      "B": -0.3,
+      "valley": -1,
+      "radius": 0.008,
+      "intervals": 192,
+      "transport_intervals": 600,
+      "label": "OPPOSITE",
+      "windings": [
+        -0.9998554033169333,
+        1.000020340888053
+      ],
+      "max_node_gap_meV": 1.5259260521816032e-10,
+      "min_external_gap_meV": 1.5673062992438958,
+      "min_loop_internal_gap_meV": 1.3694374519661405,
+      "min_link_overlap": 0.9992016920217027,
+      "max_phase_increment_rad": 0.029758428130053804,
+      "ledger_counts": {
+        "frame": 989,
+        "link": 1370,
+        "angle": 384
+      }
+    }
+  ],
+  "ledger_rows": 16472,
+  "ledger_counts": {
+    "frame": 5944,
+    "link": 8224,
+    "angle": 2304
+  },
+  "model_records": 11,
+  "discovery_searches": 2,
+  "refinement_records": 6,
+  "refinement_failures": 0,
+  "synthetic_release_controls": {
+    "CONTROL_REJECTED": {
+      "returncode": 0,
+      "generated": {
+        "MIGRATION_RESULTS.json": {
+          "file": "CONTROL_REJECTED_MIGRATION_RESULTS.json",
+          "bytes": 5683,
+          "sha256": "02fc7b949e689395f825ee235cc1d48232e6e12647900975f81eec99b4ecf775"
+        }
+      },
+      "statuses": [
+        "REJECTED",
+        "REJECTED",
+        "REJECTED",
+        "REJECTED",
+        "REJECTED",
+        "REJECTED",
+        "REJECTED",
+        "REJECTED"
+      ]
+    },
+    "CONTROL_NO_PAIR": {
+      "returncode": 0,
+      "generated": {
+        "MIGRATION_RESULTS.json": {
+          "file": "CONTROL_NO_PAIR_MIGRATION_RESULTS.json",
+          "bytes": 1431,
+          "sha256": "de15b1079f3a519ed0fd547088cb805658a6633a1ee3d19cefc8b2ae96b1cafc"
+        }
+      },
+      "statuses": [
+        "NO_PAIR",
+        "NO_PAIR"
+      ]
+    },
+    "CONTROL_LATE_DISCOVERY_ERROR": {
+      "returncode": 1,
+      "generated": {}
+    },
+    "CONTROL_METAMORPHIC": {
+      "returncode": 0,
+      "generated": {
+        "METAMORPHIC.json": {
+          "file": "CONTROL_METAMORPHIC_METAMORPHIC.json",
+          "bytes": 2554,
+          "sha256": "a8cf2dfe5cb9af2200968cd0466bcc53ee6708713757e5f9c4a34a09a8684a49"
+        }
+      },
+      "false_relations": [
+        "MR1 strain-angle period 180"
+      ]
+    }
+  }
+}

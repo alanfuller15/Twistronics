@@ -1,0 +1,92 @@
+[
+ {
+  "relation": "MR1 strain-angle period 180",
+  "statement": "H(phi) == H(phi+180) bitwise",
+  "holds": false,
+  "detail": "max |dH| = 1.250e-01 meV",
+  "values": {
+   "max_dH_meV": 0.125
+  }
+ },
+ {
+  "relation": "MR2 C3 strain direction (common basis)",
+  "statement": "bandwidth and min remote gap invariant under phi -> phi+60 on one common index set",
+  "holds": true,
+  "detail": "common basis (71 vectors): |d bandwidth| = 0.00e+00 meV, |d remote gap| = 0.00e+00 meV; native per-angle bases (47 vs 71 vectors): 0.00e+00 and 0.00e+00 meV",
+  "values": {
+   "common_vectors": 71,
+   "d_bandwidth_meV": 0.0,
+   "d_remote_gap_meV": 0.0,
+   "native_a": 47,
+   "native_b": 71,
+   "native_d_bandwidth_meV": 0.0,
+   "native_d_remote_gap_meV": 0.0
+  }
+ },
+ {
+  "relation": "MR3 basis-order invariance",
+  "statement": "permuting index_set leaves the spectrum unchanged",
+  "holds": true,
+  "detail": "max |dE| = 2.665e-13 meV over six central bands",
+  "values": {
+   "max_dE_meV": 2.6645352591003757e-13
+  }
+ },
+ {
+  "relation": "MR4 homogeneity in (hbar v, w)",
+  "statement": "scaling hbar v and w by L scales every eigenvalue by L",
+  "holds": true,
+  "detail": "max relative deviation = 1.335e-15",
+  "values": {
+   "max_relative_deviation": 1.3350178990999532e-15,
+   "factor": 2.5
+  }
+ },
+ {
+  "relation": "MR5 valley time reversal",
+  "statement": "H_K'(k) == conj(H_K(-k)); spectra mirror",
+  "holds": true,
+  "detail": "max |dH| = 0.0e+00, max |dE| = 0.0e+00 meV",
+  "values": {
+   "max_dH_meV": 0.0,
+   "max_dE_meV": 0.0
+  }
+ },
+ {
+  "relation": "MR6 reciprocal periodicity (diagnostic)",
+  "statement": "E(f) vs E(f+G): truncation-limited, reported not asserted",
+  "holds": true,
+  "detail": "max |dE| = 1.472e-02 meV at N=4 (this is the finite-basis edge effect, not a bug)",
+  "values": {
+   "max_dE_meV": 0.014721879099226953,
+   "N": 4
+  }
+ },
+ {
+  "relation": "MR7 fast==native [K]",
+  "statement": "real-basis engine reproduces the native spectrum",
+  "holds": true,
+  "detail": "max |dE| = 2.10e-13 meV",
+  "values": {
+   "max_dE_meV": 2.0961010704922955e-13
+  }
+ },
+ {
+  "relation": "MR7 fast==native [K']",
+  "statement": "real-basis engine reproduces the native spectrum",
+  "holds": true,
+  "detail": "max |dE| = 2.84e-13 meV",
+  "values": {
+   "max_dE_meV": 2.8421709430404007e-13
+  }
+ },
+ {
+  "relation": "MR7 fast==native [permuted basis]",
+  "statement": "real-basis engine reproduces the native spectrum",
+  "holds": true,
+  "detail": "max |dE| = 1.42e-13 meV",
+  "values": {
+   "max_dE_meV": 1.4210854715202004e-13
+  }
+ }
+]

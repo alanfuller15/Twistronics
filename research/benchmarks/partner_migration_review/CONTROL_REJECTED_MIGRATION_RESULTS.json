@@ -1,0 +1,260 @@
+{
+ "consumer": "producers.valley_controls braid label (v073p, v075p)",
+ "migrated_to": {
+  "module": "guarded_topology",
+  "functions": [
+   "Sampler",
+   "Policy",
+   "geometry",
+   "mirror",
+   "pair_charges"
+  ]
+ },
+ "source_sha256": {
+  "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+  "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4",
+  "migrated_valley_control.py": "c2b5afb97ff4ca0492c7d517efacdf62339d3438152f87b00d69fbc8f34eb201",
+  "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+  "partner_v074p.zip": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163"
+ },
+ "policy": {
+  "reality_meV": 1e-09,
+  "hermiticity_meV": 1e-09,
+  "external_gap_meV": 1e-05,
+  "internal_gap_meV": 1e-06,
+  "root_gap_meV": 1e-06,
+  "overlap_min": 0.5,
+  "sewing_loss_max": 0.05,
+  "phase_step_max_rad": 2.356194490192345,
+  "unit_winding_tol": 0.15
+ },
+ "not_migrated": [
+  "chiral control",
+  "endpoint band_sign_holonomy",
+  "Euler meshes",
+  "atlas/sweep/trace consumers",
+  "sparse Newton and event detection (unsupported per handoff item 2)"
+ ],
+ "rows": [
+  {
+   "B": -0.25,
+   "valley": 1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 4.362999970908277e-05,
+   "first_loop_point": [
+    0.312,
+    0.4
+   ],
+   "transport_first": [
+    0.312,
+    0.4
+   ],
+   "transport_last": [
+    0.612,
+    0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.25,
+   "valley": -1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 3.508300142129883e-05,
+   "first_loop_point": [
+    -0.312,
+    -0.4
+   ],
+   "transport_first": [
+    -0.312,
+    -0.4
+   ],
+   "transport_last": [
+    -0.612,
+    -0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.25,
+   "valley": 1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 3.340900002513081e-05,
+   "first_loop_point": [
+    0.308,
+    0.4
+   ],
+   "transport_first": [
+    0.308,
+    0.4
+   ],
+   "transport_last": [
+    0.608,
+    0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.25,
+   "valley": -1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 2.6822999643627554e-05,
+   "first_loop_point": [
+    -0.308,
+    -0.4
+   ],
+   "transport_first": [
+    -0.308,
+    -0.4
+   ],
+   "transport_last": [
+    -0.608,
+    -0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": 1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 2.697400122997351e-05,
+   "first_loop_point": [
+    0.312,
+    0.4
+   ],
+   "transport_first": [
+    0.312,
+    0.4
+   ],
+   "transport_last": [
+    0.612,
+    0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": -1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 4.0325998270418495e-05,
+   "first_loop_point": [
+    -0.312,
+    -0.4
+   ],
+   "transport_first": [
+    -0.312,
+    -0.4
+   ],
+   "transport_last": [
+    -0.612,
+    -0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": 1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 8.158900163834915e-05,
+   "first_loop_point": [
+    0.308,
+    0.4
+   ],
+   "transport_first": [
+    0.308,
+    0.4
+   ],
+   "transport_last": [
+    0.608,
+    0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": -1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "REJECTED",
+   "label": null,
+   "windings": null,
+   "node_gaps_meV": null,
+   "rejection": "{'status': 'REJECTED', 'code': 'review_injected_rejection', 'scope': 'synthetic'}",
+   "ledger_rows": 0,
+   "seconds": 2.1308998839231208e-05,
+   "first_loop_point": [
+    -0.308,
+    -0.4
+   ],
+   "transport_first": [
+    -0.308,
+    -0.4
+   ],
+   "transport_last": [
+    -0.608,
+    -0.6
+   ],
+   "coordinate_policy": "unwrapped"
+  }
+ ],
+ "index_set": {
+  "vectors": 49,
+  "sha256": "9840ff7943dab1fe656649197f9fc7559c9bde1208681b403168138240c2b590"
+ }
+}

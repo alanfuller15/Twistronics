@@ -1,0 +1,3180 @@
+{
+  "scope": "Synthetic software-contract controls only; not graphene evidence",
+  "plan_sha256": "6f14b5b29040df977c2aae5f9caf3d00a354439a1d2f1089f0ec2d244d697a8b",
+  "source_sha256": {
+    "record_controls.py": "0e3ac24367f1cceacde6a384c22ea48d37ff7171fca4aaf8d87eacb2434c1f48",
+    "test_guards.py": "6fe266be6e33f06192b1d7f1e697d127c7162d0b4cc953222d142b30c0269f90",
+    "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+    "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4"
+  },
+  "controls": [
+    {
+      "name": "zero_pair_overlap",
+      "expected_code": "overlap",
+      "passed": true,
+      "outcome": {
+        "status": "REJECTED",
+        "code": "overlap",
+        "where": "axis2:0:0",
+        "value": 0.0,
+        "threshold": 0.5
+      },
+      "ledger": [
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:0",
+          "f": [
+            0.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:1",
+          "f": [
+            0.0,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:2",
+          "f": [
+            0.0,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:3",
+          "f": [
+            0.0,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:4",
+          "f": [
+            0.0,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:0",
+          "f": [
+            0.25,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:1",
+          "f": [
+            0.25,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:2",
+          "f": [
+            0.25,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:3",
+          "f": [
+            0.25,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:4",
+          "f": [
+            0.25,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:0",
+          "f": [
+            0.5,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:1",
+          "f": [
+            0.5,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:2",
+          "f": [
+            0.5,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:3",
+          "f": [
+            0.5,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:4",
+          "f": [
+            0.5,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:0",
+          "f": [
+            0.75,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:1",
+          "f": [
+            0.75,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:2",
+          "f": [
+            0.75,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:3",
+          "f": [
+            0.75,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:4",
+          "f": [
+            0.75,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:0",
+          "f": [
+            1.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:1",
+          "f": [
+            1.0,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:2",
+          "f": [
+            1.0,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:3",
+          "f": [
+            1.0,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:4",
+          "f": [
+            1.0,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:closure",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis2:0:0",
+          "singular_values": [
+            0.0,
+            0.0
+          ],
+          "min_overlap": 0.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "overlap",
+          "where": "axis2:0:0",
+          "value": 0.0,
+          "threshold": 0.5
+        }
+      ]
+    },
+    {
+      "name": "smooth_band_unresolved_at_n4",
+      "expected_code": "overlap",
+      "passed": true,
+      "outcome": {
+        "status": "REJECTED",
+        "code": "overlap",
+        "where": "cycle:1",
+        "value": 0.0,
+        "threshold": 0.5
+      },
+      "ledger": [
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "cycle:0",
+          "f": [
+            0.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0
+          ],
+          "lo": 1,
+          "n": 1,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "cycle:1",
+          "f": [
+            0.25,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0
+          ],
+          "lo": 1,
+          "n": 1,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "cycle:1",
+          "singular_values": [
+            0.0
+          ],
+          "min_overlap": 0.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "overlap",
+          "where": "cycle:1",
+          "value": 0.0,
+          "threshold": 0.5
+        }
+      ]
+    },
+    {
+      "name": "highest_pair_lower_external_gap",
+      "expected_code": "external_gap",
+      "passed": true,
+      "outcome": {
+        "status": "REJECTED",
+        "code": "external_gap",
+        "where": "grid:0:0",
+        "value_meV": 2.0,
+        "threshold_meV": 3
+      },
+      "ledger": [
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:0",
+          "f": [
+            0.0,
+            0.0
+          ],
+          "first_band": 1,
+          "energies_meV": [
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 2,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": null,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "external_gap",
+          "where": "grid:0:0",
+          "value_meV": 2.0,
+          "threshold_meV": 3
+        }
+      ]
+    },
+    {
+      "name": "endpoint_sewing_axis0",
+      "expected_code": "sewing_loss",
+      "passed": true,
+      "outcome": {
+        "status": "REJECTED",
+        "code": "sewing_loss",
+        "where": "sewing1:0",
+        "value": 0.09999999999999998,
+        "threshold": 0.05
+      },
+      "ledger": [
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:0",
+          "f": [
+            0.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:1",
+          "f": [
+            0.0,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:2",
+          "f": [
+            0.0,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:3",
+          "f": [
+            0.0,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:4",
+          "f": [
+            0.0,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:0",
+          "f": [
+            0.25,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:1",
+          "f": [
+            0.25,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:2",
+          "f": [
+            0.25,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:3",
+          "f": [
+            0.25,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:4",
+          "f": [
+            0.25,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:0",
+          "f": [
+            0.5,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:1",
+          "f": [
+            0.5,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:2",
+          "f": [
+            0.5,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:3",
+          "f": [
+            0.5,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:4",
+          "f": [
+            0.5,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:0",
+          "f": [
+            0.75,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:1",
+          "f": [
+            0.75,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:2",
+          "f": [
+            0.75,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:3",
+          "f": [
+            0.75,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:4",
+          "f": [
+            0.75,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:0",
+          "f": [
+            1.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:1",
+          "f": [
+            1.0,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:2",
+          "f": [
+            1.0,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:3",
+          "f": [
+            1.0,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:4",
+          "f": [
+            1.0,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:0",
+          "singular_values": [
+            0.9,
+            0.9
+          ],
+          "min_overlap": 0.9,
+          "sewing": true,
+          "sewing_loss": 0.09999999999999998,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "sewing_loss",
+          "where": "sewing1:0",
+          "value": 0.09999999999999998,
+          "threshold": 0.05
+        }
+      ]
+    },
+    {
+      "name": "endpoint_sewing_axis1",
+      "expected_code": "sewing_loss",
+      "passed": true,
+      "outcome": {
+        "status": "REJECTED",
+        "code": "sewing_loss",
+        "where": "sewing2:0",
+        "value": 0.09999999999999998,
+        "threshold": 0.05
+      },
+      "ledger": [
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:0",
+          "f": [
+            0.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:1",
+          "f": [
+            0.0,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:2",
+          "f": [
+            0.0,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:3",
+          "f": [
+            0.0,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:0:4",
+          "f": [
+            0.0,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:0",
+          "f": [
+            0.25,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:1",
+          "f": [
+            0.25,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:2",
+          "f": [
+            0.25,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:3",
+          "f": [
+            0.25,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:1:4",
+          "f": [
+            0.25,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:0",
+          "f": [
+            0.5,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:1",
+          "f": [
+            0.5,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:2",
+          "f": [
+            0.5,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:3",
+          "f": [
+            0.5,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:2:4",
+          "f": [
+            0.5,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:0",
+          "f": [
+            0.75,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:1",
+          "f": [
+            0.75,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:2",
+          "f": [
+            0.75,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:3",
+          "f": [
+            0.75,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:3:4",
+          "f": [
+            0.75,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:0",
+          "f": [
+            1.0,
+            0.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:1",
+          "f": [
+            1.0,
+            0.25
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:2",
+          "f": [
+            1.0,
+            0.5
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:3",
+          "f": [
+            1.0,
+            0.75
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "frame",
+          "model": "model",
+          "where": "grid:4:4",
+          "f": [
+            1.0,
+            1.0
+          ],
+          "first_band": 0,
+          "energies_meV": [
+            -3.0,
+            -1.0,
+            1.0,
+            3.0
+          ],
+          "lo": 1,
+          "n": 2,
+          "lower_external_gap_meV": 2.0,
+          "upper_external_gap_meV": 2.0,
+          "external_gap_meV": 2.0,
+          "external_status": "CHECKED",
+          "reality_meV": 0.0,
+          "hermiticity_meV": 0.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:0:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:1:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:2:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis1:3:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing1:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:4",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "base:closure",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis2:0:0",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis2:0:1",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis2:0:2",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "axis2:0:3",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": false,
+          "sewing_loss": null,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "sewing2:0",
+          "singular_values": [
+            0.9,
+            0.9
+          ],
+          "min_overlap": 0.9,
+          "sewing": true,
+          "sewing_loss": 0.09999999999999998,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "sewing_loss",
+          "where": "sewing2:0",
+          "value": 0.09999999999999998,
+          "threshold": 0.05
+        }
+      ]
+    },
+    {
+      "name": "base_displaced_by_2r",
+      "expected_code": "base_path_mismatch",
+      "passed": true,
+      "outcome": {
+        "status": "REJECTED",
+        "code": "base_path_mismatch"
+      },
+      "ledger": [
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "base_path_mismatch"
+        }
+      ]
+    }
+  ],
+  "retired_inertia_counterexample": {
+    "matrix": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "eigenvalues": [
+      -1.0,
+      1.0
+    ],
+    "signed_U_diagonal_count": 0,
+    "U_diagonal": [
+      1.0,
+      1.0
+    ],
+    "row_permutation": [
+      1,
+      0
+    ],
+    "column_permutation": [
+      0,
+      1
+    ],
+    "replacement_policy": "No inertia assertion; native dense ordered comparison is mandatory for accepted windows"
+  }
+}

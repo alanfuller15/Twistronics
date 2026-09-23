@@ -1,0 +1,190 @@
+[
+  {
+    "name": "REPLAY",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/migration_worker.py",
+      "{work}",
+      "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review"
+    ],
+    "timeout_seconds": 180,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 79.39247042900024,
+    "generated": {
+      "MIGRATION_RESULTS.json": {
+        "file": "REPLAY_MIGRATION_RESULTS.json",
+        "bytes": 6675,
+        "sha256": "f23ce67615a4ad72ae8c81e91d765ab6cc932b5a488bf89ea9e3cd4f57f4d103"
+      }
+    },
+    "mode": "passive instrumentation"
+  },
+  {
+    "name": "CLEAN",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "migrated_valley_control.py"
+    ],
+    "timeout_seconds": 180,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 83.22176347700224,
+    "generated": {
+      "MIGRATION_RESULTS.json": {
+        "file": "CLEAN_MIGRATION_RESULTS.json",
+        "bytes": 6672,
+        "sha256": "e5098c11761b5e90aa1b78aace390af29e708b71146443a629a8ab07fe85b205"
+      }
+    },
+    "mode": "unchanged source, no instrumentation"
+  },
+  {
+    "name": "TESTS",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "test_guards.py"
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 1.3964894979981182,
+    "generated": {},
+    "mode": null
+  },
+  {
+    "name": "NEGATIVE",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "record_controls.py"
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 1.2122429569972155,
+    "generated": {
+      "NEGATIVE_CONTROLS.json": {
+        "file": "NEGATIVE_NEGATIVE_CONTROLS.json",
+        "bytes": 74279,
+        "sha256": "e9b5ce793db9a2b52e4fe69e79aecb61d40a3d90ba7a7e7126edafc598d3552d"
+      }
+    },
+    "mode": null
+  },
+  {
+    "name": "METAMORPHIC",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "metamorphic.py"
+    ],
+    "timeout_seconds": 120,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 30.785131122000166,
+    "generated": {
+      "METAMORPHIC.json": {
+        "file": "METAMORPHIC_METAMORPHIC.json",
+        "bytes": 2623,
+        "sha256": "14b16fd3fa727b3614dc3dcfa0f840dc937d40631d7674382b65b68ca62decf2"
+      }
+    },
+    "mode": "unchanged source"
+  },
+  {
+    "name": "LINT",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "claim_lint.py",
+      "."
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 1,
+    "wall_seconds": 0.10064664499805076,
+    "generated": {},
+    "mode": null
+  },
+  {
+    "name": "CONTROL_REJECTED",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/failure_worker.py",
+      "{work}",
+      "rejected"
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 1.0683230380018358,
+    "generated": {
+      "MIGRATION_RESULTS.json": {
+        "file": "CONTROL_REJECTED_MIGRATION_RESULTS.json",
+        "bytes": 5683,
+        "sha256": "02fc7b949e689395f825ee235cc1d48232e6e12647900975f81eec99b4ecf775"
+      }
+    },
+    "mode": "synthetic injected failure"
+  },
+  {
+    "name": "CONTROL_NO_PAIR",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/failure_worker.py",
+      "{work}",
+      "no_pair"
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 0.9564321350007958,
+    "generated": {
+      "MIGRATION_RESULTS.json": {
+        "file": "CONTROL_NO_PAIR_MIGRATION_RESULTS.json",
+        "bytes": 1431,
+        "sha256": "de15b1079f3a519ed0fd547088cb805658a6633a1ee3d19cefc8b2ae96b1cafc"
+      }
+    },
+    "mode": "synthetic injected failure"
+  },
+  {
+    "name": "CONTROL_LATE_DISCOVERY_ERROR",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/failure_worker.py",
+      "{work}",
+      "late_discovery_error"
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 1,
+    "wall_seconds": 1.020733149998705,
+    "generated": {},
+    "mode": "synthetic injected failure"
+  },
+  {
+    "name": "CONTROL_METAMORPHIC",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/25cf544f787e/Twistronics-partner-migration-review/research/benchmarks/partner_migration_review/failure_worker.py",
+      "{work}",
+      "metamorphic"
+    ],
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 0,
+    "wall_seconds": 1.184434708997287,
+    "generated": {
+      "METAMORPHIC.json": {
+        "file": "CONTROL_METAMORPHIC_METAMORPHIC.json",
+        "bytes": 2554,
+        "sha256": "a8cf2dfe5cb9af2200968cd0466bcc53ee6708713757e5f9c4a34a09a8684a49"
+      }
+    },
+    "mode": "synthetic injected failure"
+  }
+]

@@ -1,0 +1,308 @@
+{
+ "consumer": "producers.valley_controls braid label (v073p, v075p)",
+ "migrated_to": {
+  "module": "guarded_topology",
+  "functions": [
+   "Sampler",
+   "Policy",
+   "geometry",
+   "mirror",
+   "pair_charges"
+  ]
+ },
+ "source_sha256": {
+  "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+  "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4",
+  "migrated_valley_control.py": "c2b5afb97ff4ca0492c7d517efacdf62339d3438152f87b00d69fbc8f34eb201",
+  "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+  "partner_v074p.zip": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163"
+ },
+ "policy": {
+  "reality_meV": 1e-09,
+  "hermiticity_meV": 1e-09,
+  "external_gap_meV": 1e-05,
+  "internal_gap_meV": 1e-06,
+  "root_gap_meV": 1e-06,
+  "overlap_min": 0.5,
+  "sewing_loss_max": 0.05,
+  "phase_step_max_rad": 2.356194490192345,
+  "unit_winding_tol": 0.15
+ },
+ "not_migrated": [
+  "chiral control",
+  "endpoint band_sign_holonomy",
+  "Euler meshes",
+  "atlas/sweep/trace consumers",
+  "sparse Newton and event detection (unsupported per handoff item 2)"
+ ],
+ "rows": [
+  {
+   "B": -0.25,
+   "valley": 1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "SAME",
+   "windings": [
+    0.9996566818073052,
+    0.9989749897085514
+   ],
+   "node_gaps_meV": [
+    1.1539746935795847e-10,
+    1.4705570094974973e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 1375,
+   "seconds": 8.718655758999375,
+   "first_loop_point": [
+    0.529234998877193,
+    0.8277661746554233
+   ],
+   "transport_first": [
+    0.529234998877193,
+    0.8277661746554233
+   ],
+   "transport_last": [
+    0.7578774722154928,
+    0.6123369007264259
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.25,
+   "valley": -1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "SAME",
+   "windings": [
+    -0.9996566818073048,
+    -0.9989749897085506
+   ],
+   "node_gaps_meV": [
+    1.1539746935795847e-10,
+    1.4705570094974973e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 1375,
+   "seconds": 3.3184035179983766,
+   "first_loop_point": [
+    -0.529234998877193,
+    -0.8277661746554233
+   ],
+   "transport_first": [
+    -0.529234998877193,
+    -0.8277661746554233
+   ],
+   "transport_last": [
+    -0.7578774722154928,
+    -0.6123369007264259
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.25,
+   "valley": 1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "SAME",
+   "windings": [
+    0.9998482887830098,
+    0.9995467743890334
+   ],
+   "node_gaps_meV": [
+    1.1539746935795847e-10,
+    1.4705570094974973e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 2743,
+   "seconds": 15.041204249999282,
+   "first_loop_point": [
+    0.525234998877193,
+    0.8277661746554233
+   ],
+   "transport_first": [
+    0.525234998877193,
+    0.8277661746554233
+   ],
+   "transport_last": [
+    0.7538774722154928,
+    0.6123369007264259
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.25,
+   "valley": -1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "SAME",
+   "windings": [
+    0.9998482887830102,
+    0.9995467743890332
+   ],
+   "node_gaps_meV": [
+    1.1539746935795847e-10,
+    1.4705570094974973e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 2743,
+   "seconds": 6.528479338998295,
+   "first_loop_point": [
+    -0.525234998877193,
+    -0.8277661746554233
+   ],
+   "transport_first": [
+    -0.525234998877193,
+    -0.8277661746554233
+   ],
+   "transport_last": [
+    -0.7538774722154928,
+    -0.6123369007264259
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": 1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "OPPOSITE",
+   "windings": [
+    -0.9996733356039645,
+    1.000056154430831
+   ],
+   "node_gaps_meV": [
+    1.1673506605802686e-10,
+    1.5259260521816032e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 1375,
+   "seconds": 8.633796321999398,
+   "first_loop_point": [
+    0.5318006168952296,
+    0.827664346807825
+   ],
+   "transport_first": [
+    0.5318006168952296,
+    0.827664346807825
+   ],
+   "transport_last": [
+    0.7527545453881446,
+    0.611085278645868
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": -1,
+   "radius": 0.012,
+   "intervals": 96,
+   "transport_intervals": 300,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "OPPOSITE",
+   "windings": [
+    0.9996733356039642,
+    -1.000056154430832
+   ],
+   "node_gaps_meV": [
+    1.1673506605802686e-10,
+    1.5259260521816032e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 1375,
+   "seconds": 3.1722914159981883,
+   "first_loop_point": [
+    -0.5318006168952296,
+    -0.827664346807825
+   ],
+   "transport_first": [
+    -0.5318006168952296,
+    -0.827664346807825
+   ],
+   "transport_last": [
+    -0.7527545453881446,
+    -0.611085278645868
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": 1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "OPPOSITE",
+   "windings": [
+    0.9998554033169332,
+    -1.0000203408880535
+   ],
+   "node_gaps_meV": [
+    1.1673506605802686e-10,
+    1.5259260521816032e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 2743,
+   "seconds": 15.541879346001224,
+   "first_loop_point": [
+    0.5278006168952296,
+    0.827664346807825
+   ],
+   "transport_first": [
+    0.5278006168952296,
+    0.827664346807825
+   ],
+   "transport_last": [
+    0.7487545453881446,
+    0.611085278645868
+   ],
+   "coordinate_policy": "unwrapped"
+  },
+  {
+   "B": -0.3,
+   "valley": -1,
+   "radius": 0.008,
+   "intervals": 192,
+   "transport_intervals": 600,
+   "status": "PASSED_SAMPLED_GATES",
+   "label": "OPPOSITE",
+   "windings": [
+    -0.9998554033169333,
+    1.000020340888053
+   ],
+   "node_gaps_meV": [
+    1.1673506605802686e-10,
+    1.5259260521816032e-10
+   ],
+   "rejection": null,
+   "ledger_rows": 2743,
+   "seconds": 6.422998347999965,
+   "first_loop_point": [
+    -0.5278006168952296,
+    -0.827664346807825
+   ],
+   "transport_first": [
+    -0.5278006168952296,
+    -0.827664346807825
+   ],
+   "transport_last": [
+    -0.7487545453881446,
+    -0.611085278645868
+   ],
+   "coordinate_policy": "unwrapped"
+  }
+ ],
+ "index_set": {
+  "vectors": 49,
+  "sha256": "9840ff7943dab1fe656649197f9fc7559c9bde1208681b403168138240c2b590"
+ }
+}

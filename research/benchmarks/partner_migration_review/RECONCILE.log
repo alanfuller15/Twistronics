@@ -1,0 +1,52 @@
+{
+  "scope": "Reviewer replay and contract findings; supplied sources unchanged. All numerical checks are finite, sampled checks.",
+  "comparisons": {
+    "supplied_vs_replay": {
+      "numeric_leaves": 138,
+      "numeric_exact": 127,
+      "max_abs_difference": 3.3306690738754696e-16,
+      "differences": [],
+      "within_declared_tolerance": true
+    },
+    "replay_vs_clean": {
+      "numeric_leaves": 138,
+      "numeric_exact": 138,
+      "max_abs_difference": 0.0,
+      "differences": [],
+      "within_declared_tolerance": true
+    },
+    "metamorphic": {
+      "numeric_leaves": 18,
+      "numeric_exact": 18,
+      "max_abs_difference": 0.0,
+      "differences": [],
+      "within_declared_tolerance": true
+    },
+    "negative_controls": {
+      "numeric_leaves": 1486,
+      "numeric_exact": 1486,
+      "max_abs_difference": 0.0,
+      "differences": [],
+      "within_declared_tolerance": true
+    }
+  },
+  "source_bindings": {
+    "guarded_topology.py": true,
+    "guarded_sparse.py": true,
+    "migrated_valley_control.py": true,
+    "response_inputs.py": true,
+    "partner_v074p.zip": true
+  },
+  "checks": 5995,
+  "failed_checks": [],
+  "ledger_rows": 16472,
+  "ledger_counts": {
+    "frame": 5944,
+    "link": 8224,
+    "angle": 2304
+  },
+  "model_records": 11,
+  "discovery_searches": 2,
+  "refinement_records": 6,
+  "refinement_failures": 0
+}

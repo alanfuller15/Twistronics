@@ -1,0 +1,89 @@
+--- /dev/null
++++ v077p/migrated_valley_control.py
+@@ -0,0 +1,76 @@
++"""migrated_valley_control.py — migration of ONE consumer (the v073p/v075p valley control) onto the team's guarded
++APIs from `variant-guard-repairs` (item 1 of FABLE_HANDOFF.md).
++
++Consumer migrated: the braid-label measurement in `producers.valley_controls`, previously calling `topo.pair_charges`.
++Not migrated here, stated rather than implied: the chiral control, the endpoint sign holonomies, the Euler meshes, and
++every atlas/sweep/tracer consumer. Sparse Newton and event detection stay unsupported per handoff item 2.
++
++Binding: every row records the source SHA-256 of the guarded modules and of this consumer, the ordered index list and
++its hash, the model defaults, the policy thresholds, and the exact coordinate arrays used.
++"""
++import numpy as np, json, hashlib, sys, time
++import guarded_topology as gt          # activates and path-inserts the preserved partner_v074p archive
++from bm_strain import BM, sz           # therefore resolved from that archive, not from local copies
++from knobs import add_harmonic
++from gate import real_basis
++
++SRC = ['guarded_topology.py', 'guarded_sparse.py', 'migrated_valley_control.py', 'response_inputs.py', 'partner_v074p.zip']
++
++
++def sha(path):
++    return hashlib.sha256(open(path, 'rb').read()).hexdigest()
++
++
++def model(valley, B, indices=None):
++    m = BM(N=4, eps=0.003, phi_deg=0.0, theta_deg=1.05, A_scalar=0.2, ratio=0.8, w1=110.0,
++           kinetic='lab_nn_full', geometry='exact', valley=valley, index_set=indices)
++    add_harmonic(m, B, mat=sz, use_sin=True)
++    return m
++
++
++def run():
++    pol = gt.Policy()
++    out = dict(consumer='producers.valley_controls braid label (v073p, v075p)',
++               migrated_to=dict(module='guarded_topology', functions=['Sampler', 'Policy', 'geometry', 'mirror', 'pair_charges']),
++               source_sha256={p: sha(p) for p in SRC},
++               policy={k: float(getattr(pol, k)) for k in ('reality_meV', 'hermiticity_meV', 'external_gap_meV', 'internal_gap_meV',
++                                                           'root_gap_meV', 'overlap_min', 'sewing_loss_max', 'phase_step_max_rad', 'unit_winding_tol')},
++               not_migrated=['chiral control', 'endpoint band_sign_holonomy', 'Euler meshes', 'atlas/sweep/trace consumers',
++                             'sparse Newton and event detection (unsupported per handoff item 2)'],
++               rows=[])
++    frozen = list(BM(N=4, eps=0.003, phi_deg=0.0, theta_deg=1.05, A_scalar=0.2, kinetic='lab_nn_full', geometry='exact').idx)
++    out['index_set'] = dict(vectors=len(frozen), sha256=hashlib.sha256(json.dumps([list(t) for t in frozen]).encode()).hexdigest())
++    for B in (-0.25, -0.30):
++        mK = model(+1, B, frozen)
++        nk = [f for q, f in mK.find_nodes(ngrid=15, nkeep=6) if q < 1e-6]
++        if len(nk) != 2:
++            out['rows'].append(dict(B=B, status='NO_PAIR', found=len(nk)))
++            continue
++        for radius, intervals, tint in ((0.012, 96, 300), (0.008, 192, 600)):
++            g = gt.geometry(np.array(nk), radius, intervals, tint)
++            gm = gt.mirror(g)
++            for valley, geom in ((+1, g), (-1, gm)):
++                m = model(valley, B, frozen)
++                led = []
++                S = gt.Sampler(m, policy=pol, U=real_basis(m.nG), ledger=led, name=f'B{B}_v{valley}')
++                t0 = time.perf_counter()
++                try:
++                    r = gt.pair_charges(S, geom)
++                    status, label, winds, gaps, code = r['status'], r['label'], r['windings'], r['node_gaps_meV'], None
++                except gt.Rejected as e:
++                    status, label, winds, gaps, code = 'REJECTED', None, None, None, str(e)
++                out['rows'].append(dict(B=B, valley=valley, radius=radius, intervals=intervals, transport_intervals=tint,
++                                        status=status, label=label, windings=winds, node_gaps_meV=gaps, rejection=code,
++                                        ledger_rows=len(led), seconds=time.perf_counter() - t0,
++                                        first_loop_point=geom['loops'][0][0], transport_first=geom['transport'][0],
++                                        transport_last=geom['transport'][-1], coordinate_policy=geom['coordinate_policy']))
++                print(f"  B={B:+.2f} valley {valley:+d} r={radius} n={intervals}: {status} {label or code} ({len(led)} ledger rows)")
++                sys.stdout.flush()
++    json.dump(out, open('MIGRATION_RESULTS.json', 'w'), indent=1)
++    return out
++
++
++if __name__ == '__main__':
++    r = run()
++    labels = {(x['B'], x['valley']): x['label'] for x in r['rows'] if x.get('label')}
++    print('\nlabels:', {f"B={k[0]} valley {k[1]:+d}": v for k, v in labels.items()})
+--- v076p/metamorphic.py
++++ v077p/metamorphic.py
+@@ -4,6 +4,7 @@
+ precondition and tolerance declared before execution. A violation is a defect in the code or in the relation; both
+ must be reported, neither may be tuned away."""
+ import numpy as np, json, sys
++import response_inputs; response_inputs.activate()   # engines come from the preserved partner archive
+ import bm_strain as bs
+ from bm_strain import BM
+ from gate import real_basis
