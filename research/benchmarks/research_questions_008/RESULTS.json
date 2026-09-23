@@ -1,0 +1,418 @@
+{
+  "schema": "twistronics_seam_index_v1",
+  "passed": true,
+  "source_sha256": "fb45666aee800eeb17c462b328c3ced7a1ebd1cdc7d2e81f7e3d88b577d74c09",
+  "plan_sha256": "e395b208e03e46ce60c078c7ad1d1270ff1726614c30fd45ca50ff4f7c27eebe",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "checks": [
+    {
+      "name": "left_hidden_corner",
+      "passed": true,
+      "residual": 2.3808085534365814e-16
+    },
+    {
+      "name": "left_hidden_transport_identity",
+      "passed": true,
+      "residual": 1.319485001705613e-15
+    },
+    {
+      "name": "left_hidden_corrected_index",
+      "passed": true,
+      "value": -0.9999999999999999,
+      "expected": -1
+    },
+    {
+      "name": "left_hidden_stokes_both_seams",
+      "passed": true,
+      "residual": 8.881784197001252e-16
+    },
+    {
+      "name": "left_hidden_frame_gauge",
+      "passed": true,
+      "residual": 3.885780586188048e-16
+    },
+    {
+      "name": "left_hidden_collar_matches_edges",
+      "passed": true,
+      "residual": 1.159106867033638e-15
+    },
+    {
+      "name": "left_hidden_canonical_gauge",
+      "passed": true,
+      "residual": 9.420554752102651e-16
+    },
+    {
+      "name": "left_hidden_full_collar_cocycle",
+      "passed": true,
+      "residual": 2.021718909579674e-15
+    },
+    {
+      "name": "left_hidden_full_connection_compatibility",
+      "passed": true,
+      "residual": 4.440892098500626e-16
+    },
+    {
+      "name": "left_hidden_compatible_euler_sign",
+      "passed": true,
+      "euler": 0.9999999999999997
+    },
+    {
+      "name": "mixed_corner",
+      "passed": true,
+      "residual": 1.8138670177167933e-15
+    },
+    {
+      "name": "mixed_transport_identity",
+      "passed": true,
+      "residual": 5.672986778833481e-16
+    },
+    {
+      "name": "mixed_corrected_index",
+      "passed": true,
+      "value": 3.0,
+      "expected": 3
+    },
+    {
+      "name": "mixed_stokes_both_seams",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "name": "mixed_frame_gauge",
+      "passed": true,
+      "residual": 1.7763568394002505e-15
+    },
+    {
+      "name": "mixed_collar_matches_edges",
+      "passed": true,
+      "residual": 1.790180836524724e-15
+    },
+    {
+      "name": "mixed_canonical_gauge",
+      "passed": true,
+      "residual": 1.7763568394002505e-15
+    },
+    {
+      "name": "mixed_full_collar_cocycle",
+      "passed": true,
+      "residual": 6.71860036976734e-15
+    },
+    {
+      "name": "mixed_full_connection_compatibility",
+      "passed": true,
+      "residual": 2.0539125955565396e-15
+    },
+    {
+      "name": "mixed_compatible_euler_sign",
+      "passed": true,
+      "euler": -2.9999999999999996
+    },
+    {
+      "name": "zero_class_corner",
+      "passed": true,
+      "residual": 1.1102230246251565e-16
+    },
+    {
+      "name": "zero_class_transport_identity",
+      "passed": true,
+      "residual": 4.890671021443945e-16
+    },
+    {
+      "name": "zero_class_corrected_index",
+      "passed": true,
+      "value": -7.067899292141149e-17,
+      "expected": 0
+    },
+    {
+      "name": "zero_class_stokes_both_seams",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "name": "zero_class_frame_gauge",
+      "passed": true,
+      "residual": 6.661338147750939e-16
+    },
+    {
+      "name": "zero_class_collar_matches_edges",
+      "passed": true,
+      "residual": 2.0014830212433607e-16
+    },
+    {
+      "name": "zero_class_canonical_gauge",
+      "passed": true,
+      "residual": 1.1102230246251565e-16
+    },
+    {
+      "name": "zero_class_full_collar_cocycle",
+      "passed": true,
+      "residual": 4.0029660424867215e-16
+    },
+    {
+      "name": "zero_class_full_connection_compatibility",
+      "passed": true,
+      "residual": 2.7755575615628914e-17
+    },
+    {
+      "name": "zero_class_compatible_euler_sign",
+      "passed": true,
+      "euler": -0.0
+    },
+    {
+      "name": "right_twist_corner",
+      "passed": true,
+      "residual": 1.9013094962944242e-16
+    },
+    {
+      "name": "right_twist_transport_identity",
+      "passed": true,
+      "residual": 2.7755575615628914e-17
+    },
+    {
+      "name": "right_twist_corrected_index",
+      "passed": true,
+      "value": 1.0,
+      "expected": 1
+    },
+    {
+      "name": "right_twist_stokes_both_seams",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "name": "right_twist_frame_gauge",
+      "passed": true,
+      "residual": 8.881784197001252e-16
+    },
+    {
+      "name": "right_twist_collar_matches_edges",
+      "passed": true,
+      "residual": 8.968100940422726e-16
+    },
+    {
+      "name": "right_twist_canonical_gauge",
+      "passed": true,
+      "residual": 8.881784197001252e-16
+    },
+    {
+      "name": "right_twist_full_collar_cocycle",
+      "passed": true,
+      "residual": 2.3743894155498404e-15
+    },
+    {
+      "name": "right_twist_full_connection_compatibility",
+      "passed": true,
+      "residual": 4.440892098500626e-16
+    },
+    {
+      "name": "right_twist_compatible_euler_sign",
+      "passed": true,
+      "euler": -0.9999999999999997
+    },
+    {
+      "name": "left_integer_hidden_from_raw_scan",
+      "passed": true
+    },
+    {
+      "name": "joint_counterexample_corner",
+      "passed": true
+    },
+    {
+      "name": "joint_counterexample_edge1_below_two",
+      "passed": true,
+      "uniform_bound": 1.9753766811902755
+    },
+    {
+      "name": "joint_counterexample_edge2_below_two",
+      "passed": true,
+      "uniform_bound": 0.31286893008046174
+    },
+    {
+      "name": "joint_counterexample_changed_class",
+      "passed": true,
+      "q_difference": 1.0
+    },
+    {
+      "name": "naive_homotopy_breaks_corner",
+      "passed": true,
+      "midpoint_defect": 2.0
+    },
+    {
+      "name": "joint_strict_bound_refuses_counterexample",
+      "passed": true,
+      "rho_sum": 3.141592653589794
+    },
+    {
+      "name": "positive_joint_lift_condition",
+      "passed": true
+    },
+    {
+      "name": "positive_joint_uniform_bound",
+      "passed": true,
+      "analytic_angle_bound_sum": 0.5874999999999999
+    },
+    {
+      "name": "finite_jet_matches_at_origin",
+      "passed": true
+    },
+    {
+      "name": "finite_jet_does_not_close_collar",
+      "passed": true,
+      "defect": 0.0009999999583333342
+    },
+    {
+      "name": "lipschitz_midpoint_error_bound",
+      "passed": true,
+      "actual_error": 0.140625,
+      "bound": 3.375
+    },
+    {
+      "name": "exact_interval_positive",
+      "passed": true,
+      "observed": 2
+    },
+    {
+      "name": "exact_interval_negative",
+      "passed": true,
+      "observed": -3
+    },
+    {
+      "name": "exact_interval_zero_width",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "name": "exact_interval_ambiguous",
+      "passed": true,
+      "observed": "refuse"
+    },
+    {
+      "name": "exact_interval_empty",
+      "passed": true,
+      "observed": "refuse"
+    },
+    {
+      "name": "exact_interval_negative_radius",
+      "passed": true,
+      "observed": "invalid"
+    }
+  ],
+  "cases": [
+    {
+      "name": "left_hidden",
+      "q": -1,
+      "raw_phase_change_turns": 0.0,
+      "K1": 6.283185307179585,
+      "K2": 0.0,
+      "flux": 0.0,
+      "corrected_index": -0.9999999999999999,
+      "euler": 0.9999999999999997,
+      "corner_residual": 2.3808085534365814e-16,
+      "collar_residual": 2.021718909579674e-15,
+      "connection_residual": 4.440892098500626e-16,
+      "b_derivative_jump": 0.0
+    },
+    {
+      "name": "mixed",
+      "q": 3,
+      "raw_phase_change_turns": 2.331042281631142,
+      "K1": -4.203185307179586,
+      "K2": 13.926370614359174,
+      "flux": 0.72,
+      "corrected_index": 3.0,
+      "euler": -2.9999999999999996,
+      "corner_residual": 1.8138670177167933e-15,
+      "collar_residual": 6.71860036976734e-15,
+      "connection_residual": 2.0539125955565396e-15,
+      "b_derivative_jump": 0.48999999999999994
+    },
+    {
+      "name": "zero_class",
+      "q": 0,
+      "raw_phase_change_turns": 0.3676479185422782,
+      "K1": 2.31,
+      "K2": 1.59,
+      "flux": 0.72,
+      "corrected_index": -7.067899292141149e-17,
+      "euler": -0.0,
+      "corner_residual": 1.1102230246251565e-16,
+      "collar_residual": 4.0029660424867215e-16,
+      "connection_residual": 2.7755575615628914e-17,
+      "b_derivative_jump": -0.35
+    },
+    {
+      "name": "right_twist",
+      "q": 1,
+      "raw_phase_change_turns": 1.0,
+      "K1": -1.0408340855860843e-17,
+      "K2": 6.283185307179586,
+      "flux": 0.0,
+      "corrected_index": 1.0,
+      "euler": -0.9999999999999997,
+      "corner_residual": 1.9013094962944242e-16,
+      "collar_residual": 2.3743894155498404e-15,
+      "connection_residual": 4.440892098500626e-16,
+      "b_derivative_jump": 0.21
+    }
+  ],
+  "joint_counterexample": {
+    "eta1": 1.9753766811902755,
+    "eta2": 0.31286893008046174,
+    "q_difference": 1.0,
+    "homotopy_midpoint_defect": 2.0
+  },
+  "interval_cases": [
+    {
+      "name": "positive",
+      "center": "201/100",
+      "error": "1/50",
+      "expected": 2,
+      "observed": 2
+    },
+    {
+      "name": "negative",
+      "center": "-151/50",
+      "error": "1/25",
+      "expected": -3,
+      "observed": -3
+    },
+    {
+      "name": "zero_width",
+      "center": "0",
+      "error": "0",
+      "expected": 0,
+      "observed": 0
+    },
+    {
+      "name": "ambiguous",
+      "center": "1/2",
+      "error": "1/2",
+      "expected": "refuse",
+      "observed": "refuse"
+    },
+    {
+      "name": "empty",
+      "center": "1/2",
+      "error": "1/10",
+      "expected": "refuse",
+      "observed": "refuse"
+    },
+    {
+      "name": "negative_radius",
+      "center": "0",
+      "error": "-1/10",
+      "expected": "invalid",
+      "observed": "invalid"
+    }
+  ],
+  "limits": [
+    "Fixed synthetic two-dimensional matrix and polynomial controls; no physical model, eigensolver, numerical sweep or production API",
+    "Floating-point geometric tests illustrate derivations; no certified enclosure of geometric data",
+    "The exact rational interval checker covers only declared synthetic data in units of 2 pi",
+    "Constructed collar and connection need not preserve prescribed physical data; no physical reference or finite-to-infinite comparison supplied",
+    "Earlier evidence frozen; no v078 implementation or merge"
+  ]
+}
