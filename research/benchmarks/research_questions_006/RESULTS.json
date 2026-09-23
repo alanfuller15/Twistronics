@@ -1,0 +1,1404 @@
+{
+  "schema": "twistronics_boundary_sewing_audit_v1",
+  "passed": true,
+  "source_sha256": "e9debc047e10abcc738601a3937d0574b93fba51e7dbf2627618d753d62cbaa2",
+  "plan_sha256": "0ddd9223fe42d31586691433c2d4c02921412621eea54072a007ef554caada62",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "checks": [
+    {
+      "name": "retained_basis_size",
+      "passed": true
+    },
+    {
+      "name": "partial_isometry_v1_a0",
+      "passed": true
+    },
+    {
+      "name": "nonunitary_v1_a0",
+      "passed": true
+    },
+    {
+      "name": "reverse_shift_v1_a0",
+      "passed": true
+    },
+    {
+      "name": "real_basis_v1_a0",
+      "passed": true
+    },
+    {
+      "name": "partial_isometry_v1_a1",
+      "passed": true
+    },
+    {
+      "name": "nonunitary_v1_a1",
+      "passed": true
+    },
+    {
+      "name": "reverse_shift_v1_a1",
+      "passed": true
+    },
+    {
+      "name": "real_basis_v1_a1",
+      "passed": true
+    },
+    {
+      "name": "corner_path_identity_v1",
+      "passed": true
+    },
+    {
+      "name": "partial_isometry_v-1_a0",
+      "passed": true
+    },
+    {
+      "name": "nonunitary_v-1_a0",
+      "passed": true
+    },
+    {
+      "name": "reverse_shift_v-1_a0",
+      "passed": true
+    },
+    {
+      "name": "real_basis_v-1_a0",
+      "passed": true
+    },
+    {
+      "name": "partial_isometry_v-1_a1",
+      "passed": true
+    },
+    {
+      "name": "nonunitary_v-1_a1",
+      "passed": true
+    },
+    {
+      "name": "reverse_shift_v-1_a1",
+      "passed": true
+    },
+    {
+      "name": "real_basis_v-1_a1",
+      "passed": true
+    },
+    {
+      "name": "corner_path_identity_v-1",
+      "passed": true
+    },
+    {
+      "name": "identity_gate",
+      "passed": true
+    },
+    {
+      "name": "identity_decomposition",
+      "passed": true
+    },
+    {
+      "name": "identity_bounds",
+      "passed": true
+    },
+    {
+      "name": "identity_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "identity_angle",
+      "passed": true
+    },
+    {
+      "name": "pure_norm_loss_gate",
+      "passed": true
+    },
+    {
+      "name": "pure_norm_loss_decomposition",
+      "passed": true
+    },
+    {
+      "name": "pure_norm_loss_bounds",
+      "passed": true
+    },
+    {
+      "name": "pure_norm_loss_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "pure_norm_loss_angle",
+      "passed": true
+    },
+    {
+      "name": "pure_subspace_mismatch_gate",
+      "passed": true
+    },
+    {
+      "name": "pure_subspace_mismatch_decomposition",
+      "passed": true
+    },
+    {
+      "name": "pure_subspace_mismatch_bounds",
+      "passed": true
+    },
+    {
+      "name": "pure_subspace_mismatch_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "pure_subspace_mismatch_angle",
+      "passed": true
+    },
+    {
+      "name": "identical_gate_distinct_mechanisms",
+      "passed": true
+    },
+    {
+      "name": "excess_norm_loss_gate",
+      "passed": true
+    },
+    {
+      "name": "excess_norm_loss_decomposition",
+      "passed": true
+    },
+    {
+      "name": "excess_norm_loss_bounds",
+      "passed": true
+    },
+    {
+      "name": "phase_0.6_gate",
+      "passed": true
+    },
+    {
+      "name": "phase_0.6_decomposition",
+      "passed": true
+    },
+    {
+      "name": "phase_0.6_bounds",
+      "passed": true
+    },
+    {
+      "name": "phase_0.6_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "phase_0.6_angle",
+      "passed": true
+    },
+    {
+      "name": "phase_loss_zero_0.6",
+      "passed": true
+    },
+    {
+      "name": "phase_1.4_gate",
+      "passed": true
+    },
+    {
+      "name": "phase_1.4_decomposition",
+      "passed": true
+    },
+    {
+      "name": "phase_1.4_bounds",
+      "passed": true
+    },
+    {
+      "name": "phase_1.4_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "phase_1.4_angle",
+      "passed": true
+    },
+    {
+      "name": "phase_loss_zero_1.4",
+      "passed": true
+    },
+    {
+      "name": "phase_2.4_gate",
+      "passed": true
+    },
+    {
+      "name": "phase_2.4_decomposition",
+      "passed": true
+    },
+    {
+      "name": "phase_2.4_bounds",
+      "passed": true
+    },
+    {
+      "name": "phase_2.4_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "phase_2.4_angle",
+      "passed": true
+    },
+    {
+      "name": "phase_loss_zero_2.4",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_bottom_gate",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_bottom_decomposition",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_bottom_bounds",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_bottom_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_left_gate",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_left_decomposition",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_left_bounds",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_left_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_right_gate",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_right_decomposition",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_right_bounds",
+      "passed": true
+    },
+    {
+      "name": "corner_bottom_to_top_right_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_top_gate",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_top_decomposition",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_top_bounds",
+      "passed": true
+    },
+    {
+      "name": "corner_left_to_right_top_fit_bound",
+      "passed": true
+    },
+    {
+      "name": "local_gates_do_not_impose_corner_cocycle",
+      "passed": true
+    },
+    {
+      "name": "sizing_[0.0, 0.0]",
+      "passed": true
+    },
+    {
+      "name": "sizing_[0.23, -0.17]",
+      "passed": true
+    },
+    {
+      "name": "sizing_[0.4, 0.2]",
+      "passed": true
+    }
+  ],
+  "basis": {
+    "vectors": 49,
+    "sha256": "9840ff7943dab1fe656649197f9fc7559c9bde1208681b403168138240c2b590",
+    "ordered_indices": [
+      [
+        -4,
+        0
+      ],
+      [
+        -4,
+        1
+      ],
+      [
+        -4,
+        2
+      ],
+      [
+        -4,
+        3
+      ],
+      [
+        -3,
+        -1
+      ],
+      [
+        -3,
+        0
+      ],
+      [
+        -3,
+        1
+      ],
+      [
+        -3,
+        2
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -1,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        -1,
+        3
+      ],
+      [
+        0,
+        -3
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        -3
+      ],
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        2,
+        -2
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        3,
+        -2
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        -3
+      ],
+      [
+        4,
+        -2
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        4,
+        0
+      ]
+    ]
+  },
+  "structural": [
+    {
+      "valley": 1,
+      "axis": 0,
+      "shift": [
+        -1,
+        0
+      ],
+      "dimension": 196,
+      "rank": 168,
+      "lost_indices": [
+        [
+          -4,
+          0
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -2,
+          -2
+        ],
+        [
+          0,
+          -3
+        ]
+      ],
+      "ambient_isometry_defect": 1.0,
+      "real_basis_transform_error": 2.4441574809578864e-16
+    },
+    {
+      "valley": 1,
+      "axis": 1,
+      "shift": [
+        0,
+        -1
+      ],
+      "dimension": 196,
+      "rank": 160,
+      "lost_indices": [
+        [
+          -4,
+          0
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -2,
+          -2
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          1,
+          -3
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          4,
+          -3
+        ]
+      ],
+      "ambient_isometry_defect": 1.0,
+      "real_basis_transform_error": 2.4441574809578864e-16
+    },
+    {
+      "valley": 1,
+      "corner_commutator_norm": 0.0,
+      "disagreeing_indices": [],
+      "differing_columns": 0,
+      "meaning": "ambient structural test, not selected-band cocycle"
+    },
+    {
+      "valley": -1,
+      "axis": 0,
+      "shift": [
+        1,
+        0
+      ],
+      "dimension": 196,
+      "rank": 168,
+      "lost_indices": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          -3
+        ],
+        [
+          4,
+          -2
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "ambient_isometry_defect": 1.0,
+      "real_basis_transform_error": 2.4441574809578864e-16
+    },
+    {
+      "valley": -1,
+      "axis": 1,
+      "shift": [
+        0,
+        1
+      ],
+      "dimension": 196,
+      "rank": 160,
+      "lost_indices": [
+        [
+          -4,
+          3
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "ambient_isometry_defect": 1.0,
+      "real_basis_transform_error": 2.4441574809578864e-16
+    },
+    {
+      "valley": -1,
+      "corner_commutator_norm": 0.0,
+      "disagreeing_indices": [],
+      "differing_columns": 0,
+      "meaning": "ambient structural test, not selected-band cocycle"
+    }
+  ],
+  "endpoint_controls": [
+    {
+      "name": "identity",
+      "S": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        1.0
+      ],
+      "sewing_loss": 0.0,
+      "norm_loss_squared": 0.0,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "identity",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.0,
+      "fitting_norm": 0.0
+    },
+    {
+      "name": "pure_norm_loss",
+      "S": [
+        [
+          0.96,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.96,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        0.96,
+        0.96
+      ],
+      "sewing_loss": 0.040000000000000036,
+      "norm_loss_squared": 0.07840000000000003,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "pure_norm_loss",
+          "singular_values": [
+            0.96,
+            0.96
+          ],
+          "min_overlap": 0.96,
+          "sewing": true,
+          "sewing_loss": 0.040000000000000036,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.0,
+      "fitting_norm": 0.040000000000000036
+    },
+    {
+      "name": "pure_subspace_mismatch",
+      "S": [
+        [
+          0.96,
+          0.0,
+          -0.28,
+          -0.0
+        ],
+        [
+          0.0,
+          0.96,
+          -0.0,
+          -0.28
+        ],
+        [
+          0.28,
+          0.0,
+          0.96,
+          0.0
+        ],
+        [
+          0.0,
+          0.28,
+          0.0,
+          0.96
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        0.96,
+        0.96
+      ],
+      "sewing_loss": 0.040000000000000036,
+      "norm_loss_squared": 0.0,
+      "mismatch_norm": 0.28,
+      "decomposition_error": 1.3877787807814457e-17,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "pure_subspace_mismatch",
+          "singular_values": [
+            0.96,
+            0.96
+          ],
+          "min_overlap": 0.96,
+          "sewing": true,
+          "sewing_loss": 0.040000000000000036,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.0,
+      "fitting_norm": 0.28284271247461906
+    },
+    {
+      "name": "excess_norm_loss",
+      "S": [
+        [
+          0.94,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.94,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "rejected",
+      "rejection": "sewing_loss",
+      "singular_values": [
+        0.94,
+        0.94
+      ],
+      "sewing_loss": 0.06000000000000005,
+      "norm_loss_squared": 0.11640000000000006,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "excess_norm_loss",
+          "singular_values": [
+            0.94,
+            0.94
+          ],
+          "min_overlap": 0.94,
+          "sewing": true,
+          "sewing_loss": 0.06000000000000005,
+          "polar_det": 1.0
+        },
+        {
+          "kind": "rejection",
+          "model": "model",
+          "code": "sewing_loss",
+          "where": "excess_norm_loss",
+          "value": 0.06000000000000005,
+          "threshold": 0.05
+        }
+      ]
+    },
+    {
+      "name": "phase_0.6",
+      "S": [
+        [
+          0.8253356149096783,
+          -0.5646424733950354,
+          0.0,
+          0.0
+        ],
+        [
+          0.5646424733950354,
+          0.8253356149096783,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        1.0
+      ],
+      "sewing_loss": 0.0,
+      "norm_loss_squared": 4.092647269024399e-18,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "phase_0.6",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.6000000000000001,
+      "fitting_norm": 1.1102230246251565e-16
+    },
+    {
+      "name": "phase_1.4",
+      "S": [
+        [
+          0.16996714290024104,
+          -0.9854497299884601,
+          0.0,
+          0.0
+        ],
+        [
+          0.9854497299884601,
+          0.16996714290024104,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        0.9999999999999999
+      ],
+      "sewing_loss": 1.1102230246251565e-16,
+      "norm_loss_squared": 3.804750632253523e-18,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "phase_1.4",
+          "singular_values": [
+            1.0,
+            0.9999999999999999
+          ],
+          "min_overlap": 0.9999999999999999,
+          "sewing": true,
+          "sewing_loss": 1.1102230246251565e-16,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 1.4,
+      "fitting_norm": 8.326672684688674e-17
+    },
+    {
+      "name": "phase_2.4",
+      "S": [
+        [
+          -0.7373937155412454,
+          -0.675463180551151,
+          0.0,
+          0.0
+        ],
+        [
+          0.675463180551151,
+          -0.7373937155412454,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        0.9999999999999999
+      ],
+      "sewing_loss": 1.1102230246251565e-16,
+      "norm_loss_squared": 2.2737888084474094e-17,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "phase_2.4",
+          "singular_values": [
+            1.0,
+            0.9999999999999999
+          ],
+          "min_overlap": 0.9999999999999999,
+          "sewing": true,
+          "sewing_loss": 1.1102230246251565e-16,
+          "polar_det": 1.0000000000000002
+        }
+      ],
+      "polar_angle": 2.4,
+      "fitting_norm": 1.7963785889362148e-16
+    },
+    {
+      "name": "corner_left_to_right_bottom",
+      "S": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        1.0
+      ],
+      "sewing_loss": 0.0,
+      "norm_loss_squared": 0.0,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "corner_left_to_right_bottom",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.0,
+      "fitting_norm": 0.0
+    },
+    {
+      "name": "corner_bottom_to_top_left",
+      "S": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        1.0
+      ],
+      "sewing_loss": 0.0,
+      "norm_loss_squared": 0.0,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "corner_bottom_to_top_left",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.0,
+      "fitting_norm": 0.0
+    },
+    {
+      "name": "corner_bottom_to_top_right",
+      "S": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        1.0
+      ],
+      "sewing_loss": 0.0,
+      "norm_loss_squared": 0.0,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "corner_bottom_to_top_right",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 1.0
+        }
+      ],
+      "polar_angle": 0.0,
+      "fitting_norm": 0.0
+    },
+    {
+      "name": "corner_left_to_right_top",
+      "S": [
+        [
+          0.5000000000000001,
+          -0.8660254037844386,
+          0.0,
+          0.0
+        ],
+        [
+          0.8660254037844386,
+          0.5000000000000001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "passed",
+      "rejection": null,
+      "singular_values": [
+        1.0,
+        1.0
+      ],
+      "sewing_loss": 0.0,
+      "norm_loss_squared": 1.4874168143337463e-17,
+      "mismatch_norm": 0.0,
+      "decomposition_error": 0.0,
+      "ledger": [
+        {
+          "kind": "link",
+          "model": "model",
+          "where": "corner_left_to_right_top",
+          "singular_values": [
+            1.0,
+            1.0
+          ],
+          "min_overlap": 1.0,
+          "sewing": true,
+          "sewing_loss": 0.0,
+          "polar_det": 0.9999999999999999
+        }
+      ],
+      "polar_angle": 1.0471975511965976,
+      "fitting_norm": 1.1102230246251565e-16
+    }
+  ],
+  "synthetic_corner": {
+    "angle": 1.0471975511965976,
+    "defect": 0.9999999999999999
+  },
+  "conditional_sizing": [
+    {
+      "centre_K": [
+        0.0,
+        0.0
+      ],
+      "conditional_gap": 5.331890161169883,
+      "p": 24.932260576407508,
+      "q": 3779.5702258521183,
+      "loop_length": 1.0,
+      "target": 0.7853981633974483,
+      "denominator_free_threshold": 152.59672574098246,
+      "full_threshold": 153.61174927587265,
+      "sufficient_integer": 154,
+      "loop_bound": 0.7813904848299067,
+      "status": "conditional_arithmetic_not_a_physical_mesh_certificate"
+    },
+    {
+      "centre_K": [
+        0.23,
+        -0.17
+      ],
+      "conditional_gap": 1.8915645808556742,
+      "p": 70.27836966736582,
+      "q": 29774.852197952263,
+      "loop_length": 1.0,
+      "target": 0.7853981633974483,
+      "denominator_free_threshold": 719.518535410917,
+      "full_threshold": 721.2325889901416,
+      "sufficient_integer": 722,
+      "loop_bound": 0.783721514417201,
+      "status": "conditional_arithmetic_not_a_physical_mesh_certificate"
+    },
+    {
+      "centre_K": [
+        0.4,
+        0.2
+      ],
+      "conditional_gap": 6.807611907592022,
+      "p": 19.527563654857772,
+      "q": 2327.009581076849,
+      "loop_length": 1.0,
+      "target": 0.7853981633974483,
+      "denominator_free_threshold": 105.93871047301444,
+      "full_threshold": 106.8347941816356,
+      "sufficient_integer": 107,
+      "loop_bound": 0.7829337171871733,
+      "status": "conditional_arithmetic_not_a_physical_mesh_certificate"
+    }
+  ],
+  "limits": [
+    "Structural basis and synthetic component checks, not a physical Euler run or eigenvector calculation",
+    "Selected archived AST definitions executed unchanged; not an end-to-end import or production consumer replay",
+    "No finite-cutoff convergence conclusion follows from an ambient defect of one",
+    "Sewing singular values alone do not identify a physical reference transition or enforce a corner cocycle",
+    "The conditional sizing uses earlier uncertified floating-point cell gap bounds, not interval-certified gaps",
+    "No production modification, Fable correction, physical parameter sweep, merge or new graphene claim"
+  ]
+}
