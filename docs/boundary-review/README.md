@@ -32,7 +32,7 @@ Codex reproduced both corner values independently in review 5288150576.
 
 **Why it happens.** Both path composites equal X·N with X = S₂S₁F₀ = S₁S₂F₀, so each is X(XᵀX)^(−½)·O for some O ∈ O(2). Polar projection is nonlinear, so the two O factors differ in general. Commuting ambient maps fix the image but not the rotation within it.
 
-With constant, commuting, **orthogonal** transitions and exactly equivariant fibres, J equals T restricted to the fibre, and the corner closes. The retained control gives a defect of 1.2e-16.
+With constant, commuting, **orthogonal** transitions and exactly equivariant fibres, J equals T restricted to the fibre, and the corner closes. The retained control gives a defect of 4.5e-16 (`orthogonal_control_defect` = 4.518979695706721e-16 in `RESULTS.json`).
 
 ## 2. A conservative operator-norm bound (Codex, review 5288150576)
 
