@@ -1,5 +1,5 @@
 {
-  "schema": "twistronics_static_readiness_sources_v1",
+  "schema": "twistronics_static_readiness_sources_v2",
   "date": "2026-09-23",
   "evidence_commit": "4b01d0867a85a92e9bc634cc852c32b4c219cef3",
   "migration_baseline_commit": "44dc66951057a995ee0999c785aca3e0e6c67092",
@@ -11,8 +11,8 @@
   "files": [
     {
       "path": "docs/certification-readiness/README.md",
-      "sha256": "7fd8cd8ec603a1b8c325fa139b1af291ae62575661f5eeecca9d61c4555fa924",
-      "bytes": 10016
+      "sha256": "2504e2989237b25b3a9c5c3aca00b2f55cf8b5360bf4d421ae98a655425a0513",
+      "bytes": 12048
     },
     {
       "path": "research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json",
@@ -28,6 +28,21 @@
       "path": "research/benchmarks/research_questions_008/DERIVATION.md",
       "sha256": "47c134ff18eb01a5c7acf69fbdaf6841784137678a4922e6f30234b5407e0550",
       "bytes": 11650
+    },
+    {
+      "path": "docs/certification-readiness/CASE.md",
+      "sha256": "7ab2d084f9023a85546c837e42f48feb08d3f14a3b8638c13cdbee03b55c596f",
+      "bytes": 9498
+    },
+    {
+      "path": "docs/certification-readiness/CASE.json",
+      "sha256": "845d99071f2bfe148f19bc3974b9d2108defbcc8df7bf205f1238dfc885fc723",
+      "bytes": 16356
+    },
+    {
+      "path": "research/benchmarks/research_questions_007/DERIVATION.md",
+      "sha256": "b681e9aee4e8d57cf59a382b0879cf51647991b89929a5046d79907681347c42",
+      "bytes": 9700
     }
   ],
   "archive_members": [
@@ -186,5 +201,12 @@
     "physical_or_synthetic_numerical_runs": 0,
     "meaning": "Integrity and static source inspection only. No mathematical or physical certification is inferred from hashes."
   },
-  "partner_review_status": "requested_after_publication"
+  "partner_review_status": "source_proof_audit_complete; fixed_case_declaration_review_pending",
+  "prior_readiness_commit": "838be1b7fba2dba38c99769a150b3d2af7c121b5",
+  "source_proof_audit": {
+    "claude_source_comment": 5791880416,
+    "codex_completed_review": 5288846821,
+    "qualifications_incorporated": true
+  },
+  "declaration_receipt": "docs/certification-readiness/DECLARATION_CHECKS.json"
 }

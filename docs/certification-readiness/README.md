@@ -1,7 +1,10 @@
 # From the seam theorem to the archived finite model
 
-Date: 2026-09-23. Status: source-level candidate proof and readiness handoff;
-independent Claude audit requested. No physical run was performed.
+Date: 2026-09-23. Status: source-level proof independently audited for the
+declared case. Claude comment [5791880416](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791880416)
+and Codex review [5288846821](https://github.com/alanfuller15/Twistronics/pull/2#pullrequestreview-5288846821)
+record the audit. This revision incorporates its qualifications and adds a
+[fixed, unexecuted case declaration](CASE.md). No physical run was performed.
 
 This note follows q008 at `4b01d0867a85a92e9bc634cc852c32b4c219cef3`,
 Claude comment [5791531635](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791531635),
@@ -30,7 +33,7 @@ with real finite parameters, a fixed finite index set, and well-defined
 geometry. It does not prove that a floating-point execution evaluates them
 without error, nor certify constructor/plan agreement for arbitrary runs.
 
-## 2. Candidate finite-model real-structure proof
+## 2. Finite-model real-structure proof
 
 Let X be sigma_x on every layer/reciprocal-index sublattice pair and K be
 entrywise complex conjugation in that fixed ordering. Set C=X K.
@@ -53,9 +56,12 @@ Every block in the declared massless model is fixed by T:
 | `_build_static` displacement field | Real layer-dependent coefficient times I; zero in the declared run. |
 | `add_harmonic` with real amplitude and `sz`, `use_sin=True` | Each directed block has a purely imaginary coefficient times sigma_z. Conjugating the coefficient and reversing sigma_z cancel. Opposite directions are adjoints. |
 
-A nonzero real mass times sigma_z would fail this condition. Thus this
-argument explicitly relies on the declared mass=0; a cosine sigma_z
-harmonic would also require a different analysis.
+A nonzero real mass times sigma_z fails this condition. For real nonzero
+Fourier amplitudes, cosine-sigma_z and sine-{I,sigma_x,sigma_y} also break
+this C; cosine-{I,sigma_x,sigma_y} and sine-sigma_z preserve it. These claims
+concern the individual nonzero terms, absent cancellations. The declared
+pairing, real amplitude, real layer_sign and real w1 are explicit hypotheses.
+The proof does not rely on an assertion serving as input validation.
 
 Finite truncation removes complete sublattice pairs and block connections.
 C acts within each retained pair, so it preserves the finite space for any
@@ -68,6 +74,9 @@ X conjugate(H_K(k)) X = H_K(k),   C^2=I,
 ```
 
 for every real k where the declared formulas are defined. The archived
+valley +1 path does not coerce k to float; real k must be a caller
+precondition. Complex-step and contour evaluations are outside this proof.
+The archived
 valley wrapper is H_Kprime(k)=conjugate(H_K(-k)). Conjugating the identity
 above gives X H_K(-k) X=conjugate(H_K(-k)), which proves the same C symmetry
 for the wrapper. This is an algebraic partner valley, not an independent
@@ -97,14 +106,15 @@ make it unitary, an exact covariance of the finite H, or a valid torus seam.
 
 ## 3. What this does and does not close
 
-Subject to independent audit, the exact declared finite model has a
-specified ambient real structure for every k. This replaces a missing
+The independent audit supports a specified ambient real structure for the
+exact declared finite model at every real k. This replaces a missing
 algebraic definition with an explicit source-level construction.
 
 For an isolated rank-two spectral cluster, its projector commutes with C
 by spectral calculus. With a uniform gap and suitable regularity, it
-therefore defines a real rank-two bundle on the rectangle. Those isolation
-hypotheses have not been certified here. A real structure alone proves
+therefore defines a real rank-two bundle on the contractible rectangle,
+where the bundle is trivial and orientable. Those isolation hypotheses
+have not been certified here. A real structure alone proves
 neither orientability on the glued torus nor the existence of an oriented
 periodic frame. It also does not establish that the modeled antiunitary
 matches every physical symmetry, perturbation or experimental sample.
@@ -113,25 +123,46 @@ matches every physical symmetry, perturbation or experimental sample.
 residual at evaluated coordinates before diagonalizing the real part.
 These are sampled floating-point diagnostics. To connect the executed
 matrix to this exact model still requires assembly, eigensolver and
-projector error enclosures in a declared norm. The entrywise tolerance
-alone is not an operator-norm or spectral certificate.
+projector error enclosures in a declared norm. For a D-by-D matrix,
+||Im R||_2 <= ||Im R||_F <= D max_ij |Im R_ij|, so the 1e-9 meV entrywise
+gate bounds the discarded part by 1.96e-7 meV at D=196, assuming that
+entrywise bound is established for the represented matrix. It does not
+enclose assembly roundoff, trigonometric/inverse errors, eigensolver errors
+or the difference from the exact model. An observed rounded residual is
+not a replacement for outward-rounded bounds on those quantities.
+
+Raw links between independent eigenframes can have negative determinants
+because eigenvector column signs are arbitrary. Rejecting such raw links
+on determinant sign would be wrong. Orientation is tested on seam maps
+expressed in consistently oriented continuous rectangle frames. A real
+structure does not determine that seam orientation. Stability of w1 along
+a gapped continuous family presupposes a continuously specified gluing
+family under declared identifications; independently changing the gluing
+is not covered by a gap-only argument.
 
 ## 4. Ordered readiness map
+
+The model/error, isolation, continuous boundary/orientation, and corner
+conditions below must be proved separately for BOTH finite systems before
+using a cross-cutoff comparison. Orientation precedes principal repair.
 
 | Gate | Accessible evidence | Required before a certified finite relative class |
 |---|---|---|
 | Model and domain declaration | Exact archived constructor and harmonic; frozen N=4 basis and eight local-path cases | Select one parameter setting, rectangle, band pair, orientation convention and comparison cutoff with explicit index sets. Local node loops and transport paths do not supply a whole-rectangle certificate. |
-| Ambient real structure | Candidate proof in section 2, bound to actual archived definitions | Independent algebra/source audit and an error bridge from floating-point matrices to the exact real model. |
+| Ambient real structure | Audited proof in section 2, bound to actual archived definitions | An error bridge from floating-point matrices to the exact real model for each finite system. |
 | Isolated real two-plane field | Sampled neighboring energies in the migration records | Certified uniform external spectral gap over the declared rectangle and seams, with regularity bounds. Internal degeneracy of the selected pair need not destroy the pair projector. |
-| Boundary polar maps and orientation | `shift_matrix`, `sewing`, and `Sampler.link`; q006 loss/mismatch identities | Continuous selected-fibre invertibility, justified orientation of each transition, and its relation to the intended physical translation. `Sampler.link` records the polar determinant but does not itself reject a negative determinant. |
+| Boundary polar maps and orientation | `shift_matrix`, `sewing`, and `Sampler.link`; q006 loss/mismatch identities | Continuous selected-fibre invertibility, positive seam determinant in consistently oriented frames, and its relation to the intended physical translation. The determinant of a raw eigenframe link is not this test. |
 | Corner repair | q007 principal construction; q008 audit composition warning | Certified margin below 2 for each unrepaired corner discrepancy, then the specified principal repair and continuous maps for the repaired system. |
 | Cross-cutoff identification | No such object is supplied by this reviewed N=4 migration package | Explicit continuous oriented isometry between the selected fibres over the whole rectangle. Ordered ambient index inclusion alone does not identify the selected eigenspaces. |
 | Joint class comparison | q008 equations (6)-(7) | Certify the joint lifted-corner condition or uniform sufficient bound for the repaired systems under that single identification. Endpoint agreement is insufficient. |
 | Integer extraction | q008 section 5 conditional contract | Certified phase variation, seam-defect quadrature, endpoint errors, pi and directed arithmetic; exactly one integer candidate in the final enclosure. |
 | Physical/infinite-cutoff interpretation | Not established by this packet | Separate physical reference and controlled finite-to-infinite comparison. Agreement of two finite classes is insufficient. |
 
-The migration diagnostic ledger stores spectra and link diagnostics, but
-not the eigenframes returned by `Sampler.frame`. Its scalar records cannot
+The migration ledger has 5,944 frame, 8,224 link and 2,304 angle records.
+None of its links has sewing=true. There are 4,457 negative raw-link
+determinants, which are not by themselves orientation defects. It stores
+neither the eigenframes returned by `Sampler.frame` nor a second cutoff.
+Its scalar records cannot
 reconstruct a continuous field or a cross-cutoff identification. This is
 an evidence-availability limit of that delivery, not evidence that its
 retained SAME/OPPOSITE labels are wrong. Earlier historical cutoff studies
@@ -139,13 +170,13 @@ are not being assessed or promoted into continuous certificates here.
 
 ## 5. Next bounded handoff
 
-Claude's next task is a static independent review of sections 1-3 and the
-gate ordering, using the exact archive chain. Check every Hamiltonian term,
-the sine coefficient, valley wrapper, cutoff ordering, realify formula,
-and the distinction between ambient reality and oriented spectral gluing.
-Return a counterexample or missing hypothesis if any. Also identify the
-minimum source/data additions needed to specify one future fixed physical
-case; do not infer a rectangle or second cutoff from the local-loop records.
+The real-structure source audit is complete. The next review concerns the
+explicit [CASE.md](CASE.md) and [CASE.json](CASE.json) declaration: model,
+two ordered bases, two selected band pairs, rectangle, seam directions,
+orientation construction, continuous fibre identification and arithmetic
+targets. These are newly declared choices, not inferred retained results.
+Claude should test their consistency and identify any missing condition
+before a bounded numerical certificate implementation is designed.
 
 That review requires no Hamiltonian run, eigensolver, sweep, production
 change or v078 correction. The existing v078 owner retains that work.

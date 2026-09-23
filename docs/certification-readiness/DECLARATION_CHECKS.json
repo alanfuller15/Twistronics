@@ -1,0 +1,96 @@
+{
+  "schema": "twistronics_static_declaration_checks_v1",
+  "date": "2026-09-23",
+  "case_id": "FC49-77-K-Bm025-v1",
+  "outcome": "PASS_STATIC_INTEGRITY_AND_FINITE_SET_CHECKS_ONLY",
+  "method": "Python standard-library json, zipfile, ast, hashlib and Fraction; read-only source parsing and exact integer/rational finite-set checks; no archived imports",
+  "documents": [
+    {
+      "path": "docs/certification-readiness/README.md",
+      "sha256": "2504e2989237b25b3a9c5c3aca00b2f55cf8b5360bf4d421ae98a655425a0513",
+      "bytes": 12048
+    },
+    {
+      "path": "docs/certification-readiness/CASE.md",
+      "sha256": "7ab2d084f9023a85546c837e42f48feb08d3f14a3b8638c13cdbee03b55c596f",
+      "bytes": 9498
+    },
+    {
+      "path": "docs/certification-readiness/CASE.json",
+      "sha256": "845d99071f2bfe148f19bc3974b9d2108defbcc8df7bf205f1238dfc885fc723",
+      "bytes": 16356
+    },
+    {
+      "path": "docs/certification-readiness/SOURCE_BINDINGS.json",
+      "sha256": "676d02e0c0415bfe6655d96dd394413deaa4d986a2207a1388424e657bc7a0f1",
+      "bytes": 6999
+    }
+  ],
+  "checks": {
+    "archive_matches_contract_and_both_declarations": true,
+    "file:docs/certification-readiness/README.md": true,
+    "file:research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json": true,
+    "file:research/benchmarks/research_questions_006/DERIVATION.md": true,
+    "file:research/benchmarks/research_questions_008/DERIVATION.md": true,
+    "file:docs/certification-readiness/CASE.md": true,
+    "file:docs/certification-readiness/CASE.json": true,
+    "file:research/benchmarks/research_questions_007/DERIVATION.md": true,
+    "archive_member:migrated_valley_control.py": true,
+    "definition_spans:migrated_valley_control.py": true,
+    "archive_member:guarded_topology.py": true,
+    "definition_spans:guarded_topology.py": true,
+    "archive_member:response_inputs.py": true,
+    "definition_spans:response_inputs.py": true,
+    "archive_member:RUN/MODELS.json": true,
+    "archive_member:RUN/BASIS.json": true,
+    "archive_member:PLAN_MIGRATION.json": true,
+    "archive_member:partner_v074p.zip": true,
+    "archive_member:bm_strain.py": true,
+    "definition_spans:bm_strain.py": true,
+    "archive_member:knobs.py": true,
+    "definition_spans:knobs.py": true,
+    "archive_member:fast_engine.py": true,
+    "definition_spans:fast_engine.py": true,
+    "archive_member:euler.py": true,
+    "definition_spans:euler.py": true,
+    "contract_outer_sources": true,
+    "retained_basis_order": true,
+    "exact_neighbor_shell": true,
+    "counts_nesting_uniqueness": true,
+    "dimensions_and_fixed_pairs": true,
+    "same_index_layer_sublattice_embedding": true,
+    "exact_ambient_isometry": true,
+    "canonical_array_hashes": true,
+    "constructor_defaults_match_retained_model": true,
+    "parameter_and_harmonic_match_retained_case": true,
+    "constant_literals": true,
+    "all_three_harmonics_declared": true,
+    "explicit_index_set_and_unexecuted_state": true,
+    "declared_source_to_target_shifts": true,
+    "repair_polynomial_endpoint_jets": true,
+    "fixed_rational_targets": true
+  },
+  "counts": {
+    "retained_indices": 49,
+    "comparison_indices": 77,
+    "new_indices": 28,
+    "dimensions": [
+      196,
+      308
+    ],
+    "inclusion_columns": 196,
+    "archive_members_bound": 11
+  },
+  "execution": {
+    "archived_modules_imported": false,
+    "hamiltonian_assemblies": 0,
+    "eigensolver_runs": 0,
+    "parameter_sweeps": 0,
+    "physical_case_outcome": null
+  },
+  "limitations": [
+    "Not a proof of gaps, geometry invertibility, frames, seam orientation, corner bounds or class agreement.",
+    "Independent mathematical declaration review and bounded certified-arithmetic implementation plan remain required.",
+    "Array SHA values use CASE.json hash_encoding, not the different retained BASIS.json internal digest convention."
+  ]
+}
