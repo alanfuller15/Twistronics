@@ -1,0 +1,190 @@
+{
+  "schema": "twistronics_static_readiness_sources_v1",
+  "date": "2026-09-23",
+  "evidence_commit": "4b01d0867a85a92e9bc634cc852c32b4c219cef3",
+  "migration_baseline_commit": "44dc66951057a995ee0999c785aca3e0e6c67092",
+  "archive": {
+    "path": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+    "sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+    "bytes": 1628560
+  },
+  "files": [
+    {
+      "path": "docs/certification-readiness/README.md",
+      "sha256": "7fd8cd8ec603a1b8c325fa139b1af291ae62575661f5eeecca9d61c4555fa924",
+      "bytes": 10016
+    },
+    {
+      "path": "research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json",
+      "sha256": "0300f2ab57c7e4c4468d9ae28118e4f24af8dc397e95cf5575d3ec97aa4c5c79",
+      "bytes": 6722
+    },
+    {
+      "path": "research/benchmarks/research_questions_006/DERIVATION.md",
+      "sha256": "dd303e656d75d58b34abb60ec495993b58b25ecf64c7dc541090bdc98b99d0cf",
+      "bytes": 8174
+    },
+    {
+      "path": "research/benchmarks/research_questions_008/DERIVATION.md",
+      "sha256": "47c134ff18eb01a5c7acf69fbdaf6841784137678a4922e6f30234b5407e0550",
+      "bytes": 11650
+    }
+  ],
+  "archive_members": [
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "migrated_valley_control.py",
+      "bytes": 9575,
+      "sha256": "548219d961af1c57763a890f1f9d787b3e1e1ffae4c087c2af082e19ab146e2a",
+      "inspected_definitions": [
+        {
+          "name": "build",
+          "first_line": 29,
+          "last_line": 31
+        }
+      ]
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "guarded_topology.py",
+      "bytes": 12340,
+      "sha256": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+      "inspected_definitions": [
+        {
+          "name": "Sampler.frame",
+          "first_line": 78,
+          "last_line": 105
+        },
+        {
+          "name": "Sampler.link",
+          "first_line": 107,
+          "last_line": 121
+        },
+        {
+          "name": "sewing",
+          "first_line": 210,
+          "last_line": 212
+        }
+      ]
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "response_inputs.py",
+      "bytes": 1261,
+      "sha256": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+      "inspected_definitions": [
+        {
+          "name": "extract",
+          "first_line": 6,
+          "last_line": 21
+        },
+        {
+          "name": "activate",
+          "first_line": 23,
+          "last_line": 26
+        }
+      ]
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "RUN/MODELS.json",
+      "bytes": 5872,
+      "sha256": "8c2e9e054b3ce89d6bfb0d2d31342f22fa7afbac24b53761b5415622c9219ccc"
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "RUN/BASIS.json",
+      "bytes": 1143,
+      "sha256": "71aa4ec545a745741b83e1bb985641cdba8f27295ec40507d065bcc96605240b"
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "PLAN_MIGRATION.json",
+      "bytes": 2531,
+      "sha256": "1d36e8cae984b55110a64a80760b08b9330fc0d1e01e1467cabccd8d2d90ddd9"
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+      "member": "partner_v074p.zip",
+      "bytes": 42652,
+      "sha256": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163"
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip!partner_v074p.zip",
+      "member": "bm_strain.py",
+      "bytes": 17306,
+      "sha256": "2b763c6a4400497a453229586f45f9d2e24371ed0957265d6c53eb161cfe1eef",
+      "inspected_definitions": [
+        {
+          "name": "BM.__init__",
+          "first_line": 52,
+          "last_line": 140
+        },
+        {
+          "name": "BM._build_static",
+          "first_line": 143,
+          "last_line": 178
+        },
+        {
+          "name": "BM.H",
+          "first_line": 181,
+          "last_line": 183
+        },
+        {
+          "name": "BM._H_K",
+          "first_line": 184,
+          "last_line": 196
+        }
+      ]
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip!partner_v074p.zip",
+      "member": "knobs.py",
+      "bytes": 2210,
+      "sha256": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+      "inspected_definitions": [
+        {
+          "name": "add_harmonic",
+          "first_line": 4,
+          "last_line": 17
+        }
+      ]
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip!partner_v074p.zip",
+      "member": "fast_engine.py",
+      "bytes": 5951,
+      "sha256": "03e7b87889c1483f92ed591d0bf4231550e5154c362695aeeca351d011501822",
+      "inspected_definitions": [
+        {
+          "name": "realify",
+          "first_line": 13,
+          "last_line": 18
+        }
+      ]
+    },
+    {
+      "container": "research/benchmarks/migration_contract_review/partner_v078p.zip!partner_v074p.zip",
+      "member": "euler.py",
+      "bytes": 2841,
+      "sha256": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271",
+      "inspected_definitions": [
+        {
+          "name": "shift_matrix",
+          "first_line": 9,
+          "last_line": 18
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "archive_sha_matches_contract": true,
+    "outer_python_source_hashes_match_contract": true,
+    "nested_source_hashes_and_lengths_match_input_manifest": true,
+    "definition_spans_located_with_ast": true,
+    "archived_modules_imported": false,
+    "physical_or_synthetic_numerical_runs": 0,
+    "meaning": "Integrity and static source inspection only. No mathematical or physical certification is inferred from hashes."
+  },
+  "partner_review_status": "requested_after_publication"
+}
