@@ -58,6 +58,8 @@ A correction counts as closed only with committed evidence, not a description:
 - Source, model and path bindings, plus a generated concise README.
 - Separate reporting of execution success, evidence integrity and sampled numerical acceptance.
 
+[`correction-intake.md`](correction-intake.md) maps each item to its existing probe and to the evidence needed to close it. It also lists the requirements for an incoming package. Every correction is UNREVIEWED until a new package arrives.
+
 Keep these limitations explicit. The checker cannot prove that the records came from an authentic execution. It also cannot recompute frame overlaps without the eigenvectors, which are not retained. Report lint finding counts as software findings, not as numerical errors.
 
 ## Scientific scope limits
