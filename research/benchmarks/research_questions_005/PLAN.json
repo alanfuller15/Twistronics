@@ -1,0 +1,47 @@
+{
+  "version": "research_questions_005",
+  "baseline_commit": "5304c430e9fe8b46ab40c5966785372c13eac7fe",
+  "sources": {
+    "research/benchmarks/research_questions_005/projector_transport.py": "9d4e60e04a41baa8a965c934571193d97537bc7f5be547abb99f45ed8d142a69",
+    "research/benchmarks/research_questions_005/DERIVATION.md": "9da468bf0a94e13ea6adead3b5257483d622ecdfcb5b63d03de39220f86d6af0",
+    "research/benchmarks/research_questions_003/bounds.py": "544f4bedecaa48d213273f8df52c564cb5c88ee20c616ca94cda03847ad48426",
+    "research/benchmarks/research_questions_003/RESULTS.json": "36f58ce8bd6c0f8c51314ff62dbd0346fe36c5fca602869a6c449afb747c5796",
+    "research/benchmarks/research_questions_004/RESULTS.json": "85ae53ce2922ce5a14b5a7ba1fa10f26c58b56f2efb9f35a657d758ff73023ed",
+    "research/benchmarks/vafek_2025/model.py": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3"
+  },
+  "spinor_z": [[0.0, 0.0], [0.4, 0.7], [-1.2, 0.3], [3.0, -2.0]],
+  "spinor_u": [[1.0, 0.0], [0.0, 1.0], [0.6, 0.8], [0.5, 0.0]],
+  "model_centres": [[0.0, 0.0], [0.23, -0.17], [0.4, 0.2]],
+  "model_Q": 0.5,
+  "K_directions": [[1.0, 0.0], [0.0, 1.0], [0.6, 0.8]],
+  "scalar_shift": -132.5,
+  "finite_difference_step": 0.0001,
+  "fd_tolerance": 0.00005,
+  "real_starts": [0.0, 0.4],
+  "complex_starts": [0.3],
+  "edge_lengths": [0.05, 0.1, 0.2],
+  "geodesic_lengths": [0.1, 0.4, 1.0],
+  "ode_tolerances": {"rtol": 2e-11, "atol": 2e-13},
+  "ODE_diagnostic_tolerance": 1e-8,
+  "folds": [1, 49, 97],
+  "screen_meshes": [24, 48, 96],
+  "expected_outcomes": [
+    "The sharp spinor formula holds at all fixed witnesses and is attained at z=0",
+    "Fixed source Hamiltonian derivatives agree with declared finite differences and obey revised bounds",
+    "Nine real-rank2 or complex-rank3 polar links obey the general Kato bound and gauge covariance",
+    "At least one curved-path link has nonzero error above 1e-5; exact geodesic errors vanish to tolerance",
+    "The orthogonal-endpoint case is refused by the sufficient hypotheses",
+    "Generic sphere unwrapping bound passes at 48/96, pi/2 only at96; aliases are not certified",
+    "Conditional projector acceleration arithmetic improves but does not certify the earlier float gaps"
+  ],
+  "limits": [
+    "Proposed exact-arithmetic theorem pending partner proof review",
+    "ODE and finite-difference witnesses are numerical diagnostics, not validated enclosures",
+    "Norm comparison covers finite-dimensional C2 projectors; Euler scan conclusion needs real oriented rank2 and exact periodic identifications",
+    "No physical-domain isolation, real-structure, sewing or floating-point certificate",
+    "Earlier disk gap values are ordinary floating point and reused only as conditional arithmetic",
+    "No production API replay, physical parameter sweep, v078 repair, merge or new physical claim"
+  ],
+  "failure_policy": "Retain unexpected failed attempts before changing source, cases or thresholds",
+  "provenance": "Source, derivation and plan frozen before first execution; not independently timestamp-attested"
+}
