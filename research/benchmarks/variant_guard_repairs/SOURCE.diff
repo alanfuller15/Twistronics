@@ -1,0 +1,1243 @@
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/clean_smoke.py
+@@ -0,0 +1,60 @@
++"""Copy sources + original input only, then run tests and a bounded fresh smoke."""
++import hashlib
++import json
++import os
++from pathlib import Path
++import shutil
++import subprocess
++import sys
++import tempfile
++import zipfile
++
++ROOT = Path(__file__).resolve().parent
++def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
++
++
++def run():
++    env = dict(os.environ, OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTEST_DISABLE_PLUGIN_AUTOLOAD='1')
++    with tempfile.TemporaryDirectory(prefix='twistronics_guard_clean_') as td:
++        dst = Path(td)
++        inputs = sorted(ROOT.glob('*.py')) + [ROOT/x for x in ('partner_v074p.zip', 'INPUT_MANIFEST.json', 'PLAN.json')]
++        for p in inputs: shutil.copy2(p, dst/p.name)
++        rec = dict(copied_sources={p.name: sha(p) for p in inputs}, inherited_results=False, commands=[])
++        commands = [[sys.executable, '-m', 'pytest', '-q', '-p', 'no:cacheprovider', 'test_guards.py', '--junitxml=CLEAN_TESTS.xml'],
++                    [sys.executable, 'run_campaign.py', '--smoke', '--output', 'smoke']]
++        for j, command in enumerate(commands):
++            done = subprocess.run(command, cwd=dst, env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=240)
++            (dst/f'command_{j}.log').write_text(done.stdout)
++            rec['commands'].append(dict(argv=command, returncode=done.returncode))
++            if done.returncode:
++                (ROOT/'CLEAN_FAILURE.log').write_text(done.stdout)
++                raise RuntimeError('clean command failed; see CLEAN_FAILURE.log')
++        old = json.loads((ROOT/'RESULTS.json').read_text())
++        fresh = json.loads((dst/'smoke/RESULTS.json').read_text())
++        byid = {r['id']: r for r in old['outcomes']}
++        comparisons = []
++        for r in fresh['outcomes']:
++            other = byid[r['id']]
++            if r['result']['status'] != other['result']['status']: raise RuntimeError('smoke status changed')
++            fields = ['label', 'code']
++            for key in fields:
++                if r['result'].get(key) != other['result'].get(key): raise RuntimeError('smoke decision changed')
++            import numpy as np
++            errors = {}
++            for key in ('windings', 'node_gaps_meV', 'energies_meV'):
++                if key in r['result']:
++                    errors[key] = float(np.max(np.abs(np.asarray(r['result'][key])-other['result'][key])))
++                    if errors[key] > 1e-9: raise RuntimeError('smoke numerical mismatch')
++            comparisons.append(dict(id=r['id'], status=r['result']['status'], max_abs_differences=errors))
++        rec['comparisons'] = comparisons
++        rec['original_archive_unchanged'] = sha(dst/'partner_v074p.zip') == sha(ROOT/'partner_v074p.zip')
++        rec['core_source_hashes_match_full_run'] = all(fresh['sources'][f] == old['sources'][f] for f in ('guarded_topology.py', 'guarded_sparse.py', 'run_campaign.py', 'response_inputs.py'))
++        with zipfile.ZipFile(ROOT/'CLEAN_EVIDENCE.zip', 'w', zipfile.ZIP_DEFLATED) as z:
++            for p in sorted((dst/'smoke').glob('*')): z.write(p, 'smoke/'+p.name)
++            for name in ('CLEAN_TESTS.xml', 'command_0.log', 'command_1.log'): z.write(dst/name, name)
++        rec['evidence_zip_sha256'] = sha(ROOT/'CLEAN_EVIDENCE.zip')
++        (ROOT/'CLEAN_SMOKE.json').write_text(json.dumps(rec, indent=2)+'\n')
++        print(json.dumps(rec, indent=2))
++
++
++if __name__ == '__main__': run()
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/guarded_sparse.py
+@@ -0,0 +1,159 @@
++"""Conservative sparse windows with mandatory native dense comparison.
++
++No inertia is estimated from LU. LU is only a linear solver for ARPACK.
++This mode makes no speedup, root-finding or certified-arithmetic claim.
++"""
++from contextlib import contextmanager
++import hashlib
++import json
++import time
++import numpy as np
++import scipy.sparse as sp
++from scipy.sparse.linalg import eigsh, splu, LinearOperator
++from scipy.linalg import eigh
++from guarded_topology import Rejected, integer, finite_points
++from fast_engine import RealEngine, realify
++from bm_strain import BM
++
++
++def validate_indices(indices):
++    raw = np.asarray(indices, dtype=object)
++    if raw.ndim != 2 or raw.shape[1] != 2 or len(raw) == 0:
++        raise Rejected("invalid_basis_shape")
++    out = []
++    for row in raw:
++        item = []
++        for value in row:
++            if isinstance(value, (bool, np.bool_, str)):
++                raise Rejected("invalid_basis_component", value=str(value))
++            f = float(value)
++            if not np.isfinite(f) or f != int(f):
++                raise Rejected("invalid_basis_component", value=str(value))
++            item.append(int(f))
++        out.append(tuple(item))
++    if len(set(out)) != len(out):
++        raise Rejected("duplicate_basis_index")
++    return out
++
++
++def fixed_bm(indices, **kw):
++    """Validate before the historical BM constructor can truncate an index."""
++    return BM(index_set=validate_indices(indices), **kw)
++
++
++class Ledger:
++    def __init__(self):
++        self.entries = []
++
++    def add(self, kind, **kw):
++        self.entries.append(dict(kind=kind, **kw))
++
++    @contextmanager
++    def component(self, name, attempt):
++        start = time.perf_counter()
++        status = "COMPLETED"
++        try:
++            yield
++        except Exception:
++            status = "FAILED"
++            raise
++        finally:
++            self.add("component", name=name, attempt=attempt, status=status,
++                     exclusive_seconds=time.perf_counter()-start)
++
++    def counts(self):
++        names = [x["name"] for x in self.entries if x["kind"] == "component"]
++        return {name: names.count(name) for name in sorted(set(names))}
++
++
++class CheckedSparse:
++    def __init__(self, model, declared_indices, policy, ledger=None):
++        self.m = model
++        self.indices = validate_indices(declared_indices)
++        if not isinstance(model, BM) or not model.index_set_fixed or list(model.idx) != self.indices:
++            raise Rejected("fixed_declared_basis_required")
++        self.p = dict(policy)
++        required = ("native_matrix_tol_meV", "ordered_energy_tol_meV", "residual_tol_meV", "orthogonality_tol", "projector_tol", "edge_gap_meV")
++        for name in required:
++            value = self.p[name]
++            if isinstance(value, bool) or not np.isfinite(value) or value <= 0:
++                raise Rejected("invalid_sparse_policy", name=name, value=str(value))
++        self.ledger = Ledger() if ledger is None else ledger
++        self.counter = 0
++        with self.ledger.component("setup", 0):
++            self.E = RealEngine(model)
++        self.identity = dict(dimension=model.dim, ordered_indices=[list(x) for x in self.indices],
++                             basis_sha256=hashlib.sha256(json.dumps(self.indices, separators=(",", ":")).encode()).hexdigest())
++
++    def check(self, name, value, attempt):
++        threshold = self.p[name]
++        passed = bool(np.isfinite(value) and value <= threshold)
++        self.ledger.add("check", attempt=attempt, name=name, value=float(value) if np.isfinite(value) else None,
++                        threshold=threshold, passed=passed)
++        if not passed:
++            raise Rejected("sparse_comparison", check=name, value=str(value), threshold=threshold)
++
++    def window(self, f, lo, n=2, sigma=0., request_k=14):
++        self.counter += 1
++        attempt = self.counter
++        start = time.perf_counter()
++        status = "REJECTED"
++        try:
++            f = finite_points([f])[0]
++            lo, n, k = integer(lo, "lo"), integer(n, "n", 1), integer(request_k, "request_k", 1)
++            if lo+n > self.m.dim or n > k or k >= self.m.dim or not np.isfinite(sigma):
++                raise Rejected("unsupported_sparse_request")
++            if list(self.m.idx) != self.indices or self.m.dim != 4*len(self.indices):
++                raise Rejected("basis_changed")
++            self.ledger.add("request", attempt=attempt, f=f.tolist(), lo=lo, n=n, sigma=float(sigma), request_k=k)
++            with self.ledger.component("native_assembly", attempt):
++                H = self.m.H(self.m.frac_to_k(f))
++                R = realify(H)
++                if not np.isfinite(R).all():
++                    raise Rejected("nonfinite_native_matrix")
++                self.check("native_matrix_tol_meV", float(np.max(np.abs(H-H.conj().T))), attempt)
++                self.check("native_matrix_tol_meV", float(np.max(np.abs(R.imag))), attempt)
++            with self.ledger.component("candidate_assembly", attempt):
++                C = self.E.HR(f)
++                self.check("native_matrix_tol_meV", float(np.max(np.abs(C-R))), attempt)
++                S = sp.csc_matrix(C)
++            low, high = max(0, lo-1), min(self.m.dim-1, lo+n)
++            with self.ledger.component("native_dense_eigh", attempt):
++                wd, Vd = eigh(R.real, subset_by_index=(low, high))
++            j = lo-low
++            gaps = ([float(wd[j]-wd[j-1])] if lo > 0 else []) + ([float(wd[j+n]-wd[j+n-1])] if lo+n < self.m.dim else [])
++            target, targetV = wd[j:j+n], Vd[:, j:j+n]
++            self.ledger.add("native_target", attempt=attempt, first_band=low, energies_meV=wd.tolist(), edge_gaps_meV=gaps)
++            if any(g < self.p["edge_gap_meV"] for g in gaps):
++                raise Rejected("unresolved_sparse_window_edge", gaps_meV=gaps)
++            with self.ledger.component("lu_factorization", attempt):
++                lu = splu(S-float(sigma)*sp.eye(self.m.dim, format="csc"))
++            op = LinearOperator(S.shape, matvec=lu.solve, dtype=float)
++            with self.ledger.component("arpack", attempt):
++                ws, Vs = eigsh(S, k=k, sigma=float(sigma), which="LM", OPinv=op,
++                               v0=np.ones(self.m.dim), tol=0)
++            order = np.argsort(ws)
++            ws, Vs = ws[order], Vs[:, order]
++            self.ledger.add("arpack_spectrum", attempt=attempt, energies_meV=ws.tolist())
++            with self.ledger.component("validation", attempt):
++                errors = [float(np.max(np.abs(ws[a:a+n]-target))) for a in range(len(ws)-n+1)]
++                good = [a for a, error in enumerate(errors) if error <= self.p["ordered_energy_tol_meV"]]
++                if len(good) != 1:
++                    raise Rejected("absolute_window_not_matched", match_count=len(good), best_error_meV=min(errors))
++                a = good[0]; w, V = ws[a:a+n], Vs[:, a:a+n]
++                self.check("ordered_energy_tol_meV", errors[a], attempt)
++                self.check("residual_tol_meV", float(np.linalg.norm(R.real @ V-V*w, axis=0).max()), attempt)
++                self.check("orthogonality_tol", float(np.max(np.abs(V.T @ V-np.eye(n)))), attempt)
++                self.check("projector_tol", float(np.linalg.norm(V-targetV @ (targetV.T @ V), 2)), attempt)
++            status = "ACCEPTED_DENSE_CHECKED"
++            self.ledger.add("accepted", attempt=attempt, lo=lo, n=n, energies_meV=w.tolist(), candidate_offset=a)
++            return w, V
++        except Exception as ex:
++            details = ex.record if isinstance(ex, Rejected) else dict(code="solver_failure", error_type=type(ex).__name__, message=str(ex))
++            self.ledger.add("rejected", attempt=attempt, details=details)
++            if isinstance(ex, Rejected):
++                raise
++            raise Rejected("solver_failure", error_type=type(ex).__name__, message=str(ex)) from ex
++        finally:
++            # Inclusive attempt wall time is separately named; never add to components.
++            self.ledger.add("attempt", attempt=attempt, status=status, inclusive_wall_seconds=time.perf_counter()-start)
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/guarded_topology.py
+@@ -0,0 +1,276 @@
++"""Opt-in sampled topology gates. A passed mesh is not a continuous-path proof.
++
++Native model Hamiltonians supply every frame. Closed-form realify is the same
++fixed unitary change of basis used by the partner; it is not another model.
++Coordinates are never wrapped implicitly. Historical APIs are unchanged.
++"""
++from dataclasses import dataclass, asdict
++import numbers
++import numpy as np
++from scipy.linalg import eigh
++from response_inputs import activate
++activate()
++from fast_engine import realify
++from euler import shift_matrix
++
++
++class Rejected(RuntimeError):
++    def __init__(self, code, **details):
++        self.record = dict(status="REJECTED", code=code, **details)
++        super().__init__(str(self.record))
++
++
++def integer(value, name, minimum=0):
++    if isinstance(value, (bool, np.bool_)) or not isinstance(value, numbers.Integral) or value < minimum:
++        raise Rejected("invalid_integer", name=name, value=str(value), minimum=minimum)
++    return int(value)
++
++
++def finite_points(points, minimum=1):
++    p = np.asarray(points, float)
++    if p.ndim != 2 or p.shape[1] != 2 or len(p) < minimum or not np.isfinite(p).all():
++        raise Rejected("invalid_coordinates")
++    return p
++
++
++@dataclass(frozen=True)
++class Policy:
++    reality_meV: float = 1e-9
++    hermiticity_meV: float = 1e-9
++    external_gap_meV: float = 1e-5
++    internal_gap_meV: float = 1e-6
++    root_gap_meV: float = 1e-6
++    overlap_min: float = 0.5
++    sewing_loss_max: float = 0.05
++    phase_step_max_rad: float = 3*np.pi/4
++    unit_winding_tol: float = 0.15
++
++    def __post_init__(self):
++        for name, value in asdict(self).items():
++            if isinstance(value, bool) or not np.isfinite(value) or value <= 0:
++                raise Rejected("invalid_policy", name=name, value=str(value))
++        if self.overlap_min > 1 or self.sewing_loss_max >= 1 or self.phase_step_max_rad >= np.pi or self.unit_winding_tol >= 0.5:
++            raise Rejected("invalid_policy_range")
++
++
++class Sampler:
++    """All evaluated coordinates, selected spectra and gate diagnostics are logged.
++
++    An optional U permits controls in another declared real basis. Production
++    BM measurements use the fixed sublattice realify transform.
++    """
++    def __init__(self, model, policy=None, U=None, ledger=None, name="model"):
++        self.m = model
++        self.p = Policy() if policy is None else policy
++        self.U = U
++        self.records = [] if ledger is None else ledger
++        self.name = name
++
++    def emit(self, kind, **kw):
++        row = dict(kind=kind, model=self.name, **kw)
++        self.records.append(row)
++        return row
++
++    def reject(self, code, **kw):
++        self.emit("rejection", code=code, **kw)
++        raise Rejected(code, **kw)
++
++    def frame(self, f, lo, n=2, where="frame"):
++        f = finite_points([f])[0]
++        lo, n = integer(lo, "lo"), integer(n, "n", 1)
++        if lo+n > self.m.dim:
++            self.reject("band_range", lo=lo, n=n, dimension=self.m.dim)
++        H = self.m.H(self.m.frac_to_k(f))
++        if H.shape != (self.m.dim, self.m.dim) or not np.isfinite(H).all():
++            self.reject("invalid_matrix", where=where)
++        herm = float(np.max(np.abs(H-H.conj().T)))
++        R = realify(H) if self.U is None else self.U.conj().T @ H @ self.U
++        real = float(np.max(np.abs(R.imag)))
++        if not np.isfinite(R).all() or real > self.p.reality_meV or herm > self.p.hermiticity_meV:
++            self.reject("matrix_precondition", where=where, reality_meV=real, hermiticity_meV=herm)
++        low, high = max(0, lo-1), min(self.m.dim-1, lo+n)
++        w, V = eigh(R.real, subset_by_index=(low, high))
++        j = lo-low
++        lower = float(w[j]-w[j-1]) if lo > 0 else None
++        upper = float(w[j+n]-w[j+n-1]) if lo+n < self.m.dim else None
++        available = [x for x in (lower, upper) if x is not None]
++        ext = min(available) if available else None
++        self.emit("frame", where=where, f=f.tolist(), first_band=low,
++                  energies_meV=w.tolist(), lo=lo, n=n, lower_external_gap_meV=lower,
++                  upper_external_gap_meV=upper, external_gap_meV=ext,
++                  external_status="CHECKED" if available else "NOT_APPLICABLE_FULL_SPACE",
++                  reality_meV=real, hermiticity_meV=herm)
++        if ext is not None and (not np.isfinite(ext) or ext < self.p.external_gap_meV):
++            self.reject("external_gap", where=where, value_meV=ext, threshold_meV=self.p.external_gap_meV)
++        return w[j:j+n], V[:, j:j+n]
++
++    def link(self, a, b, where, sewing=False):
++        M = a.T @ b
++        if not np.isfinite(M).all():
++            self.reject("nonfinite_link", where=where)
++        u, s, vt = np.linalg.svd(M)
++        low = float(s.min())
++        loss = float(np.max(np.abs(1-s)))
++        self.emit("link", where=where, singular_values=s.tolist(), min_overlap=low,
++                  sewing=sewing, sewing_loss=loss if sewing else None,
++                  polar_det=float(np.linalg.det(u @ vt)))
++        if low < self.p.overlap_min:
++            self.reject("overlap", where=where, value=low, threshold=self.p.overlap_min)
++        if sewing and loss > self.p.sewing_loss_max:
++            self.reject("sewing_loss", where=where, value=loss, threshold=self.p.sewing_loss_max)
++        return u @ vt
++
++
++def geometry(nodes, radius, intervals, transport_intervals, direction=(1., 0.)):
++    nodes = finite_points(nodes, 2)
++    if len(nodes) != 2 or not np.isfinite(radius) or radius <= 0:
++        raise Rejected("invalid_loop_geometry")
++    n, nt = integer(intervals, "intervals", 4), integer(transport_intervals, "transport_intervals", 1)
++    d = finite_points([direction])[0]
++    if np.linalg.norm(d) == 0:
++        raise Rejected("zero_start_direction")
++    d = radius*d/np.linalg.norm(d)
++    t = np.linspace(0, 2*np.pi, n+1)
++    offsets = np.cos(t)[:, None]*d + np.sin(t)[:, None]*np.array([-d[1], d[0]])
++    loops = [x+offsets for x in nodes]
++    for loop in loops:
++        loop[-1] = loop[0]
++    path = np.linspace(loops[0][0], loops[1][0], nt+1)
++    return dict(nodes=nodes.tolist(), loops=[x.tolist() for x in loops], transport=path.tolist(),
++                radius=float(radius), periodic_translation=[0, 0], coordinate_policy="unwrapped")
++
++
++def mirror(g):
++    out = dict(g)
++    for key in ("nodes", "loops", "transport"):
++        out[key] = (-np.asarray(g[key])).tolist()
++    return out
++
++
++def node_winding(S, coordinates, base, lo, where):
++    points = finite_points(coordinates, 5)
++    if not np.array_equal(points[0], points[-1]):
++        S.reject("loop_not_closed", where=where)
++    frames = []
++    for j, p in enumerate(points):
++        w, F = S.frame(p, lo, where=f"{where}:point:{j}")
++        gap = float(w[1]-w[0])
++        if gap < S.p.internal_gap_meV:
++            S.reject("loop_internal_gap", where=where, point=j, value_meV=gap)
++        frames.append(F)
++    # Same-coordinate alignment is checked, not inferred from frame determinants
++    # at different base points. pair_charges enforces the coordinate identity.
++    O = S.link(base, frames[0], where+":base")
++    e = frames[0] @ O.T
++    prev = frames[0][:, :1]
++    alpha = float(np.arctan2(e[:, 1] @ prev[:, 0], e[:, 0] @ prev[:, 0]))
++    total = 0.
++    for j, F in enumerate(frames[1:], 1):
++        O = S.link(e, F, f"{where}:pair:{j}")
++        e = F @ O.T
++        v = F[:, :1]
++        sign = S.link(prev, v, f"{where}:band:{j}")[0, 0]
++        v = v*sign
++        a = float(np.arctan2(e[:, 1] @ v[:, 0], e[:, 0] @ v[:, 0]))
++        step = float((a-alpha+np.pi) % (2*np.pi)-np.pi)
++        S.emit("angle", where=where, point=j, angle_rad=a, step_rad=step)
++        if abs(step) > S.p.phase_step_max_rad:
++            S.reject("phase_resolution", where=where, step_rad=step)
++        total += step
++        alpha, prev = a, v
++    return total/np.pi
++
++
++def pair_charges(S, g, lo=None):
++    lo = S.m.dim//2-1 if lo is None else integer(lo, "lo")
++    nodes = finite_points(g["nodes"], 2)
++    loops = [finite_points(x, 5) for x in g["loops"]]
++    path = finite_points(g["transport"], 2)
++    if len(nodes) != 2 or len(loops) != 2 or not np.array_equal(path[0], loops[0][0]) or not np.array_equal(path[-1], loops[1][0]):
++        S.reject("base_path_mismatch")
++    gaps = []
++    for j, f in enumerate(nodes):
++        w, _ = S.frame(f, lo, where=f"node:{j}")
++        gap = float(w[1]-w[0]); gaps.append(gap)
++        if gap > S.p.root_gap_meV:
++            S.reject("unverified_node", node=j, gap_meV=gap, threshold_meV=S.p.root_gap_meV)
++    base = S.frame(path[0], lo, where="transport:0")[1]
++    end = base
++    for j, f in enumerate(path[1:], 1):
++        F = S.frame(f, lo, where=f"transport:{j}")[1]
++        O = S.link(end, F, f"transport:{j}")
++        end = F @ O.T
++    winds = [node_winding(S, loops[0], base, lo, "loop:0"), node_winding(S, loops[1], end, lo, "loop:1")]
++    if any(abs(abs(w)-1) > S.p.unit_winding_tol for w in winds):
++        S.reject("nonunit_winding", windings=winds)
++    return dict(status="PASSED_SAMPLED_GATES", label="SAME" if winds[0]*winds[1] > 0 else "OPPOSITE",
++                windings=winds, node_gaps_meV=gaps, lo=lo)
++
++
++def sewing(S, axis):
++    v = int(getattr(S.m, "valley", 1))
++    return shift_matrix(S.m, (-v, 0) if axis == 0 else (0, -v))
++
++
++def euler_wilson(S, lo=None, nf1=24, nf2=40, sewings=None):
++    """Sampled winding with real endpoints and explicit sewing in both axes.
++
++    Each link is gated before taking its polar factor. Multiplying orthogonal
++    factors avoids ill-conditioning of the unnormalized overlap product.
++    """
++    lo = S.m.dim//2-1 if lo is None else integer(lo, "lo")
++    n1, n2 = integer(nf1, "nf1", 4), integer(nf2, "nf2", 4)
++    s1, s2 = (sewing(S, 0), sewing(S, 1)) if sewings is None else sewings
++    grid = [[S.frame([i/n1, j/n2], lo, where=f"grid:{i}:{j}")[1]
++             for j in range(n2+1)] for i in range(n1+1)]
++    # All interior links along k1, then exact-endpoint k1 sewing at every k2.
++    for i in range(n1):
++        for j in range(n2+1):
++            S.link(grid[i][j], grid[i+1][j], f"axis1:{i}:{j}")
++    for j in range(n2+1):
++        S.link(grid[-1][j], s1 @ grid[0][j], f"sewing1:{j}", sewing=True)
++    for i in range(1, n1+1):
++        O = S.link(grid[i-1][0], grid[i][0], f"base:{i}")
++        if np.linalg.det(O) < 0:
++            grid[i][0] = grid[i][0] @ np.diag([1., -1.])
++    closure = S.link(grid[-1][0], s1 @ grid[0][0], "base:closure", sewing=True)
++    if np.linalg.det(closure) < 0:
++        S.reject("nonorientable_axis1")
++    phases = []
++    for i, row in enumerate(grid):
++        W = np.eye(2)
++        for j in range(n2):
++            W = W @ S.link(row[j], row[j+1], f"axis2:{i}:{j}")
++        W = W @ S.link(row[-1], s2 @ row[0], f"sewing2:{i}", sewing=True)
++        if np.linalg.det(W) < 0:
++            S.reject("nonorientable_axis2", row=i)
++        phases.append(float(np.arctan2(W[1, 0], W[0, 0])))
++    steps = np.diff(np.unwrap(phases))
++    S.emit("wilson_phases", phases_rad=phases, increments_rad=steps.tolist())
++    if max(abs(steps)) > S.p.phase_step_max_rad:
++        S.reject("phase_resolution", max_step_rad=float(max(abs(steps))))
++    estimate = float(np.sum(steps)/(2*np.pi))
++    if abs(estimate-round(estimate)) > S.p.unit_winding_tol:
++        S.reject("wilson_closure", estimate=estimate)
++    return dict(status="PASSED_SAMPLED_GATES", euler_estimate=estimate, nearest_integer=round(estimate),
++                phases_rad=phases, mesh=[n1, n2], lo=lo,
++                interpretation="Sampled finite-model estimate; sign depends on base orientation")
++
++
++def band_sign_holonomy(S, band, axis, c, n=80, sewing_matrix=None):
++    band, axis, n = integer(band, "band"), integer(axis, "axis"), integer(n, "n", 4)
++    if axis not in (0, 1) or not np.isfinite(c):
++        S.reject("invalid_cycle")
++    sm = sewing(S, axis) if sewing_matrix is None else sewing_matrix
++    first = prev = None
++    for j, t in enumerate(np.linspace(0, 1, n+1)):
++        f = [t, c] if axis == 0 else [c, t]
++        _, F = S.frame(f, band, n=1, where=f"cycle:{j}")
++        if prev is not None:
++            F = F @ S.link(prev, F, f"cycle:{j}").T
++        if first is None:
++            first = F
++        prev = F
++    O = S.link(prev, sm @ first, "cycle:sewing", sewing=True)
++    return dict(status="PASSED_SAMPLED_GATES", sign=int(round(O[0, 0])),
++                closure_overlap=float((prev.T @ sm @ first)[0, 0]), intervals=n, band=band, axis=axis)
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/reconcile.py
+@@ -0,0 +1,119 @@
++"""Reconstruct reported quantities from retained records, without solver imports."""
++from collections import Counter, defaultdict
++import gzip
++import hashlib
++import json
++from pathlib import Path
++import xml.etree.ElementTree as ET
++import numpy as np
++
++ROOT = Path(__file__).resolve().parent
++def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
++
++
++def reconcile(root=ROOT):
++    root = Path(root)
++    result = json.loads((root/'RESULTS.json').read_text())
++    plan = json.loads((root/'PLAN.json').read_text())
++    if result['plan_sha256'] != sha(root/'PLAN.json'):
++        raise RuntimeError('plan changed since execution')
++    for file, digest in result['sources'].items():
++        if sha(root/file) != digest: raise RuntimeError('executed source changed: '+file)
++    rows = defaultdict(list)
++    with gzip.open(root/'EVALUATIONS.jsonl.gz', 'rt') as f:
++        for line in f:
++            record = json.loads(line); rows[record['attempt_id']].append(record)
++    with gzip.open(root/'PATHS.json.gz', 'rt') as f: paths = json.load(f)
++    counts = Counter(r['kind'] for rs in rows.values() for r in rs)
++    frame_error = 0.; winding_error = 0.; wilson_error = 0.
++    for outcome in result['outcomes']:
++        kind, status = outcome['kind'], outcome['result']['status']
++        if kind == 'sparse': continue
++        data = rows[outcome['id']]
++        frames = [x for x in data if x['kind'] == 'frame']
++        links = [x for x in data if x['kind'] == 'link']
++        if len(frames) != outcome['diagnostics']['frame_evaluations']: raise RuntimeError('frame count mismatch')
++        for r in frames:
++            w = r['energies_meV']; j = r['lo']-r['first_band']; n = r['n']
++            lower = w[j]-w[j-1] if j else None
++            upper = w[j+n]-w[j+n-1] if j+n < len(w) else None
++            for actual, recorded in [(lower, r['lower_external_gap_meV']), (upper, r['upper_external_gap_meV'])]:
++                if actual is None:
++                    if recorded is not None: raise RuntimeError('external gap applicability mismatch')
++                else: frame_error = max(frame_error, abs(actual-recorded))
++        if status != 'PASSED_SAMPLED_GATES': continue
++        if any(x['kind'] == 'rejection' for x in data): raise RuntimeError('accepted rejected attempt')
++        if any(r['external_gap_meV'] is not None and r['external_gap_meV'] < plan['policy']['external_gap_meV'] for r in frames):
++            raise RuntimeError('accepted inadequate external gap')
++        if any(r['min_overlap'] < plan['policy']['overlap_min'] for r in links): raise RuntimeError('accepted unresolved overlap')
++        if any(r['sewing'] and r['sewing_loss'] > plan['policy']['sewing_loss_max'] for r in links): raise RuntimeError('accepted inadequate sewing')
++        if kind == 'pair':
++            for j, w in enumerate(outcome['result']['windings']):
++                total = sum(x['step_rad'] for x in data if x['kind'] == 'angle' and x['where'] == f'loop:{j}')/np.pi
++                winding_error = max(winding_error, abs(total-w))
++            roots = [x for x in frames if x['where'].startswith('node:')]
++            if len(roots) != 2: raise RuntimeError('missing evaluated root')
++            for x, gap in zip(roots, outcome['result']['node_gaps_meV']):
++                j = x['lo']-x['first_band']; native_gap = x['energies_meV'][j+1]-x['energies_meV'][j]
++                if abs(native_gap-gap) > 1e-12 or native_gap > plan['policy']['root_gap_meV']: raise RuntimeError('root gap mismatch')
++        if kind == 'wilson':
++            phases = [r for r in data if r['kind'] == 'wilson_phases']
++            if len(phases) != 1: raise RuntimeError('missing Wilson phases')
++            wind = float((np.unwrap(phases[0]['phases_rad'])[-1]-phases[0]['phases_rad'][0])/(2*np.pi))
++            wilson_error = max(wilson_error, abs(wind-outcome['result']['euler_estimate']))
++            for axis in (1, 2):
++                if not any(r['sewing'] and r['where'].startswith(f'sewing{axis}:') for r in links): raise RuntimeError('missing sewing direction')
++    for name, g in paths.items():
++        for key in ('nodes', 'loops', 'transport'):
++            if not np.array_equal(g['Kprime'][key], -np.asarray(g['K'][key])): raise RuntimeError('not an exact path mirror')
++        for valley in ('K', 'Kprime'):
++            if not np.array_equal(g[valley]['transport'][0], g[valley]['loops'][0][0]) or not np.array_equal(g[valley]['transport'][-1], g[valley]['loops'][1][0]):
++                raise RuntimeError('base path mismatch')
++    refinements = []
++    for B in plan['braid']['B']:
++        for valley in (1, -1):
++            rr = [r for r in result['outcomes'] if r['kind'] == 'pair' and r['B'] == B and r['valley'] == valley]
++            complete = len(rr) == 4 and all(r['result']['status'] == 'PASSED_SAMPLED_GATES' for r in rr)
++            spread = float(np.ptp(np.abs([r['result']['windings'] for r in rr]), axis=0).max()) if complete else None
++            refinements.append(dict(kind='loop_radius_and_mesh', B=B, valley=valley, count=len(rr), maximum_abs_winding_spread=spread,
++                                    passed=bool(complete and len(set(r['result']['label'] for r in rr)) == 1 and spread <= plan['braid']['refinement_abs_winding_tol'])))
++    for name in sorted(set(r['model'] for r in result['outcomes'] if r['kind'] == 'wilson')):
++        rr = [r for r in result['outcomes'] if r['kind'] == 'wilson' and r['model'] == name]
++        ok = len(rr) == 2 and all(r['result']['status'] == 'PASSED_SAMPLED_GATES' for r in rr)
++        diff = abs(abs(rr[0]['result']['euler_estimate'])-abs(rr[1]['result']['euler_estimate'])) if ok else None
++        refinements.append(dict(kind='wilson_mesh', model=name, comparable=ok, absolute_estimate_difference=diff,
++                                same_integer_magnitude=bool(ok and abs(rr[0]['result']['nearest_integer']) == abs(rr[1]['result']['nearest_integer']))))
++    for name in sorted(set(r['model'] for r in result['outcomes'] if r['kind'] == 'sign')):
++        for band in ('flat1', 'flat2'):
++            for axis in (0, 1):
++                rr = [r for r in result['outcomes'] if r['kind'] == 'sign' and r['model'] == name and r['band_label'] == band and r['axis'] == axis]
++                ok = len(rr) == 2 and all(r['result']['status'] == 'PASSED_SAMPLED_GATES' for r in rr)
++                refinements.append(dict(kind='sign_mesh', model=name, band=band, axis=axis,
++                                        passed=bool(ok and rr[0]['result']['sign'] == rr[1]['result']['sign'])))
++    sparse_checks = []
++    for name in sorted(set(r['model'] for r in result['outcomes'] if r['kind'] == 'sparse')):
++        data = rows[name]
++        for a in [r for r in data if r['kind'] == 'accepted']:
++            records = [r for r in data if r.get('attempt') == a['attempt']]
++            checked = {r['name'] for r in records if r['kind'] == 'check' and r['passed']}
++            expected = {'native_matrix_tol_meV', 'ordered_energy_tol_meV', 'residual_tol_meV', 'orthogonality_tol', 'projector_tol'}
++            if not expected <= checked: raise RuntimeError('missing accepted sparse gate')
++            if sum(r['kind'] == 'component' and r['name'] == 'native_dense_eigh' and r['status'] == 'COMPLETED' for r in records) != 1:
++                raise RuntimeError('accepted without exactly one native dense solve')
++            sparse_checks.extend(r for r in records if r['kind'] == 'check')
++    tests = ET.parse(root/'TESTS.xml').getroot()
++    cases = tests.findall('.//testcase')
++    summary = dict(plan_sha256=sha(root/'PLAN.json'), inputs={f: sha(root/f) for f in ['RESULTS.json', 'EVALUATIONS.jsonl.gz', 'PATHS.json.gz', 'TESTS.xml']},
++                   tests=dict(count=len(cases), failures=len(tests.findall('.//failure')), errors=len(tests.findall('.//error'))),
++                   outcome_counts={kind: dict(Counter(r['result']['status'] for r in result['outcomes'] if r['kind'] == kind)) for kind in ('pair', 'wilson', 'sign', 'sparse')},
++                   ledger_counts=dict(counts), external_gap_reconstruction_error_meV=frame_error, winding_reconstruction_error=winding_error,
++                   wilson_reconstruction_error=wilson_error, refinements=refinements, mirror_checks=result['checks'],
++                   sparse_accepted_max_checks={name: max(r['value'] for r in sparse_checks if r['name'] == name) for name in sorted(set(r['name'] for r in sparse_checks))},
++                   archive_unchanged=sha(root/'partner_v074p.zip') == 'be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163')
++    if max(frame_error, winding_error, wilson_error) > 1e-10: raise RuntimeError('record reconstruction mismatch')
++    (root/'SUMMARY.json').write_text(json.dumps(summary, indent=2, allow_nan=False)+'\n')
++    print(json.dumps(summary, indent=2))
++    return summary
++
++
++if __name__ == '__main__': reconcile()
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/record_controls.py
+@@ -0,0 +1,51 @@
++"""Retain structured diagnostics for the specific reviewed negative controls.
++
++This supplements the regression log with raw refusal records; it does not run
++another numerical campaign or change the frozen policy.
++"""
++import hashlib
++import json
++from pathlib import Path
++import numpy as np
++from scipy.linalg import eigh
++import guarded_topology as gt
++import guarded_sparse as gs
++from test_guards import Toy, Smooth
++ROOT = Path(__file__).resolve().parent
++
++
++def run():
++    records = []
++    def capture(name, S, call, expected):
++        try:
++            value = call(S)
++            outcome = dict(status='RETURNED', result=value)
++        except gt.Rejected as ex:
++            outcome = ex.record
++        passed = outcome.get('code') == expected
++        records.append(dict(name=name, expected_code=expected, passed=passed, outcome=outcome, ledger=S.records))
++        if not passed: raise RuntimeError('unexpected negative-control outcome: '+name)
++    def sampler(m=None, **kw): return gt.Sampler(Toy() if m is None else m, gt.Policy(**kw), U=np.eye(4))
++    class Jump(Toy):
++        def H(self, k): return np.diag([-3., -1., 1., 3.] if round(4*k[1]) % 2 == 0 else [-1., -3., 3., 1.]).astype(complex)
++    capture('zero_pair_overlap', sampler(Jump()), lambda S: gt.euler_wilson(S, nf1=4, nf2=4, sewings=(np.eye(4), np.eye(4))), 'overlap')
++    capture('smooth_band_unresolved_at_n4', sampler(Smooth()), lambda S: gt.band_sign_holonomy(S, 1, 0, 0, n=4, sewing_matrix=np.eye(4)), 'overlap')
++    capture('highest_pair_lower_external_gap', sampler(external_gap_meV=3), lambda S: gt.euler_wilson(S, lo=2, nf1=4, nf2=4, sewings=(np.eye(4), np.eye(4))), 'external_gap')
++    for axis in (0, 1):
++        sew = [np.eye(4), np.eye(4)]; sew[axis] *= .9
++        capture(f'endpoint_sewing_axis{axis}', sampler(), lambda S, sew=sew: gt.euler_wilson(S, nf1=4, nf2=4, sewings=sew), 'sewing_loss')
++    g = gt.geometry([[.3, .4], [.6, .6]], .012, 8, 8); g['transport'][0][0] += .024
++    capture('base_displaced_by_2r', sampler(), lambda S: gt.pair_charges(S, g), 'base_path_mismatch')
++    A = np.array([[0., 1.], [1., 0.]])
++    lu = gs.splu(gs.sp.csc_matrix(A), diag_pivot_thresh=0., options={'SymmetricMode': True})
++    kernel = dict(matrix=A.tolist(), eigenvalues=eigh(A, eigvals_only=True).tolist(), signed_U_diagonal_count=int(np.count_nonzero(lu.U.diagonal() < 0)),
++                  U_diagonal=lu.U.diagonal().tolist(), row_permutation=lu.perm_r.tolist(), column_permutation=lu.perm_c.tolist(),
++                  replacement_policy='No inertia assertion; native dense ordered comparison is mandatory for accepted windows')
++    out = dict(scope='Synthetic software-contract controls only; not graphene evidence', plan_sha256=hashlib.sha256((ROOT/'PLAN.json').read_bytes()).hexdigest(),
++               source_sha256={f: hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in ('record_controls.py', 'test_guards.py', 'guarded_topology.py', 'guarded_sparse.py')},
++               controls=records, retired_inertia_counterexample=kernel)
++    (ROOT/'NEGATIVE_CONTROLS.json').write_text(json.dumps(out, indent=2, allow_nan=False)+'\n')
++    print(json.dumps(dict(controls=len(records), passing=sum(r['passed'] for r in records), retired_inertia_counterexample=kernel), indent=2))
++
++
++if __name__ == '__main__': run()
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/report.py
+@@ -0,0 +1,173 @@
++"""Generate the numerical narrative and path figure from retained results."""
++import gzip
++import hashlib
++import json
++from pathlib import Path
++import numpy as np
++import matplotlib
++matplotlib.use('Agg')
++import matplotlib.pyplot as plt
++from matplotlib.lines import Line2D
++from reconcile import reconcile
++
++ROOT = Path(__file__).resolve().parent
++def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
++
++
++def run():
++    s = reconcile()
++    if s['tests']['failures'] or s['tests']['errors'] or not s['tests']['count']:
++        raise RuntimeError('Refusing a passing-test narrative for a failing or empty suite')
++    r = json.loads((ROOT/'RESULTS.json').read_text()); rows = r['outcomes']
++    with gzip.open(ROOT/'PATHS.json.gz', 'rt') as f: paths = json.load(f)
++    pair = [x for x in rows if x['kind'] == 'pair']
++    pair_ok = [x for x in pair if x['result']['status'] == 'PASSED_SAMPLED_GATES']
++    mirror_error = max(x['max_matrix_error_meV'] for x in s['mirror_checks'] if x['kind'] == 'native_time_reversal')
++    root_max = max(max(x['result']['node_gaps_meV']) for x in pair_ok)
++    pair_lines = []
++    for B in (-.25, -.30):
++        for v in (1, -1):
++            rr = [x for x in pair if x['B'] == B and x['valley'] == v]
++            accepted = [x for x in rr if x['result']['status'] == 'PASSED_SAMPLED_GATES']
++            label = ', '.join(sorted(set(x['result']['label'] for x in accepted))) or 'no accepted label'
++            minimum = min(x['diagnostics']['min_overlap'] for x in accepted) if accepted else float('nan')
++            ext = min(x['diagnostics']['min_external_gap_meV'] for x in accepted) if accepted else float('nan')
++            pair_lines.append(f'| {B:.2f} | {"K" if v == 1 else "K′"} | {len(accepted)}/{len(rr)} | {label} | {minimum:.6f} | {ext:.6g} |')
++    wilson_lines = []
++    for x in [x for x in rows if x['kind'] == 'wilson']:
++        out, d = x['result'], x['diagnostics']; mesh = ' × '.join(map(str, x['mesh']))
++        estimate = f"{out['euler_estimate']:+.9f}" if 'euler_estimate' in out else out.get('code', out['status'])
++        wilson_lines.append(f"| {x['model']} | {mesh} | {estimate} | {d['min_overlap']:.6f} | {d['max_endpoint_sewing_loss']:.6g} | {d['min_external_gap_meV']:.6f} |")
++    sp_lines = []
++    for x in [x for x in rows if x['kind'] == 'sparse']:
++        out = x['result']; status = out['status'] if 'code' not in out else 'REJECTED: '+out['code']
++        sp_lines.append(f"| {x['valley']:+d} | {x['f']} | {x['sigma']:g} | {status} |")
++    sign_lines = []
++    for x in [x for x in rows if x['kind'] == 'sign' and x['intervals'] == 160]:
++        out = x['result']; status = f"{out['sign']:+d}" if 'sign' in out else out.get('code', out['status'])
++        sign_lines.append(f"| {x['valley']:+d} | {x['band_label']} | {x['axis']} | {status} | {x['diagnostics']['min_external_gap_meV']:.6g} |")
++    text = f'''# Guarded variant measurements
++
++This branch implements the focused corrections identified in the [v074p response review](../variant_response_review/README.md). The new opt-in APIs use explicit mirrored coordinate arrays, enforce sampled topology gates, and require a native dense comparison for every accepted sparse window. Historical producers and input archives remain unchanged.
++
++**{s['tests']['count']} regression tests pass.** The bounded run contains {len(pair)} pair measurements, six Wilson meshes, sixteen sign cycles and twelve sparse requests. The tables below are generated from retained records by `report.py`; they are not manually transcribed verdicts.
++
++![Actual K and K-prime measurement paths](mirrored_paths.png)
++
++The figure shows the recorded fine-mesh paths at radius 0.012. Centers, circles, their starts, and the connecting transport segment all undergo the same coordinate inversion. Colored circles identify the two nodes; signed winding depends on the arbitrary base-frame orientation. These are momentum-coordinate paths, not a movie of nodes braiding in parameter space.
++
++## What changed
++
++| Contract | Implemented behavior | Scope |
++|---|---|---|
++| Loop/base agreement | Explicit closed circles and full transport arrays; mismatched endpoints are refused. K′ uses the exact negative of every K coordinate. | Unwrapped finite-model comparison; no periodic-image substitution. |
++| Root checks | Both centers are evaluated natively and must meet the frozen gap threshold. | Uses retained K seeds; no new root search or inventory. |
++| Topology acceptance | Native reality, Hermiticity, both available external gaps, pair/single-band overlap, phase increments, and both endpoint sewing directions are enforced. | Sampled gates; no unsampled lower bounds. |
++| Wilson product | Gate each link, then multiply its polar factor. Actual endpoint frames separate sewing from the last finite mesh step. | Finite-cutoff sewing is approximate; estimates need not be exact integers. |
++| Sparse acceptance | Bind the candidate matrix to the native matrix, solve native absolute ordered bands, then check candidate energies, residuals, orthogonality and subspace agreement. | Conservative dense-assisted window mode; no speedup or root/event claim. |
++| Work records | Disjoint component durations and counts; separately named inclusive attempt times; failures retained. | Counts for these APIs, not an audit of all historical consumers. |
++
++The old LU diagonal “inertia proof” is **not used** by the new mode. General pivoted LU remains only as an inverse operator for ARPACK. Its row/column permutations do not supply an inertia certificate. Small residuals alone never authorize a band-window label.
++
++## Mirrored pairs
++
++N=4; θ=1.05°; ε=0.003; φ=0°; A=0.2; `lab_nn_full`; exact geometry; w₁=110 meV and w₀/w₁=0.8. The perturbation is B times the declared sine σz harmonic. The ordered basis is frozen before each model is constructed; complete defaults, harmonics and indices are in [MODELS.json](MODELS.json).
++
++Each row covers radii 0.012 and 0.008 and loop/transport interval counts 96/300 and 192/600. Paths stay at their actual unwrapped coordinates; no modulo operation moves a K′ node to a different finite-cutoff Hamiltonian.
++
++| B | Valley | Passed / attempted | Relative label | Minimum link singular value | Minimum sampled external gap (meV) |
++|---|---|---|---|---|---|
++{chr(10).join(pair_lines)}
++
++Largest evaluated center gap: **{root_max:.3g} meV**, against 10⁻⁶ meV. Largest entrywise native difference in H_K′(−k) versus conjugate(H_K(k)) over every retained loop/transport/center coordinate: **{mirror_error:.3g} meV**. This equality is also built into the native valley wrapper; it is an implementation consistency check, not an independently coded K′ model.
++
++All four loop/radius refinement comparisons and all eight valley-pair comparisons are retained in [SUMMARY.json](SUMMARY.json). Their pass flags must be consulted if regenerating this report. Earlier producer labels remain historical results; this measurement changes their geometrical implementation rather than silently replacing their evidence.
++
++## Wilson meshes with enforced gates
++
++The strained baseline has A=0, B=0, N=4 and the same strain/kinetic settings as above. The chiral control has N=6, θ=1.06°, ε=0, w₀=0 and `kinetic=none`. No bandwidth scan is rerun.
++
++| Model | Intervals k₁ × k₂ | Euler estimate | Minimum link singular value | Maximum endpoint sewing loss | Minimum sampled external gap (meV) |
++|---|---|---|---|---|---|
++{chr(10).join(wilson_lines)}
++
++The grid includes both endpoints: (n₁+1)(n₂+1) native frame evaluations. Sewing loss is max |1−σᵢ| for the overlap between the actual endpoint frame and the sewn starting frame. It no longer includes a missing last mesh step. The small noninteger offsets for strained models persist under refinement and must not be presented as cutoff accuracy or an exact topological certificate. Only magnitudes are compared across arbitrary frame orientations. No signed Euler/total-node relation is asserted; see the [reference qualification](../variant_response_review/REFERENCES.md).
++
++## Single-band endpoint cycles
++
++The endpoint uses N=4, ε=0.003, φ=80°, A=−0.30, ratio=0.88, plus the declared −0.40 and layer-antisymmetric −1.8 sine σz harmonics. Both 80- and 160-interval runs are retained; this table shows the latter. Mesh comparisons are in SUMMARY.json.
++
++| Valley | Band | Axis | Sign / refusal | Minimum sampled isolation gap (meV) |
++|---|---|---|---|---|
++{chr(10).join(sign_lines)}
++
++## Sparse windows: accept or refuse
++
++These twelve requests use six absolute central bands, a fixed 14-eigenpair ARPACK request, and both shifts 0 and 100 meV. A shift does not define an absolute band index. A missing target window is refused without retry or silent fallback. Every accepted window includes a native dense solve, so this is not a sparse performance benchmark.
++
++| Valley | Fractional coordinate | Shift (meV) | Outcome |
++|---|---|---|---|
++{chr(10).join(sp_lines)}
++
++The regression suite also injects exact eigenpairs from the wrong absolute window and checks their refusal despite good residuals. The former 2×2 LU counterexample remains in the suite: signed U-diagonal count 0, actual negative eigenvalue count 1. The new mode makes no inertia claim.
++
++## Evidence and reproduction
++
++- [PLAN.json](PLAN.json): thresholds and finite run matrix frozen before the first test; SHA256 `{s['plan_sha256']}`.
++- [RESULTS.json](RESULTS.json), [SUMMARY.json](SUMMARY.json), [EVALUATIONS.jsonl.gz](EVALUATIONS.jsonl.gz): every attempt, native spectra, gaps, links, phase increments, comparison checks and work records.
++- [PATHS.json.gz](PATHS.json.gz), [MODELS.json](MODELS.json): full coordinate arrays and ordered basis/model identities.
++- [TESTS.log](TESTS.log), [TESTS.xml](TESTS.xml): regression outcomes. [CLEAN_SMOKE.json](CLEAN_SMOKE.json) and [CLEAN_EVIDENCE.zip](CLEAN_EVIDENCE.zip): fresh-source tests and four targeted repeated requests, without inherited result files.
++- [NEGATIVE_CONTROLS.json](NEGATIVE_CONTROLS.json): structured refusal records for six synthetic controls and the retired 2×2 inertia counterexample, generated by `record_controls.py` after the numerical campaign.
++- [partner_v074p.zip](partner_v074p.zip), [INPUT_MANIFEST.json](INPUT_MANIFEST.json): byte-preserved partner input. [SOURCE.diff](SOURCE.diff) records this branch's added implementation sources. No original source is patched.
++- [FABLE_HANDOFF.md](FABLE_HANDOFF.md): precise adoption boundary and remaining work.
++
++The ledger retains native selected spectra and transport diagnostics, **not all eigenvectors**. Reconciliation independently rebuilds gaps and windings from those records; rerunning source is required to recompute overlaps. Root convergence is not newly demonstrated: retained candidate roots are re-evaluated at their exact coordinates.
++
++From a fresh disposable checkout of this folder, using Python 3.12:
++
++```sh
++python -m pip install -r REQUIREMENTS.txt
++OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -p no:cacheprovider test_guards.py --junitxml=TESTS.xml
++OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python run_campaign.py
++python report.py
++python record_controls.py
++python clean_smoke.py
++```
++
++The commands regenerate output files in the disposable copy. `response_inputs.py` verifies the original ZIP and member hashes before extraction. For a read-only reconciliation of numerical records apart from its regenerated summary, run `python reconcile.py`.
++
++**Limits:** these APIs are opt-in; they do not automatically repair historical `topo.py`, `braid.py`, `sparse_mode_v2.py` or their consumers. This pass adds no general sparse Newton/event acceptance, global node inventory, continuous-path isolation proof, new cutoff campaign, physical validation or novelty claim. Two engines sharing measurement code remain a numerical consistency check. Constant tunnelling remains a model assumption.
++'''
++    (ROOT/'README.md').write_text(text)
++    plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11, 'axes.titlesize': 13, 'axes.labelsize': 11, 'axes.spines.top': False, 'axes.spines.right': False, 'svg.fonttype': 'none'})
++    fig, axes = plt.subplots(2, 2, figsize=(12, 9))
++    fig.subplots_adjust(left=.09, right=.97, bottom=.20, top=.85, wspace=.22, hspace=.40)
++    fig.text(.07, .963, 'The same paths, explicitly mirrored', fontsize=23, weight='bold', color='#182f46')
++    fig.text(.07, .920, 'Native finite model · N = 4 · radius 0.012 · 192 loop / 600 transport intervals', fontsize=12, color='#455769')
++    colors = ['#146b8a', '#c46b28']
++    for i, B in enumerate((-.25, -.30)):
++        key = f'B{B}_r0.012_n192_t600'
++        for j, (name, valley) in enumerate([('K', 1), ('Kprime', -1)]):
++            ax = axes[i, j]; g = paths[key][name]; nodes = np.asarray(g['nodes']); path = np.asarray(g['transport'])
++            out = next(x for x in pair if x['B'] == B and x['valley'] == valley and x['radius'] == .012 and x['loop_intervals'] == 192)
++            label = out['result'].get('label', out['result']['status'])
++            ax.plot(path[:, 0], path[:, 1], color='#798896', lw=1.6, zorder=1)
++            ax.annotate('', xy=path[345], xytext=path[290], arrowprops=dict(arrowstyle='->', color='#536373', lw=1.7))
++            for q, loop in enumerate(g['loops']):
++                xy = np.array(loop)
++                ax.plot(xy[:, 0], xy[:, 1], color=colors[q], lw=2.4, zorder=3)
++                ax.scatter(nodes[q, 0], nodes[q, 1], color=colors[q], marker='x', s=32, zorder=4)
++                ax.scatter(xy[0, 0], xy[0, 1], facecolor='white', edgecolor=colors[q], linewidth=1.7, s=38, zorder=5)
++                ax.annotate(str(q+1), nodes[q], xytext=(-13, 14), textcoords='offset points', color=colors[q], fontsize=12, weight='bold')
++            center = nodes.mean(axis=0); span = max(np.ptp(nodes, axis=0))+.09
++            ax.set_xlim(center[0]-span/2, center[0]+span/2); ax.set_ylim(center[1]-span/2, center[1]+span/2)
++            ax.set_aspect('equal', adjustable='box'); ax.grid(color='#e8edf2', linewidth=.7)
++            ax.set_xlabel('Fractional momentum f₁'); ax.set_ylabel('Fractional momentum f₂')
++            ax.set_title(f'B = {B:.2f}   ·   {"K" if valley == 1 else "K′"}   ·   {label}', loc='left', pad=12, weight='bold', color='#21384e')
++    fig.legend(handles=[Line2D([0], [0], color=colors[0], lw=2, label='Loop 1'), Line2D([0], [0], color=colors[1], lw=2, label='Loop 2'), Line2D([0], [0], color='#798896', lw=1.6, label='Frame transport'), Line2D([0], [0], marker='o', color='none', markeredgecolor='#536373', markerfacecolor='white', label='Loop / transport endpoint')], loc='lower center', bbox_to_anchor=(.5, .064), ncol=4, frameon=False)
++    fig.text(.07, .025, 'Measured paths and sampled charge labels. No complete node inventory or continuous-path proof is claimed.', fontsize=10, color='#536373')
++    fig.savefig(ROOT/'mirrored_paths.png', dpi=200, facecolor='white'); fig.savefig(ROOT/'mirrored_paths.svg', facecolor='white'); plt.close(fig)
++    (ROOT/'FIGURE.json').write_text(json.dumps(dict(generator_sha256=sha(ROOT/'report.py'), sources={f: sha(ROOT/f) for f in ('RESULTS.json', 'PATHS.json.gz', 'SUMMARY.json')}, outputs={f: sha(ROOT/f) for f in ('mirrored_paths.png', 'mirrored_paths.svg')}, scope='Actual retained coordinate arrays; no synthetic band or braid illustration'), indent=2)+'\n')
++
++
++if __name__ == '__main__': run()
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/response_inputs.py
+@@ -0,0 +1,28 @@
++"""Verify and extract the preserved partner archive without network access."""
++import hashlib, json, sys, zipfile
++from pathlib import Path
++ROOT=Path(__file__).resolve().parent
++
++def extract(target):
++    target=Path(target); target.mkdir(parents=True,exist_ok=True)
++    manifest=json.loads((ROOT/'INPUT_MANIFEST.json').read_text())
++    archive=ROOT/'partner_v074p.zip'
++    if hashlib.sha256(archive.read_bytes()).hexdigest()!=manifest['archive_sha256']:
++        raise RuntimeError('partner archive hash mismatch')
++    with zipfile.ZipFile(archive) as z:
++        if set(z.namelist())!=set(manifest['files']): raise RuntimeError('archive member mismatch')
++        for n,rec in manifest['files'].items():
++            if Path(n).name!=n or n in ('.','..'): raise RuntimeError('unsafe archive member')
++            b=z.read(n)
++            if len(b)!=rec['bytes'] or hashlib.sha256(b).hexdigest()!=rec['sha256']: raise RuntimeError('member hash mismatch')
++            p=target/n
++            if p.exists() and p.read_bytes()!=b: raise RuntimeError('refusing to replace changed input: '+n)
++            p.write_bytes(b)
++    return target
++
++def activate():
++    p=extract(ROOT/'original')
++    sys.path.insert(0,str(p))
++    return p
++
++if __name__=='__main__': print(activate())
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/run_campaign.py
+@@ -0,0 +1,161 @@
++"""Run only PLAN.json's frozen finite-model checks. Keep every attempted result."""
++import argparse
++import gzip
++import hashlib
++import inspect
++import json
++import platform
++from pathlib import Path
++import time
++import numpy as np
++import scipy
++from threadpoolctl import threadpool_limits, threadpool_info
++from response_inputs import ROOT, activate
++INPUT = activate()
++import guarded_topology as gt
++import guarded_sparse as gs
++from bm_strain import BM, sz
++from knobs import add_harmonic
++
++
++def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
++def write(path, obj): Path(path).write_text(json.dumps(obj, indent=2, allow_nan=False)+'\n')
++
++
++def run(output, smoke=False):
++    output = Path(output); output.mkdir(parents=True, exist_ok=True)
++    plan = json.loads((ROOT/'PLAN.json').read_text()); p = gt.Policy(**plan['policy'])
++    models = {}; outcomes = []; geometries = {}; checks = []
++    sources = {x.name: sha(x) for x in sorted(ROOT.glob('*.py'))}
++    environment = dict(python=platform.python_version(), numpy=np.__version__, scipy=scipy.__version__, threadpools=threadpool_info())
++    start = time.perf_counter()
++    def model(name, B=None, extra=None, **kw):
++        args = {k: v.default for k, v in inspect.signature(BM).parameters.items()}
++        args.update(kw)
++        provisional = BM(**args)
++        idx = gs.validate_indices(provisional.idx)
++        args['index_set'] = idx
++        m = gs.fixed_bm(idx, **{k: v for k, v in args.items() if k != 'index_set'})
++        harms = []
++        if B is not None:
++            add_harmonic(m, B, mat=sz, use_sin=True)
++            harms.append(dict(amplitude=B, matrix='sigma_z', use_sin=True, layer_sign=1))
++        if extra is not None:
++            add_harmonic(m, extra, mat=sz, use_sin=True, layer_sign=-1)
++            harms.append(dict(amplitude=extra, matrix='sigma_z', use_sin=True, layer_sign=-1))
++        models[name] = dict(parameters=args, harmonics=harms, dimension=m.dim, basis_vectors=m.nG,
++                            ordered_basis_sha256=hashlib.sha256(json.dumps(idx, separators=(',', ':')).encode()).hexdigest(),
++                            native_source_sha256=sha(INPUT/'bm_strain.py'))
++        return m
++
++    def checkpoint():
++        write(output/'RESULTS.json', dict(plan_sha256=sha(ROOT/'PLAN.json'), sources=sources, input_archive_sha256=sha(ROOT/'partner_v074p.zip'),
++              smoke=smoke, outcomes=outcomes, checks=checks, elapsed_seconds=time.perf_counter()-start, environment=environment))
++        write(output/'MODELS.json', models)
++
++    with gzip.open(output/'EVALUATIONS.jsonl.gz', 'wt') as log:
++        def retain(records, attempt):
++            for row in records:
++                log.write(json.dumps(dict(attempt_id=attempt, **row), allow_nan=False)+'\n')
++            log.flush()
++
++        def attempt(name, m, call, metadata):
++            S = gt.Sampler(m, p, name=metadata['model'])
++            t = time.perf_counter()
++            try:
++                result = call(S)
++            except gt.Rejected as ex:
++                result = ex.record
++            except Exception as ex:
++                result = dict(status='ERROR', error_type=type(ex).__name__, message=str(ex))
++            frames = [r for r in S.records if r['kind'] == 'frame']
++            links = [r for r in S.records if r['kind'] == 'link']
++            ext = [r['external_gap_meV'] for r in frames if r['external_gap_meV'] is not None]
++            sew = [r['sewing_loss'] for r in links if r['sewing']]
++            diag = dict(frame_evaluations=len(frames), link_evaluations=len(links),
++                        min_external_gap_meV=min(ext) if ext else None,
++                        min_overlap=min(r['min_overlap'] for r in links) if links else None,
++                        max_endpoint_sewing_loss=max(sew) if sew else None,
++                        max_reality_meV=max(r['reality_meV'] for r in frames) if frames else None)
++            retain(S.records, name)
++            outcomes.append(dict(id=name, **metadata, result=result, diagnostics=diag, elapsed_seconds=time.perf_counter()-t))
++            checkpoint()
++            print(name, result['status'], result.get('label', result.get('code', result.get('euler_estimate', result.get('sign')))), flush=True)
++            return result
++
++        seeds = json.loads((INPUT/'VALLEY_MIRROR.json').read_text())
++        for B in plan['braid']['B'][:1] if smoke else plan['braid']['B']:
++            pair = {}
++            for valley in (1, -1):
++                name = f'braid_B{B}_v{valley}'
++                pair[valley] = model(name, N=4, eps=.003, phi_deg=0, A_scalar=.2, kinetic='lab_nn_full', geometry='exact', valley=valley, B=B)
++            nodes = seeds[f'braid_{B}']['K']['nodes']
++            for radius in plan['braid']['radii'][:1] if smoke else plan['braid']['radii']:
++                for n, nt in plan['braid']['meshes'][:1] if smoke else plan['braid']['meshes']:
++                    key = f'B{B}_r{radius}_n{n}_t{nt}'
++                    g = gt.geometry(nodes, radius, n, nt); gm = gt.mirror(g)
++                    geometries[key] = dict(K=g, Kprime=gm, seed_source='original/VALLEY_MIRROR.json', root_action='evaluate both native roots without relocation')
++                    tr = []
++                    points = np.concatenate([np.asarray(g['nodes']), np.asarray(g['transport']), *[np.asarray(x) for x in g['loops']]])
++                    for j, f in enumerate(points):
++                        h = pair[1].H(pair[1].frac_to_k(f)); hp = pair[-1].H(pair[-1].frac_to_k(-f))
++                        error = float(np.max(np.abs(hp-h.conj())))
++                        tr.append(dict(kind='native_time_reversal', sample=j, f_K=f.tolist(), f_Kprime=(-f).tolist(), matrix_error_meV=error))
++                    retain(tr, 'TR_'+key)
++                    mx = max(x['matrix_error_meV'] for x in tr)
++                    checks.append(dict(kind='native_time_reversal', id=key, samples=len(tr), max_matrix_error_meV=mx, passed=mx <= plan['braid']['matrix_TR_tol_meV']))
++                    res = []
++                    for valley, geometry in [(1, g), (-1, gm)]:
++                        res.append(attempt(f'pair_{key}_v{valley}', pair[valley], lambda S, geometry=geometry: gt.pair_charges(S, geometry),
++                                   dict(kind='pair', model=f'braid_B{B}_v{valley}', B=B, valley=valley, radius=radius, loop_intervals=n, transport_intervals=nt, geometry_id=key)))
++                    passed = all(r['status'] == 'PASSED_SAMPLED_GATES' for r in res)
++                    diff = max(abs(abs(a)-abs(b)) for a, b in zip(res[0]['windings'], res[1]['windings'])) if passed else None
++                    checks.append(dict(kind='mirror_labels', id=key, comparable=passed, abs_winding_difference=diff,
++                                       passed=bool(passed and res[0]['label'] == res[1]['label'] and diff <= plan['braid']['paired_abs_winding_tol'])))
++
++        if not smoke:
++            for valley in plan['wilson']['valleys']:
++                name = f'baseline_v{valley}'
++                m = model(name, N=4, eps=.003, phi_deg=0, kinetic='lab_nn_full', geometry='exact', valley=valley)
++                for n1, n2 in plan['wilson']['meshes']:
++                    attempt(f'wilson_{name}_{n1}x{n2}', m, lambda S, a=n1, b=n2: gt.euler_wilson(S, nf1=a, nf2=b), dict(kind='wilson', model=name, valley=valley, mesh=[n1, n2]))
++            m = model('chiral_N6', N=6, theta_deg=1.06, ratio=0., eps=0., kinetic='none')
++            for n1, n2 in plan['wilson']['chiral_meshes']:
++                attempt(f'wilson_chiral_{n1}x{n2}', m, lambda S, a=n1, b=n2: gt.euler_wilson(S, nf1=a, nf2=b), dict(kind='wilson', model='chiral_N6', valley=1, mesh=[n1, n2]))
++            for valley in plan['sign']['valleys']:
++                name = f'endpoint_v{valley}'
++                m = model(name, N=4, eps=.003, phi_deg=80, A_scalar=-.30, ratio=.88, kinetic='lab_nn_full', geometry='exact', valley=valley, B=-.40, extra=-1.8)
++                for label, band in [('flat1', m.dim//2-1), ('flat2', m.dim//2)]:
++                    for axis in plan['sign']['axes']:
++                        for n in plan['sign']['intervals']:
++                            attempt(f'sign_{name}_{label}_a{axis}_n{n}', m, lambda S, b=band, a=axis, n=n: gt.band_sign_holonomy(S, b, a, 0., n=n), dict(kind='sign', model=name, valley=valley, band=band, band_label=label, axis=axis, intervals=n))
++
++        sp = plan['sparse']
++        for valley in sp['valleys'][:1] if smoke else sp['valleys']:
++            name = f'sparse_v{valley}'
++            m = model(name, N=sp['N'], eps=.003, kinetic='lab_nn_full', geometry='exact', valley=valley)
++            ledger = gs.Ledger(); C = gs.CheckedSparse(m, m.idx, sp, ledger)
++            for f in sp['points'][:1] if smoke else sp['points']:
++                for sigma in sp['sigma']:
++                    key = f'{name}_f{f}_sigma{sigma}'; lo = m.dim//2-3
++                    try:
++                        w, _ = C.window(f, lo, sp['n'], sigma=sigma, request_k=sp['request_k'])
++                        result = dict(status='ACCEPTED_DENSE_CHECKED', energies_meV=w.tolist())
++                    except gt.Rejected as ex: result = ex.record
++                    outcomes.append(dict(id=key, kind='sparse', model=name, valley=valley, f=f, sigma=sigma, lo=lo, result=result))
++                    print(key, result['status'], result.get('code', ''), flush=True)
++            retain(ledger.entries, name)
++            checks.append(dict(kind='sparse_work_counts', model=name, component_counts=ledger.counts(),
++                               attempts=len([r for r in ledger.entries if r['kind'] == 'attempt']),
++                               accounting='Components are disjoint. Inclusive attempt wall times are not added to component times.'))
++        checkpoint()
++    with gzip.open(output/'PATHS.json.gz', 'wt') as f:
++        json.dump(geometries, f, allow_nan=False)
++    checkpoint()
++    if any(r['result']['status'] == 'ERROR' for r in outcomes):
++        raise RuntimeError('Unexpected errors retained; inspect RESULTS.json')
++
++
++if __name__ == '__main__':
++    ap = argparse.ArgumentParser(); ap.add_argument('--output', default=str(ROOT)); ap.add_argument('--smoke', action='store_true'); args = ap.parse_args()
++    with threadpool_limits(limits=1): run(args.output, args.smoke)
+--- /dev/null
++++ b/research/benchmarks/variant_guard_repairs/test_guards.py
+@@ -0,0 +1,189 @@
++"""Regression tests for the reviewed failures and the narrowed API contracts."""
++import json
++from pathlib import Path
++import numpy as np
++import pytest
++from scipy.linalg import eigh
++import guarded_topology as gt
++import guarded_sparse as gs
++from bm_strain import BM
++from gate import real_basis
++
++PLAN = json.loads((Path(__file__).parent/'PLAN.json').read_text())
++
++
++class Toy:
++    dim = 4
++    valley = 1
++    def frac_to_k(self, f): return np.asarray(f)
++    def H(self, k): return np.diag([-3., -1., 1., 3.]).astype(complex)
++
++
++class Smooth(Toy):
++    def H(self, k):
++        a = 2*np.pi*k[0]; c, s = np.cos(a), np.sin(a)
++        R = np.eye(4); R[:2, :2] = [[c, -s], [s, c]]
++        return (R @ super().H(k) @ R.T).astype(complex)
++
++
++def sampler(model=None, **policy):
++    return gt.Sampler(Toy() if model is None else model, gt.Policy(**policy), U=np.eye(4))
++
++
++def assert_code(code, call):
++    with pytest.raises(gt.Rejected) as ex: call()
++    assert ex.value.record['code'] == code
++
++
++@pytest.mark.parametrize('name,value', [('external_gap_meV', 0), ('overlap_min', 0), ('reality_meV', float('nan')), ('root_gap_meV', -1), ('overlap_min', 1.1), ('phase_step_max_rad', np.pi)])
++def test_invalid_policy_refused(name, value):
++    with pytest.raises(gt.Rejected): gt.Policy(**{name: value})
++
++
++@pytest.mark.parametrize('lo', [1.2, float('nan'), True, -1, 4])
++def test_invalid_band_refused(lo):
++    with pytest.raises(gt.Rejected): sampler().frame([0, 0], lo)
++
++
++@pytest.mark.parametrize('lo', [0, 2])
++def test_both_external_edges_accounted_and_enforced(lo):
++    S = sampler(); S.frame([0, 0], lo)
++    row = S.records[-1]
++    assert row['external_gap_meV'] == 2
++    assert (row['lower_external_gap_meV'] is None) == (lo == 0)
++    assert (row['upper_external_gap_meV'] is None) == (lo == 2)
++    assert_code('external_gap', lambda: sampler(external_gap_meV=3).frame([0, 0], lo))
++
++
++def test_full_space_external_is_not_applicable():
++    S = sampler(); S.frame([0, 0], 0, 4)
++    assert S.records[-1]['external_status'] == 'NOT_APPLICABLE_FULL_SPACE'
++    assert S.records[-1]['external_gap_meV'] is None
++
++
++def test_negative_loop_start_and_exact_mirror():
++    nodes = [[.3, .4], [.6, .6]]
++    for direction in ([1, 0], [-1, 0]):
++        g = gt.geometry(nodes, .012, 96, 300, direction)
++        assert np.array_equal(g['transport'][0], g['loops'][0][0])
++        assert np.array_equal(g['transport'][-1], g['loops'][1][0])
++        assert np.allclose(np.array(g['loops'][0][0])-nodes[0], np.array(direction)*.012, atol=1e-16)
++        for key in ('nodes', 'loops', 'transport'):
++            assert np.array_equal(gt.mirror(g)[key], -np.asarray(g[key]))
++
++
++def test_mismatched_base_refused_before_frame():
++    g = gt.geometry([[.3, .4], [.6, .6]], .012, 8, 8)
++    g['transport'][0][0] += .024
++    S = sampler()
++    assert_code('base_path_mismatch', lambda: gt.pair_charges(S, g))
++    assert not any(x['kind'] == 'frame' for x in S.records)
++
++
++def test_nonroot_centers_refused():
++    g = gt.geometry([[.3, .4], [.6, .6]], .012, 8, 8)
++    assert_code('unverified_node', lambda: gt.pair_charges(sampler(), g))
++
++
++def test_zero_pair_overlap_refused():
++    class Jump(Toy):
++        def H(self, k):
++            return np.diag([-3., -1., 1., 3.] if round(4*k[1]) % 2 == 0 else [-1., -3., 3., 1.]).astype(complex)
++    assert_code('overlap', lambda: gt.euler_wilson(sampler(Jump()), nf1=4, nf2=4, sewings=(np.eye(4), np.eye(4))))
++
++
++def test_smooth_band_coarse_refusal_and_refined_acceptance():
++    assert_code('overlap', lambda: gt.band_sign_holonomy(sampler(Smooth()), 1, 0, 0, n=4, sewing_matrix=np.eye(4)))
++    r = gt.band_sign_holonomy(sampler(Smooth()), 1, 0, 0, n=32, sewing_matrix=np.eye(4))
++    assert r['sign'] == 1
++
++
++@pytest.mark.parametrize('axis', [0, 1])
++def test_both_sewing_directions_enforced(axis):
++    sew = [np.eye(4), np.eye(4)]; sew[axis] *= .9
++    assert_code('sewing_loss', lambda: gt.euler_wilson(sampler(), nf1=4, nf2=4, sewings=sew))
++
++
++def test_zero_sewing_refused():
++    assert_code('overlap', lambda: gt.band_sign_holonomy(sampler(), 1, 0, 0, n=4, sewing_matrix=np.zeros((4, 4))))
++
++
++def test_positive_wilson_and_boundary_bands():
++    for lo in [0, 1, 2]:
++        r = gt.euler_wilson(sampler(), lo=lo, nf1=4, nf2=4, sewings=(np.eye(4), np.eye(4)))
++        assert r['euler_estimate'] == 0
++    for band in [0, 3]:
++        assert gt.band_sign_holonomy(sampler(), band, 0, 0, n=4, sewing_matrix=np.eye(4))['sign'] == 1
++
++
++def test_degenerate_band_rejected():
++    class Degenerate(Toy):
++        def H(self, k): return np.diag([-2., 0., 0., 2.]).astype(complex)
++    assert_code('external_gap', lambda: gt.band_sign_holonomy(sampler(Degenerate()), 1, 0, 0, n=4, sewing_matrix=np.eye(4)))
++
++
++def test_native_reality_and_realify_binding():
++    m = BM(N=2, eps=.003, kinetic='lab_nn_full', geometry='exact')
++    f = np.array([.31, .27]); H = m.H(m.frac_to_k(f)); U = real_basis(m.nG)
++    assert np.max(np.abs(gs.realify(H)-U.conj().T @ H @ U)) < 1e-9
++    m2 = BM(N=2, eps=.003, mass=1, kinetic='lab_nn_full', geometry='exact')
++    assert_code('matrix_precondition', lambda: gt.Sampler(m2).frame(f, m2.dim//2-1))
++
++
++@pytest.mark.parametrize('idx', [[[1.9, 0]], [[float('nan'), 0]], [[True, 0]], [['1', 0]], [[0, 0], [0, 0]], [1, 2], []])
++def test_bad_basis_rejected_before_constructor(idx):
++    with pytest.raises(gt.Rejected): gs.fixed_bm(idx)
++
++
++def model_and_checker():
++    kw = dict(N=3, eps=.003, kinetic='lab_nn_full', geometry='exact')
++    idx = BM(**kw).idx
++    m = gs.fixed_bm(idx, **kw)
++    return m, gs.CheckedSparse(m, idx, PLAN['sparse'])
++
++
++def test_implicit_basis_not_supported():
++    m = BM(N=2)
++    assert_code('fixed_declared_basis_required', lambda: gs.CheckedSparse(m, m.idx, PLAN['sparse']))
++
++
++def test_sparse_mandatory_native_match_and_work_accounting():
++    m, C = model_and_checker(); lo = m.dim//2-3; f = [.31, .27]
++    w, V = C.window(f, lo, 6)
++    expected = eigh(m.H(m.frac_to_k(np.array(f))), eigvals_only=True, subset_by_index=(lo, lo+5))
++    assert np.max(abs(w-expected)) < 1e-8
++    counts = C.ledger.counts()
++    assert counts == {'setup': 1, 'native_assembly': 1, 'candidate_assembly': 1, 'native_dense_eigh': 1, 'lu_factorization': 1, 'arpack': 1, 'validation': 1}
++    assert len([x for x in C.ledger.entries if x['kind'] == 'attempt']) == 1
++    assert all('inclusive_wall_seconds' not in x for x in C.ledger.entries if x['kind'] == 'component')
++
++
++def test_wrong_absolute_bands_rejected_even_with_good_residual(monkeypatch):
++    m, C = model_and_checker(); lo = m.dim//2-3
++    def wrong(S, k, **kw):
++        # Exact eigenpairs from the wrong absolute window: residual alone passes.
++        return eigh(S.toarray(), subset_by_index=(lo+2, lo+2+k-1))
++    monkeypatch.setattr(gs, 'eigsh', wrong)
++    assert_code('absolute_window_not_matched', lambda: C.window([.31, .27], lo, 6))
++    assert C.ledger.entries[-1]['status'] == 'REJECTED'
++    assert not any(x['kind'] == 'accepted' for x in C.ledger.entries)
++
++
++def test_far_shift_missing_window_refused():
++    m, C = model_and_checker()
++    assert_code('absolute_window_not_matched', lambda: C.window([.31, .27], m.dim//2-3, 6, sigma=10000, request_k=8))
++
++
++def test_changed_static_model_cannot_use_stale_fast_snapshot():
++    m, C = model_and_checker(); m.Hstat[0, 0] += 1; m.Hstat[1, 1] += 1
++    assert_code('sparse_comparison', lambda: C.window([.31, .27], m.dim//2-3, 6))
++
++
++def test_general_lu_used_only_as_solver_on_inertia_counterexample():
++    # The original signed-U-diagonal count is demonstrably wrong. The replacement
++    # uses LU only for inverse application; the ordered reference is dense eigh.
++    A = np.array([[0., 1.], [1., 0.]])
++    lu = gs.splu(gs.sp.csc_matrix(A), diag_pivot_thresh=0., options={'SymmetricMode': True})
++    assert np.count_nonzero(lu.U.diagonal() < 0) == 0
++    assert np.count_nonzero(eigh(A, eigvals_only=True) < 0) == 1
++    assert np.allclose(A @ lu.solve(np.eye(2)), np.eye(2))

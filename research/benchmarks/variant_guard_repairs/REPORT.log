@@ -1,0 +1,308 @@
+{
+  "plan_sha256": "6f14b5b29040df977c2aae5f9caf3d00a354439a1d2f1089f0ec2d244d697a8b",
+  "inputs": {
+    "RESULTS.json": "54e4f9544e5b81f75ca072f618f970940dcba1a4ba18cdb51208b95c08deea11",
+    "EVALUATIONS.jsonl.gz": "6d32eeabf272509c489c8520a9f5ee6ec78bf5e3237dea20b5a37a92f7b86421",
+    "PATHS.json.gz": "00c0f3bb06862237db092ceb24d3dacffa901f333002ee4462d1eeac5d8571fa",
+    "TESTS.xml": "64ff17126e43ded61e97cc35331b8a759f53857c975f48ac34002362afc86777"
+  },
+  "tests": {
+    "count": 38,
+    "failures": 0,
+    "errors": 0
+  },
+  "outcome_counts": {
+    "pair": {
+      "PASSED_SAMPLED_GATES": 16
+    },
+    "wilson": {
+      "PASSED_SAMPLED_GATES": 6
+    },
+    "sign": {
+      "PASSED_SAMPLED_GATES": 16
+    },
+    "sparse": {
+      "ACCEPTED_DENSE_CHECKED": 12
+    }
+  },
+  "ledger_counts": {
+    "native_time_reversal": 5944,
+    "frame": 26658,
+    "link": 44256,
+    "angle": 4608,
+    "wilson_phases": 6,
+    "component": 74,
+    "request": 12,
+    "check": 84,
+    "native_target": 12,
+    "arpack_spectrum": 12,
+    "accepted": 12,
+    "attempt": 12
+  },
+  "external_gap_reconstruction_error_meV": 0.0,
+  "winding_reconstruction_error": 0.0,
+  "wilson_reconstruction_error": 2.220446049250313e-16,
+  "refinements": [
+    {
+      "kind": "loop_radius_and_mesh",
+      "B": -0.25,
+      "valley": 1,
+      "count": 4,
+      "maximum_abs_winding_spread": 0.0005725652460666364,
+      "passed": true
+    },
+    {
+      "kind": "loop_radius_and_mesh",
+      "B": -0.25,
+      "valley": -1,
+      "count": 4,
+      "maximum_abs_winding_spread": 0.0005725652460656372,
+      "passed": true
+    },
+    {
+      "kind": "loop_radius_and_mesh",
+      "B": -0.3,
+      "valley": 1,
+      "count": 4,
+      "maximum_abs_winding_spread": 0.0001823260917022118,
+      "passed": true
+    },
+    {
+      "kind": "loop_radius_and_mesh",
+      "B": -0.3,
+      "valley": -1,
+      "count": 4,
+      "maximum_abs_winding_spread": 0.00018232609170243386,
+      "passed": true
+    },
+    {
+      "kind": "wilson_mesh",
+      "model": "baseline_v-1",
+      "comparable": true,
+      "absolute_estimate_difference": 3.970946338416326e-08,
+      "same_integer_magnitude": true
+    },
+    {
+      "kind": "wilson_mesh",
+      "model": "baseline_v1",
+      "comparable": true,
+      "absolute_estimate_difference": 1.0391824023514573e-07,
+      "same_integer_magnitude": true
+    },
+    {
+      "kind": "wilson_mesh",
+      "model": "chiral_N6",
+      "comparable": true,
+      "absolute_estimate_difference": 2.220446049250313e-16,
+      "same_integer_magnitude": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v-1",
+      "band": "flat1",
+      "axis": 0,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v-1",
+      "band": "flat1",
+      "axis": 1,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v-1",
+      "band": "flat2",
+      "axis": 0,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v-1",
+      "band": "flat2",
+      "axis": 1,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v1",
+      "band": "flat1",
+      "axis": 0,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v1",
+      "band": "flat1",
+      "axis": 1,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v1",
+      "band": "flat2",
+      "axis": 0,
+      "passed": true
+    },
+    {
+      "kind": "sign_mesh",
+      "model": "endpoint_v1",
+      "band": "flat2",
+      "axis": 1,
+      "passed": true
+    }
+  ],
+  "mirror_checks": [
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.012_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.012_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.012_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.012_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 1.4432899320127035e-15,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.008_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.008_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 5.551115123125783e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.008_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.008_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.012_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.012_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 5.551115123125783e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.012_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.012_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.008_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.008_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.008_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.008_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "kind": "sparse_work_counts",
+      "model": "sparse_v1",
+      "component_counts": {
+        "arpack": 6,
+        "candidate_assembly": 6,
+        "lu_factorization": 6,
+        "native_assembly": 6,
+        "native_dense_eigh": 6,
+        "setup": 1,
+        "validation": 6
+      },
+      "attempts": 6,
+      "accounting": "Components are disjoint. Inclusive attempt wall times are not added to component times."
+    },
+    {
+      "kind": "sparse_work_counts",
+      "model": "sparse_v-1",
+      "component_counts": {
+        "arpack": 6,
+        "candidate_assembly": 6,
+        "lu_factorization": 6,
+        "native_assembly": 6,
+        "native_dense_eigh": 6,
+        "setup": 1,
+        "validation": 6
+      },
+      "attempts": 6,
+      "accounting": "Components are disjoint. Inclusive attempt wall times are not added to component times."
+    }
+  ],
+  "sparse_accepted_max_checks": {
+    "native_matrix_tol_meV": 0.0,
+    "ordered_energy_tol_meV": 4.085620730620576e-13,
+    "orthogonality_tol": 3.1086244689504383e-15,
+    "projector_tol": 6.095582748423809e-15,
+    "residual_tol_meV": 5.06991323574553e-13
+  },
+  "archive_unchanged": true
+}

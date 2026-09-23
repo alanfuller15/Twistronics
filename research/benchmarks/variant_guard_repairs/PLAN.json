@@ -1,0 +1,53 @@
+{
+  "scope": "New opt-in guarded measurement APIs; unchanged v074p inputs. Finite floating-point software checks, not physical validation or a continuous-path proof.",
+  "parent": "d187fe4b3043b26b97d244fbfa1733aebdd674e1",
+  "frozen_before_first_test": true,
+  "policy": {
+    "reality_meV": 1e-9,
+    "hermiticity_meV": 1e-9,
+    "external_gap_meV": 1e-5,
+    "internal_gap_meV": 1e-6,
+    "root_gap_meV": 1e-6,
+    "overlap_min": 0.5,
+    "sewing_loss_max": 0.05,
+    "phase_step_max_rad": 2.356194490192345,
+    "unit_winding_tol": 0.15
+  },
+  "braid": {
+    "N": 4,
+    "B": [-0.25, -0.30],
+    "radii": [0.012, 0.008],
+    "meshes": [[96, 300], [192, 600]],
+    "node_source": "Unchanged v074p VALLEY_MIRROR.json K coordinates; re-evaluate both native gaps. No node search or Newton acceptance.",
+    "path_policy": "Use both actual unwrapped K coordinates, their straight connecting path and explicit closed circles. K-prime arrays are exact negatives, including both nodes. No modulo wrapping or reciprocal shift.",
+    "matrix_TR_tol_meV": 1e-9,
+    "paired_abs_winding_tol": 1e-7,
+    "refinement_abs_winding_tol": 0.02
+  },
+  "wilson": {
+    "strained_N": 4,
+    "valleys": [1, -1],
+    "meshes": [[24, 40], [48, 80]],
+    "chiral_N": 6,
+    "chiral_meshes": [[18, 30], [36, 60]],
+    "note": "Native frames, per-link polar factors, both axis links and explicit endpoint sewing. Retain all refusals; no mesh or threshold relaxation. No new bandwidth scan."
+  },
+  "sign": {"N": 4, "valleys": [1, -1], "bands": ["flat1", "flat2"], "axes": [0, 1], "intervals": [80, 160]},
+  "sparse": {
+    "N": 4,
+    "valleys": [1, -1],
+    "points": [[0.31, 0.27], [0.11, 0.43], [-0.31, -0.27]],
+    "sigma": [0.0, 100.0],
+    "n": 6,
+    "request_k": 14,
+    "native_matrix_tol_meV": 1e-9,
+    "ordered_energy_tol_meV": 1e-8,
+    "residual_tol_meV": 1e-8,
+    "orthogonality_tol": 1e-8,
+    "projector_tol": 1e-6,
+    "edge_gap_meV": 1e-5,
+    "supported_mode": "Explicit fixed validated basis; BM real model; dense native absolute-band comparison at every accepted sparse window. No inertia count, retry, Newton or event acceptance. Every failure is retained."
+  },
+  "tests": "Negative controls for malformed policies/indices, reality, missing external neighbor, zero frame/sign overlap, both sewing directions and the former LU counterexample. Positive isolated controls and real finite-model comparisons.",
+  "budget": "One complete bounded campaign plus one clean-source test/small smoke run; retain failures and any implementation corrections. No atlas expansion."
+}

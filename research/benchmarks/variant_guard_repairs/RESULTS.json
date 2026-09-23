@@ -1,0 +1,1818 @@
+{
+  "plan_sha256": "6f14b5b29040df977c2aae5f9caf3d00a354439a1d2f1089f0ec2d244d697a8b",
+  "sources": {
+    "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4",
+    "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+    "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+    "run_campaign.py": "79df3f18b86497ee0e88a2ded5a4ac3cb3ee7464bfd956dc61387b75a0647a10",
+    "test_guards.py": "6fe266be6e33f06192b1d7f1e697d127c7162d0b4cc953222d142b30c0269f90"
+  },
+  "input_archive_sha256": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+  "smoke": false,
+  "outcomes": [
+    {
+      "id": "pair_B-0.25_r0.012_n96_t300_v1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v1",
+      "B": -0.25,
+      "valley": 1,
+      "radius": 0.012,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.25_r0.012_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          0.9996566818073048,
+          0.9989749897085501
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 2.9009084271499397,
+        "min_overlap": 0.9980288393920889,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.480335743002797
+    },
+    {
+      "id": "pair_B-0.25_r0.012_n96_t300_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v-1",
+      "B": -0.25,
+      "valley": -1,
+      "radius": 0.012,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.25_r0.012_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          -0.9996566818073046,
+          -0.99897498970855
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 2.9009084271499397,
+        "min_overlap": 0.9980288393920885,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.310749890002626
+    },
+    {
+      "id": "pair_B-0.25_r0.012_n192_t600_v1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v1",
+      "B": -0.25,
+      "valley": 1,
+      "radius": 0.012,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.25_r0.012_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          0.9996564911948683,
+          0.9989744499562832
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 2.900572209033207,
+        "min_overlap": 0.9995061305761203,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.256556454998645
+    },
+    {
+      "id": "pair_B-0.25_r0.012_n192_t600_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v-1",
+      "B": -0.25,
+      "valley": -1,
+      "radius": 0.012,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.25_r0.012_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          -0.9996564911948669,
+          -0.9989744499562836
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 2.900572209033207,
+        "min_overlap": 0.9995061305761203,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.317731176000962
+    },
+    {
+      "id": "pair_B-0.25_r0.008_n96_t300_v1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v1",
+      "B": -0.25,
+      "valley": 1,
+      "radius": 0.008,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.25_r0.008_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          0.9998483713318355,
+          0.9995470152023498
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 3.178539205041428,
+        "min_overlap": 0.998048978622007,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.436746215000312
+    },
+    {
+      "id": "pair_B-0.25_r0.008_n96_t300_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v-1",
+      "B": -0.25,
+      "valley": -1,
+      "radius": 0.008,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.25_r0.008_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          0.9998483713318355,
+          0.9995470152023492
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 3.178539205041428,
+        "min_overlap": 0.998048978622007,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.271158081999602
+    },
+    {
+      "id": "pair_B-0.25_r0.008_n192_t600_v1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v1",
+      "B": -0.25,
+      "valley": 1,
+      "radius": 0.008,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.25_r0.008_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          0.9998482887830096,
+          0.9995467743890328
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 3.177806199297482,
+        "min_overlap": 0.9995113013358035,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.296755673000007
+    },
+    {
+      "id": "pair_B-0.25_r0.008_n192_t600_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.25_v-1",
+      "B": -0.25,
+      "valley": -1,
+      "radius": 0.008,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.25_r0.008_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "SAME",
+        "windings": [
+          0.99984828878301,
+          0.9995467743890332
+        ],
+        "node_gaps_meV": [
+          1.1505107977427542e-10,
+          1.4705570094974973e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 3.177806199297482,
+        "min_overlap": 0.9995113013358035,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.251222678001795
+    },
+    {
+      "id": "pair_B-0.3_r0.012_n96_t300_v1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v1",
+      "B": -0.3,
+      "valley": 1,
+      "radius": 0.012,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.3_r0.012_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          -0.9996733356039633,
+          1.0000561544308313
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 1.895924126813462,
+        "min_overlap": 0.9978580671942081,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 2.161824881000939
+    },
+    {
+      "id": "pair_B-0.3_r0.012_n96_t300_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v-1",
+      "B": -0.3,
+      "valley": -1,
+      "radius": 0.012,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.3_r0.012_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          0.9996733356039628,
+          -1.0000561544308308
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 1.895924126813462,
+        "min_overlap": 0.9978580671942081,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 2.0769450070001767
+    },
+    {
+      "id": "pair_B-0.3_r0.012_n192_t600_v1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v1",
+      "B": -0.3,
+      "valley": 1,
+      "radius": 0.012,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.3_r0.012_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          -0.9996731556268543,
+          1.0000561925570852
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 1.895924126813462,
+        "min_overlap": 0.999460354096454,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 7.587376801002392
+    },
+    {
+      "id": "pair_B-0.3_r0.012_n192_t600_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v-1",
+      "B": -0.3,
+      "valley": -1,
+      "radius": 0.012,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.3_r0.012_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          0.9996731556268537,
+          -1.0000561925570866
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 1.895924126813462,
+        "min_overlap": 0.9994603540964542,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 7.7683244019972335
+    },
+    {
+      "id": "pair_B-0.3_r0.008_n96_t300_v1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v1",
+      "B": -0.3,
+      "valley": 1,
+      "radius": 0.008,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.3_r0.008_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          0.9998554817185565,
+          -1.0000203283395503
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 1.5673062992438958,
+        "min_overlap": 0.9968459615357952,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 2.066090096002881
+    },
+    {
+      "id": "pair_B-0.3_r0.008_n96_t300_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v-1",
+      "B": -0.3,
+      "valley": -1,
+      "radius": 0.008,
+      "loop_intervals": 96,
+      "transport_intervals": 300,
+      "geometry_id": "B-0.3_r0.008_n96_t300",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          -0.9998554817185561,
+          1.0000203283395506
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 497,
+        "link_evaluations": 686,
+        "min_external_gap_meV": 1.5673062992438958,
+        "min_overlap": 0.9968459615357956,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 2.0387211720008054
+    },
+    {
+      "id": "pair_B-0.3_r0.008_n192_t600_v1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v1",
+      "B": -0.3,
+      "valley": 1,
+      "radius": 0.008,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.3_r0.008_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          0.9998554033169342,
+          -1.000020340888053
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 1.5673062992438958,
+        "min_overlap": 0.9992016920217026,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 7.654880851001508
+    },
+    {
+      "id": "pair_B-0.3_r0.008_n192_t600_v-1",
+      "kind": "pair",
+      "model": "braid_B-0.3_v-1",
+      "B": -0.3,
+      "valley": -1,
+      "radius": 0.008,
+      "loop_intervals": 192,
+      "transport_intervals": 600,
+      "geometry_id": "B-0.3_r0.008_n192_t600",
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "label": "OPPOSITE",
+        "windings": [
+          -0.9998554033169343,
+          1.0000203408880517
+        ],
+        "node_gaps_meV": [
+          1.163371621260012e-10,
+          1.5259260521816032e-10
+        ],
+        "lo": 97
+      },
+      "diagnostics": {
+        "frame_evaluations": 989,
+        "link_evaluations": 1370,
+        "min_external_gap_meV": 1.5673062992438958,
+        "min_overlap": 0.9992016920217025,
+        "max_endpoint_sewing_loss": null,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 7.865339476000372
+    },
+    {
+      "id": "wilson_baseline_v1_24x40",
+      "kind": "wilson",
+      "model": "baseline_v1",
+      "valley": 1,
+      "mesh": [
+        24,
+        40
+      ],
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "euler_estimate": -1.0000515934446719,
+        "nearest_integer": -1,
+        "phases_rad": [
+          -0.029554924000499402,
+          -0.03537878328979218,
+          -0.029756640947679165,
+          -0.01771419554478764,
+          -0.002751681763444054,
+          0.012303144448239298,
+          0.024649369492491253,
+          0.030879494592372787,
+          0.02617124214839624,
+          0.003011403775604534,
+          -0.05110470424460693,
+          -0.15795093073139682,
+          -0.3553625064104912,
+          -0.7008018904291955,
+          -1.253018835383068,
+          -2.052792880752607,
+          -3.0939628628879463,
+          2.131993958338192,
+          1.3137975532040063,
+          0.7438684557028119,
+          0.37869285088738236,
+          0.1676474769160208,
+          0.05336751778343324,
+          -0.00463410693716235,
+          -0.02987909517400832
+        ],
+        "mesh": [
+          24,
+          40
+        ],
+        "lo": 97,
+        "interpretation": "Sampled finite-model estimate; sign depends on base orientation"
+      },
+      "diagnostics": {
+        "frame_evaluations": 1025,
+        "link_evaluations": 2075,
+        "min_external_gap_meV": 5.249125596333556,
+        "min_overlap": 0.7481309599002737,
+        "max_endpoint_sewing_loss": 0.0006178268592574865,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 5.591915482000331
+    },
+    {
+      "id": "wilson_baseline_v1_48x80",
+      "kind": "wilson",
+      "model": "baseline_v1",
+      "valley": 1,
+      "mesh": [
+        48,
+        80
+      ],
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "euler_estimate": -1.0000514895264316,
+        "nearest_integer": -1,
+        "phases_rad": [
+          -0.0300597631875753,
+          -0.03474582796349568,
+          -0.035757653119133745,
+          -0.03395125363090615,
+          -0.030008605944110124,
+          -0.024484428979466764,
+          -0.01784168138240116,
+          -0.01047955400281317,
+          -0.002756618460108192,
+          0.004988941731530061,
+          0.012420534913419618,
+          0.019184535651164198,
+          0.024890592427734306,
+          0.029089472065836366,
+          0.03124667539159559,
+          0.0307094281612856,
+          0.026663679960074696,
+          0.01807633769997017,
+          0.0036160609086857065,
+          -0.018456311508456776,
+          -0.05043847585096574,
+          -0.09538817997320108,
+          -0.15737429923116975,
+          -0.24174009910905633,
+          -0.3552544992767099,
+          -0.5058825287183841,
+          -0.7018402505688036,
+          -0.9500645852737538,
+          -1.255448099922081,
+          -1.6222639353953643,
+          -2.055150369673105,
+          -2.5526372892314124,
+          -3.0945477130818677,
+          2.64218807600591,
+          2.1344014824227284,
+          1.6915003988646748,
+          1.3167043153444775,
+          1.003217522791888,
+          0.7453414845730021,
+          0.538978837295834,
+          0.37876359075548494,
+          0.2574208579855546,
+          0.16711475272442522,
+          0.10078465239285404,
+          0.05270198394825214,
+          0.018461559933226145,
+          -0.0052489420278004385,
+          -0.020908729454986605,
+          -0.03038328142352517
+        ],
+        "mesh": [
+          48,
+          80
+        ],
+        "lo": 97,
+        "interpretation": "Sampled finite-model estimate; sign depends on base orientation"
+      },
+      "diagnostics": {
+        "frame_evaluations": 3969,
+        "link_evaluations": 7987,
+        "min_external_gap_meV": 5.0175014528598965,
+        "min_overlap": 0.9005332146481352,
+        "max_endpoint_sewing_loss": 0.0006178268592574865,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 17.298580588998448
+    },
+    {
+      "id": "wilson_baseline_v-1_24x40",
+      "kind": "wilson",
+      "model": "baseline_v-1",
+      "valley": -1,
+      "mesh": [
+        24,
+        40
+      ],
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "euler_estimate": 0.9995203077478295,
+        "nearest_integer": 1,
+        "phases_rad": [
+          -0.02958907500797858,
+          -0.004375784509485315,
+          0.05360382901589257,
+          0.1678781051164667,
+          0.37894783143433375,
+          0.7441879037685516,
+          1.314148843564332,
+          2.1321204260350792,
+          -3.094153776765838,
+          -2.052776660045415,
+          -1.252920047559247,
+          -0.7008512678301871,
+          -0.355611302240589,
+          -0.15841154905851423,
+          -0.05180790954268202,
+          0.0020236618450805645,
+          0.024864398486764524,
+          0.0292360822922858,
+          0.022668310104579675,
+          0.009996921538942686,
+          -0.0053553549258879354,
+          -0.02056601897469277,
+          -0.03277985653980633,
+          -0.03847105804222018,
+          -0.032603070318783414
+        ],
+        "mesh": [
+          24,
+          40
+        ],
+        "lo": 97,
+        "interpretation": "Sampled finite-model estimate; sign depends on base orientation"
+      },
+      "diagnostics": {
+        "frame_evaluations": 1025,
+        "link_evaluations": 2075,
+        "min_external_gap_meV": 5.284422113915602,
+        "min_overlap": 0.7496140635992654,
+        "max_endpoint_sewing_loss": 0.0060210944288340285,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 4.902314173999912
+    },
+    {
+      "id": "wilson_baseline_v-1_48x80",
+      "kind": "wilson",
+      "model": "baseline_v-1",
+      "valley": -1,
+      "mesh": [
+        48,
+        80
+      ],
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "euler_estimate": 0.9995203474572929,
+        "nearest_integer": 1,
+        "phases_rad": [
+          -0.030093887791807442,
+          -0.02063618226328422,
+          -0.004991299187830795,
+          0.018706638656699342,
+          0.05293744821684533,
+          0.10101439140991929,
+          0.1673440572952305,
+          0.2576569561040339,
+          0.37901592284685487,
+          0.5392580070472394,
+          0.7456547478379781,
+          1.0035589740247408,
+          1.3170416623455077,
+          1.6917654577505914,
+          2.13450494565242,
+          2.6420962888944786,
+          -3.094735512968372,
+          -2.552763746081427,
+          -2.0551474812399158,
+          -1.6221788381793079,
+          -1.2553609421465275,
+          -0.950033806433313,
+          -0.7018954658780217,
+          -0.5060344997468934,
+          -0.35550648269582136,
+          -0.2420949504556002,
+          -0.1578372996917891,
+          -0.09596740851553742,
+          -0.05114403204201504,
+          -0.019299062429838754,
+          0.002625778514446656,
+          0.016929746308041935,
+          0.025354158853247696,
+          0.029232683797825957,
+          0.02960060859014877,
+          0.027273913988686775,
+          0.022907069402889235,
+          0.017036176589986938,
+          0.010112176315384979,
+          0.002527427566748587,
+          -0.005361994449861314,
+          -0.01321655462767334,
+          -0.020694697442243764,
+          -0.02743424251688485,
+          -0.03303246460518886,
+          -0.037023348696513345,
+          -0.03885004832323734,
+          -0.03782982638952909,
+          -0.03310763360069589
+        ],
+        "mesh": [
+          48,
+          80
+        ],
+        "lo": 97,
+        "interpretation": "Sampled finite-model estimate; sign depends on base orientation"
+      },
+      "diagnostics": {
+        "frame_evaluations": 3969,
+        "link_evaluations": 7987,
+        "min_external_gap_meV": 5.060995312919713,
+        "min_overlap": 0.9020708188870126,
+        "max_endpoint_sewing_loss": 0.0060210944288340285,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 16.803562114997476
+    },
+    {
+      "id": "wilson_chiral_18x30",
+      "kind": "wilson",
+      "model": "chiral_N6",
+      "valley": 1,
+      "mesh": [
+        18,
+        30
+      ],
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "euler_estimate": -1.0000000000000002,
+        "nearest_integer": -1,
+        "phases_rad": [
+          0.7967609985389065,
+          0.5163813038416657,
+          0.25373693477151077,
+          -2.6016179563436767e-16,
+          -0.2537369347715132,
+          -0.5163813038416689,
+          -0.7967609985389092,
+          -1.1032745920316995,
+          -1.4430255880260638,
+          -1.8203193047849817,
+          -2.234735666631043,
+          -2.6795372892074316,
+          3.141592653589791,
+          2.679537289207427,
+          2.2347356666310385,
+          1.820319304784977,
+          1.4430255880260603,
+          1.1032745920316958,
+          0.796760998538905
+        ],
+        "mesh": [
+          18,
+          30
+        ],
+        "lo": 253,
+        "interpretation": "Sampled finite-model estimate; sign depends on base orientation"
+      },
+      "diagnostics": {
+        "frame_evaluations": 589,
+        "link_evaluations": 1197,
+        "min_external_gap_meV": 101.83433290382126,
+        "min_overlap": 0.9881768194805228,
+        "max_endpoint_sewing_loss": 6.661338147750939e-16,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 59.22016847800114
+    },
+    {
+      "id": "wilson_chiral_36x60",
+      "kind": "wilson",
+      "model": "chiral_N6",
+      "valley": 1,
+      "mesh": [
+        36,
+        60
+      ],
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "euler_estimate": -1.0,
+        "nearest_integer": -1,
+        "phases_rad": [
+          0.7971542849902217,
+          0.654143283400578,
+          0.5166476682602127,
+          0.3835902241778915,
+          0.2538705549665866,
+          0.1263783009488235,
+          -1.0380155375200454e-15,
+          -0.1263783009488274,
+          -0.2538705549665897,
+          -0.3835902241778933,
+          -0.5166476682602151,
+          -0.6541432834005818,
+          -0.7971542849902248,
+          -0.9467131592316302,
+          -1.103776167537784,
+          -1.2691810182526289,
+          -1.443594068074986,
+          -1.6274492716549558,
+          -1.820883515543923,
+          -2.0236756698691414,
+          -2.2351990802926744,
+          -2.454398440287852,
+          -2.679801089777245,
+          -2.909569149506017,
+          3.141592653589791,
+          2.9095691495060123,
+          2.679801089777241,
+          2.4543984402878456,
+          2.23519908029267,
+          2.023675669869138,
+          1.8208835155439198,
+          1.6274492716549522,
+          1.4435940680749808,
+          1.2691810182526262,
+          1.10377616753778,
+          0.9467131592316276,
+          0.7971542849902206
+        ],
+        "mesh": [
+          36,
+          60
+        ],
+        "lo": 253,
+        "interpretation": "Sampled finite-model estimate; sign depends on base orientation"
+      },
+      "diagnostics": {
+        "frame_evaluations": 2257,
+        "link_evaluations": 4551,
+        "min_external_gap_meV": 101.83433290382126,
+        "min_overlap": 0.9970114008842403,
+        "max_endpoint_sewing_loss": 6.661338147750939e-16,
+        "max_reality_meV": 0.0
+      },
+      "elapsed_seconds": 99.77760277800189
+    },
+    {
+      "id": "sign_endpoint_v1_flat1_a0_n80",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 0,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": -1,
+        "closure_overlap": -0.9999652938632103,
+        "intervals": 80,
+        "band": 141,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 24.826192342155437,
+        "min_overlap": 0.9980522148110471,
+        "max_endpoint_sewing_loss": 3.4706136789575126e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6325308049999876
+    },
+    {
+      "id": "sign_endpoint_v1_flat1_a0_n160",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 0,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": -1,
+        "closure_overlap": -0.9999652938632103,
+        "intervals": 160,
+        "band": 141,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 24.826192342155437,
+        "min_overlap": 0.9995106149597179,
+        "max_endpoint_sewing_loss": 3.4706136789575126e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.2679949669982307
+    },
+    {
+      "id": "sign_endpoint_v1_flat1_a1_n80",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 1,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999945587247292,
+        "intervals": 80,
+        "band": 141,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 17.492919065682372,
+        "min_overlap": 0.9991668080552308,
+        "max_endpoint_sewing_loss": 5.4412752708010714e-06,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6294781640026486
+    },
+    {
+      "id": "sign_endpoint_v1_flat1_a1_n160",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 1,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999945587247292,
+        "intervals": 160,
+        "band": 141,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 17.492919065682372,
+        "min_overlap": 0.9997914566948561,
+        "max_endpoint_sewing_loss": 5.4412752708010714e-06,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.2593000610031595
+    },
+    {
+      "id": "sign_endpoint_v1_flat2_a0_n80",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 0,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999456587421884,
+        "intervals": 80,
+        "band": 142,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 4.52327286718014,
+        "min_overlap": 0.9304902320344757,
+        "max_endpoint_sewing_loss": 5.4341257811674204e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6198652160019265
+    },
+    {
+      "id": "sign_endpoint_v1_flat2_a0_n160",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 0,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999456587421884,
+        "intervals": 160,
+        "band": 142,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 4.52327286718014,
+        "min_overlap": 0.9791879208934943,
+        "max_endpoint_sewing_loss": 5.4341257811674204e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.256396943001164
+    },
+    {
+      "id": "sign_endpoint_v1_flat2_a1_n80",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 1,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.999981830082588,
+        "intervals": 80,
+        "band": 142,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 39.825386326718416,
+        "min_overlap": 0.9990543828223352,
+        "max_endpoint_sewing_loss": 1.8169917412103054e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6387037660024362
+    },
+    {
+      "id": "sign_endpoint_v1_flat2_a1_n160",
+      "kind": "sign",
+      "model": "endpoint_v1",
+      "valley": 1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 1,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.999981830082588,
+        "intervals": 160,
+        "band": 142,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 39.81603540135595,
+        "min_overlap": 0.9997630263073166,
+        "max_endpoint_sewing_loss": 1.8169917412103054e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.2260924780021014
+    },
+    {
+      "id": "sign_endpoint_v-1_flat1_a0_n80",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 0,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": -1,
+        "closure_overlap": -0.9999561606147778,
+        "intervals": 80,
+        "band": 141,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 24.787843684690436,
+        "min_overlap": 0.9980538724118693,
+        "max_endpoint_sewing_loss": 4.383938522245501e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6757801769999787
+    },
+    {
+      "id": "sign_endpoint_v-1_flat1_a0_n160",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 0,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": -1,
+        "closure_overlap": -0.9999561606147778,
+        "intervals": 160,
+        "band": 141,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 24.787843684690436,
+        "min_overlap": 0.9995110255973125,
+        "max_endpoint_sewing_loss": 4.383938522245501e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.2687705729986192
+    },
+    {
+      "id": "sign_endpoint_v-1_flat1_a1_n80",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 1,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999798647616106,
+        "intervals": 80,
+        "band": 141,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 17.49642247592606,
+        "min_overlap": 0.9991668322570069,
+        "max_endpoint_sewing_loss": 2.0135238389396015e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6423117859994818
+    },
+    {
+      "id": "sign_endpoint_v-1_flat1_a1_n160",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 141,
+      "band_label": "flat1",
+      "axis": 1,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999798647616106,
+        "intervals": 160,
+        "band": 141,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 17.49642247592606,
+        "min_overlap": 0.9997914676883477,
+        "max_endpoint_sewing_loss": 2.0135238389396015e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.2429179140017368
+    },
+    {
+      "id": "sign_endpoint_v-1_flat2_a0_n80",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 0,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999378662204632,
+        "intervals": 80,
+        "band": 142,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 4.508206948863403,
+        "min_overlap": 0.9304883496864398,
+        "max_endpoint_sewing_loss": 6.213377953678823e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6236263179998787
+    },
+    {
+      "id": "sign_endpoint_v-1_flat2_a0_n160",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 0,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999378662204632,
+        "intervals": 160,
+        "band": 142,
+        "axis": 0
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 4.508206948863403,
+        "min_overlap": 0.9790999202731113,
+        "max_endpoint_sewing_loss": 6.213377953678823e-05,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.272357973997714
+    },
+    {
+      "id": "sign_endpoint_v-1_flat2_a1_n80",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 1,
+      "intervals": 80,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999917351320833,
+        "intervals": 80,
+        "band": 142,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 81,
+        "link_evaluations": 81,
+        "min_external_gap_meV": 39.82957531463999,
+        "min_overlap": 0.999054442728562,
+        "max_endpoint_sewing_loss": 8.264867916940588e-06,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 0.6667446600004041
+    },
+    {
+      "id": "sign_endpoint_v-1_flat2_a1_n160",
+      "kind": "sign",
+      "model": "endpoint_v-1",
+      "valley": -1,
+      "band": 142,
+      "band_label": "flat2",
+      "axis": 1,
+      "intervals": 160,
+      "result": {
+        "status": "PASSED_SAMPLED_GATES",
+        "sign": 1,
+        "closure_overlap": 0.9999917351320833,
+        "intervals": 160,
+        "band": 142,
+        "axis": 1
+      },
+      "diagnostics": {
+        "frame_evaluations": 161,
+        "link_evaluations": 161,
+        "min_external_gap_meV": 39.820131114616586,
+        "min_overlap": 0.9997630412576103,
+        "max_endpoint_sewing_loss": 8.264867916940588e-06,
+        "max_reality_meV": 7.105427357601002e-15
+      },
+      "elapsed_seconds": 1.3422049789987796
+    },
+    {
+      "id": "sparse_v1_f[0.31, 0.27]_sigma0.0",
+      "kind": "sparse",
+      "model": "sparse_v1",
+      "valley": 1,
+      "f": [
+        0.31,
+        0.27
+      ],
+      "sigma": 0.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -129.31898142068883,
+          -92.53571955429358,
+          -5.758899558972842,
+          12.0402366259203,
+          82.74657433586448,
+          145.3959930976598
+        ]
+      }
+    },
+    {
+      "id": "sparse_v1_f[0.31, 0.27]_sigma100.0",
+      "kind": "sparse",
+      "model": "sparse_v1",
+      "valley": 1,
+      "f": [
+        0.31,
+        0.27
+      ],
+      "sigma": 100.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -129.31898142068883,
+          -92.53571955429328,
+          -5.758899558972956,
+          12.040236625920173,
+          82.74657433586447,
+          145.39599309765987
+        ]
+      }
+    },
+    {
+      "id": "sparse_v1_f[0.11, 0.43]_sigma0.0",
+      "kind": "sparse",
+      "model": "sparse_v1",
+      "valley": 1,
+      "f": [
+        0.11,
+        0.43
+      ],
+      "sigma": 0.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -90.40189387194121,
+          -83.38571371258249,
+          -4.339581792279948,
+          12.537387597865441,
+          70.15544204623932,
+          102.11498709990066
+        ]
+      }
+    },
+    {
+      "id": "sparse_v1_f[0.11, 0.43]_sigma100.0",
+      "kind": "sparse",
+      "model": "sparse_v1",
+      "valley": 1,
+      "f": [
+        0.11,
+        0.43
+      ],
+      "sigma": 100.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -90.40189387194127,
+          -83.38571371258257,
+          -4.339581792280001,
+          12.537387597865504,
+          70.15544204623923,
+          102.11498709990065
+        ]
+      }
+    },
+    {
+      "id": "sparse_v1_f[-0.31, -0.27]_sigma0.0",
+      "kind": "sparse",
+      "model": "sparse_v1",
+      "valley": 1,
+      "f": [
+        -0.31,
+        -0.27
+      ],
+      "sigma": 0.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -39.41049842312281,
+          -33.67877961805105,
+          -1.4384353265066347,
+          13.629212894707587,
+          18.853821491103353,
+          45.207937613231856
+        ]
+      }
+    },
+    {
+      "id": "sparse_v1_f[-0.31, -0.27]_sigma100.0",
+      "kind": "sparse",
+      "model": "sparse_v1",
+      "valley": 1,
+      "f": [
+        -0.31,
+        -0.27
+      ],
+      "sigma": 100.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -39.41049842312299,
+          -33.67877961805124,
+          -1.4384353265065926,
+          13.629212894707663,
+          18.853821491103332,
+          45.207937613231806
+        ]
+      }
+    },
+    {
+      "id": "sparse_v-1_f[0.31, 0.27]_sigma0.0",
+      "kind": "sparse",
+      "model": "sparse_v-1",
+      "valley": -1,
+      "f": [
+        0.31,
+        0.27
+      ],
+      "sigma": 0.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -39.41049842312277,
+          -33.678779618050946,
+          -1.4384353265066345,
+          13.629212894707651,
+          18.853821491103357,
+          45.207937613231934
+        ]
+      }
+    },
+    {
+      "id": "sparse_v-1_f[0.31, 0.27]_sigma100.0",
+      "kind": "sparse",
+      "model": "sparse_v-1",
+      "valley": -1,
+      "f": [
+        0.31,
+        0.27
+      ],
+      "sigma": 100.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -39.41049842312273,
+          -33.67877961805104,
+          -1.438435326506763,
+          13.62921289470735,
+          18.85382149110326,
+          45.207937613231884
+        ]
+      }
+    },
+    {
+      "id": "sparse_v-1_f[0.11, 0.43]_sigma0.0",
+      "kind": "sparse",
+      "model": "sparse_v-1",
+      "valley": -1,
+      "f": [
+        0.11,
+        0.43
+      ],
+      "sigma": 0.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -58.49740597647711,
+          -48.93179332003921,
+          0.6743152261439275,
+          12.218075017095956,
+          39.34915084319605,
+          58.83282797945923
+        ]
+      }
+    },
+    {
+      "id": "sparse_v-1_f[0.11, 0.43]_sigma100.0",
+      "kind": "sparse",
+      "model": "sparse_v-1",
+      "valley": -1,
+      "f": [
+        0.11,
+        0.43
+      ],
+      "sigma": 100.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -58.497405976476756,
+          -48.93179332003905,
+          0.6743152261439604,
+          12.218075017095899,
+          39.34915084319608,
+          58.83282797945922
+        ]
+      }
+    },
+    {
+      "id": "sparse_v-1_f[-0.31, -0.27]_sigma0.0",
+      "kind": "sparse",
+      "model": "sparse_v-1",
+      "valley": -1,
+      "f": [
+        -0.31,
+        -0.27
+      ],
+      "sigma": 0.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -129.31898142068874,
+          -92.53571955429348,
+          -5.75889955897285,
+          12.040236625920306,
+          82.74657433586464,
+          145.3959930976599
+        ]
+      }
+    },
+    {
+      "id": "sparse_v-1_f[-0.31, -0.27]_sigma100.0",
+      "kind": "sparse",
+      "model": "sparse_v-1",
+      "valley": -1,
+      "f": [
+        -0.31,
+        -0.27
+      ],
+      "sigma": 100.0,
+      "lo": 95,
+      "result": {
+        "status": "ACCEPTED_DENSE_CHECKED",
+        "energies_meV": [
+          -129.31898142068837,
+          -92.535719554293,
+          -5.7588995589728,
+          12.0402366259203,
+          82.74657433586447,
+          145.3959930976598
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.012_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.012_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.012_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.012_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 1.4432899320127035e-15,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.008_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.008_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 5.551115123125783e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.25_r0.008_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.25_r0.008_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.012_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.012_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 5.551115123125783e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.012_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.012_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.008_n96_t300",
+      "samples": 497,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.008_n96_t300",
+      "comparable": true,
+      "abs_winding_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "kind": "native_time_reversal",
+      "id": "B-0.3_r0.008_n192_t600",
+      "samples": 989,
+      "max_matrix_error_meV": 0.0,
+      "passed": true
+    },
+    {
+      "kind": "mirror_labels",
+      "id": "B-0.3_r0.008_n192_t600",
+      "comparable": true,
+      "abs_winding_difference": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "kind": "sparse_work_counts",
+      "model": "sparse_v1",
+      "component_counts": {
+        "arpack": 6,
+        "candidate_assembly": 6,
+        "lu_factorization": 6,
+        "native_assembly": 6,
+        "native_dense_eigh": 6,
+        "setup": 1,
+        "validation": 6
+      },
+      "attempts": 6,
+      "accounting": "Components are disjoint. Inclusive attempt wall times are not added to component times."
+    },
+    {
+      "kind": "sparse_work_counts",
+      "model": "sparse_v-1",
+      "component_counts": {
+        "arpack": 6,
+        "candidate_assembly": 6,
+        "lu_factorization": 6,
+        "native_assembly": 6,
+        "native_dense_eigh": 6,
+        "setup": 1,
+        "validation": 6
+      },
+      "attempts": 6,
+      "accounting": "Components are disjoint. Inclusive attempt wall times are not added to component times."
+    }
+  ],
+  "elapsed_seconds": 310.228220175999,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  }
+}

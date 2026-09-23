@@ -1,0 +1,76 @@
+{
+  "copied_sources": {
+    "clean_smoke.py": "dcb803b4820cee41f2365902a683b53e777e6ec10e211bd0ab646c86cc0e6850",
+    "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4",
+    "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+    "reconcile.py": "9da421be944ecbecabff99458d918e02589a6eb1fe0c41241d8387720def7c13",
+    "report.py": "76d254d7a5c700ce2e027f468fcc6cfe013bed84b8a0f6eb9bd9127f4979c2c1",
+    "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+    "run_campaign.py": "79df3f18b86497ee0e88a2ded5a4ac3cb3ee7464bfd956dc61387b75a0647a10",
+    "test_guards.py": "6fe266be6e33f06192b1d7f1e697d127c7162d0b4cc953222d142b30c0269f90",
+    "partner_v074p.zip": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+    "INPUT_MANIFEST.json": "af33e152cc00c9db03e6366ea6c51141e1037cbc0be8c817337bb55aeab5b790",
+    "PLAN.json": "6f14b5b29040df977c2aae5f9caf3d00a354439a1d2f1089f0ec2d244d697a8b"
+  },
+  "inherited_results": false,
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_guards.py",
+        "--junitxml=CLEAN_TESTS.xml"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "run_campaign.py",
+        "--smoke",
+        "--output",
+        "smoke"
+      ],
+      "returncode": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "pair_B-0.25_r0.012_n96_t300_v1",
+      "status": "PASSED_SAMPLED_GATES",
+      "max_abs_differences": {
+        "windings": 0.0,
+        "node_gaps_meV": 0.0
+      }
+    },
+    {
+      "id": "pair_B-0.25_r0.012_n96_t300_v-1",
+      "status": "PASSED_SAMPLED_GATES",
+      "max_abs_differences": {
+        "windings": 0.0,
+        "node_gaps_meV": 0.0
+      }
+    },
+    {
+      "id": "sparse_v1_f[0.31, 0.27]_sigma0.0",
+      "status": "ACCEPTED_DENSE_CHECKED",
+      "max_abs_differences": {
+        "energies_meV": 0.0
+      }
+    },
+    {
+      "id": "sparse_v1_f[0.31, 0.27]_sigma100.0",
+      "status": "ACCEPTED_DENSE_CHECKED",
+      "max_abs_differences": {
+        "energies_meV": 0.0
+      }
+    }
+  ],
+  "original_archive_unchanged": true,
+  "core_source_hashes_match_full_run": true,
+  "evidence_zip_sha256": "f4303d8cd76ff418aa2d21f3acec1510848e7c8007907dd7f3f57e9484b4c8ea"
+}
