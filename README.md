@@ -4,6 +4,8 @@ This AI-assisted computational research project asks how band crossings and thei
 
 In plain language: two slightly rotated graphene sheets can have unusual electronic behavior. Here, we calculate where certain electron-energy bands meet, follow those meeting points as a model parameter changes, and check whether their topological relationships change consistently. These points live in **momentum space**, not at physical locations on a graphene sheet.
 
+> **Current status:** active work is the v078p software-acceptance review on the `migration-contract-review` branch, not the v062 material below. See **[research status and reading order](docs/research-status.md)**.
+
 **Start with the [illustrated research guide](docs/visual-guide/README.md).** It explains the question, terminology, evidence and open work without requiring you to reconstruct the version history.
 
 ![Measured node locations through the v062 continuation in both implementations](docs/visual-guide/figures/node-paths.svg)
