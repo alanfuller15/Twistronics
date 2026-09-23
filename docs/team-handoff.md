@@ -26,7 +26,7 @@ Files read for this handoff:
 ### What the checkpoint establishes
 
 - The v077 failure paths reviewed there are repaired. All-rejected and no-pair runs return 1 with eight accounted rows. A later discovery failure keeps four accepted rows and four blocked rows with INCOMPLETE status.
-- The eight labels reproduce in a fresh extraction. B = −0.25 is SAME and B = −0.30 is OPPOSITE, in both valleys and both coupled radius/mesh settings. Row numerics differ from the submitted values by at most 3.33067e-16, and diagnostics by at most 8.88178e-16, excluding timings.
+- The eight labels reproduce in a fresh extraction. B = −0.25 is SAME and B = −0.30 is OPPOSITE, in both valleys and both coupled radius/mesh settings. The labels agree exactly. Excluding timings, numeric row fields differ from the submitted values by at most 3.33067e-16, and diagnostics by at most 8.88178e-16.
 - 42 tests pass: 38 helper tests and 4 lint fixtures.
 - The reviewer's `check_records.py` with `CONTRACT_EXPECTATIONS.json` accepts the intact records and the fresh replay, and refuses all 15 negative cases. The 16 regression cases pass.
 

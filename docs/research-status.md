@@ -29,7 +29,7 @@ This page is for a researcher joining the Twistronics project who needs to know 
 ### 2. Retained numerical evidence
 
 - **v078p (current).** The eight labels reproduce in a fresh extraction ([v078p review](../research/benchmarks/migration_contract_review/README.md#numerical-replay)): B=−0.25 gives SAME and B=−0.30 gives OPPOSITE, in both valleys and both settings.
-  - The largest row difference, excluding timings, is 3.33067e-16. The largest diagnostic difference is 8.88178e-16.
+  - The labels agree exactly. Excluding timings, the largest difference in a numeric row field is 3.33067e-16, and the largest diagnostic difference is 8.88178e-16.
   - All 16,472 diagnostic rows are retained.
   - Full Hamiltonians and eigenvectors are not retained.
 - **v077p (earlier).** The same eight classifications, with their sampled gate margins ([v077p review](../research/benchmarks/partner_migration_review/README.md)):
@@ -42,7 +42,7 @@ This page is for a researcher joining the Twistronics project who needs to know 
 
 ### 3. Software acceptance review
 
-The numerical labels are stable. The open question is whether the delivery software **accepts only valid evidence**. Read the reviews in this order:
+The eight retained classifications agree in the supplied and replayed v078p records. The open question is whether the delivery software **accepts only valid evidence**. Read the reviews in this order:
 
 1. [v073p review](../research/benchmarks/variant_controls_review/README.md) and [v074p review](../research/benchmarks/variant_response_review/README.md): the valley implementation was corrected. Topology safeguards stayed open.
 2. [Guarded variant measurements](../research/benchmarks/variant_guard_repairs/README.md): opt-in guarded APIs with enforced sampled gates and 38 regression tests.
@@ -60,7 +60,7 @@ The numerical labels are stable. The open question is whether the delivery softw
 
 | Category | Item | Status | Where it is recorded |
 |---|---|---|---|
-| Observed baseline behavior | Eight SAME/OPPOSITE labels reproduce, with differences ≤ 3.33067e-16 | Observed at `44dc669` | [v078p review](../research/benchmarks/migration_contract_review/README.md#numerical-replay) |
+| Observed baseline behavior | The eight SAME/OPPOSITE labels agree exactly between the supplied and replayed records. The largest numeric row-field difference, excluding timings, is 3.33067e-16. | Observed at `44dc669` | [v078p review](../research/benchmarks/migration_contract_review/README.md#numerical-replay) |
 | Observed baseline behavior | The partner verifier accepts 10 invalid record variants; the reviewer checker refuses all 15 negative cases | Observed defect | [`CONTRACT_PROBES.json`](../research/benchmarks/migration_contract_review/CONTRACT_PROBES.json), [`CHECKER_REGRESSIONS.json`](../research/benchmarks/migration_contract_review/CHECKER_REGRESSIONS.json) |
 | Observed baseline behavior | A returned `status='REJECTED'` is recorded as ACCEPTED, and a duplicate plan reports COMPLETE | Observed defect (synthetic controls) | [v078p review](../research/benchmarks/migration_contract_review/README.md#other-retained-controls) |
 | Observed baseline behavior | A geometry-stage error leaves rows but no model or geometry context, summary or manifest | Observed defect (synthetic control) | Same section |
@@ -68,8 +68,8 @@ The numerical labels are stable. The open question is whether the delivery softw
 | Verified intake tooling | The baseline checker accepts the intact run (exit 0) and refuses `wrong_label` for exactly the intended error (exit 1). The runner enforces exact outcomes, with 12/12 synthetic regressions passing. | Verified at `8281f9e`; confirmed by Codex review 5286522495 | [Receipt](intake-evidence/README.md) |
 | Implementation corrections | Content-consistency checking in the delivery gate | **UNREVIEWED** | [Correction intake](correction-intake.md#correction-map), item 1 |
 | Implementation corrections | Returned status/schema and a unique case inventory | **UNREVIEWED** | Items 2a and 2b |
-| Implementation corrections | Plan-to-constructor binding | **UNREVIEWED**; no consumer-level probe exists in this repository yet | Item 3 |
-| Implementation corrections | Finalization after errors, and behavior when the output directory already exists | **UNREVIEWED**; no existing-directory probe exists in this repository yet | Items 4a and 4b |
+| Implementation corrections | Plan-to-constructor binding | **UNREVIEWED**. The baseline defect is reproduced by synthetic probes in draft PR #3, commit [`43fbc8f`](https://github.com/alanfuller15/Twistronics/commit/43fbc8fc484c4bb5639286409e811cdb8d66cbab), not merged. | Item 3; [probe receipt](https://github.com/alanfuller15/Twistronics/blob/43fbc8fc484c4bb5639286409e811cdb8d66cbab/research/benchmarks/consumer_boundary_review/evidence/20260923T0328Z/RECEIPT.json) |
+| Implementation corrections | Finalization after errors, and behavior when the output directory already exists | **UNREVIEWED**. The existing-directory defect is reproduced by synthetic probes in draft PR #3, commit `43fbc8f`. | Items 4a and 4b; [PR #3 review README](https://github.com/alanfuller15/Twistronics/blob/43fbc8fc484c4bb5639286409e811cdb8d66cbab/research/benchmarks/consumer_boundary_review/README.md) |
 | Implementation corrections | Metric-bound, precision-correct linting | **UNREVIEWED** | Item 5 |
 | Implementation corrections | Enforcing failure controls, with forced and clean metamorphic evidence kept separately | **UNREVIEWED** | Items 6a and 6b |
 
@@ -79,7 +79,7 @@ The next deliverable is the **corrected v078 follow-up package**. The original C
 
 The Claude Code session that maintains PR #2 has repository context only. It **cannot retrieve unpublished files from that conversation**. The package has to be committed to this repository or attached to PR #2 before review can start. [Correction intake](correction-intake.md#incoming-delivery-requirements) lists what the package must contain.
 
-Codex said in review 5286564275 that it is adding synthetic review probes for the two untested gaps: plan-to-constructor binding and existing-output-directory behavior. Those probes are not in this repository as of this page.
+Codex has published synthetic probes for the two previously untested gaps in draft [PR #3](https://github.com/alanfuller15/Twistronics/pull/3), commit [`43fbc8f`](https://github.com/alanfuller15/Twistronics/commit/43fbc8fc484c4bb5639286409e811cdb8d66cbab) ([review README](https://github.com/alanfuller15/Twistronics/blob/43fbc8fc484c4bb5639286409e811cdb8d66cbab/research/benchmarks/consumer_boundary_review/README.md)). They show that a changed N or strain in the plan is ignored even though the run reports COMPLETE, that an existing output directory is silently replaced, and that a constructor error truncates prior rows and diagnostics. That PR is unmerged, so these are commit links, not paths on this branch. The probes are baseline defect evidence, not a consumer repair, and the corrections stay UNREVIEWED.
 
 ## Scope limits
 
