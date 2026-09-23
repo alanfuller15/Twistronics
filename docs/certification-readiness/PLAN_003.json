@@ -1,0 +1,37 @@
+{
+  "schema": "twistronics_certification_readiness_v3",
+  "plan_id": "FC49-77-PLAN-003",
+  "date": "2026-09-23",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "case_status": "DECLARED_UNEXECUTED",
+  "previous_evidence_sha": "1d5cbd8a5c4febbf40447dfe4ec4b6ae91d14dcb",
+  "source_review": 5292777390,
+  "current_derivation": "docs/certification-readiness/S0B_DERIVATION.md",
+  "current_packet": "research/benchmarks/certification_s0b_001",
+  "review_status": "INDEPENDENT_REVIEW_PENDING",
+  "S0a": "IMPLEMENTED_SYNTHETIC_PASS_INDEPENDENTLY_REPRODUCED",
+  "S0b": {
+    "status": "IMPLEMENTED_EXPECTED_SYNTHETIC_BEHAVIORS_PASS",
+    "jobs": 9,
+    "expected_inconclusive_controls": 3,
+    "runner_controls": 10,
+    "physical_evaluations": 0,
+    "physical_certificates": 0,
+    "run": "research/benchmarks/certification_s0b_001/RUN/RESULTS.json",
+    "completion": "research/benchmarks/certification_s0b_001/RUN/COMPLETE.json"
+  },
+  "candidate_conditional_error_ledger": {
+    "frame_error_Frobenius_sufficient": "1/16",
+    "unrepaired_seam_map_error_operator": "1/128",
+    "repair_angle_error_radians": "1/32",
+    "additional_phase_error_total_radians": "1/64",
+    "q_halfwidth_target": "1/8",
+    "additional_gates": ["corner branch separation before repair", "complete phase lifts", "per-step variation and endpoint bounds", "orientation", "compatible gluing and integrality", "unique integer in final enclosure"],
+    "status": "SUFFICIENT_ALLOCATION_PENDING_REVIEW_NOT_A_PHYSICAL_RESULT"
+  },
+  "spectral_requirement": "For each external gap, certify equal inertia counts at both endpoints of a nonzero-width spectrum-free window over every closed domain cell. Include assembly error and every Riesz contour segment.",
+  "physical_stage_status": "S1-S4_NOT_IMPLEMENTED_NOT_RUN_BUDGET_NOT_FROZEN",
+  "remaining_S0": ["Riesz inverse/projector and quadrature bounds", "positive polar and seam-map errors", "continuous phase lifts and repair enclosure", "physical assembly", "general projector-derived transport and initial-strip dependency", "full result/refusal dependency cascade"],
+  "next_gate": "Independent audit of S0b; then freeze the next bounded synthetic primitive packet before any physical evaluation.",
+  "v078_implementation_changes": false
+}
