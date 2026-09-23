@@ -1,0 +1,23 @@
+{
+  "parent_commit": "02bbe167f01b2197b07f6b52e388bb7b5946f481",
+  "archive_sha256": "b3e1b362baf67423477a26170c78bddeb4d7a56b056d0bf9629f85e531231c21",
+  "scope": "Review the unchanged v076p self-checks and bundled topology/sparse changes. Do not replace accepted guarded APIs or alter historical numerical campaigns.",
+  "source_inspection": "All new/changed Python modules read before execution. They read local sources/results and write local JSON; claim_lint exits nonzero on findings. No network, subprocess or deletion calls in reviewed partner changes. Original native model dependencies were reviewed in earlier passes and are byte-identical.",
+  "full_replays": [
+    {"script": "metamorphic.py", "budget_seconds": 240, "output": "METAMORPHIC.json"},
+    {"script": "basis_dependence_check.py", "budget_seconds": 600, "output": "BASIS_DEPENDENCE.json"}
+  ],
+  "replay_policy": "Separate fresh extractions with supplied result JSON removed only in disposable copies; single-thread BLAS; retain stdout, exit status, source identities, model constructors, ordered bases, eigenspectra and refinement returns. Do not relax partner thresholds or suppress failed rows.",
+  "comparison": {"energy_absolute_meV": 1e-8, "reported_roundoff_absolute": 1e-10, "require_boolean_outcomes_match": false},
+  "software_probes": [
+    "Run the supplied linter on its supplied README and record all diagnostics.",
+    "Controlled prose fixtures: valid binding, wrong value, wrong field in same record, missing record, backtick-only evidence, two-significant-digit measurements, year-prefix exclusions, tiny-value drift.",
+    "Run regenerate_readme.py with a sentinel README and record whether any output content changes.",
+    "Inject a failed MR1 through an in-memory model perturbation in a disposable run; verify the original suite's process exit. Stub expensive unrelated measurements for this harness-contract control, clearly separate from scientific replay.",
+    "Instrument pair path coordinates with fixed synthetic frames at start angles zero and pi.",
+    "Synthetic controls for highest-pair gap, fractional lo, zero overlap, missing k1 sewing, missing single-band sewing, NaN/negative thresholds and absent loop isolation.",
+    "Original LU counterexample should now return unavailable; positive symmetric kernel and six native N4 sparse windows compared with native dense absolute bands. No general inertia or root certification claim."
+  ],
+  "bounded_native_checks": {"N": 4, "eps": 0.003, "kinetic": "lab_nn_full", "geometry": "exact", "valleys": [1, -1], "points": [[0.31, 0.27], [0.11, 0.43], [-0.31, -0.27]], "central_bands": 6},
+  "excluded": "No new parameter atlas, node search campaign, continuous-path proof, sign-convention derivation, broad adversarial sparse-inertia sweep, or retroactive validation of unseen v024/v075p records."
+}

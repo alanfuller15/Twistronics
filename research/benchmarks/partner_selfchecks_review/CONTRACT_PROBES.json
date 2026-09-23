@@ -1,0 +1,2185 @@
+{
+  "plan_sha256": "dc313edaad8b50bc6528d6423bcbcc183bd1f175a914fe4ab4b5f8ace66713aa",
+  "source_sha256": {
+    "bm_strain.py": "2b763c6a4400497a453229586f45f9d2e24371ed0957265d6c53eb161cfe1eef",
+    "claim_lint.py": "5c8ba776f7690423ad40c3a08cac52bf1cf9d695cd0d95b08e1cd64e3c4e1806",
+    "sparse_mode_v2.py": "1f7e30a46e419347ec9553c278abb3d3a621fb171e7a2f3b8a2310d1ed0697db",
+    "atlas.py": "a893e5d267d8f1a5e2eea6eb5f13988db315e6d66707780db87fbfb805ff2e60",
+    "gate.py": "a698e31fdb532f6496b495ebdd84cf7d8f26ffbc8d07cf2e3681320e03cbb10e",
+    "metamorphic.py": "b6eef9f763142481b769cb27e1915ee4d466400e78b68174fe71e2fca650e54c",
+    "topo.py": "2097bc062905d547b33d6f01df563add8d5c55ec83e282341c59ba79a047ab07",
+    "basis_dependence_check.py": "d40f78d638090a74c2ad1183b570da522aca7079f49109222f33064306c08038",
+    "euler.py": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271",
+    "braid.py": "99c9b11c18b77ad5fb89c2065ae9ed228f09d3ef93feedf7a6dc3e42ac48b423",
+    "regenerate_readme.py": "da08e82d4e610cbf8522957d7e9a8d14aab70f5a2bf70b90dd2a7e653df6c942",
+    "tbg_ref.py": "4972974b7690684779f537067fc3af445dcfe53931d19beac17f3a30d409fb92",
+    "knobs.py": "e842a289be8b90e7526b23fb52b9b19ac0ee02c21fa951d652b613a9221c1539",
+    "final_check.py": "e35480d7c339259a9c5c5761fc494b802bb844241319a55f15fe86c926a3a902",
+    "fast_engine.py": "03e7b87889c1483f92ed591d0bf4231550e5154c362695aeeca351d011501822"
+  },
+  "probe_source_sha256": "4b53b8cc87a412fa8f43b485bf00b88bb5909074722df969aee6be223ed846f1",
+  "environment": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "supplied_readme_lint": {
+    "returncode": 1,
+    "stdout": "  R2-number   README.md:14  0.002  | R2 number | a numeral that does not match a value in the record **that line cites**, within 0.002 relative |\n  R1-scope    README.md:15    | R3 unbound | a line stating a measured quantity (meV, gap, overlap, closure, winding, bandwidth) that cites \n  R2-number   README.md:29  180  | MR1 | `H(\u03c6) == H(\u03c6+180)` bitwise (the strain tensor has period 180\u00b0) | max |dH| = 0 meV |\n  R2-number   README.md:29  180  | MR1 | `H(\u03c6) == H(\u03c6+180)` bitwise (the strain tensor has period 180\u00b0) | max |dH| = 0 meV |\n  R1-scope    README.md:32    | MR4 | scaling \u0127v and w together by \u03bb scales every eigenvalue by \u03bb | 1.33502e-15 relative |\n  R2-number   README.md:39  0.000139314  As first written, MR2 compared \u03c6 = 17\u00b0 and 77\u00b0 at each angle's own basis and **failed**: 0.000139314 meV in ba\n6 violation(s) in .\n",
+    "stderr": "",
+    "findings": [
+      {
+        "rule": "R2-number",
+        "doc": "README.md",
+        "line": 14,
+        "value": "0.002",
+        "text": "| R2 number | a numeral that does not match a value in the record **that line cites**, within 0.002 relative |"
+      },
+      {
+        "rule": "R1-scope",
+        "doc": "README.md",
+        "line": 15,
+        "text": "| R3 unbound | a line stating a measured quantity (meV, gap, overlap, closure, winding, bandwidth) that cites no record at all |"
+      },
+      {
+        "rule": "R2-number",
+        "doc": "README.md",
+        "line": 29,
+        "value": "180",
+        "text": "| MR1 | `H(\u03c6) == H(\u03c6+180)` bitwise (the strain tensor has period 180\u00b0) | max |dH| = 0 meV |"
+      },
+      {
+        "rule": "R2-number",
+        "doc": "README.md",
+        "line": 29,
+        "value": "180",
+        "text": "| MR1 | `H(\u03c6) == H(\u03c6+180)` bitwise (the strain tensor has period 180\u00b0) | max |dH| = 0 meV |"
+      },
+      {
+        "rule": "R1-scope",
+        "doc": "README.md",
+        "line": 32,
+        "text": "| MR4 | scaling \u0127v and w together by \u03bb scales every eigenvalue by \u03bb | 1.33502e-15 relative |"
+      },
+      {
+        "rule": "R2-number",
+        "doc": "README.md",
+        "line": 39,
+        "value": "0.000139314",
+        "text": "As first written, MR2 compared \u03c6 = 17\u00b0 and 77\u00b0 at each angle's own basis and **failed**: 0.000139314 meV in bandwidth and 0.0513797 meV in the remote "
+      }
+    ]
+  },
+  "linter_fixtures": [
+    {
+      "name": "valid_value",
+      "prose": "Measured overlap = 0.995703 in evidence.json.\n",
+      "evidence_json": {
+        "overlap": 0.995703
+      },
+      "expected_violation": false,
+      "actual_findings": [],
+      "detects_expected_behavior": true
+    },
+    {
+      "name": "wrong_value",
+      "prose": "Measured overlap = 0.730 in evidence.json.\n",
+      "evidence_json": {
+        "overlap": 0.995703
+      },
+      "expected_violation": true,
+      "actual_findings": [
+        {
+          "rule": "R2-number",
+          "doc": "README.md",
+          "line": 1,
+          "value": "0.730",
+          "text": "Measured overlap = 0.730 in evidence.json."
+        }
+      ],
+      "detects_expected_behavior": true
+    },
+    {
+      "name": "unbound_two_digit",
+      "prose": "Measured gap = 5.3 meV.\n",
+      "evidence_json": {},
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "wrong_two_digit",
+      "prose": "Measured gap = 5.3 meV in evidence.json.\n",
+      "evidence_json": {
+        "gap": 101.834
+      },
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "wrong_field_same_record",
+      "prose": "Measured overlap = 0.730 in evidence.json.\n",
+      "evidence_json": {
+        "overlap": 0.995703,
+        "unrelated_parameter": 0.73
+      },
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "missing_record",
+      "prose": "All cases pass missing.json.\n",
+      "evidence_json": {},
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "backtick_as_evidence",
+      "prose": "All cases pass `placeholder`.\n",
+      "evidence_json": {},
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "year_prefix_measurement",
+      "prose": "Measured gap = 19.876 meV in evidence.json.\n",
+      "evidence_json": {
+        "gap": 2.345
+      },
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "tiny_value_drift",
+      "prose": "Measured residual = 1e-30 meV in evidence.json.\n",
+      "evidence_json": {
+        "residual": 1e-13
+      },
+      "expected_violation": true,
+      "actual_findings": [],
+      "detects_expected_behavior": false
+    },
+    {
+      "name": "correct_scientific_notation",
+      "prose": "Measured residual = 4.20\u00d710\u207b\u2076 meV in evidence.json.\n",
+      "evidence_json": {
+        "residual": 4.2e-06
+      },
+      "expected_violation": false,
+      "actual_findings": [],
+      "detects_expected_behavior": true
+    }
+  ],
+  "readme_generator": {
+    "returncode": 0,
+    "stdout": "tables regenerated from METAMORPHIC.json and BASIS_DEPENDENCE.json\n",
+    "stderr": "",
+    "sentinel": "# REVIEW SENTINEL\nNo generated tables are present.\n",
+    "before_sha256": "0c5ab48f4b489065cdd32ebaf698c2ec8d91a7efef85a3b85ce0a79be82dc8b9",
+    "after_sha256": "0c5ab48f4b489065cdd32ebaf698c2ec8d91a7efef85a3b85ce0a79be82dc8b9",
+    "unchanged": true
+  },
+  "forced_metamorphic_failure": {
+    "scope": "Runtime-injected MR1 perturbation and stubbed expensive scans; harness exit test only",
+    "worker_sha256": "39fd1c367986f291cce5bfb36a33af8e2955477756a076e7614c80f59bba35cf",
+    "original_suite_unchanged": true,
+    "returncode": 0,
+    "rows": [
+      {
+        "relation": "MR1 strain-angle period 180",
+        "statement": "H(phi) == H(phi+180) bitwise",
+        "holds": false,
+        "detail": "max |dH| = 1.250e-01 meV",
+        "values": {
+          "max_dH_meV": 0.125
+        }
+      },
+      {
+        "relation": "MR2 C3 strain direction (common basis)",
+        "statement": "bandwidth and min remote gap invariant under phi -> phi+60 on one common index set",
+        "holds": true,
+        "detail": "common basis (71 vectors): |d bandwidth| = 0.00e+00 meV, |d remote gap| = 0.00e+00 meV; native per-angle bases (47 vs 71 vectors): 0.00e+00 and 0.00e+00 meV",
+        "values": {
+          "common_vectors": 71,
+          "d_bandwidth_meV": 0.0,
+          "d_remote_gap_meV": 0.0,
+          "native_a": 47,
+          "native_b": 71,
+          "native_d_bandwidth_meV": 0.0,
+          "native_d_remote_gap_meV": 0.0
+        }
+      },
+      {
+        "relation": "MR3 basis-order invariance",
+        "statement": "permuting index_set leaves the spectrum unchanged",
+        "holds": true,
+        "detail": "max |dE| = 2.665e-13 meV over six central bands",
+        "values": {
+          "max_dE_meV": 2.6645352591003757e-13
+        }
+      },
+      {
+        "relation": "MR4 homogeneity in (hbar v, w)",
+        "statement": "scaling hbar v and w by L scales every eigenvalue by L",
+        "holds": true,
+        "detail": "max relative deviation = 1.335e-15",
+        "values": {
+          "max_relative_deviation": 1.3350178990999532e-15,
+          "factor": 2.5
+        }
+      },
+      {
+        "relation": "MR5 valley time reversal",
+        "statement": "H_K'(k) == conj(H_K(-k)); spectra mirror",
+        "holds": true,
+        "detail": "max |dH| = 0.0e+00, max |dE| = 0.0e+00 meV",
+        "values": {
+          "max_dH_meV": 0.0,
+          "max_dE_meV": 0.0
+        }
+      },
+      {
+        "relation": "MR6 reciprocal periodicity (diagnostic)",
+        "statement": "E(f) vs E(f+G): truncation-limited, reported not asserted",
+        "holds": true,
+        "detail": "max |dE| = 1.472e-02 meV at N=4 (this is the finite-basis edge effect, not a bug)",
+        "values": {
+          "max_dE_meV": 0.014721879099226953,
+          "N": 4
+        }
+      },
+      {
+        "relation": "MR7 fast==native [K]",
+        "statement": "real-basis engine reproduces the native spectrum",
+        "holds": true,
+        "detail": "max |dE| = 2.10e-13 meV",
+        "values": {
+          "max_dE_meV": 2.0961010704922955e-13
+        }
+      },
+      {
+        "relation": "MR7 fast==native [K']",
+        "statement": "real-basis engine reproduces the native spectrum",
+        "holds": true,
+        "detail": "max |dE| = 2.84e-13 meV",
+        "values": {
+          "max_dE_meV": 2.8421709430404007e-13
+        }
+      },
+      {
+        "relation": "MR7 fast==native [permuted basis]",
+        "statement": "real-basis engine reproduces the native spectrum",
+        "holds": true,
+        "detail": "max |dE| = 1.42e-13 meV",
+        "values": {
+          "max_dE_meV": 1.4210854715202004e-13
+        }
+      }
+    ],
+    "stdout": "  FAIL  MR1 strain-angle period 180: max |dH| = 1.250e-01 meV\n  PASS  MR2 C3 strain direction (common basis): common basis (71 vectors): |d bandwidth| = 0.00e+00 meV, |d remote gap| = 0.00e+00 meV; native per-angle bases (47 vs 71 vectors): 0.00e+00 and 0.00e+00 meV\n  PASS  MR3 basis-order invariance: max |dE| = 2.665e-13 meV over six central bands\n  PASS  MR4 homogeneity in (hbar v, w): max relative deviation = 1.335e-15\n  PASS  MR5 valley time reversal: max |dH| = 0.0e+00, max |dE| = 0.0e+00 meV\n  PASS  MR6 reciprocal periodicity (diagnostic): max |dE| = 1.472e-02 meV at N=4 (this is the finite-basis edge effect, not a bug)\n  PASS  MR7 fast==native [K]: max |dE| = 2.10e-13 meV\n  PASS  MR7 fast==native [K']: max |dE| = 2.84e-13 meV\n  PASS  MR7 fast==native [permuted basis]: max |dE| = 1.42e-13 meV\n\n1 violation(s) of 9 declared relations\n",
+    "stderr": ""
+  },
+  "topology_controls": {
+    "scope": "Synthetic software controls, not new graphene results",
+    "cases": {
+      "enforced_gap": {
+        "status": "REJECTED",
+        "error_type": "IsolationError",
+        "error": "external gap 2.000e+00 meV below gap_tol 3.0e+00 at f=(0.000,0.000)"
+      },
+      "highest_pair_gap_fixed": {
+        "status": "RETURNED",
+        "value": {
+          "e2": 0.0,
+          "orientation_closure": 1.0,
+          "min_polar_det": 1.0,
+          "min_overlap_singular_value": 1.0,
+          "max_sewing_loss": 0.0,
+          "max_reality_residual": 0.0,
+          "min_external_gap_meV": 2.0,
+          "mesh": [
+            4,
+            4
+          ],
+          "lo": 2,
+          "valley": 1
+        }
+      },
+      "fractional_wilson_index": {
+        "status": "REJECTED",
+        "error_type": "ValueError",
+        "error": "band index 1.5 is not an integer"
+      },
+      "zero_pair_link_refusal": {
+        "status": "REJECTED",
+        "error_type": "IsolationError",
+        "error": "frame link singular value 0.000e+00 at or below 1.0e-06"
+      },
+      "smooth_band_zero_link_refusal": {
+        "status": "REJECTED",
+        "error_type": "DegeneracyError",
+        "error": "adjacent single-band overlap 0.000e+00 at or below 1.0e-06"
+      },
+      "smooth_band_refined_positive": {
+        "status": "RETURNED",
+        "value": [
+          0.9999999999999999,
+          1.9999999999999991
+        ]
+      },
+      "nan_gap_threshold": {
+        "status": "RETURNED",
+        "value": {
+          "e2": 0.0,
+          "orientation_closure": 1.0,
+          "min_polar_det": 1.0,
+          "min_overlap_singular_value": 1.0,
+          "max_sewing_loss": 0.0,
+          "max_reality_residual": 0.0,
+          "min_external_gap_meV": 2.0,
+          "mesh": [
+            4,
+            4
+          ],
+          "lo": 1,
+          "valley": 1
+        }
+      },
+      "negative_overlap_threshold": {
+        "status": "RETURNED",
+        "value": {
+          "e2": 0.0,
+          "orientation_closure": 1.0,
+          "min_polar_det": 1.0,
+          "min_overlap_singular_value": 0.0,
+          "max_sewing_loss": 1.0,
+          "max_reality_residual": 0.0,
+          "min_external_gap_meV": 2.0,
+          "mesh": [
+            4,
+            4
+          ],
+          "lo": 1,
+          "valley": 1
+        }
+      },
+      "highest_single_band": {
+        "status": "REJECTED",
+        "error_type": "ValueError",
+        "error": "Requested eigenvalue indices are not valid. Valid range is [0, 3] and start <= end, but start=2, end=4 is given"
+      },
+      "zero_k1_sewing": {
+        "status": "RETURNED",
+        "value": {
+          "e2": 0.0,
+          "orientation_closure": 0.0,
+          "min_polar_det": 1.0,
+          "min_overlap_singular_value": 1.0,
+          "max_sewing_loss": 0.0,
+          "max_reality_residual": 0.0,
+          "min_external_gap_meV": 2.0,
+          "mesh": [
+            4,
+            4
+          ],
+          "lo": 1,
+          "valley": 1
+        }
+      },
+      "zero_single_band_sewing": {
+        "status": "RETURNED",
+        "value": [
+          0.0,
+          2.0
+        ]
+      },
+      "nonisolated_loop_routine": {
+        "status": "RETURNED",
+        "value": [
+          0.0,
+          [
+            [
+              0.312,
+              0.4
+            ],
+            [
+              0.3084852813742386,
+              0.4084852813742386
+            ],
+            [
+              0.3,
+              0.41200000000000003
+            ],
+            [
+              0.2915147186257614,
+              0.4084852813742386
+            ],
+            [
+              0.288,
+              0.4
+            ],
+            [
+              0.2915147186257614,
+              0.3915147186257614
+            ],
+            [
+              0.3,
+              0.388
+            ],
+            [
+              0.3084852813742386,
+              0.3915147186257614
+            ],
+            [
+              0.312,
+              0.4
+            ]
+          ],
+          1.0
+        ]
+      }
+    },
+    "coordinate_instrument": [
+      {
+        "start_angle": 0.0,
+        "all_evaluated_coordinates": [
+          [
+            0.312,
+            0.4
+          ],
+          [
+            0.312,
+            0.4
+          ],
+          [
+            0.3084852813742386,
+            0.4084852813742386
+          ],
+          [
+            0.3,
+            0.41200000000000003
+          ],
+          [
+            0.2915147186257614,
+            0.4084852813742386
+          ],
+          [
+            0.288,
+            0.4
+          ],
+          [
+            0.2915147186257614,
+            0.3915147186257614
+          ],
+          [
+            0.3,
+            0.388
+          ],
+          [
+            0.3084852813742386,
+            0.3915147186257614
+          ],
+          [
+            0.312,
+            0.4
+          ],
+          [
+            0.312,
+            0.4
+          ],
+          [
+            0.387,
+            0.45
+          ],
+          [
+            0.4620000000000001,
+            0.5
+          ],
+          [
+            0.5370000000000001,
+            0.55
+          ],
+          [
+            0.6120000000000001,
+            0.6
+          ],
+          [
+            0.6120000000000001,
+            0.6
+          ],
+          [
+            0.6084852813742386,
+            0.6084852813742385
+          ],
+          [
+            0.6000000000000001,
+            0.612
+          ],
+          [
+            0.5915147186257615,
+            0.6084852813742385
+          ],
+          [
+            0.5880000000000001,
+            0.6
+          ],
+          [
+            0.5915147186257615,
+            0.5915147186257614
+          ],
+          [
+            0.6000000000000001,
+            0.588
+          ],
+          [
+            0.6084852813742386,
+            0.5915147186257614
+          ],
+          [
+            0.6120000000000001,
+            0.6
+          ]
+        ],
+        "returned_metadata": {
+          "start_angle": 0.0,
+          "radius": 0.012,
+          "image": [
+            0.30000000000000004,
+            0.19999999999999996
+          ],
+          "base_point": [
+            0.312,
+            0.4
+          ],
+          "transport": [
+            [
+              0.312,
+              0.4
+            ],
+            [
+              0.6120000000000001,
+              0.6
+            ]
+          ],
+          "loop1_first": [
+            0.312,
+            0.4
+          ],
+          "loop1_last": [
+            0.312,
+            0.4
+          ],
+          "loop2_first": [
+            0.6120000000000001,
+            0.6
+          ],
+          "loop2_last": [
+            0.6120000000000001,
+            0.6
+          ],
+          "loop_points": 8,
+          "transport_points": 5,
+          "min_loop1_overlap": 1.0,
+          "min_loop2_overlap": 1.0,
+          "min_transport_overlap": 1.0,
+          "base_equals_first_loop_point": true
+        },
+        "base_to_loop1_distance": 0.0,
+        "transport_end_to_loop2_distance": 0.0,
+        "actual_loop_samples": [
+          9,
+          9
+        ],
+        "actual_transport_samples": 5,
+        "returned_transport_samples": 2
+      },
+      {
+        "start_angle": 3.141592653589793,
+        "all_evaluated_coordinates": [
+          [
+            0.288,
+            0.4
+          ],
+          [
+            0.288,
+            0.4
+          ],
+          [
+            0.2915147186257614,
+            0.3915147186257614
+          ],
+          [
+            0.3,
+            0.388
+          ],
+          [
+            0.3084852813742386,
+            0.3915147186257614
+          ],
+          [
+            0.312,
+            0.4
+          ],
+          [
+            0.3084852813742386,
+            0.40848528137423856
+          ],
+          [
+            0.3,
+            0.41200000000000003
+          ],
+          [
+            0.29151471862576145,
+            0.4084852813742386
+          ],
+          [
+            0.288,
+            0.4
+          ],
+          [
+            0.288,
+            0.4
+          ],
+          [
+            0.363,
+            0.45
+          ],
+          [
+            0.43800000000000006,
+            0.5
+          ],
+          [
+            0.5130000000000001,
+            0.55
+          ],
+          [
+            0.5880000000000001,
+            0.6
+          ],
+          [
+            0.5880000000000001,
+            0.6
+          ],
+          [
+            0.5915147186257615,
+            0.5915147186257614
+          ],
+          [
+            0.6000000000000001,
+            0.588
+          ],
+          [
+            0.6084852813742386,
+            0.5915147186257614
+          ],
+          [
+            0.6120000000000001,
+            0.6
+          ],
+          [
+            0.6084852813742386,
+            0.6084852813742385
+          ],
+          [
+            0.6000000000000001,
+            0.612
+          ],
+          [
+            0.5915147186257615,
+            0.6084852813742385
+          ],
+          [
+            0.5880000000000001,
+            0.6
+          ]
+        ],
+        "returned_metadata": {
+          "start_angle": 3.141592653589793,
+          "radius": 0.012,
+          "image": [
+            0.30000000000000004,
+            0.19999999999999996
+          ],
+          "base_point": [
+            0.288,
+            0.4
+          ],
+          "transport": [
+            [
+              0.288,
+              0.4
+            ],
+            [
+              0.5880000000000001,
+              0.6
+            ]
+          ],
+          "loop1_first": [
+            0.288,
+            0.4
+          ],
+          "loop1_last": [
+            0.288,
+            0.4
+          ],
+          "loop2_first": [
+            0.5880000000000001,
+            0.6
+          ],
+          "loop2_last": [
+            0.5880000000000001,
+            0.6
+          ],
+          "loop_points": 8,
+          "transport_points": 5,
+          "min_loop1_overlap": 1.0,
+          "min_loop2_overlap": 1.0,
+          "min_transport_overlap": 1.0,
+          "base_equals_first_loop_point": true
+        },
+        "base_to_loop1_distance": 0.0,
+        "transport_end_to_loop2_distance": 0.0,
+        "actual_loop_samples": [
+          9,
+          9
+        ],
+        "actual_transport_samples": 5,
+        "returned_transport_samples": 2
+      }
+    ]
+  },
+  "sparse_kernel_controls": [
+    {
+      "name": "reviewed_swap",
+      "matrix": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "eigenvalues": [
+        -1.0,
+        1.0
+      ],
+      "reported_count": null,
+      "expected_count": 1,
+      "row_permutation": [
+        1,
+        0
+      ],
+      "column_permutation": [
+        0,
+        1
+      ],
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.0019049039983656257,
+          "mu": 0.0,
+          "seconds": 0.0013704879966098815,
+          "where": "reviewed_swap"
+        },
+        {
+          "kind": "inertia_unavailable",
+          "elapsed": 0.0020368369987409096,
+          "where": "reviewed_swap",
+          "reason": "row and column permutations differ"
+        }
+      ]
+    },
+    {
+      "name": "symmetric_positive_control",
+      "matrix": [
+        [
+          2.0,
+          1.0
+        ],
+        [
+          1.0,
+          -2.0
+        ]
+      ],
+      "eigenvalues": [
+        -2.23606797749979,
+        2.23606797749979
+      ],
+      "reported_count": 1,
+      "expected_count": 1,
+      "row_permutation": [
+        0,
+        1
+      ],
+      "column_permutation": [
+        0,
+        1
+      ],
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.0007272270013345405,
+          "mu": 0.0,
+          "seconds": 0.0005682770024577621,
+          "where": "symmetric_positive_control"
+        }
+      ]
+    }
+  ],
+  "native_sparse_samples": [
+    {
+      "model_id": 0,
+      "f": [
+        0.31,
+        0.27
+      ],
+      "lo": 95,
+      "n": 6,
+      "native_energies_meV": [
+        -129.31898142068871,
+        -92.53571955429334,
+        -5.758899558972754,
+        12.040236625920146,
+        82.74657433586448,
+        145.39599309765993
+      ],
+      "result": {
+        "status": "RETURNED",
+        "values_meV": [
+          -129.31898142068857,
+          -92.53571955429338,
+          -5.758899558972843,
+          12.04023662592013,
+          82.74657433586393,
+          145.39599309765958
+        ],
+        "native_max_error_meV": 5.542233338928781e-13,
+        "within_review_tolerance": true
+      },
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.025470818000030704,
+          "mu": 0.0,
+          "seconds": 0.001711419998173369,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.026740099001472117,
+          "mu": -1.0,
+          "seconds": 0.0010752149973995984,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.027723642000637483,
+          "mu": -2.5,
+          "seconds": 0.000644165000267094,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.028509584000858013,
+          "mu": -4.75,
+          "seconds": 0.0006679510006506462,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02943073799906415,
+          "mu": -8.125,
+          "seconds": 0.0007979750007507391,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.030207645999325905,
+          "mu": -13.1875,
+          "seconds": 0.0006425169995054603,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03121333200033405,
+          "mu": -20.78125,
+          "seconds": 0.0008851710008457303,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.032019731999753276,
+          "mu": -32.171875,
+          "seconds": 0.0006679389989585616,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03276201300104731,
+          "mu": -49.2578125,
+          "seconds": 0.0006226689984032419,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03349477899973863,
+          "mu": -74.88671875,
+          "seconds": 0.0006157659991004039,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03423991700037732,
+          "mu": -113.330078125,
+          "seconds": 0.0006275960004131775,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03517379899858497,
+          "mu": -170.9951171875,
+          "seconds": 0.0008114850024867337,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03593325600013486,
+          "mu": -84.49755859375,
+          "seconds": 0.0006259239999053534,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03670734600018477,
+          "mu": -127.746337890625,
+          "seconds": 0.0006517419969895855,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03743025899893837,
+          "mu": -192.6195068359375,
+          "seconds": 0.0006068099974072538,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.038418058000388555,
+          "mu": -95.30975341796875,
+          "seconds": 0.0008699589998286683,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03948030399988056,
+          "mu": -143.96463012695312,
+          "seconds": 0.0008077450002019759,
+          "where": "window"
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.04558435099897906,
+          "where": "window",
+          "k": 18,
+          "above": 6
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.05528826299996581,
+          "where": "window",
+          "k": 36,
+          "above": 11
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.05624008800077718,
+          "mu": 151.105336688422,
+          "seconds": 0.0009348829989903606,
+          "where": "window"
+        },
+        {
+          "kind": "check",
+          "elapsed": 0.05669485700127552,
+          "check": "eigen_residual",
+          "value": 9.67199708030901e-13,
+          "threshold": 1e-08,
+          "passed": true,
+          "where": "window",
+          "check_kind": "numerical_cross_check"
+        },
+        {
+          "kind": "sparse_solve",
+          "elapsed": 0.05670209500021883,
+          "where": "window",
+          "lo": 95,
+          "n": 6,
+          "mu": -143.96463012695312,
+          "residual": 9.67199708030901e-13,
+          "seconds": 0.03317109899944626
+        }
+      ]
+    },
+    {
+      "model_id": 0,
+      "f": [
+        0.11,
+        0.43
+      ],
+      "lo": 95,
+      "n": 6,
+      "native_energies_meV": [
+        -90.40189387194127,
+        -83.38571371258276,
+        -4.339581792279953,
+        12.53738759786533,
+        70.15544204623927,
+        102.11498709990052
+      ],
+      "result": {
+        "status": "RETURNED",
+        "values_meV": [
+          -90.4018938719413,
+          -83.38571371258331,
+          -4.339581792272682,
+          12.537387597860729,
+          70.15544204624115,
+          102.11498709990016
+        ],
+        "native_max_error_meV": 7.270628543665225e-12,
+        "within_review_tolerance": true
+      },
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.016149487000802765,
+          "mu": 0.0,
+          "seconds": 0.001113013000576757,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.017013571999996202,
+          "mu": -1.0,
+          "seconds": 0.0007113319989002775,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01785537500109058,
+          "mu": -2.5,
+          "seconds": 0.0007122440001694486,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.018850726999517065,
+          "mu": -4.75,
+          "seconds": 0.00061938100043335,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01977709499988123,
+          "mu": -8.125,
+          "seconds": 0.0007626750011695549,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02068977299859398,
+          "mu": -13.1875,
+          "seconds": 0.0007371930005319882,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02178592600103002,
+          "mu": -20.78125,
+          "seconds": 0.0008257359986600932,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.022559279001143295,
+          "mu": -32.171875,
+          "seconds": 0.0006044349975127261,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.0233543610011111,
+          "mu": -49.2578125,
+          "seconds": 0.0006808059988543391,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.024098150999634527,
+          "mu": -74.88671875,
+          "seconds": 0.0006171880013425834,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.024939795999671333,
+          "mu": -113.330078125,
+          "seconds": 0.000723020999430446,
+          "where": "window"
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.029327847001695773,
+          "where": "window",
+          "k": 18,
+          "above": 6
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.03811657199912588,
+          "where": "window",
+          "k": 36,
+          "above": 14
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03884566399938194,
+          "mu": 135.4481685216291,
+          "seconds": 0.0007127680000849068,
+          "where": "window"
+        },
+        {
+          "kind": "check",
+          "elapsed": 0.03915282700108946,
+          "check": "eigen_residual",
+          "value": 4.1867411963384416e-11,
+          "threshold": 1e-08,
+          "passed": true,
+          "where": "window",
+          "check_kind": "numerical_cross_check"
+        },
+        {
+          "kind": "sparse_solve",
+          "elapsed": 0.039159349998953985,
+          "where": "window",
+          "lo": 95,
+          "n": 6,
+          "mu": -113.330078125,
+          "residual": 4.1867411963384416e-11,
+          "seconds": 0.024259080000774702
+        }
+      ]
+    },
+    {
+      "model_id": 0,
+      "f": [
+        -0.31,
+        -0.27
+      ],
+      "lo": 95,
+      "n": 6,
+      "native_energies_meV": [
+        -39.41049842312283,
+        -33.678779618050854,
+        -1.4384353265069447,
+        13.629212894707784,
+        18.853821491103336,
+        45.20793761323199
+      ],
+      "result": {
+        "status": "RETURNED",
+        "values_meV": [
+          -39.4104984231228,
+          -33.678779618051,
+          -1.438435326506628,
+          13.62921289470765,
+          18.85382149110329,
+          45.207937613231664
+        ],
+        "native_max_error_meV": 3.268496584496461e-13,
+        "within_review_tolerance": true
+      },
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.015280951000022469,
+          "mu": 0.0,
+          "seconds": 0.001163266999355983,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.016439831000752747,
+          "mu": -1.0,
+          "seconds": 0.000997590999759268,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.017207111002790043,
+          "mu": -2.5,
+          "seconds": 0.0006292899997788481,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.017952431000594515,
+          "mu": -4.75,
+          "seconds": 0.0006316549988696352,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01864905200272915,
+          "mu": -8.125,
+          "seconds": 0.0005765090027125552,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.019513440001901472,
+          "mu": -13.1875,
+          "seconds": 0.0007069300008879509,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.020308606002799934,
+          "mu": -20.78125,
+          "seconds": 0.0006715029994666111,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.021068677000585012,
+          "mu": -32.171875,
+          "seconds": 0.0006372839998221025,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.021806413002195768,
+          "mu": -49.2578125,
+          "seconds": 0.0006232569976418745,
+          "where": "window"
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.026560239002719754,
+          "where": "window",
+          "k": 18,
+          "above": 9
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.027505467001901707,
+          "mu": 132.2918095314409,
+          "seconds": 0.0009322270016127732,
+          "where": "window"
+        },
+        {
+          "kind": "check",
+          "elapsed": 0.027821158000733703,
+          "check": "eigen_residual",
+          "value": 3.2001406094662513e-13,
+          "threshold": 1e-08,
+          "passed": true,
+          "where": "window",
+          "check_kind": "numerical_cross_check"
+        },
+        {
+          "kind": "sparse_solve",
+          "elapsed": 0.02782665300037479,
+          "where": "window",
+          "lo": 95,
+          "n": 6,
+          "mu": -49.2578125,
+          "residual": 3.2001406094662513e-13,
+          "seconds": 0.013848159996996401
+        }
+      ]
+    },
+    {
+      "model_id": 1,
+      "f": [
+        0.31,
+        0.27
+      ],
+      "lo": 95,
+      "n": 6,
+      "native_energies_meV": [
+        -39.41049842312283,
+        -33.678779618050854,
+        -1.4384353265069447,
+        13.629212894707784,
+        18.853821491103336,
+        45.20793761323199
+      ],
+      "result": {
+        "status": "RETURNED",
+        "values_meV": [
+          -39.41049842312279,
+          -33.67877961805101,
+          -1.4384353265066423,
+          13.629212894707564,
+          18.85382149110336,
+          45.207937613231735
+        ],
+        "native_max_error_meV": 3.0242475190789264e-13,
+        "within_review_tolerance": true
+      },
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.016949118999036727,
+          "mu": 0.0,
+          "seconds": 0.0008327450013894122,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01787717099796282,
+          "mu": -1.0,
+          "seconds": 0.000767019999329932,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01869146399985766,
+          "mu": -2.5,
+          "seconds": 0.0006782310010748915,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01949741099815583,
+          "mu": -4.75,
+          "seconds": 0.0006689880028716289,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.020219210000504972,
+          "mu": -8.125,
+          "seconds": 0.0006002459995215759,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02098508799826959,
+          "mu": -13.1875,
+          "seconds": 0.0005905640027776826,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.021745963000284974,
+          "mu": -20.78125,
+          "seconds": 0.0006508810001832899,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.022619979998125928,
+          "mu": -32.171875,
+          "seconds": 0.0007501789987145457,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.023459108000679407,
+          "mu": -49.2578125,
+          "seconds": 0.000657630997011438,
+          "where": "window"
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.02848186099799932,
+          "where": "window",
+          "k": 18,
+          "above": 9
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.029191494999395218,
+          "mu": 132.29180953144106,
+          "seconds": 0.0006965129978198092,
+          "where": "window"
+        },
+        {
+          "kind": "check",
+          "elapsed": 0.029567190998932347,
+          "check": "eigen_residual",
+          "value": 2.938684146329747e-13,
+          "threshold": 1e-08,
+          "passed": true,
+          "where": "window",
+          "check_kind": "numerical_cross_check"
+        },
+        {
+          "kind": "sparse_solve",
+          "elapsed": 0.02957271799823502,
+          "where": "window",
+          "lo": 95,
+          "n": 6,
+          "mu": -49.2578125,
+          "residual": 2.938684146329747e-13,
+          "seconds": 0.013588503999926616
+        }
+      ]
+    },
+    {
+      "model_id": 1,
+      "f": [
+        0.11,
+        0.43
+      ],
+      "lo": 95,
+      "n": 6,
+      "native_energies_meV": [
+        -58.4974059764768,
+        -48.93179332003959,
+        0.674315226144149,
+        12.218075017095956,
+        39.349150843195915,
+        58.83282797945911
+      ],
+      "result": {
+        "status": "RETURNED",
+        "values_meV": [
+          -58.497405976477054,
+          -48.931793320039304,
+          0.6743152261438894,
+          12.218075017095927,
+          39.349150843196085,
+          58.832827979458784
+        ],
+        "native_max_error_meV": 3.268496584496461e-13,
+        "within_review_tolerance": true
+      },
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.015717411999503383,
+          "mu": 0.0,
+          "seconds": 0.0009703200012154412,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.017701159998978255,
+          "mu": -1.0,
+          "seconds": 0.001116863000788726,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.01857249699969543,
+          "mu": -2.5,
+          "seconds": 0.000726756999938516,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.019354469997779233,
+          "mu": -4.75,
+          "seconds": 0.0006054309997125529,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.020354959000542294,
+          "mu": -8.125,
+          "seconds": 0.0008819690010568593,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.021539083998504793,
+          "mu": -13.1875,
+          "seconds": 0.001048493999405764,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.022428517000662396,
+          "mu": -20.78125,
+          "seconds": 0.000701664001098834,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.024941799998487113,
+          "mu": -32.171875,
+          "seconds": 0.0023829479978303425,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02583194600083516,
+          "mu": -49.2578125,
+          "seconds": 0.0006961569997656625,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.026556239998171804,
+          "mu": -74.88671875,
+          "seconds": 0.0005956189997959882,
+          "where": "window"
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.03262406599969836,
+          "where": "window",
+          "k": 18,
+          "above": 8
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03342723099922296,
+          "mu": 125.64066780655648,
+          "seconds": 0.000745825997000793,
+          "where": "window"
+        },
+        {
+          "kind": "check",
+          "elapsed": 0.0337249049989623,
+          "check": "eigen_residual",
+          "value": 1.2645367310561412e-12,
+          "threshold": 1e-08,
+          "passed": true,
+          "where": "window",
+          "check_kind": "numerical_cross_check"
+        },
+        {
+          "kind": "sparse_solve",
+          "elapsed": 0.03373059699879377,
+          "where": "window",
+          "lo": 95,
+          "n": 6,
+          "mu": -74.88671875,
+          "residual": 1.2645367310561412e-12,
+          "seconds": 0.019243460999859963
+        }
+      ]
+    },
+    {
+      "model_id": 1,
+      "f": [
+        -0.31,
+        -0.27
+      ],
+      "lo": 95,
+      "n": 6,
+      "native_energies_meV": [
+        -129.31898142068871,
+        -92.53571955429334,
+        -5.758899558972754,
+        12.040236625920146,
+        82.74657433586448,
+        145.39599309765993
+      ],
+      "result": {
+        "status": "RETURNED",
+        "values_meV": [
+          -129.3189814206886,
+          -92.53571955429328,
+          -5.75889955897253,
+          12.040236625920443,
+          82.7465743358647,
+          145.39599309765975
+        ],
+        "native_max_error_meV": 2.9665159217984183e-13,
+        "within_review_tolerance": true
+      },
+      "ledger": [
+        {
+          "kind": "factorization",
+          "elapsed": 0.01623375499912072,
+          "mu": 0.0,
+          "seconds": 0.0008580249996157363,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.017245625000214204,
+          "mu": -1.0,
+          "seconds": 0.0008448480002698489,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.018360530000791186,
+          "mu": -2.5,
+          "seconds": 0.0009727040014695376,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.019248399999924004,
+          "mu": -4.75,
+          "seconds": 0.000730337000277359,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02016222100064624,
+          "mu": -8.125,
+          "seconds": 0.0007745210023131222,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.021167767998122144,
+          "mu": -13.1875,
+          "seconds": 0.0008765370002947748,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02235006000046269,
+          "mu": -20.78125,
+          "seconds": 0.0009300960009568371,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.023287455998797668,
+          "mu": -32.171875,
+          "seconds": 0.0008062699998845346,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.0243142010003794,
+          "mu": -49.2578125,
+          "seconds": 0.0008119800004351418,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02523596299943165,
+          "mu": -74.88671875,
+          "seconds": 0.0007843579987820704,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.02648073299860698,
+          "mu": -113.330078125,
+          "seconds": 0.0009724480005388614,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.027575456999329617,
+          "mu": -170.9951171875,
+          "seconds": 0.0006738029987900518,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.028409824997652322,
+          "mu": -84.49755859375,
+          "seconds": 0.0006656959994870704,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.029323716000362765,
+          "mu": -127.746337890625,
+          "seconds": 0.0007864409999456257,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03027022799869883,
+          "mu": -192.6195068359375,
+          "seconds": 0.0008127239998430014,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.031190089997835457,
+          "mu": -95.30975341796875,
+          "seconds": 0.0007948419988679234,
+          "where": "window"
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.03207349999865983,
+          "mu": -143.96463012695312,
+          "seconds": 0.000719126001058612,
+          "where": "window"
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.037254844999552006,
+          "where": "window",
+          "k": 18,
+          "above": 6
+        },
+        {
+          "kind": "arpack_request",
+          "elapsed": 0.05108084899984533,
+          "where": "window",
+          "k": 36,
+          "above": 11
+        },
+        {
+          "kind": "factorization",
+          "elapsed": 0.052162455998768564,
+          "mu": 151.10533668842152,
+          "seconds": 0.0010632350022206083,
+          "where": "window"
+        },
+        {
+          "kind": "check",
+          "elapsed": 0.05261245400106418,
+          "check": "eigen_residual",
+          "value": 1.2357179384655029e-12,
+          "threshold": 1e-08,
+          "passed": true,
+          "where": "window",
+          "check_kind": "numerical_cross_check"
+        },
+        {
+          "kind": "sparse_solve",
+          "elapsed": 0.05261826499918243,
+          "where": "window",
+          "lo": 95,
+          "n": 6,
+          "mu": -143.96463012695312,
+          "residual": 1.2357179384655029e-12,
+          "seconds": 0.037399518998427084
+        }
+      ]
+    }
+  ],
+  "native_models": [
+    {
+      "id": 0,
+      "valley": 1,
+      "N": 4,
+      "eps": 0.003,
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "dimension": 196,
+      "ordered_indices": [
+        [
+          -4,
+          0
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          -3
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          3,
+          -2
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          -3
+        ],
+        [
+          4,
+          -2
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "basis_sha256": "370453795938f1a66113abe0fc376510881d10963626ddae6092b48f364a6110",
+      "defaults": "Unchanged BM constructor defaults for omitted arguments"
+    },
+    {
+      "id": 1,
+      "valley": -1,
+      "N": 4,
+      "eps": 0.003,
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "dimension": 196,
+      "ordered_indices": [
+        [
+          -4,
+          0
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          -3
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          3,
+          -2
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          -3
+        ],
+        [
+          4,
+          -2
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "basis_sha256": "370453795938f1a66113abe0fc376510881d10963626ddae6092b48f364a6110",
+      "defaults": "Unchanged BM constructor defaults for omitted arguments"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "plan_sha256": "dc313edaad8b50bc6528d6423bcbcc183bd1f175a914fe4ab4b5f8ace66713aa",
+  "executions": [
+    {
+      "script": "metamorphic.py",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/producer_worker.py",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/replay/metamorphic",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review",
+        "metamorphic.py"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_s": 31.179628070000035,
+      "source_files_unchanged": true,
+      "result_present": true
+    },
+    {
+      "script": "basis_dependence_check.py",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/producer_worker.py",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/replay/basis_dependence_check",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review",
+        "basis_dependence_check.py"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_s": 301.7659100350029,
+      "source_files_unchanged": true,
+      "result_present": true
+    }
+  ],
+  "reconstructed_basis_rows": [
+    {
+      "N": 4,
+      "basis": "native per angle",
+      "model_ids": [
+        0,
+        1
+      ],
+      "basis_sizes": [
+        47,
+        71
+      ],
+      "symmetric_difference": 24,
+      "d_bandwidth_meV": 0.00017263171526948895,
+      "d_remote_gap_meV": 0.051379686104018774
+    },
+    {
+      "N": 4,
+      "basis": "common union",
+      "model_ids": [
+        2,
+        3
+      ],
+      "basis_sizes": [
+        71,
+        71
+      ],
+      "symmetric_difference": 0,
+      "d_bandwidth_meV": 2.09920027316457e-06,
+      "d_remote_gap_meV": 0.000195736886642095
+    },
+    {
+      "N": 6,
+      "basis": "native per angle",
+      "model_ids": [
+        4,
+        5
+      ],
+      "basis_sizes": [
+        103,
+        149
+      ],
+      "symmetric_difference": 46,
+      "d_bandwidth_meV": 3.390642433487301e-09,
+      "d_remote_gap_meV": 2.9294010417402205e-07
+    },
+    {
+      "N": 6,
+      "basis": "common union",
+      "model_ids": [
+        6,
+        7
+      ],
+      "basis_sizes": [
+        149,
+        149
+      ],
+      "symmetric_difference": 0,
+      "d_bandwidth_meV": 7.638334409421077e-13,
+      "d_remote_gap_meV": 5.589839702224708e-11
+    },
+    {
+      "N": 8,
+      "basis": "native per angle",
+      "model_ids": [
+        8,
+        9
+      ],
+      "basis_sizes": [
+        183,
+        269
+      ],
+      "symmetric_difference": 86,
+      "d_bandwidth_meV": 6.927791673660977e-13,
+      "d_remote_gap_meV": 9.78772618509538e-13
+    }
+  ],
+  "reconstructed_MR2_values": {
+    "native_d_bandwidth_meV": 0.0001393136394831629,
+    "native_d_remote_gap_meV": 0.051379686103871336,
+    "d_bandwidth_meV": 4.215107683336328e-06,
+    "d_remote_gap_meV": 0.00019573688706486791
+  },
+  "selfcheck_gate_findings": {
+    "supplied_lint_exit": 1,
+    "supplied_lint_findings": 6,
+    "forced_failure_exit": 0,
+    "forced_failed_relations": [
+      "MR1 strain-angle period 180"
+    ],
+    "generator_changed_readme": false,
+    "missed_invalid_fixtures": [
+      "unbound_two_digit",
+      "wrong_two_digit",
+      "wrong_field_same_record",
+      "missing_record",
+      "backtick_as_evidence",
+      "year_prefix_measurement",
+      "tiny_value_drift"
+    ],
+    "positive_fixtures_pass": 2
+  },
+  "sparse_samples": {
+    "attempted": 6,
+    "returned": 6,
+    "maximum_native_energy_error_meV": 7.270628543665225e-12,
+    "caution": "Review-time native comparison, not a mandatory comparison enforced by the bundled window routine"
+  },
+  "archive_unchanged": true
+}

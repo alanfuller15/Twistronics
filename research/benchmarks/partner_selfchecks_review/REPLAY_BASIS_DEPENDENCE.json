@@ -1,0 +1,48 @@
+{
+ "question": "is the phi -> phi+60 discrepancy a code asymmetry or a finite-model difference?",
+ "answer": "finite-model difference: index-set membership differs per angle",
+ "rows": [
+  {
+   "N": 4,
+   "basis_a": 47,
+   "basis_b": 71,
+   "symmetric_difference": 24,
+   "d_bandwidth_meV": 0.00017263171526948895,
+   "d_remote_gap_meV": 0.051379686104018774,
+   "basis": "native per angle"
+  },
+  {
+   "N": 4,
+   "basis_vectors": 71,
+   "d_bandwidth_meV": 2.09920027316457e-06,
+   "d_remote_gap_meV": 0.000195736886642095,
+   "basis": "common union"
+  },
+  {
+   "N": 6,
+   "basis_a": 103,
+   "basis_b": 149,
+   "symmetric_difference": 46,
+   "d_bandwidth_meV": 3.390642433487301e-09,
+   "d_remote_gap_meV": 2.9294010417402205e-07,
+   "basis": "native per angle"
+  },
+  {
+   "N": 6,
+   "basis_vectors": 149,
+   "d_bandwidth_meV": 7.638334409421077e-13,
+   "d_remote_gap_meV": 5.589839702224708e-11,
+   "basis": "common union"
+  },
+  {
+   "N": 8,
+   "basis_a": 183,
+   "basis_b": 269,
+   "symmetric_difference": 86,
+   "d_bandwidth_meV": 6.927791673660977e-13,
+   "d_remote_gap_meV": 9.78772618509538e-13,
+   "basis": "native per angle"
+  }
+ ],
+ "correction": "v024 section 1 attributed a 0.04 meV phi=0 vs 60 remote-gap difference to \"N=4 cutoff asymmetry\" without testing; the cause is measured here"
+}

@@ -1,0 +1,857 @@
+{
+  "plan_sha256": "dc313edaad8b50bc6528d6423bcbcc183bd1f175a914fe4ab4b5f8ace66713aa",
+  "executions": [
+    {
+      "script": "metamorphic.py",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/producer_worker.py",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/replay/metamorphic",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review",
+        "metamorphic.py"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_s": 31.179628070000035,
+      "source_files_unchanged": true,
+      "result_present": true
+    },
+    {
+      "script": "basis_dependence_check.py",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/producer_worker.py",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review/replay/basis_dependence_check",
+        "/workspace/scratch/25cf544f787e/Twistronics-partner-selfchecks-review/research/benchmarks/partner_selfchecks_review",
+        "basis_dependence_check.py"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_s": 301.7659100350029,
+      "source_files_unchanged": true,
+      "result_present": true
+    }
+  ],
+  "producers": {
+    "METAMORPHIC": {
+      "status": "REPRODUCED",
+      "numeric_leaves": 18,
+      "max_numeric_difference": 0.0,
+      "nonnumeric_mismatches": [],
+      "differences": [
+        {
+          "path": "/0/values/max_dH_meV",
+          "supplied": 0.0,
+          "replay": 0.0,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/1/values/native_d_remote_gap_meV",
+          "supplied": 0.051379686103871336,
+          "replay": 0.051379686103871336,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/1/values/native_b",
+          "supplied": 71,
+          "replay": 71,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/1/values/d_bandwidth_meV",
+          "supplied": 4.215107683336328e-06,
+          "replay": 4.215107683336328e-06,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/1/values/common_vectors",
+          "supplied": 71,
+          "replay": 71,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/1/values/native_a",
+          "supplied": 47,
+          "replay": 47,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/1/values/d_remote_gap_meV",
+          "supplied": 0.00019573688706486791,
+          "replay": 0.00019573688706486791,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/1/values/native_d_bandwidth_meV",
+          "supplied": 0.0001393136394831629,
+          "replay": 0.0001393136394831629,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/2/values/max_dE_meV",
+          "supplied": 2.6645352591003757e-13,
+          "replay": 2.6645352591003757e-13,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/3/values/factor",
+          "supplied": 2.5,
+          "replay": 2.5,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/3/values/max_relative_deviation",
+          "supplied": 1.3350178990999532e-15,
+          "replay": 1.3350178990999532e-15,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/4/values/max_dH_meV",
+          "supplied": 0.0,
+          "replay": 0.0,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/4/values/max_dE_meV",
+          "supplied": 0.0,
+          "replay": 0.0,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/5/values/N",
+          "supplied": 4,
+          "replay": 4,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/5/values/max_dE_meV",
+          "supplied": 0.014721879099226953,
+          "replay": 0.014721879099226953,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/6/values/max_dE_meV",
+          "supplied": 2.0961010704922955e-13,
+          "replay": 2.0961010704922955e-13,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/7/values/max_dE_meV",
+          "supplied": 2.8421709430404007e-13,
+          "replay": 2.8421709430404007e-13,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/8/values/max_dE_meV",
+          "supplied": 1.4210854715202004e-13,
+          "replay": 1.4210854715202004e-13,
+          "absolute_difference": 0.0
+        }
+      ],
+      "counts": {
+        "model_created": 11,
+        "native_H": 1543,
+        "measurement_start": 8,
+        "eigh": 1542,
+        "measurement_return": 8,
+        "refine_return": 6,
+        "fast_HR": 3
+      },
+      "model_records": 11,
+      "measurements": [
+        {
+          "measurement_id": 1,
+          "model_id": 4,
+          "method": "flat_bandwidth",
+          "args": [
+            10
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.209880494067146,
+          "reconstructed_value_meV": 30.209880494067146,
+          "error_meV": 0.0,
+          "eigensolves": 100,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 2,
+          "model_id": 5,
+          "method": "flat_bandwidth",
+          "args": [
+            10
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.20988470917483,
+          "reconstructed_value_meV": 30.20988470917483,
+          "error_meV": 0.0,
+          "eigensolves": 100,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 3,
+          "model_id": 4,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 12,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.755133290681474,
+          "reconstructed_value_meV": 8.755133290681474,
+          "error_meV": 0.0,
+          "eigensolves": 236,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 4,
+          "model_id": 5,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 12,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.75493755379441,
+          "reconstructed_value_meV": 8.75493755379441,
+          "error_meV": 0.0,
+          "eigensolves": 331,
+          "refinement_returns": 2
+        },
+        {
+          "measurement_id": 5,
+          "model_id": 2,
+          "method": "flat_bandwidth",
+          "args": [
+            10
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.210024022814313,
+          "reconstructed_value_meV": 30.210024022814313,
+          "error_meV": 0.0,
+          "eigensolves": 100,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 6,
+          "model_id": 3,
+          "method": "flat_bandwidth",
+          "args": [
+            10
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.20988470917483,
+          "reconstructed_value_meV": 30.20988470917483,
+          "error_meV": 0.0,
+          "eigensolves": 100,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 7,
+          "model_id": 2,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 12,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.703557867690538,
+          "reconstructed_value_meV": 8.703557867690538,
+          "error_meV": 0.0,
+          "eigensolves": 230,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 8,
+          "model_id": 3,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 12,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.75493755379441,
+          "reconstructed_value_meV": 8.75493755379441,
+          "error_meV": 0.0,
+          "eigensolves": 331,
+          "refinement_returns": 2
+        }
+      ],
+      "elapsed_s": 30.443456502998743
+    },
+    "BASIS_DEPENDENCE_CHECK": {
+      "status": "REPRODUCED",
+      "numeric_leaves": 26,
+      "max_numeric_difference": 0,
+      "nonnumeric_mismatches": [],
+      "differences": [
+        {
+          "path": "/rows/0/basis_a",
+          "supplied": 47,
+          "replay": 47,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/0/basis_b",
+          "supplied": 71,
+          "replay": 71,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/0/d_bandwidth_meV",
+          "supplied": 0.00017263171526948895,
+          "replay": 0.00017263171526948895,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/0/d_remote_gap_meV",
+          "supplied": 0.051379686104018774,
+          "replay": 0.051379686104018774,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/0/N",
+          "supplied": 4,
+          "replay": 4,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/0/symmetric_difference",
+          "supplied": 24,
+          "replay": 24,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/1/d_bandwidth_meV",
+          "supplied": 2.09920027316457e-06,
+          "replay": 2.09920027316457e-06,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/1/basis_vectors",
+          "supplied": 71,
+          "replay": 71,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/1/d_remote_gap_meV",
+          "supplied": 0.000195736886642095,
+          "replay": 0.000195736886642095,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/1/N",
+          "supplied": 4,
+          "replay": 4,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/2/basis_a",
+          "supplied": 103,
+          "replay": 103,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/2/basis_b",
+          "supplied": 149,
+          "replay": 149,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/2/d_bandwidth_meV",
+          "supplied": 3.390642433487301e-09,
+          "replay": 3.390642433487301e-09,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/2/d_remote_gap_meV",
+          "supplied": 2.9294010417402205e-07,
+          "replay": 2.9294010417402205e-07,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/2/N",
+          "supplied": 6,
+          "replay": 6,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/2/symmetric_difference",
+          "supplied": 46,
+          "replay": 46,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/3/d_bandwidth_meV",
+          "supplied": 7.638334409421077e-13,
+          "replay": 7.638334409421077e-13,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/3/basis_vectors",
+          "supplied": 149,
+          "replay": 149,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/3/d_remote_gap_meV",
+          "supplied": 5.589839702224708e-11,
+          "replay": 5.589839702224708e-11,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/3/N",
+          "supplied": 6,
+          "replay": 6,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/4/basis_a",
+          "supplied": 183,
+          "replay": 183,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/4/basis_b",
+          "supplied": 269,
+          "replay": 269,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/4/d_bandwidth_meV",
+          "supplied": 6.927791673660977e-13,
+          "replay": 6.927791673660977e-13,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/4/d_remote_gap_meV",
+          "supplied": 9.78772618509538e-13,
+          "replay": 9.78772618509538e-13,
+          "absolute_difference": 0.0
+        },
+        {
+          "path": "/rows/4/N",
+          "supplied": 8,
+          "replay": 8,
+          "absolute_difference": 0
+        },
+        {
+          "path": "/rows/4/symmetric_difference",
+          "supplied": 86,
+          "replay": 86,
+          "absolute_difference": 0
+        }
+      ],
+      "counts": {
+        "model_created": 10,
+        "measurement_start": 20,
+        "native_H": 2548,
+        "eigh": 2548,
+        "measurement_return": 20,
+        "refine_return": 10
+      },
+      "model_records": 10,
+      "measurements": [
+        {
+          "measurement_id": 1,
+          "model_id": 0,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.19370716547193,
+          "reconstructed_value_meV": 30.19370716547193,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 2,
+          "model_id": 1,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.19353453375666,
+          "reconstructed_value_meV": 30.19353453375666,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 3,
+          "model_id": 0,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.70355786768995,
+          "reconstructed_value_meV": 8.70355786768995,
+          "error_meV": 0.0,
+          "eigensolves": 191,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 4,
+          "model_id": 1,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.754937553793969,
+          "reconstructed_value_meV": 8.754937553793969,
+          "error_meV": 0.0,
+          "eigensolves": 192,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 5,
+          "model_id": 2,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.19353243455639,
+          "reconstructed_value_meV": 30.19353243455639,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 6,
+          "model_id": 3,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.19353453375666,
+          "reconstructed_value_meV": 30.19353453375666,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 7,
+          "model_id": 2,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.755133290680611,
+          "reconstructed_value_meV": 8.755133290680611,
+          "error_meV": 0.0,
+          "eigensolves": 193,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 8,
+          "model_id": 3,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.754937553793969,
+          "reconstructed_value_meV": 8.754937553793969,
+          "error_meV": 0.0,
+          "eigensolves": 192,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 9,
+          "model_id": 4,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.1935323257634,
+          "reconstructed_value_meV": 30.1935323257634,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 10,
+          "model_id": 5,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.193532322372757,
+          "reconstructed_value_meV": 30.193532322372757,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 11,
+          "model_id": 4,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.75495251447698,
+          "reconstructed_value_meV": 8.75495251447698,
+          "error_meV": 0.0,
+          "eigensolves": 188,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 12,
+          "model_id": 5,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.754952807417084,
+          "reconstructed_value_meV": 8.754952807417084,
+          "error_meV": 0.0,
+          "eigensolves": 193,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 13,
+          "model_id": 6,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.19353232237352,
+          "reconstructed_value_meV": 30.19353232237352,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 14,
+          "model_id": 7,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.193532322372757,
+          "reconstructed_value_meV": 30.193532322372757,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 15,
+          "model_id": 6,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.754952807472982,
+          "reconstructed_value_meV": 8.754952807472982,
+          "error_meV": 0.0,
+          "eigensolves": 188,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 16,
+          "model_id": 7,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.754952807417084,
+          "reconstructed_value_meV": 8.754952807417084,
+          "error_meV": 0.0,
+          "eigensolves": 193,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 17,
+          "model_id": 8,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.19353232237318,
+          "reconstructed_value_meV": 30.19353232237318,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 18,
+          "model_id": 9,
+          "method": "flat_bandwidth",
+          "args": [
+            8
+          ],
+          "kwargs": {},
+          "returned_value_meV": 30.193532322372487,
+          "reconstructed_value_meV": 30.193532322372487,
+          "error_meV": 0.0,
+          "eigensolves": 64,
+          "refinement_returns": 0
+        },
+        {
+          "measurement_id": 19,
+          "model_id": 8,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.75495280741881,
+          "reconstructed_value_meV": 8.75495280741881,
+          "error_meV": 0.0,
+          "eigensolves": 188,
+          "refinement_returns": 1
+        },
+        {
+          "measurement_id": 20,
+          "model_id": 9,
+          "method": "min_remote",
+          "args": [],
+          "kwargs": {
+            "ngrid": 10,
+            "nkeep": 3
+          },
+          "returned_value_meV": 8.754952807417832,
+          "reconstructed_value_meV": 8.754952807417832,
+          "error_meV": 0.0,
+          "eigensolves": 190,
+          "refinement_returns": 1
+        }
+      ],
+      "elapsed_s": 301.0295800990025
+    }
+  },
+  "reconstructed_basis_rows": [
+    {
+      "N": 4,
+      "basis": "native per angle",
+      "model_ids": [
+        0,
+        1
+      ],
+      "basis_sizes": [
+        47,
+        71
+      ],
+      "symmetric_difference": 24,
+      "d_bandwidth_meV": 0.00017263171526948895,
+      "d_remote_gap_meV": 0.051379686104018774
+    },
+    {
+      "N": 4,
+      "basis": "common union",
+      "model_ids": [
+        2,
+        3
+      ],
+      "basis_sizes": [
+        71,
+        71
+      ],
+      "symmetric_difference": 0,
+      "d_bandwidth_meV": 2.09920027316457e-06,
+      "d_remote_gap_meV": 0.000195736886642095
+    },
+    {
+      "N": 6,
+      "basis": "native per angle",
+      "model_ids": [
+        4,
+        5
+      ],
+      "basis_sizes": [
+        103,
+        149
+      ],
+      "symmetric_difference": 46,
+      "d_bandwidth_meV": 3.390642433487301e-09,
+      "d_remote_gap_meV": 2.9294010417402205e-07
+    },
+    {
+      "N": 6,
+      "basis": "common union",
+      "model_ids": [
+        6,
+        7
+      ],
+      "basis_sizes": [
+        149,
+        149
+      ],
+      "symmetric_difference": 0,
+      "d_bandwidth_meV": 7.638334409421077e-13,
+      "d_remote_gap_meV": 5.589839702224708e-11
+    },
+    {
+      "N": 8,
+      "basis": "native per angle",
+      "model_ids": [
+        8,
+        9
+      ],
+      "basis_sizes": [
+        183,
+        269
+      ],
+      "symmetric_difference": 86,
+      "d_bandwidth_meV": 6.927791673660977e-13,
+      "d_remote_gap_meV": 9.78772618509538e-13
+    }
+  ],
+  "reconstructed_MR2_values": {
+    "native_d_bandwidth_meV": 0.0001393136394831629,
+    "native_d_remote_gap_meV": 0.051379686103871336,
+    "d_bandwidth_meV": 4.215107683336328e-06,
+    "d_remote_gap_meV": 0.00019573688706486791
+  },
+  "selfcheck_gate_findings": {
+    "supplied_lint_exit": 1,
+    "supplied_lint_findings": 6,
+    "forced_failure_exit": 0,
+    "forced_failed_relations": [
+      "MR1 strain-angle period 180"
+    ],
+    "generator_changed_readme": false,
+    "missed_invalid_fixtures": [
+      "unbound_two_digit",
+      "wrong_two_digit",
+      "wrong_field_same_record",
+      "missing_record",
+      "backtick_as_evidence",
+      "year_prefix_measurement",
+      "tiny_value_drift"
+    ],
+    "positive_fixtures_pass": 2
+  },
+  "sparse_samples": {
+    "attempted": 6,
+    "returned": 6,
+    "maximum_native_energy_error_meV": 7.270628543665225e-12,
+    "caution": "Review-time native comparison, not a mandatory comparison enforced by the bundled window routine"
+  },
+  "archive_unchanged": true
+}
