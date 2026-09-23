@@ -1,0 +1,26 @@
+  B-0.25_v+1_r0.012: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.25_v-1_r0.012: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.25_v+1_r0.008: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.25_v-1_r0.008: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.30_v+1_r0.012: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.30_v-1_r0.012: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.30_v+1_r0.008: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+  B-0.30_v-1_r0.008: REJECTED {'status': 'REJECTED', 'code': 'injected_rejection', 'control': 'all_rejected'}
+
+run_status=INCOMPLETE accepted=0/8 rejected=8 blocked=0 missing=0 stages=0
+  all_measurements_rejected: exit=1 run_status=INCOMPLETE rows=8 statuses={'accepted': 0, 'rejected': 8, 'blocked': 0, 'errored': 0, 'missing_cases': 0}
+  no pair at B=-0.25 (0 nodes); 4 case(s) NO_PAIR
+  no pair at B=-0.30 (0 nodes); 4 case(s) NO_PAIR
+
+run_status=INCOMPLETE accepted=0/8 rejected=0 blocked=8 missing=0 stages=2
+  no_pair_found: exit=1 run_status=INCOMPLETE rows=8 statuses={'accepted': 0, 'rejected': 0, 'blocked': 8, 'errored': 0, 'missing_cases': 0}
+  B-0.25_v+1_r0.012: ACCEPTED SAME
+  B-0.25_v-1_r0.012: ACCEPTED SAME
+  B-0.25_v+1_r0.008: ACCEPTED SAME
+  B-0.25_v-1_r0.008: ACCEPTED SAME
+  discovery failed at B=-0.30: RuntimeError; 4 case(s) BLOCKED
+
+run_status=INCOMPLETE accepted=4/8 rejected=0 blocked=4 missing=0 stages=1
+  discovery_fails_after_first_B: exit=1 run_status=INCOMPLETE rows=8 statuses={'accepted': 4, 'rejected': 0, 'blocked': 4, 'errored': 0, 'missing_cases': 0}
+  forced_MR1_violation: exit=1 MR1 holds=False
+  metamorphic_clean: exit=0

@@ -1,0 +1,292 @@
+{
+ "verifier": [
+  {
+   "case": "intact",
+   "mutation": "No mutation",
+   "manifest_refreshed": false,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.9067349639990425,
+   "mutations": []
+  },
+  {
+   "case": "missing_geometry",
+   "mutation": "Remove required geometry; retain original manifest",
+   "manifest_refreshed": false,
+   "returncode": 1,
+   "checks": 5,
+   "failed": 1,
+   "wall_seconds": 0.42223211099917535,
+   "mutations": [
+    {
+     "file": "GEOMETRY.json",
+     "removed": true
+    }
+   ]
+  },
+  {
+   "case": "unrefreshed_angle",
+   "mutation": "Alter one angle increment without refreshing manifest",
+   "manifest_refreshed": false,
+   "returncode": 1,
+   "checks": 77,
+   "failed": 2,
+   "wall_seconds": 0.9297685370002,
+   "mutations": [
+    {
+     "file": "DIAGNOSTICS.jsonl",
+     "sha256": "772ca9884c9bcfb2956d3414a4271309111261fb592020749b734921abc32bf3"
+    }
+   ]
+  },
+  {
+   "case": "empty_rows",
+   "mutation": "Remove every row; leave COMPLETE/eight accepted summary",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 29,
+   "failed": 0,
+   "wall_seconds": 0.6846367660000396,
+   "mutations": [
+    {
+     "file": "ROWS.jsonl",
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "4218398b8686f3682b5f6add146e143dbb7bd10b50e66616f3a67bc30432fdae"
+    }
+   ]
+  },
+  {
+   "case": "duplicate_row",
+   "mutation": "Replace last row with first; one expected case absent and another duplicated",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.7331794959973195,
+   "mutations": [
+    {
+     "file": "ROWS.jsonl",
+     "sha256": "5c6350be9c5b9a0187d3dce544b7f9136253dbab1cff995d95884bed98a6697a"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "a414eb05d63d10acc13f167c9fbab9e5083d756ce457d0f4a84b6a0e33b88673"
+    }
+   ]
+  },
+  {
+   "case": "wrong_label",
+   "mutation": "Flip first SAME label while retaining same-sign winding pair",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.7409912650000479,
+   "mutations": [
+    {
+     "file": "ROWS.jsonl",
+     "sha256": "542569eed8d6df9581377f8cd2e23ee779449c8d586b08d184bdf8ac317258d9"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "138173e3ac5fae51f9c5b7478ae3f8bc4f906696029d94dccade174a2e31c518"
+    }
+   ]
+  },
+  {
+   "case": "wrong_source",
+   "mutation": "Wrong guarded source hash in summary",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.7742364480000106,
+   "mutations": [
+    {
+     "file": "SUMMARY.json",
+     "sha256": "3479a80889987518f31199974710a8400407006fd55812fa215c7a871973248f"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "6c6861dfc8958ad988f7927051b3f8acdaa59bb5cd536ff27d332b0da0857bbd"
+    }
+   ]
+  },
+  {
+   "case": "wrong_model",
+   "mutation": "Change row model strain from .003 to .02; retain plan and numerical records",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.7099378599996271,
+   "mutations": [
+    {
+     "file": "MODELS.json",
+     "sha256": "717bb14fcd56aaf4c2a246b586e83e367e7004ddeacb742360866f6e8c43ec24"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "15cd2cc6b177b1bfcfef095a8036f5a280019832c706991ce15fbbc74ae10ac1"
+    }
+   ]
+  },
+  {
+   "case": "wrong_basis",
+   "mutation": "Replace first basis vector; retain declared ordered-basis hash",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.8360202379990369,
+   "mutations": [
+    {
+     "file": "BASIS.json",
+     "sha256": "bbcd14edbec713fe8a69cc88d8a0d40fc9cdce49402c8ccee411dadcf545659e"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "6b13a01b1c49edf9efa192a5c7d3a10027a3e311900cbcba43b0398bfeb0c017"
+    }
+   ]
+  },
+  {
+   "case": "zero_overlap",
+   "mutation": "Set a transport link overlap to zero, below policy .5",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.8220534780011803,
+   "mutations": [
+    {
+     "file": "DIAGNOSTICS.jsonl",
+     "sha256": "fad335752d9cce80e81deabacb03202509182dcfc822514b4a97b4c50286726e"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "636a2464795e60a3c6855af6375ed29a2cb18e17308873245275df8841b2639f"
+    }
+   ]
+  },
+  {
+   "case": "wrong_frame_role",
+   "mutation": "Move transport:1 frame to a node coordinate that belongs to geometry but is not transport:1",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.7686151580019214,
+   "mutations": [
+    {
+     "file": "DIAGNOSTICS.jsonl",
+     "sha256": "b0fc16bae80cfbd3fc9590ed21b297803a454eed23b0524b9d901025cb11ac57"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "98a6225f87026645a1b8f09621502b3d52d9163db799d883e09a3bc9b82aace6"
+    }
+   ]
+  },
+  {
+   "case": "missing_link_frames",
+   "mutation": "Keep only node frames and angle increments; remove all links and other frames and update slice offsets/counts",
+   "manifest_refreshed": true,
+   "returncode": 0,
+   "checks": 77,
+   "failed": 0,
+   "wall_seconds": 0.36441859000115073,
+   "mutations": [
+    {
+     "file": "ROWS.jsonl",
+     "sha256": "520c0b5430a41c11bea2746a5c91e220127e5700ed9b1a417f9bf2739d5eccee"
+    },
+    {
+     "file": "DIAGNOSTICS.jsonl",
+     "sha256": "bb750550f53ac3a1ce24a01963a09d58dc0dc9712da764d99eab1a5a0db41c57"
+    },
+    {
+     "file": "MANIFEST.json",
+     "sha256": "396ca7a7d242965382b04c0eef708edd7dbbf11c96b01f3371ec35c4427f86b9"
+    }
+   ]
+  },
+  {
+   "case": "empty_manifest",
+   "mutation": "Replace run manifest with empty mapping while keeping files present",
+   "manifest_refreshed": false,
+   "returncode": 0,
+   "checks": 71,
+   "failed": 0,
+   "wall_seconds": 0.7084018999994441,
+   "mutations": [
+    {
+     "file": "MANIFEST.json",
+     "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    }
+   ]
+  }
+ ],
+ "consumer": [
+  {
+   "case": "late_geometry",
+   "returncode": 1,
+   "rows": 4,
+   "unique_case_ids": 4,
+   "run_status": null,
+   "files": [
+    "BASIS.json",
+    "DIAGNOSTICS.jsonl",
+    "ROWS.jsonl"
+   ],
+   "gate_statuses": [
+    "SYNTHETIC_RETURN"
+   ],
+   "scope": "synthetic stubs; not physics"
+  },
+  {
+   "case": "wrong_gate_status",
+   "returncode": 0,
+   "rows": 8,
+   "unique_case_ids": 8,
+   "run_status": "COMPLETE",
+   "files": [
+    "BASIS.json",
+    "DIAGNOSTICS.jsonl",
+    "GEOMETRY.json",
+    "MANIFEST.json",
+    "MODELS.json",
+    "ROWS.jsonl",
+    "SUMMARY.json"
+   ],
+   "gate_statuses": [
+    "REJECTED"
+   ],
+   "scope": "synthetic stubs; not physics"
+  },
+  {
+   "case": "duplicate_case",
+   "returncode": 0,
+   "rows": 8,
+   "unique_case_ids": 4,
+   "run_status": "COMPLETE",
+   "files": [
+    "BASIS.json",
+    "DIAGNOSTICS.jsonl",
+    "GEOMETRY.json",
+    "MANIFEST.json",
+    "MODELS.json",
+    "ROWS.jsonl",
+    "SUMMARY.json"
+   ],
+   "gate_statuses": [
+    "SYNTHETIC_RETURN"
+   ],
+   "scope": "synthetic stubs; not physics"
+  }
+ ]
+}

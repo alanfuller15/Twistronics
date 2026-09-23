@@ -1,0 +1,32 @@
+{
+  "scope": "Review unchanged v078p against the one-consumer v077 findings. One full positive replay; supplied failure-control program; helper/linter tests; bounded synthetic verifier and persistence controls. No numerical expansion.",
+  "frozen_before_first_execution": true,
+  "created_utc": "2026-09-23T01:10:18.208995+00:00",
+  "local_parent": "8c63a5b352d626e20626a36a42c1120b7d6497a5",
+  "public_parent": "dcd611449a7d61bcf7d0f93aeb47c66462c6c50a",
+  "archive_sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+  "budgets_seconds": {
+    "positive": 180,
+    "supplied_controls": 300,
+    "tests": 60,
+    "lint": 30,
+    "synthetic_consumer": 60,
+    "verifier_cases_each": 30
+  },
+  "numerical_comparison": {
+    "same_8_cases_and_labels": true,
+    "coordinates_exact": true,
+    "policy_model_source_basis_exact": true,
+    "non_timing_scalar_abs_tolerance": 1e-10,
+    "raw_diag_tolerance": 1e-10
+  },
+  "controls": [
+    "Unchanged intact verification; missing required geometry; unrefreshed angle corruption",
+    "Fresh-manifest semantic mutations: empty rows, duplicated row, wrong label, source hash, model parameter, basis identity, zero overlap, frame-role mismatch, missing diagnostic kinds",
+    "Consumer synthetic late geometry failure, duplicate case inventory, unexpected returned gate status",
+    "Linter wrong field binding and retained precision mismatch"
+  ],
+  "interpretation": "Rehashing synthetic invalid records tests semantic validation as for a newly produced run; it is not a bypass of a trusted external archive hash. Synthetic results are not graphene evidence.",
+  "retention": "Preserve original archive, complete generated run folders in ZIPs, subprocess output/return codes, exact mutations and verification reports. No extra eigenvectors or Hamiltonians.",
+  "publication": "Separate branch; no merge to main."
+}

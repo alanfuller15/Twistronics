@@ -1,0 +1,69 @@
+{
+  "source_sha256": "322ec7d02103334fe1a667b240fb0b9461166bf122c8fe7cfe29e8e9e4b82391",
+  "cases": [
+    {
+      "case": "correct_rounding",
+      "record": {
+        "gap_meV": 1.5259312e-10
+      },
+      "prose": "Node gap 1.53e-10 meV from `REC.json`.\n",
+      "valid_claim": true,
+      "linter_accepted": true,
+      "expected_behavior": true,
+      "findings": []
+    },
+    {
+      "case": "correct_four_digits",
+      "record": {
+        "gap_meV": 1.5259312e-10
+      },
+      "prose": "Node gap 1.526e-10 meV from `REC.json`.\n",
+      "valid_claim": true,
+      "linter_accepted": true,
+      "expected_behavior": true,
+      "findings": []
+    },
+    {
+      "case": "stale_third_digit",
+      "record": {
+        "gap_meV": 1.5259312e-10
+      },
+      "prose": "Node gap 1.61e-10 meV from `REC.json`.\n",
+      "valid_claim": false,
+      "linter_accepted": false,
+      "expected_behavior": true,
+      "findings": [
+        {
+          "rule": "R2-number",
+          "doc": "README.md",
+          "line": 1,
+          "value": "1.61e-10",
+          "text": "Node gap 1.61e-10 meV from `REC.json`."
+        }
+      ]
+    },
+    {
+      "case": "wrong_field",
+      "record": {
+        "overlap": 0.995703,
+        "unrelated": 0.73
+      },
+      "prose": "Measured overlap 0.730 from `REC.json`.\n",
+      "valid_claim": false,
+      "linter_accepted": true,
+      "expected_behavior": false,
+      "findings": []
+    },
+    {
+      "case": "incorrect_trailing_zero_precision",
+      "record": {
+        "gap_meV": 1.5259312e-10
+      },
+      "prose": "Node gap 1.530e-10 meV from `REC.json`.\n",
+      "valid_claim": false,
+      "linter_accepted": true,
+      "expected_behavior": false,
+      "findings": []
+    }
+  ]
+}

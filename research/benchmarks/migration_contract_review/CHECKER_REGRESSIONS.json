@@ -1,0 +1,207 @@
+[
+  {
+    "case": "consumer_duplicate_case",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 78,
+    "error_count": 15,
+    "first_errors": [
+      "current plan hash",
+      "declared source identity",
+      "summary expected case order",
+      "exact actual case inventory without duplicate/missing rows",
+      "model inventory",
+      "geometry inventory",
+      "accepted gate status B-0.25_v+1_r0.012",
+      "contiguous complete diagnostics slice B-0.25_v+1_r0.012"
+    ]
+  },
+  {
+    "case": "consumer_late_geometry",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 1,
+    "error_count": 1,
+    "first_errors": [
+      "required files"
+    ]
+  },
+  {
+    "case": "consumer_wrong_gate_status",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 94,
+    "error_count": 9,
+    "first_errors": [
+      "accepted gate status B-0.25_v+1_r0.012",
+      "contiguous complete diagnostics slice B-0.25_v+1_r0.012",
+      "diagnostic count and identity B-0.25_v+1_r0.012",
+      "diagnostic role/order/completeness B-0.25_v+1_r0.012",
+      "reconstructed node gaps B-0.25_v+1_r0.012",
+      "reconstructed winding sums B-0.25_v+1_r0.012",
+      "unit winding gate B-0.25_v+1_r0.012",
+      "label from winding product B-0.25_v+1_r0.012"
+    ]
+  },
+  {
+    "case": "duplicate_row",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 46838,
+    "error_count": 4,
+    "first_errors": [
+      "exact actual case inventory without duplicate/missing rows",
+      "accepted summary derived from rows",
+      "contiguous complete diagnostics slice B-0.25_v+1_r0.012",
+      "no unclaimed diagnostics"
+    ]
+  },
+  {
+    "case": "empty_manifest",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 7,
+    "first_errors": [
+      "manifest exact required-file coverage",
+      "file hash GEOMETRY.json",
+      "file hash DIAGNOSTICS.jsonl",
+      "file hash MODELS.json",
+      "file hash ROWS.jsonl",
+      "file hash SUMMARY.json",
+      "file hash BASIS.json"
+    ]
+  },
+  {
+    "case": "empty_rows",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 74,
+    "error_count": 4,
+    "first_errors": [
+      "exact actual case inventory without duplicate/missing rows",
+      "accepted summary derived from rows",
+      "complete accepted run",
+      "no unclaimed diagnostics"
+    ]
+  },
+  {
+    "case": "intact",
+    "expected_acceptance": true,
+    "actual_acceptance": true,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 0,
+    "first_errors": []
+  },
+  {
+    "case": "missing_geometry",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 1,
+    "error_count": 1,
+    "first_errors": [
+      "required files"
+    ]
+  },
+  {
+    "case": "missing_link_frames",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 298,
+    "error_count": 4,
+    "first_errors": [
+      "contiguous complete diagnostics slice B-0.25_v+1_r0.012",
+      "diagnostic count and identity B-0.25_v+1_r0.012",
+      "diagnostic role/order/completeness B-0.25_v+1_r0.012",
+      "Malformed or incomplete evidence: ValueError: min() iterable argument is empty"
+    ]
+  },
+  {
+    "case": "unrefreshed_angle",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 2,
+    "first_errors": [
+      "file hash DIAGNOSTICS.jsonl",
+      "reconstructed winding sums B-0.25_v+1_r0.012"
+    ]
+  },
+  {
+    "case": "wrong_basis",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 2,
+    "first_errors": [
+      "ordered basis and identity",
+      "basis internal hash"
+    ]
+  },
+  {
+    "case": "wrong_frame_role",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 1,
+    "first_errors": [
+      "exact frame role coordinate B-0.25_v+1_r0.012 transport:1"
+    ]
+  },
+  {
+    "case": "wrong_label",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 1,
+    "first_errors": [
+      "label from winding product B-0.25_v+1_r0.012"
+    ]
+  },
+  {
+    "case": "wrong_model",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 1,
+    "first_errors": [
+      "constructor defaults model_B-0.25_v+1_r0.012"
+    ]
+  },
+  {
+    "case": "wrong_source",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 1,
+    "first_errors": [
+      "declared source identity"
+    ]
+  },
+  {
+    "case": "zero_overlap",
+    "expected_acceptance": false,
+    "actual_acceptance": false,
+    "passed": true,
+    "checks": 51050,
+    "error_count": 1,
+    "first_errors": [
+      "link scalar gate B-0.25_v+1_r0.012 transport:1"
+    ]
+  }
+]

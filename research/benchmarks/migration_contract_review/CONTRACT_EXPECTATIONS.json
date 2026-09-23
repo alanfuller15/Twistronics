@@ -1,0 +1,372 @@
+{
+  "scope": "Frozen reference for these eight v078p cases only; source literals and separately hash-verified supplied basis/policy. Not a general topology verifier.",
+  "archive_sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+  "source_sha256": {
+    "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+    "guarded_sparse.py": "09b5626e64178850f5ad096d032e88208535b3621e4029fe00c3b59d0e5313c4",
+    "migrated_valley_control.py": "548219d961af1c57763a890f1f9d787b3e1e1ffae4c087c2af082e19ab146e2a",
+    "response_inputs.py": "7ff4de60922c3b40ef9f3670f0c59642c8867b4abdbb1f622fcb1fceed8b6a0d",
+    "partner_v074p.zip": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+    "PLAN_MIGRATION.json": "1d36e8cae984b55110a64a80760b08b9330fc0d1e01e1467cabccd8d2d90ddd9"
+  },
+  "plan": {
+    "version": "partner_migration_v078p",
+    "scope": "one consumer: guarded braid-label entry point for the valley control",
+    "frozen_before_run": true,
+    "model_defaults": {
+      "N": 4,
+      "eps": 0.003,
+      "phi_deg": 0.0,
+      "theta_deg": 1.05,
+      "A_scalar": 0.2,
+      "ratio": 0.8,
+      "w1": 110.0,
+      "kinetic": "lab_nn_full",
+      "geometry": "exact"
+    },
+    "B_values": [
+      -0.25,
+      -0.3
+    ],
+    "coupled_settings": [
+      [
+        0.012,
+        96,
+        300
+      ],
+      [
+        0.008,
+        192,
+        600
+      ]
+    ],
+    "coupled_settings_note": "two COUPLED settings (radius, loop intervals, transport intervals); not an independent radius-by-mesh product",
+    "node_search": {
+      "performed": true,
+      "function": "BM.find_nodes",
+      "ngrid": 15,
+      "nkeep": 6,
+      "accept_gap_meV": 1e-06,
+      "note": "this consumer DOES perform node discovery; it does not inherit the earlier campaign declaration of no node search"
+    },
+    "expected_cases": [
+      {
+        "case_id": "B-0.25_v+1_r0.012",
+        "B": -0.25,
+        "valley": 1,
+        "radius": 0.012,
+        "loop_intervals": 96,
+        "transport_intervals": 300
+      },
+      {
+        "case_id": "B-0.25_v-1_r0.012",
+        "B": -0.25,
+        "valley": -1,
+        "radius": 0.012,
+        "loop_intervals": 96,
+        "transport_intervals": 300
+      },
+      {
+        "case_id": "B-0.25_v+1_r0.008",
+        "B": -0.25,
+        "valley": 1,
+        "radius": 0.008,
+        "loop_intervals": 192,
+        "transport_intervals": 600
+      },
+      {
+        "case_id": "B-0.25_v-1_r0.008",
+        "B": -0.25,
+        "valley": -1,
+        "radius": 0.008,
+        "loop_intervals": 192,
+        "transport_intervals": 600
+      },
+      {
+        "case_id": "B-0.30_v+1_r0.012",
+        "B": -0.3,
+        "valley": 1,
+        "radius": 0.012,
+        "loop_intervals": 96,
+        "transport_intervals": 300
+      },
+      {
+        "case_id": "B-0.30_v-1_r0.012",
+        "B": -0.3,
+        "valley": -1,
+        "radius": 0.012,
+        "loop_intervals": 96,
+        "transport_intervals": 300
+      },
+      {
+        "case_id": "B-0.30_v+1_r0.008",
+        "B": -0.3,
+        "valley": 1,
+        "radius": 0.008,
+        "loop_intervals": 192,
+        "transport_intervals": 600
+      },
+      {
+        "case_id": "B-0.30_v-1_r0.008",
+        "B": -0.3,
+        "valley": -1,
+        "radius": 0.008,
+        "loop_intervals": 192,
+        "transport_intervals": 600
+      }
+    ],
+    "exit_policy": "exit 0 only when every expected case is ACCEPTED; rejected, blocked, no-pair, errored or missing cases exit 1",
+    "evidence": [
+      "SUMMARY.json",
+      "ROWS.jsonl",
+      "DIAGNOSTICS.jsonl",
+      "MODELS.json",
+      "GEOMETRY.json",
+      "BASIS.json",
+      "MANIFEST.json"
+    ],
+    "out_of_scope": [
+      "other consumers",
+      "sparse Newton or event detection",
+      "resolution or cutoff studies",
+      "any physics claim beyond the sampled labels"
+    ]
+  },
+  "policy": {
+    "reality_meV": 1e-09,
+    "hermiticity_meV": 1e-09,
+    "external_gap_meV": 1e-05,
+    "internal_gap_meV": 1e-06,
+    "root_gap_meV": 1e-06,
+    "overlap_min": 0.5,
+    "sewing_loss_max": 0.05,
+    "phase_step_max_rad": 2.356194490192345,
+    "unit_winding_tol": 0.15
+  },
+  "basis": {
+    "vectors": 49,
+    "sha256": "9840ff7943dab1fe656649197f9fc7559c9bde1208681b403168138240c2b590",
+    "ordered_indices": [
+      [
+        -4,
+        0
+      ],
+      [
+        -4,
+        1
+      ],
+      [
+        -4,
+        2
+      ],
+      [
+        -4,
+        3
+      ],
+      [
+        -3,
+        -1
+      ],
+      [
+        -3,
+        0
+      ],
+      [
+        -3,
+        1
+      ],
+      [
+        -3,
+        2
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -1,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        -1,
+        3
+      ],
+      [
+        0,
+        -3
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        -3
+      ],
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        2,
+        -2
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        3,
+        -2
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        -3
+      ],
+      [
+        4,
+        -2
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        4,
+        0
+      ]
+    ]
+  },
+  "model_defaults": {
+    "N": 4,
+    "eps": 0.003,
+    "phi_deg": 0.0,
+    "theta_deg": 1.05,
+    "A_scalar": 0.2,
+    "ratio": 0.8,
+    "w1": 110.0,
+    "nu": 0.16,
+    "beta": 3.14,
+    "kinetic": "lab_nn_full",
+    "geometry": "exact",
+    "cutoff_tol": 1e-06,
+    "mass": 0.0,
+    "Dfield": 0.0,
+    "w_kappa": 0.0,
+    "w_mode": "average"
+  },
+  "harmonic": {
+    "mat": "sz",
+    "use_sin": true,
+    "layer_sign": 1
+  },
+  "HBARV_meV_angstrom": 5944.0
+}
