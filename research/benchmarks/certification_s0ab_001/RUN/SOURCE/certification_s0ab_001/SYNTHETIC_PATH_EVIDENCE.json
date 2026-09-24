@@ -1,0 +1,27 @@
+{
+  "schema": "synthetic_exact_affine_path_v1",
+  "evidence_id": "FC49-77-S0Z-PATH-001",
+  "evidence_scope": "synthetic_shape_fixture",
+  "physical_model_evaluations": 0,
+  "assembly_artifact": "SYNTHETIC_AFFINE_ASSEMBLY.json",
+  "assembly_artifact_sha256": "f5e05ec95f9d3aa8cf0ff87402f8df51888ed3615cc2b68f779add3a7b6b3461",
+  "parameter_domain": {"t": ["0", "1/8"]},
+  "coordinate_formula": {"x": ["0", "1"], "y": ["0", "1/2"]},
+  "coordinate_semantics": "gamma_axis(t)=intercept+slope*t",
+  "declared_path_derivatives": {
+    "gamma1": ["1", "1/2"],
+    "gamma2": ["0", "0"],
+    "gamma3": ["0", "0"]
+  },
+  "declared_H_path_derivative_diagonals": {
+    "H1": ["-1", "1", "-1/2", "1/2"],
+    "H2": ["0", "0", "0", "0"],
+    "H3": ["0", "0", "0", "0"]
+  },
+  "norm": "operator",
+  "limitations": [
+    "one exact affine path only",
+    "no physical path",
+    "no transport execution"
+  ]
+}
