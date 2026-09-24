@@ -1,12 +1,12 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0l nonzero comparison and conditional finite-width extraction](S0L_STRESS.md).
-Fifteen frozen outcomes and six record-integrity controls pass. Nonzero
-same-class comparisons pass near the Frobenius screen boundary; a same-class
-case beyond that sufficient gate refuses. Declared finite phase errors test
-signed integer extraction and its halfwidth refusal. Those errors are not yet
-derived from numerical projectors. S0k audit is recorded in Claude 5806117739 /
-Codex 5806138647; S0l independent audit is pending.
+Latest: [S0m centred matrix screen and phase/repair perturbations](S0M_MATRIX.md).
+Ten frozen outcomes and six integrity controls pass. Actual computed matrix
+centres with mean-value cell debits certify a near-threshold bound of 0.999290
+at 4096 cells/edge. Sampled phases are perturbed; the error ledger charges
+repair uncertainty separately and refuses excessive width or branch error.
+Numerical projector error derivation remains open. S0l audit is recorded in
+Claude 5806294776 / Codex 5806311795; S0m independent audit is pending.
 General numerical transport, realistic-width geometric enclosures, uniform
 projector coverage and physical S1-S4 remain open.
 
