@@ -199,6 +199,10 @@ correction owner retains that work; frozen q001-q008 are unchanged.
 
 ## S0e correction handoff
 
+Latest additive work: [S0f conditional frame bridge](S0F_FRAME_BRIDGE.md),
+six fixed bridge checks and three integration controls, independent review pending.
+S0e review is recorded in Claude comment 5805000902 and Codex comment 5805023465.
+
 [S0e corrections](S0E_CORRECTIONS.md) and [PLAN_006](PLAN_006.json) supersede the
 S0d next-step status above. All 14 fixed expected outcomes and 10 protocol checks
 pass; independent review is pending. Full geometric composition remains open.
