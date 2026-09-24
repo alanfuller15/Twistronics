@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/twistronics/state.schema.json",
+  "title": "Twistronics evidence acceptance state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_label",
+    "status",
+    "claim_scope",
+    "source_bindings",
+    "binding_digest",
+    "reviews",
+    "exchange_count",
+    "max_exchanges",
+    "gate",
+    "notification"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "source_label": {"type": "string", "minLength": 1},
+    "status": {
+      "enum": ["DRAFT", "IN_REVIEW", "ACCEPTED", "BLOCKED", "MATERIAL_FINDING"]
+    },
+    "claim_scope": {"const": "RETAINED_EVIDENCE_ONLY"},
+    "source_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/binding"}
+    },
+    "binding_digest": {"$ref": "#/$defs/sha256"},
+    "reviews": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {"$ref": "reviewer-message.schema.json"}
+    },
+    "exchange_count": {"type": "integer", "minimum": 0, "maximum": 2},
+    "max_exchanges": {"const": 2},
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actual_bytes_verified", "issues"],
+      "properties": {
+        "actual_bytes_verified": {"type": "boolean"},
+        "issues": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "notification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alan_notification_required", "reason"],
+      "properties": {
+        "alan_notification_required": {"type": "boolean"},
+        "reason": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "size"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "size": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}
+

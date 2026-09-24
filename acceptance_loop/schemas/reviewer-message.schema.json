@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/twistronics/reviewer-message.schema.json",
+  "title": "Bounded reviewer message",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_id",
+    "reviewer",
+    "exchange",
+    "reviewed_binding_digest",
+    "verdict",
+    "claim_scope",
+    "evidence_refs",
+    "limitations",
+    "next_actions"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "reviewer": {"enum": ["ASTRA", "CLAUDE"]},
+    "exchange": {"type": "integer", "minimum": 1, "maximum": 2},
+    "reviewed_binding_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "verdict": {"enum": ["ACCEPT", "REQUEST_CHANGES", "MATERIAL_FINDING"]},
+    "claim_scope": {"const": "RETAINED_EVIDENCE_ONLY"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "next_actions": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

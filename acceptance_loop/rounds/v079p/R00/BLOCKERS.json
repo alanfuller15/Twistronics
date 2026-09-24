@@ -1,0 +1,31 @@
+{
+  "blockers": [
+    {
+      "id": "B1",
+      "required_closure": "Regenerate expectations and verification from one frozen source tree; the shipped verifier identity and retained verification must agree.",
+      "title": "Verifier identity mismatch and stale retained verification"
+    },
+    {
+      "id": "B2",
+      "required_closure": "Independent verification must hash actual source bytes and fail on missing, extra, or mismatched identities.",
+      "title": "Verifier compares declarations rather than source bytes"
+    },
+    {
+      "id": "B3",
+      "required_closure": "Exclude the manifest from its own entries and bind the completed archive with a detached digest.",
+      "title": "Outer manifest self-hash mismatch"
+    },
+    {
+      "id": "B4",
+      "required_closure": "Run the reviewer-owned linter on the actual README and retain zero violations.",
+      "title": "Deliverable claim lint reports 21 violations"
+    },
+    {
+      "id": "B5",
+      "required_closure": "Correctly label or replace the malformed checker invocation and retain a source-bound test execution log.",
+      "title": "Execution evidence is incomplete or ambiguous"
+    }
+  ],
+  "round_id": "TWI-ACC-v079p-R00-aaa1e43060d7"
+}
+

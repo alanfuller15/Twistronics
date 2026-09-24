@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "detail": "14 standard-library unit tests passed",
+      "id": "controller_unittests",
+      "status": "PASS"
+    },
+    {
+      "detail": "source and tests compile under Python 3.12",
+      "id": "compileall",
+      "status": "PASS"
+    },
+    {
+      "detail": "no subprocess, network client, NumPy, SciPy, or scientific workload dependency",
+      "id": "scope_scan",
+      "status": "PASS"
+    },
+    {
+      "detail": "review packet internal hashes and compressed data verified",
+      "id": "review_packet_integrity",
+      "status": "PASS"
+    }
+  ],
+  "claim_scope": "RETAINED_EVIDENCE_ONLY",
+  "limitations": [
+    "This verifies the acceptance controller and blocker ledger, not the scientific workload.",
+    "The original v079p packet remains blocked by B1 through B5.",
+    "Physical S1, continuous braid proof, cutoff convergence, and the composed physical error budget remain open."
+  ],
+  "reviewer": "ASTRA",
+  "round_id": "TWI-ACC-v079p-R00-aaa1e43060d7"
+}
