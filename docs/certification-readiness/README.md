@@ -1,10 +1,11 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0j independent sewing and curved Kato fixture](S0J_CURVED.md).
-Nine frozen outcomes and six record-integrity controls pass. Rodrigues sewing
-is defined without calling the measured frame; curved analytic cases recover
-q=-1,0,+1 and reject the wrong transport order. S0i audit is recorded in
-Claude 5805883761 / Codex 5805894231; S0j independent audit is pending.
+Latest: [S0k curved partial-shift composition](S0K_COMBINED.md).
+Eight frozen outcomes and six record-integrity controls pass. Nonzero curvature,
+principal repair, both partial-shift deficits and the relative screen are combined;
+orientation, repair-sign and singular-gate controls refuse as intended.
+S0j audit is recorded in Claude 5806020671 / Codex 5806035978;
+S0k independent audit is pending.
 General numerical transport, realistic-width geometric enclosures, uniform
 projector coverage and physical S1-S4 remain open.
 

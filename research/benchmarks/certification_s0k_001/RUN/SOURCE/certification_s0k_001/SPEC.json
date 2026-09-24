@@ -1,0 +1,94 @@
+{
+  "id": "FC49-77-S0K-001",
+  "parent": "ac5e6d8d1630d66c91d23082c383651bd3a42d42",
+  "source_review": 5806020671,
+  "scope": "Curved repair partial-shift and relative-screen analytic composition",
+  "backend": {
+    "python_flint": "0.9.0",
+    "flint": "3.6.0",
+    "threads": 1,
+    "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+  },
+  "limits": {
+    "global_wall_seconds": 180,
+    "job_wall_seconds": 40,
+    "worker_address_bytes": 1073741824,
+    "retries": 0
+  },
+  "jobs": [
+    {
+      "id": "negative",
+      "winding": -1,
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "CURVED_REPAIRED_PARTIAL_CLASS",
+      "expected_q": -1
+    },
+    {
+      "id": "zero",
+      "winding": 0,
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "CURVED_REPAIRED_PARTIAL_CLASS",
+      "expected_q": 0
+    },
+    {
+      "id": "positive",
+      "winding": 1,
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "CURVED_REPAIRED_PARTIAL_CLASS",
+      "expected_q": 1
+    },
+    {
+      "id": "orientation_fault",
+      "winding": 1,
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "ORIENTATION_REFERENCE_REFUSED"
+    },
+    {
+      "id": "wrong_repair",
+      "winding": 1,
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "EXACT_GLUING_REQUIRED"
+    },
+    {
+      "id": "singular_gate",
+      "winding": 1,
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "SEAM_SINGULAR_GATE",
+      "denominator": 8
+    },
+    {
+      "id": "pair_equal",
+      "winding": 1,
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "SYNTHETIC_RELATIVE_WINDING_CLASS",
+      "other_winding": 1
+    },
+    {
+      "id": "pair_unequal",
+      "winding": 1,
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "JOINT_EDGE_SCREEN",
+      "other_winding": -1
+    }
+  ],
+  "dependencies": {
+    "certification_s0h_001/cases.py": "8c60951e5fb93b1c8b2ad5f0981d6f1e48c010c7fef672bbcb45939078e1502a",
+    "certification_s0f_001/primitives_s0f.py": "1e0029ab1cfc0ddfefcd0fc58ae3e746f7134b596d12ff197cf9bcae3483bf30",
+    "certification_s0b_001/runner_io.py": "b23d4aa027cf7f518d8f195e428ecb81c5c29f0d42bdf38436b730b8a6949708",
+    "certification_s0b_001/run_calibration.py": "f4823d37fa5ef6be36feeda4ac78624ef967fa2efbbdd65c370f54df6a900631",
+    "certification_s0f_001/frame_bridge.py": "fd1ed97b9ea976f344e247757e89da0e7f845c229475b1f41b26f52898a772de",
+    "certification_s0f_001/certified_s0f.py": "8e38781d6d3885a43022a772d908b1f4348406d37f9c14de80ff83f0f377e255",
+    "certification_s0f_001/pair_s0f.py": "7b4667262188648513b2c2b5e47ddbb24cf068d36273f4d26f925776037219fe",
+    "certification_s0i_001/cases.py": "fddd400278d2ccb035e62dc03d838081659fd7cc5562d147fc67ac4660c1b914",
+    "certification_s0j_001/cases.py": "51ebeedcea2b83eb4b50d57937948f648f9bab13f11819d89f10587ba01a82fd",
+    "certification_s0j_001/sewing.py": "9814113c3006abbeabc7e0ef811f647891230a8145553b76ee3e3757ac8e5c0a"
+  }
+}
