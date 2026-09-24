@@ -15,10 +15,10 @@ from pathlib import Path
 import common
 
 
-def trim_timeout_fragment(path: Path) -> None:
+def trim_timeout_fragment(path: Path) -> tuple[int, int]:
     data = path.read_bytes()
     if data.endswith(b"\n"):
-        return
+        return len(data), len(data)
     cut = data.rfind(b"\n")
     if cut < 0:
         raise RuntimeError("TIMEOUT_LOG_HAS_NO_COMPLETE_HEADER")
@@ -27,6 +27,7 @@ def trim_timeout_fragment(path: Path) -> None:
         stream.flush()
         os.fsync(stream.fileno())
     common.fsync_directory(path.parent)
+    return len(data), cut + 1
 
 
 def main() -> int:
@@ -45,6 +46,8 @@ def main() -> int:
     common.verify_implementation_files()
     spec, _, _ = common.load_frozen_state()
     test_mode = args.evaluator == "synthetic"
+    if args.fault != "none" and not test_mode:
+        raise RuntimeError("FAULT_INJECTION_REQUIRES_SYNTHETIC_MODE")
     if (args.test_soft_seconds is not None or args.test_hard_seconds is not None) and not test_mode:
         raise RuntimeError("DEADLINE_OVERRIDE_REQUIRES_SYNTHETIC_MODE")
     soft = args.test_soft_seconds if test_mode and args.test_soft_seconds is not None else spec["limits"]["worker_wall_seconds"]
@@ -63,7 +66,10 @@ def main() -> int:
         command += ["--wheel", str(args.wheel.resolve())]
 
     started = time.monotonic()
-    proc = subprocess.Popen(command, start_new_session=True)
+    worker_env = dict(os.environ)
+    worker_env["OPENBLAS_NUM_THREADS"] = "1"
+    worker_env["OMP_NUM_THREADS"] = "1"
+    proc = subprocess.Popen(command, start_new_session=True, env=worker_env)
     sigterm_at = sigkill_at = None
     deadline_signal_sent = False
     while proc.poll() is None:
@@ -93,8 +99,15 @@ def main() -> int:
         group_empty = False
 
     log_path = output / "ATTEMPTS.ndjson"
+    fault_ready_path = output / "FAULT_READY"
+    fault_ready_observed = fault_ready_path.is_file()
+    pre_trim_bytes = log_path.stat().st_size if log_path.is_file() else 0
+    post_trim_bytes = pre_trim_bytes
     if deadline_signal_sent and log_path.is_file():
-        trim_timeout_fragment(log_path)
+        pre_trim_bytes, post_trim_bytes = trim_timeout_fragment(log_path)
+    if fault_ready_path.exists():
+        fault_ready_path.unlink()
+        common.fsync_directory(output)
     log_bytes = log_path.read_bytes() if log_path.is_file() else b""
     if deadline_signal_sent:
         termination_reason = "WATCHDOG_TIMEOUT"
@@ -107,6 +120,8 @@ def main() -> int:
         "approved_protocol_commit": common.APPROVED_PROTOCOL_COMMIT,
         "implementation_commit": args.implementation_commit,
         "monotonic_start": started,
+        "soft_deadline_at": started + soft,
+        "hard_deadline_at": started + hard,
         "sigterm_sent_at_or_null": sigterm_at,
         "sigkill_sent_at_or_null": sigkill_at,
         "reaped_at": reaped_at,
@@ -116,6 +131,10 @@ def main() -> int:
         "durable_log_sha256": hashlib.sha256(log_bytes).hexdigest(),
         "termination_reason": termination_reason,
         "test_mode": test_mode,
+        "fault": args.fault,
+        "fault_ready_observed": fault_ready_observed,
+        "pre_trim_durable_log_bytes": pre_trim_bytes,
+        "post_trim_durable_log_bytes": post_trim_bytes,
     }
     common.atomic_json(output / "SUPERVISOR_RECEIPT.json", receipt)
 

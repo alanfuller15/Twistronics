@@ -89,16 +89,17 @@ def main() -> int:
         raise RuntimeError("OUTPUT_MUST_BE_EXISTING_EMPTY_DIRECTORY")
     common.verify_implementation_files()
     spec, _, _ = common.load_frozen_state()
+    if args.fault != "none" and args.evaluator != "synthetic":
+        raise RuntimeError("FAULT_INJECTION_REQUIRES_SYNTHETIC_MODE")
     resource.setrlimit(resource.RLIMIT_AS,
                        (spec["limits"]["address_space_bytes"], spec["limits"]["address_space_bytes"]))
     if args.evaluator == "physical" and args.wheel is None:
         raise RuntimeError("PHYSICAL_EVALUATOR_REQUIRES_WHEEL")
     evaluator = SyntheticEvaluator() if args.evaluator == "synthetic" else PhysicalEvaluator(args.wheel, spec)
-    if args.evaluator == "physical":
-        observed = common.sha256_bytes(common.canonical_object_bytes(
-            evaluator.runtime_provenance))
-        if observed != args.runtime_provenance_digest:
-            raise RuntimeError("RUNTIME_PROVENANCE_DIGEST_MISMATCH")
+    observed = common.sha256_bytes(common.canonical_object_bytes(
+        evaluator.runtime_provenance))
+    if observed != args.runtime_provenance_digest:
+        raise RuntimeError("RUNTIME_PROVENANCE_DIGEST_MISMATCH")
 
     header_unsigned = {
         "kind": "header",
@@ -109,8 +110,10 @@ def main() -> int:
         "predecessor_results_sha256": common.PREDECESSOR_RESULTS_SHA256,
         "implementation_commit": args.implementation_commit,
         "runtime_provenance_digest": args.runtime_provenance_digest,
+        "runtime_provenance": evaluator.runtime_provenance,
         "evaluator": args.evaluator,
         "test_mode": args.evaluator == "synthetic",
+        "fault": args.fault,
         "hash_encoding": "record_sha256=sha256(canonical object without record_sha256); previous_record_sha256=sha256(exact prior canonical line bytes excluding newline)",
     }
     _, header_line, previous_line_sha = common.hashed_record(header_unsigned)
