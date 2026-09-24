@@ -1,12 +1,13 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0h common-geometry composition and dense calibration](S0H_COMPOSITION.md),
-12/12 expected outcomes and six record-integrity controls. One analytic rectangle
-now joins the bottom/vertical gauge, two-point seams, actual corner repair,
-both lifts and a separate Q screen. Dense pointwise Riesz-to-frame tests pass
-at dimensions 196 and 308. S0g review completed in Claude 5805215136 / Codex
-5805230712; S0h independent audit is pending. Uniform numerical projector
-coverage, representative conditioning and physical S1-S4 remain open.
+Latest: [S0i nonzero sewing and integer consistency](S0I_WINDING.md).
+Known +1/-1 and swapped-edge signs, same/different-class joint screens,
+structural repair convention and the contradiction error are exercised.
+Sixteen frozen outcomes and six record-integrity controls pass. Dense
+196/308 calibrations now retain timing/resource counters. S0h audit is
+recorded in Claude 5805761394 / Codex 5805777568; S0i audit is pending.
+Uniform numerical projector coverage, curved strip transport, representative
+conditioning and physical S1-S4 remain open.
 
 Date: 2026-09-23. Status: source-level proof independently audited for the
 declared case. Claude comment [5791880416](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791880416)
