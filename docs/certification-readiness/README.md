@@ -196,3 +196,9 @@ protocol controls; independent review is pending. The next bounded slice is
 composition of these primitives with the exact principal repair and joint
 relative integer enclosure before any physical-model execution. The v078
 correction owner retains that work; frozen q001-q008 are unchanged.
+
+## S0e correction handoff
+
+[S0e corrections](S0E_CORRECTIONS.md) and [PLAN_006](PLAN_006.json) supersede the
+S0d next-step status above. All 14 fixed expected outcomes and 10 protocol checks
+pass; independent review is pending. Full geometric composition remains open.
