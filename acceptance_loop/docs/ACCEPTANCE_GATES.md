@@ -6,6 +6,10 @@ logs are evidence inputs; the reviewer-controlled harness decides acceptance.
 Only `PASS` advances. `FAIL`, `ERROR`, `SKIPPED`, `MISSING`, and `NOT_RUN` all
 block publication.
 
+Every G00-G17 result and every mandatory negative control must cite a retained
+evidence path and SHA-256 from the candidate's exact evidence binding. The
+complete ledgers are part of the canonical descriptor reviewed by both agents.
+
 | Gate | Requirement |
 |---|---|
 | G00 | Candidate identity was approved before evidence generation. |
@@ -41,4 +45,3 @@ The immutable order is:
 Any upstream byte change invalidates every downstream artifact and starts a
 new round. These gates do not require or authorize a numerical or scientific
 rerun.
-

@@ -16,12 +16,13 @@ These rules apply to every human or automated worker in this repository.
 
 ## Review loop
 
-- A candidate is identified by the SHA-256 digest of the sorted, canonical list
-  of actual source-byte hashes and sizes.
+- A candidate is identified by a canonical descriptor digest binding round,
+  commit, artifact, exact source/evidence bytes, G00-G17 results, and mandatory
+  negative controls.
 - Reject missing, extra-declared, duplicate, escaping, non-regular, or symlinked
   source bindings.
-- Astra and Claude may each submit at most one review envelope. The combined
-  maximum is two exchanges.
+- Astra and Claude may each submit at most one review envelope, in that order.
+  The combined maximum is two exchanges and both must cite bound evidence.
 - Never acknowledge an acknowledgement. Never continue a blocked candidate.
 - Corrections create a new candidate binding and a new state file.
 - Evidence referenced by a review must be retained and accessible; otherwise
@@ -40,9 +41,9 @@ Do not send progress nudges, idle notices, or intermediate acknowledgements for
 
 ## Packaging
 
-- Package only from `ACCEPTED` state.
+- Package only the exact evidence binding from `PREPACKAGE_ACCEPTED`; publish
+  only after staged G16 clean extraction and G17 detached attestation pass.
 - `MANIFEST.json` must not list or hash itself.
 - `PACKAGE.sha256` must remain outside the ZIP as a detached digest.
 - Reject symlinks and non-regular files.
 - Retain limitations and reviewer source IDs in the state evidence.
-

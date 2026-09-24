@@ -1,0 +1,22 @@
+{
+  "closures": [
+    "Reviewer envelopes now retain normalized GitHub transport receipts whose source ID, repository URL, event type, timestamp, body hash, fetched commit and envelope hash are validated; the authorized connector remains the authentication boundary.",
+    "Every G00-G17 and negative-control result now uses a distinct typed execution receipt whose gate-specific checker and every input/output resolve to exact source/evidence bindings.",
+    "G00-G15 and ordered reviews produce PREPACKAGE_ACCEPTED; staged packaging performs G16 clean extraction and G17 detached attestation before final publication.",
+    "The ZIP, digest and full G17 attestation are staged together and exposed only by one directory rename; postcheck or attestation-write failure leaves no final bundle.",
+    "Public protocol and machine schema use the same field names and status vocabulary."
+  ],
+  "limitations": [
+    "The standard-library controller cannot cryptographically authenticate GitHub; the authorized connector verifies live events before normalization.",
+    "Typed receipts enforce structure, binding and checker identity, while domain-specific checker correctness remains an independent review responsibility.",
+    "Notification deduplication and repeated-blocker escalation remain outer-coordinator responsibilities.",
+    "Physical S1, continuous braid proof, cutoff convergence and the composed physical budget remain out of scope."
+  ],
+  "local_verification": {
+    "compileall": "PASS",
+    "json_parse": "PASS",
+    "prohibited_import_scan": "PASS",
+    "unit_tests": "26/26 PASS"
+  },
+  "round_id": "TWI-ACC-v079p-R02-aaa1e43060d7"
+}

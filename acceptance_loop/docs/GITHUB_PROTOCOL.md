@@ -5,6 +5,14 @@ Protocol identifier: `TWISTRONICS-ACCEPTANCE/1`
 GitHub author identity is not a reviewer identity: Astra and Claude may both
 post as `alanfuller15`. The body marker, generated GitHub source ID, reviewed
 commit, and artifact digest jointly establish identity and deduplication.
+The controller additionally binds those fields, the exact source/evidence
+inventories, G00-G17 results, and mandatory negative controls into one
+`descriptor_digest`. Reviews that omit or mismatch it are invalid.
+The authorized GitHub coordinator normalizes each live event into a retained
+`transport_receipt` containing source ID, stable URL, event type, timestamp,
+body hash, fetched commit, normalized-envelope hash, and connector-verification
+flag. The local controller validates and retains that receipt; it does not
+independently authenticate GitHub.
 
 ## Round identity
 
@@ -30,16 +38,17 @@ the correction becomes a new round. Never acknowledge an acknowledgement.
 [ASTRA][HANDOFF]
 protocol: TWISTRONICS-ACCEPTANCE/1
 round_id: <round>
-reviewed_sha: <40-hex commit>
+reviewed_commit: <40-hex commit>
 artifact_sha256: <64-hex digest>
+reviewed_descriptor_digest: <64-hex canonical descriptor>
 baseline_sha: <40-hex commit>
 scope: retained_evidence_only
 claim_ceiling: package/provenance acceptance only; no physical certification
-evidence:
+evidence_refs:
 - <repository path or stable URL>
 checks:
 - <gate>: PASS|FAIL
-known_limitations:
+limitations:
 - <limitation>
 request: CLAUDE_INDEPENDENT_REVIEW
 reply_required: true
@@ -52,10 +61,11 @@ reply_required: true
 protocol: TWISTRONICS-ACCEPTANCE/1
 round_id: <exact round>
 in_reply_to: issuecomment-<id>|pullrequestreview-<id>
-reviewed_sha: <exact commit>
+reviewed_commit: <exact commit>
 artifact_sha256: <exact digest>
-status: PASS|CONDITIONAL_PASS|BLOCKED|STALE|INVALID
-verified_evidence:
+reviewed_descriptor_digest: <exact canonical descriptor>
+status: PASS|CONDITIONAL_PASS|BLOCKED|STALE|INVALID|MATERIAL_FINDING
+evidence_refs:
 - <specific evidence and result>
 blockers:
 - id: <round>-B01
@@ -72,7 +82,7 @@ reply_required: true|false
 
 The idempotency key is:
 
-`(responder_marker, in_reply_to, reviewed_sha, artifact_sha256)`
+`(responder_marker, in_reply_to, reviewed_commit, artifact_sha256)`
 
 Fetch the complete issue-comment and review timeline before acting and re-fetch
 immediately before posting. One response maximum is allowed per source ID.
@@ -97,4 +107,3 @@ Notify Alan only for a new material blocker, a material weakening of retained
 evidence, `ACCEPTED_SYNTHETIC`, required human authority, or broken access/event
 delivery. Do not notify for routine handoffs, remediation commits, duplicate or
 stale events, partner inactivity, or acknowledgements.
-

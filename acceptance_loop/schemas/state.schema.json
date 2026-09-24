@@ -1,74 +1,52 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/twistronics/state.schema.json",
-  "title": "Twistronics evidence acceptance state",
+  "title": "Twistronics evidence acceptance state v2",
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "schema_version",
-    "source_label",
-    "status",
-    "claim_scope",
-    "source_bindings",
-    "binding_digest",
-    "reviews",
-    "exchange_count",
-    "max_exchanges",
-    "gate",
-    "notification"
+    "schema_version", "protocol", "round_id", "baseline_sha", "reviewed_commit",
+    "artifact_sha256", "source_label", "status", "claim_scope", "source_bindings",
+    "source_binding_digest", "evidence_bindings", "evidence_binding_digest",
+    "gate_results", "negative_controls", "descriptor_digest", "reviews",
+    "exchange_count", "max_exchanges", "gate", "notification"
   ],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"const": 2},
+    "protocol": {"const": "TWISTRONICS-ACCEPTANCE/1"},
+    "round_id": {"type": "string", "pattern": "^TWI-ACC-v079p-R[0-9]{2}-[0-9a-f]{12}$"},
+    "baseline_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "reviewed_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifact_sha256": {"$ref": "#/$defs/sha256"},
     "source_label": {"type": "string", "minLength": 1},
-    "status": {
-      "enum": ["DRAFT", "IN_REVIEW", "ACCEPTED", "BLOCKED", "MATERIAL_FINDING"]
-    },
+    "status": {"enum": ["DRAFT", "IN_REVIEW", "PREPACKAGE_ACCEPTED", "ACCEPTED", "BLOCKED", "MATERIAL_FINDING"]},
     "claim_scope": {"const": "RETAINED_EVIDENCE_ONLY"},
-    "source_bindings": {
-      "type": "array",
-      "minItems": 1,
-      "uniqueItems": true,
-      "items": {"$ref": "#/$defs/binding"}
-    },
-    "binding_digest": {"$ref": "#/$defs/sha256"},
-    "reviews": {
-      "type": "array",
-      "maxItems": 2,
-      "items": {"$ref": "reviewer-message.schema.json"}
-    },
+    "source_bindings": {"$ref": "#/$defs/bindings"},
+    "source_binding_digest": {"$ref": "#/$defs/sha256"},
+    "evidence_bindings": {"$ref": "#/$defs/bindings"},
+    "evidence_binding_digest": {"$ref": "#/$defs/sha256"},
+    "gate_results": {"type": "object", "minProperties": 18, "maxProperties": 18},
+    "negative_controls": {"type": "object", "minProperties": 19, "maxProperties": 19},
+    "descriptor_digest": {"$ref": "#/$defs/sha256"},
+    "reviews": {"type": "array", "maxItems": 2, "items": {"$ref": "reviewer-message.schema.json"}},
     "exchange_count": {"type": "integer", "minimum": 0, "maximum": 2},
     "max_exchanges": {"const": 2},
-    "gate": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["actual_bytes_verified", "issues"],
-      "properties": {
-        "actual_bytes_verified": {"type": "boolean"},
-        "issues": {"type": "array", "items": {"type": "string"}}
-      }
-    },
-    "notification": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["alan_notification_required", "reason"],
-      "properties": {
-        "alan_notification_required": {"type": "boolean"},
-        "reason": {"type": "string"}
-      }
-    }
+    "gate": {"type": "object"},
+    "notification": {"type": "object"}
   },
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "binding": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["path", "sha256", "size"],
-      "properties": {
-        "path": {"type": "string", "minLength": 1},
-        "sha256": {"$ref": "#/$defs/sha256"},
-        "size": {"type": "integer", "minimum": 0}
+    "bindings": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "sha256", "size"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/sha256"},
+          "size": {"type": "integer", "minimum": 0}
+        }
       }
     }
   }
 }
-
