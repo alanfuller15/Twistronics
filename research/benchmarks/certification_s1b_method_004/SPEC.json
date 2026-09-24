@@ -1,0 +1,40 @@
+{
+  "schema": "twistronics_s1b_diagonal_minimum_probe_spec_v1",
+  "spec_id": "FC49-77-S1B-METHOD-004",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "parent_reviewed_commit": "aab6bae4df0e8337322a2a57bcfdd4b8f5548521",
+  "parent_packet": "research/benchmarks/certification_s1b_method_003",
+  "precision_bits": 128,
+  "recomputation_decimal_digits": 10,
+  "cutoff_order": ["a", "b"],
+  "target_point": ["23/32", "23/32"],
+  "probe_cells": [
+    [2, 2, 2], [2, 3, 3],
+    [3, 5, 5], [3, 6, 6],
+    [4, 11, 11], [4, 12, 12],
+    [5, 22, 22], [5, 23, 23],
+    [6, 45, 45], [6, 46, 46],
+    [7, 91, 91], [7, 92, 92],
+    [8, 183, 183], [8, 184, 184],
+    [9, 367, 367], [9, 368, 368]
+  ],
+  "limits": {
+    "physical_cases": 1,
+    "parameter_sweeps": 0,
+    "probe_cells_total": 32,
+    "primary_factorizations_total": 128,
+    "max_recomputation_factorizations": 128,
+    "max_factorizations_total": 256,
+    "worker_processes": 1,
+    "wall_seconds": 480,
+    "address_bytes": 2147483648
+  },
+  "method": {
+    "name": "two-sided frozen diagonal-minimum direct affine-cell interval inertia",
+    "chains": "for depths 2 through 9, the two diagonal cells with centres bracketing (23/32,23/32)",
+    "primary_congruence": "midpoint eigenvectors serialized with 17 significant digits and certified nonsingular",
+    "accepted_cell_recomputation": "recorded shifts recomputed with midpoint eigenvectors independently rounded to 10 significant digits and separately certified nonsingular",
+    "acceptance": "all four primary and all four recomputation LDL factorizations certify with the required negative counts"
+  },
+  "claim_ceiling": "S1B_DIAGONAL_MINIMUM_METHOD_FEASIBILITY_ONLY_NO_DOMAIN_COVER_OR_UNIFORM_ISOLATION"
+}
