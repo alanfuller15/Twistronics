@@ -1,5 +1,10 @@
 # From the seam theorem to the archived finite model
 
+Latest: [S0g batched gauge/repair controls](S0G_BATCH.md), 12/12 expected
+outcomes under the environment-locked runner and six record-integrity controls.
+S0f review completed in Claude 5805089819 / Codex 5805109052. S0g independent
+audit is pending. The full geometric composition and physical S1-S4 remain open.
+
 Date: 2026-09-23. Status: source-level proof independently audited for the
 declared case. Claude comment [5791880416](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791880416)
 and Codex review [5288846821](https://github.com/alanfuller15/Twistronics/pull/2#pullrequestreview-5288846821)
