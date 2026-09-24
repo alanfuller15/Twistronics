@@ -59,8 +59,10 @@ software and provenance without reproducing the scientific calculation.
 This is specialist work and is not a first-time reproduction exercise. It
 requires the exact case declaration, source and artifact digests, arithmetic
 backend, finite budgets, gate semantics, and retained limitations. Do not begin
-S1b or later work merely because an S1a file exists; verify that its independent
-audit gate closed for the same commit and packet.
+S1b or later work merely because an S1a file exists. The S1a hardening audit
+closed for commit `654ef460…`; a later or modified packet needs its own exact
+binding. S1b must also carry the remaining gate that connects the locked wheel
+to the loaded extension and native-library files.
 
 ## Reporting a reproduction
 

@@ -18,7 +18,7 @@ specific report or frozen contract take precedence over this orientation page.
 | `p` suffix | Used in partner/review package names such as v078p and v079p. Consult that packet's manifest; the suffix does not imply publication or physical certification |
 | S0 series | Bounded certification-readiness work, generally synthetic arithmetic, interface, provenance, or control validation |
 | S1a | The bounded fixed-case physical affine-assembly bridge retained in draft PR #5 |
-| S1b | The proposed next physical stage: bounded interval-inertia coverage for uniform isolation, subject to the S1a audit gate |
+| S1b | The next bounded physical stage: interval-inertia coverage for uniform isolation. The S1a hardening audit gate passed at commit `654ef460…`; no S1b result is public in this status snapshot |
 | S1–S4 | Staged physical certification work defined by the corresponding declaration and plan; later labels must not be assumed complete |
 | G00–G17 | Acceptance-loop gate identifiers for provenance, reviews, packaging, extraction, and attestation; they do not certify the physics |
 | Draft PR | Public, reviewable work that is not part of the default branch and may still change |
