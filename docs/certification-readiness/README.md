@@ -1,11 +1,12 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0k curved partial-shift composition](S0K_COMBINED.md).
-Eight frozen outcomes and six record-integrity controls pass. Nonzero curvature,
-principal repair, both partial-shift deficits and the relative screen are combined;
-orientation, repair-sign and singular-gate controls refuse as intended.
-S0j audit is recorded in Claude 5806020671 / Codex 5806035978;
-S0k independent audit is pending.
+Latest: [S0l nonzero comparison and conditional finite-width extraction](S0L_STRESS.md).
+Fifteen frozen outcomes and six record-integrity controls pass. Nonzero
+same-class comparisons pass near the Frobenius screen boundary; a same-class
+case beyond that sufficient gate refuses. Declared finite phase errors test
+signed integer extraction and its halfwidth refusal. Those errors are not yet
+derived from numerical projectors. S0k audit is recorded in Claude 5806117739 /
+Codex 5806138647; S0l independent audit is pending.
 General numerical transport, realistic-width geometric enclosures, uniform
 projector coverage and physical S1-S4 remain open.
 
