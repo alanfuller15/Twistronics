@@ -1,9 +1,12 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0g batched gauge/repair controls](S0G_BATCH.md), 12/12 expected
-outcomes under the environment-locked runner and six record-integrity controls.
-S0f review completed in Claude 5805089819 / Codex 5805109052. S0g independent
-audit is pending. The full geometric composition and physical S1-S4 remain open.
+Latest: [S0h common-geometry composition and dense calibration](S0H_COMPOSITION.md),
+12/12 expected outcomes and six record-integrity controls. One analytic rectangle
+now joins the bottom/vertical gauge, two-point seams, actual corner repair,
+both lifts and a separate Q screen. Dense pointwise Riesz-to-frame tests pass
+at dimensions 196 and 308. S0g review completed in Claude 5805215136 / Codex
+5805230712; S0h independent audit is pending. Uniform numerical projector
+coverage, representative conditioning and physical S1-S4 remain open.
 
 Date: 2026-09-23. Status: source-level proof independently audited for the
 declared case. Claude comment [5791880416](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791880416)
