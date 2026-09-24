@@ -1,11 +1,19 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0o derivative validation and polar derivative](S0O_DERIVATIVES.md).
+Latest: [S0p cellwise overlap and polar derivatives](S0P_CELL_DERIVATIVES.md).
+Eight fixed outcomes and six integrity controls pass. Four declared cells
+enclose dM by the frame product rule and dU by the entrywise polar derivative,
+with uniform amplification bounds. The missing edge-1 sign mutation and three
+domain refusals pass. S0o audit is recorded in Claude 5806697692 / Codex
+5299181707. S0p independent audit is pending; numerical projector and transport
+derivatives remain open.
+
+Previous: [S0o derivative validation and polar derivative](S0O_DERIVATIVES.md).
 Fourteen fixed controls and six integrity controls pass. This corrects the
 central-difference proposal: L3 h²/6 requires a third-derivative bound; L2 alone
 supports L2 h/2. It checks the actual S0n derivative against computed maps and
 adds an entrywise 2×2 polar derivative primitive. S0n audit is recorded in Claude
-5806604653 / Codex 5299127974. S0o independent audit is pending.
+5806604653 / Codex 5299127974. S0o independent audit is complete.
 
 Previous: [S0n second-order matrix calibration](S0N_SECOND_ORDER.md).
 Ten frozen outcomes, six integrity controls and 32 fixed rotation identities
