@@ -1,5 +1,12 @@
 # From the seam theorem to the archived finite model
 
+Latest physical status: [S1b bounded interval inertia](S1B_INTERVAL_INERTIA.md).
+The exact retained packet passes replay-free verification of 420 interval
+factorizations and 93,072 signed pivots, but reaches the frozen wall budget
+before any complete closed-cell cover. Its result is `INCONCLUSIVE`, not a
+physical gap closure. S2-S4, topology, cutoff convergence, and experimental
+claims remain unexecuted.
+
 Latest: [S0p cellwise overlap and polar derivatives](S0P_CELL_DERIVATIVES.md).
 Eight fixed outcomes and six integrity controls pass. Four declared cells
 enclose dM by the frame product rule and dU by the entrywise polar derivative,

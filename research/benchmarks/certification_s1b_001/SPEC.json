@@ -1,0 +1,53 @@
+{
+  "schema": "twistronics_s1b_interval_inertia_spec_v1",
+  "spec_id": "FC49-77-S1B-001",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "parent_reviewed_commit": "654ef460af1dc9594457feff37cf04d628f7d558",
+  "case_path": "docs/certification-readiness/CASE.json",
+  "plan_path": "docs/certification-readiness/PLAN.json",
+  "parent_packet": "research/benchmarks/certification_s1a_hardening_001",
+  "stage": "S1b",
+  "scope": "closed-cell uniform external-gap attempt by certified interval inertia",
+  "target_external_gap_lower_meV": "0.00001",
+  "cutoff_order": ["a", "b"],
+  "precision_bits": [128, 256, 512],
+  "candidate_window": {
+    "construction": "Use the frozen plan's 3/8 and 5/8 rational candidates inside each diagnostic adjacent-eigenvalue interval; approximate eigenvalues propose shifts only and interval inertia certifies both endpoints.",
+    "left_fraction": "3/8",
+    "right_fraction": "5/8"
+  },
+  "subdivision": {
+    "order": "breadth_first_x_then_y_low_coordinate_first",
+    "max_attempted_cells_per_cutoff": 512,
+    "max_depth": 8
+  },
+  "limits": {
+    "stage_wall_seconds": 600,
+    "worker_compute_seconds_per_cutoff": 270,
+    "worker_wall_seconds_per_cutoff": 290,
+    "worker_address_bytes": 2147483648,
+    "worker_processes": 1,
+    "max_inertia_factorizations_total": 8192,
+    "max_inertia_factorizations_per_cutoff": 4096,
+    "physical_cases": 1,
+    "parameter_sweeps": 0
+  },
+  "inertia": {
+    "method": "unpivoted interval LDL^T on a certified nonsingular fixed congruence",
+    "congruence": "exact decimal matrix proposed by the midpoint eigensolver; strict interval diagonal dominance of V^T V certifies nonsingularity",
+    "acceptance": "every pivot interval excludes zero; the negative-pivot count must equal the declared gap count at both window endpoints"
+  },
+  "runtime_provenance": {
+    "require_exact_wheel_digest": true,
+    "require_all_installed_native_members_match_wheel": true,
+    "require_loaded_extension_match_wheel": true,
+    "require_mapped_native_libraries_match_wheel": true,
+    "platform": "Linux /proc/self/maps required for this packet"
+  },
+  "outcomes": {
+    "certified": "CERTIFIED_UNIFORM_EXTERNAL_ISOLATION",
+    "inconclusive": "INCONCLUSIVE",
+    "execution_error": "EXECUTION_ERROR"
+  },
+  "claim_ceiling": "S1B_UNIFORM_EXTERNAL_ISOLATION_ONLY_NO_PROJECTOR_TRANSPORT_SEAM_OR_TOPOLOGY"
+}
