@@ -1,91 +1,104 @@
 # S1b cutoff-a hard-quadrant continuation protocol 002
 
-**Status: PROTOCOL FROZEN / INDEPENDENT REVIEW PENDING / NOT EXECUTED.**
+**Status: PROTOCOL AMENDED / INDEPENDENT REVIEW PENDING / NOT EXECUTED.**
 
-This is a protocol-only continuation from `S1B-QUADRANT-A-001` at commit
-`16c864c9d0d0c545f4369567e81bfdbc826953d9`. It adds no runner, changes no
-scientific source, performs no factorization, and creates no new coverage
-evidence. Implementation and execution are forbidden until an independent
-review explicitly passes this exact protocol commit.
+This protocol-only amendment resolves M1 and M2 from Claude review
+`issuecomment-5821711346` of commit `35664fc7f3a028a7b8d32848bc719e9fc01b8b74`.
+It adds no runner, changes no scientific source, performs no factorization and
+creates no new coverage evidence. Implementation and execution remain
+forbidden until an independent review passes this exact amendment commit.
 
-## Frozen source state
+## Frozen source and order
 
-The predecessor's `PARTITION.json` is bound by SHA-256
-`2bbc19927b996e6d3b43ed9c17fe1d3b92f029bd1866cc031390b76d5814e000`.
-Its immutable accepted set covers `23/64` of `[1/2,1]^2`; its exact 437-cell
-frontier covers the remaining `41/64` (73 depth-5 and 364 depth-6 cells).
-Any binding mismatch is an execution error, not permission to reconstruct or
-substitute a frontier.
+The predecessor remains `S1B-QUADRANT-A-001` at
+`16c864c9d0d0c545f4369567e81bfdbc826953d9`. Its `PARTITION.json` SHA-256 is
+`2bbc19927b996e6d3b43ed9c17fe1d3b92f029bd1866cc031390b76d5814e000`:
+83 accepted cells cover `23/64`; the exact 437-cell frontier covers `41/64`.
+The predecessor accepted array is the byte-identical prefix of any combined
+accepted array, and replay begins from the exact predecessor frontier.
 
-## Deterministic continuation order
+The exact-rational best-first key is unchanged: L-infinity distance from the
+closed dyadic cell to `(23/32,23/32)`, then negative depth, `ix`, and `iy`.
+An inconclusive cell below depth 9 adds its four children; accepted cells and
+depth-9 inconclusive cells are terminal.
 
-The continuation uses the exact retained frontier and a deterministic
-best-first queue. For each cell `(depth, ix, iy)`, compute exactly the
-L-infinity distance from the closed dyadic cell to `(23/32,23/32)`. Compare
-exact rational distances by cross multiplication. The ascending priority key
-is:
+## Frozen status mapping and precedence (M1)
 
-1. exact distance to the fixed target;
-2. negative depth (deeper first at equal distance);
-3. `ix`;
-4. `iy`.
+The precedence is total, high to low:
 
-An inconclusive cell below depth 9 contributes four children in x-bit then
-y-bit low-first order, after which the entire work queue is sorted by the
-same key. Accepted cells are terminal. Depth-9 inconclusive cells enter the
-unresolved terminal set. Every attempted record retains its key, and the
-verifier must prove it was the unique current minimum under the complete
-tie-break rule.
+1. `EXECUTION_ERROR` for any source/evidence binding mismatch, malformed or
+   hash-invalid durable record, worker exception, memory-limit failure,
+   unexpected worker exit, supervisor crash, missing/invalid receipt,
+   nonempty process group after reap, or replay/partition/package failure.
+2. `INCONCLUSIVE_WATCHDOG_TIMEOUT` only when a valid receipt proves the
+   deadline signal, reap and empty-group check, and the surviving durable log
+   prefix verifies.
+3. `INCONCLUSIVE_RESOURCE_CAP` when admission before the next queue pop lacks
+   room under a frozen cell or factorization cap.
+4. `CERTIFIED_CUTOFF_A_HARD_QUADRANT_COVERAGE` only after normal verified
+   completion with both derived unresolved and frontier sets empty.
+5. `INCONCLUSIVE_BOUNDED_COVERAGE` only after normal verified queue exhaustion
+   with a nonempty depth-9 unresolved set and an empty frontier.
 
-This order is deliberately targeted planning, not a scientific inference.
-The target is frozen from the retained hard-window evidence; it does not
-assume that the neighbourhood will certify.
+Anything else is `EXECUTION_ERROR`. A partial resource-capped or timed-out
+round can never receive a `CERTIFIED_*` status.
 
-## Bounded resources and real watchdog
+## Crash-safe log and deterministic recovery (M2)
 
-The round may attempt at most 1,024 new cells, 4,096 primary
-factorizations, 4,096 recomputations and 8,192 total factorizations. It uses
-one physical case, cutoff `a`, one worker, 128-bit arithmetic, zero parameter
-sweeps, zero retries and at most 2 GiB of address space.
+The worker writes `ATTEMPTS.ndjson` as canonical, newline-terminated JSON.
+The header binds the approved protocol, predecessor bytes, implementation and
+runtime provenance. Attempt records have contiguous sequence numbers, the
+exact cell and priority key, factorization counts, complete interval evidence,
+outcome, and a SHA-256 chain back to the header.
 
-The worker has 2,700 seconds. A separate supervisor must create the worker in
-a new process group, send `SIGTERM` to the entire group at 2,700 seconds, and
-send `SIGKILL` to the entire group at the 2,760-second hard deadline. An
-in-process timer alone is insufficient. Timeout is retained as
-`INCONCLUSIVE_WATCHDOG_TIMEOUT`; only fsync-complete records may survive. The
-supervisor receipt, termination reason and elapsed monotonic times are
-mandatory evidence.
+The selected cell is not durably removed from the queue until its complete
+record is appended, the file is flushed and fsynced, and the parent directory
+is fsynced. Only then may the queue transition be committed and another cell
+be selected. On recovery, only a final non-newline fragment may be discarded;
+a complete malformed or hash-invalid line is an execution error. The worker
+streams records and does not retain the complete evidence set in memory.
 
-The 1,024-cell cap is four times the predecessor's cap. The 2,700-second
-worker ceiling is the predecessor's 613.7-second observation multiplied by
-four with bounded headroom. These are deterministic ceilings, not a forecast
-of completion or a claim that the physical case will pass.
+The supervisor or offline verifier—not the worker—replays the predecessor
+state and the durable log. Each record must be the current minimum priority
+cell. A killed in-flight cell without a durable record remains in the
+frontier. Counts come only from durable records. Accepted, unresolved and
+frontier sets are derived by replay, never trusted from worker output.
 
-## Fail-closed verification
+After the worker group is reaped, the supervisor writes its receipt atomically
+and fsyncs it and its directory. The receipt binds the protocol,
+implementation and durable log; records monotonic times, signals and exit
+status; and proves `killpg(group, 0)` returned `ESRCH`. The worker may spawn no
+children and may not create another session. A missing receipt is an execution
+error. Gzip parts are produced only after the durable log verifies.
 
-The future verifier must bind this exact protocol and predecessor bytes,
-replay the exact priority queue, check every attempt and both congruences,
-enforce all count/time/memory caps, validate the supervisor receipt, and
-prove that accepted, max-depth-unresolved and unprocessed-frontier cells are
-pairwise disjoint and exactly cover the frozen quadrant. Exact rational areas
-must sum to one. Missing, partial, duplicated, stale or substituted evidence
-is rejection or an inconclusive/error outcome—never acceptance.
+## Resources and verification
+
+The unchanged caps are 1,024 new cells, 4,096 primary, 4,096 recomputation
+and 8,192 total factorizations; one worker; zero retries; 2 GiB address space;
+2,700 worker seconds; SIGTERM then SIGKILL by 2,760 seconds. Admission reserves
+the worst-case four primary and four recomputation factorizations before each
+pop.
+
+Verification binds every source, predecessor array and durable record; replays
+every priority choice; derives the combined partition; checks the 83 accepted
+cells as a byte-identical prefix and the exact 437-cell starting frontier; and
+proves no duplicate or ancestor relation plus exact rational area one. This is
+a disjoint complete-partition proof, not merely an area identity.
 
 ## Claim ceiling
 
-Any future result is limited to bounded cutoff-a coverage of the hard
-quadrant. It cannot by itself establish the whole quadrant unless the exact
-partition does so, and it never establishes full-domain uniform isolation,
-cutoff-b agreement, topology, projector transport, seam composition, cutoff
-convergence, v078 correctness or an experimental claim.
+Any future result is limited to bounded cutoff-a hard-quadrant coverage. It
+does not establish full-domain uniform isolation, cutoff-b agreement,
+topology, projector transport, seam composition, cutoff convergence, v078
+correctness or an experimental claim.
 
-## Independent review questions
+## Review questions
 
-1. Are the predecessor bindings and initial terminal/frontier state exact?
-2. Is the priority key total, deterministic and replayable without floating
-   comparisons?
-3. Do the caps and separate process-group watchdog fail closed?
-4. Does the required verifier establish a disjoint complete partition rather
-   than only an area identity?
-5. Is the claim ceiling preserved, with no execution authorized by this
-   protocol-only commit?
+1. Is the status mapping total and does its precedence prevent partial
+   evidence from receiving a certified label?
+2. Does the write-ahead hash chain make every durable queue transition
+   replayable, leaving an interrupted cell in the frontier?
+3. Are the post-reap receipt, empty-group check and verified-log-only packaging
+   sufficient to fail closed after timeout?
+4. Are the predecessor arrays, caps, exact queue and claim ceiling unchanged?
+5. Does this remain protocol-only with implementation and execution gated?
