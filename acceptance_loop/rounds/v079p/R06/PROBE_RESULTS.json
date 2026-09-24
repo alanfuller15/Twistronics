@@ -1,0 +1,53 @@
+{
+  "gate_status": {
+    "NOT_RUN": [
+      "G04",
+      "G16",
+      "G17"
+    ],
+    "PASS": [
+      "G00",
+      "G01",
+      "G02",
+      "G03",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G12",
+      "G13",
+      "G14",
+      "G15"
+    ]
+  },
+  "limitations": [
+    "The final descriptor is computed only after Git resolves the reviewed commit; it must then be reproduced from the exact published bytes before handoff.",
+    "The reviewed commit is intentionally supplied by the handoff transport because a Git commit cannot contain its own SHA.",
+    "Authorized connector identity remains an external trust boundary.",
+    "G04, G16, and G17 remain open until reviewed staged packaging.",
+    "This verdict concerns controller mechanics only and makes no v079p scientific or physical claim."
+  ],
+  "review_scope": "controller_mechanics_only",
+  "reviewer": "astra_adversarial_probe",
+  "round_id": "TWI-ACC-v079p-R06-aaa1e43060d7",
+  "verdict": "NO_PREPUBLICATION_BLOCKER",
+  "verified": {
+    "approved_source_files": 15,
+    "approved_source_files_matched": 15,
+    "canonical_source_files_including_approval": 16,
+    "descriptor_mismatch_refusal": true,
+    "generated_compiled_source_files": 0,
+    "mandatory_negative_controls_passed": 19,
+    "mandatory_negative_controls_total": 19,
+    "payload_manifest_actual_files": 45,
+    "payload_manifest_entries": 45,
+    "published_recipe_requires_transport_commit": true,
+    "published_recipe_test_reconstruction": true,
+    "source_tests_passed": 39,
+    "source_tests_total": 39,
+    "typed_receipts": 37
+  }
+}
