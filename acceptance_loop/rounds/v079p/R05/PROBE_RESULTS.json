@@ -1,0 +1,54 @@
+{
+  "round_id": "TWI-ACC-v079p-R05-aaa1e43060d7",
+  "review_scope": "controller_mechanics_only",
+  "reviewer": "independent_adversarial_worker",
+  "verdict": "NO_BLOCKER",
+  "verified": {
+    "approved_source_files": 15,
+    "approved_source_files_matched": 15,
+    "frozen_source_files_including_approval": 16,
+    "generated_compiled_source_files": 0,
+    "frozen_source_tests_passed": 36,
+    "frozen_source_tests_total": 36,
+    "mandatory_negative_controls_passed": 19,
+    "mandatory_negative_controls_total": 19,
+    "typed_receipts": 37,
+    "payload_manifest_entries": 45,
+    "payload_manifest_actual_files": 45,
+    "evidence_binding_files": 86,
+    "clean_copy_digest_reproduction": true,
+    "controller_status": "IN_REVIEW",
+    "controller_issues": []
+  },
+  "gate_status": {
+    "PASS": [
+      "G00",
+      "G01",
+      "G02",
+      "G03",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G12",
+      "G13",
+      "G14",
+      "G15"
+    ],
+    "NOT_RUN": [
+      "G04",
+      "G16",
+      "G17"
+    ]
+  },
+  "limitations": [
+    "The final descriptor must be regenerated with the immutable published R05 commit.",
+    "Evidence generation relies on a bytecode-disabled environment; omission fails closed but can leave local generated files requiring cleanup.",
+    "Authorized connector identity remains an external trust boundary.",
+    "G04, G16, and G17 remain open until reviewed staged packaging.",
+    "This verdict concerns controller mechanics only and makes no v079p scientific or physical claim."
+  ]
+}
