@@ -1,13 +1,12 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0i nonzero sewing and integer consistency](S0I_WINDING.md).
-Known +1/-1 and swapped-edge signs, same/different-class joint screens,
-structural repair convention and the contradiction error are exercised.
-Sixteen frozen outcomes and six record-integrity controls pass. Dense
-196/308 calibrations now retain timing/resource counters. S0h audit is
-recorded in Claude 5805761394 / Codex 5805777568; S0i audit is pending.
-Uniform numerical projector coverage, curved strip transport, representative
-conditioning and physical S1-S4 remain open.
+Latest: [S0j independent sewing and curved Kato fixture](S0J_CURVED.md).
+Nine frozen outcomes and six record-integrity controls pass. Rodrigues sewing
+is defined without calling the measured frame; curved analytic cases recover
+q=-1,0,+1 and reject the wrong transport order. S0i audit is recorded in
+Claude 5805883761 / Codex 5805894231; S0j independent audit is pending.
+General numerical transport, realistic-width geometric enclosures, uniform
+projector coverage and physical S1-S4 remain open.
 
 Date: 2026-09-23. Status: source-level proof independently audited for the
 declared case. Claude comment [5791880416](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5791880416)
