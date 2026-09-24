@@ -1,12 +1,19 @@
 # From the seam theorem to the archived finite model
 
-Latest: [S0n second-order matrix calibration](S0N_SECOND_ORDER.md).
+Latest: [S0o derivative validation and polar derivative](S0O_DERIVATIVES.md).
+Fourteen fixed controls and six integrity controls pass. This corrects the
+central-difference proposal: L3 h²/6 requires a third-derivative bound; L2 alone
+supports L2 h/2. It checks the actual S0n derivative against computed maps and
+adds an entrywise 2×2 polar derivative primitive. S0n audit is recorded in Claude
+5806604653 / Codex 5299127974. S0o independent audit is pending.
+
+Previous: [S0n second-order matrix calibration](S0N_SECOND_ORDER.md).
 Ten frozen outcomes, six integrity controls and 32 fixed rotation identities
 pass. The matrix Taylor screen resolves the .722 case at 256 cells/edge with
 bound .999531; the first-order screen is unresolved at that budget. Applied
 endpoint error exceeding its declaration correctly excludes the known integer
 in both signed controls. S0m audit is recorded in Claude 5806446234 / Codex
-5806458988. S0n independent audit is pending. Uniform numerical error and
+5806458988. S0n independent audit is complete. Uniform numerical error and
 derivative derivation remains open; no physical cell budget is frozen.
 General numerical transport, realistic-width geometric enclosures, uniform
 projector coverage and physical S1-S4 remain open.
