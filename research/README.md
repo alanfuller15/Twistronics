@@ -11,8 +11,10 @@ The [interactive field guide](../docs/interactive-guide/README.md) combines an
 ideal geometry lesson, historical v062 node playback and 128 retained draft
 momentum-space samples at exact commit `3f174f1`. Displaying those draft records
 does not merge their scientific track into this archive. The
-[updated status note](../docs/STATUS.md#interactive-learning-and-retained-draft-mapping)
-distinguishes sampled gaps from retained quadrant-area certification.
+[updated status note](../docs/STATUS.md#published-four-quadrant-execution)
+records the newer four-worker packet: **702 accepted cells covering 40.42%
+of the full coordinate square**. The browser guide remains a frozen earlier
+snapshot. Counts, quadrant area and full-square area are reported separately.
 
 ## Material presented on the default branch
 
@@ -32,12 +34,14 @@ not a declaration that v053 is the current scientific or learning milestone.
 
 ## Active work
 
-Migration-contract, certification-readiness, physical S1a/S1b, exploratory
+Migration-contract, certification-readiness, physical S1a/S1b four-quadrant coverage, exploratory
 point mapping, and v079p package-acceptance work is public in draft pull
 requests. Their scientific packets are not merged into this default-branch
 directory by the visual update. Follow exact commit links from
 [`docs/STATUS.md`](../docs/STATUS.md); do not infer acceptance from a moving
 branch name or a higher version number.
+Use the [branch guide](../docs/BRANCHES.md) to find the active source branch
+and distinguish it from immutable evidence snapshots.
 
 ## Interpretation
 

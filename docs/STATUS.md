@@ -8,12 +8,48 @@ The interactive guide and its source-bound display data were published on
 [`bd25a56ec6652a44fee9d9cac10c89747241286d`](https://github.com/alanfuller15/Twistronics/commit/bd25a56ec6652a44fee9d9cac10c89747241286d).
 The research packets in PR #5 remain draft evidence at their own exact commits.
 
+## Published four-quadrant execution
+
+The newest **published execution evidence** is the 49-file packet at
+[`bc88ff0d5503d60684bca106affc0d39ebc2a83f`](https://github.com/alanfuller15/Twistronics/tree/bc88ff0d5503d60684bca106affc0d39ebc2a83f/research/benchmarks/parallel_domain_001_execution).
+Four workers completed 256 new attempts and accepted 112 new cells.
+
+| Measure | Before | After parallel batch 001 |
+|---|---:|---:|
+| Accepted full-square area | 29663/262144 = 11.32% | **105951/262144 = 40.42%** |
+| Accepted cells | 590 | **702** |
+| Remaining frontier cells | Quadrant-only predecessor | **903** across all four quadrants |
+| Terminal unresolved cells | 40 | **40**, preserved |
+
+The gain is **29.10 percentage points of the full coordinate square [0,1]²**.
+These are fractional momentum coordinates. Cell side length is 2⁻ᵈ and area
+is 4⁻ᵈ at depth d. Shared edges have zero area. Full partition accounting
+includes frontier and unresolved cells; it does not mean that every cell
+passed isolation.
+
+Local replay and clean log reconstruction passed. The implementation received
+an independent review before this batch; the
+[execution audit request](https://github.com/alanfuller15/Twistronics/pull/5#issuecomment-5827654253)
+is pending. The status remains **INCONCLUSIVE_PARTIAL_DOMAIN_COVERAGE** at
+finite cutoff a, dimension 196. No topology, seam, infinite-cutoff, or
+experimental result follows.
+
+The next runner is published at
+[`7494c36022f163a427df2e513e57e534cb84c885`](https://github.com/alanfuller15/Twistronics/tree/7494c36022f163a427df2e513e57e534cb84c885/research/benchmarks/parallel_domain_002).
+Its execution packet has not yet been published to this repository. Runner
+publication alone supplies no additional accepted area. Continued bounded
+execution is authorized without waiting for audit acceptance; numerical
+acceptance conditions and retained evidence requirements still apply.
+
+See [active branches](BRANCHES.md) for the current development paths.
+
 ## Interactive learning and retained draft mapping
 
 The [interactive field guide](interactive-guide/README.md) now displays exact
 saved observations from PR #5 at commit
 [`3f174f19b3ed5d57598accd1d7b1550fc7c9eeff`](https://github.com/alanfuller15/Twistronics/commit/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff).
-This is a presentation update; the scientific draft is not merged by it.
+This is a frozen educational snapshot, preceding the four-quadrant execution
+above; the scientific draft is not merged by its presentation.
 
 - [Point mapping](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/momentum_mapping_summary_001/OUTPUT/REPORT.md):
   64 coarse and 64 targeted refined finite-cutoff-a spectra, dimension 196.

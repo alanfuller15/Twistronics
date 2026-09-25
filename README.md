@@ -25,26 +25,32 @@ geometry lessons, historical results, and current draft observations separately.
 
 ## Current research snapshot
 
-**Updated 25 September 2026 UTC.** The visual guide is published on `main`.
-The newest displayed research observations are bound to
-[`3f174f19b3ed5d57598accd1d7b1550fc7c9eeff`](https://github.com/alanfuller15/Twistronics/commit/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff)
-in draft [PR #5](https://github.com/alanfuller15/Twistronics/pull/5). Publishing
-their presentation does not merge or certify that scientific track.
+**Updated 25 September 2026 UTC.** Four interval-inertia workers have now run
+across all four quadrants. Their first published packet is bound to
+[`bc88ff0d5503d60684bca106affc0d39ebc2a83f`](https://github.com/alanfuller15/Twistronics/commit/bc88ff0d5503d60684bca106affc0d39ebc2a83f)
+in draft [PR #5](https://github.com/alanfuller15/Twistronics/pull/5).
+The browser guide retains its earlier `3f174f1` educational snapshot;
+it does not update automatically when an engine runs.
 
 | Work | Retained result | What it establishes |
 |---|---|---|
-| Momentum-space mapping | **128 point spectra**: 64 coarse and 64 targeted refined samples, finite cutoff a, matrix dimension 196 | Approximate gaps at those sampled coordinates |
-| Targeted refinement | Smallest sampled upper gap: **0.00819 → 0.00309 meV** | A tighter sampled region for follow-up; not a lower bound between points or proof of gap closure |
-| Bounded S1b interval-inertia run | **29663/65536 ≈ 45.26% of quadrant area**, with 590 accepted cells | Partial accepted area within the declared quadrant [½, 1]²; frontier and unresolved cells keep the run inconclusive |
+| Four-quadrant interval-inertia run | **105951/262144 ≈ 40.42% of full-square area**, with **702 accepted cells** | Partial finite-cutoff cell isolation across [0, 1]²; 903 frontier and 40 unresolved cells remain |
+| Earlier single-quadrant baseline | **29663/65536 ≈ 45.26% of quadrant area**, with 590 accepted cells | Equivalent to **11.32% of the full square**; this is the baseline retained by the browser guide |
+| Momentum-space mapping | **128 point spectra**: 64 coarse and 64 targeted refined samples, finite cutoff a, dimension 196 | Approximate gaps at those sampled coordinates; no certified area |
+| Targeted refinement | Smallest sampled upper gap: **0.00819 → 0.00309 meV** | A tighter sampled region for follow-up; not proof of gap closure |
 | Earlier v062 continuation | Six seeded nodes at **11 saved settings per engine** | Historical finite-model trajectories and spatial charge comparisons; not a complete braid |
 
-**[Latest point-mapping report and figure](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/momentum_mapping_summary_001/OUTPUT/REPORT.md)** ·
-**[Retained S1b execution and its limits](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/certification_s1b_quadrant_a_002/RUN/README.md)**
+**[Published four-worker execution and replay](https://github.com/alanfuller15/Twistronics/blob/bc88ff0d5503d60684bca106affc0d39ebc2a83f/research/benchmarks/parallel_domain_001_execution/README.md)** ·
+**[Point-mapping report and figure](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/momentum_mapping_summary_001/OUTPUT/REPORT.md)**
 
-The 128 point samples add **no certified area**. The coverage fraction is an
-area measure for one quadrant, not a cell count, full-domain coverage, or a
-percentage of the project completed. Refinement was chosen from the coarse
-results, so the combined samples are not an independent validation set.
+Coverage measures accepted **area**, with its denominator stated explicitly.
+Each quadrant occupies one quarter of the full square. A depth-d cell has
+side length 2⁻ᵈ and full-square area 4⁻ᵈ, so cell count and area are different
+measurements. The first parallel batch added **29.10 percentage points** of
+full-square area. Coverage does not measure project completion, and 40.42%
+does not establish full-domain isolation. Independent execution audit is pending.
+The 128 point samples add **no certified area**; their targeted refinement is
+not an independent validation set.
 
 ## Learn through the visuals
 
@@ -67,6 +73,7 @@ controls provide alternatives to pointing and color.
 | What is the project, and what should I read first? | [Start here](docs/START_HERE.md) |
 | What do the current map and scales mean? | [Interactive field guide](docs/interactive-guide/README.md) |
 | What is published, draft, or still open? | [Research status](docs/STATUS.md) |
+| Which branch should I use? | [Active branches and preserved checkpoints](docs/BRANCHES.md) |
 | Which saved records produced these views? | [Presentation sources and hashes](docs/interactive-guide/sources.json) |
 | How can I reproduce a presentation or inspect evidence? | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
 | What does the older node-continuation evidence show? | [Historical illustrated guide](docs/visual-guide/README.md) |

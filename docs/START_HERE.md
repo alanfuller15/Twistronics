@@ -29,7 +29,7 @@ illustrated guide is intentionally centered on the older v060/v062 evidence.
 ### I want to evaluate the evidence
 
 1. Read the [status and claim boundaries](STATUS.md).
-2. Follow the current point-mapping and retained S1b links in the status page.
+2. Follow the published four-quadrant execution and point-mapping links in the status page.
    For historical v062, read the [report](../research/v062/REPORT.md),
    [method](../research/v062/METHOD.md), and [coverage ledger](../research/v062/COVERAGE.md).
 3. Follow the [reproducibility ladder](REPRODUCIBILITY.md).
@@ -44,13 +44,15 @@ under review, not extensions already accepted into `main`:
 - [PR #2](https://github.com/alanfuller15/Twistronics/pull/2): migration-contract
   review and research-status material.
 - [PR #5](https://github.com/alanfuller15/Twistronics/pull/5):
-  certification-readiness, physical S1a assembly, partial S1b quadrant
-  coverage, and exploratory momentum-space point mapping.
+  certification-readiness, physical S1a assembly, partial S1b coverage across
+  four quadrants, and exploratory momentum-space point mapping.
 - [PR #6](https://github.com/alanfuller15/Twistronics/pull/6): deterministic
   review and packaging mechanics for the v079p acceptance line.
 
 The [status page](STATUS.md) records the exact reviewed heads used for this
 learning snapshot and explains what each track does and does not establish.
+The [branch guide](BRANCHES.md) identifies active work, pinned review candidates,
+and preserved historical checkpoints.
 
 ### I want to contribute
 
