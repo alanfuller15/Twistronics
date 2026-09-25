@@ -1,6 +1,33 @@
 # Research status
 
-Status snapshot: **2026-09-24**.
+Reader update: **2026-09-25 UTC**. The earlier multi-track inventory below
+retains its **2026-09-24** snapshot date.
+
+## Interactive learning and retained draft mapping
+
+The [interactive field guide](interactive-guide/README.md) now displays exact
+saved observations from PR #5 at commit
+[`3f174f19b3ed5d57598accd1d7b1550fc7c9eeff`](https://github.com/alanfuller15/Twistronics/commit/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff).
+This is a presentation update; the scientific draft is not merged by it.
+
+- [Point mapping](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/momentum_mapping_summary_001/OUTPUT/REPORT.md):
+  64 coarse and 64 targeted refined finite-cutoff-a spectra, dimension 196.
+  The smallest sampled upper gap changes from 0.008193629349 to
+  0.003089965450713 meV. These are approximate point observations, not lower
+  bounds between samples or evidence of gap closure.
+- [Retained S1b execution](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/certification_s1b_quadrant_a_002/RUN/README.md):
+  accepted area is 29663/65536 of the declared quadrant [1/2, 1]², about
+  45.26%, across 590 accepted cells. Frontier and unresolved cells remain;
+  the run is `INCONCLUSIVE_WATCHDOG_TIMEOUT`. This is not full-domain
+  coverage, and point mapping adds no certified area.
+
+The guide also retains the explicitly historical v062 node-path lesson and an
+ideal, unstrained geometric moiré lesson. The angle slider does not alter the
+fixed research cases or run a model. Full-domain certification, complete
+projector/transport/seam composition, infinite-cutoff convergence and
+experimental validation remain open.
+
+## Earlier inventory: 2026-09-24
 
 This page distinguishes material retained on the default branch from public
 draft work. Draft pull-request heads can move; the full commit hashes below are

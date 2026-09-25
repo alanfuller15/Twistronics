@@ -15,9 +15,12 @@ proof of a material's topology, or a single polished software package.
 
 ### I want the accessible scientific story
 
-1. Read the [illustrated research guide](visual-guide/README.md).
-2. Use the [glossary](GLOSSARY.md) when a version or evidence label is unclear.
-3. Read [current status](STATUS.md) before treating any result as current.
+1. Explore the [interactive field guide](interactive-guide/README.md): rotate
+   the layers, inspect coordinate scales and select retained samples.
+2. Read the [illustrated research guide](visual-guide/README.md) for the
+   historical v060/v062 narrative.
+3. Use the [glossary](GLOSSARY.md) when a version or evidence label is unclear.
+4. Read [current status](STATUS.md) before treating any result as current.
 
 The visual guide is intentionally centered on the retained v060/v062 evidence.
 It is the best introduction, but it is a historical snapshot rather than the

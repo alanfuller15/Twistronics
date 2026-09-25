@@ -20,6 +20,20 @@ whether their relationships change consistently. These points live in
 > public in draft pull requests but is not part of `main`. See the dated
 > [status page](docs/STATUS.md) before interpreting “latest” or “PASS.”
 
+## Explore the interactive field guide
+
+The new [interactive visual guide](docs/interactive-guide/README.md) lets you
+turn two reference lattices, zoom into 128 retained momentum-space samples,
+and step through saved band-crossing paths. Each view explains its units,
+magnification, and evidence limits. Download its single-file explorer to run
+it in a browser; GitHub's Markdown viewer cannot execute interactive controls.
+
+[![Interactive momentum map with explicit coordinate and energy scales](docs/interactive-guide/preview-map.jpg)](docs/interactive-guide/README.md)
+
+The map presents draft observations at exact commit `3f174f1`; it does not
+merge or certify that research. The geometry lesson is explanatory, and the
+node-path lesson retains its historical v062 label.
+
 ## The established visual introduction
 
 The [illustrated research guide](docs/visual-guide/README.md) explains the
