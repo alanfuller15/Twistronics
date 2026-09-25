@@ -1,0 +1,286 @@
+{
+  "packet_id": "S1B-DIAGNOSTIC-001",
+  "raw_log_bytes": 196613136,
+  "raw_log_sha256": "328b42afbdb508b631fbccbaf13afbdf5197824ab97822a7c5a4aa755b674679",
+  "retained_width_statistics": {
+    "accepted_depth9_lower_minimum_meV": "13743988707402037/40000000000000000",
+    "accepted_depth9_upper_widths_inside_failed_range": [
+      "409062536313913/2000000000000000",
+      "873340518610351/4000000000000000",
+      "481398364115593/2000000000000000",
+      "96814716253897/400000000000000"
+    ],
+    "accepted_upper_minimum_by_depth": {
+      "6": {
+        "width_meV": "7846073930379369/4000000000000000",
+        "width_times_2_to_depth_meV": "7846073930379369/62500000000000"
+      },
+      "7": {
+        "width_meV": "3240900580632811/4000000000000000",
+        "width_times_2_to_depth_meV": "3240900580632811/31250000000000"
+      },
+      "8": {
+        "width_meV": "1651344092761771/4000000000000000",
+        "width_times_2_to_depth_meV": "1651344092761771/15625000000000"
+      },
+      "9": {
+        "width_meV": "409062536313913/2000000000000000",
+        "width_times_2_to_depth_meV": "409062536313913/3906250000000"
+      }
+    },
+    "historical_depth9_signatures": {
+      "accepted": 155,
+      "lower.left": 2,
+      "lower.left+lower.right": 2,
+      "upper.left": 9,
+      "upper.left+upper.right": 26,
+      "upper.right": 1
+    },
+    "lower_failures": 4,
+    "lower_failures_below_accepted_depth9_minimum": 4,
+    "upper_failures": 36,
+    "upper_failures_below_accepted_depth9_minimum": 27
+  },
+  "schema_version": 1,
+  "scope": "Retained-record selection and arithmetic only; no new physical or certification evidence.",
+  "selection_ties": "ascending (depth, ix, iy), exact rational comparison",
+  "source_commit": "ad18d34ef0bf3b5d4ec7a4d2e27ba954f2fd0492",
+  "specimens": [
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 352,
+        "iy": 367
+      },
+      "center": [
+        "705/1024",
+        "735/1024"
+      ],
+      "historical_signature": "upper.left",
+      "id": "upper_left",
+      "max_failed_pivot_interval_width": "306963819/4096",
+      "original_half_width": "1/1024",
+      "selection_rule": "largest_failed_pivot_width",
+      "source_record_sha256": "492c8d1ede3833a25706b5e90276bd7debd55f5958ccd1ee798c2c2f775e47a8",
+      "source_sequence": 281,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-1535291031676956639/80000000000000000",
+          "right": "-39892457572152017/3200000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "268989796186578107/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "121847731916423191/4000000000000000",
+          "right": "122557138279390481/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "70940636296729/400000000000000"
+        }
+      }
+    },
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 351,
+        "iy": 370
+      },
+      "center": [
+        "703/1024",
+        "741/1024"
+      ],
+      "historical_signature": "upper.right",
+      "id": "upper_right",
+      "max_failed_pivot_interval_width": "305453391/536870912",
+      "original_half_width": "1/1024",
+      "selection_rule": "smallest_proposed_upper_width",
+      "source_record_sha256": "ff4fba104fa85b3fc0f1fe484c1cca4216c0c9abc3ebf57237cbcd58d89a6af0",
+      "source_sequence": 309,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-1585734038786874971/80000000000000000",
+          "right": "-204555759369377897/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "281477620969992743/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "123508247806904861/4000000000000000",
+          "right": "124258465803600987/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "375108998348063/2000000000000000"
+        }
+      }
+    },
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 351,
+        "iy": 368
+      },
+      "center": [
+        "703/1024",
+        "737/1024"
+      ],
+      "historical_signature": "upper.left+upper.right",
+      "id": "upper_both",
+      "max_failed_pivot_interval_width": "74535673/134217728",
+      "original_half_width": "1/1024",
+      "selection_rule": "smallest_proposed_upper_width",
+      "source_record_sha256": "d7a9806f25cf7f241b69863a33f12dd1a64c5ffa3c14d53b69565d106670785b",
+      "source_sequence": 306,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-386402397225140113/20000000000000000",
+          "right": "-50268069109457251/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "67531025838926929/10000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "122222477131233557/4000000000000000",
+          "right": "122362523798817307/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "112037334067/3200000000000"
+        }
+      }
+    },
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 333,
+        "iy": 332
+      },
+      "center": [
+        "667/1024",
+        "665/1024"
+      ],
+      "historical_signature": "lower.left",
+      "id": "lower_left",
+      "max_failed_pivot_interval_width": "808689333/8388608",
+      "original_half_width": "1/1024",
+      "selection_rule": "largest_failed_pivot_width",
+      "source_record_sha256": "32f37166c8db151b153cbcb7919bd913eac2c39a85f523a2518a9e6ecaed8294",
+      "source_sequence": 676,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-308240368578942839/40000000000000000",
+          "right": "-296190575301439417/40000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "6024896638751711/20000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "183792429713275731/8000000000000000",
+          "right": "209135901598216101/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "2534347188494037/800000000000000"
+        }
+      }
+    },
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 333,
+        "iy": 331
+      },
+      "center": [
+        "667/1024",
+        "663/1024"
+      ],
+      "historical_signature": "lower.left+lower.right",
+      "id": "lower_both",
+      "max_failed_pivot_interval_width": "765539851/268435456",
+      "original_half_width": "1/1024",
+      "selection_rule": "smallest_proposed_lower_width",
+      "source_record_sha256": "fa7967168f7d8f8d362a546123fe1cdb17ac483e9f72fbcccd71842cb2395f05",
+      "source_sequence": 708,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-119925843740110997/16000000000000000",
+          "right": "-579780378563200047/80000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "9924420068677469/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "183468800409568509/8000000000000000",
+          "right": "209427175574500459/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "519167503298639/160000000000000"
+        }
+      }
+    },
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 348,
+        "iy": 369
+      },
+      "center": [
+        "697/1024",
+        "739/1024"
+      ],
+      "historical_signature": "accepted",
+      "id": "accepted_upper",
+      "original_half_width": "1/1024",
+      "selection_rule": "smallest_proposed_upper_width",
+      "source_record_sha256": "89c3bf171e0a0e3b36c6feed00986acba098a199719fbc18b08bd88421d6cacf",
+      "source_sequence": 379,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-1536354687668453289/80000000000000000",
+          "right": "-202108451866531267/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "262906214167898477/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "120623534927520671/4000000000000000",
+          "right": "121441660000148497/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "409062536313913/2000000000000000"
+        }
+      }
+    },
+    {
+      "cell": {
+        "depth": 9,
+        "ix": 332,
+        "iy": 331
+      },
+      "center": [
+        "665/1024",
+        "663/1024"
+      ],
+      "historical_signature": "accepted",
+      "id": "accepted_lower",
+      "original_half_width": "1/1024",
+      "selection_rule": "smallest_proposed_lower_width",
+      "source_record_sha256": "65c58268f7e1c134ed69f645ac68a5d2df4ad3bcb97aba3e8f0cc3be188aac80",
+      "source_sequence": 707,
+      "windows": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-605847826594980449/80000000000000000",
+          "right": "-4626878793441411/640000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "13743988707402037/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "183902381595006357/8000000000000000",
+          "right": "209474092346850387/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "2557171075184403/800000000000000"
+        }
+      }
+    }
+  ]
+}
