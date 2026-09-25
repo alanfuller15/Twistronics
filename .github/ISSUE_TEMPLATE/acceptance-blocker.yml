@@ -1,0 +1,44 @@
+name: Acceptance blocker
+description: Record a fail-closed evidence or provenance blocker
+title: "[BLOCKED] "
+labels:
+  - acceptance-blocker
+body:
+  - type: input
+    id: binding
+    attributes:
+      label: Binding digest
+      description: SHA-256 identity of the candidate source-binding list.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Retained evidence
+      description: Exact files, hashes, logs, or reviewer source IDs.
+    validations:
+      required: true
+  - type: textarea
+    id: limitation
+    attributes:
+      label: Limitation
+      description: State what cannot be concluded.
+    validations:
+      required: true
+  - type: textarea
+    id: action
+    attributes:
+      label: Bounded next action
+      description: The smallest corrective action that creates a new candidate.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope guard
+      options:
+        - label: No scientific workload or numerical sweep was executed.
+          required: true
+        - label: Claims are limited to retained evidence.
+          required: true
+

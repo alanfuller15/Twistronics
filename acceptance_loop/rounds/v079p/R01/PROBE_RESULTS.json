@@ -1,0 +1,48 @@
+{
+  "closed_findings": [
+    {
+      "id": "R00-C1",
+      "closure": "Schema v2 binds round, commit, artifact, descriptor, ordered role, GitHub source ID and retained evidence paths; nonexistent or mismatched references fail."
+    },
+    {
+      "id": "R00-C2",
+      "closure": "Packaging requires the exact accepted evidence binding and rejects unrelated trees."
+    },
+    {
+      "id": "R00-C3",
+      "closure": "State v2 requires exact G00-G17 and mandatory negative-control ledgers with byte-bound evidence references."
+    },
+    {
+      "id": "R00-M1",
+      "closure": "Portable archive validation rejects backslashes, drive syntax, dot segments, non-canonical names, links, special files and case/Unicode collisions."
+    },
+    {
+      "id": "R00-M2",
+      "closure": "The canonical descriptor binds source label, source/evidence inventories, commit, artifact, round and ledgers; replay under changed identity fails."
+    },
+    {
+      "id": "R00-M3",
+      "closure": "Terminal states reject further review ingestion."
+    },
+    {
+      "id": "R00-M4",
+      "closure": "Controller and GitHub protocol now share PASS, CONDITIONAL_PASS, BLOCKED, STALE, INVALID and MATERIAL_FINDING vocabulary."
+    },
+    {
+      "id": "R00-M5",
+      "closure": "Packaging snapshots each file once, verifies finished ZIP bytes and manifest, compares a clean extraction and rechecks the evidence tree before publication."
+    }
+  ],
+  "limitations": [
+    "The local controller validates retained transport identifiers but relies on the authorized GitHub connector as the transport trust boundary.",
+    "Repeated-blocker escalation and notification deduplication remain outer-coordinator responsibilities.",
+    "Physical S1, continuous braid proof, cutoff convergence and the composed physical budget remain out of scope."
+  ],
+  "local_verification": {
+    "compileall": "PASS",
+    "json_parse": "PASS",
+    "prohibited_import_scan": "PASS",
+    "unit_tests": "23/23 PASS"
+  },
+  "round_id": "TWI-ACC-v079p-R01-aaa1e43060d7"
+}

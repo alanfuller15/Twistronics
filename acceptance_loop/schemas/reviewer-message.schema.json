@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/twistronics/reviewer-message.schema.json",
+  "title": "Bounded reviewer message v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "protocol", "round_id", "source_id", "in_reply_to",
+    "reviewer", "responder_marker", "exchange", "reviewed_commit",
+    "artifact_sha256", "reviewed_descriptor_digest", "status", "claim_scope",
+    "evidence_refs", "blockers", "limitations", "next_action", "reply_required",
+    "transport_receipt"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "protocol": {"const": "TWISTRONICS-ACCEPTANCE/1"},
+    "round_id": {"type": "string", "pattern": "^TWI-ACC-v079p-R[0-9]{2}-[0-9a-f]{12}$"},
+    "source_id": {"type": "string", "pattern": "^(issuecomment|pullrequestreview)-[0-9]+$"},
+    "in_reply_to": {"type": ["string", "null"]},
+    "reviewer": {"enum": ["ASTRA", "CLAUDE"]},
+    "responder_marker": {"enum": ["[ASTRA][HANDOFF]", "[CLAUDE][REVIEW]"]},
+    "exchange": {"type": "integer", "minimum": 1, "maximum": 2},
+    "reviewed_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifact_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewed_descriptor_digest": {"$ref": "#/$defs/sha256"},
+    "status": {"enum": ["PASS", "CONDITIONAL_PASS", "BLOCKED", "STALE", "INVALID", "MATERIAL_FINDING"]},
+    "claim_scope": {"const": "RETAINED_EVIDENCE_ONLY"},
+    "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "blockers": {"type": "array", "items": {"type": "object"}},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "next_action": {"type": "string", "minLength": 1},
+    "reply_required": {"type": "boolean"},
+    "transport_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_type", "source_id", "url", "created_at", "body_sha256", "fetched_commit", "envelope_sha256", "connector_verified"],
+      "properties": {
+        "event_type": {"enum": ["issue_comment", "pull_request_review"]},
+        "source_id": {"type": "string"},
+        "url": {"type": "string"},
+        "created_at": {"type": "string"},
+        "body_sha256": {"$ref": "#/$defs/sha256"},
+        "fetched_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "envelope_sha256": {"$ref": "#/$defs/sha256"},
+        "connector_verified": {"const": true}
+      }
+    }
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

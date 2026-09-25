@@ -1,0 +1,51 @@
+{
+  "round_id": "TWI-ACC-v079p-R04-aaa1e43060d7",
+  "review_scope": "controller_mechanics_only",
+  "reviewer": "independent_adversarial_worker",
+  "verdict": "NO_BLOCKER",
+  "verified": {
+    "approved_source_files": 15,
+    "approved_source_files_matched": 15,
+    "frozen_source_tests_passed": 34,
+    "frozen_source_tests_total": 34,
+    "mandatory_negative_controls_passed": 19,
+    "mandatory_negative_controls_total": 19,
+    "typed_receipts": 37,
+    "payload_manifest_entries": 45,
+    "payload_manifest_actual_files": 45,
+    "evidence_binding_files": 86,
+    "controller_status": "IN_REVIEW",
+    "controller_issues": []
+  },
+  "gate_status": {
+    "PASS": [
+      "G00",
+      "G01",
+      "G02",
+      "G03",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G12",
+      "G13",
+      "G14",
+      "G15"
+    ],
+    "NOT_RUN": [
+      "G04",
+      "G16",
+      "G17"
+    ]
+  },
+  "limitations": [
+    "The canonical descriptor must be regenerated with the immutable published commit before partner handoff.",
+    "Astra approval identity and timestamp are retained declarations; authorized GitHub connector provenance remains an external trust boundary.",
+    "Five direct negative controls remain synthetic harness-level probes; positive checks still lint actual Markdown and reconcile the retained test log.",
+    "G04, G16, and G17 remain open until reviewed staged packaging.",
+    "This verdict concerns controller mechanics only and makes no v079p scientific or physical claim."
+  ]
+}
