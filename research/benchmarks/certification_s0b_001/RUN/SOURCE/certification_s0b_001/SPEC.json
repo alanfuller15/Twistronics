@@ -1,0 +1,27 @@
+{
+  "schema": "twistronics_s0b_spec_v1",
+  "id": "FC49-77-S0B-001",
+  "date": "2026-09-23",
+  "scope": "Synthetic uniform Schur windows, noncommuting variable skew transport, and runner controls only",
+  "frozen_before_execution": true,
+  "backend": {"python_flint": "0.9.0", "flint": "3.6.0", "threads": 1, "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"},
+  "limits": {"global_wall_seconds": 900, "job_wall_seconds": 180, "worker_address_bytes": 2147483648, "workers": 1, "retries": 0},
+  "ledger": {"frame_error": "1/16", "unrepaired_seam_map_error": "1/128", "repair_angle_error": "1/32", "total_additional_phase_error": "1/64", "q_halfwidth": "1/8"},
+  "cell_family": "H(x)=Q diag(d+x*v) Q^T, x in [-width,width]; same Q,d as S0a, v_i=(-1)^i/4. V=Q(I+E)S, E_ij=((i mod 3)-1)*((j mod 5)-2)/(128*n), S_jj=1+(1+(j mod 3))/1024. This exact rational V is not an eigenbasis.",
+  "block_rule": "For each shift select the two exact center eigenvalue labels nearest below it and two nearest above it, ties by original index. This prescribed synthetic selector is not a physical eigensolver.",
+  "windows": [["-5/4", "-3/4"], ["3/4", "5/4"]],
+  "transport_family": "Repeat 4-by-4 blocks: U(t,x)=R01(20*t+t^2/2+x*t) R12(3*t^2/2), fourth coordinate fixed, t in [0,1], x in [-strip,strip]. A=U_t U^T. Midpoint-frozen exponential steps; additive error debit L*h^2*||center||_F/4 with L=130, plus full rounding and 7*strip*sqrt(2) parameter debit.",
+  "jobs": [
+    {"id": "phase_and_window_controls", "kind": "controls", "precision": 128},
+    {"id": "cell_196_pass", "kind": "cell", "dimension": 196, "precision": 128, "width": "1/8", "expected": "CERTIFIED_WINDOW_PAIR"},
+    {"id": "cell_308_pass", "kind": "cell", "dimension": 308, "precision": 128, "width": "1/8", "expected": "CERTIFIED_WINDOW_PAIR"},
+    {"id": "cell_308_256", "kind": "cell", "dimension": 308, "precision": 256, "width": "1/8", "expected": "CERTIFIED_WINDOW_PAIR"},
+    {"id": "cell_196_inconclusive", "kind": "cell", "dimension": 196, "precision": 128, "width": "16", "expected": "INCONCLUSIVE"},
+    {"id": "cell_308_inconclusive", "kind": "cell", "dimension": 308, "precision": 128, "width": "16", "expected": "INCONCLUSIVE"},
+    {"id": "transport_196_pass", "kind": "transport", "dimension": 196, "precision": 128, "strip": "1/1024", "steps": 1024, "expected": "WITHIN_FRAME_BUDGET"},
+    {"id": "transport_308_pass", "kind": "transport", "dimension": 308, "precision": 128, "strip": "1/1024", "steps": 1024, "expected": "WITHIN_FRAME_BUDGET"},
+    {"id": "transport_308_inconclusive", "kind": "transport", "dimension": 308, "precision": 128, "strip": "1/1024", "steps": 16, "expected": "INCONCLUSIVE"}
+  ],
+  "interpretation": "A job PASS means its declared expected behavior was observed. Expected INCONCLUSIVE is not a certificate. No adaptation of precision, cases, method or thresholds follows outcomes.",
+  "physical_evaluations": 0
+}

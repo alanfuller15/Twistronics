@@ -1,0 +1,48 @@
+{
+  "version": "research_questions_006_boundary_sewing_v1",
+  "baseline_commit": "a10cc54da792fca5c3be9cb9309f1dccd2505509",
+  "sources": {
+    "research/benchmarks/research_questions_006/sewing_audit.py": "e9debc047e10abcc738601a3937d0574b93fba51e7dbf2627618d753d62cbaa2",
+    "research/benchmarks/research_questions_006/DERIVATION.md": "dd303e656d75d58b34abb60ec495993b58b25ecf64c7dc541090bdc98b99d0cf",
+    "research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json": "0300f2ab57c7e4c4468d9ae28118e4f24af8dc397e95cf5575d3ec97aa4c5c79",
+    "research/benchmarks/migration_contract_review/partner_v078p.zip": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+    "research/benchmarks/research_questions_005/RESULTS.json": "4f33e104a146e9835beb92c8bc389a8f0c93ee23b50f31f51fc66741fe4187a5",
+    "research/benchmarks/research_questions_005/DERIVATION.md": "9da468bf0a94e13ea6adead3b5257483d622ecdfcb5b63d03de39220f86d6af0"
+  },
+  "archive_path": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+  "contract_path": "research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json",
+  "q005_results": "research/benchmarks/research_questions_005/RESULTS.json",
+  "archive_members": {
+    "guarded_topology.py": "c0330478ce1ff1098cc596b4798a4497efc0f0044b3c10cca9b1443fc88856ae",
+    "partner_v074p.zip": "be296d77d1051909d04fa91bcff0374bcd1d3f05f9783e6b3c37885f0188f163",
+    "euler.py": "5a5bc0ec45cfba2beffbcc0dcc97c3abad47c5df5e9c27070a12ad84c9e0a271"
+  },
+  "valleys": [1, -1],
+  "tolerance": 1e-10,
+  "accepted_cosine": 0.96,
+  "rejected_cosine": 0.94,
+  "phase_controls": [0.6, 1.4, 2.4],
+  "corner_angle": 1.0471975511965976,
+  "sizing_loop_length": 1.0,
+  "sizing_target": 0.7853981633974483,
+  "expected_outcomes": [
+    "Each shift has exact zero/one Gram diagonal and deficient rank; reverse shift is its transpose",
+    "Each shift commutes with the fixed internal real-basis transform to tolerance",
+    "Corner product columns agree exactly with the finite-index path inventory; record either commute or noncommute outcome",
+    "Identity, 0.96 norm loss and 0.96 subspace mismatch pass the original link gate; 0.94 is refused specifically for sewing_loss",
+    "The norm-loss/mismatch decomposition and fitting bounds hold for all synthetic controls",
+    "Pure in-plane rotations have zero sewing loss but retain their nonzero angle",
+    "Four individually accepted edge controls can have a nonzero corner cocycle defect",
+    "The full conditional mesh inequality gives a sufficient integer for its declared error bound"
+  ],
+  "limits": [
+    "Structural basis and synthetic component checks, not a physical Euler run or eigenvector calculation",
+    "Selected archived AST definitions executed unchanged; not an end-to-end import or production consumer replay",
+    "No finite-cutoff convergence conclusion follows from an ambient defect of one",
+    "Sewing singular values alone do not identify a physical reference transition or enforce a corner cocycle",
+    "The conditional sizing uses earlier uncertified floating-point cell gap bounds, not interval-certified gaps",
+    "No production modification, Fable correction, physical parameter sweep, merge or new graphene claim"
+  ],
+  "failure_policy": "Retain failed output, source and plan if any declared check fails; never relax a threshold after seeing results",
+  "provenance": "Written before first execution of this script; this is not an independently timestamped attestation"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "FC49-77-S0G-001",
+  "parent": "c3edcecfd7815e10226e2b573bc82de607ce4ac9",
+  "source_review": 5805089819,
+  "scope": "Fixed analytic gauge and repaired-loop controls; no physical evaluation",
+  "backend": {"python_flint":"0.9.0","flint":"3.6.0","threads":1,"wheel_sha256":"376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"},
+  "limits": {"global_wall_seconds":120,"job_wall_seconds":10,"worker_address_bytes":1073741824,"retries":0},
+  "jobs": [
+    {"id":"gauge_correct","precision":128,"expected_status":"CERTIFIED","expected_reason":"SYNTHETIC_ANALYTIC_KATO_GAUGE"},
+    {"id":"gauge_unconverted","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"GAUGE_CONNECTION_NOT_ZERO"},
+    {"id":"seam_distinct","precision":128,"expected_status":"CERTIFIED","expected_reason":"PARTIAL_SHIFT_SEAM_ENCLOSURE"},
+    {"id":"seam_loss","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"SEAM_SINGULAR_GATE_NOT_CERTIFIED"},
+    {"id":"lift_a","precision":128,"expected_status":"CERTIFIED","expected_reason":"CONTINUOUS_PHASE_LIFT"},
+    {"id":"lift_b","precision":128,"expected_status":"CERTIFIED","expected_reason":"CONTINUOUS_PHASE_LIFT"},
+    {"id":"lift_open","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"INTEGER_OUTSIDE_ENCLOSURE"},
+    {"id":"repair_branch","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"REPAIR_BRANCH_REFUSED"},
+    {"id":"vector_good","precision":128,"expected_status":"CERTIFIED","expected_reason":"SYNTHETIC_REPAIRED_LOOP_VECTOR"},
+    {"id":"vector_swap","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"ROLE_CONTENT_BINDING_REFUSED"},
+    {"id":"vector_tamper","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"ROLE_CONTENT_BINDING_REFUSED"},
+    {"id":"vector_conditional","precision":128,"expected_status":"INCONCLUSIVE","expected_reason":"ROLE_REASON_REFUSED"}
+  ]
+}

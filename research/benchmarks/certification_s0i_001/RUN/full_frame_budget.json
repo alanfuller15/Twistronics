@@ -1,0 +1,142 @@
+{
+  "dimension": 196,
+  "exact_spectrum": {
+    "0": 2,
+    "2": 194
+  },
+  "frame": {
+    "frame_operator_error_bound": {
+      "lower": {
+        "exponent": -261,
+        "mantissa": "74840523328330225972691991429643466337462564056692764234872790626558006724079"
+      },
+      "upper": {
+        "exponent": -261,
+        "mantissa": "74840523328330225972691991429643466337462564056692764234872790626558006724305"
+      }
+    },
+    "off_plane_operator_bound": {
+      "lower": {
+        "exponent": -261,
+        "mantissa": "74099528039137382582863596407476408042760198973403513738907385154428373788329"
+      },
+      "upper": {
+        "exponent": -261,
+        "mantissa": "74099528039137382582863596407476408042760198973403513738907385154428373788329"
+      }
+    },
+    "projector_error": {
+      "lower": {
+        "exponent": -285,
+        "mantissa": "14474011158034517762124840817525388167724573755961153343002280115241665296455"
+      },
+      "upper": {
+        "exponent": -285,
+        "mantissa": "14474011158034517762124840817525388167724573755961153343002280115241665296455"
+      }
+    },
+    "reason": "FRAME_ERROR_BUDGET",
+    "residual_F_bound": {
+      "lower": {
+        "exponent": -261,
+        "mantissa": "74099527176419089033175867398990088409908826747846320223537889822051409979387"
+      },
+      "upper": {
+        "exponent": -261,
+        "mantissa": "74099527176419089033175867398990088409908826747846320223537889822051409979693"
+      }
+    },
+    "status": "INCONCLUSIVE"
+  },
+  "job": {
+    "dimension": 196,
+    "expected_reason": "FRAME_ERROR_BUDGET",
+    "expected_status": "INCONCLUSIVE",
+    "frame_budget": "1/1024",
+    "id": "full_frame_budget",
+    "nodes": 32,
+    "precision": 256
+  },
+  "physical_evaluations": 0,
+  "point": [
+    "1/2",
+    "1/2"
+  ],
+  "premises": "P=KK^T; U rational orthogonal; E=(u*K1+w*normal,K2), u^2+w^2=1; normalized PE=K",
+  "reason": "FRAME_ERROR_BUDGET",
+  "resources": {
+    "peak_rss_kib": 79828,
+    "system_cpu_seconds": 0.046046,
+    "user_cpu_seconds": 1.196816,
+    "wall_seconds": 1.1048772229996757
+  },
+  "riesz": {
+    "analytic_operator_error_bound": {
+      "lower": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613168406440321120011812863"
+      },
+      "upper": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613168406440321120011812865"
+      }
+    },
+    "inner_ratio_bound": {
+      "lower": {
+        "exponent": 0,
+        "mantissa": "0"
+      },
+      "upper": {
+        "exponent": 0,
+        "mantissa": "0"
+      }
+    },
+    "interval_rounding_F_bound": {
+      "lower": {
+        "exponent": -464,
+        "mantissa": "39002524927832357339123353141881787170383947973572495245094841883574831144103"
+      },
+      "upper": {
+        "exponent": -461,
+        "mantissa": "4875315615979044667390419142735223396297993496696561905636855235446853893013"
+      }
+    },
+    "nodes": 32,
+    "outer_ratio_bound": {
+      "lower": {
+        "exponent": 1,
+        "mantissa": "1"
+      },
+      "upper": {
+        "exponent": 1,
+        "mantissa": "1"
+      }
+    },
+    "quadrature_identity": "roots_of_unity_trapezoid",
+    "reason": "RIESZ_PROJECTOR_ENCLOSURE",
+    "status": "CERTIFIED",
+    "symmetry_defect_F_bound": {
+      "lower": {
+        "exponent": -481,
+        "mantissa": "10707505673337374187074552271416780149871840170598416340353380338180743835459"
+      },
+      "upper": {
+        "exponent": -483,
+        "mantissa": "42830022693349496748298209085667120599487360682393665361413521352722975341837"
+      }
+    },
+    "target_error": "1/1024",
+    "total_projector_operator_error_bound": {
+      "lower": {
+        "exponent": -286,
+        "mantissa": "28948022316069035524249681635050776335449147511922306686004560230483330592907"
+      },
+      "upper": {
+        "exponent": -285,
+        "mantissa": "14474011158034517762124840817525388167724573755961153343002280115241665296455"
+      }
+    }
+  },
+  "scope": "Dense fixed-point calibration, not uniform rectangle Riesz or a physical workload",
+  "status": "INCONCLUSIVE"
+}

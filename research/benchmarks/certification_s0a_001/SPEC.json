@@ -1,0 +1,26 @@
+{
+  "schema": "twistronics_synthetic_calibration_v1",
+  "id": "FC49-77-S0A-001",
+  "date": "2026-09-23",
+  "status": "FROZEN_BEFORE_RETAINED_RUN",
+  "scope": "Synthetic inertia and constant skew transport only; no physical model evaluation",
+  "backend": {"python_flint": "0.9.0", "flint": "3.6.0", "threads": 1},
+  "limits": {"global_wall_seconds": 900, "job_wall_seconds": 100, "worker_address_bytes": 2147483648, "workers": 1, "retries": 0},
+  "jobs": [
+    {"id": "regressions", "kind": "regressions", "precision": 128},
+    {"id": "inertia_196_raw", "kind": "inertia", "dimension": 196, "precision": 128, "shift": 1, "precondition": false},
+    {"id": "inertia_196_minus", "kind": "inertia", "dimension": 196, "precision": 128, "shift": -1, "precondition": true},
+    {"id": "inertia_196_plus", "kind": "inertia", "dimension": 196, "precision": 128, "shift": 1, "precondition": true},
+    {"id": "inertia_308_raw", "kind": "inertia", "dimension": 308, "precision": 128, "shift": 1, "precondition": false},
+    {"id": "inertia_308_minus", "kind": "inertia", "dimension": 308, "precision": 128, "shift": -1, "precondition": true},
+    {"id": "inertia_308_plus", "kind": "inertia", "dimension": 308, "precision": 128, "shift": 1, "precondition": true},
+    {"id": "inertia_308_256", "kind": "inertia", "dimension": 308, "precision": 256, "shift": 1, "precondition": true},
+    {"id": "transport_196", "kind": "transport", "dimension": 196, "precision": 128, "omega": 1000, "steps": 512, "degree": 20, "acceptance_error": "1/100000000"},
+    {"id": "transport_308", "kind": "transport", "dimension": 308, "precision": 128, "omega": 1000, "steps": 512, "degree": 20, "acceptance_error": "1/100000000"}
+  ],
+  "inertia_family": "H=Q diag(d) Q^T, Q=I-2uu^T/(u^Tu), u_i=1+(i mod 7); d consists of m=(n-2)/2 entries -3-i, two zeros, and m entries 3+i. V=Q diag(1+(1+i mod 3)/1024).",
+  "transport_family": "A is a direct sum of omega*[[0,-1],[1,0]], F(0) is the first two columns of Q above, t in [0,1]. Every step uses a degree-20 Taylor polynomial, exact dyadic midpoint recentering, and an additive norm remainder.",
+  "acceptance": "Every completed job must PASS. A timeout or zero-containing LDL pivot is retained as INCONCLUSIVE, never retried or counted as a pass. A failed known-answer check is EXECUTION_ERROR.",
+  "physical_evaluations": 0,
+  "unimplemented": ["physical assembly", "spectral bisection", "physical uniform cell certification", "Riesz projectors", "variable-coefficient parametric Kato transport", "rank-two polar and phase primitives", "physical seams and class certificate"]
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "twistronics_certification_readiness_v5",
+  "plan_id": "FC49-77-PLAN-005",
+  "date": "2026-09-23",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "case_status": "DECLARED_UNEXECUTED",
+  "previous_evidence_sha": "9fe81378158b51314ae0aff104b2f4c01cfc2ed9",
+  "source_comment": 5799275603,
+  "completed_review": 5294252575,
+  "current_derivation": "docs/certification-readiness/S0D_PRIMITIVES.md",
+  "current_packet": "research/benchmarks/certification_s0d_001",
+  "review_status": "INDEPENDENT_REVIEW_PENDING",
+  "S0a": "IMPLEMENTED_SYNTHETIC_PASS_INDEPENDENTLY_REPRODUCED",
+  "S0b": "IMPLEMENTED_SYNTHETIC_PASS_INDEPENDENTLY_REPRODUCED",
+  "S0c": "IMPLEMENTED_SYNTHETIC_PASS_INDEPENDENTLY_REPRODUCED",
+  "S0d": {
+    "status": "IMPLEMENTED_EXPECTED_SYNTHETIC_BEHAVIORS_PASS",
+    "jobs": 13,
+    "raw_status_counts": {"CERTIFIED": 6, "INCONCLUSIVE": 6, "EXECUTION_ERROR": 1},
+    "protocol_controls": 10,
+    "physical_evaluations": 0,
+    "physical_certificates": 0,
+    "run": "research/benchmarks/certification_s0d_001/RUN/RESULTS.json"
+  },
+  "reviewed_corrections": {
+    "H1": "certify ||A_tilde-B_tilde|| + 2*(2*eta+eta^2) <= 1 before using the exact branch gate",
+    "H2": "form V^T H0 V, V^T Hx V and V^T V internally from one enclosed tuple",
+    "H3": "recognized nonfinite interval growth is INCONCLUSIVE/NONFINITE_ENCLOSURE; shapes and unrelated faults remain errors",
+    "H4": "name the ledger outcome BUDGET_CONDITIONALLY_SUFFICIENT"
+  },
+  "projector_primitive": {
+    "method": "roots-of-unity circular Riesz trapezoid via [I-((H-cI)/r)^N]^-1",
+    "analytic_error": "alpha^N/(1-alpha^N)+1/(beta^N-1)",
+    "positive_fixture": "Householder-rotated diag(-3,-2,0,0,2,3), target indices [2,3], N=8, alpha=0, beta=2",
+    "status": "SYNTHETICALLY_CERTIFIED_WITH_DECLARED_SPECTRAL_SPLIT"
+  },
+  "seam_primitive": {
+    "method": "internal F^T G overlap, certified orientation-preserving 2x2 polar factor, full F U G^T interval evaluation",
+    "positive_budget": "1/128 Frobenius-sufficient operator bound",
+    "status": "SYNTHETICALLY_CERTIFIED"
+  },
+  "phase_primitive": {
+    "method": "ordered dot/cross branch gates, continuous atan increments, endpoint closure and one nearest-integer cell",
+    "positive_fixture": "16 steps, one positive winding, certified integer +1",
+    "status": "SYNTHETICALLY_CERTIFIED"
+  },
+  "physical_stage_status": "S1-S4_NOT_IMPLEMENTED_NOT_RUN_BUDGET_NOT_FROZEN",
+  "remaining_S0": [
+    "compose projector error into continuous frame certificates",
+    "bind seam maps to the intended physical translation and common-fibre identification",
+    "enclose the exact principal corner repair",
+    "certify both complete repaired edge lifts and the joint relative integer",
+    "freeze the physical dependency cascade and refusal hierarchy"
+  ],
+  "next_gate": "Independent S0d audit, then a bounded synthetic composition packet; no physical execution yet.",
+  "v078_implementation_changes": false
+}

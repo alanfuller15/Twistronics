@@ -1,0 +1,112 @@
+{
+  "id": "FC49-77-S0H-001",
+  "parent": "5c119991786da432148b0393c9bb66492b14eaa3",
+  "source_review": 5805215136,
+  "scope": "One fixed analytic rectangle; no physical model or Riesz numerical certification",
+  "backend": {
+    "python_flint": "0.9.0",
+    "flint": "3.6.0",
+    "threads": 1,
+    "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+  },
+  "limits": {
+    "global_wall_seconds": 180,
+    "job_wall_seconds": 40,
+    "worker_address_bytes": 1073741824,
+    "retries": 0
+  },
+  "jobs": [
+    {
+      "id": "joined",
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "SYNTHETIC_GEOMETRIC_COMPOSITION"
+    },
+    {
+      "id": "bad_gauge",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "GAUGE_CONNECTION"
+    },
+    {
+      "id": "singular_loss",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "SEAM_SINGULAR_GATE"
+    },
+    {
+      "id": "wrong_repair",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "INTEGER_OUTSIDE_ENCLOSURE"
+    },
+    {
+      "id": "branch_charge",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "CHARGED_CORNER_BRANCH"
+    },
+    {
+      "id": "dependency_tamper",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "DEPENDENCY_HASH_REFUSED"
+    },
+    {
+      "id": "unbound_Q",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "Q_DEPENDENCY_REFUSED"
+    },
+    {
+      "id": "joint_budget",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "JOINT_EDGE_SCREEN"
+    },
+    {
+      "id": "full_196",
+      "dimension": 196,
+      "nodes": 32,
+      "frame_budget": "1/16",
+      "precision": 256,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "FULL_DIMENSION_POINT_BRIDGE"
+    },
+    {
+      "id": "full_308",
+      "dimension": 308,
+      "nodes": 32,
+      "frame_budget": "1/16",
+      "precision": 256,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "FULL_DIMENSION_POINT_BRIDGE"
+    },
+    {
+      "id": "full_contour_budget",
+      "dimension": 196,
+      "nodes": 2,
+      "frame_budget": "1/16",
+      "precision": 256,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "PROJECTOR_ERROR_BUDGET"
+    },
+    {
+      "id": "full_frame_budget",
+      "dimension": 196,
+      "nodes": 32,
+      "frame_budget": "1/1024",
+      "precision": 256,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "FRAME_ERROR_BUDGET"
+    }
+  ],
+  "dependencies": {
+    "certification_s0f_001/primitives_s0f.py": "1e0029ab1cfc0ddfefcd0fc58ae3e746f7134b596d12ff197cf9bcae3483bf30",
+    "certification_s0b_001/runner_io.py": "b23d4aa027cf7f518d8f195e428ecb81c5c29f0d42bdf38436b730b8a6949708",
+    "certification_s0b_001/run_calibration.py": "f4823d37fa5ef6be36feeda4ac78624ef967fa2efbbdd65c370f54df6a900631",
+    "certification_s0f_001/frame_bridge.py": "fd1ed97b9ea976f344e247757e89da0e7f845c229475b1f41b26f52898a772de",
+    "certification_s0f_001/certified_s0f.py": "8e38781d6d3885a43022a772d908b1f4348406d37f9c14de80ff83f0f377e255",
+    "certification_s0f_001/pair_s0f.py": "7b4667262188648513b2c2b5e47ddbb24cf068d36273f4d26f925776037219fe"
+  }
+}

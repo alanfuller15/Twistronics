@@ -1,0 +1,39 @@
+{
+  "version": "research_questions_004",
+  "baseline_commit": "ccf99d8eb34097f31e565cb7e5745c6d4805d0fa",
+  "sources": {
+    "research/benchmarks/research_questions_004/transport.py": "3613369d6efd0a25ad381fb8eab9bd5f064d9d12d47b9ea1dbd70b0743d703cf",
+    "research/benchmarks/research_questions_001/reproduce.py": "f845bac8b5d87987bad017c089bae7ca47ec9f8193d38f6d6880dbbd42d0ef42",
+    "research/benchmarks/research_questions_002/calibrate.py": "c259f8dd9cd604033cbe92d9673456de71d7d2fd87e96f71c4443193d55e90aa",
+    "research/benchmarks/research_questions_002/RESULTS.json": "22c375fb2571389a255c30c79534a8e8bf46f6ddefb6541e2ec7ed32539248ec",
+    "research/benchmarks/research_questions_003/RESULTS.json": "36f58ce8bd6c0f8c51314ff62dbd0346fe36c5fca602869a6c449afb747c5796",
+    "research/benchmarks/vafek_2025/model.py": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3",
+    "research/benchmarks/migration_contract_review/partner_v078p.zip": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e"
+  },
+  "folds": [1, 49, 97],
+  "meshes": [24, 48, 96],
+  "link_angles": [0.2, 0.7, 1.2, 2.4],
+  "latitude_angles": [0.7, 1.1],
+  "latitude_meshes": [12, 24, 48],
+  "sphere_masses": [-1, -3],
+  "scan_fractions": [0.0, 0.25, 0.4166666666666667, 0.5, 0.5833333333333334, 0.75, 1.0],
+  "ode_tolerances": {"rtol": 2e-11, "atol": 2e-13},
+  "numerical_tolerance": 1e-8,
+  "expected_outcomes": [
+    "Fold1 meets exact-arithmetic unwrapping at all three grids; pi/2 sufficient bound only at48/96",
+    "Folds49/97 fail sufficient theorem conditions at all three grids",
+    "Acute polar links equal short normal-arc transport; obtuse control differs",
+    "Latitude and retained sphere holonomy errors lie below explicit ribbon bounds",
+    "Original 24x24 routine refuses calibrated pi/2 but returns Euler2 under default3pi/4"
+  ],
+  "limits": [
+    "Proposed exact-arithmetic sphere argument, pending partner proof review",
+    "No certified floating-point phase or interval error bound",
+    "Numerical ODE is a diagnostic, not an exact continuous solution",
+    "Identity sewings and tangent sphere planes only; no TBG transport certificate",
+    "Projected-model derivative constants are symbolic and require a valid uniform gap for projector bounds",
+    "No physical sign choice, v078 repair, parameter sweep, merge or experimental claim"
+  ],
+  "failure_policy": "Retain unexpected failed attempts before changing source, thresholds or cases",
+  "provenance": "Written before execution; not independently timestamp-attested"
+}

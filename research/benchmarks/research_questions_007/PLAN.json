@@ -1,0 +1,58 @@
+{
+  "version": "research_questions_007_corner_repair_v1",
+  "baseline_commit": "929329564c676bbfc6e483dbf145416aeb25270d",
+  "baseline_tree": "cb071e0882428886bc5b79c94e669117dcf2af4f",
+  "sources": {
+    "research/benchmarks/research_questions_007/boundary_repair.py": "bdd14edba33cb048332a094ad4658295e4f5862d95b9c10884aca0398d64a42a",
+    "research/benchmarks/research_questions_007/DERIVATION.md": "b681e9aee4e8d57cf59a382b0879cf51647991b89929a5046d79907681347c42",
+    "research/benchmarks/research_questions_007/UPSTREAM.json": "8fe4ce57e89afe8949b8dd0b9eb5e06b62c1d1b025aa73b1cfc8014f14e5f696",
+    "research/benchmarks/research_questions_006/DERIVATION.md": "dd303e656d75d58b34abb60ec495993b58b25ecf64c7dc541090bdc98b99d0cf",
+    "research/benchmarks/research_questions_006/RESULTS.json": "7e4f31088f3291a59d237ba2346c81209dffac8a6d82dd5b4200f76ece6d1b94",
+    "research/benchmarks/research_questions_005/DERIVATION.md": "9da468bf0a94e13ea6adead3b5257483d622ecdfcb5b63d03de39220f86d6af0"
+  },
+  "tolerance": 1e-10,
+  "branch_margin": 1e-8,
+  "length_x": 2,
+  "length_y": 3,
+  "additional_angles": [
+    1.2,
+    -0.7
+  ],
+  "edge_sites": [
+    0,
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    0.875,
+    1
+  ],
+  "quadrature_order": 8,
+  "twists": [
+    -1,
+    0,
+    1
+  ],
+  "alias_intervals": 16,
+  "relative_loop_amplitude": 0.4,
+  "expected_check_count": 60,
+  "expected_outcomes": [
+    "Principal short-arc repair closes each of five declared corners and achieves the endpoint-forced uniform norm change",
+    "Quintic correction has zero first/second endpoint jets and the stated derivative and integral costs",
+    "Covariant seam derivative identity and independent endpoint gauge transformation agree",
+    "Orientation reversal, nonisometry and antipodal principal-log data are specifically refused",
+    "Local phase derivative equals curvature flux plus covariant seam defect, including the correction",
+    "Three explicit constant-plane gluings close and have unit singular values but distinct analytic Euler classes",
+    "A 16-turn relative loop aliases identity at 16 interval endpoints yet attains antipodal distance between them",
+    "An explicitly bounded relative loop has a periodic principal log"
+  ],
+  "limits": [
+    "Synthetic fixed 2x2 algebra and quadrature only; no production API, physical Hamiltonian or eigensolver",
+    "Numerical sites illustrate formulas; analytic derivation supplies continuous bounds",
+    "No certified floating-point arithmetic, physical reference transition or full corner/collar jet certification",
+    "Exact corner repair does not select a physical topology or establish cutoff convergence",
+    "No v078 repair, physical sign convention, numerical parameter sweep or merge"
+  ],
+  "failure_policy": "Retain failed output, source and plan if any predicate fails; do not change thresholds after observing results",
+  "provenance": "Plan and bound source hashes written before first script execution; not an independently timestamped preregistration"
+}

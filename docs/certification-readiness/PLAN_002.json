@@ -1,0 +1,64 @@
+{
+  "schema": "twistronics_bounded_certification_plan_v2",
+  "plan_id": "FC49-77-PLAN-002",
+  "date": "2026-09-23",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "case_status": "DECLARED_UNEXECUTED",
+  "supersedes_execution_design": "FC49-77-PLAN-001",
+  "historical_packet_sha": "96b0c96009a34ecbcd69724d8b460547674d32c1",
+  "review_status": "INDEPENDENT_REVIEW_PENDING",
+  "case_definition_changed": false,
+  "backend": {
+    "python": "CPython 3.12.14",
+    "package": "python-flint",
+    "version": "0.9.0",
+    "native_flint_version": "3.6.0",
+    "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76",
+    "lock_status": "RETAINED_SYNTHETIC_RUN_ARTIFACTS_BOUND",
+    "environment_record": "research/benchmarks/certification_s0a_001/RUN/ENVIRONMENT.json",
+    "arithmetic_trust": "Conditional on the identified backend, interpreter and hardware; not formally verified"
+  },
+  "stages": [
+    {
+      "id": "S0a",
+      "status": "IMPLEMENTED_SYNTHETIC_PASS",
+      "spec": "research/benchmarks/certification_s0a_001/SPEC.json",
+      "manifest": "research/benchmarks/certification_s0a_001/RUN/MANIFEST.json",
+      "results": "research/benchmarks/certification_s0a_001/RUN/RESULTS.json",
+      "planned_jobs": 10,
+      "passed_jobs": 10,
+      "global_wall_seconds": 900,
+      "per_job_wall_seconds": 100,
+      "worker_address_bytes": 2147483648,
+      "worker_processes": 1,
+      "retries": 0,
+      "physical_model_evaluation": false
+    },
+    {
+      "id": "S0b",
+      "status": "NOT_IMPLEMENTED",
+      "next_packet_scope": ["uniform Schur cell solver with residual-certified complementary inverse", "variable-coefficient skew residual transport with retained parameter debit"],
+      "required_before_run": "Freeze a new finite synthetic case list, exact reference solutions, hard resource caps and refusal controls; record it with source hashes before execution.",
+      "physical_model_evaluation": false
+    },
+    {
+      "id": "S0_remaining",
+      "status": "NOT_IMPLEMENTED",
+      "scope": ["Riesz inverse and quadrature validation", "rank-two positive polar", "phase arcs and lifts", "dependency/status cascade"],
+      "physical_model_evaluation": false
+    },
+    {
+      "id": "S1-S4",
+      "status": "NOT_IMPLEMENTED_NOT_RUN",
+      "budget_status": "NOT_FROZEN",
+      "release_gate": "Independent design/code review plus sufficient primitive and uniform-cell/transport evidence; publish explicit finite caps before physical execution.",
+      "physical_model_evaluation_this_packet": false
+    }
+  ],
+  "spectral_design": "Fixed certified nonsingular congruence retaining -s V^T V; uniform Schur complement with complementary inverse and inertia proof; direct selected-block variation retained.",
+  "transport_design": "Exact original Kato gauge enclosed by a polynomial center and additive Frobenius defect bound using skew symmetry; parameter and recentering debits carried without reset.",
+  "physical_assemblies": 0,
+  "physical_eigensolver_runs": 0,
+  "physical_transport_steps": 0,
+  "physical_certificates": 0
+}

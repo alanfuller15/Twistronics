@@ -1,0 +1,38 @@
+{
+  "schema": "twistronics_s1b_hard_region_probe_spec_v1",
+  "spec_id": "FC49-77-S1B-METHOD-003",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "parent_reviewed_commit": "fae7794fdec7f7135e9e58df95d3899071533722",
+  "parent_packet": "research/benchmarks/certification_s1b_method_002",
+  "precision_bits": 128,
+  "recomputation_decimal_digits": 10,
+  "cutoff_order": ["a", "b"],
+  "target_point": ["3/4", "3/4"],
+  "probe_cells": [
+    [2, 2, 2], [2, 3, 3],
+    [3, 5, 5], [3, 6, 6],
+    [4, 11, 11], [4, 12, 12],
+    [5, 23, 23], [5, 24, 24],
+    [6, 47, 47], [6, 48, 48],
+    [7, 95, 95], [7, 96, 96]
+  ],
+  "limits": {
+    "physical_cases": 1,
+    "parameter_sweeps": 0,
+    "probe_cells_total": 24,
+    "primary_factorizations_total": 96,
+    "max_recomputation_factorizations": 96,
+    "max_factorizations_total": 192,
+    "worker_processes": 1,
+    "wall_seconds": 360,
+    "address_bytes": 2147483648
+  },
+  "method": {
+    "name": "two-sided nested hard-region direct affine-cell interval inertia",
+    "chains": "for depths 2 through 7, the two diagonal cells immediately below and above (3/4,3/4)",
+    "primary_congruence": "midpoint eigenvectors serialized with 17 significant digits and certified nonsingular",
+    "accepted_cell_recomputation": "recorded shifts recomputed with midpoint eigenvectors independently rounded to 10 significant digits and separately certified nonsingular",
+    "acceptance": "all four primary and all four recomputation LDL factorizations certify with the required negative counts"
+  },
+  "claim_ceiling": "S1B_HARD_REGION_METHOD_FEASIBILITY_ONLY_NO_DOMAIN_COVER_OR_UNIFORM_ISOLATION"
+}

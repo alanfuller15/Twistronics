@@ -1,0 +1,165 @@
+{
+  "id": "FC49-77-S0I-001",
+  "parent": "c7ed0d08f2ecb07c01fff23b6091ed06184e0d43",
+  "source_review": 5805761394,
+  "scope": "Nonzero synthetic sewing classes and timed dense bridge calibration",
+  "backend": {
+    "python_flint": "0.9.0",
+    "flint": "3.6.0",
+    "threads": 1,
+    "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+  },
+  "limits": {
+    "global_wall_seconds": 180,
+    "job_wall_seconds": 40,
+    "worker_address_bytes": 1073741824,
+    "retries": 0
+  },
+  "jobs": [
+    {
+      "id": "individual_0",
+      "precision": 128,
+      "winding_a": 1,
+      "edge": 2,
+      "expected_q": 1,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "WINDING_RECTANGLE_Q"
+    },
+    {
+      "id": "individual_1",
+      "precision": 128,
+      "winding_a": -1,
+      "edge": 2,
+      "expected_q": -1,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "WINDING_RECTANGLE_Q"
+    },
+    {
+      "id": "individual_2",
+      "precision": 128,
+      "winding_a": 1,
+      "edge": 1,
+      "expected_q": -1,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "WINDING_RECTANGLE_Q"
+    },
+    {
+      "id": "same_positive",
+      "precision": 128,
+      "winding_a": 1,
+      "winding_b": 1,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "SYNTHETIC_RELATIVE_WINDING_CLASS"
+    },
+    {
+      "id": "same_negative",
+      "precision": 128,
+      "winding_a": -1,
+      "winding_b": -1,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "SYNTHETIC_RELATIVE_WINDING_CLASS"
+    },
+    {
+      "id": "different",
+      "precision": 128,
+      "winding_a": 1,
+      "winding_b": -1,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "JOINT_EDGE_SCREEN"
+    },
+    {
+      "id": "contradiction_injection",
+      "precision": 128,
+      "winding_a": 1,
+      "winding_b": 1,
+      "expected_status": "EXECUTION_ERROR",
+      "expected_reason": "CERTIFIED_SCREEN_INTEGER_CONTRADICTION"
+    },
+    {
+      "id": "wrong_repair",
+      "precision": 128,
+      "winding_a": 1,
+      "winding_b": 1,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "EXACT_GLUING_REQUIRED"
+    },
+    {
+      "id": "interval_negative",
+      "precision": 128,
+      "midpoint": "-2",
+      "radius": "0.01",
+      "expected_status": "CERTIFIED",
+      "expected_reason": "UNIQUE_CONTAINED_INTEGER",
+      "expected_q": -2
+    },
+    {
+      "id": "interval_empty",
+      "precision": 128,
+      "midpoint": "0.25",
+      "radius": "0.01",
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "INTEGER_OUTSIDE_ENCLOSURE"
+    },
+    {
+      "id": "interval_multiple",
+      "precision": 128,
+      "midpoint": "0",
+      "radius": "1",
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "INTEGER_NOT_UNIQUE"
+    },
+    {
+      "id": "interval_wide",
+      "precision": 128,
+      "midpoint": "0",
+      "radius": "0.2",
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "INTEGER_HALFWIDTH"
+    },
+    {
+      "id": "full_196",
+      "dimension": 196,
+      "nodes": 32,
+      "frame_budget": "1/16",
+      "precision": 256,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "FULL_DIMENSION_POINT_BRIDGE"
+    },
+    {
+      "id": "full_308",
+      "dimension": 308,
+      "nodes": 32,
+      "frame_budget": "1/16",
+      "precision": 256,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "FULL_DIMENSION_POINT_BRIDGE"
+    },
+    {
+      "id": "full_contour_budget",
+      "dimension": 196,
+      "nodes": 2,
+      "frame_budget": "1/16",
+      "precision": 256,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "PROJECTOR_ERROR_BUDGET"
+    },
+    {
+      "id": "full_frame_budget",
+      "dimension": 196,
+      "nodes": 32,
+      "frame_budget": "1/1024",
+      "precision": 256,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "FRAME_ERROR_BUDGET"
+    }
+  ],
+  "dependencies": {
+    "certification_s0h_001/cases.py": "8c60951e5fb93b1c8b2ad5f0981d6f1e48c010c7fef672bbcb45939078e1502a",
+    "certification_s0f_001/primitives_s0f.py": "1e0029ab1cfc0ddfefcd0fc58ae3e746f7134b596d12ff197cf9bcae3483bf30",
+    "certification_s0b_001/runner_io.py": "b23d4aa027cf7f518d8f195e428ecb81c5c29f0d42bdf38436b730b8a6949708",
+    "certification_s0b_001/run_calibration.py": "f4823d37fa5ef6be36feeda4ac78624ef967fa2efbbdd65c370f54df6a900631",
+    "certification_s0f_001/frame_bridge.py": "fd1ed97b9ea976f344e247757e89da0e7f845c229475b1f41b26f52898a772de",
+    "certification_s0f_001/certified_s0f.py": "8e38781d6d3885a43022a772d908b1f4348406d37f9c14de80ff83f0f377e255",
+    "certification_s0f_001/pair_s0f.py": "7b4667262188648513b2c2b5e47ddbb24cf068d36273f4d26f925776037219fe"
+  }
+}

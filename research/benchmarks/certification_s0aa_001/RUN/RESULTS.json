@@ -1,0 +1,282 @@
+{
+  "assembly_sha256": "f5e05ec95f9d3aa8cf0ff87402f8df51888ed3615cc2b68f779add3a7b6b3461",
+  "contract": {
+    "coverage": {
+      "cell_count": 4,
+      "exact_cover": true,
+      "path_contained_in_window_cover": true,
+      "window_parameter_domain": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "eligible_for_physical_transport": false,
+    "global_window": {
+      "cluster_lower": "-1/3",
+      "cluster_upper": "1/3",
+      "nearest_lower_complement_upper": "-3",
+      "nearest_upper_complement_lower": "3"
+    },
+    "inputs": {
+      "H_derivative_bounds": {
+        "H1": "1",
+        "H2": "0",
+        "H3": "0"
+      },
+      "H_derivative_semantics": "derived_from_hash_bound_affine_assembly_and_exact_path",
+      "assembly_artifact_sha256": "f5e05ec95f9d3aa8cf0ff87402f8df51888ed3615cc2b68f779add3a7b6b3461",
+      "assembly_evidence_id": "FC49-77-S0Z-AFFINE-001",
+      "cluster_center": "0",
+      "cluster_dimension": 2,
+      "cluster_enclosure_radius": "1/3",
+      "cluster_radius_semantics": "derived_uniform_supremum_over_exact_cell_cover",
+      "complement_distance_from_center_lower": "3",
+      "complement_distance_semantics": "derived_uniform_infimum_over_exact_cell_cover",
+      "contour_center": "0",
+      "contour_radius": "5/3",
+      "contract_id": "synthetic_path_bound_contour_contract",
+      "fixed_contour": true,
+      "norm": "operator",
+      "path_artifact_sha256": "22516a1b2ada16f57169404673c6915c191b17c5f9dd670a6c8d1f48b8efc784",
+      "path_evidence_id": "FC49-77-S0Z-PATH-001",
+      "resolvent_distance": "4/3",
+      "selected_zero_based_indices": [
+        1,
+        2
+      ],
+      "self_adjoint": true,
+      "source_evidence_id": "FC49-77-S0Z-WINDOWS-001",
+      "theorem_id": "self_adjoint_riesz_contour_differentiation_v1",
+      "uniform_over_path_parameter_domain": true,
+      "valid_parameter_domain": {
+        "t": [
+          "0",
+          "1/8"
+        ]
+      },
+      "window_parameter_domain": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "outputs": {
+      "K": "15/16",
+      "K1": "45/32",
+      "K2": "1485/256",
+      "P1": "15/16",
+      "P2": "45/32",
+      "P3": "405/128",
+      "norm": "operator",
+      "valid_parameter_domain": {
+        "t": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "path_proof": {
+      "H_derivative_bounds": {
+        "H1": "1",
+        "H2": "0",
+        "H3": "0"
+      },
+      "H_path_derivative_diagonals": {
+        "H1": [
+          "-1",
+          "1",
+          "-1/2",
+          "1/2"
+        ],
+        "H2": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H3": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "cover_containment": true,
+      "path_coordinate_endpoints": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/16"
+        ]
+      },
+      "path_derivatives": {
+        "gamma1": [
+          "1",
+          "1/2"
+        ],
+        "gamma2": [
+          "0",
+          "0"
+        ],
+        "gamma3": [
+          "0",
+          "0"
+        ]
+      },
+      "path_parameter_domain": {
+        "t": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "physical_status": "DECLARED_UNEXECUTED",
+    "status": "PASS_SYNTHETIC_PATH_BOUND_WINDOW_TO_CONTRACT"
+  },
+  "evidence_sha256": "5e37afacbc9ff02412f3eb8778d153baa46c06f6bee02bd72a95538b1542544e",
+  "path_sha256": "22516a1b2ada16f57169404673c6915c191b17c5f9dd670a6c8d1f48b8efc784",
+  "physical_model_evaluations": 0,
+  "physical_status": "DECLARED_UNEXECUTED",
+  "refusal_controls": [
+    {
+      "error": "WINDOW_EVIDENCE_SCHEMA_REQUIRED",
+      "id": "wrong_schema"
+    },
+    {
+      "error": "PHYSICAL_S1_EVIDENCE_REQUIRED",
+      "id": "physical_scope_not_accepted"
+    },
+    {
+      "error": "ZERO_PHYSICAL_EVALUATIONS_REQUIRED",
+      "id": "physical_evaluation_claim"
+    },
+    {
+      "error": "ASSEMBLY_ARTIFACT_HASH_MISMATCH",
+      "id": "assembly_hash_mismatch"
+    },
+    {
+      "error": "PATH_ARTIFACT_HASH_MISMATCH",
+      "id": "path_hash_mismatch"
+    },
+    {
+      "error": "CONTOUR_POLICY_REQUIRED",
+      "id": "contour_policy_missing"
+    },
+    {
+      "error": "INVALID_REQUIRED_DOMAIN",
+      "id": "invalid_required_domain"
+    },
+    {
+      "error": "CELL_OUTSIDE_REQUIRED_DOMAIN",
+      "id": "cell_outside_domain"
+    },
+    {
+      "error": "COVERAGE_GAP",
+      "id": "coverage_gap"
+    },
+    {
+      "error": "COVERAGE_OVERLAP",
+      "id": "coverage_overlap"
+    },
+    {
+      "error": "DUPLICATE_CELL_ID",
+      "id": "duplicate_cell_id"
+    },
+    {
+      "error": "UNCERTIFIED_WINDOW_CELL",
+      "id": "uncertified_cell"
+    },
+    {
+      "error": "ASSEMBLY_PROVENANCE_MISMATCH",
+      "id": "assembly_provenance_mismatch"
+    },
+    {
+      "error": "SELF_ADJOINT_EVIDENCE_REQUIRED",
+      "id": "self_adjoint_missing"
+    },
+    {
+      "error": "SELECTED_INDICES_MISMATCH",
+      "id": "selected_indices_mismatch"
+    },
+    {
+      "error": "CELL_SPECTRAL_ORDER_INVALID",
+      "id": "spectral_order_invalid"
+    },
+    {
+      "error": "MISSING_SPECTRAL_BOUND",
+      "id": "missing_spectral_bound"
+    },
+    {
+      "error": "INVALID_RATIONAL",
+      "id": "invalid_rational"
+    },
+    {
+      "error": "CELL_DERIVATIVE_OVERRIDE_FORBIDDEN",
+      "id": "cell_derivative_understatement"
+    },
+    {
+      "error": "UNIFORM_SEPARATION_REQUIRED",
+      "id": "uniform_separation_missing"
+    },
+    {
+      "error": "ASSEMBLY_SCHEMA_REQUIRED",
+      "id": "assembly_schema_missing"
+    },
+    {
+      "error": "ASSEMBLY_COEFFICIENT_REQUIRED",
+      "id": "assembly_coefficient_missing"
+    },
+    {
+      "error": "ASSEMBLY_FORMULA_MISMATCH",
+      "id": "assembly_formula_mismatch"
+    },
+    {
+      "error": "PATH_SCHEMA_REQUIRED",
+      "id": "path_schema_missing"
+    },
+    {
+      "error": "PATH_ASSEMBLY_BINDING_MISMATCH",
+      "id": "path_assembly_binding_mismatch"
+    },
+    {
+      "error": "INVALID_PATH_DOMAIN",
+      "id": "invalid_path_domain"
+    },
+    {
+      "error": "PATH_OUTSIDE_WINDOW_DOMAIN",
+      "id": "path_outside_window_domain"
+    },
+    {
+      "error": "PATH_DERIVATIVE_MISMATCH",
+      "id": "path_derivative_mismatch"
+    },
+    {
+      "error": "PATH_H_DERIVATIVE_MISMATCH",
+      "id": "path_H_derivative_mismatch"
+    },
+    {
+      "error": "OPERATOR_NORM_REQUIRED",
+      "id": "path_operator_norm_missing"
+    },
+    {
+      "error": "PATH_ARTIFACT_HASH_MISMATCH",
+      "id": "path_consistent_content_old_digest"
+    }
+  ],
+  "status": "PASS_SYNTHETIC_INTRINSIC_CONTENT_BINDING_AND_REFUSALS",
+  "wall_seconds": 0.00803129699852434
+}
