@@ -1,0 +1,797 @@
+{
+  "status": "SOURCE_SIGN_DISCREPANCY_REPRODUCED_CONVENTION_UNRESOLVED",
+  "tolerance": 1e-10,
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "sources": {
+    "research/benchmarks/vafek_2025/model.py": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3",
+    "research/benchmarks/vafek_convention_review/source_audit/reproduce.py": "429b8a26af9c1f45af2c0ff5e19ff08ea2281ac76fb22d0848b89a2cf7ea9aa4",
+    "research/benchmarks/vafek_convention_review/source_audit/SOURCE_RECEIPT.json": "25af2d9b90bb58ade14d7a9322bada9aae5c5e98a9b89bd32c26a62fb75b98af"
+  },
+  "predicates": {
+    "retained_witness:source_columns_orthonormal": true,
+    "retained_witness:source_columns_kernel_meV": true,
+    "retained_witness:source_columns_equal_code_columns_times_phase": true,
+    "retained_witness:cf_projection_equals_negative_scalar_meV": true,
+    "retained_witness:literal_minus_rephased_projection_equals_formula_meV": true,
+    "retained_witness:parent_projector_from_source_equals_code": true,
+    "retained_witness:source_hc_equals_code_meV": true,
+    "retained_witness:source_hf_equals_code_meV": true,
+    "retained_witness:source_full_projection_equals_direct_meV": true,
+    "retained_witness:source_full_projection_hermitian_meV": true,
+    "retained_opposite_y:source_columns_orthonormal": true,
+    "retained_opposite_y:source_columns_kernel_meV": true,
+    "retained_opposite_y:source_columns_equal_code_columns_times_phase": true,
+    "retained_opposite_y:cf_projection_equals_negative_scalar_meV": true,
+    "retained_opposite_y:literal_minus_rephased_projection_equals_formula_meV": true,
+    "retained_opposite_y:parent_projector_from_source_equals_code": true,
+    "retained_opposite_y:source_hc_equals_code_meV": true,
+    "retained_opposite_y:source_hf_equals_code_meV": true,
+    "retained_opposite_y:source_full_projection_equals_direct_meV": true,
+    "retained_opposite_y:source_full_projection_hermitian_meV": true,
+    "retained_axis:source_columns_orthonormal": true,
+    "retained_axis:source_columns_kernel_meV": true,
+    "retained_axis:source_columns_equal_code_columns_times_phase": true,
+    "retained_axis:cf_projection_equals_negative_scalar_meV": true,
+    "retained_axis:literal_minus_rephased_projection_equals_formula_meV": true,
+    "retained_axis:parent_projector_from_source_equals_code": true,
+    "retained_axis:source_hc_equals_code_meV": true,
+    "retained_axis:source_hf_equals_code_meV": true,
+    "retained_axis:source_full_projection_equals_direct_meV": true,
+    "retained_axis:source_full_projection_hermitian_meV": true,
+    "retained_gamma:source_columns_orthonormal": true,
+    "retained_gamma:source_columns_kernel_meV": true,
+    "retained_gamma:source_columns_equal_code_columns_times_phase": true,
+    "retained_gamma:cf_projection_equals_negative_scalar_meV": true,
+    "retained_gamma:literal_minus_rephased_projection_equals_formula_meV": true,
+    "retained_gamma:parent_projector_from_source_equals_code": true,
+    "retained_gamma:source_hc_equals_code_meV": true,
+    "retained_gamma:source_hf_equals_code_meV": true,
+    "retained_gamma:source_full_projection_equals_direct_meV": true,
+    "retained_gamma:source_full_projection_hermitian_meV": true,
+    "retained_zero_cpp:source_columns_orthonormal": true,
+    "retained_zero_cpp:source_columns_kernel_meV": true,
+    "retained_zero_cpp:source_columns_equal_code_columns_times_phase": true,
+    "retained_zero_cpp:cf_projection_equals_negative_scalar_meV": true,
+    "retained_zero_cpp:literal_minus_rephased_projection_equals_formula_meV": true,
+    "retained_zero_cpp:parent_projector_from_source_equals_code": true,
+    "retained_zero_cpp:source_hc_equals_code_meV": true,
+    "retained_zero_cpp:source_hf_equals_code_meV": true,
+    "retained_zero_cpp:source_full_projection_equals_direct_meV": true,
+    "retained_zero_cpp:source_full_projection_hermitian_meV": true,
+    "retained_zero_strain:source_columns_orthonormal": true,
+    "retained_zero_strain:source_columns_kernel_meV": true,
+    "retained_zero_strain:source_columns_equal_code_columns_times_phase": true,
+    "retained_zero_strain:cf_projection_equals_negative_scalar_meV": true,
+    "retained_zero_strain:literal_minus_rephased_projection_equals_formula_meV": true,
+    "retained_zero_strain:parent_projector_from_source_equals_code": true,
+    "retained_zero_strain:source_hc_equals_code_meV": true,
+    "retained_zero_strain:source_hf_equals_code_meV": true,
+    "retained_zero_strain:source_full_projection_equals_direct_meV": true,
+    "retained_zero_strain:source_full_projection_hermitian_meV": true,
+    "artificial_positive_gamma:source_columns_orthonormal": true,
+    "artificial_positive_gamma:source_columns_kernel_meV": true,
+    "artificial_positive_gamma:source_columns_equal_code_columns_times_phase": true,
+    "artificial_positive_gamma:cf_projection_equals_negative_scalar_meV": true,
+    "artificial_positive_gamma:literal_minus_rephased_projection_equals_formula_meV": true,
+    "artificial_positive_gamma:parent_projector_from_source_equals_code": true,
+    "artificial_positive_gamma:source_hc_equals_code_meV": true,
+    "artificial_positive_gamma:source_hf_equals_code_meV": true,
+    "artificial_positive_gamma:source_full_projection_equals_direct_meV": true,
+    "artificial_positive_gamma:source_full_projection_hermitian_meV": true,
+    "witness_gap_reproduced": true,
+    "single_valley_trace_witness_nonzero": true,
+    "retained_axis:zero_control": true,
+    "retained_gamma:zero_control": true,
+    "retained_zero_cpp:zero_control": true,
+    "retained_zero_strain:zero_control": true
+  },
+  "cases": [
+    {
+      "id": "retained_witness",
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "overrides": {},
+      "physical_k_A_inverse": [
+        0.001326511627906977,
+        -0.00098046511627907
+      ],
+      "physical_q_A_inverse": [
+        0.0028837209302325583,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": 0.919282307265668,
+      "single_valley_cf_scalar_from_printed_E73_meV": -0.9192823072656684,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": -3.6771292290626727,
+      "checks": {
+        "source_columns_orthonormal": 6.661851969412524e-16,
+        "source_columns_kernel_meV": 1.0583799827984717e-15,
+        "source_columns_equal_code_columns_times_phase": 2.2887833992611187e-16,
+        "cf_projection_equals_negative_scalar_meV": 4.462730844059998e-16,
+        "literal_minus_rephased_projection_equals_formula_meV": 2.2247786310271853e-15,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 5.684341886080802e-14,
+        "source_full_projection_hermitian_meV": 4.440892098500626e-16
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -102.26407559755415,
+            0.5651632494242822,
+            0.9959537409610425,
+            3.8470129573579865
+          ],
+          [
+            0.5651632494242822,
+            -102.26407559755415,
+            3.847012957357987,
+            0.9959537409610427
+          ],
+          [
+            0.9959537409610425,
+            3.847012957357987,
+            -98.19985388127853,
+            3.7156437190323515
+          ],
+          [
+            3.8470129573579865,
+            0.9959537409610426,
+            3.715643719032351,
+            -98.19985388127854
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            2.9298704836020004,
+            0.49033528167519347,
+            -1.0825584140880897
+          ],
+          [
+            -2.9298704836020004,
+            0.0,
+            1.08255841408809,
+            -0.4903352816751935
+          ],
+          [
+            -0.49033528167519347,
+            -1.08255841408809,
+            -5.551115123125783e-17,
+            0.5069970853978434
+          ],
+          [
+            1.0825584140880897,
+            0.4903352816751937,
+            -0.5069970853978434,
+            0.0
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -107.82108015571833,
+        -104.20944421926346,
+        -97.5269913760398,
+        -90.66449302636
+      ],
+      "source_projected_spectrum_meV": [
+        -106.54263906080196,
+        -104.46307447994633,
+        -97.95897014128404,
+        -91.96317527563308
+      ],
+      "same_Q_gap_difference_meV": 1.5320713555992427
+    },
+    {
+      "id": "retained_opposite_y",
+      "K": [
+        -0.11,
+        0.19
+      ],
+      "Q": 0.8,
+      "overrides": {},
+      "physical_k_A_inverse": [
+        -0.0006344186046511628,
+        0.0010958139534883722
+      ],
+      "physical_q_A_inverse": [
+        0.004613953488372093,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": -1.0603674871207782,
+      "single_valley_cf_scalar_from_printed_E73_meV": 1.0603674871207787,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": 4.241469948483114,
+      "checks": {
+        "source_columns_orthonormal": 2.22044633230485e-16,
+        "source_columns_kernel_meV": 1.3623144347764708e-15,
+        "source_columns_equal_code_columns_times_phase": 2.220446049250313e-16,
+        "cf_projection_equals_negative_scalar_meV": 4.441161868419363e-16,
+        "literal_minus_rephased_projection_equals_formula_meV": 4.460365043975677e-16,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 4.3220627292571254e-14,
+        "source_full_projection_hermitian_meV": 1.4210854715202004e-14
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -100.811727548652,
+            5.104292197821816,
+            0.5029913207872264,
+            2.0571938378146446
+          ],
+          [
+            5.104292197821816,
+            -100.81172754865202,
+            2.057193837814645,
+            0.5029913207872256
+          ],
+          [
+            0.5029913207872265,
+            2.057193837814645,
+            -102.93777410893378,
+            0.11680737540502895
+          ],
+          [
+            2.057193837814644,
+            0.502991320787226,
+            0.11680737540502895,
+            -102.93777410893375
+          ]
+        ],
+        "imag": [
+          [
+            8.881784197001252e-16,
+            0.7845998928762723,
+            2.214124474278701,
+            1.829059348317188
+          ],
+          [
+            -0.7845998928762725,
+            0.0,
+            -1.8290593483171875,
+            -2.2141244742787016
+          ],
+          [
+            -2.214124474278701,
+            1.829059348317188,
+            0.0,
+            -3.1643067427866063
+          ],
+          [
+            -1.8290593483171877,
+            2.2141244742787016,
+            3.1643067427866063,
+            7.105427357601002e-15
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -108.9857578748641,
+        -105.96199846430251,
+        -99.3362850413684,
+        -92.67606510076997
+      ],
+      "source_projected_spectrum_meV": [
+        -108.8206578249638,
+        -105.39801854891174,
+        -99.22689760995983,
+        -94.05342933133609
+      ],
+      "same_Q_gap_difference_meV": 1.4867516619746795
+    },
+    {
+      "id": "retained_axis",
+      "K": [
+        0.2,
+        0.0
+      ],
+      "Q": 0.5,
+      "overrides": {},
+      "physical_k_A_inverse": [
+        0.0011534883720930233,
+        0.0
+      ],
+      "physical_q_A_inverse": [
+        0.0028837209302325583,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": 0.0,
+      "single_valley_cf_scalar_from_printed_E73_meV": 0.0,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": 0.0,
+      "checks": {
+        "source_columns_orthonormal": 3.3306690738754696e-16,
+        "source_columns_kernel_meV": 7.832782494703736e-16,
+        "source_columns_equal_code_columns_times_phase": 1.1102230246251565e-16,
+        "cf_projection_equals_negative_scalar_meV": 1.8233846160918055e-17,
+        "literal_minus_rephased_projection_equals_formula_meV": 8.886119947416683e-16,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 8.881784197001252e-16,
+        "source_full_projection_hermitian_meV": 5.97224919677067e-17
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -101.82349272349272,
+            3.076923076923076,
+            0.0,
+            3.437070124358865
+          ],
+          [
+            3.076923076923076,
+            -101.82349272349272,
+            3.437070124358865,
+            0.0
+          ],
+          [
+            0.0,
+            3.437070124358865,
+            -96.38179551122194,
+            3.690773067331671
+          ],
+          [
+            3.437070124358865,
+            0.0,
+            3.690773067331671,
+            -96.38179551122194
+          ]
+        ],
+        "imag": [
+          [
+            2.986124598385335e-17,
+            3.0834898128898134,
+            0.2971431939243669,
+            0.0
+          ],
+          [
+            -3.0834898128898134,
+            -2.986124598385335e-17,
+            0.0,
+            -0.2971431939243669
+          ],
+          [
+            -0.29714319392436694,
+            0.0,
+            2.596705949941763e-18,
+            -0.04566234413965086
+          ],
+          [
+            0.0,
+            0.29714319392436694,
+            0.04566234413965086,
+            -2.596705949941763e-18
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -107.531081877974,
+        -100.45908183926295,
+        -97.50164833981441,
+        -90.91876441237808
+      ],
+      "source_projected_spectrum_meV": [
+        -107.53108187797396,
+        -100.45908183926288,
+        -97.50164833981437,
+        -90.918764412378
+      ],
+      "same_Q_gap_difference_meV": 4.263256414560601e-14
+    },
+    {
+      "id": "retained_gamma",
+      "K": [
+        0.0,
+        0.0
+      ],
+      "Q": 0.5,
+      "overrides": {},
+      "physical_k_A_inverse": [
+        0.0,
+        0.0
+      ],
+      "physical_q_A_inverse": [
+        0.0028837209302325583,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": 0.0,
+      "single_valley_cf_scalar_from_printed_E73_meV": 0.0,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": 0.0,
+      "checks": {
+        "source_columns_orthonormal": 4.440892098500626e-16,
+        "source_columns_kernel_meV": 0.0,
+        "source_columns_equal_code_columns_times_phase": 2.220446049250313e-16,
+        "cf_projection_equals_negative_scalar_meV": 0.0,
+        "literal_minus_rephased_projection_equals_formula_meV": 1.7763568394002505e-15,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 0.0,
+        "source_full_projection_hermitian_meV": 7.353202757834707e-17
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -98.2294117647059,
+            3.4823529411764707,
+            0.0,
+            3.005882352941176
+          ],
+          [
+            3.4823529411764707,
+            -98.2294117647059,
+            3.005882352941176,
+            0.0
+          ],
+          [
+            0.0,
+            3.005882352941176,
+            -98.2294117647059,
+            3.4823529411764707
+          ],
+          [
+            3.005882352941176,
+            0.0,
+            3.4823529411764707,
+            -98.2294117647059
+          ]
+        ],
+        "imag": [
+          [
+            3.676601378917353e-17,
+            1.0770941176470588,
+            0.8529411764705882,
+            0.0
+          ],
+          [
+            -1.0770941176470588,
+            -3.676601378917353e-17,
+            0.0,
+            -0.8529411764705882
+          ],
+          [
+            -0.8529411764705882,
+            0.0,
+            -3.676601378917353e-17,
+            -1.0770941176470588
+          ],
+          [
+            0.0,
+            0.8529411764705882,
+            1.0770941176470588,
+            3.676601378917353e-17
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -104.72485376722449,
+        -99.20496360605459,
+        -97.74573446806977,
+        -91.24209521747495
+      ],
+      "source_projected_spectrum_meV": [
+        -104.72485376722449,
+        -99.20496360605459,
+        -97.74573446806977,
+        -91.24209521747495
+      ],
+      "same_Q_gap_difference_meV": 0.0
+    },
+    {
+      "id": "retained_zero_cpp",
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "overrides": {
+        "cpp": 0.0
+      },
+      "physical_k_A_inverse": [
+        0.001326511627906977,
+        -0.00098046511627907
+      ],
+      "physical_q_A_inverse": [
+        0.0028837209302325583,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": 0.0,
+      "single_valley_cf_scalar_from_printed_E73_meV": 0.0,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": 0.0,
+      "checks": {
+        "source_columns_orthonormal": 6.661851969412524e-16,
+        "source_columns_kernel_meV": 1.0583799827984717e-15,
+        "source_columns_equal_code_columns_times_phase": 2.2887833992611187e-16,
+        "cf_projection_equals_negative_scalar_meV": 0.0,
+        "literal_minus_rephased_projection_equals_formula_meV": 2.2247786310271853e-15,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 5.684341886080802e-14,
+        "source_full_projection_hermitian_meV": 4.440892098500626e-16
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -103.05378384816957,
+            0.5651632494242822,
+            0.9959537409610425,
+            3.8470129573579865
+          ],
+          [
+            0.5651632494242822,
+            -103.05378384816959,
+            3.847012957357987,
+            0.9959537409610427
+          ],
+          [
+            0.9959537409610425,
+            3.847012957357987,
+            -97.23368308559215,
+            3.7156437190323515
+          ],
+          [
+            3.8470129573579865,
+            0.9959537409610426,
+            3.715643719032351,
+            -97.23368308559213
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            2.9298704836020004,
+            0.49033528167519347,
+            -1.0825584140880897
+          ],
+          [
+            -2.9298704836020004,
+            0.0,
+            1.08255841408809,
+            -0.4903352816751935
+          ],
+          [
+            -0.49033528167519347,
+            -1.08255841408809,
+            0.0,
+            0.5069970853978434
+          ],
+          [
+            1.0825584140880897,
+            0.4903352816751937,
+            -0.5069970853978434,
+            0.0
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -107.16257734482198,
+        -104.23380481761315,
+        -97.82386288786321,
+        -91.35468881722527
+      ],
+      "source_projected_spectrum_meV": [
+        -107.16257734482194,
+        -104.2338048176131,
+        -97.82386288786323,
+        -91.35468881722527
+      ],
+      "same_Q_gap_difference_meV": 5.684341886080802e-14
+    },
+    {
+      "id": "retained_zero_strain",
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "overrides": {
+        "strain": 0.0
+      },
+      "physical_k_A_inverse": [
+        0.001326511627906977,
+        -0.00098046511627907
+      ],
+      "physical_q_A_inverse": [
+        0.0028837209302325583,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": 0.0,
+      "single_valley_cf_scalar_from_printed_E73_meV": -0.0,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": -0.0,
+      "checks": {
+        "source_columns_orthonormal": 6.661851969412524e-16,
+        "source_columns_kernel_meV": 1.0583799827984717e-15,
+        "source_columns_equal_code_columns_times_phase": 2.2887833992611187e-16,
+        "cf_projection_equals_negative_scalar_meV": 0.0,
+        "literal_minus_rephased_projection_equals_formula_meV": 2.664807764543404e-15,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 5.684341886080802e-14,
+        "source_full_projection_hermitian_meV": 4.965068306494546e-16
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -103.05378384816957,
+            1.0590010323195416,
+            0.9959537409610425,
+            3.8470129573579865
+          ],
+          [
+            1.0590010323195418,
+            -103.05378384816959,
+            3.847012957357987,
+            0.9959537409610427
+          ],
+          [
+            0.9959537409610425,
+            3.847012957357987,
+            -97.23368308559215,
+            3.690469250947245
+          ],
+          [
+            3.8470129573579865,
+            0.9959537409610426,
+            3.6904692509472445,
+            -97.23368308559213
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            2.320138172000317,
+            0.49033528167519347,
+            -1.0825584140880897
+          ],
+          [
+            -2.320138172000317,
+            0.0,
+            1.08255841408809,
+            -0.4903352816751935
+          ],
+          [
+            -0.49033528167519347,
+            -1.08255841408809,
+            0.0,
+            0.40148644709997106
+          ],
+          [
+            1.0825584140880897,
+            0.4903352816751937,
+            -0.40148644709997083,
+            0.0
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -106.71263684722915,
+        -104.39872082083508,
+        -98.15418436274518,
+        -91.30939183671414
+      ],
+      "source_projected_spectrum_meV": [
+        -106.71263684722912,
+        -104.39872082083502,
+        -98.15418436274517,
+        -91.30939183671417
+      ],
+      "same_Q_gap_difference_meV": 4.263256414560601e-14
+    },
+    {
+      "id": "artificial_positive_gamma",
+      "K": [
+        0.23,
+        -0.17
+      ],
+      "Q": 0.5,
+      "overrides": {
+        "gamma": 24.8
+      },
+      "physical_k_A_inverse": [
+        -0.001326511627906977,
+        0.00098046511627907
+      ],
+      "physical_q_A_inverse": [
+        -0.0028837209302325583,
+        0.0
+      ],
+      "single_valley_cf_scalar_from_projection_meV": 0.9192823072656682,
+      "single_valley_cf_scalar_from_printed_E73_meV": -0.9192823072656684,
+      "single_valley_cf_trace_difference_printed_minus_projected_meV": -3.677129229062673,
+      "checks": {
+        "source_columns_orthonormal": 5.551176357092241e-16,
+        "source_columns_kernel_meV": 1.9579598492208535e-15,
+        "source_columns_equal_code_columns_times_phase": 2.2887833992611187e-16,
+        "cf_projection_equals_negative_scalar_meV": 2.4247638654166954e-16,
+        "literal_minus_rephased_projection_equals_formula_meV": 2.674959349669056e-15,
+        "parent_projector_from_source_equals_code": 0.0,
+        "source_hc_equals_code_meV": 0.0,
+        "source_hf_equals_code_meV": 0.0,
+        "source_full_projection_equals_direct_meV": 7.105427357601002e-14,
+        "source_full_projection_hermitian_meV": 9.155133597044475e-16
+      },
+      "source_full_projection_in_code_gauge": {
+        "real": [
+          [
+            -102.26407559755414,
+            0.5651632494242815,
+            0.9959537409610426,
+            3.847012957357986
+          ],
+          [
+            0.5651632494242818,
+            -102.26407559755418,
+            3.847012957357988,
+            0.9959537409610424
+          ],
+          [
+            0.9959537409610426,
+            3.8470129573579874,
+            -98.19985388127853,
+            3.715643719032352
+          ],
+          [
+            3.847012957357986,
+            0.9959537409610424,
+            3.715643719032351,
+            -98.19985388127853
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            2.9298704836019995,
+            0.49033528167519314,
+            -1.0825584140880897
+          ],
+          [
+            -2.929870483602,
+            0.0,
+            1.0825584140880902,
+            -0.4903352816751939
+          ],
+          [
+            -0.49033528167519325,
+            -1.0825584140880897,
+            0.0,
+            0.5069970853978432
+          ],
+          [
+            1.0825584140880897,
+            0.49033528167519397,
+            -0.5069970853978434,
+            0.0
+          ]
+        ]
+      },
+      "literal_spectrum_meV": [
+        -107.82108015571833,
+        -104.20944421926346,
+        -97.5269913760398,
+        -90.66449302636
+      ],
+      "source_projected_spectrum_meV": [
+        -106.54263906080195,
+        -104.46307447994631,
+        -97.958970141284,
+        -91.96317527563303
+      ],
+      "same_Q_gap_difference_meV": 1.5320713555992427
+    }
+  ],
+  "limitations": [
+    "Human transcription of arXiv v2 only; later journal equations not checked.",
+    "Fixed small-matrix diagnostics; not an independent physical validation.",
+    "No selected convention, model repair, node search, transport, sweep or braid claim."
+  ]
+}
