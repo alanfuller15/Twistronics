@@ -1,0 +1,112 @@
+{
+  "all_baseline_observations_reproduced": true,
+  "archive_sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+  "artifacts": {
+    "existing_abort/OBSERVATION.json": "8ee634b8c8ad31686cd198a54235026aaea53160b58031a48c5a87516ae7f92d",
+    "existing_abort/STDERR.log": "c58e0dc295d3c06b98c0b0d8bbd75ea3d100d26e1671c25bdc05bc48556542ed",
+    "existing_abort/STDOUT.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "existing_success/OBSERVATION.json": "c3c12f3a212982ef6ca3245b522da6e1bb7a96f917c6336f5af8944ee7c2ded1",
+    "existing_success/STDERR.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "existing_success/STDOUT.log": "fba45693c9abf526994b55d93b27ef3eb60e038a27d6631b56fdc650e05094ea",
+    "matching_plan/OBSERVATION.json": "78071a4e3d448a73df1861083e092ad16d3cdea0b99b199e40a5b0de2a006ef4",
+    "matching_plan/STDERR.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "matching_plan/STDOUT.log": "fba45693c9abf526994b55d93b27ef3eb60e038a27d6631b56fdc650e05094ea",
+    "plan_N/OBSERVATION.json": "bf0934114ad7a059867e201f62af2475e118f4942d055d30a5d283c6ee2896c9",
+    "plan_N/STDERR.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan_N/STDOUT.log": "fba45693c9abf526994b55d93b27ef3eb60e038a27d6631b56fdc650e05094ea",
+    "plan_eps/OBSERVATION.json": "e5d9ef3e683ce3be01a379def665663db9a55bf23f0676d986a2679d97c9bd3f",
+    "plan_eps/STDERR.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan_eps/STDOUT.log": "fba45693c9abf526994b55d93b27ef3eb60e038a27d6631b56fdc650e05094ea"
+  },
+  "baseline_commit": "44dc66951057a995ee0999c785aca3e0e6c67092",
+  "cases": {
+    "existing_abort": {
+      "baseline_observation_reproduced": true,
+      "checks": {
+        "current_observation": true,
+        "exit_matches_observation": true,
+        "one_constructor_no_measurements": true,
+        "prior_summary_left_unchanged": true,
+        "rows_and_diagnostics_truncated": true,
+        "specific_injected_exception": true,
+        "unchanged_executed_sources": true
+      },
+      "failed": [],
+      "returncode": 1
+    },
+    "existing_success": {
+      "baseline_observation_reproduced": true,
+      "checks": {
+        "all_three_prior_files_replaced": true,
+        "constructors_used_baseline_defaults": true,
+        "consumer_returned_complete": true,
+        "current_observation": true,
+        "eight_unique_synthetic_cases": true,
+        "eleven_real_constructor_calls": true,
+        "exit_matches_observation": true,
+        "ten_model_records_used_baseline_defaults": true,
+        "unchanged_executed_sources": true,
+        "unmutated_plan": true
+      },
+      "failed": [],
+      "returncode": 0
+    },
+    "matching_plan": {
+      "baseline_observation_reproduced": true,
+      "checks": {
+        "constructors_used_baseline_defaults": true,
+        "consumer_returned_complete": true,
+        "current_observation": true,
+        "eight_unique_synthetic_cases": true,
+        "eleven_real_constructor_calls": true,
+        "exit_matches_observation": true,
+        "ten_model_records_used_baseline_defaults": true,
+        "unchanged_executed_sources": true,
+        "unmutated_plan": true
+      },
+      "failed": [],
+      "returncode": 0
+    },
+    "plan_N": {
+      "baseline_observation_reproduced": true,
+      "checks": {
+        "constructors_used_baseline_defaults": true,
+        "consumer_returned_complete": true,
+        "current_observation": true,
+        "declared_value_not_used": true,
+        "eight_unique_synthetic_cases": true,
+        "eleven_real_constructor_calls": true,
+        "exact_single_plan_mutation": true,
+        "exit_matches_observation": true,
+        "mutated_plan_hash_recorded": true,
+        "ten_model_records_used_baseline_defaults": true,
+        "unchanged_executed_sources": true
+      },
+      "failed": [],
+      "returncode": 0
+    },
+    "plan_eps": {
+      "baseline_observation_reproduced": true,
+      "checks": {
+        "constructors_used_baseline_defaults": true,
+        "consumer_returned_complete": true,
+        "current_observation": true,
+        "declared_value_not_used": true,
+        "eight_unique_synthetic_cases": true,
+        "eleven_real_constructor_calls": true,
+        "exact_single_plan_mutation": true,
+        "exit_matches_observation": true,
+        "mutated_plan_hash_recorded": true,
+        "ten_model_records_used_baseline_defaults": true,
+        "unchanged_executed_sources": true
+      },
+      "failed": [],
+      "returncode": 0
+    }
+  },
+  "extractor_sha256": "b66c76e65eda3614546a41abc905967137464dbfde9d104375fd5e6e235eb7a5",
+  "meaning_of_exit_zero": "Pinned baseline behaviors reproduced, including defects; NOT correction acceptance.",
+  "original_archive_unchanged": true,
+  "probe_sha256": "d590be4cb2c11ebbdb013e583ce95147e4f31ea79644655794a3d14d89ac84c0",
+  "scientific_results": false
+}
