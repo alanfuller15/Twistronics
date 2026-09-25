@@ -9,6 +9,12 @@ The source is `ad18d34ef0bf3b5d4ec7a4d2e27ba954f2fd0492`. The machine-readable
 contract is [SPEC.json](SPEC.json); [INPUTS.json](INPUTS.json) binds the retained
 records, specimen selection, exact centers and fixed spectral windows.
 
+This protocol-only amendment addresses M1 in Claude review
+[5825509820](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5825509820),
+recorded in [5825522584](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5825522584).
+It supersedes design commit `cbc29f77c7b0f510d7968d680aafe5ba8629c641`
+and awaits a new commit-bound design review.
+
 ## Question and evidence
 
 Most unresolved cells have narrower proposed windows than any accepted
@@ -111,10 +117,56 @@ reported as `OTHER_INERTIA_VERIFIED`, not as the target count or a malformed
 record. Uncertified Gram bounds remain a diagnostic failure, with no LDL
 performed for that configuration in either primary or verification stage.
 
-The two accepted controls are comparators. If either original_128 control
-fails, finish only the already frozen comparisons within the caps, report
-`CONTROL_MISMATCH_REVIEW_REQUIRED`, and withhold favorable interpretation
-pending review. Do not tune inputs to reproduce the historical label.
+### Baseline comparability and persistent review flags
+
+For every specimen, the offline verifier must compare `original_128` with
+the exact source record bound by INPUTS.json. It derives and retains
+`baseline_matches_historical_label`: a completed, repeat-consistent
+four-endpoint pass matches an accepted source; a completed nonpass matches
+a historical failure's coarse label. This field does not claim identical
+bases or failure mechanisms. Missing, incomplete or invalid baseline
+evidence yields `null`, with an explicit assessment state and reason.
+
+For failure specimens, also retain the historical and reconstructed failed
+endpoint sets, every reconstructed endpoint's outcome, and
+`baseline_matches_historical_failed_endpoints`. The latter is `null` until
+the baseline is complete and validated. Changed endpoint sets or failure
+types remain explicit. A Gram failure or wrong full inertia is distinct
+from the historical zero-containing pivot failure, even if the coarse
+nonpass label matches.
+
+| Baseline observation | Required disposition |
+|---|---|
+| Historical failure now passes all four primary/repeat tests | `BASELINE_DIVERGENCE=true`; retain other arms, exclude this specimen from failure-mechanism comparisons |
+| Historical failure repeats the same failed endpoints and zero-pivot type with positive Gram | Completed, repeat-consistent arms are eligible for qualified comparison to this reconstructed baseline |
+| Baseline fails at different endpoints or by a different outcome type | Report the differences; exclude from historical failure-mechanism comparisons |
+| Accepted control has a validated, repeat-consistent failed endpoint or Gram check | `control_mismatch=true`; withhold favorable interpretation pending review |
+| Baseline has not supplied enough validated evidence | Explicit unknown (`null`) and reason; no favorable comparison |
+
+A known repeat-consistent failure makes `BASELINE_DIVERGENCE=false` for a
+historical failure specimen even if other baseline endpoints are unfinished.
+An accepted control's mismatch is false only after a completed,
+repeat-consistent four-endpoint pass; an unfinished control without a known
+failure stays unknown. No retry, re-basis, substitution or additional arm is
+allowed. Continue only the frozen comparisons within the existing caps.
+
+RESULTS must always contain all seven baseline assessments, the applicable
+per-specimen flags, known flagged IDs, unresolved IDs, exclusion reasons and
+the aggregates `control_mismatch_detected` and `baseline_divergence_detected`.
+Each aggregate is true if any applicable specimen is true, false only if
+all applicable specimens are false, and otherwise null. These fields
+remain present under **every terminal status**, including timeout, resource
+caps and execution errors. Validated prefix evidence preserves known
+findings; invalid or unavailable evidence is marked unknown with its reason.
+Terminal precedence never clears a flag.
+
+For a complete run, an accepted-control mismatch still gives
+`CONTROL_MISMATCH_REVIEW_REQUIRED`. `DIAGNOSTIC_COMPLETE` can coexist with
+baseline divergence and exclusions: completion says that the fixed work
+finished, not that a failure mechanism was identified. A reconstructed
+baseline pass cannot be attributed to a smaller box, higher precision or
+reversal, and matching baseline labels/endpoints does not prove a unique
+historical cause.
 
 ## Bounds, retention and review gates
 
@@ -148,8 +200,10 @@ The current files contain only design and retained-data extraction. Claude
 must pass this exact protocol commit before physical-runner implementation.
 An implementation-only commit must then pass independent audit, including
 known-inertia, zero-pivot, wrong-full-inertia, basis/shift/cell/precision/
-permutation substitution, control mismatch, call-cap, byte-cap, repeat
-mismatch, signal recovery, and unexpected-file controls, before execution.
+permutation substitution, control mismatch, baseline divergence, changed
+failed-endpoint set/type, unknown baseline states, flags surviving each
+terminal status, call-cap, byte-cap, repeat mismatch, signal recovery, and
+unexpected-file controls, before execution.
 Any executed evidence then requires a separate audit. These are sequential
 gates, with no automatic follow-on run or merge.
 
@@ -171,7 +225,14 @@ hashes pin the historical evidence; no historical execution bytes change.
 ## Interpretation and claim ceiling
 
 Point success with full-box failure is compatible with spatial-enclosure or
-variation difficulty; it does not prove a gap closes. A precision-only pass
+variation difficulty; it does not prove a gap closes. This interpretation
+requires the baseline-comparability conditions above. At a point, spatial
+box variation vanishes, but coefficient and basis representation and
+arithmetic/congruence/LDL enclosure effects remain. A zero-containing
+unpivoted LDL pivot alone does not prove that a shift is near an eigenvalue,
+that the matrix is singular, or that a gap closes. The two point arms test
+arithmetic sensitivity without predicting that point failures must be rare.
+A precision-only pass
 shows sensitivity to arithmetic precision for those fixed inputs, not a
 unique cause. A reverse-order pass shows order dependence. All-arm failure
 stays inconclusive. The arms do not test changes to window choice or to the

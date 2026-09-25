@@ -7,6 +7,12 @@
   "source_reviewed_commit": "ad18d34ef0bf3b5d4ec7a4d2e27ba954f2fd0492",
   "source_review": "issuecomment-5825338266",
   "recorded_review": "issuecomment-5825353921",
+  "amendment": {
+    "supersedes_design_commit": "cbc29f77c7b0f510d7968d680aafe5ba8629c641",
+    "source_finding": "issuecomment-5825509820",
+    "recorded_finding": "issuecomment-5825522584",
+    "scope": "M1 baseline comparability and persistent review flags; protocol text only"
+  },
   "case_path": "docs/certification-readiness/CASE.json",
   "case_id": "FC49-77-K-Bm025-v2",
   "cutoff": "a",
@@ -75,14 +81,31 @@
   "endpoint_outcomes": ["EXPECTED_INERTIA_VERIFIED", "OTHER_INERTIA_VERIFIED", "ZERO_CONTAINING_PIVOT", "GRAM_UNCERTIFIED", "INTERRUPTED"],
   "gram_failure": "If any required primary Gram margin is not strictly positive, perform the verification Gram calculation, require repeat consistency, retain all margins, record four skipped endpoint slots in both stages and do no LDL; never count skipped slots as started factorizations",
   "configuration_outcome": "FOUR_ENDPOINT_TESTS_PASS only if all four primary and repeat endpoint tests have positive Gram bounds, 196 signed pivots and expected full counts; otherwise NO_FOUR_ENDPOINT_PASS; missing stages are INCOMPLETE",
-  "accepted_control_rule": "If either accepted control fails FOUR_ENDPOINT_TESTS_PASS in original_128, complete the fixed comparisons within budget but mark CONTROL_MISMATCH_REVIEW_REQUIRED and withhold favorable physical interpretation; do not tune, substitute or retry",
+  "baseline_comparison": {
+    "derivation": "Offline verifier derives one assessment for every specimen from validated original_128 primary/repeat evidence and the source record bound by INPUTS.json source_sequence/source_record_sha256 and raw-log hash; never accept worker-authored comparison flags",
+    "historical_label": "INPUTS historical_signature=accepted maps to FOUR_ENDPOINT_TESTS_PASS; the five failure signatures map to NO_FOUR_ENDPOINT_PASS, using the exact configuration_outcome labels. This is a coarse pass/nonpass comparison, not historical basis or failure-mechanism identity",
+    "baseline_matches_historical_label": "Boolean equality of the historical coarse label and the completed, repeat-consistent original_128 configuration outcome; null if missing, incomplete or invalid. Always retain assessment_state and reason, including NOT_STARTED, INCOMPLETE or INVALID_EVIDENCE; null is never a pass or a match",
+    "historical_failed_endpoints": "Ordered set decoded from the validated historical_signature; empty for accepted controls",
+    "baseline_failed_endpoints": "For a completed repeat-consistent baseline, ordered endpoints whose outcome is not EXPECTED_INERTIA_VERIFIED; include each endpoint's actual outcome, including OTHER_INERTIA_VERIFIED or GRAM_UNCERTIFIED. For incomplete or invalid baselines use null and separately retain observed validated endpoint outcomes",
+    "baseline_matches_historical_failed_endpoints": "For the five failure specimens, compare the complete baseline_failed_endpoints with historical_failed_endpoints; null if the baseline is incomplete/invalid, or not applicable for accepted controls. Endpoint-set equality alone does not establish equality of failure type",
+    "BASELINE_DIVERGENCE": "For a historical failure specimen, true only when original_128 achieves a completed repeat-consistent FOUR_ENDPOINT_TESTS_PASS; false when a repeat-consistent failed endpoint or Gram failure rules out that pass; null while unresolved. Retain all other arms but exclude a divergent specimen from failure-mechanism comparisons. No retry, re-basis, replacement specimen or adaptive arm",
+    "failure_mechanism_comparison_eligible": "True only for a historical failure with completed repeat-consistent original_128, matching coarse label and failed-endpoint set, positive Gram, ZERO_CONTAINING_PIVOT at every failed endpoint and EXPECTED_INERTIA_VERIFIED elsewhere, and a completed repeat-consistent compared arm. Otherwise false with reason. Changed endpoint sets, failure types, incomplete baselines and divergent specimens remain descriptive results; no historical repair claim",
+    "interpretation": "Every comparison is relative to the reconstructed original_128 using the same retained new basis. A baseline pass cannot be attributed to smaller boxes, higher precision or reversal. Matching baseline labels/endpoints still does not prove the historical failure had a unique cause"
+  },
+  "accepted_control_rule": "For each accepted control, control_mismatch is true as soon as validated repeat-consistent original_128 endpoint or Gram evidence rules out FOUR_ENDPOINT_TESTS_PASS, false only for a completed repeat-consistent FOUR_ENDPOINT_TESTS_PASS, and null otherwise. Continue only frozen comparisons within caps, withhold favorable interpretation on any true mismatch, and never tune, substitute or retry. CONTROL_MISMATCH_REVIEW_REQUIRED remains the complete-run terminal label; independent RESULTS flags persist under every terminal status",
+  "results_review_flags": {
+    "mandatory": "RESULTS must always include all seven baseline assessments, per-applicable-specimen control_mismatch and BASELINE_DIVERGENCE states, observed endpoint outcomes, exclusion reasons, and aggregate control_mismatch_detected/baseline_divergence_detected, regardless of terminal status, including errors, timeout and resource caps",
+    "aggregate": "Each aggregate is true if any applicable specimen flag is true, false only if every applicable flag is false, otherwise null; missing/unassessed work is never silently false. Include known flagged IDs and unresolved IDs",
+    "validity": "Derive only from evidence that passes required identity, chain, arithmetic-record and repeat checks. A validated prefix can retain known findings after interruption/error; invalid or unavailable evidence yields null with an explicit reason, not fabricated flags",
+    "independence_from_terminal": "Terminal precedence describes execution completion/error and must never erase, reset or replace review flags. DIAGNOSTIC_COMPLETE may coexist with BASELINE_DIVERGENCE and exclusions; it is not a scientific success label"
+  },
   "terminal_precedence": ["EXECUTION_ERROR", "DIAGNOSTIC_INCOMPLETE_WATCHDOG", "DIAGNOSTIC_INCOMPLETE_RESOURCE_CAP", "CONTROL_MISMATCH_REVIEW_REQUIRED", "DIAGNOSTIC_COMPLETE"],
   "terminal_semantics": {
     "EXECUTION_ERROR": "Any binding, source, arithmetic nonfinite, repeat, record, package or receipt failure, exception, memory limit, unexpected exit or group-reap failure",
     "DIAGNOSTIC_INCOMPLETE_WATCHDOG": "Valid deadline receipt plus valid durable prefix; all pending calls/configurations explicitly listed",
     "DIAGNOSTIC_INCOMPLETE_RESOURCE_CAP": "Verified admission or raw-byte cap stop before full completion without a higher-precedence condition",
     "CONTROL_MISMATCH_REVIEW_REQUIRED": "All 56 configurations completed and verified but accepted-control rule failed",
-    "DIAGNOSTIC_COMPLETE": "All 56 configurations completed and verified with original_128 controls passing; other arms may remain inconclusive",
+    "DIAGNOSTIC_COMPLETE": "All 56 configurations completed and verified with original_128 controls passing; other arms may remain inconclusive and baseline-divergence flags/exclusions may be present. Completion does not imply mechanism identification or scientific success",
     "otherwise": "EXECUTION_ERROR"
   },
   "coverage_policy": "Diagnostic arms never modify the historical partition, accepted count or area. Centrally nested boxes are not dyadic tiling descendants; point and nested passes do not certify parent coverage.",
@@ -93,8 +116,10 @@
     "hosted_directory": "RESULTS.json, SUPERVISOR_RECEIPT.json, MANIFEST.json and precisely the contiguous EVENTS.ndjson.gz.partNNN files declared by RESULTS with byte counts and SHA-256",
     "packaging": "Canonical log unchanged; gzip mtime=0 after offline replay; fixed 500000-byte parts except the last; materializer verifies all part hashes plus raw size/hash before replay",
     "membership": "Manifest lists every evidence file except itself; unexpected, missing, duplicated or stale files are EXECUTION_ERROR; protocol/source docs live outside the evidence directory",
-    "check_only": "Fresh reconstruction reproduces RESULTS, receipt binding, derived summaries, part ordering and hashes byte-for-byte without starting any numerical calls"
+    "check_only": "Fresh reconstruction reproduces RESULTS including baseline comparisons, nullable review flags and exclusions, receipt binding, derived summaries, part ordering and hashes byte-for-byte without starting any numerical calls"
   },
+  "point_interpretation": "Point arms remove spatial box variation, but coefficient/basis representation and arithmetic/congruence/LDL enclosure effects remain. A point failure is diagnostic noncertification; a zero-containing unpivoted LDL pivot alone does not prove a nearby eigenvalue, singularity or gap closure. Compare 128/256-bit point arms only within baseline-comparability restrictions; no prediction that failures must be rare",
+  "amendment_validation_obligations": ["historical failure passing reconstructed baseline is flagged/excluded without re-basing", "changed failed-endpoint set or failure type is reported/excluded from historical mechanism comparisons", "control mismatch and baseline divergence survive watchdog, resource-cap and error terminal precedence", "partial/unstarted/invalid baselines keep explicit unknown states", "check-only derives identical comparisons and flags without numerical calls"],
   "review_gates": {
     "before_implementation": "Claude PASS binding the exact protocol commit",
     "before_physical_execution": "Separate implementation-only commit with synthetic/mutation/supervision controls and an explicit Claude PASS binding that exact implementation and this protocol",

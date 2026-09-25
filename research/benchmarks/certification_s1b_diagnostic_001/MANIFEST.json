@@ -1,14 +1,14 @@
 {
   "entries": [
     {
-      "bytes": 10816,
+      "bytes": 16621,
       "path": "research/benchmarks/certification_s1b_diagnostic_001/SPEC.json",
-      "sha256": "6d303d83b11a494b8a00dabfec0c08929977d588ec44ca5c64cbcd4be03c004c"
+      "sha256": "c33be233d931449342e1c2f4a63ac0ccbcafee4dab3a0fc93200633ed47713f6"
     },
     {
-      "bytes": 10679,
+      "bytes": 14723,
       "path": "research/benchmarks/certification_s1b_diagnostic_001/README.md",
-      "sha256": "be3c0143b49e70efe073cd87e9163dd46f1d25936717820294601ac69e000a6a"
+      "sha256": "ba66f19567e05e55522a9347d84c11767ee0648ad264af37fe1c797db35e21c8"
     },
     {
       "bytes": 9473,
@@ -37,11 +37,12 @@
     }
   ],
   "packet_id": "S1B-DIAGNOSTIC-001",
-  "parent_commit": "ad18d34ef0bf3b5d4ec7a4d2e27ba954f2fd0492",
+  "parent_commit": "cbc29f77c7b0f510d7968d680aafe5ba8629c641",
   "schema_version": 1,
-  "scope": "Design only plus retained-record statistics; no physical runner or execution evidence. Eight files changed including this manifest.",
+  "scope": "Protocol-only M1 amendment: SPEC.json, README.md and this manifest. Existing specimen inputs, extractor, source bindings and retained evidence are unchanged.",
   "validation": {
-    "independent_design_check": "resolved fixed-permutation, typed-call-accounting and Gram-repeat ambiguities",
+    "independent_design_check": "PASS: separate read-only review of M1 baseline comparisons, nullable flags, partial evidence and point interpretation; Claude re-audit pending",
+    "protocol_only_scope_check": "PASS: arms, caps, inputs, arithmetic, ordering and review gates match the parent protocol",
     "new_factorizations": 0,
     "new_physical_evaluations": 0,
     "numerical_model_imports": 0,
