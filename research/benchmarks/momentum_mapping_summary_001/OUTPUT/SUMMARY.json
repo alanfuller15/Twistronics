@@ -1,0 +1,952 @@
+{
+  "batches": {
+    "Coarse 001": {
+      "eigensolver_starts": 64,
+      "elapsed_seconds": 2.752101796999341,
+      "input_files": {
+        "EVENTS.ndjson": {
+          "bytes": 497503,
+          "sha256": "938037e8168678a33d19be029a75e91afd105d32207bf64aa006097759e17742"
+        },
+        "MANIFEST.json": {
+          "bytes": 501,
+          "sha256": "e8acdf38656f80e17733b93ed8bfb72c27002162241efb5a8efd4f5e89d192b3"
+        },
+        "RESULTS.json": {
+          "bytes": 218820,
+          "sha256": "45648684252cbc628a56f18fea593bf7baf6539c0363fa1ac7959979dc2bef29"
+        },
+        "SUPERVISOR_RECEIPT.json": {
+          "bytes": 572,
+          "sha256": "dfa944cf2f969819eb1f0994eab1026ac7d8c609ef9c866a0c96473fbbfd5114"
+        }
+      },
+      "interval_factorizations": 0,
+      "packet_id": "MOMENTUM-MAPPING-SCOUT-001",
+      "pending_eigensolver_point": null,
+      "points_completed": 64,
+      "post_reap_group_empty": true,
+      "runtime_provenance_digest": "334fc9e0d81f22240f626791f105b42ede65cb945f34f5bdf60b59bf228e8107",
+      "sigkill_sent": false,
+      "sigterm_sent": false,
+      "source_bindings_sha256": "563ee0556d74c7cc6c7844247783371d7d373dee9a1994c9759290a714ef92f8",
+      "statistics": {
+        "all_fixed_endpoints_expected": 34,
+        "fixed_parent_endpoints": {
+          "lower.left": {
+            "mismatching_points": 0,
+            "numerical_negative_count_distribution": {
+              "97": 64
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2815,
+                  "iy": 2951
+                },
+                "fractional_center": [
+                  "5631/8192",
+                  "5903/8192"
+                ]
+              },
+              "maximum_meV": "209168433005749667/20000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2808,
+                  "iy": 2944
+                },
+                "fractional_center": [
+                  "5617/8192",
+                  "5889/8192"
+                ]
+              },
+              "minimum_meV": "196015749663874167/20000000000000000"
+            }
+          },
+          "lower.right": {
+            "mismatching_points": 0,
+            "numerical_negative_count_distribution": {
+              "97": 64
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2815,
+                  "iy": 2951
+                },
+                "fractional_center": [
+                  "5631/8192",
+                  "5903/8192"
+                ]
+              },
+              "maximum_meV": "1637854894359593/160000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2808,
+                  "iy": 2944
+                },
+                "fractional_center": [
+                  "5617/8192",
+                  "5889/8192"
+                ]
+              },
+              "minimum_meV": "200453963562528701/20000000000000000"
+            }
+          },
+          "upper.left": {
+            "mismatching_points": 19,
+            "numerical_negative_count_distribution": {
+              "98": 19,
+              "99": 45
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2815,
+                  "iy": 2944
+                },
+                "fractional_center": [
+                  "5631/8192",
+                  "5889/8192"
+                ]
+              },
+              "maximum_meV": "741003952524049/4000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2815,
+                  "iy": 2951
+                },
+                "fractional_center": [
+                  "5631/8192",
+                  "5903/8192"
+                ]
+              },
+              "minimum_meV": "-610346108956539/4000000000000000"
+            }
+          },
+          "upper.right": {
+            "mismatching_points": 24,
+            "numerical_negative_count_distribution": {
+              "100": 11,
+              "98": 13,
+              "99": 40
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2815,
+                  "iy": 2944
+                },
+                "fractional_center": [
+                  "5631/8192",
+                  "5889/8192"
+                ]
+              },
+              "maximum_meV": "660997413105717/4000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 12,
+                  "ix": 2815,
+                  "iy": 2951
+                },
+                "fractional_center": [
+                  "5631/8192",
+                  "5903/8192"
+                ]
+              },
+              "minimum_meV": "-470299441372789/4000000000000000"
+            }
+          }
+        },
+        "fixed_parent_failure_signatures": {
+          "all_expected": 34,
+          "upper.left": 6,
+          "upper.left+upper.right": 13,
+          "upper.right": 11
+        },
+        "gaps": {
+          "lower": {
+            "maximum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2815,
+                "iy": 2951
+              },
+              "fractional_center": [
+                "5631/8192",
+                "5903/8192"
+              ]
+            },
+            "maximum_meV": "10979246929571053/400000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2808,
+                "iy": 2944
+              },
+              "fractional_center": [
+                "5617/8192",
+                "5889/8192"
+              ]
+            },
+            "minimum_meV": "265765882452128363/10000000000000000"
+          },
+          "upper": {
+            "maximum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2815,
+                "iy": 2944
+              },
+              "fractional_center": [
+                "5631/8192",
+                "5889/8192"
+              ]
+            },
+            "maximum_meV": "385512008303379/1000000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2812,
+                "iy": 2950
+              },
+              "fractional_center": [
+                "5625/8192",
+                "5901/8192"
+              ]
+            },
+            "minimum_meV": "4096814674499/500000000000000"
+          }
+        },
+        "local_window_widths": {
+          "lower": {
+            "maximum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2815,
+                "iy": 2951
+              },
+              "fractional_center": [
+                "5631/8192",
+                "5903/8192"
+              ]
+            },
+            "maximum_meV": "10979246929571053/1600000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2808,
+                "iy": 2944
+              },
+              "fractional_center": [
+                "5617/8192",
+                "5889/8192"
+              ]
+            },
+            "minimum_meV": "265765882452128363/40000000000000000"
+          },
+          "upper": {
+            "maximum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2815,
+                "iy": 2944
+              },
+              "fractional_center": [
+                "5631/8192",
+                "5889/8192"
+              ]
+            },
+            "maximum_meV": "385512008303379/4000000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 12,
+                "ix": 2812,
+                "iy": 2950
+              },
+              "fractional_center": [
+                "5625/8192",
+                "5901/8192"
+              ]
+            },
+            "minimum_meV": "4096814674499/2000000000000000"
+          }
+        },
+        "minimum_upper_gap_sample_neighborhood": {
+          "absent_same_depth_neighbor_cells": [],
+          "all_eight_neighbor_cells_sampled": true,
+          "cell": {
+            "depth": 12,
+            "ix": 2812,
+            "iy": 2950
+          },
+          "interpretation": "An interior sampled-cell neighborhood does not locate or bound the continuum minimum; sampled centers are never the cell boundaries."
+        },
+        "sampled_common_upper_gap": {
+          "interpretation": "Approximate intersection over sampled point gaps only; a negative width is not a certified impossibility result.",
+          "maximum_lower_edge_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2951
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5903/8192"
+            ]
+          },
+          "maximum_lower_edge_meV": "7677051452511881/250000000000000",
+          "minimum_upper_edge_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2808,
+              "iy": 2946
+            },
+            "fractional_center": [
+              "5617/8192",
+              "5893/8192"
+            ]
+          },
+          "minimum_upper_edge_meV": "6111769018257943/200000000000000",
+          "signed_intersection_width_meV": "-149360718757809/1000000000000000"
+        },
+        "samples": 64
+      },
+      "status": "EXPLORATORY_COMPLETE",
+      "termination_reason": "NORMAL_EXIT",
+      "uncompleted_points": [],
+      "worker_exit_code": 0
+    },
+    "Refined 002": {
+      "eigensolver_starts": 64,
+      "elapsed_seconds": 2.984962581002037,
+      "input_files": {
+        "EVENTS.ndjson": {
+          "bytes": 507358,
+          "sha256": "3176adadbeaa3ca1aaa93437b30c1992e10c3f506596a92b48f62771816d1e19"
+        },
+        "MANIFEST.json": {
+          "bytes": 501,
+          "sha256": "7a56e4d4b75c31189e0eb55f08ebf465f7d3e78e9426a882d55e63f4f374f275"
+        },
+        "RESULTS.json": {
+          "bytes": 227515,
+          "sha256": "14ffb8cb4b396661ac217cbc0457b5f3c07a5896d275c64697aa368222ab28fd"
+        },
+        "SUPERVISOR_RECEIPT.json": {
+          "bytes": 572,
+          "sha256": "68191f6cc0b8e3abe2ee5f981ecb4906de1fef8cf34a98e96333055983cf2945"
+        }
+      },
+      "interval_factorizations": 0,
+      "packet_id": "MOMENTUM-MAPPING-SCOUT-002",
+      "pending_eigensolver_point": null,
+      "points_completed": 64,
+      "post_reap_group_empty": true,
+      "runtime_provenance_digest": "334fc9e0d81f22240f626791f105b42ede65cb945f34f5bdf60b59bf228e8107",
+      "sigkill_sent": false,
+      "sigterm_sent": false,
+      "source_bindings_sha256": "5068585ebaec171837d4ab6d17e6f79271f465962885fc41188504741c7b81a1",
+      "statistics": {
+        "all_fixed_endpoints_expected": 0,
+        "fixed_parent_endpoints": {
+          "lower.left": {
+            "mismatching_points": 0,
+            "numerical_negative_count_distribution": {
+              "97": 64
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11255,
+                  "iy": 11807
+                },
+                "fractional_center": [
+                  "22511/32768",
+                  "23615/32768"
+                ]
+              },
+              "maximum_meV": "208430380703315307/20000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11244,
+                  "iy": 11800
+                },
+                "fractional_center": [
+                  "22489/32768",
+                  "23601/32768"
+                ]
+              },
+              "minimum_meV": "204423807605870067/20000000000000000"
+            }
+          },
+          "lower.right": {
+            "mismatching_points": 0,
+            "numerical_negative_count_distribution": {
+              "97": 64
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11255,
+                  "iy": 11807
+                },
+                "fractional_center": [
+                  "22511/32768",
+                  "23615/32768"
+                ]
+              },
+              "maximum_meV": "204231454892198547/20000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11244,
+                  "iy": 11800
+                },
+                "fractional_center": [
+                  "22489/32768",
+                  "23601/32768"
+                ]
+              },
+              "minimum_meV": "202790083977960097/20000000000000000"
+            }
+          },
+          "upper.left": {
+            "mismatching_points": 64,
+            "numerical_negative_count_distribution": {
+              "98": 64
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11244,
+                  "iy": 11800
+                },
+                "fractional_center": [
+                  "22489/32768",
+                  "23601/32768"
+                ]
+              },
+              "maximum_meV": "-133450624524887/4000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11255,
+                  "iy": 11806
+                },
+                "fractional_center": [
+                  "22511/32768",
+                  "23613/32768"
+                ]
+              },
+              "minimum_meV": "-503771078697031/4000000000000000"
+            }
+          },
+          "upper.right": {
+            "mismatching_points": 63,
+            "numerical_negative_count_distribution": {
+              "98": 63,
+              "99": 1
+            },
+            "points_with_equality": 0,
+            "signed_bracketing_margin": {
+              "maximum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11244,
+                  "iy": 11800
+                },
+                "fractional_center": [
+                  "22489/32768",
+                  "23601/32768"
+                ]
+              },
+              "maximum_meV": "6596043058863/4000000000000000",
+              "minimum_at": {
+                "cell": {
+                  "depth": 14,
+                  "ix": 11255,
+                  "iy": 11806
+                },
+                "fractional_center": [
+                  "22511/32768",
+                  "23613/32768"
+                ]
+              },
+              "minimum_meV": "-363724411113281/4000000000000000"
+            }
+          }
+        },
+        "fixed_parent_failure_signatures": {
+          "upper.left": 1,
+          "upper.left+upper.right": 63
+        },
+        "gaps": {
+          "lower": {
+            "maximum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11255,
+                "iy": 11807
+              },
+              "fractional_center": [
+                "22511/32768",
+                "23615/32768"
+              ]
+            },
+            "maximum_meV": "17116371477292741/625000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11244,
+                "iy": 11800
+              },
+              "fractional_center": [
+                "22489/32768",
+                "23601/32768"
+              ]
+            },
+            "minimum_meV": "271137971630842011/10000000000000000"
+          },
+          "upper": {
+            "maximum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11252,
+                "iy": 11807
+              },
+              "fractional_center": [
+                "22505/32768",
+                "23615/32768"
+              ]
+            },
+            "maximum_meV": "63027182060437/1000000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11250,
+                "iy": 11802
+              },
+              "fractional_center": [
+                "22501/32768",
+                "23605/32768"
+              ]
+            },
+            "minimum_meV": "3089965450713/1000000000000000"
+          }
+        },
+        "local_window_widths": {
+          "lower": {
+            "maximum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11255,
+                "iy": 11807
+              },
+              "fractional_center": [
+                "22511/32768",
+                "23615/32768"
+              ]
+            },
+            "maximum_meV": "17116371477292741/2500000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11244,
+                "iy": 11800
+              },
+              "fractional_center": [
+                "22489/32768",
+                "23601/32768"
+              ]
+            },
+            "minimum_meV": "271137971630842011/40000000000000000"
+          },
+          "upper": {
+            "maximum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11252,
+                "iy": 11807
+              },
+              "fractional_center": [
+                "22505/32768",
+                "23615/32768"
+              ]
+            },
+            "maximum_meV": "63027182060437/4000000000000000",
+            "minimum_at": {
+              "cell": {
+                "depth": 14,
+                "ix": 11250,
+                "iy": 11802
+              },
+              "fractional_center": [
+                "22501/32768",
+                "23605/32768"
+              ]
+            },
+            "minimum_meV": "3089965450713/4000000000000000"
+          }
+        },
+        "minimum_upper_gap_sample_neighborhood": {
+          "absent_same_depth_neighbor_cells": [],
+          "all_eight_neighbor_cells_sampled": true,
+          "cell": {
+            "depth": 14,
+            "ix": 11250,
+            "iy": 11802
+          },
+          "interpretation": "An interior sampled-cell neighborhood does not locate or bound the continuum minimum; sampled centers are never the cell boundaries."
+        },
+        "sampled_common_upper_gap": {
+          "interpretation": "Approximate intersection over sampled point gaps only; a negative width is not a certified impossibility result.",
+          "maximum_lower_edge_at": {
+            "cell": {
+              "depth": 14,
+              "ix": 11255,
+              "iy": 11806
+            },
+            "fractional_center": [
+              "22511/32768",
+              "23613/32768"
+            ]
+          },
+          "maximum_lower_edge_meV": "30681562052482647/1000000000000000",
+          "minimum_upper_edge_at": {
+            "cell": {
+              "depth": 14,
+              "ix": 11244,
+              "iy": 11800
+            },
+            "fractional_center": [
+              "22489/32768",
+              "23601/32768"
+            ]
+          },
+          "minimum_upper_edge_meV": "15312082159194441/500000000000000",
+          "signed_intersection_width_meV": "-11479546818753/200000000000000"
+        },
+        "samples": 64
+      },
+      "status": "EXPLORATORY_COMPLETE",
+      "termination_reason": "NORMAL_EXIT",
+      "uncompleted_points": [],
+      "worker_exit_code": 0
+    }
+  },
+  "claim": "Approximate finite-cutoff-a point spectra only. Positive sampled gaps and window margins do not certify cell interiors, gap lower bounds, coverage, seams, topology, or physical gap closure. Historical certified coverage remains 29663/65536. Refinement was selected from coarse observations; the combined samples are not a uniform or independent validation set.",
+  "combined_statistics": {
+    "all_fixed_endpoints_expected": 34,
+    "fixed_parent_endpoints": {
+      "lower.left": {
+        "mismatching_points": 0,
+        "numerical_negative_count_distribution": {
+          "97": 128
+        },
+        "points_with_equality": 0,
+        "signed_bracketing_margin": {
+          "maximum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2951
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5903/8192"
+            ]
+          },
+          "maximum_meV": "209168433005749667/20000000000000000",
+          "minimum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2808,
+              "iy": 2944
+            },
+            "fractional_center": [
+              "5617/8192",
+              "5889/8192"
+            ]
+          },
+          "minimum_meV": "196015749663874167/20000000000000000"
+        }
+      },
+      "lower.right": {
+        "mismatching_points": 0,
+        "numerical_negative_count_distribution": {
+          "97": 128
+        },
+        "points_with_equality": 0,
+        "signed_bracketing_margin": {
+          "maximum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2951
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5903/8192"
+            ]
+          },
+          "maximum_meV": "1637854894359593/160000000000000",
+          "minimum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2808,
+              "iy": 2944
+            },
+            "fractional_center": [
+              "5617/8192",
+              "5889/8192"
+            ]
+          },
+          "minimum_meV": "200453963562528701/20000000000000000"
+        }
+      },
+      "upper.left": {
+        "mismatching_points": 83,
+        "numerical_negative_count_distribution": {
+          "98": 83,
+          "99": 45
+        },
+        "points_with_equality": 0,
+        "signed_bracketing_margin": {
+          "maximum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2944
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5889/8192"
+            ]
+          },
+          "maximum_meV": "741003952524049/4000000000000000",
+          "minimum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2951
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5903/8192"
+            ]
+          },
+          "minimum_meV": "-610346108956539/4000000000000000"
+        }
+      },
+      "upper.right": {
+        "mismatching_points": 87,
+        "numerical_negative_count_distribution": {
+          "100": 11,
+          "98": 76,
+          "99": 41
+        },
+        "points_with_equality": 0,
+        "signed_bracketing_margin": {
+          "maximum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2944
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5889/8192"
+            ]
+          },
+          "maximum_meV": "660997413105717/4000000000000000",
+          "minimum_at": {
+            "cell": {
+              "depth": 12,
+              "ix": 2815,
+              "iy": 2951
+            },
+            "fractional_center": [
+              "5631/8192",
+              "5903/8192"
+            ]
+          },
+          "minimum_meV": "-470299441372789/4000000000000000"
+        }
+      }
+    },
+    "fixed_parent_failure_signatures": {
+      "all_expected": 34,
+      "upper.left": 7,
+      "upper.left+upper.right": 76,
+      "upper.right": 11
+    },
+    "gaps": {
+      "lower": {
+        "maximum_at": {
+          "cell": {
+            "depth": 12,
+            "ix": 2815,
+            "iy": 2951
+          },
+          "fractional_center": [
+            "5631/8192",
+            "5903/8192"
+          ]
+        },
+        "maximum_meV": "10979246929571053/400000000000000",
+        "minimum_at": {
+          "cell": {
+            "depth": 12,
+            "ix": 2808,
+            "iy": 2944
+          },
+          "fractional_center": [
+            "5617/8192",
+            "5889/8192"
+          ]
+        },
+        "minimum_meV": "265765882452128363/10000000000000000"
+      },
+      "upper": {
+        "maximum_at": {
+          "cell": {
+            "depth": 12,
+            "ix": 2815,
+            "iy": 2944
+          },
+          "fractional_center": [
+            "5631/8192",
+            "5889/8192"
+          ]
+        },
+        "maximum_meV": "385512008303379/1000000000000000",
+        "minimum_at": {
+          "cell": {
+            "depth": 14,
+            "ix": 11250,
+            "iy": 11802
+          },
+          "fractional_center": [
+            "22501/32768",
+            "23605/32768"
+          ]
+        },
+        "minimum_meV": "3089965450713/1000000000000000"
+      }
+    },
+    "local_window_widths": {
+      "lower": {
+        "maximum_at": {
+          "cell": {
+            "depth": 12,
+            "ix": 2815,
+            "iy": 2951
+          },
+          "fractional_center": [
+            "5631/8192",
+            "5903/8192"
+          ]
+        },
+        "maximum_meV": "10979246929571053/1600000000000000",
+        "minimum_at": {
+          "cell": {
+            "depth": 12,
+            "ix": 2808,
+            "iy": 2944
+          },
+          "fractional_center": [
+            "5617/8192",
+            "5889/8192"
+          ]
+        },
+        "minimum_meV": "265765882452128363/40000000000000000"
+      },
+      "upper": {
+        "maximum_at": {
+          "cell": {
+            "depth": 12,
+            "ix": 2815,
+            "iy": 2944
+          },
+          "fractional_center": [
+            "5631/8192",
+            "5889/8192"
+          ]
+        },
+        "maximum_meV": "385512008303379/4000000000000000",
+        "minimum_at": {
+          "cell": {
+            "depth": 14,
+            "ix": 11250,
+            "iy": 11802
+          },
+          "fractional_center": [
+            "22501/32768",
+            "23605/32768"
+          ]
+        },
+        "minimum_meV": "3089965450713/4000000000000000"
+      }
+    },
+    "minimum_upper_gap_sample_neighborhood": {
+      "absent_same_depth_neighbor_cells": [],
+      "all_eight_neighbor_cells_sampled": true,
+      "cell": {
+        "depth": 14,
+        "ix": 11250,
+        "iy": 11802
+      },
+      "interpretation": "An interior sampled-cell neighborhood does not locate or bound the continuum minimum; sampled centers are never the cell boundaries."
+    },
+    "sampled_common_upper_gap": {
+      "interpretation": "Approximate intersection over sampled point gaps only; a negative width is not a certified impossibility result.",
+      "maximum_lower_edge_at": {
+        "cell": {
+          "depth": 12,
+          "ix": 2815,
+          "iy": 2951
+        },
+        "fractional_center": [
+          "5631/8192",
+          "5903/8192"
+        ]
+      },
+      "maximum_lower_edge_meV": "7677051452511881/250000000000000",
+      "minimum_upper_edge_at": {
+        "cell": {
+          "depth": 12,
+          "ix": 2808,
+          "iy": 2946
+        },
+        "fractional_center": [
+          "5617/8192",
+          "5893/8192"
+        ]
+      },
+      "minimum_upper_edge_meV": "6111769018257943/200000000000000",
+      "signed_intersection_width_meV": "-149360718757809/1000000000000000"
+    },
+    "samples": 128
+  },
+  "schema_version": 1,
+  "summary_id": "MOMENTUM-MAPPING-SUMMARY-001"
+}
