@@ -17,12 +17,26 @@ frontier and 5/8192 unresolved, summing to one.
 `verify.py --check-only` passed against the original fresh packet, including
 the receipt, runtime provenance, caps, hash chain, exact priority replay,
 partition and byte-exact derived artifacts. `N4_SPOT_RECOMPUTATION.json` is a
-separate deterministic third-congruence check of five accepted cells. It uses
+separate third-congruence check of five accepted cells with deterministic
+selection and perturbation seeds. It uses
 LAPACK `evx`, a seeded non-orthonormal perturbation, and 12-digit decimal
 rounding. All 20 interval-LDL factorizations certify the retained 97/99 inertia
 counts, including two depth-9 cells. Running `n4_spot_recompute.py` twice
-produced byte-identical output with SHA-256
+on the original runtime produced byte-identical output with SHA-256
 `f4bf8ac283e8eb7a771e628fc0f0b10073e14ba955a2aa72d60f52de0e6d8287`.
+
+This does not promise identical bytes across platforms: floating LAPACK/BLAS
+basis generation can change diagnostics, rounded bases and their interval
+enclosures. The SHA identifies the retained artifact; certification rests on
+checked Gram bounds, pivot signs and inertia counts. Claude's
+[independent-platform audit](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5825167937)
+reports the same five certifications with different output bytes. That rerun
+was not reproduced in the original runtime. N4 uses the same interval-LDL
+backend as the coverage run and adds no coverage.
+
+The [retained-record follow-up](../REVIEW_001/README.md) inspects the 40
+unresolved cells without new numerical execution. The execution evidence and
+terminal partition remain unchanged.
 
 ## Hosted log representation
 
