@@ -1,5 +1,11 @@
 # A visual guide to the Twistronics project
 
+> **Historical learning snapshot:** this guide explains retained v060/v062
+> evidence from source snapshot `7776ffd3ca21`. It remains the recommended
+> visual introduction, but it is not a summary of every later draft research
+> track. See [Start here](../START_HERE.md) and [current status](../STATUS.md)
+> before interpreting it as the project's latest state.
+
 ## The question in one minute
 
 Can we track band crossings and their topological relationships reliably as parameters change in a continuum model of strained twisted bilayer graphene?
