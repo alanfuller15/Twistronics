@@ -18,7 +18,8 @@ distinguishes sampled gaps from retained quadrant-area certification.
 
 | Location | Role |
 |---|---|
-| [`v062/`](v062/) | Latest numerical batch presented on `main`; includes the report, method, coverage ledger, summary, and raw results |
+| [`../docs/interactive-guide/`](../docs/interactive-guide/) | Current presentation: source-bound copies of 128 draft point observations, plus historical node playback and a geometric lesson |
+| [`v062/`](v062/) | Historical numerical campaign archived on `main`; includes the report, method, coverage ledger, summary, and raw results |
 | [`v065/`](v065/) | Evidence-recorder/software iteration; not a newer numerical batch |
 | [`v053/`](v053/)–[`v061/`](v061/) | Earlier retained research deliveries and handoffs |
 | [`prior_our_v052/`](prior_our_v052/) | Complete preserved predecessor archive with intentionally nested history |
@@ -31,9 +32,10 @@ not a declaration that v053 is the current scientific or learning milestone.
 
 ## Active work
 
-Migration-contract, certification-readiness, physical S1a, and v079p package
-acceptance work is currently public in draft pull requests and is not part of
-this default-branch directory. Follow exact commit links from
+Migration-contract, certification-readiness, physical S1a/S1b, exploratory
+point mapping, and v079p package-acceptance work is public in draft pull
+requests. Their scientific packets are not merged into this default-branch
+directory by the visual update. Follow exact commit links from
 [`docs/STATUS.md`](../docs/STATUS.md); do not infer acceptance from a moving
 branch name or a higher version number.
 

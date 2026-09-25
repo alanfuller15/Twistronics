@@ -22,16 +22,16 @@ proof of a material's topology, or a single polished software package.
 3. Use the [glossary](GLOSSARY.md) when a version or evidence label is unclear.
 4. Read [current status](STATUS.md) before treating any result as current.
 
-The visual guide is intentionally centered on the retained v060/v062 evidence.
-It is the best introduction, but it is a historical snapshot rather than the
-complete current research frontier.
+The interactive guide combines an ideal geometry lesson, the latest displayed
+draft point mapping, and historical v062 playback. The separate static
+illustrated guide is intentionally centered on the older v060/v062 evidence.
 
 ### I want to evaluate the evidence
 
 1. Read the [status and claim boundaries](STATUS.md).
-2. For v062, read the [report](../research/v062/REPORT.md),
-   [method](../research/v062/METHOD.md), and
-   [coverage ledger](../research/v062/COVERAGE.md).
+2. Follow the current point-mapping and retained S1b links in the status page.
+   For historical v062, read the [report](../research/v062/REPORT.md),
+   [method](../research/v062/METHOD.md), and [coverage ledger](../research/v062/COVERAGE.md).
 3. Follow the [reproducibility ladder](REPRODUCIBILITY.md).
 4. Use exact commit links for draft work. A moving branch name is not an
    evidence binding.
@@ -44,7 +44,8 @@ under review, not extensions already accepted into `main`:
 - [PR #2](https://github.com/alanfuller15/Twistronics/pull/2): migration-contract
   review and research-status material.
 - [PR #5](https://github.com/alanfuller15/Twistronics/pull/5):
-  certification-readiness and bounded physical S1a assembly work.
+  certification-readiness, physical S1a assembly, partial S1b quadrant
+  coverage, and exploratory momentum-space point mapping.
 - [PR #6](https://github.com/alanfuller15/Twistronics/pull/6): deterministic
   review and packaging mechanics for the v079p acceptance line.
 

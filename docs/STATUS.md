@@ -3,6 +3,11 @@
 Reader update: **2026-09-25 UTC**. The earlier multi-track inventory below
 retains its **2026-09-24** snapshot date.
 
+The interactive guide and its source-bound display data were published on
+`main` by [PR #8](https://github.com/alanfuller15/Twistronics/pull/8), merged at
+[`bd25a56ec6652a44fee9d9cac10c89747241286d`](https://github.com/alanfuller15/Twistronics/commit/bd25a56ec6652a44fee9d9cac10c89747241286d).
+The research packets in PR #5 remain draft evidence at their own exact commits.
+
 ## Interactive learning and retained draft mapping
 
 The [interactive field guide](interactive-guide/README.md) now displays exact
@@ -27,9 +32,10 @@ fixed research cases or run a model. Full-domain certification, complete
 projector/transport/seam composition, infinite-cutoff convergence and
 experimental validation remain open.
 
-## Earlier inventory: 2026-09-24
+<details>
+<summary><strong>Historical multi-track inventory: 2026-09-24</strong></summary>
 
-This page distinguishes material retained on the default branch from public
+This retained earlier inventory distinguishes material on the default branch from public
 draft work. Draft pull-request heads can move; the full commit hashes below are
 the exact snapshots reviewed for this page.
 
@@ -74,7 +80,10 @@ and the corresponding Codex
 close the four pre-S1b hardening findings. Bounded S1b work may proceed from
 that exact commit, carrying the remaining native-module provenance gate. No
 S1b interval-inertia result is public at this snapshot, so uniform physical
-isolation remains open.
+isolation remains open. The 2026-09-25 update above supersedes this earlier
+statement about whether an S1b result has been published.
+
+</details>
 
 ## How to interpret common success words
 

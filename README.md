@@ -1,101 +1,111 @@
-# Twistronics: following band crossings through a changing model
+# Twistronics: mapping band crossings in twisted graphene
 
-This AI-assisted computational research project studies how band crossings and
-their topological charge relationships evolve along parameter paths in a model
-of strained twisted bilayer graphene.
+Two slightly rotated graphene sheets create a much larger moiré pattern. This
+AI-assisted computational research project studies where selected electron-energy
+bands meet in a strained bilayer model, how those crossings move, and which
+claims the retained calculations can support. The crossings live in **momentum
+space**, not at physical locations on a sheet.
 
-In plain language: two slightly rotated graphene sheets can have unusual
-electronic behavior. This project calculates where selected electron-energy
-bands meet, follows those meeting points as model parameters change, and checks
-whether their relationships change consistently. These points live in
-**momentum space**, not at physical locations on a graphene sheet.
+**[Explore the visual field guide](docs/interactive-guide/README.md)** ·
+**[Download the browser explorer](docs/interactive-guide/explorer.html)** ·
+**[Read the current evidence](docs/STATUS.md)**
 
-> **New here?** Begin with [Start here](docs/START_HERE.md). It separates the
-> established learning material from active draft research and explains which
-> documents to read for your goal.
+[![Current visual field guide: inspect 128 retained momentum-space samples, coordinate magnification and energy scales](docs/interactive-guide/preview-map.jpg)](docs/interactive-guide/README.md)
 
-> **Current status:** [`main`](https://github.com/alanfuller15/Twistronics/tree/main)
-> retains the v060/v062 numerical presentation and v065 software evidence.
-> Later migration, certification-readiness, physical S1a, and packaging work is
-> public in draft pull requests but is not part of `main`. See the dated
-> [status page](docs/STATUS.md) before interpreting “latest” or “PASS.”
+*Select individual samples, switch between linear and logarithmic energy colors,
+zoom from a unit fractional chart into the sampled patch, rotate explanatory
+graphene reference lattices, and replay saved node positions. The guide labels
+geometry lessons, historical results, and current draft observations separately.*
 
-## Explore the interactive field guide
+> **Opening the interactive view:** GitHub displays the preview image but does
+> not execute the explorer inside this README. Open
+> [explorer.html](docs/interactive-guide/explorer.html), choose **Download raw
+> file**, and open the downloaded file in your browser. It contains its own
+> data and controls; no installation or research-engine run is needed.
 
-The new [interactive visual guide](docs/interactive-guide/README.md) lets you
-turn two reference lattices, zoom into 128 retained momentum-space samples,
-and step through saved band-crossing paths. Each view explains its units,
-magnification, and evidence limits. Download its single-file explorer to run
-it in a browser; GitHub's Markdown viewer cannot execute interactive controls.
+## Current research snapshot
 
-[![Interactive momentum map with explicit coordinate and energy scales](docs/interactive-guide/preview-map.jpg)](docs/interactive-guide/README.md)
+**Updated 25 September 2026 UTC.** The visual guide is published on `main`.
+The newest displayed research observations are bound to
+[`3f174f19b3ed5d57598accd1d7b1550fc7c9eeff`](https://github.com/alanfuller15/Twistronics/commit/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff)
+in draft [PR #5](https://github.com/alanfuller15/Twistronics/pull/5). Publishing
+their presentation does not merge or certify that scientific track.
 
-The map presents draft observations at exact commit `3f174f1`; it does not
-merge or certify that research. The geometry lesson is explanatory, and the
-node-path lesson retains its historical v062 label.
+| Work | Retained result | What it establishes |
+|---|---|---|
+| Momentum-space mapping | **128 point spectra**: 64 coarse and 64 targeted refined samples, finite cutoff a, matrix dimension 196 | Approximate gaps at those sampled coordinates |
+| Targeted refinement | Smallest sampled upper gap: **0.00819 → 0.00309 meV** | A tighter sampled region for follow-up; not a lower bound between points or proof of gap closure |
+| Bounded S1b interval-inertia run | **29663/65536 ≈ 45.26% of quadrant area**, with 590 accepted cells | Partial accepted area within the declared quadrant [½, 1]²; frontier and unresolved cells keep the run inconclusive |
+| Earlier v062 continuation | Six seeded nodes at **11 saved settings per engine** | Historical finite-model trajectories and spatial charge comparisons; not a complete braid |
 
-## The established visual introduction
+**[Latest point-mapping report and figure](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/momentum_mapping_summary_001/OUTPUT/REPORT.md)** ·
+**[Retained S1b execution and its limits](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/certification_s1b_quadrant_a_002/RUN/README.md)**
 
-The [illustrated research guide](docs/visual-guide/README.md) explains the
-scientific question, terminology, v060/v062 evidence, and open work without
-requiring readers to reconstruct the repository history.
+The 128 point samples add **no certified area**. The coverage fraction is an
+area measure for one quadrant, not a cell count, full-domain coverage, or a
+percentage of the project completed. Refinement was chosen from the coarse
+results, so the combined samples are not an independent validation set.
 
-![Measured node locations through the v062 continuation in both implementations](docs/visual-guide/figures/node-paths.svg)
+## Learn through the visuals
 
-*Actual retained numerical data, not an artist's illustration. Markers are
-measured states; connecting lines guide the eye. This continuation segment
-alone is not a demonstration of a complete braid.*
+| Lesson | Try it | Learn to distinguish |
+|---|---|---|
+| Twist & length | Change the angle, field of view and visible moiré cell | Atomic lattice spacing, moiré length and display magnification |
+| Momentum & energy | Compare 1×, 512× and 1,024× views; inspect sample values | Fractional coordinates, physical momentum geometry and energy differences |
+| Moving crossings | Step through saved settings and switch implementations | Measured states, connecting lines and unknown motion between samples |
+| What we know | Follow exact source links and evidence labels | An illustration, a sampled observation, a software check and a certificate |
 
-## What the retained v060/v062 evidence shows
-
-The latest numerical batch presented on `main` is **v062**. Two separately
-coded engines retain the same spatial charge classification, **OPPOSITE**, at
-eleven measured tunnelling ratios from 0.991 to 1.000. Joining the retained
-v060 window gives fifteen distinct sampled ratios per engine, including earlier
-SAME classifications. Definitions and caveats are in the
-[guide](docs/visual-guide/README.md#what-do-the-charge-labels-mean).
-
-![Spatial charge classifications at the fifteen sampled ratios](docs/visual-guide/figures/charge-comparison.svg)
-
-The engines share a measurement framework and model assumptions. Their
-agreement is a useful numerical check, not independent physical validation.
-Finite sampling does not establish a continuous-path proof, a complete N8
-campaign, or accuracy at infinite momentum cutoff. The microscopic relation
-between strain and interlayer tunnelling remains open.
+The [interactive guide](docs/interactive-guide/README.md) explains nm and Å,
+meV and μeV, reciprocal-coordinate charts, linear versus area magnification,
+logarithmic color scales, and momentum cutoff. Exact-value tables and keyboard
+controls provide alternatives to pointing and color.
 
 ## Choose a reading path
 
 | Your question | Start here |
 |---|---|
-| What is this repository, and what should I read first? | [Start here](docs/START_HERE.md) |
-| What do the pictures and scientific terms mean? | [Illustrated research guide](docs/visual-guide/README.md) |
-| What is established, draft, or still open? | [Research status](docs/STATUS.md) |
-| What do v062, S0, S1a, and acceptance gates mean? | [Glossary](docs/GLOSSARY.md) |
-| What precisely was calculated for v062? | [v062 report](research/v062/REPORT.md), [method](research/v062/METHOD.md), and [coverage ledger](research/v062/COVERAGE.md) |
-| Where are the data? | [v062 summary](research/v062/SUMMARY.json), [raw results](research/v062/results), and [instructions](research/v062/README.md) |
+| What is the project, and what should I read first? | [Start here](docs/START_HERE.md) |
+| What do the current map and scales mean? | [Interactive field guide](docs/interactive-guide/README.md) |
+| What is published, draft, or still open? | [Research status](docs/STATUS.md) |
+| Which saved records produced these views? | [Presentation sources and hashes](docs/interactive-guide/sources.json) |
 | How can I reproduce a presentation or inspect evidence? | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
-| How is the large research archive organized? | [Archive map](docs/ARCHIVE_MAP.md) |
+| What does the older node-continuation evidence show? | [Historical illustrated guide](docs/visual-guide/README.md) |
+| What do the terms and version labels mean? | [Glossary](docs/GLOSSARY.md) |
+| How is the research archive organized? | [Archive map](docs/ARCHIVE_MAP.md) |
 
-## Claim boundary
+<details>
+<summary><strong>Historical background: the v060/v062 node continuation</strong></summary>
 
-The repository contains several different kinds of evidence: sampled numerical
-results, software acceptance checks, synthetic certification-readiness tests,
-and a bounded physical affine-assembly bridge in draft work. A successful
-software test, review gate, or package-acceptance round is not automatically a
-physical or topological certification.
+Two separately coded engines retain the same spatial charge classification,
+**OPPOSITE**, at eleven sampled tunnelling ratios from 0.991 to 1.000 in v062.
+The combined v060/v062 record has fifteen distinct ratios per engine,
+including earlier SAME classifications. These compare topological charge signs
+under declared frame conventions, not electric charge.
 
-As of the dated status snapshot, the project has not established a complete
-continuous-path proof, uniform physical isolation over the declared rectangle,
-certified projector/transport/seam composition, an Euler-class result for a
-physical material, infinite-cutoff convergence, or experimental validation.
+![Historical v062 node continuation in both implementations](docs/visual-guide/figures/node-paths.svg)
 
-## Scientific feedback and contributions
+Markers show retained numerical states; connecting lines guide the eye. This
+segment alone is not a demonstration of a complete braid. See the
+[historical guide](docs/visual-guide/README.md), [report](research/v062/REPORT.md),
+[method](research/v062/METHOD.md), and [coverage ledger](research/v062/COVERAGE.md).
+
+The engines share a measurement framework and model assumptions. Their
+agreement is a useful numerical check, not independent physical validation.
+The v065 software evidence is a separate historical track, not a newer
+numerical campaign.
+
+</details>
+
+## Open scientific work
+
+Uniform full-domain isolation, the complete certified projector/transport/seam
+composition, a continuous-path proof, infinite-cutoff convergence, and
+experimental validation remain open. A passed software test, review, or
+package gate does not by itself establish any of these results. The
+microscopic relation between strain, tunnelling, and realizable device
+controls also requires further work.
 
 Useful outside feedback includes a decisive topology benchmark, a check on
 symmetry and band-isolation assumptions, or a realistic observable and
 experimental control path. Before proposing changes, read
 [CONTRIBUTING.md](CONTRIBUTING.md) and bind claims to exact retained evidence.
-
-Earlier research remains part of the record. It should be entered through the
-[archive map](docs/ARCHIVE_MAP.md), not treated as a sequence of progressively
-stronger physical claims.
