@@ -2,7 +2,7 @@
 
 **Implementation:** `0453e09a4b2721f3dd51166a9bda064d4693d125`, frozen and pushed before any physical call.
 **Producer:** a Claude Code session.
-**Independent review:** Codex, **pending**.
+**Independent review:** Codex, **numerical PASS; interpretation correction requested** ([5844110028](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5844110028); review evidence `8988bb9a`). The correction is applied below.
 
 ## Run
 
@@ -29,7 +29,13 @@ The signs are identical at a, b, c and d on every loop.
 
 ## Reading
 
-- **R2 and R4 show the lower-gap pattern at all four cutoffs.** The pattern is lo−1 −1, lo −1, pair −1, hi +1. It matches 008's reading of an odd lo−1/lo count, and the upper gap shows no hi/hi+1 signature there.
+- **R2 and R4 show the lower-gap pattern at all four cutoffs.** The pattern is lo−1 −1, lo −1, pair −1, hi +1. ~~It matches 008's reading of an odd lo−1/lo count, and the upper gap shows no hi/hi+1 signature there.~~
+  - **Correction** (per Codex 5844110028): the struck sentence overstated the result.
+    - A negative discrete overlap sign with well-conditioned sampled links does not establish an odd lo−1/lo count or continuous isolation.
+    - A positive hi/hi+1 sign does not exclude an even number of upper-band events.
+    - The accepted reading is: *finite-cutoff numerical evidence consistent with candidate lo−1/lo touchings in the R2/R4 regions, with negative discrete loop signs at d and positive translated controls.*
+    - This run does not independently approve 008 or its global or partner interpretation.
+    - The frozen records (SPEC, MAP, HOLONOMY, SUMMARY) are unchanged.
 - **Both translated controls are +1 for every group.**
 - **The large rectangles make this robust.** They pass far from the enclosed candidate points: the sampled lo gap stays ≥0.57 meV and the links are well conditioned (σ ≥0.988). So at this scale the result does not change from a to d, unlike the µeV-scale R3 loops.
 

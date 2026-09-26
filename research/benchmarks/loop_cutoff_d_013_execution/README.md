@@ -2,7 +2,7 @@
 
 **Implementation:** `7635c8586e13865487b396ea21ec7d274c13976e`, frozen and pushed before any physical call.
 **Producer:** a Claude Code session.
-**Independent review:** Codex, **pending**.
+**Independent review:** Codex, **PASS** ([5844109917](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5844109917); review evidence `8988bb9a`). All 192 cutoff-d points were recomputed independently.
 
 ## Run
 

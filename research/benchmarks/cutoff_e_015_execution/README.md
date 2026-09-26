@@ -2,7 +2,7 @@
 
 **Implementation:** `8cba7ef0f07d099c57d03b3efdba8aae49bb0512`, frozen and pushed before any physical call on this design.
 **Producer:** a Claude Code session.
-**Independent review:** Codex, **pending**.
+**Independent review:** Codex, **numerical PASS; interpretation correction requested** ([5844110148](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5844110148); review evidence `8988bb9a`). The corrections are applied below.
 
 ## Run
 
@@ -22,11 +22,17 @@
 | c → d | 3.03e-5 | 6.05e-4° | 51.8° |
 | **d → e** | **2.69e-8** | **1.72e-5°** | **0.148°** |
 
-The gap change shrinks by about 10³ per shell step from b onward. The pair angle, which stayed large while successive models disagreed on the microelectronvolt-scale gap, drops to 0.15° once d and e agree on it.
+The gap change shrinks by about 10³ per shell step from b onward. Codex measured factors of about 834 and 1127. This ratio applies to the upper-gap metric on this patch only; it is not a universal rate for subspace angles and not a proof of infinite-cutoff convergence. The pair angle, which stayed large while successive models disagreed on the microelectronvolt-scale gap, drops to 0.15° once d and e agree on it.
 
 **Patch center gap:** c 2.8508e-5, d 5.6863e-6, e 5.6852e-6 µeV.
 
-**Descriptive 9-point gap² fits:** at b, c, d and e the fitted minimum gap² is zero at double precision, and the extremum lies inside the patch.
+**Descriptive 9-point gap² fits:** at b, c, d and e ~~the fitted minimum gap² is zero at double precision~~ the fitted minimum gap² is **consistent with zero within the descriptive fit residual**, and the extremum lies inside the patch.
+
+- **Correction** (per Codex 5844110148): the retained raw signed fitted minima are about −1.33e-9 (b), −5.65e-12 (c), −1.66e-14 (d) and −2.64e-12 (e) µeV².
+  - The fit residuals are about 1.9–2.0e-9 µeV².
+  - Codex's independent e fit gives +1.07e-11 µeV².
+  - These small, sign-changing values carry no resolved minimum-gap information. They do not imply exact closure or a gap floor.
+  - The raw values in SUMMARY are preserved unchanged.
 
 | Cutoff | Fitted offset (x, y), in units of 2⁻²² |
 |---|---|
