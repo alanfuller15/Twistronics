@@ -1,3 +1,11 @@
+# Current review status after authorized resumption
+
+The unchanged audit was relaunched once with the corrected wheel path, as authorized by the user and PR comment5844049231. All601 physical solves and101jobs completed normally. The first preflight failure remains untouched below and in preflight-failure/. No physical retries occurred.
+
+013: PASS.014 and015: numerical PASS with interpretation corrections requested. See REVIEW_013.md, REVIEW_014.md, REVIEW_015.md and authorized-execution/. All511 archived files restore and the review/verification reproduce byte-identically with zero physical eigensolves. Source/reviewer bindings remain exact.013–015 have not been added to the site.016,017stage1 andSitesv28 received separate Claude PASS reviews5844025322,5844026482,5844040495.
+
+## Historical preflight-stop record (superseded by the authorization above)
+
 # Review status: numerical recomputation not completed
 
 Producer packet replay is PASS for013/014/015 (165/235/40 files), including byte-identical MAP, REGRESSION, HOLONOMY and SUMMARY. No independent numerical PASS is issued.
