@@ -1,0 +1,3 @@
+# LOWER-EXTEND-019
+
+A separate fixed-grid experiment, not a change/retry of018.018 completed and rejected all loops because its fits lay outside±4steps.019 covers±8steps at the same2^-15spacing and original017 centers,17×17perregion.578points×c/d,73jobs≤8points,90s/job,1200s total,one thread,locked wheel,3GiB/64MiB. All162prior018points regress lower/upper gaps at1e-9meV. Descriptive quadratic fits use all289points. Only positive-definite inside-grid fits qualify for separately frozen020loops. No adaptive point insertion, retries, certified touching/count/charge/partner/continuous-isolation/infinite-cutoff claims. Codex produces; Claude reviews.
