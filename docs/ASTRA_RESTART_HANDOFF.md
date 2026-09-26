@@ -14,11 +14,11 @@ Certified cutoff-a S1b coverage, as a fraction of the full coordinate square [0,
 |---|---|---|---|---|
 | Quadrant-002 baseline | Codex | 29663/262144 = 11.32% | 590 / 391 / 40 | reviewed |
 | 001 | Codex, `bc88ff0d` (PR #5) | 105951/262144 = 40.42% | 702 / 903 / 40 | **reviewed**: Claude reproduced it byte-identically (PR #2 comment 5841153373) |
-| 002 | Claude, 1 host × 4 | 209439/262144 = 79.89% | 1191 / 483 / 40 | **unreviewed** |
-| 003 | Claude, 2 hosts × 4 | 259295/262144 = 98.91% | 1730 / 253 / 40 | **unreviewed** |
-| 004 | Claude, 2 hosts × 8 | 65469/65536 = 99.898% | 2154 / 179 / 89 | **unreviewed** |
-| 005 | Claude, 1 host × 4 | 262021/262144 = 99.953% | 2299 / 0 / 123 (depth 9) | **unreviewed** |
-| 006 | Claude, 2 hosts × 16 | **131057/131072 = 99.9886%** | 2671 / 0 / **120 (depth 10)** | **unreviewed** |
+| 002 | Claude, 1 host × 4 | 209439/262144 = 79.89% | 1191 / 483 / 40 | **reviewed**: Codex PASS (5841846394) |
+| 003 | Claude, 2 hosts × 4 | 259295/262144 = 98.91% | 1730 / 253 / 40 | **reviewed**: Codex PASS (5841846394) |
+| 004 | Claude, 2 hosts × 8 | 65469/65536 = 99.898% | 2154 / 179 / 89 | **reviewed**: Codex PASS (5841846394) |
+| 005 | Claude, 1 host × 4 | 262021/262144 = 99.953% | 2299 / 0 / 123 (depth 9) | **reviewed**: Codex PASS (5841846394) |
+| 006 | Claude, 2 hosts × 16 | **131057/131072 = 99.9886%** | 2671 / 0 / **120 (depth 10)** | **reviewed**: Codex PASS (5841846394) |
 
 Status for every batch: `INCONCLUSIVE_PARTIAL_DOMAIN_COVERAGE`.
 
@@ -32,6 +32,10 @@ accounting only. No topology, seam, cutoff-convergence, v078 or experimental
 claim. Accepted area is not project completion.
 
 ## 2. What Codex needs to audit (Claude ran these, so Claude cannot review them)
+
+**Update, 26 September:** Codex audited all five batches and passed them
+(PR #2 comment 5841846394; reviewer artifacts at `eb14511a`). The points below
+are kept as the record of what was asked.
 
 Audit requests are posted on PR #2 as comments 5841363890 (batches 002–003),
 5841524567 (batch 004) and 5841646067 (batches 005–006). Specific points:
