@@ -37,14 +37,14 @@ function drawMoire(){
   c.fillStyle='#08141d';c.fillRect(0,0,w,h);
   const extent=Math.hypot(w,h)/scale/2+a, n=Math.ceil(extent/(a*Math.sqrt(3)/2));
   for(const [angle,color] of [[-rad/2,'#77e3ed'],[rad/2,'#ffd18b']]){
-    const cs=Math.cos(angle),sn=Math.sin(angle);c.fillStyle=color;c.globalAlpha=field===3?.9:.7;
+    const cs=Math.cos(angle),sn=Math.sin(angle);c.fillStyle=color;c.globalAlpha=field===3?.9:.85;
     for(let j=-n;j<=n;j++){
       const y=j*a*Math.sqrt(3)/2;
       const imin=Math.floor(-extent/a-j/2),imax=Math.ceil(extent/a-j/2);
       for(let i=imin;i<=imax;i++){
         const x=a*(i+j/2),px=w/2+scale*(cs*x-sn*y),py=h/2-scale*(sn*x+cs*y);
         if(px<0||px>w||py<0||py>h)continue;
-        const radius=field===3?2.4:field===12?1.25:.8;
+        const radius=field===3?2.4:field===12?1.25:1.15;
         c.beginPath();c.arc(px,py,radius,0,Math.PI*2);c.fill();
       }
     }
@@ -55,7 +55,7 @@ function drawMoire(){
     const v1=[0,L],v2=[-Math.sqrt(3)*L/2,L/2],o=[-(v1[0]+v2[0])/2,-(v1[1]+v2[1])/2];
     const pts=[o,[o[0]+v1[0],o[1]+v1[1]],[o[0]+v1[0]+v2[0],o[1]+v1[1]+v2[1]],[o[0]+v2[0],o[1]+v2[1]]];
     c.beginPath();pts.forEach((p,i)=>c[i?'lineTo':'moveTo'](w/2+p[0]*scale,h/2-p[1]*scale));c.closePath();c.fillStyle='#77e3ed0b';c.fill();c.strokeStyle='#d3f8fc';c.lineWidth=1.7;c.stroke();
-    c.fillStyle='#e7f6f9';c.font='13px ui-monospace, monospace';c.fillText(1.5*L*scale<h-30?'One moiré cell · edges L':'Moiré cell extends beyond this view',22,27);
+    c.fillStyle='#e7f6f9';c.font='13px ui-monospace, monospace';const fits=1.5*L*scale<=h&&Math.sqrt(3)/2*L*scale<=w;c.fillText(fits?'One moiré cell · edge L = '+L.toFixed(2)+' nm':'Moiré cell extends beyond this view',22,27);
   }
   // Fixed units, responsive pixel conversion. Both spatial axes share one scale.
   const bar=field===40?5:field===12?2:.5,x=26,y=h-30;
