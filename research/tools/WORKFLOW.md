@@ -1,6 +1,6 @@
 # New frozen-run workflow
 
-This additive workflow separates scheduling, retained-state loading and scientific checks. Existing frozen runners do not import it and remain unchanged. Independent Claude review of this implementation is pending. It is infrastructure, not a numerical or publication PASS.
+This additive workflow separates scheduling, retained-state loading and scientific checks. Existing frozen runners do not import it and remain unchanged. Claude infrastructure PASS: PR #2 comment 5845181342 at e039de6ae4b6a9285fad0fa63155c1324ba45a55. It is infrastructure, not a numerical or publication PASS.
 
 ## Before any physical call
 
