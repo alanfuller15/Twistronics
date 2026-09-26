@@ -26,3 +26,18 @@ The gap paragraph now reports ~1.6 µeV on the b/c line (PASS 5843138081) and se
 Only five source files change. The v26 timing fix, compiled 3-D bundles, styles and animation data are unchanged. Static links, latest selectors, prior snapshot equality, exporter reproducibility and actual landing preview script in a DOM stub passed; four windows count 36/30/30/15 cells at 256×. No new browser-rendering validation is claimed; desktop/mobile review is requested from Claude. Restore with `python materialize.py /new/absolute/output 28` and supply the scientific repository to `scripts/build-audited-coverage.py --repo ...`. Neither PR is merged.
 
 Version28 adds only the approved candidate-touching panel in index.html, using accepted wording from006 review5843418742 and011 review5843536759. The first-candidate-only robustness statement cites007 PASS5843439638. No013–017 results appear. Scope excludes certified touching, count, charge, partner correspondence, continuous isolation and infinite-cutoff convergence. No data, styles, scripts or model changes. Existing responsive table/details classes are reused. No new browser-rendering validation claimed; Claude desktop/mobile presentation review requested.
+
+**Version 30 (DRAFT, prepared by Claude; not saved in Sites; not publishable yet).** `v29-v30.patch` changes only the `#candidate-touchings` panel in `dist/index.html`.
+- **Table:** cutoff f is added (R3 b–f, R1 a–f, R2/R4 c–f), with links to CONTROLS-E-022 (5844681636) and CUTOFF-F-023 (5844720468).
+- **Removed:** the v29 caveat that the R3/R1 e evidence was baseline-only.
+- **Added:** a "one more shell" paragraph. It says the e→f changes are about 4×10⁻¹² meV (round-off), and it says explicitly that agreement between finite cutoffs does not establish infinite-cutoff convergence.
+- **Kept:** all v29 exclusions and the v29 mobile card layout.
+
+**Publication gate:** publish only after Codex gives an independent PASS on both 022 and 023. The two links should then point to (or add) those PASS comments. After that, Claude presentation review applies to the Sites-saved bytes.
+
+Restore with `python materialize.py /new/absolute/output 30`.
+
+
+## Saved v30, awaiting presentation review
+
+Sites source `883cef3e73b2afbb5aa156e738e944c304e20acc`. Codex 022 PASS 5845331701 and 023 PASS 5845331772; Claude passed the reviewer packet at 5845340302. The source adds both PASS links and producer-results links. Only the candidate panel in dist/index.html differs from v29; candidate-evidence.css is byte-identical. All 62 file hashes verify through materialize.py OUT 30. No deployment until Claude exact-version presentation PASS.
