@@ -1,0 +1,139 @@
+diff --git a/dist/app.js b/dist/app.js
+index bda974f..90510c8 100644
+--- a/dist/app.js
++++ b/dist/app.js
+@@ -92,7 +92,7 @@ function drawMoire(){
+ }
+ ['angle','show-cell'].forEach(id=>$(id).addEventListener('input',drawMoire));
+ $('real-zoom').addEventListener('input',()=>{moireField=null;drawMoire();});
+-function setMoireMode(mode){moireMode=mode;moireField=mode==='layers'?3:null;$('real-zoom').value=mode==='layers'?'3':'fit';
++function setMoireMode(mode){moireMode=mode;moireField=mode==='layers'?3:null;$('real-zoom').value=mode==='layers'?'3':'40';
+   $('moire-pattern').setAttribute('aria-pressed',mode==='pattern');$('moire-detail').setAttribute('aria-pressed',mode==='layers');drawMoire();}
+ $('moire-pattern').addEventListener('click',()=>setMoireMode('pattern'));
+ $('moire-detail').addEventListener('click',()=>setMoireMode('layers'));
+diff --git a/dist/gallery.css b/dist/gallery.css
+index 55c71c4..34fa0ff 100644
+--- a/dist/gallery.css
++++ b/dist/gallery.css
+@@ -60,3 +60,13 @@
+ #coverage-closeup{display:block;width:100%;height:auto;max-width:480px;margin:auto;background:#214d63;border:1px solid #8aabbd}
+ .coverage-detail-help{font-size:.9375rem;line-height:1.5;max-width:480px;margin:12px auto 0;color:#d0e2ec}
+ @media(max-width:370px){.coverage-preview{padding:12px}.coverage-locator-row{grid-template-columns:96px minmax(0,1fr);gap:12px}#model-coverage #coverage-overview{width:96px;height:96px}}
++
++/* A sequence of small discoveries, with every live model still on the page. */
++.story-opening{max-width:680px;padding:10px 0 4px}.story-kicker{color:var(--cyan)!important;font-size:.875rem!important;letter-spacing:.03em;margin:0 0 8px!important}.story-opening h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;margin-bottom:14px}.story-opening .opening-objective{font-size:clamp(1.15rem,2.8vw,1.5rem);line-height:1.4;max-width:36ch}.story-opening .opening-context{max-width:56ch;margin:10px 0 20px}
++.model-card .story-card-heading{justify-content:flex-start;align-items:center;gap:12px;padding:18px 20px 8px}.model-card-heading>.story-step{display:inline-grid;place-items:center;width:30px;height:30px;flex-shrink:0;border:1px solid #7296a6;border-radius:50%;color:#b7ecf3;font-size:.9375rem}.story-card-heading h2{font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.25;margin:0}
++.story-invitation{margin:0;padding:0 20px 18px;font-size:1rem;line-height:1.5;color:#e2eff5;max-width:66ch}.story-connection{margin:0;padding:0 20px 16px;font-size:.9375rem;line-height:1.55;color:#b8cfdb;max-width:72ch}
++.story-discovery{margin:0 20px 16px;padding:12px 14px;border-left:3px solid #ffca50;background:#162934;color:#ffe6ab;font-size:1rem;line-height:1.5}
++.story-continue{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;min-height:60px;padding:16px 20px;border:0;border-top:1px solid #34515f;border-radius:0;background:#153440;color:#a2eff4;text-align:left;font-size:1rem;line-height:1.45}.story-continue:hover{background:#204653}.story-continue:focus-visible{outline:3px solid #ffca50;outline-offset:-4px}.story-continue span{font-size:1.4rem}
++.story-view-options{margin:0;padding:0 12px;border:0;background:#0b1c29}.story-view-options summary{font-size:.9375rem;min-height:44px;display:flex;align-items:center;color:#c2dce7;cursor:pointer}.story-view-options summary::before{content:'+';margin-right:10px}.story-view-options[open] summary::before{content:'−'}.story-view-options .moire-toolbar{padding-left:0;padding-right:0}
++#model-layers .model-caption{font-size:.9375rem;color:#b8cfdb}#model-layers .story-view-options{order:3}
++@media(max-width:720px){.story-opening{padding-top:0}.story-opening h1{font-size:2rem}.story-opening .opening-context{font-size:.9375rem}.model-card .story-card-heading{padding:16px 16px 8px}.story-invitation,.story-connection{padding-left:16px;padding-right:16px}.story-discovery{margin-left:16px;margin-right:16px}.story-continue{padding:14px 16px}.model-card #moire-canvas{height:280px}}
+diff --git a/dist/index.html b/dist/index.html
+index 5599626..29935c4 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -20,7 +20,7 @@
+   <script src="coverage-data.js" defer></script>
+   <script src="survey-data.js" defer></script>
+   <script src="coverage.js" defer></script>
+-  <script src="gallery.js" defer></script>
++  <script src="gallery.js" defer></script><script src="landing-story.js" defer></script>
+   <script src="app.js" defer></script>
+   <script src="bands3d.js" defer></script>
+   <script src="learning.js" defer></script><script src="coverage-preview.js" defer></script>
+@@ -37,39 +37,44 @@
+   <div class="chapter-trail" id="chapter-trail" hidden><a href="#start" data-next="start">← All models</a><span id="chapter-name"></span><details id="chapter-menu"><summary>Chapters</summary><nav aria-label="All chapters"><a href="#wave" data-next="wave">How waves add</a><a href="#layers" data-next="layers">What a twist changes</a><a href="#bands" data-next="bands">Energy in 3D</a><a href="#evidence" data-next="evidence">What the evidence means</a><a href="#momentum" data-next="momentum">Momentum samples</a><a href="#nodes" data-next="nodes">Tracked crossings</a><a href="#coverage" data-next="coverage">Coverage & progress</a></nav></details></div>
+   <div id="lesson" tabindex="-1">
+     <section id="start" class="lesson" aria-labelledby="start-title">
+-      <div class="gallery-heading"><h1 id="start-title">It starts with a twist.</h1><p class="opening-objective">Learn how a small twist between two sheets of graphene changes the patterns and energies of electrons.</p><p class="opening-context">Graphene is carbon just one atom thick. Start by twisting the layers below, then explore the 3D models to connect their geometry to electron behavior.</p></div>
++      <div class="gallery-heading story-opening"><p class="story-kicker">A tiny change. A different pattern.</p><h1 id="start-title">It starts with a twist.</h1><p class="opening-objective">How can a tiny twist change the way electrons move?</p><p class="opening-context">Start with two sheets of graphene—carbon just one atom thick. Make a pattern, then explore what it could mean for an electron.</p></div>
+       <div class="model-gallery"><article class="model-card" id="model-layers" aria-labelledby="card-layers-title">
+-  <header class="model-card-heading"><h2 id="card-layers-title">Twist two layers</h2><span>Geometry model</span></header>
++  <header class="model-card-heading story-card-heading"><span class="story-step" aria-label="Step 1">1</span><h2 id="card-layers-title">Make a larger pattern</h2></header><p class="story-invitation">Move the angle slider toward 0.50°. Watch the repeating pattern grow.</p>
+   <div class="model-slot" id="slot-layers"></div>
+   <p class="model-caption" id="caption-layers">Move the angle slider. A small turn changes the much larger alignment pattern.</p>
+-  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The larger repeating pattern is called moiré. The white outline marks one repeat. Bright areas in the pattern view are an illustrative alignment guide. Choose “See the layers” for cyan dots and orange rings, each marking a two-carbon lattice cell. Neither view calculates electron energies.</p></details><a href="#layers/layers-reading" data-next="layers/layers-reading"><span>2</span> Understand the model</a><a href="#layers/layers-method" data-next="layers/layers-method"><span>3</span> Methods & evidence</a></div>
++  <p id="twist-discovery" class="story-discovery" role="status" aria-live="polite">Try the slider: a smaller angle makes a larger repeating pattern.</p><div class="model-learning"><details><summary><span>1</span> Why does this happen?</summary><p>The larger repeating pattern is called moiré. The white outline marks one repeat. Bright areas in the pattern view are an illustrative alignment guide. Choose “See the layers” for cyan dots and orange rings, each marking a two-carbon lattice cell. Neither view calculates electron energies.</p></details><a href="#layers/layers-reading" data-next="layers/layers-reading"><span>2</span> Understand the model</a><a href="#layers/layers-method" data-next="layers/layers-method"><span>3</span> Methods & evidence</a></div>
++<button class="story-continue" data-story-next="model-graphene">What does this mean for an electron? <span aria-hidden="true">↓</span></button>
++</article>
++<article class="model-card" id="model-graphene" aria-labelledby="card-graphene-title">
++  <header class="model-card-heading story-card-heading"><span class="story-step" aria-label="Step 2">2</span><h2 id="card-graphene-title">Watch a probability pattern move</h2></header><p class="story-invitation">Press Play. Follow one peak as the pattern changes.</p>
++  <p class="story-connection">The twist changes the geometry an electron experiences. This separate, fixed-setting calculation shows a probability pattern—not an electron’s path. It does not update from the twist slider above.</p><div class="model-slot" id="slot-graphene"></div>
++  <p class="model-caption" id="caption-graphene">Press play or rotate the surface. Peaks show where an electron is more likely to be detected.</p>
++  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The surface is a probability map. Its height is not the height of the carbon sheet. The same calculated interval replays with a short fade, then stops.</p></details><a href="#graphene/graphene-explanation" data-next="graphene/graphene-explanation"><span>2</span> Understand the model</a><a href="#graphene/graphene-evidence" data-next="graphene/graphene-evidence"><span>3</span> Methods & evidence</a></div>
++<button class="story-continue" data-story-next="model-wave">Why describe an electron as a wave? <span aria-hidden="true">↓</span></button>
+ </article>
+ <article class="model-card" id="model-wave" aria-labelledby="card-wave-title">
+-  <header class="model-card-heading"><h2 id="card-wave-title">Momentum meets real space</h2><span>Teaching model</span></header>
++  <header class="model-card-heading story-card-heading"><span class="story-step" aria-label="Step 3">3</span><h2 id="card-wave-title">Build the idea of a wave</h2></header><p class="story-invitation">Try two waves, then a packet. Notice how their combined pattern changes.</p>
+   <div class="model-slot" id="slot-wave"></div>
+   <p class="model-caption" id="caption-wave">Play the wave or change its ingredients. Momentum components combine into the real-space pattern.</p>
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Momentum space lists the waves being combined; real space shows their combined pattern. The views share a clock. This simpler free-particle model teaches superposition, not the graphene calculation.</p></details><a href="#wave/wave-reading" data-next="wave/wave-reading"><span>2</span> Understand the model</a><a href="#wave/wave-method" data-next="wave/wave-method"><span>3</span> Methods & evidence</a></div>
+-</article>
+-<article class="model-card" id="model-graphene" aria-labelledby="card-graphene-title">
+-  <header class="model-card-heading"><h2 id="card-graphene-title">Graphene in motion</h2><span>Computed model</span></header>
+-  <div class="model-slot" id="slot-graphene"></div>
+-  <p class="model-caption" id="caption-graphene">Press play or rotate the surface. Peaks show where an electron is more likely to be detected.</p>
+-  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The surface is a probability map. Its height is not the height of the carbon sheet. The same calculated interval replays with a short fade, then stops.</p></details><a href="#graphene/graphene-explanation" data-next="graphene/graphene-explanation"><span>2</span> Understand the model</a><a href="#graphene/graphene-evidence" data-next="graphene/graphene-evidence"><span>3</span> Methods & evidence</a></div>
++<button class="story-continue" data-story-next="model-bands">Where does energy enter the picture? <span aria-hidden="true">↓</span></button>
+ </article>
+ <article class="model-card" id="model-bands" aria-labelledby="card-bands-title">
+-  <header class="model-card-heading"><h2 id="card-bands-title">Give energy a height</h2><span>Saved calculations</span></header>
++  <header class="model-card-heading story-card-heading"><span class="story-step" aria-label="Step 4">4</span><h2 id="card-bands-title">Give energy a height</h2></header><p class="story-invitation">Rotate the view. Two marks above the same location represent two energies.</p>
+   <div class="model-slot" id="slot-bands"></div>
+   <p class="model-caption" id="caption-bands">Rotate the chart or select a dot. Vertical separation compares energies at the same momentum coordinate.</p>
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>These marks come from saved energy calculations, not particles on the graphene sheet. In the paired-band view, a vertical line compares two energies at one sampled location. Empty space between points is not measured.</p></details><a href="#bands/bands-reading" data-next="bands/bands-reading"><span>2</span> Understand the model</a><a href="#bands/bands-source" data-next="bands/bands-source"><span>3</span> Methods & evidence</a></div>
++<button class="story-continue" data-story-next="model-nodes">What happens where bands meet? <span aria-hidden="true">↓</span></button>
+ </article>
+ <article class="model-card" id="model-nodes" aria-labelledby="card-nodes-title">
+-  <header class="model-card-heading"><h2 id="card-nodes-title">Follow the crossings</h2><span>Saved parameter steps</span></header>
++  <header class="model-card-heading story-card-heading"><span class="story-step" aria-label="Step 5">5</span><h2 id="card-nodes-title">Follow where bands meet</h2></header><p class="story-invitation">Play the saved settings. Watch the marked crossings move.</p>
+   <div class="model-slot" id="slot-nodes"></div>
+   <p class="model-caption" id="caption-nodes">Play the saved settings. Follow the places where the selected energy bands meet.</p>
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Each dot marks a tracked band crossing. Playback changes a model parameter, not physical time. Connecting lines join saved settings; they do not establish the path between them.</p></details><a href="#nodes/nodes-reading" data-next="nodes/nodes-reading"><span>2</span> Understand the model</a><a href="#nodes/nodes-source-detail" data-next="nodes/nodes-source-detail"><span>3</span> Methods & evidence</a></div>
++<button class="story-continue" data-story-next="model-coverage">How much have we actually checked? <span aria-hidden="true">↓</span></button>
+ </article>
+ <article class="model-card" id="model-coverage" aria-labelledby="card-coverage-title">
+-<header class="model-card-heading"><h2 id="card-coverage-title">See the cells still unresolved</h2><span>Audited coverage</span></header>
++<header class="model-card-heading story-card-heading"><span class="story-step" aria-label="Step 6">6</span><h2 id="card-coverage-title">Separate the picture from the evidence</h2></header><p class="story-invitation">Explore the yellow cells. These are the places where the local check remains unresolved.</p>
+ <div class="coverage-preview">
+   <div class="coverage-preview-key" aria-label="Map legend"><span><i class="coverage-key-pass" aria-hidden="true"></i>Passed local check</span><span><i class="coverage-key-open" aria-hidden="true">•</i>Unresolved</span></div>
+   <div class="coverage-locator-row"><figure><svg id="coverage-overview" viewBox="0 0 320 320" role="img" aria-label="Whole square; white ring locates the enlarged area below"></svg><figcaption>Whole square</figcaption></figure><p><strong id="coverage-magnification">128× closer</strong>The white ring locates the close-up below. Markers show location, not cell size.</p></div>
+@@ -241,7 +246,7 @@
+           <div class="control"><label for="angle">Twist angle <output id="angle-value">1.05°</output></label><input id="angle" type="range" min="0.5" max="3" step="0.01" value="1.05"><div class="range-labels"><span>0.50°</span><span>3.00°</span></div></div>
+           <div class="presets" aria-label="Angle presets"><button data-angle="0.5">0.50°</button><button data-angle="1.05" class="active">1.05°</button><button data-angle="3">3.00°</button></div>
+           <div class="readout"><span>MOIRÉ REPEAT LENGTH</span><strong id="moire-length">13.42 <small>nm</small></strong><p id="moire-ratio">54.6 × the atomic lattice spacing</p></div>
+-          <div class="control"><label for="real-zoom">Field of view</label><select id="real-zoom"><option value="fit" selected>Fit the whole cell</option><option value="40">40 nm · pattern scale</option><option value="12">12 nm · closer view</option><option value="3">3 nm · lattice detail</option></select></div>
++          <div class="control"><label for="real-zoom">Field of view</label><select id="real-zoom"><option value="fit">Fit the whole cell</option><option value="40" selected>40 nm · pattern scale</option><option value="12">12 nm · closer view</option><option value="3">3 nm · lattice detail</option></select></div>
+           <label class="check"><input id="show-cell" type="checkbox" checked> Show one moiré cell</label>
+           <button id="layer-reset" class="text-button">Reset the view ↺</button>
+         </aside>
+diff --git a/dist/landing-story.js b/dist/landing-story.js
+new file mode 100644
+index 0000000..60bef7a
+--- /dev/null
++++ b/dist/landing-story.js
+@@ -0,0 +1,22 @@
++'use strict';
++(() => {
++const $=id=>document.getElementById(id);
++document.querySelectorAll('[data-story-next]').forEach(button=>button.addEventListener('click',()=>{
++ const target=$(button.dataset.storyNext),title=target.querySelector('h2');
++ target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
++ title.setAttribute('tabindex','-1');title.focus({preventScroll:true});
++}));
++const initial=Number($('angle').value),length=theta=>.246/(2*Math.sin(theta*Math.PI/360));
++function discovery(){const theta=Number($('angle').value),factor=length(theta)/length(initial);
++ $('twist-discovery').textContent=Math.abs(theta-initial)<.001?'At this starting angle, two fine lattices make a much larger repeat. Try a smaller angle.':factor>1?`You made the repeating pattern ${factor.toFixed(1)}× as wide as at the starting angle. This larger pattern is called moiré.`:`You made the repeating pattern smaller—${Math.round(factor*100)}% of its starting width. This larger-scale pattern is called moiré.`;
++}
++$('angle').addEventListener('change',discovery);
++document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>queueMicrotask(discovery)));
++$('layer-reset').addEventListener('click',()=>queueMicrotask(discovery));
++// Keep the first action prominent; reveal secondary view controls on request.
++const options=document.createElement('details');options.className='story-view-options';
++const summary=document.createElement('summary');summary.textContent='View options · layers, zoom & fit';options.append(summary);
++const visual=$('moire-canvas').parentElement;
++visual.append(options);
++visual.querySelectorAll('.moire-toolbar').forEach(toolbar=>options.append(toolbar));
++})();
