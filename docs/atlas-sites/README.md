@@ -38,6 +38,6 @@ Version28 adds only the approved candidate-touching panel in index.html, using a
 Restore with `python materialize.py /new/absolute/output 30`.
 
 
-## Saved v30, awaiting presentation review
+## Published v30
 
-Sites source `883cef3e73b2afbb5aa156e738e944c304e20acc`. Codex 022 PASS 5845331701 and 023 PASS 5845331772; Claude passed the reviewer packet at 5845340302. The source adds both PASS links and producer-results links. Only the candidate panel in dist/index.html differs from v29; candidate-evidence.css is byte-identical. All 62 file hashes verify through materialize.py OUT 30. No deployment until Claude exact-version presentation PASS.
+Sites source `883cef3e73b2afbb5aa156e738e944c304e20acc`. Codex 022 PASS 5845331701 and 023 PASS 5845331772; Claude passed the reviewer packet at 5845340302. The source adds both PASS links and producer-results links. Only the candidate panel in dist/index.html differs from v29; candidate-evidence.css is byte-identical. All 62 file hashes verify through materialize.py OUT 30. Claude exact-version presentation PASS 5845378941 received; deployment succeeded. See v30-publication.json.
