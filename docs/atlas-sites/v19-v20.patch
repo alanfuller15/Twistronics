@@ -1,0 +1,147 @@
+diff --git a/README.md b/README.md
+index 6d53c06..74a6836 100644
+--- a/README.md
++++ b/README.md
+@@ -235,3 +235,8 @@ The home view presents one model at a time, starting with twist geometry. The mo
+ The moiré view defaults to a fitted, full-cell illustration. Its normalized three-harmonic alignment guide is `(cos(u)+cos(v)+cos(u+v)+1.5)/4.5`, where `u=2π(x/√3+y)/L` and `v=-4πx/(√3L)`. Contrast mapping is for legibility; it is not a calculated energy, density, or quantitative registry observable. Both primitive cell translations preserve this illustration. The layers view retains the actual symmetrically rotated triangular reference sites with cyan filled dots and orange rings. It opens at 3 nm; fit-cell and zoom buttons change the physical viewing window, preserving equal x/y scales. No scientific data or audit verdict changed.
+ 
+ Validation: DOM interactions, model selection, display modes, zoom and cell labels at 0.50°, 0.58°, 1.05° and 3.00° passed, together with existing coverage-data checks. Managed visual preview remains blocked by the absent `/tmp/sites-previewd/requests` mailbox; browser/GPU visual verification is pending.
++
++
++### Landing-page correction
++
++The landing page now opens with “It starts with a twist” and its interactive geometry model, followed directly by the live wave, graphene and energy 3D models, then crossings and coverage. All six exhibits are visible in the page; the model selector and previous/next gating are removed. Short descriptions sit below each model. The moiré contrast, layer detail and fit/zoom controls are retained.
+diff --git a/dist/gallery.css b/dist/gallery.css
+index 6a48421..525a271 100644
+--- a/dist/gallery.css
++++ b/dist/gallery.css
+@@ -32,13 +32,15 @@
+ @media(max-width:900px){.learning-path{grid-template-columns:repeat(3,minmax(0,1fr))}}
+ @media(max-width:600px){.learning-path{grid-template-columns:repeat(2,minmax(0,1fr))}.learning-path a{font-size:.9375rem}.learning-path a:last-child{grid-column:1/-1}}
+ 
+-/* Beginner view: one experiment, with detail available when wanted. */
+-#start{max-width:900px;margin:0 auto}.model-gallery{display:block}.model-card[hidden]{display:none!important}
++/* Landing page: twist first, followed by the live models and short captions. */
++#start{max-width:900px;margin:0 auto}.model-gallery{display:grid;grid-template-columns:1fr;gap:32px}.model-card[hidden]{display:none!important}
+ .gallery-heading{margin:16px 0}.gallery-heading h1{font-size:clamp(1.5rem,4vw,2rem)}
+-.explore-nav{display:flex;gap:8px;margin:0 0 14px;align-items:center}.explore-nav select{flex:1;min-width:0;font-size:1rem}.explore-nav button{min-width:44px;min-height:44px;padding:8px}
+ .model-card-heading{padding:12px 16px}.model-card-heading>span{display:none}.model-caption{min-height:0;font-size:.95rem}
+ .model-learning{display:block}.model-learning>a{display:none}.model-learning:has(details[open])>a{display:flex}
+ .moire-toolbar{display:flex;gap:8px;align-items:center;padding:10px 12px;flex-wrap:wrap;background:#0b1c29}.moire-toolbar button{min-height:44px;padding:8px 12px;font-size:.95rem}.moire-toolbar button[aria-pressed=true]{background:#75e9fa;color:#071821;border-color:#75e9fa}
+ .moire-zoom output{font-size:.8rem;color:#c5d9e2;margin-left:auto}.moire-note{font-size:.8rem;color:#c5d9e2;padding:0 12px 10px;margin:0;background:#0b1c29}
+ .model-card #moire-canvas{height:420px;width:100%;display:block}.model-card #moire-legend{font-size:.8rem;color:#d8f5fc;min-height:36px}.model-card .presets{gap:8px}
+ @media(max-width:720px){.model-card #moire-canvas{height:340px}.gallery-heading p{font-size:.95rem}.model-card-heading{flex-direction:row}.moire-zoom output{flex-basis:100%;margin:0}.model-learning{padding-bottom:8px}}
++
++.model-card .graphene-stage,.model-card .wave-stage{height:360px}.model-card .band-stage{height:440px}
++@media(max-width:720px){.model-gallery{gap:24px}.model-card .graphene-stage,.model-card .wave-stage{height:310px}.model-card .band-stage{height:340px}}
+diff --git a/dist/gallery.js b/dist/gallery.js
+index 10168cc..20ea99a 100644
+--- a/dist/gallery.js
++++ b/dist/gallery.js
+@@ -17,34 +17,14 @@
+   window.prepareModelGallery=shown=>{
+     for(const {node,home,slot} of pieces)if(shown)slot.append(node);else home.after(node);
+   };
+-  const sequence=['layers','wave','graphene','bands','nodes','coverage'];
+-  function selectModel(){
+-    const model=$('model-choice').value,index=sequence.indexOf(model);
+-    document.querySelectorAll('.model-card').forEach(card=>card.hidden=card.id!=='model-'+model);
+-    $('model-prev').disabled=index===0;$('model-next').disabled=index===sequence.length-1;
+-    window.pauseGrapheneScene?.();window.pauseWaveScene?.();window.pauseNodeScene?.();
+-    if(model==='wave')window.showWaveScene?.();
+-    if(model==='bands')window.showBandScene?.();
+-    if(model==='graphene')window.showGrapheneScene?.();
+-    window.dispatchEvent(new Event('resize'));
+-  }
+-  $('model-choice').addEventListener('change',selectModel);
+-  for(const [id,step] of [['model-prev',-1],['model-next',1]])$(id).addEventListener('click',()=>{
+-    $('model-choice').value=sequence[sequence.indexOf($('model-choice').value)+step];selectModel();
+-  });
+-  selectModel();
+   function write(model,text){const el=$('caption-'+model);if(el.textContent!==text)el.textContent=text;}
+   function narrate(){
+-    const time=$('graphene-time').textContent,mass=$('graphene-mass').textContent;
+-    write('graphene',time==='Replay'?'The picture fades before the saved interval replays. This is a viewing transition, not additional physical evolution.':mass.startsWith('—')?'Press play or rotate the surface. Peaks show where an electron is more likely to be detected.':`Higher peaks mean greater probability. At ${time}, ${mass.replace(' in view','')} of the probability lies inside this window; the rest lies outside it.`);
+-    const mode=$('wave-preset').value,momentum=$('wave-views').dataset.mobileView==='momentum';
+-    const idea={single:'One wave spreads probability evenly, even as its phase changes.',pair:'Two waves reinforce each other in stripes. Their changing relative phase shifts that pattern.',packet:'Many waves combine into a localized pattern that moves and spreads.'}[mode];
+-    const amplitude=$('wave-height').value==='amplitude';
+-    write('wave',idea+(momentum?' Momentum marker heights stay fixed here; their colors show changing phase.':amplitude?' Real-space height is wave amplitude, which can be negative; it is not probability.':' Height in real space shows probability density. The momentum view shows the ingredients.'));
+-    write('layers',`At ${$('angle-value').textContent}, the alignment pattern repeats every ${$('moire-length').textContent.trim()}. Try a smaller angle: the repeat grows. Use + to look closer, or Fit cell to see its outline.`);
+-    const gap=$('band-selected-gap').textContent;
++    write('graphene','Watch a calculated probability pattern move. Higher peaks mean a greater chance of detecting the electron nearby.');
++    const momentum=$('wave-views').dataset.mobileView==='momentum',amplitude=$('wave-height').value==='amplitude';
++    write('wave',momentum?'See the waves that build the pattern. Marker height shows each contribution; color shows its phase.':amplitude?'Combine waves into a moving pattern. Height shows wave amplitude, which can be negative—not probability.':'Combine waves into a moving pattern. Height shows probability density; momentum space shows the ingredients.');
++    write('layers',`A ${$('angle-value').textContent} twist creates a ${$('moire-length').textContent.trim()} repeat. A smaller angle makes the pattern larger.`);
+     const bandHeight=$('band-mode').value.endsWith('-gap')?'an energy gap':'saved energy';
+-    write('bands',gap?`Height shows ${bandHeight}. Selected point: ${gap}. Rotate or select another point. Empty space between samples is unmeasured.`:'Rotate the chart or select a dot. Height shows saved energy; vertical separation compares energies at one momentum coordinate.');
++    write('bands',`Explore saved calculations in 3D. Height shows ${bandHeight}; empty space between samples is unmeasured.`);
+     write('nodes',`${$('state-counter').textContent.replace('STATE','Saved setting')}: w₀/w₁ = ${$('ratio-value').textContent}. The dots mark tracked band crossings. Playback changes this parameter, not physical time.`);
+   }
+   for(const id of ['graphene-time','graphene-mass','angle-value','moire-length','band-selected-gap','state-counter','ratio-value'])new MutationObserver(narrate).observe($(id),{childList:true,characterData:true,subtree:true});
+diff --git a/dist/index.html b/dist/index.html
+index a3c8641..38fb3a4 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -37,38 +37,42 @@
+   <div class="chapter-trail" id="chapter-trail" hidden><a href="#start" data-next="start">← All models</a><span id="chapter-name"></span><details id="chapter-menu"><summary>Chapters</summary><nav aria-label="All chapters"><a href="#wave" data-next="wave">How waves add</a><a href="#layers" data-next="layers">What a twist changes</a><a href="#bands" data-next="bands">Energy in 3D</a><a href="#evidence" data-next="evidence">What the evidence means</a><a href="#momentum" data-next="momentum">Momentum samples</a><a href="#nodes" data-next="nodes">Tracked crossings</a><a href="#coverage" data-next="coverage">Coverage & progress</a></nav></details></div>
+   <div id="lesson" tabindex="-1">
+     <section id="start" class="lesson" aria-labelledby="start-title">
+-      <div class="gallery-heading"><h1 id="start-title">A small twist. A new pattern.</h1><p>Start here: move the angle slider and watch the pattern grow.</p></div>
+-      <nav class="explore-nav" aria-label="Explore one model at a time"><button id="model-prev" aria-label="Previous model">←</button><label for="model-choice" class="sr-only">Choose a model</label><select id="model-choice"><option value="layers">1 / 6 · Twist two layers</option><option value="wave">2 / 6 · Build a wave</option><option value="graphene">3 / 6 · Watch probability move</option><option value="bands">4 / 6 · Read the energies</option><option value="nodes">5 / 6 · Follow crossings</option><option value="coverage">6 / 6 · Inspect the evidence</option></select><button id="model-next" aria-label="Next model">→</button></nav>
+-      <div class="model-gallery"><article class="model-card" id="model-wave" aria-labelledby="card-wave-title">
+-  <header class="model-card-heading"><h2 id="card-wave-title">Momentum meets real space</h2><span>Teaching model</span></header>
+-  <div class="model-slot" id="slot-wave"></div>
+-  <p class="model-caption" id="caption-wave">Play the wave or change its ingredients. Momentum components combine into the real-space pattern.</p>
+-  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Momentum space lists the waves being combined; real space shows their combined pattern. The views share a clock. This simpler free-particle model teaches superposition, not the graphene calculation.</p></details><a href="#wave/wave-reading" data-next="wave/wave-reading"><span>2</span> Understand the model</a><a href="#wave/wave-method" data-next="wave/wave-method"><span>3</span> Methods & evidence</a></div>
+-</article><article class="model-card" id="model-layers" aria-labelledby="card-layers-title">
++      <div class="gallery-heading"><h1 id="start-title">It starts with a twist.</h1><p>Turn one layer slightly. Watch a larger pattern appear.</p></div>
++      <div class="model-gallery"><article class="model-card" id="model-layers" aria-labelledby="card-layers-title">
+   <header class="model-card-heading"><h2 id="card-layers-title">Twist two layers</h2><span>Geometry model</span></header>
+   <div class="model-slot" id="slot-layers"></div>
+   <p class="model-caption" id="caption-layers">Move the angle slider. A small turn changes the much larger alignment pattern.</p>
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The larger repeating pattern is called moiré. The white outline marks one repeat. Bright areas in the pattern view are an illustrative alignment guide. Choose “See the layers” for cyan dots and orange rings, each marking a two-carbon lattice cell. Neither view calculates electron energies.</p></details><a href="#layers/layers-reading" data-next="layers/layers-reading"><span>2</span> Understand the model</a><a href="#layers/layers-method" data-next="layers/layers-method"><span>3</span> Methods & evidence</a></div>
+-</article><article class="model-card" id="model-bands" aria-labelledby="card-bands-title">
+-  <header class="model-card-heading"><h2 id="card-bands-title">Give energy a height</h2><span>Saved calculations</span></header>
+-  <div class="model-slot" id="slot-bands"></div>
+-  <p class="model-caption" id="caption-bands">Rotate the chart or select a dot. Vertical separation compares energies at the same momentum coordinate.</p>
+-  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>These marks come from saved energy calculations, not particles on the graphene sheet. In the paired-band view, a vertical line compares two energies at one sampled location. Empty space between points is not measured.</p></details><a href="#bands/bands-reading" data-next="bands/bands-reading"><span>2</span> Understand the model</a><a href="#bands/bands-source" data-next="bands/bands-source"><span>3</span> Methods & evidence</a></div>
+-</article><article class="model-card" id="model-coverage" aria-labelledby="card-coverage-title">
+-<header class="model-card-heading"><h2 id="card-coverage-title">From points to whole cells</h2><span>Audited coverage</span></header>
+-<a class="coverage-overview-link" href="#coverage" data-next="coverage" aria-label="Open the audited batch 006 coverage map"><svg id="coverage-overview" viewBox="0 0 320 320" role="img" aria-label="Latest audited full-square cell partition"></svg></a>
+-<p class="model-caption"><strong id="home-coverage-percent">99.988556%</strong> of the full square is accepted. <strong id="home-unresolved-count">120</strong> depth-10 cells remain unresolved. Rose cells are small; open the map to inspect them.</p>
+-<div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Cyan regions passed the local cell-isolation check. Rose regions remain unresolved. Small unresolved area can still block a global claim. Refining a cell changes its size, not its physical model.</p></details><a href="#coverage" data-next="coverage"><span>2</span> Inspect the cells</a><a href="#evidence" data-next="evidence"><span>3</span> What PASS means</a></div>
+-</article><article class="model-card" id="model-graphene" aria-labelledby="card-graphene-title">
++</article>
++<article class="model-card" id="model-wave" aria-labelledby="card-wave-title">
++  <header class="model-card-heading"><h2 id="card-wave-title">Momentum meets real space</h2><span>Teaching model</span></header>
++  <div class="model-slot" id="slot-wave"></div>
++  <p class="model-caption" id="caption-wave">Play the wave or change its ingredients. Momentum components combine into the real-space pattern.</p>
++  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Momentum space lists the waves being combined; real space shows their combined pattern. The views share a clock. This simpler free-particle model teaches superposition, not the graphene calculation.</p></details><a href="#wave/wave-reading" data-next="wave/wave-reading"><span>2</span> Understand the model</a><a href="#wave/wave-method" data-next="wave/wave-method"><span>3</span> Methods & evidence</a></div>
++</article>
++<article class="model-card" id="model-graphene" aria-labelledby="card-graphene-title">
+   <header class="model-card-heading"><h2 id="card-graphene-title">Graphene in motion</h2><span>Computed model</span></header>
+   <div class="model-slot" id="slot-graphene"></div>
+   <p class="model-caption" id="caption-graphene">Press play or rotate the surface. Peaks show where an electron is more likely to be detected.</p>
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The surface is a probability map. Its height is not the height of the carbon sheet. The same calculated interval replays with a short fade, then stops.</p></details><a href="#graphene/graphene-explanation" data-next="graphene/graphene-explanation"><span>2</span> Understand the model</a><a href="#graphene/graphene-evidence" data-next="graphene/graphene-evidence"><span>3</span> Methods & evidence</a></div>
+-</article><article class="model-card" id="model-nodes" aria-labelledby="card-nodes-title">
++</article>
++<article class="model-card" id="model-bands" aria-labelledby="card-bands-title">
++  <header class="model-card-heading"><h2 id="card-bands-title">Give energy a height</h2><span>Saved calculations</span></header>
++  <div class="model-slot" id="slot-bands"></div>
++  <p class="model-caption" id="caption-bands">Rotate the chart or select a dot. Vertical separation compares energies at the same momentum coordinate.</p>
++  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>These marks come from saved energy calculations, not particles on the graphene sheet. In the paired-band view, a vertical line compares two energies at one sampled location. Empty space between points is not measured.</p></details><a href="#bands/bands-reading" data-next="bands/bands-reading"><span>2</span> Understand the model</a><a href="#bands/bands-source" data-next="bands/bands-source"><span>3</span> Methods & evidence</a></div>
++</article>
++<article class="model-card" id="model-nodes" aria-labelledby="card-nodes-title">
+   <header class="model-card-heading"><h2 id="card-nodes-title">Follow the crossings</h2><span>Saved parameter steps</span></header>
+   <div class="model-slot" id="slot-nodes"></div>
+   <p class="model-caption" id="caption-nodes">Play the saved settings. Follow the places where the selected energy bands meet.</p>
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Each dot marks a tracked band crossing. Playback changes a model parameter, not physical time. Connecting lines join saved settings; they do not establish the path between them.</p></details><a href="#nodes/nodes-reading" data-next="nodes/nodes-reading"><span>2</span> Understand the model</a><a href="#nodes/nodes-source-detail" data-next="nodes/nodes-source-detail"><span>3</span> Methods & evidence</a></div>
++</article>
++<article class="model-card" id="model-coverage" aria-labelledby="card-coverage-title">
++<header class="model-card-heading"><h2 id="card-coverage-title">From points to whole cells</h2><span>Audited coverage</span></header>
++<a class="coverage-overview-link" href="#coverage" data-next="coverage" aria-label="Open the audited batch 006 coverage map"><svg id="coverage-overview" viewBox="0 0 320 320" role="img" aria-label="Latest audited full-square cell partition"></svg></a>
++<p class="model-caption"><strong id="home-coverage-percent">99.988556%</strong> of the full square is accepted. <strong id="home-unresolved-count">120</strong> depth-10 cells remain unresolved. Rose cells are small; open the map to inspect them.</p>
++<div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Cyan regions passed the local cell-isolation check. Rose regions remain unresolved. Small unresolved area can still block a global claim. Refining a cell changes its size, not its physical model.</p></details><a href="#coverage" data-next="coverage"><span>2</span> Inspect the cells</a><a href="#evidence" data-next="evidence"><span>3</span> What PASS means</a></div>
+ </article></div>
+     </section>
+     <section id="graphene" class="lesson" hidden aria-labelledby="graphene-title">

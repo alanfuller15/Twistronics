@@ -1,0 +1,23 @@
+diff --git a/dist/gallery.css b/dist/gallery.css
+index 525a271..0e9e7ee 100644
+--- a/dist/gallery.css
++++ b/dist/gallery.css
+@@ -44,3 +44,5 @@
+ 
+ .model-card .graphene-stage,.model-card .wave-stage{height:360px}.model-card .band-stage{height:440px}
+ @media(max-width:720px){.model-gallery{gap:24px}.model-card .graphene-stage,.model-card .wave-stage{height:310px}.model-card .band-stage{height:340px}}
++
++.gallery-heading .opening-objective{font-size:1.125rem;line-height:1.5;color:var(--text);max-width:62ch}.gallery-heading .opening-context{font-size:1rem;line-height:1.5;margin-top:10px;max-width:68ch}
+diff --git a/dist/index.html b/dist/index.html
+index 38fb3a4..b120aaa 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -37,7 +37,7 @@
+   <div class="chapter-trail" id="chapter-trail" hidden><a href="#start" data-next="start">← All models</a><span id="chapter-name"></span><details id="chapter-menu"><summary>Chapters</summary><nav aria-label="All chapters"><a href="#wave" data-next="wave">How waves add</a><a href="#layers" data-next="layers">What a twist changes</a><a href="#bands" data-next="bands">Energy in 3D</a><a href="#evidence" data-next="evidence">What the evidence means</a><a href="#momentum" data-next="momentum">Momentum samples</a><a href="#nodes" data-next="nodes">Tracked crossings</a><a href="#coverage" data-next="coverage">Coverage & progress</a></nav></details></div>
+   <div id="lesson" tabindex="-1">
+     <section id="start" class="lesson" aria-labelledby="start-title">
+-      <div class="gallery-heading"><h1 id="start-title">It starts with a twist.</h1><p>Turn one layer slightly. Watch a larger pattern appear.</p></div>
++      <div class="gallery-heading"><h1 id="start-title">It starts with a twist.</h1><p class="opening-objective">Learn how a small twist between two sheets of graphene changes the patterns and energies of electrons.</p><p class="opening-context">Graphene is carbon just one atom thick. Start by twisting the layers below, then explore the 3D models to connect their geometry to electron behavior.</p></div>
+       <div class="model-gallery"><article class="model-card" id="model-layers" aria-labelledby="card-layers-title">
+   <header class="model-card-heading"><h2 id="card-layers-title">Twist two layers</h2><span>Geometry model</span></header>
+   <div class="model-slot" id="slot-layers"></div>

@@ -1,0 +1,213 @@
+diff --git a/README.md b/README.md
+index 99cb3f6..6d53c06 100644
+--- a/README.md
++++ b/README.md
+@@ -226,3 +226,12 @@ chapter changes; a complete twelve-cycle run stopping at 30 seconds (observed
+ 29.797 seconds after the click call returned). Retained scientific data and
+ research acceptance/publication statuses are unchanged. Browser QA used the
+ Canvas fallback, not a physical iPhone WebGL measurement.
++
++
++## Beginner display update — 26 September 2026
++
++The home view presents one model at a time, starting with twist geometry. The model selector and previous/next buttons retain access to all six exhibits. Explanations and methods remain available beneath each exhibit.
++
++The moiré view defaults to a fitted, full-cell illustration. Its normalized three-harmonic alignment guide is `(cos(u)+cos(v)+cos(u+v)+1.5)/4.5`, where `u=2π(x/√3+y)/L` and `v=-4πx/(√3L)`. Contrast mapping is for legibility; it is not a calculated energy, density, or quantitative registry observable. Both primitive cell translations preserve this illustration. The layers view retains the actual symmetrically rotated triangular reference sites with cyan filled dots and orange rings. It opens at 3 nm; fit-cell and zoom buttons change the physical viewing window, preserving equal x/y scales. No scientific data or audit verdict changed.
++
++Validation: DOM interactions, model selection, display modes, zoom and cell labels at 0.50°, 0.58°, 1.05° and 3.00° passed, together with existing coverage-data checks. Managed visual preview remains blocked by the absent `/tmp/sites-previewd/requests` mailbox; browser/GPU visual verification is pending.
+diff --git a/dist/app.js b/dist/app.js
+index 9137d72..bda974f 100644
+--- a/dist/app.js
++++ b/dist/app.js
+@@ -28,31 +28,49 @@ document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',e
+ window.addEventListener('hashchange',()=>chapter(location.hash.slice(1),false,false));
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+ 
++let moireMode='pattern',moireField=null;
+ // Ideal geometry only: triangular Bravais reference sites, two atoms per site.
+ function drawMoire(){
+   const canvas=$('moire-canvas'), box=canvas.getBoundingClientRect();if(!box.width)return;
+   const dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(box.width*dpr);canvas.height=Math.round(box.height*dpr);
+   const c=canvas.getContext('2d');c.scale(dpr,dpr);const w=box.width,h=box.height;
+   const theta=+$('angle').value,rad=theta*Math.PI/180,a=.246,L=a/(2*Math.sin(rad/2));
+-  const field=+$('real-zoom').value,scale=w/field;
++  const fit=Math.max(Math.sqrt(3)*L/2*w/Math.max(1,w-60),1.5*L*w/Math.max(1,h-120));
++  const field=moireField??($('real-zoom').value==='fit'?fit:+$('real-zoom').value),scale=w/field;
+   $('angle-value').textContent=theta.toFixed(2)+'°';
+   $('moire-length').innerHTML=L.toFixed(2)+' <small>nm</small>';
+   $('moire-ratio').textContent=(L/a).toFixed(1)+' × the atomic lattice spacing';
+   $('scale-analogy').textContent=`If a were drawn as 1 mm, one moiré repeat would be ${(L/a).toFixed(1)} mm. A smaller twist makes L larger.`;
+-  $('real-scale').textContent=field+' nm across · equal x/y length scale';
++  $('real-scale').textContent=field.toFixed(1)+' nm across';
++  $('moire-legend').textContent=moireMode==='pattern'?'Dark → bright: alignment guide':'● Cyan: layer 1   ·   ◯ Orange: layer 2';
++  $('moire-note').textContent=moireMode==='pattern'?'Illustrated alignment, not energy or probability.':'Dots and rings mark lattice cells; symbols are enlarged.';
+   document.querySelectorAll('[data-angle]').forEach(b=>b.classList.toggle('active',+b.dataset.angle===theta));
+   c.fillStyle='#08141d';c.fillRect(0,0,w,h);
+-  const extent=Math.hypot(w,h)/scale/2+a, n=Math.ceil(extent/(a*Math.sqrt(3)/2));
+-  for(const [angle,color] of [[-rad/2,'#77e3ed'],[rad/2,'#ffd18b']]){
+-    const cs=Math.cos(angle),sn=Math.sin(angle);c.fillStyle=color;c.globalAlpha=field===3?.9:.85;
+-    for(let j=-n;j<=n;j++){
+-      const y=j*a*Math.sqrt(3)/2;
+-      const imin=Math.floor(-extent/a-j/2),imax=Math.ceil(extent/a-j/2);
+-      for(let i=imin;i<=imax;i++){
+-        const x=a*(i+j/2),px=w/2+scale*(cs*x-sn*y),py=h/2-scale*(sn*x+cs*y);
+-        if(px<0||px>w||py<0||py>h)continue;
+-        const radius=field===3?2.4:field===12?1.25:1.15;
+-        c.beginPath();c.arc(px,py,radius,0,Math.PI*2);c.fill();
++  if(moireMode==='pattern'){
++    // Three reciprocal harmonics: an illustrative, periodic geometric guide.
++    // Its periods are the displayed cell vectors. This is not a computed observable.
++    const imgCanvas=document.createElement('canvas'),iw=Math.ceil(w/2),ih=Math.ceil(h/2);
++    imgCanvas.width=iw;imgCanvas.height=ih;const ic=imgCanvas.getContext('2d'),pixels=ic.createImageData(iw,ih);
++    for(let j=0;j<ih;j++)for(let i=0;i<iw;i++){
++      const x=(i/iw*w-w/2)/scale,y=(h/2-j/ih*h)/scale;
++      const u=2*Math.PI*(x/Math.sqrt(3)+y)/L,v=-4*Math.PI*x/(Math.sqrt(3)*L);
++      const t=Math.pow(Math.max(0,Math.min(1,(Math.cos(u)+Math.cos(v)+Math.cos(u+v)+1.5)/4.5)),1.5);
++      const k=4*(j*iw+i),lo=[7,19,43],hi=[65,235,250];
++      for(let channel=0;channel<3;channel++)pixels.data[k+channel]=Math.round(lo[channel]+t*(hi[channel]-lo[channel]));pixels.data[k+3]=255;
++    }
++    ic.putImageData(pixels,0,0);c.drawImage(imgCanvas,0,0,w,h);
++  }else{
++    const extent=Math.hypot(w,h)/scale/2+a,n=Math.ceil(extent/(a*Math.sqrt(3)/2));
++    for(const [layer,angle,color] of [[0,-rad/2,'#3be6ff'],[1,rad/2,'#ff993e']]){
++      const cs=Math.cos(angle),sn=Math.sin(angle);c.fillStyle=color;c.strokeStyle=color;
++      const spacing=a*scale,radius=Math.min(layer?5:3,spacing*(layer?.34:.18));c.lineWidth=Math.min(1.8,spacing*.12);
++      for(let j=-n;j<=n;j++){
++        const y=j*a*Math.sqrt(3)/2,imin=Math.floor(-extent/a-j/2),imax=Math.ceil(extent/a-j/2);
++        for(let i=imin;i<=imax;i++){
++          const x=a*(i+j/2),px=w/2+scale*(cs*x-sn*y),py=h/2-scale*(sn*x+cs*y);
++          if(px<0||px>w||py<0||py>h)continue;
++          c.beginPath();c.arc(px,py,radius,0,Math.PI*2);if(layer)c.stroke();else c.fill();
++        }
+       }
+     }
+   }
+@@ -61,18 +79,29 @@ function drawMoire(){
+     // Real-space cell dual to the difference of symmetrically rotated reciprocal bases.
+     const v1=[0,L],v2=[-Math.sqrt(3)*L/2,L/2],o=[-(v1[0]+v2[0])/2,-(v1[1]+v2[1])/2];
+     const pts=[o,[o[0]+v1[0],o[1]+v1[1]],[o[0]+v1[0]+v2[0],o[1]+v1[1]+v2[1]],[o[0]+v2[0],o[1]+v2[1]]];
+-    c.beginPath();pts.forEach((p,i)=>c[i?'lineTo':'moveTo'](w/2+p[0]*scale,h/2-p[1]*scale));c.closePath();c.fillStyle='#77e3ed0b';c.fill();c.strokeStyle='#d3f8fc';c.lineWidth=1.7;c.stroke();
+-    c.fillStyle='#e7f6f9';c.font='13px ui-monospace, monospace';const fits=1.5*L*scale<=h&&Math.sqrt(3)/2*L*scale<=w;c.fillText(fits?'One moiré cell · edge L = '+L.toFixed(2)+' nm':'Moiré cell extends beyond this view',22,27);
++    c.beginPath();pts.forEach((p,i)=>c[i?'lineTo':'moveTo'](w/2+p[0]*scale,h/2-p[1]*scale));c.closePath();c.strokeStyle='#071321';c.lineWidth=5;c.stroke();c.strokeStyle='#ffffff';c.lineWidth=2;c.stroke();
++    const fits=1.5*L*scale<=h&&Math.sqrt(3)/2*L*scale<=w;
++    c.fillStyle='#071321ee';c.fillRect(10,10,w-20,32);c.fillStyle='#ffffff';c.font='13px system-ui, sans-serif';
++    c.fillText((fits?'Cell edge: ':'Close-up · cell edge: ')+L.toFixed(2)+' nm',20,31);
+   }
+   // Fixed units, responsive pixel conversion. Both spatial axes share one scale.
+-  const bar=field===40?5:field===12?2:.5,x=26,y=h-30;
++  const desired=field/6,power=10**Math.floor(Math.log10(desired)),bar=[5,2,1].map(v=>v*power).find(v=>v<=desired)||power/2,x=26,y=h-30;
+   c.fillStyle='#08141de8';c.fillRect(14,y-28,Math.max(bar*scale+30,132),46);
+   c.strokeStyle='#edf5f8';c.lineWidth=2;c.beginPath();c.moveTo(x,y);c.lineTo(x+bar*scale,y);c.moveTo(x,y-4);c.lineTo(x,y+4);c.moveTo(x+bar*scale,y-4);c.lineTo(x+bar*scale,y+4);c.stroke();
+   c.fillStyle='#edf5f8';c.font='13px ui-monospace, monospace';c.fillText(bar+' nm',x,y-11);
+ }
+-['angle','real-zoom','show-cell'].forEach(id=>$(id).addEventListener('input',drawMoire));
++['angle','show-cell'].forEach(id=>$(id).addEventListener('input',drawMoire));
++$('real-zoom').addEventListener('input',()=>{moireField=null;drawMoire();});
++function setMoireMode(mode){moireMode=mode;moireField=mode==='layers'?3:null;$('real-zoom').value=mode==='layers'?'3':'fit';
++  $('moire-pattern').setAttribute('aria-pressed',mode==='pattern');$('moire-detail').setAttribute('aria-pressed',mode==='layers');drawMoire();}
++$('moire-pattern').addEventListener('click',()=>setMoireMode('pattern'));
++$('moire-detail').addEventListener('click',()=>setMoireMode('layers'));
++$('moire-fit').addEventListener('click',()=>{moireField=null;$('real-zoom').value='fit';drawMoire();});
++for(const [id,factor] of [['moire-in',.65],['moire-out',1/.65]])$(id).addEventListener('click',()=>{
++  const current=parseFloat($('real-scale').textContent);moireField=Math.max(1,Math.min(100,current*factor));drawMoire();
++});
+ document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>{$('angle').value=b.dataset.angle;drawMoire();}));
+-$('layer-reset').addEventListener('click',()=>{$('angle').value='1.05';$('real-zoom').value='40';$('show-cell').checked=true;drawMoire();});
++$('layer-reset').addEventListener('click',()=>{$('angle').value='1.05';$('show-cell').checked=true;setMoireMode('pattern');});
+ new ResizeObserver(()=>{if(active==='layers'||active==='start')drawMoire();}).observe($('moire-canvas'));
+ 
+ function palette(v){
+diff --git a/dist/gallery.css b/dist/gallery.css
+index 8d5ceb7..6a48421 100644
+--- a/dist/gallery.css
++++ b/dist/gallery.css
+@@ -31,3 +31,14 @@
+ .progression-next{margin-top:24px}.progression-next p{max-width:65ch;line-height:1.6}
+ @media(max-width:900px){.learning-path{grid-template-columns:repeat(3,minmax(0,1fr))}}
+ @media(max-width:600px){.learning-path{grid-template-columns:repeat(2,minmax(0,1fr))}.learning-path a{font-size:.9375rem}.learning-path a:last-child{grid-column:1/-1}}
++
++/* Beginner view: one experiment, with detail available when wanted. */
++#start{max-width:900px;margin:0 auto}.model-gallery{display:block}.model-card[hidden]{display:none!important}
++.gallery-heading{margin:16px 0}.gallery-heading h1{font-size:clamp(1.5rem,4vw,2rem)}
++.explore-nav{display:flex;gap:8px;margin:0 0 14px;align-items:center}.explore-nav select{flex:1;min-width:0;font-size:1rem}.explore-nav button{min-width:44px;min-height:44px;padding:8px}
++.model-card-heading{padding:12px 16px}.model-card-heading>span{display:none}.model-caption{min-height:0;font-size:.95rem}
++.model-learning{display:block}.model-learning>a{display:none}.model-learning:has(details[open])>a{display:flex}
++.moire-toolbar{display:flex;gap:8px;align-items:center;padding:10px 12px;flex-wrap:wrap;background:#0b1c29}.moire-toolbar button{min-height:44px;padding:8px 12px;font-size:.95rem}.moire-toolbar button[aria-pressed=true]{background:#75e9fa;color:#071821;border-color:#75e9fa}
++.moire-zoom output{font-size:.8rem;color:#c5d9e2;margin-left:auto}.moire-note{font-size:.8rem;color:#c5d9e2;padding:0 12px 10px;margin:0;background:#0b1c29}
++.model-card #moire-canvas{height:420px;width:100%;display:block}.model-card #moire-legend{font-size:.8rem;color:#d8f5fc;min-height:36px}.model-card .presets{gap:8px}
++@media(max-width:720px){.model-card #moire-canvas{height:340px}.gallery-heading p{font-size:.95rem}.model-card-heading{flex-direction:row}.moire-zoom output{flex-basis:100%;margin:0}.model-learning{padding-bottom:8px}}
+diff --git a/dist/gallery.js b/dist/gallery.js
+index 4248dbc..10168cc 100644
+--- a/dist/gallery.js
++++ b/dist/gallery.js
+@@ -17,6 +17,22 @@
+   window.prepareModelGallery=shown=>{
+     for(const {node,home,slot} of pieces)if(shown)slot.append(node);else home.after(node);
+   };
++  const sequence=['layers','wave','graphene','bands','nodes','coverage'];
++  function selectModel(){
++    const model=$('model-choice').value,index=sequence.indexOf(model);
++    document.querySelectorAll('.model-card').forEach(card=>card.hidden=card.id!=='model-'+model);
++    $('model-prev').disabled=index===0;$('model-next').disabled=index===sequence.length-1;
++    window.pauseGrapheneScene?.();window.pauseWaveScene?.();window.pauseNodeScene?.();
++    if(model==='wave')window.showWaveScene?.();
++    if(model==='bands')window.showBandScene?.();
++    if(model==='graphene')window.showGrapheneScene?.();
++    window.dispatchEvent(new Event('resize'));
++  }
++  $('model-choice').addEventListener('change',selectModel);
++  for(const [id,step] of [['model-prev',-1],['model-next',1]])$(id).addEventListener('click',()=>{
++    $('model-choice').value=sequence[sequence.indexOf($('model-choice').value)+step];selectModel();
++  });
++  selectModel();
+   function write(model,text){const el=$('caption-'+model);if(el.textContent!==text)el.textContent=text;}
+   function narrate(){
+     const time=$('graphene-time').textContent,mass=$('graphene-mass').textContent;
+@@ -25,7 +41,7 @@
+     const idea={single:'One wave spreads probability evenly, even as its phase changes.',pair:'Two waves reinforce each other in stripes. Their changing relative phase shifts that pattern.',packet:'Many waves combine into a localized pattern that moves and spreads.'}[mode];
+     const amplitude=$('wave-height').value==='amplitude';
+     write('wave',idea+(momentum?' Momentum marker heights stay fixed here; their colors show changing phase.':amplitude?' Real-space height is wave amplitude, which can be negative; it is not probability.':' Height in real space shows probability density. The momentum view shows the ingredients.'));
+-    write('layers',`At ${$('angle-value').textContent}, the alignment pattern repeats every ${$('moire-length').textContent.trim()}. Reduce the angle to make this larger pattern grow. The dots mark lattice cells.`);
++    write('layers',`At ${$('angle-value').textContent}, the alignment pattern repeats every ${$('moire-length').textContent.trim()}. Try a smaller angle: the repeat grows. Use + to look closer, or Fit cell to see its outline.`);
+     const gap=$('band-selected-gap').textContent;
+     const bandHeight=$('band-mode').value.endsWith('-gap')?'an energy gap':'saved energy';
+     write('bands',gap?`Height shows ${bandHeight}. Selected point: ${gap}. Rotate or select another point. Empty space between samples is unmeasured.`:'Rotate the chart or select a dot. Height shows saved energy; vertical separation compares energies at one momentum coordinate.');
+diff --git a/dist/index.html b/dist/index.html
+index 787c9b3..a3c8641 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -37,9 +37,8 @@
+   <div class="chapter-trail" id="chapter-trail" hidden><a href="#start" data-next="start">← All models</a><span id="chapter-name"></span><details id="chapter-menu"><summary>Chapters</summary><nav aria-label="All chapters"><a href="#wave" data-next="wave">How waves add</a><a href="#layers" data-next="layers">What a twist changes</a><a href="#bands" data-next="bands">Energy in 3D</a><a href="#evidence" data-next="evidence">What the evidence means</a><a href="#momentum" data-next="momentum">Momentum samples</a><a href="#nodes" data-next="nodes">Tracked crossings</a><a href="#coverage" data-next="coverage">Coverage & progress</a></nav></details></div>
+   <div id="lesson" tabindex="-1">
+     <section id="start" class="lesson" aria-labelledby="start-title">
+-      <div class="gallery-heading"><h1 id="start-title">From waves to evidence.</h1><p>Explore a model, then connect what it shows to what the research can claim.</p></div>
+-      <nav class="learning-path" aria-label="Learning progression"><a href="#wave" data-next="wave"><span>1</span>Build a wave</a><a href="#layers" data-next="layers"><span>2</span>Twist the layers</a><a href="#bands" data-next="bands"><span>3</span>Read the energies</a><a href="#coverage" data-next="coverage"><span>4</span>Inspect whole cells</a><a href="#evidence" data-next="evidence"><span>5</span>Read the evidence</a></nav>
+-      <p class="learning-update">Coverage updated through <strong>audited batch 006</strong> · 26 September 2026. <a href="https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5841846394">Read the independent PASS review ↗</a></p>
++      <div class="gallery-heading"><h1 id="start-title">A small twist. A new pattern.</h1><p>Start here: move the angle slider and watch the pattern grow.</p></div>
++      <nav class="explore-nav" aria-label="Explore one model at a time"><button id="model-prev" aria-label="Previous model">←</button><label for="model-choice" class="sr-only">Choose a model</label><select id="model-choice"><option value="layers">1 / 6 · Twist two layers</option><option value="wave">2 / 6 · Build a wave</option><option value="graphene">3 / 6 · Watch probability move</option><option value="bands">4 / 6 · Read the energies</option><option value="nodes">5 / 6 · Follow crossings</option><option value="coverage">6 / 6 · Inspect the evidence</option></select><button id="model-next" aria-label="Next model">→</button></nav>
+       <div class="model-gallery"><article class="model-card" id="model-wave" aria-labelledby="card-wave-title">
+   <header class="model-card-heading"><h2 id="card-wave-title">Momentum meets real space</h2><span>Teaching model</span></header>
+   <div class="model-slot" id="slot-wave"></div>
+@@ -49,7 +48,7 @@
+   <header class="model-card-heading"><h2 id="card-layers-title">Twist two layers</h2><span>Geometry model</span></header>
+   <div class="model-slot" id="slot-layers"></div>
+   <p class="model-caption" id="caption-layers">Move the angle slider. A small turn changes the much larger alignment pattern.</p>
+-  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The larger pattern is called moiré. Each dot represents a two-carbon lattice cell. This view changes only geometry; it does not calculate new electron energies.</p></details><a href="#layers/layers-reading" data-next="layers/layers-reading"><span>2</span> Understand the model</a><a href="#layers/layers-method" data-next="layers/layers-method"><span>3</span> Methods & evidence</a></div>
++  <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The larger repeating pattern is called moiré. The white outline marks one repeat. Bright areas in the pattern view are an illustrative alignment guide. Choose “See the layers” for cyan dots and orange rings, each marking a two-carbon lattice cell. Neither view calculates electron energies.</p></details><a href="#layers/layers-reading" data-next="layers/layers-reading"><span>2</span> Understand the model</a><a href="#layers/layers-method" data-next="layers/layers-method"><span>3</span> Methods & evidence</a></div>
+ </article><article class="model-card" id="model-bands" aria-labelledby="card-bands-title">
+   <header class="model-card-heading"><h2 id="card-bands-title">Give energy a height</h2><span>Saved calculations</span></header>
+   <div class="model-slot" id="slot-bands"></div>
+@@ -231,11 +230,11 @@
+           <div class="control"><label for="angle">Twist angle <output id="angle-value">1.05°</output></label><input id="angle" type="range" min="0.5" max="3" step="0.01" value="1.05"><div class="range-labels"><span>0.50°</span><span>3.00°</span></div></div>
+           <div class="presets" aria-label="Angle presets"><button data-angle="0.5">0.50°</button><button data-angle="1.05" class="active">1.05°</button><button data-angle="3">3.00°</button></div>
+           <div class="readout"><span>MOIRÉ REPEAT LENGTH</span><strong id="moire-length">13.42 <small>nm</small></strong><p id="moire-ratio">54.6 × the atomic lattice spacing</p></div>
+-          <div class="control"><label for="real-zoom">Field of view</label><select id="real-zoom"><option value="40">40 nm · pattern scale</option><option value="12">12 nm · closer view</option><option value="3">3 nm · lattice detail</option></select></div>
++          <div class="control"><label for="real-zoom">Field of view</label><select id="real-zoom"><option value="fit" selected>Fit the whole cell</option><option value="40">40 nm · pattern scale</option><option value="12">12 nm · closer view</option><option value="3">3 nm · lattice detail</option></select></div>
+           <label class="check"><input id="show-cell" type="checkbox" checked> Show one moiré cell</label>
+           <button id="layer-reset" class="text-button">Reset the view ↺</button>
+         </aside>
+-        <div class="visual-panel"><div class="plot-header"><span><i class="key cyan"></i> Layer 1 <i class="key amber"></i> Layer 2</span><span>TOP VIEW</span></div><canvas id="moire-canvas" aria-label="Two triangular reference lattices rotated relative to each other; controls change the twist angle and physical field of view."></canvas><div class="plot-footer"><span id="real-scale">40 nm across</span><span>Dots enlarged for visibility</span></div></div>
++        <div class="visual-panel"><div class="moire-toolbar"><button id="moire-pattern" aria-pressed="true">See the pattern</button><button id="moire-detail" aria-pressed="false">See the layers</button></div><div class="plot-header" id="moire-legend">Dark → bright: alignment guide</div><canvas id="moire-canvas" aria-label="Two triangular reference lattices rotated relative to each other; controls change the twist angle and physical field of view."></canvas><div class="moire-toolbar moire-zoom"><button id="moire-out" aria-label="Zoom out">−</button><button id="moire-fit">Fit cell</button><button id="moire-in" aria-label="Zoom in">+</button><output id="real-scale">Whole cell</output></div><p id="moire-note" class="moire-note">Illustrated alignment, not energy or probability.</p></div>
+       </div>
+       
+       <details class="secondary-content" id="layers-reading"><summary>How to read this view</summary><div class="lesson-notes" data-disclosed="true"><article><span class="note-number">a</span><h3>Keep the ruler honest</h3><p><strong>1 nm = 10 Å.</strong> The reference lattice spacing a is 0.246 nm. Each dot marks a two-carbon lattice cell; it is not one atom. Dot radius is illustrative; dot positions and the ruler use the stated length scale.</p></article><article><span class="note-number">L</span><h3>Why the pattern grows</h3><p class="formula">L = a / [2 sin(θ/2)]</p><p id="scale-analogy">If a were drawn as 1 mm, one moiré repeat would be 54.6 mm. A smaller twist makes L larger.</p></article><article><span class="note-number">k</span><h3>A different kind of space</h3><p>Real space tells us where things are. Momentum space organizes wave-like electron states. A point on the next map is a wave-vector coordinate, not a place on the sheet.</p><button class="text-button next" data-next="momentum">Explore momentum space →</button><button class="text-button" data-next="wave">Watch momentum become a real-space wave →</button></article></div></details>
