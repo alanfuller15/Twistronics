@@ -1,0 +1,573 @@
+{
+  "source_commit": "96333a8f2150e7b03dd18a6b6f7deef31752ed0e",
+  "purpose": "Independent physical audit of saved accepted records; no extension of coverage",
+  "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76",
+  "precision_bits": 128,
+  "native_threads": 1,
+  "max_cells": 20,
+  "max_endpoint_factorizations": 160,
+  "wall_seconds": 600,
+  "method": "Assemble cutoff-a coefficients after setting precision; independent eigensystem; 17- and 10-digit congruences; interval LDL at the original saved rational window endpoints; require all expected inertias and positive Gram margins. No new window search.",
+  "samples": [
+    {
+      "batch": 2,
+      "shard": "q00",
+      "sequence": 127,
+      "cell": {
+        "depth": 5,
+        "ix": 10,
+        "iy": 3
+      },
+      "record_sha256": "755e273c5a881340e500b1aaaea99e0bb93e145e29d72e04aaf13ce06e18976d",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3879494958101348073/80000000000000000",
+          "right": "-416556718498658371/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "898355682804028109/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "495594414957205857/8000000000000000",
+          "right": "528012711067319687/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "3241829611011383/800000000000000"
+        }
+      }
+    },
+    {
+      "batch": 2,
+      "shard": "q00",
+      "sequence": 114,
+      "cell": {
+        "depth": 5,
+        "ix": 8,
+        "iy": 6
+      },
+      "record_sha256": "e1fbdd867cc4f5d86c5d0affea4ae89aeccfaab5674ad564230106c51c72d76f",
+      "selection": "median upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-269146554983880081/5000000000000000",
+          "right": "-29568842157078957/1000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "7581396512405331/312500000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "529696576114813779/8000000000000000",
+          "right": "580486036899005029/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "40631568627353/6400000000000"
+        }
+      }
+    },
+    {
+      "batch": 2,
+      "shard": "q01",
+      "sequence": 99,
+      "cell": {
+        "depth": 5,
+        "ix": 9,
+        "iy": 31
+      },
+      "record_sha256": "aaf0ddf380858a7c898f69593c8b686de0dcba70239786bd4155838d36d11bf1",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3094141171281225419/80000000000000000",
+          "right": "-331522002146299321/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "718265580274864407/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "443723646172762637/8000000000000000",
+          "right": "478782442677625179/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "17529398252431271/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 2,
+      "shard": "q11",
+      "sequence": 127,
+      "cell": {
+        "depth": 6,
+        "ix": 40,
+        "iy": 46
+      },
+      "record_sha256": "604a59314ddc104f7efd4b364a84a6e67c27e6cc8120645fa0a962d547f06dad",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-280491596326481613/16000000000000000",
+          "right": "-201987557706914379/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "39252019309783617/8000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "214260924242025499/8000000000000000",
+          "right": "45774191078614009/1600000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "7305015575522273/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 3,
+      "shard": "q00h0",
+      "sequence": 119,
+      "cell": {
+        "depth": 8,
+        "ix": 90,
+        "iy": 3
+      },
+      "record_sha256": "e9933caf73d0854df9a1f19e0327c7d42e53e9d337cc80c3842b245bc35a6556",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3229584043375755217/80000000000000000",
+          "right": "-337344152965584091/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "771431639273917381/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "447980977860008821/8000000000000000",
+          "right": "90376780657279639/1600000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "1951462713194687/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 3,
+      "shard": "q00h1",
+      "sequence": 84,
+      "cell": {
+        "depth": 8,
+        "ix": 89,
+        "iy": 8
+      },
+      "record_sha256": "81549a097dab1e40719a697abe1feb0e48b9c8f5fb857300e25e259279a123fc",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3372561979767679203/80000000000000000",
+          "right": "-354618503204212673/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "799734731873307919/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "460518412294109279/8000000000000000",
+          "right": "465955513261538169/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "543710096742889/800000000000000"
+        }
+      }
+    },
+    {
+      "batch": 3,
+      "shard": "q01h1",
+      "sequence": 105,
+      "cell": {
+        "depth": 8,
+        "ix": 96,
+        "iy": 255
+      },
+      "record_sha256": "d469930087091aa978acd11f14e31d287a097d211c423fc805e1d03cf15d4fbb",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-619762138461552149/16000000000000000",
+          "right": "-63533199510453383/3200000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "151048070454642617/8000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "427471256510943011/8000000000000000",
+          "right": "435249901815033301/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "777864530409029/800000000000000"
+        }
+      }
+    },
+    {
+      "batch": 3,
+      "shard": "q11h1",
+      "sequence": 119,
+      "cell": {
+        "depth": 7,
+        "ix": 80,
+        "iy": 90
+      },
+      "record_sha256": "507bd6a7bb44b34bec053efb16a589482885aed24be10490125b5f9335098cf8",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-301604489565998463/20000000000000000",
+          "right": "-47441023139118389/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "32199686935203259/10000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "5122116399906481/200000000000000",
+          "right": "27117693598050737/1000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "376777899629583/250000000000000"
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "shard": "q00h0",
+      "sequence": 4,
+      "cell": {
+        "depth": 8,
+        "ix": 92,
+        "iy": 6
+      },
+      "record_sha256": "581028b24dca8f9824acd098c552587820754bdb4a93bccf163df02cd4856581",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3310760338048168097/80000000000000000",
+          "right": "-69052913250116207/3200000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "792218753397631461/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "452723106244171553/8000000000000000",
+          "right": "456175232802627767/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "1726063279228107/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "shard": "q00h2",
+      "sequence": 27,
+      "cell": {
+        "depth": 9,
+        "ix": 186,
+        "iy": 9
+      },
+      "record_sha256": "d1c6964c7891c90d54157c334d1b184fb7595d49dffb44e36289d42afa828895",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3259065257624488053/80000000000000000",
+          "right": "-338706706521956263/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "782765862507353369/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "224134057513590609/4000000000000000",
+          "right": "225006279933008823/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "436111209709107/2000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "shard": "q11h0",
+      "sequence": 98,
+      "cell": {
+        "depth": 9,
+        "ix": 328,
+        "iy": 337
+      },
+      "record_sha256": "19daee308482019b7ac35fb32781adb7bdebcecf3cc6330aaaad8bb8d9f6a5ec",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-360163543929730427/40000000000000000",
+          "right": "-66111161512193721/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "14803868184380911/20000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "187669700307832513/8000000000000000",
+          "right": "208295298570748727/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "10312799131458107/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "shard": "q11h3",
+      "sequence": 44,
+      "cell": {
+        "depth": 8,
+        "ix": 163,
+        "iy": 173
+      },
+      "record_sha256": "a316db7c2acd92b256e92311810faf249e32a0795793d24c285d4dd8abcceee5",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-906691089503301223/80000000000000000",
+          "right": "-157739914127942029/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "58995759431795539/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "24264926119032407/1000000000000000",
+          "right": "26081851813973941/1000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "908462847470767/500000000000000"
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "shard": "q11h0",
+      "sequence": 0,
+      "cell": {
+        "depth": 9,
+        "ix": 339,
+        "iy": 329
+      },
+      "record_sha256": "56c2a8dc94f51c205f4a17fef494a49de393ca793f7a7867de3065b44266a2da",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-18067853909208061/2500000000000000",
+          "right": "-32271098727290183/5000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "3864609091125939/5000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "22564137513488829/1000000000000000",
+          "right": "26295114109637237/1000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "466372074518551/125000000000000"
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "shard": "q11h1",
+      "sequence": 0,
+      "cell": {
+        "depth": 9,
+        "ix": 340,
+        "iy": 324
+      },
+      "record_sha256": "91dc90843b95af5fd1dd861c4e9503f230d9677587875d8a1040b14bf879e484",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-98806422823514067/16000000000000000",
+          "right": "-92065373801629109/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "3370524510942479/8000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "179237651308040499/8000000000000000",
+          "right": "212418101161008437/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "16590224926483969/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "shard": "q11h2",
+      "sequence": 0,
+      "cell": {
+        "depth": 9,
+        "ix": 340,
+        "iy": 325
+      },
+      "record_sha256": "4daad1006966e50e9225469b1a11b6c672812ff558c2d99c0d7f4e2734d8d5f4",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-510403924181300567/80000000000000000",
+          "right": "-468820727451377809/80000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "20791598364961379/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "89630866511102813/4000000000000000",
+          "right": "105960894922078307/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "8165014205487747/2000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "shard": "q11h3",
+      "sequence": 0,
+      "cell": {
+        "depth": 9,
+        "ix": 341,
+        "iy": 324
+      },
+      "record_sha256": "9bc88b1c3e790f0ea67a7d36494c4665175f6215ee4e50c80a8d3d4fa32b6d25",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-498061879194368579/80000000000000000",
+          "right": "-90128440033964241/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "23709839512273687/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "89386100958157599/4000000000000000",
+          "right": "106242018684922769/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "1685591772676517/400000000000000"
+        }
+      }
+    },
+    {
+      "batch": 6,
+      "shard": "q00h0",
+      "sequence": 2,
+      "cell": {
+        "depth": 10,
+        "ix": 365,
+        "iy": 20
+      },
+      "record_sha256": "bc2d4c242a69c9affda296d2a5a96cdf157b133b3e8a8b1d36b195e4dc8e7321",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-818424065398863929/20000000000000000",
+          "right": "-85451014267144571/4000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "195584497031570537/10000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "113041470396033919/2000000000000000",
+          "right": "113256589785686213/2000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "107559694826147/1000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 6,
+      "shard": "q00h4",
+      "sequence": 2,
+      "cell": {
+        "depth": 10,
+        "ix": 366,
+        "iy": 16
+      },
+      "record_sha256": "97384e1d05a0c537e39f3e2b21a387615aea64c90dd41b1965f73e47608f8fdf",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-3244619842959803107/80000000000000000",
+          "right": "-338249609459345601/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "776685897831537551/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "449068921568795099/8000000000000000",
+          "right": "450570477505973181/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "750777968589041/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 6,
+      "shard": "q11h0",
+      "sequence": 31,
+      "cell": {
+        "depth": 10,
+        "ix": 706,
+        "iy": 736
+      },
+      "record_sha256": "663f04d1fa831235bacee670a258ee752fe8fb7da8f3b5fd6b1a8f4d0fae680e",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-1558218859517063667/80000000000000000",
+          "right": "-201081413693810513/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "276405895524005551/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "49232523944696169/1600000000000000",
+          "right": "247182531654229963/8000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "509955965374559/4000000000000000"
+        }
+      }
+    },
+    {
+      "batch": 6,
+      "shard": "q11h7",
+      "sequence": 27,
+      "cell": {
+        "depth": 10,
+        "ix": 704,
+        "iy": 735
+      },
+      "record_sha256": "2dadbd03d0e2b140b12d228b7ac08483a41a539eda50e0acc73b43a5052e02ce",
+      "selection": "min upper-window width within requested shard/depth",
+      "window_definitions": {
+        "lower": {
+          "expected_negative": 97,
+          "left": "-1537880285389054649/80000000000000000",
+          "right": "-199874100325910163/16000000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "269254891879751917/40000000000000000"
+        },
+        "upper": {
+          "expected_negative": 99,
+          "left": "30485484800364713/1000000000000000",
+          "right": "6125352309259729/200000000000000",
+          "target_lower_meV": "1/100000",
+          "width_meV": "35319186483483/250000000000000"
+        }
+      }
+    }
+  ]
+}
