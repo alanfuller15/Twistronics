@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/82d60f93661e/next-batch/docs/audits/loops-013-015/recompute.py", line 101, in <module>
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['run','worker','collect']);p.add_argument('--commit');p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--wheel',type=Path);p.add_argument('--job',type=int);a=p.parse_args();globals()[a.mode](a)
+                                                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/82d60f93661e/next-batch/docs/audits/loops-013-015/recompute.py", line 63, in run
+    assert code==0 and empty and term=='NORMAL_EXIT';assert time.monotonic()-started<1800
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

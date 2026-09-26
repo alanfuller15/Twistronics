@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/82d60f93661e/next-batch/docs/audits/loops-013-015/recompute.py", line 101, in <module>
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['run','worker','collect']);p.add_argument('--commit');p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--wheel',type=Path);p.add_argument('--job',type=int);a=p.parse_args();globals()[a.mode](a)
+                                                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/82d60f93661e/next-batch/docs/audits/loops-013-015/recompute.py", line 31, in worker
+    np,base,assembly,case,prov=old.setup(a.wheel)
+                               ^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/82d60f93661e/next-batch/research/benchmarks/three_front_001/run.py", line 34, in setup
+    provenance=audit.reviewer_provenance(Path(wheel),lock)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/82d60f93661e/next-batch/docs/audits/parallel-domain-002-006/spotcheck.py", line 38, in reviewer_provenance
+    assert wheel.name == lock['filename']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
