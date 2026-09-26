@@ -1,13 +1,13 @@
 # Exact Sites source for Claude review
 
-Restores version 18 then applies the actual Git patches for versions 19–27. Every source file is checked against hashes read from the original Sites commits. This is a portable source/history transfer, not a claim that Sites commit objects exist in this GitHub repository.
+Restores version 18 then applies the actual Git patches for versions 19–28. Every source file is checked against hashes read from the original Sites commits. This is a portable source/history transfer, not a claim that Sites commit objects exist in this GitHub repository.
 
-Run `python materialize.py /new/absolute/output 27` (Python 3.12+, Git), then install from package-lock.json as needed. All sources, build scripts, compiled bundles, scientific display data, and binary density frames are included. No credentials or dependencies are packaged. Do not deploy the reconstructed site during review.
+Run `python materialize.py /new/absolute/output 28` (Python 3.12+, Git), then install from package-lock.json as needed. All sources, build scripts, compiled bundles, scientific display data, and binary density frames are included. No credentials or dependencies are packaged. Do not deploy the reconstructed site during review.
 
-Current deployed v27 Sites commit: 00b8668e3cb848e1acf54200b137b06d4a1c9294.
-Current index.html SHA-256: 4c022086e586101e3f7234a2727d1e0058e966b348ddd51cedef88a1e3aeec84.
+Current deployed v28 Sites commit: 9e6882ef94a8194c9f202d09846f9457c64b43f1.
+Current index.html SHA-256: 45a21e1bfebf89a9c5d6a89552290c5dbc3c97c6625fbcfe6db8e1c05a712bd3.
 
-Independent review requested on PR #2. For coverage exporter replay, use the audited scientific repository separately and supply the script's repo argument. Original v18–27 byte hashes and source IDs are in MANIFEST.json.
+Independent review requested on PR #2. For coverage exporter replay, use the audited scientific repository separately and supply the script's repo argument. Original v18–28 byte hashes and source IDs are in MANIFEST.json.
 
 Version22 fixes the single grid-tolerance sentence in both index.html and graphene.html. Sites source 3c1f5d45331c4357093c60bb99dab719d48ca094. Restore with final argument22; v21 remains available. Numerical data and frames unchanged.
 
@@ -23,4 +23,6 @@ Version 27 promotes audited depth-12 coverage: 16777105/16777216 (99.999338%), 3
 
 The gap paragraph now reports ~1.6 µeV on the b/c line (PASS 5843138081) and separately b/c/d agreement within 0.03 µeV on the two local patches (PASS 5843549264). Cutoff d was not sampled on the original line. No closure, global-minimum or infinite-cutoff-convergence claim. Optional touching panel, runs 013/014 and optional dynamics swap are omitted.
 
-Only five source files change. The v26 timing fix, compiled 3-D bundles, styles and animation data are unchanged. Static links, latest selectors, prior snapshot equality, exporter reproducibility and actual landing preview script in a DOM stub passed; four windows count 36/30/30/15 cells at 256×. No new browser-rendering validation is claimed; desktop/mobile review is requested from Claude. Restore with `python materialize.py /new/absolute/output 27` and supply the scientific repository to `scripts/build-audited-coverage.py --repo ...`. Neither PR is merged.
+Only five source files change. The v26 timing fix, compiled 3-D bundles, styles and animation data are unchanged. Static links, latest selectors, prior snapshot equality, exporter reproducibility and actual landing preview script in a DOM stub passed; four windows count 36/30/30/15 cells at 256×. No new browser-rendering validation is claimed; desktop/mobile review is requested from Claude. Restore with `python materialize.py /new/absolute/output 28` and supply the scientific repository to `scripts/build-audited-coverage.py --repo ...`. Neither PR is merged.
+
+Version28 adds only the approved candidate-touching panel in index.html, using accepted wording from006 review5843418742 and011 review5843536759. The first-candidate-only robustness statement cites007 PASS5843439638. No013–017 results appear. Scope excludes certified touching, count, charge, partner correspondence, continuous isolation and infinite-cutoff convergence. No data, styles, scripts or model changes. Existing responsive table/details classes are reused. No new browser-rendering validation claimed; Claude desktop/mobile presentation review requested.
