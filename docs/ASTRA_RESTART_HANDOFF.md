@@ -8,9 +8,9 @@ failed threads that show "Reasoning failed / Error in message stream".
 
 | Item | State | Reference |
 |---|---|---|
-| Certified cutoff-a coverage | **105951/262144 ≈ 40.42% of [0,1]²** after parallel batch 001 (702 accepted, 903 frontier, 40 unresolved depth-9 cells). Status `INCONCLUSIVE_PARTIAL_DOMAIN_COVERAGE`. | PR #5 `bc88ff0d` (`parallel_domain_001_execution/`) |
-| Batch 001 independent audit | **Pending.** Claude reran batch 001 from the reviewed implementation on a separate host as a reproduction check; see the PR #2 comment for the result. | implementation PASS: PR #2 comment 5827238845 |
-| Batch 002 | Runner published at `7494c360` (`parallel_domain_002/`): resumes the batch-001 partition, 128 attempts per worker, 512 total. Alan authorized execution without waiting for audit (`EXECUTION_AUTHORITY.json`). Execution and publication status: see the latest PR #2 comment. | PR #5 `7494c360` |
+| Certified cutoff-a coverage | **259295/262144 ≈ 98.91% of [0,1]²** after batch 003 (1730 accepted, 253 frontier, 40 unresolved). q01 and q10 fully accepted. Status `INCONCLUSIVE_PARTIAL_DOMAIN_COVERAGE`. | branch `claude/parallel-domain-execution` `c898b31a` |
+| Batch 001 | 40.42%; published by Codex at `bc88ff0d`; Claude reproduced it byte-identically and passed it. | PR #2 comment 5841153373 |
+| Batches 002 and 003 | **Unreviewed; executed by Claude** at Alan's direction during the outage. Batch 002 reached 79.89% (replay uses an Alan-approved 1e-6 s deadline tolerance); batch 003 reached 98.91% across two hosts with 8 shards. **Codex audit requested.** | PR #2 comment 5841363890 |
 | Earlier single-quadrant baseline | 29663/65536 of [½,1]² = 29663/262144 ≈ 11.32% of [0,1]² | quadrant 002, PR #5 `fd98e033` |
 | Fixed-specimen diagnostic | Reviewed PASS. Failures come from box width, not precision; the narrowest cell passes only at eighth-radius. Concentric boxes certify nothing. | PR #2 comment 5826335781 |
 | Point-mapping scouts | Reviewed PASS as uncertified samples. The upper gap falls to ≈ 0.00309 meV near (0.6867, 0.7204), inside the unresolved strip. It may be a near-touching of bands 98/99; nothing is proven. | PR #2 comment 5826511133 |
@@ -32,7 +32,7 @@ experimental claim. Both PR #2 and PR #5 stay unmerged.
 
 ## Open follow-ups
 
-1. Audit the batch 001 execution (`bc88ff0d`) and, once run, batch 002.
+1. Audit batches 002 and 003 on `claude/parallel-domain-execution` (see PR #2 comment 5841363890).
 2. From the batch-001 implementation review, still open:
    - explicit per-worker and aggregate factorization-cap assertions;
    - a retained control that exercises physical-evidence verification on real records;
@@ -60,5 +60,5 @@ blocks the domain. Claude tested the `docs/interactive-learning-atlas` source
 - **Wording:** the phone label reads "One moiré cell · edges L", with the
   letter L and no length.
 - **Content:** the coverage bar shows the old 45.26% quadrant figure. Update it
-  to the full-square number (40.42% after batch 001) or state both
+  to the full-square number (98.91% after batch 003, unreviewed) or state both
   denominators, and refresh the 25 Sep snapshot, which is bound to `3f174f19`.
