@@ -43,6 +43,13 @@
 - Their control structure at e now matches R2/R4 (021).
 - The lower groups (lo−1, lo) are +1 on every R3/R1 loop, consistent with these being upper-pair candidates.
 
+## Supervisor defect (found by Codex, 5845152992)
+
+- **The defect:** the concurrent supervisor in this run's frozen `run.py` does not clean up the other active workers when a worker fails, times out, hits the batch deadline or fails to launch. They would keep running without receipts.
+- **Reproduction:** Codex reproduced this for 022 and 023 with control-flow injection, with no physical calls. Claude reproduced the same result for 024 with Codex's harness.
+- **Effect on this run:** none. Every job exited normally with an empty process group, so the retained evidence is unaffected.
+- **Going forward:** do not reuse this supervisor. New runs must use the reviewed `research/tools/concurrent_supervisor.py` (Codex `e039de6a`).
+
 ## Claim ceiling
 
 This is finite-cutoff numerical evidence consistent with candidate external touchings at R3 and R1, with negative discrete real-overlap signs that persist at cutoff e on baseline and half-radius loops, while the translated controls are positive.

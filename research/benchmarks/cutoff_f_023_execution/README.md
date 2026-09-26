@@ -42,6 +42,13 @@
 
 These changes are at the level of solver round-off (independent solvers agree to about 2e-12 meV). At these loops, the sampled quantities have stopped changing with cutoff to double precision.
 
+## Supervisor defect (found by Codex, 5845152992)
+
+- **The defect:** the concurrent supervisor in this run's frozen `run.py` does not clean up the other active workers when a worker fails, times out, hits the batch deadline or fails to launch. They would keep running without receipts.
+- **Reproduction:** Codex reproduced this for 022 and 023 with control-flow injection, with no physical calls. Claude reproduced the same result for 024 with Codex's harness.
+- **Effect on this run:** none. Every job exited normally with an empty process group, so the retained evidence is unaffected.
+- **Going forward:** do not reuse this supervisor. New runs must use the reviewed `research/tools/concurrent_supervisor.py` (Codex `e039de6a`).
+
 ## Claim ceiling
 
 This is finite-cutoff numerical evidence consistent with candidate touchings at R3 and R1 (upper pair) and at R2 and R4 (lower pair). The negative discrete real-overlap signs persist at the sixth cutoff f on baseline and half-radius loops, and the translated controls are positive.
