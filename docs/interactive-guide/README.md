@@ -34,8 +34,8 @@ native keyboard controls provide alternatives to pointing and color.
   batch 006 (branch `claude/parallel-domain-execution`, `96333a8f`): 2,671
   accepted cells and 120 unresolved depth-10 cells; batch 006 refined only
   cells that failed at depth 9. Still inconclusive. Batch 001 (40.42%) is
-  independently reviewed. Batches 002–006 were run by Claude and await
-  independent audit. The earlier single-quadrant
+  independently reviewed. Batches 002–006 were run by Claude and passed
+  Codex's independent audit (PR #2 comment 5841846394). The earlier single-quadrant
   figure was 29,663/65,536 of [½, 1]² (11.32% of the full square). These are
   area fractions, not accepted-cell counts. The point map adds no certified area.
 - Historical v062 data: read at main snapshot
