@@ -1,7 +1,7 @@
 # Fast pipeline: upgrades 1–3 (byte-preserving)
 
 **Authorization:** Alan, 26 Sep 2026. He asked to adopt upgrades 1 and 2 now, then upgrade 3.
-**Producer:** a Claude Code session. Independent review by Codex is requested.
+**Producer:** a Claude Code session. **Independent review:** Codex **PASS** ([5844535047](https://github.com/alanfuller15/Twistronics/pull/2#issuecomment-5844535047); evidence `cc60ef8f`), approved for all new frozen runs.
 
 ## What changes
 
@@ -32,7 +32,8 @@
 - Summed job time is **63.2 s, against 215.9 s** for the original: 3.4× faster.
   - What remains is mostly the eigensolve (47 s).
   - Setup is 12 s, and matrix builds take 1.1 s.
-- Packed states total 11.1 MB, against 13.4 MB of npz (−17%) and 18.3 MB of base64 parts (−39% when stored as binary).
+- Packed states from the 6 regrouped jobs total 11.1 MB. Packing the original 24 jobs gives 11,269,337 bytes against 13,407,142 bytes of npz (**15.9% smaller**, measured by Codex in its review).
+- Against the 18.3 MB of base64 parts, binary packed storage is about 38% smaller.
 
 ## Adoption rule for new runs
 

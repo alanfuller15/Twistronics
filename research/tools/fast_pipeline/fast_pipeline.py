@@ -2,7 +2,7 @@
 
 Upgrade 1 - FastPointMatrix: drop-in replacement for three_front_001/run.py:point_matrix.
     The reviewed assembly gives H(x, y) = C0 + x*C1 + y*C2 as 128-bit Arb balls, and runs use
-    mid_float(H). C1 and C2 are nonzero only on the kinetic 2x2 blocks (0.25-0.45% of entries).
+    mid_float(H). C1 and C2 are nonzero only on the kinetic 2x2 blocks (0.25-1.0% of entries across cutoffs a-e).
     Wherever C1[i][j] and C2[i][j] are exact zeros (mid 0, rad 0), Arb gives
     C0[i][j] + x*0 + y*0 == C0[i][j] exactly, so its float midpoint is fixed and is computed once.
     Only the support of C1/C2 is re-evaluated per point, with the same Arb operations in the same
@@ -14,8 +14,8 @@ Upgrade 2 - job sizing: with ~1-4 ms matrices, per-job setup (wheel provenance ~
     cutoff per job. Per-job isolation, receipts, rlimits and the 90 s job limit are unchanged.
 
 Upgrade 3 - pack_states / unpack_states: deterministic container for retained float arrays.
-    float64 bytes are byte-plane shuffled before zlib level 9 (~30% smaller than npz/gzip for
-    eigenvectors); unpacking returns bit-identical arrays. Base64 is optional and only for
+    float64 bytes are byte-plane shuffled before zlib level 9 (about 16% smaller than the npz files
+    for the retained 021 states: 11,269,337 vs 13,407,142 bytes over the original 24 jobs); unpacking returns bit-identical arrays. Base64 is optional and only for
     transports that require text; binary storage avoids its +33%.
 """
 import hashlib, json, struct, zlib
