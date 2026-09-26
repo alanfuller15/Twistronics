@@ -8,3 +8,5 @@ Current deployed v21 Sites commit: ee72c7b07b3465f37ea9575dcdebf0fcb3716457.
 Current index.html SHA-256: 929f470cfa46aad574da7650d09a8c91abb0698b1f2fcbc582745fd6332b0563.
 
 Independent review requested on PR #2. For coverage exporter replay, use the audited scientific repository separately and supply the script's repo argument. Original v18–21 byte hashes and source IDs are in MANIFEST.json.
+
+Version22 fixes the single grid-tolerance sentence in both index.html and graphene.html. Sites source 3c1f5d45331c4357093c60bb99dab719d48ca094. Restore with final argument22; v21 remains available. Numerical data and frames unchanged.
