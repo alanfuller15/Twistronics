@@ -1,0 +1,86 @@
+{
+  "purpose": "Execution-readiness check of the existing bounded record checker. Not a new scientific result and not a closure of the partner verifier defect.",
+  "baseline": {
+    "branch": "migration-contract-review",
+    "commit": "44dc66951057a995ee0999c785aca3e0e6c67092"
+  },
+  "repository_head_when_run": "c0ee5dc511bd837aa63dcee44e40ef0f6e89c8b5",
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "recorded_review_runtime": "python 3.12.14, numpy 2.3.5 (RUNTIME.json)"
+  },
+  "trusted_archive_sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+  "bound_file_sha256": {
+    "research/benchmarks/migration_contract_review/partner_v078p.zip": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+    "research/benchmarks/migration_contract_review/INPUT_MANIFEST.json": "4d3d33abd5083882339cde1141d982f102e807d62c6899f2e92e6de67ddff079",
+    "research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json": "0300f2ab57c7e4c4468d9ae28118e4f24af8dc397e95cf5575d3ec97aa4c5c79",
+    "research/benchmarks/migration_contract_review/check_records.py": "b8d2010f2db479af1e1ca9fe5736a4d399a4da42820fc72ccd628fae72321a56",
+    "research/benchmarks/migration_contract_review/contract_probes.py": "527309aefc2ced74b99101ffbcdd78ce4634b3b16bd812dd99a37f528f37290a",
+    "research/benchmarks/migration_contract_review/review_inputs.py": "b66c76e65eda3614546a41abc905967137464dbfde9d104375fd5e6e235eb7a5"
+  },
+  "originals_unchanged": true,
+  "checks": [
+    {
+      "check": "intact",
+      "mutation": "No mutation",
+      "manifest_refreshed": false,
+      "changed_files": [],
+      "command": "python check_records.py <fresh extraction>/RUN <fresh extraction> docs/intake-evidence/intact/checker_result.json",
+      "returncode": 0,
+      "accepted": true,
+      "checks": 51050,
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "check": "wrong_label",
+      "mutation": "Flip first SAME label while retaining same-sign winding pair",
+      "manifest_refreshed": true,
+      "changed_files": [
+        {
+          "file": "RUN/ROWS.jsonl",
+          "sha256_before": "be90c6e72c34de40d7d3aefa05e875f93dce1fd58b5e6dbb01095c74b38a66a9",
+          "sha256_after": "542569eed8d6df9581377f8cd2e23ee779449c8d586b08d184bdf8ac317258d9",
+          "diff": "wrong_label/ROWS.jsonl.diff"
+        },
+        {
+          "file": "RUN/MANIFEST.json",
+          "sha256_before": "d63df38cdaa0e789effce1ce2ca523612eb56bf8930066a25e5f17ff56c48d58",
+          "sha256_after": "138173e3ac5fae51f9c5b7478ae3f8bc4f906696029d94dccade174a2e31c518",
+          "diff": "wrong_label/MANIFEST.json.diff"
+        }
+      ],
+      "command": "python check_records.py <fresh extraction>/RUN <fresh extraction> docs/intake-evidence/wrong_label/checker_result.json",
+      "returncode": 1,
+      "accepted": false,
+      "checks": 51050,
+      "error_count": 1,
+      "errors": [
+        "label from winding product B-0.25_v+1_r0.012"
+      ]
+    }
+  ],
+  "outcome": {
+    "intact": {
+      "expected_accepted": true,
+      "accepted": true,
+      "returncode": 0,
+      "as_expected": true
+    },
+    "wrong_label": {
+      "expected_accepted": false,
+      "accepted": false,
+      "returncode": 1,
+      "as_expected": true
+    }
+  },
+  "not_run": [
+    "numerical consumer",
+    "full replay",
+    "partner verify_migration.py",
+    "other contract_probes mutations",
+    "sweeps",
+    "implementation repairs"
+  ]
+}

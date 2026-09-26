@@ -116,3 +116,10 @@ Useful outside feedback includes a decisive topology benchmark, a check on
 symmetry and band-isolation assumptions, or a realistic observable and
 experimental control path. Before proposing changes, read
 [CONTRIBUTING.md](CONTRIBUTING.md) and bind claims to exact retained evidence.
+
+## Branch review notes
+
+This branch retains PR #2 migration-contract handoff and review material.
+See its [research reading order](docs/research-status.md) and
+[team handoff](docs/team-handoff.md) for that track’s retained scope.
+The repository-wide status above includes subsequent work on other branches.
