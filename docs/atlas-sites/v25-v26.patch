@@ -1,0 +1,15 @@
+diff --git a/dist/landing-story.js b/dist/landing-story.js
+index 60bef7a..587cd1c 100644
+--- a/dist/landing-story.js
++++ b/dist/landing-story.js
+@@ -11,8 +11,8 @@ function discovery(){const theta=Number($('angle').value),factor=length(theta)/l
+  $('twist-discovery').textContent=Math.abs(theta-initial)<.001?'At this starting angle, two fine lattices make a much larger repeat. Try a smaller angle.':factor>1?`You made the repeating pattern ${factor.toFixed(1)}× as wide as at the starting angle. This larger pattern is called moiré.`:`You made the repeating pattern smaller—${Math.round(factor*100)}% of its starting width. This larger-scale pattern is called moiré.`;
+ }
+ $('angle').addEventListener('change',discovery);
+-document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>queueMicrotask(discovery)));
+-$('layer-reset').addEventListener('click',()=>queueMicrotask(discovery));
++document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>setTimeout(discovery)));
++$('layer-reset').addEventListener('click',()=>setTimeout(discovery));
+ // Keep the first action prominent; reveal secondary view controls on request.
+ const options=document.createElement('details');options.className='story-view-options';
+ const summary=document.createElement('summary');summary.textContent='View options · layers, zoom & fit';options.append(summary);
