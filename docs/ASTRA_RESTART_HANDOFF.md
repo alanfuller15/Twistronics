@@ -78,8 +78,12 @@ Rebuild and verify any batch without physical calls:
 
 ## 4. Atlas site
 
-- The chatgpt.site version is **unchanged**. Claude cannot reach it: the cloud
-  environment's network policy blocks `*.chatgpt.site`.
+- **Update, 26 September:** Astra published `claude/site-updates` `d6209b61`
+  to https://twistronics-atlas.alanfuller15.chatgpt.site (PR #2 comment
+  5841805747). The deployed `explorer.html` SHA-256 `4dc6fa60…356b` matches
+  the branch file byte-for-byte, as Claude checked. The prior atlas is kept at
+  `/retained-atlas.html`. Claude still cannot fetch `*.chatgpt.site` directly,
+  because the cloud network policy blocks it.
 - Claude-hosted copy, which Claude can update directly:
   https://claude.ai/artifact/28As4ae7YSmnFJR684WjjL (shared as anyone with the link).
 - Fixes, on `claude/site-updates` and in `site/` in this zip:
