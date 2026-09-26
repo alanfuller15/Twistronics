@@ -19,8 +19,8 @@ coordinator; slots 4–7 ran on a sibling session and were pushed at
 | Unresolved cells | 123 at depth 9 | **120 at depth 10** (15/131072 = 0.0114%) |
 | Frontier cells | 0 | 0 |
 
-- **Depth-10 attempts:** 372 of 492 were accepted (76%). In q00, 48 of 72
-  were accepted; in q11, 324 of 420.
+- **Depth-10 attempts:** 372 of 492 were accepted (76%). In q00, 53 of 72
+  were accepted; in q11, 319 of 420.
 - **Depth-9 parents:** 76 of the 123 are now fully accepted; 32 are partly
   accepted; 15 have all four children unresolved.
 - **Where the unresolved cells are:** 101 in q11 and 19 in q00.
