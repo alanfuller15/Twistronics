@@ -30,11 +30,11 @@ native keyboard controls provide alternatives to pointing and color.
   [retained report](https://github.com/alanfuller15/Twistronics/blob/3f174f19b3ed5d57598accd1d7b1550fc7c9eeff/research/benchmarks/momentum_mapping_summary_001/OUTPUT/REPORT.md).
   Minimum sampled upper gaps: coarse 0.008193629349 meV; refined
   0.003089965450713 meV. Refinement was targeted, not an independent validation set.
-- S1b accepted area, full square [0, 1]²: **259,295/262,144 ≈ 98.91%** after
-  parallel batch 003 (branch `claude/parallel-domain-execution`, `c898b31a`):
-  1,730 accepted, 253 frontier and 40 unresolved cells, still inconclusive.
-  Batch 001 (40.42%) is independently reviewed. Batches 002 (79.89%) and 003
-  were run by Claude and await independent audit. The earlier single-quadrant
+- S1b accepted area, full square [0, 1]²: **65,469/65,536 ≈ 99.90%** after
+  parallel batch 004 (branch `claude/parallel-domain-execution`, `017ac54c`):
+  2,154 accepted, 179 depth-9 frontier and 89 unresolved cells, still
+  inconclusive. Batch 001 (40.42%) is independently reviewed. Batches 002
+  (79.89%), 003 (98.91%) and 004 were run by Claude and await independent audit. The earlier single-quadrant
   figure was 29,663/65,536 of [½, 1]² (11.32% of the full square). These are
   area fractions, not accepted-cell counts. The point map adds no certified area.
 - Historical v062 data: read at main snapshot
