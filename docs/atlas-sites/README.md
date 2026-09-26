@@ -41,3 +41,8 @@ Restore with `python materialize.py /new/absolute/output 30`.
 ## Published v30
 
 Sites source `883cef3e73b2afbb5aa156e738e944c304e20acc`. Codex 022 PASS 5845331701 and 023 PASS 5845331772; Claude passed the reviewer packet at 5845340302. The source adds both PASS links and producer-results links. Only the candidate panel in dist/index.html differs from v29; candidate-evidence.css is byte-identical. All 62 file hashes verify through materialize.py OUT 30. Claude exact-version presentation PASS 5845378941 received; deployment succeeded. See v30-publication.json.
+
+
+## Saved v31 rendering refresh
+
+Sites source `eedfd94954ed1d24158301ab8b5cbfcaa020655a`. Changes only materials, normals for display lighting, marker tessellation, fallback shading and stage styling. Scientific inputs, physical point positions, topology, time playback, axis scaling, candidate panel and exclusions remain unchanged. `materialize.py OUT 31` verifies 63 files. Existing wave, wave-presentation and graphene-replay controls PASS. Awaiting Claude exact-version presentation review before deployment.
