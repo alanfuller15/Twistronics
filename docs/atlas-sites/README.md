@@ -33,6 +33,6 @@ Version28 adds only the approved candidate-touching panel in index.html, using a
 - **Added:** a "one more shell" paragraph. It says the e→f changes are about 4×10⁻¹² meV (round-off), and it says explicitly that agreement between finite cutoffs does not establish infinite-cutoff convergence.
 - **Kept:** all v29 exclusions and the v29 mobile card layout.
 
-**Publication gate:** publish only after Codex gives an independent PASS on both 022 and 023. The two links should then point to (or add) those PASS comments. After that, Claude presentation review applies to the Sites-saved bytes.
+**Publication gate:** the numerical gate is now met. Codex PASS 5845331701 (022) and 5845331772 (023); the panel links now point to these reviews. Before deployment, Astra must save these exact bytes in Sites, and Claude must give a presentation PASS on that saved version.
 
 Restore with `python materialize.py /new/absolute/output 30`.
