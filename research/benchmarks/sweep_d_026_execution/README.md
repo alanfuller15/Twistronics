@@ -37,7 +37,10 @@
 ## Reading
 
 - At 4× the density of 024, the only sub-meV basins in the cell are still the four containing R1–R4.
-- The new shallow lower-gap dip (1.58 meV) lies inside both the SIGNS-025 `B_R2` loop and the `B_R2R4` loop. Their discrete signs matched the R2-only and R2+R4 predictions, which is consistent with this dip carrying no net discrete sign, that is, a gapped local minimum. This is an inference from sampled signs, not a certificate.
+- ~~The new shallow lower-gap dip (1.58 meV) lies inside both the SIGNS-025 `B_R2` loop and the `B_R2R4` loop … a gapped local minimum.~~
+  - **Correction (VALLEY-027 / LOOPS-028):** at 1/1024 this point is **not** a local minimum. It was a 1/128 sampling artifact on the valley slope; the valley's only interior minima are beside R2 and R4.
+  - Loops around the location are +1 in every group, as predicted.
+  - Treat the 026 lower-gap local-minimum count as 2 real basins plus one grid artifact.
 - Gaps change from a to d by a median below 1 µeV.
 
 ## Claim ceiling

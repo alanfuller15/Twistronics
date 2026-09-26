@@ -1,0 +1,243 @@
+{
+  "all_loop_predictions_matched": true,
+  "eigensolves_this_run": 575,
+  "grid": {
+    "lower_meV": {
+      "argmin_center": [
+        "673/1024",
+        "655/1024"
+      ],
+      "interior_local_minima": [
+        {
+          "center": [
+            "673/1024",
+            "655/1024"
+          ],
+          "distance": 0.00023688448200017497,
+          "gap_meV": 0.100020565302537,
+          "label": "V_673_655",
+          "nearest_candidate": "R2"
+        },
+        {
+          "center": [
+            "179/256",
+            "75/128"
+          ],
+          "distance": 0.0002806382235191216,
+          "gap_meV": 0.1381001874673311,
+          "label": "V_716_600",
+          "nearest_candidate": "R4"
+        }
+      ],
+      "median": 12.314432788703979,
+      "min": 0.100020565302537
+    },
+    "pair_meV": {
+      "argmin_center": [
+        "189/256",
+        "629/1024"
+      ],
+      "interior_local_minima": [],
+      "median": 18.127101591541866,
+      "min": 1.8038762727928184
+    },
+    "upper_meV": {
+      "argmin_center": [
+        "41/64",
+        "697/1024"
+      ],
+      "interior_local_minima": [],
+      "median": 18.29643990623356,
+      "min": 6.835962676557973
+    }
+  },
+  "grid_source": {
+    "A": {
+      "path": "research/benchmarks/valley_027_execution/A/MAP.json",
+      "sha256": "bb9851e95ac4e5a30ff267a42e3bcd9abf1c5bb6a0faf740c43fbe8b6ecbf918"
+    },
+    "B": {
+      "path": "research/benchmarks/valley_027_execution/B/MAP.json",
+      "sha256": "efd0f9e939a5c323dc8894009659c214f722d7db3868de2c34331608b4eefb57"
+    }
+  },
+  "implementation_commit": "e20cafd967346ced573191402ffcb2b13ca91575",
+  "independent_review": "PENDING",
+  "loops": {
+    "DIP_ctrl_y+64": {
+      "four": {
+        "match": true,
+        "min_step_singular_value": 0.9999993533829641,
+        "predicted": 1,
+        "raw_determinant": 0.9998502620900942,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "hi": {
+        "match": true,
+        "min_step_singular_value": 0.9999960022564547,
+        "predicted": 1,
+        "raw_determinant": 0.9994233056523393,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "hi_plus_1": {
+        "match": true,
+        "min_step_singular_value": 0.999998657546281,
+        "predicted": 1,
+        "raw_determinant": 0.9998095696714967,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "lo": {
+        "match": true,
+        "min_step_singular_value": 0.9976993350109364,
+        "predicted": 1,
+        "raw_determinant": 0.9561390719200881,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "lo_minus_1": {
+        "match": true,
+        "min_step_singular_value": 0.9977007589791465,
+        "predicted": 1,
+        "raw_determinant": 0.9563913156926157,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "min_sampled_lower_gap_meV": 0.4578766140148831,
+      "min_sampled_upper_gap_meV": 14.412097662188899,
+      "selected_pair": {
+        "match": true,
+        "min_step_singular_value": 0.997701306718276,
+        "predicted": 1,
+        "raw_determinant": 0.9562437052808278,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      }
+    },
+    "DIP_r16": {
+      "four": {
+        "match": true,
+        "min_step_singular_value": 0.9999996050424893,
+        "predicted": 1,
+        "raw_determinant": 0.9999408817970352,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "hi": {
+        "match": true,
+        "min_step_singular_value": 0.9999963791685944,
+        "predicted": 1,
+        "raw_determinant": 0.9997223877049759,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "hi_plus_1": {
+        "match": true,
+        "min_step_singular_value": 0.9999990350581379,
+        "predicted": 1,
+        "raw_determinant": 0.9999139563413368,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "lo": {
+        "match": true,
+        "min_step_singular_value": 0.9993456366339473,
+        "predicted": 1,
+        "raw_determinant": 0.9781704985926811,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "lo_minus_1": {
+        "match": true,
+        "min_step_singular_value": 0.9993454379560811,
+        "predicted": 1,
+        "raw_determinant": 0.9782419757304528,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "min_sampled_lower_gap_meV": 1.2519612938257696,
+      "min_sampled_upper_gap_meV": 17.468373430187057,
+      "selected_pair": {
+        "match": true,
+        "min_step_singular_value": 0.9993454460103391,
+        "predicted": 1,
+        "raw_determinant": 0.9781875869260998,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      }
+    },
+    "DIP_r32": {
+      "four": {
+        "match": true,
+        "min_step_singular_value": 0.9999995636537111,
+        "predicted": 1,
+        "raw_determinant": 0.999881181077621,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "hi": {
+        "match": true,
+        "min_step_singular_value": 0.9999959530812991,
+        "predicted": 1,
+        "raw_determinant": 0.9994350991196636,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "hi_plus_1": {
+        "match": true,
+        "min_step_singular_value": 0.9999988903675227,
+        "predicted": 1,
+        "raw_determinant": 0.9998270193177351,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "lo": {
+        "match": true,
+        "min_step_singular_value": 0.9989525859565472,
+        "predicted": 1,
+        "raw_determinant": 0.9729900726996454,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "lo_minus_1": {
+        "match": true,
+        "min_step_singular_value": 0.9989523426237434,
+        "predicted": 1,
+        "raw_determinant": 0.9731570678264878,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      },
+      "min_sampled_lower_gap_meV": 0.9829580345485374,
+      "min_sampled_upper_gap_meV": 16.534321042889587,
+      "selected_pair": {
+        "match": true,
+        "min_step_singular_value": 0.9989523536257104,
+        "predicted": 1,
+        "raw_determinant": 0.9730356326955987,
+        "reverse_sign": 1,
+        "sign": 1,
+        "valid": true
+      }
+    }
+  },
+  "scope": "Finite-cutoff sampled 1/1024 gap map of the R2-R4 valley and discrete loop signs around the SWEEP-D-026 shallow lower-gap dip. No certified isolation, touching, count, charge or infinite-cutoff claim."
+}
