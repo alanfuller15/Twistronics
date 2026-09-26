@@ -1,0 +1,150 @@
+{
+  "version": "research_questions_008_seam_index_v1",
+  "baseline_commit": "78cbdd026a633f7a0e0c3403a768f0b3710d1ede",
+  "baseline_tree": "912d970c14acb4eeadd4cc5aa300ac8ae612b432",
+  "sources": {
+    "research/benchmarks/research_questions_008/seam_index.py": "fb45666aee800eeb17c462b328c3ced7a1ebd1cdc7d2e81f7e3d88b577d74c09",
+    "research/benchmarks/research_questions_008/DERIVATION.md": "47c134ff18eb01a5c7acf69fbdaf6841784137678a4922e6f30234b5407e0550",
+    "research/benchmarks/research_questions_008/UPSTREAM.json": "d4b1d4e5bc83083a5302821b5404b161752c84bdbc699ff1a277b13932aaf17e",
+    "research/benchmarks/research_questions_007/DERIVATION.md": "b681e9aee4e8d57cf59a382b0879cf51647991b89929a5046d79907681347c42",
+    "research/benchmarks/research_questions_007/RESULTS.json": "c22694026b45447fc10a37335630d319d0a56df3c1400bf3264d90878c5a091d"
+  },
+  "length_x": 2,
+  "length_y": 3,
+  "tolerance": 1e-10,
+  "guard_margin": 1e-12,
+  "quadrature_order": 8,
+  "edge_sites": [
+    0,
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    0.875,
+    1
+  ],
+  "collar_sites": [
+    [
+      -0.05,
+      -0.04
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0.02,
+      0.03
+    ],
+    [
+      0.5,
+      0.6
+    ],
+    [
+      0.98,
+      1.02
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1.05,
+      -0.03
+    ]
+  ],
+  "cases": [
+    {
+      "name": "left_hidden",
+      "m": 0,
+      "n": 1,
+      "offset": 0,
+      "curve": 0,
+      "connection": 0
+    },
+    {
+      "name": "mixed",
+      "m": 2,
+      "n": -1,
+      "offset": 0.4,
+      "curve": 0.7,
+      "connection": 1
+    },
+    {
+      "name": "zero_class",
+      "m": 0,
+      "n": 0,
+      "offset": 0.63,
+      "curve": -0.5,
+      "connection": 1
+    },
+    {
+      "name": "right_twist",
+      "m": 1,
+      "n": 0,
+      "offset": 0,
+      "curve": 0.3,
+      "connection": 0
+    }
+  ],
+  "jet_probe": 0.1,
+  "negative_control_floor": 1e-05,
+  "midpoint_intervals": 4,
+  "interval_cases": [
+    {
+      "name": "positive",
+      "center": "201/100",
+      "error": "1/50",
+      "expected": 2
+    },
+    {
+      "name": "negative",
+      "center": "-151/50",
+      "error": "1/25",
+      "expected": -3
+    },
+    {
+      "name": "zero_width",
+      "center": "0",
+      "error": "0",
+      "expected": 0
+    },
+    {
+      "name": "ambiguous",
+      "center": "1/2",
+      "error": "1/2",
+      "expected": "refuse"
+    },
+    {
+      "name": "empty",
+      "center": "1/2",
+      "error": "1/10",
+      "expected": "refuse"
+    },
+    {
+      "name": "negative_radius",
+      "center": "0",
+      "error": "-1/10",
+      "expected": "invalid"
+    }
+  ],
+  "expected_check_count": 58,
+  "expected_outcomes": [
+    "The corrected seam index is independent of the rectangle connection and consistent frame gauge",
+    "A left/right integer can be invisible to the raw vertical scan",
+    "The constructed deck maps match the edges and satisfy an exact global cocycle analytically; fixed controls have small residuals",
+    "The constructed compatible connection gives the declared signed Euler value",
+    "Individually sub-antipodal edge comparisons can change the joint class; a strict joint angle bound refuses that example",
+    "Matching two-jets does not establish an exact collar cocycle",
+    "Rational interval inputs accept only their unique possible integer"
+  ],
+  "limits": [
+    "Fixed synthetic two-dimensional matrix and polynomial controls; no physical model, eigensolver, numerical sweep or production API",
+    "Floating-point geometric tests illustrate derivations; no certified enclosure of geometric data",
+    "The exact rational interval checker covers only declared synthetic data in units of 2 pi",
+    "Constructed collar and connection need not preserve prescribed physical data; no physical reference or finite-to-infinite comparison supplied",
+    "Earlier evidence frozen; no v078 implementation or merge"
+  ],
+  "failure_policy": "Preserve failed output, plan and source; do not tune thresholds after observing results",
+  "provenance": "Source bindings and plan written before first execution; not independently timestamped preregistration"
+}

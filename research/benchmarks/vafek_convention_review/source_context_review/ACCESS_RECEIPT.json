@@ -1,0 +1,89 @@
+{
+  "checked_utc_date": "2026-09-23",
+  "review_base_sha": "613fecbf7a14d0d60cd7af1b2956c9ecedd187db",
+  "previous_reviews": {
+    "claude_source_comment_id": 5789052218,
+    "codex_review_id": 5286900959
+  },
+  "journal_equations_checked": false,
+  "later_full_manuscript_retrieved": false,
+  "production_convention_selected": false,
+  "new_numerical_runs": false,
+  "retained_arxiv_resources_reverified": [
+    {
+      "url": "https://arxiv.org/html/2502.08700v2",
+      "bytes": 1114675,
+      "sha256": "0ebcdc516bd764734ad316e87c52922db9944373cbb95760307ff2bf5248a972"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2502.08700v2",
+      "bytes": 4515680,
+      "sha256": "9a774308f00e4f80e8bcb11249c24a652aa083133d68099aeb079f0c77a30618"
+    }
+  ],
+  "observations": [
+    {
+      "url": "https://arxiv.org/abs/2502.08700",
+      "result": "Submission history lists v1 on 2025-02-12 and v2 on 2025-02-18; no later listed arXiv version."
+    },
+    {
+      "url": "https://journals.aps.org/prb/abstract/10.1103/rr5g-3js8",
+      "revised_date": "2025-08-12",
+      "accepted_date": "2025-08-14",
+      "published_date": "2025-09-15",
+      "result": "Public landing page accessible; full text requires authorization. Equations not reviewed."
+    },
+    {
+      "url": "https://www.lpens.ens.psl.eu/recherche/quant/equipe-05/publications/",
+      "result": "Author-laboratory listing points to http://arxiv.org/pdf/2502.08700 and https://hal.science/hal-05593739v1."
+    },
+    {
+      "url": "https://hal.science/hal-05593739v1",
+      "method": "Ordinary urllib HTTP GET; no authentication or challenge workaround",
+      "http_status": 200,
+      "bytes": 109514,
+      "sha256": "cca125e5b494a8c0607006910691b83eaf7b9fcbd9982503132142b73870fef1",
+      "citation_online_date": "2026/04/16",
+      "listed_file": "2502.08700v2.pdf",
+      "listed_size": "4.31 Mo",
+      "listed_license": "CC BY 4.0",
+      "file_url": "https://hal.science/hal-05593739v1/file/2502.08700v2.pdf",
+      "result": "Full landing page retrieved locally. Web-search reader separately returned an access-denied page. Filename alone does not prove byte identity or document version."
+    },
+    {
+      "url": "https://api.archives-ouvertes.fr/search/",
+      "query": {
+        "q": "doiId_s:\"10.1103/rr5g-3js8\"",
+        "wt": "json",
+        "fl": "halId_s,title_s,uri_s,fileMain_s,linkExtUrl_s,version_i,submittedDate_s,producedDate_s",
+        "rows": 10
+      },
+      "method": "Ordinary urllib HTTP GET",
+      "http_status": 200,
+      "numFound": 1,
+      "metadata": {
+        "halId_s": "hal-05593739",
+        "uri_s": "https://hal.science/hal-05593739v1",
+        "version_i": 1,
+        "submittedDate_s": "2026-04-16 12:16:40",
+        "producedDate_s": "2025",
+        "fileMain_s": "https://hal.science/hal-05593739/document",
+        "linkExtUrl_s": "http://arxiv.org/pdf/2502.08700"
+      }
+    },
+    {
+      "url": "https://hal.science/hal-05593739/document",
+      "result": "Download did not complete and was interrupted. No document bytes retained or compared."
+    },
+    {
+      "url": "https://link.aps.org/accepted/10.1103/rr5g-3js8",
+      "result": "Web reader reported URL inaccessible; this does not establish that an accepted manuscript is absent."
+    }
+  ],
+  "limitations": [
+    "This bounded search does not prove that no public later manuscript exists.",
+    "Claude reviewed supplied excerpts; independent source retrieval by Claude remains unverified.",
+    "No conclusion about the later journal equations or author intent.",
+    "Resource hashes bind observed bytes, not independent retrieval or source authenticity."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "twistronics_certification_readiness_v4",
+  "plan_id": "FC49-77-PLAN-004",
+  "date": "2026-09-23",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "case_status": "DECLARED_UNEXECUTED",
+  "previous_evidence_sha": "c11ca5eeaa414553792249176546c4a0169346c7",
+  "source_comment": 5798619931,
+  "completed_review": 5293785199,
+  "current_derivation": "docs/certification-readiness/S0C_CORRECTIONS.md",
+  "current_packet": "research/benchmarks/certification_s0c_001",
+  "review_status": "INDEPENDENT_REVIEW_PENDING",
+  "S0a": "IMPLEMENTED_SYNTHETIC_PASS_INDEPENDENTLY_REPRODUCED",
+  "S0b": "IMPLEMENTED_SYNTHETIC_PASS_INDEPENDENTLY_REPRODUCED_WITH_REVIEWED_CORRECTIONS_IN_S0C",
+  "S0c": {
+    "status": "IMPLEMENTED_EXPECTED_SYNTHETIC_BEHAVIORS_PASS",
+    "jobs": 11,
+    "raw_status_counts": {"CERTIFIED": 4, "INCONCLUSIVE": 6, "EXECUTION_ERROR": 1},
+    "protocol_controls": 8,
+    "physical_evaluations": 0,
+    "physical_certificates": 0,
+    "run": "research/benchmarks/certification_s0c_001/RUN/RESULTS.json"
+  },
+  "conditional_error_ledger": {
+    "frame_error_operator_Frobenius_sufficient": "1/16",
+    "unrepaired_seam_map_error_operator": "1/128",
+    "repair_geometric_angle_error_radians": "3/16",
+    "additional_phase_arithmetic_total_radians": "1/64",
+    "q_halfwidth_target": "1/8",
+    "corner_gate": "b=2*eta+eta^2; z=2*b+b^2; d_corner=2*epsilon+epsilon^2+(1+epsilon)^2*z; certify d_corner<1 and asin(d_corner)<3/16",
+    "q_gate": "d_edge=2*epsilon+epsilon^2+(1+epsilon)^2*eta; certify [4*asin(d_edge)+3/16+1/64]/(2*pi)<1/8",
+    "additional_gates": ["all upstream frame/map error sources included", "exact corner compatibility bound", "principal branch separation", "complete continuous lifts", "per-step variation and endpoint errors", "orientation", "integrality", "unique integer in final enclosure"],
+    "status": "CONDITIONAL_ALLOCATION_SYNTHETICALLY_CHECKED_NOT_A_PHYSICAL_RESULT"
+  },
+  "spectral_requirement": {
+    "zero_based_pair_a": [97, 98],
+    "zero_based_pair_b": [153, 154],
+    "required_lower_upper_counts_a": [97, 99],
+    "required_lower_upper_counts_b": [153, 155],
+    "rule": "Each endpoint of the lower window must certify count l, and each endpoint of the upper window count h+1, for the declared pair [l,h] throughout every closed cell. Wrong-index windows are inconclusive for that pair. Include assembly errors and all Riesz contour segment distances."
+  },
+  "numerical_outcomes": "Uncertified complement inverse, residual, Gram bound or inertia is INCONCLUSIVE. Malformed inputs and genuine execution faults remain EXECUTION_ERROR. The regression harness separately matches expected status/reason; this is not the physical refusal/subdivision policy.",
+  "physical_stage_status": "S1-S4_NOT_IMPLEMENTED_NOT_RUN_BUDGET_NOT_FROZEN",
+  "remaining_S0": ["Riesz inverse/projector and quadrature bounds", "positive polar and seam-map errors", "continuous phase lifts and actual repair enclosure", "physical assembly", "general projector-derived transport and initial-strip dependency", "full physical outcome dependency cascade"],
+  "next_gate": "Independent S0c audit, then a frozen bounded synthetic Riesz/polar/phase-lift package; no physical execution yet.",
+  "v078_implementation_changes": false
+}

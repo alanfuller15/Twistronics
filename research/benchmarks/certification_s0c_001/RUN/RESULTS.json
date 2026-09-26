@@ -1,0 +1,94 @@
+{
+  "completed_jobs": 11,
+  "interpretation": "Expected inconclusive and execution-error controls are not certificates; CERTIFIED here covers only the specified synthetic claim.",
+  "jobs": [
+    {
+      "behavior_pass": true,
+      "id": "corner_rebalanced",
+      "raw_status": "CERTIFIED",
+      "reason": "CONDITIONAL_ERROR_BUDGET",
+      "wall_seconds": 0.0787798140081577
+    },
+    {
+      "behavior_pass": true,
+      "id": "corner_old_cap",
+      "raw_status": "INCONCLUSIVE",
+      "reason": "CORNER_ALLOWANCE_NOT_JUSTIFIED",
+      "wall_seconds": 0.07933204900473356
+    },
+    {
+      "behavior_pass": true,
+      "id": "corner_overspent",
+      "raw_status": "INCONCLUSIVE",
+      "reason": "Q_BUDGET_NOT_CERTIFIED",
+      "wall_seconds": 0.0802326660050312
+    },
+    {
+      "behavior_pass": true,
+      "id": "inverse_uncertain_center",
+      "raw_status": "INCONCLUSIVE",
+      "reason": "COMPLEMENT_INVERSE_NOT_CERTIFIED",
+      "wall_seconds": 0.10082470199267846
+    },
+    {
+      "behavior_pass": true,
+      "id": "inverse_wide_cell",
+      "raw_status": "INCONCLUSIVE",
+      "reason": "COMPLEMENT_RESIDUAL_NOT_CERTIFIED",
+      "wall_seconds": 0.07830263501091395
+    },
+    {
+      "behavior_pass": true,
+      "id": "uncertain_gram",
+      "raw_status": "INCONCLUSIVE",
+      "reason": "BASIS_NOT_CERTIFIED",
+      "wall_seconds": 0.07779305100848433
+    },
+    {
+      "behavior_pass": true,
+      "id": "declared_pair_196",
+      "raw_status": "CERTIFIED",
+      "reason": "DECLARED_PAIR_WINDOWS",
+      "wall_seconds": 5.827562278995174
+    },
+    {
+      "behavior_pass": true,
+      "id": "declared_pair_308",
+      "raw_status": "CERTIFIED",
+      "reason": "DECLARED_PAIR_WINDOWS",
+      "wall_seconds": 19.611692990001757
+    },
+    {
+      "behavior_pass": true,
+      "id": "small_wrong_pair",
+      "raw_status": "INCONCLUSIVE",
+      "reason": "DECLARED_INDEX_NOT_CERTIFIED",
+      "wall_seconds": 0.0774710460100323
+    },
+    {
+      "behavior_pass": true,
+      "id": "small_correct_pair",
+      "raw_status": "CERTIFIED",
+      "reason": "DECLARED_PAIR_WINDOWS",
+      "wall_seconds": 0.0930643610045081
+    },
+    {
+      "behavior_pass": true,
+      "id": "genuine_dimension_fault",
+      "raw_status": "EXECUTION_ERROR",
+      "reason": "WORKER_EXCEPTION",
+      "wall_seconds": 0.07622406199516263
+    }
+  ],
+  "passed_behaviors": 11,
+  "physical_evaluations": 0,
+  "planned_jobs": 11,
+  "raw_status_counts": {
+    "CERTIFIED": 4,
+    "EXECUTION_ERROR": 1,
+    "INCONCLUSIVE": 6
+  },
+  "spec_id": "FC49-77-S0C-001",
+  "status": "PASS_EXPECTED_BEHAVIORS",
+  "wall_seconds": 28.557731549008167
+}

@@ -1,0 +1,290 @@
+{
+  "checks": [
+    {
+      "evidence": {
+        "correct": {
+          "negative": 1,
+          "pivots": [
+            {
+              "lower": {
+                "exponent": 2,
+                "mantissa": "-1"
+              },
+              "upper": {
+                "exponent": 2,
+                "mantissa": "-1"
+              }
+            }
+          ],
+          "positive": 0,
+          "status": "PASS",
+          "zero": 0
+        },
+        "omitted_Gram": {
+          "negative": 0,
+          "pivots": [
+            {
+              "lower": {
+                "exponent": 1,
+                "mantissa": "1"
+              },
+              "upper": {
+                "exponent": 1,
+                "mantissa": "1"
+              }
+            }
+          ],
+          "positive": 1,
+          "status": "PASS",
+          "zero": 0
+        }
+      },
+      "name": "omitting_shift_Gram_changes_inertia",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "pivot_index": 0,
+        "pivots": [
+          {
+            "lower": {
+              "exponent": 0,
+              "mantissa": "0"
+            },
+            "upper": {
+              "exponent": 0,
+              "mantissa": "0"
+            }
+          }
+        ],
+        "reason": "ZERO_CONTAINING_PIVOT",
+        "status": "INCONCLUSIVE"
+      },
+      "name": "nonsingular_zero_leading_pivot_is_inconclusive",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "negative": 1,
+        "pivots": [
+          {
+            "lower": {
+              "exponent": 0,
+              "mantissa": "3"
+            },
+            "upper": {
+              "exponent": 0,
+              "mantissa": "3"
+            }
+          },
+          {
+            "lower": {
+              "exponent": 1,
+              "mantissa": "-1"
+            },
+            "upper": {
+              "exponent": 1,
+              "mantissa": "-1"
+            }
+          }
+        ],
+        "positive": 1,
+        "status": "PASS",
+        "zero": 0
+      },
+      "name": "symmetric_permutation_preserves_inertia",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "minus_shift": {
+          "negative": 1,
+          "pivots": [
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "-3"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "-3"
+              }
+            },
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "1"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "1"
+              }
+            },
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "1"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "1"
+              }
+            },
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "5"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "5"
+              }
+            }
+          ],
+          "positive": 3,
+          "status": "PASS",
+          "zero": 0
+        },
+        "plus_shift": {
+          "negative": 3,
+          "pivots": [
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "-5"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "-5"
+              }
+            },
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "-1"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "-1"
+              }
+            },
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "-1"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "-1"
+              }
+            },
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "3"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "3"
+              }
+            }
+          ],
+          "positive": 1,
+          "status": "PASS",
+          "zero": 0
+        }
+      },
+      "name": "repeated_pair_needs_no_internal_gap",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "inertia": {
+          "negative": 1,
+          "pivots": [
+            {
+              "lower": {
+                "exponent": 0,
+                "mantissa": "-1"
+              },
+              "upper": {
+                "exponent": 0,
+                "mantissa": "-1"
+              }
+            },
+            {
+              "lower": {
+                "exponent": -30,
+                "mantissa": "2080374783"
+              },
+              "upper": {
+                "exponent": -30,
+                "mantissa": "2214592513"
+              }
+            }
+          ],
+          "positive": 1,
+          "status": "PASS",
+          "zero": 0
+        },
+        "schur_enclosure": {
+          "lower": {
+            "exponent": -34,
+            "mantissa": "-17716740101"
+          },
+          "upper": {
+            "exponent": -34,
+            "mantissa": "-16642998267"
+          }
+        }
+      },
+      "name": "uniform_Schur_family",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "pivot_index": 0,
+        "pivots": [
+          {
+            "lower": {
+              "exponent": -29,
+              "mantissa": "-536870913"
+            },
+            "upper": {
+              "exponent": -29,
+              "mantissa": "536870913"
+            }
+          }
+        ],
+        "reason": "ZERO_CONTAINING_PIVOT",
+        "status": "INCONCLUSIVE"
+      },
+      "name": "zero_coupling_does_not_remove_direct_motion",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "lower": {
+          "exponent": -136,
+          "mantissa": "123195376214018309911057291508544029145"
+        },
+        "upper": {
+          "exponent": -134,
+          "mantissa": "30798844053504577477764322877136007287"
+        }
+      },
+      "name": "parameter_debit_is_not_roundoff",
+      "pass": true
+    }
+  ],
+  "checks_passed": 7,
+  "job": {
+    "id": "regressions",
+    "kind": "regressions",
+    "precision": 128
+  },
+  "peak_resident_kib": 41228,
+  "physical_evaluations": 0,
+  "status": "PASS",
+  "wall_seconds": 0.0014724119973834604
+}

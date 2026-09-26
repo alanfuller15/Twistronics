@@ -1,0 +1,22 @@
+{
+  "schema": "synthetic_affine_self_adjoint_assembly_v2",
+  "evidence_id": "FC49-77-S0Z-AFFINE-001",
+  "evidence_scope": "synthetic_shape_fixture",
+  "physical_model_evaluations": 0,
+  "parameter_domain": {
+    "x": ["0", "1/8"],
+    "y": ["0", "1/8"]
+  },
+  "matrix_formula": "diag(-3-x,-1/3+x,1/3-y,3+y)",
+  "constant_diagonal": ["-3", "-1/3", "1/3", "3"],
+  "x_coefficient_diagonal": ["-1", "1", "0", "0"],
+  "y_coefficient_diagonal": ["0", "0", "-1", "1"],
+  "coefficient_semantics": "exact rational diagonal affine family",
+  "self_adjoint_proof": "all exact coefficient matrices are real diagonal",
+  "selected_zero_based_indices": [1, 2],
+  "limitations": [
+    "not a graphene Hamiltonian",
+    "not physical S1 evidence",
+    "not an executed spectral-isolation run"
+  ]
+}

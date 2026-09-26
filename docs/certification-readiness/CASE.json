@@ -1,0 +1,1059 @@
+{
+  "schema": "twistronics_fixed_case_declaration_v2",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "status": "DECLARED_UNEXECUTED",
+  "date": "2026-09-23",
+  "basis_of_declaration": {
+    "reviewed_commit": "838be1b7fba2dba38c99769a150b3d2af7c121b5",
+    "claude_source_comment": 5791880416,
+    "codex_completed_review": 5288846821,
+    "archive_path": "research/benchmarks/migration_contract_review/partner_v078p.zip",
+    "archive_sha256": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e",
+    "retained_basis_member": "RUN/BASIS.json",
+    "retained_basis_member_sha256": "71aa4ec545a745741b83e1bb985641cdba8f27295ec40507d065bcc96605240b",
+    "fixed_case_audit": {
+      "claude_source_comment": 5792152685,
+      "codex_completed_review": 5289043968
+    }
+  },
+  "parameter_semantics": "Decimal strings are exact rationals. Real k only. No physical execution or certificate has occurred.",
+  "model": {
+    "valley": 1,
+    "B": "-0.25",
+    "constructor": {
+      "N": 4,
+      "eps": "0.003",
+      "phi_deg": "0",
+      "theta_deg": "1.05",
+      "A_scalar": "0.2",
+      "ratio": "0.8",
+      "w1": "110",
+      "nu": "0.16",
+      "beta": "3.14",
+      "kinetic": "lab_nn_full",
+      "geometry": "exact",
+      "cutoff_tol": "0.000001",
+      "mass": "0",
+      "Dfield": "0",
+      "w_kappa": "0",
+      "w_mode": "average"
+    },
+    "constants": {
+      "HBARV_meV_angstrom": "5944",
+      "A_LAT_angstrom": "2.46"
+    },
+    "harmonic": {
+      "mat": "sz",
+      "use_sin": true,
+      "layer_sign": 1,
+      "which": [
+        0,
+        1,
+        2
+      ]
+    },
+    "index_set_supplied_explicitly": true,
+    "ambient_real_structure": "X K; X=sigma_x on each adjacent sublattice pair",
+    "real_basis": "U=direct_sum([[1,i],[1,-i]]/sqrt(2))"
+  },
+  "domain": {
+    "fractional_x": [
+      "0",
+      "1"
+    ],
+    "fractional_y": [
+      "0",
+      "1"
+    ],
+    "base_orientation": "dx wedge dy",
+    "momentum_map": "k=x*G1+y*G2 from declared exact model geometry",
+    "interpretation": "proposed full-cell abstract finite gluing; physical translation matching is unproved",
+    "basepoint": [
+      "0",
+      "0"
+    ],
+    "edge_parameter_directions": "left-to-right map parameter y increasing; bottom-to-top map parameter x increasing"
+  },
+  "cutoffs": {
+    "a": {
+      "name": "retained49",
+      "ordered_indices": [
+        [
+          -4,
+          0
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          -3
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          3,
+          -2
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          -3
+        ],
+        [
+          4,
+          -2
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "vectors": 49,
+      "dimension": 196,
+      "selected_bands_zero_based": [
+        97,
+        98
+      ],
+      "meaning": "explicit candidate ordered spectral cluster; physical band correspondence unproved",
+      "ordered_indices_sha256": "370453795938f1a66113abe0fc376510881d10963626ddae6092b48f364a6110"
+    },
+    "b": {
+      "name": "neighbor_shell77",
+      "construction": "lexicographic sort of Lambda_a plus each stencil displacement, with duplicates removed",
+      "stencil": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "ordered_indices": [
+        [
+          -5,
+          0
+        ],
+        [
+          -5,
+          1
+        ],
+        [
+          -5,
+          2
+        ],
+        [
+          -5,
+          3
+        ],
+        [
+          -5,
+          4
+        ],
+        [
+          -4,
+          -1
+        ],
+        [
+          -4,
+          0
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -4,
+          4
+        ],
+        [
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -3,
+          4
+        ],
+        [
+          -2,
+          -3
+        ],
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -2,
+          4
+        ],
+        [
+          -1,
+          -3
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          0,
+          -4
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          -4
+        ],
+        [
+          1,
+          -3
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          -4
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          -4
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          3,
+          -2
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          -4
+        ],
+        [
+          4,
+          -3
+        ],
+        [
+          4,
+          -2
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          -4
+        ],
+        [
+          5,
+          -3
+        ],
+        [
+          5,
+          -2
+        ],
+        [
+          5,
+          -1
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "vectors": 77,
+      "dimension": 308,
+      "selected_bands_zero_based": [
+        153,
+        154
+      ],
+      "meaning": "new explicit nested cutoff, not N=6; physical band correspondence unproved",
+      "ordered_indices_sha256": "5d1ef0fbe1c7ef2624070db2a688623e5549a6d0810cad07a75a87246d666266"
+    }
+  },
+  "inclusion": {
+    "direction": "a to b",
+    "index_position_map": [
+      6,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      60,
+      61,
+      62,
+      63,
+      64,
+      67,
+      68,
+      69,
+      70
+    ],
+    "column_to_row": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295
+    ],
+    "matrix_entry": "iota[column_to_row[c],c]=1; all others zero",
+    "meaning": "ambient isometry only",
+    "column_to_row_sha256": "d5d7b9a899054737d10dbb1b9d1820b5c1d0b15d5db485dbe373460e957add92"
+  },
+  "orientation": {
+    "a_base_rule": "At p0 project fixed real coordinates [48,49], then ordered Gram-Schmidt with positive roots; certify Gram determinant >= 1e-12. No pivot search or fallback.",
+    "b_base_rule": "F_b0=Q(p0)F_a0",
+    "rectangle_transport": "Kato W'=[P',P]W, first along bottom edge to (x,0), then vertical to (x,y)",
+    "seam_sign_required": 1,
+    "raw_eigenframe_link_sign_is_not_gate": true,
+    "base_frames_status": "NOT_COMPUTED",
+    "fixed_pivot": {
+      "layer": 0,
+      "reciprocal_index": [
+        0,
+        0
+      ],
+      "index_position": 24,
+      "real_coordinates": [
+        48,
+        49
+      ],
+      "gram_determinant_lower": "0.000000000001",
+      "failure_meaning": "Orientation convention insufficient; not evidence of absence of a rank-two bundle."
+    },
+    "b_base_dependency": "Q(p0) must be certified before F_b0 and oriented q_b are available. A later whole-domain Q failure need not erase independently certified integers."
+  },
+  "identification": {
+    "map": "T=P_b*iota*P_a restricted to E_a; Q=T*(T^T*T)^(-1/2)",
+    "uniform_restricted_singular_value_min": "0.5",
+    "domain": "whole closed rectangle",
+    "orientation": "base Q sends F_a0 to F_b0; certify continuous invertibility then preserve sign"
+  },
+  "seams": {
+    "d1": [
+      -1,
+      0
+    ],
+    "d2": [
+      0,
+      -1
+    ],
+    "J1": "polar(P(1,y)*S_d1*P(0,y)) on E(0,y)",
+    "J2": "polar(P(x,1)*S_d2*P(x,0)) on E(x,0)",
+    "infinite_index_meaning": "source at k -> target k+G_i with reciprocal index n -> n-e_i",
+    "finite_covariance_assumed": false
+  },
+  "repair": {
+    "apply_separately_to_both_cutoffs": true,
+    "after_uniform_overlap_and_orientation": true,
+    "A": "J2(1)*J1(0)",
+    "B": "J1(1)*J2(0)",
+    "delta": "principal Arg(A^T*B) in (-pi,pi)",
+    "chi_coefficients_ascending": [
+      0,
+      0,
+      0,
+      10,
+      -15,
+      6
+    ],
+    "modified_map": "J2_repaired(x)=J2(x)*R_rep(x); R_rep=exp(delta*chi(x)*I_source)",
+    "I_source": "positive 90-degree complex structure on oriented source plane; matrix [[0,-1],[1,0]], not identity",
+    "source": "research/benchmarks/research_questions_007/DERIVATION.md",
+    "rotation_name": "R_rep",
+    "exact_delta_semantics": "The exact principal delta defines the system; interval enclosures certify that value. A midpoint delta must not replace it."
+  },
+  "targets": {
+    "norm": "spectral operator norm; proved Frobenius upper bounds allowed",
+    "hamiltonian_assembly_error_meV": "0.00000001",
+    "external_gap_lower_meV": "0.00001",
+    "internal_pair_gap_required": false,
+    "seam_restricted_singular_value_min": "0.95",
+    "corner_path_difference_max": "1",
+    "repaired_relative_edge_distance_max": {
+      "edge1": "1",
+      "edge2": "1"
+    },
+    "joint_screen": "rho1+rho2<=2*pi/3<pi, since eta1,eta2<=1",
+    "unwrap_variation_plus_endpoint_errors_max_in_pi_units": "0.5",
+    "final_q_interval_max_half_width": "0.125",
+    "integer_candidate_count": 1,
+    "integer_extraction_scope": "separate q008 corrected integer enclosure for each cutoff; require equality consistent with certified joint comparison",
+    "target_status": "PREDECLARED_NOT_OBSERVED"
+  },
+  "arithmetic": {
+    "method": "Outward Arb ball arithmetic; exact rational input, dyadic/rational endpoint export",
+    "backend": "python-flint==0.9.0",
+    "python": "CPython 3.12.14",
+    "native_build_lock": "Required before implementation acceptance; NOT_RESOLVED in this design packet",
+    "elementary_functions": "Certified Arb pi, trig, roots and inverses; no binary float input for decimal model constants",
+    "spectral_ordering": "Interval LDL^T inertia with certified nonzero pivots, deterministic rational bracketing and Weyl cell extension",
+    "projectors_polar_transport": "Riesz contour enclosures, rank-two positive polar formula and parametric validated Kato transport",
+    "backend_status": "NOT_IMPLEMENTED",
+    "execution_precision_and_subdivision_budget": "PLAN.json; IMPLEMENTATION_PLAN.md"
+  },
+  "no_after_the_fact_changes": [
+    "Do not change parameters, clusters, bases, orientation rule, seams, identification or thresholds after observing results",
+    "Failed sufficient comparison screen is inconclusive about unequal classes",
+    "No silent pivot fallback, numerical evidence substitution, second case or sweep"
+  ],
+  "next_gate": "Independent revision/plan review, then bounded S0 arithmetic and synthetic validation implementation. No physical execution in this packet.",
+  "limits": [
+    "No gap, frame, overlap, seam, integer or two-cutoff result exists for this case",
+    "No physical/infinite-cutoff class or experimental validation",
+    "No changes to archived production/v078 sources",
+    "Only declaration, implementation design and static integrity/index checks in this pass"
+  ],
+  "hash_encoding": "SHA256 of UTF-8 json.dumps(value,separators=(',',':'),ensure_ascii=True), without trailing newline",
+  "freeze_status": "REVIEW_PENDING",
+  "supersedes": {
+    "case_id": "FC49-77-K-Bm025-v1",
+    "commit": "bb159404c1286387b1e0f2125b295b7d586042a9",
+    "reason": "Pre-execution audit amendment: fixed pivot, arithmetic backend, Kato phase reduction and outcome vector. No physical outcomes were observed."
+  },
+  "integer_extraction": {
+    "vertical_connection": "F^T*d_y F=0 for the declared exact vertical Kato frame",
+    "edge1_lift": "alpha is a continuous lift of J1 in the declared frames",
+    "edge2_lift": "beta is a continuous lift of repaired J2 in the declared frames",
+    "formula": "q=(Delta beta-Delta alpha)/(2*pi)",
+    "quadrature": "No independent connection quadrature in this gauge; both complete phase paths and all transport errors require certification"
+  },
+  "residual_bounds": {
+    "norm": "Frobenius residual / certified cross-spectrum separation; operator-norm replacement with constant 1 is not assumed",
+    "nested_identity": "iota^T H_b iota=H_a, subject to source-to-exact-model assembly proof",
+    "embedding": "smin(P_b iota F_a)^2 >= 1-r^2; r bounds ||(I-P_b)iota F_a||_2 via Frobenius residual",
+    "seam": "smin(P_1 S F_0)^2 >= 1-ell-r^2; ell bounds ||F_0^T(I-S^T S)F_0||_2; r bounds off-target leakage",
+    "seam_target": "ell+r^2 <= 39/400 is sufficient for smin >= 19/20",
+    "meaning": "Optional sufficient bounds, not measured values; failure of a sufficient bound is inconclusive"
+  },
+  "outcome_contract": {
+    "individual_statuses": [
+      "NOT_RUN",
+      "CERTIFIED_FINITE_CLASS",
+      "REFUSED_HYPOTHESIS",
+      "REFUSED_ORIENTATION_CONVENTION",
+      "INCONCLUSIVE",
+      "EXECUTION_ERROR"
+    ],
+    "relative_statuses": [
+      "NOT_RUN",
+      "CERTIFIED_RELATIVE_FINITE_CLASS",
+      "INCONCLUSIVE",
+      "REFUSED_HYPOTHESIS",
+      "EXECUTION_ERROR"
+    ],
+    "rules": [
+      "Certified violation is distinct from failure to prove a bound",
+      "Budget exhaustion is INCONCLUSIVE/BUDGET",
+      "Preserve individually certified q when only the relative sufficient screen fails",
+      "Certified joint conditions and unequal certified q imply EXECUTION_ERROR",
+      "Negative seam determinant refuses the chosen oriented hypothesis; no global nonorientable torus claim before compatible O(2) gluing exists"
+    ]
+  },
+  "current_outcomes": {
+    "q_a": {
+      "status": "NOT_RUN",
+      "integer": null
+    },
+    "q_b": {
+      "status": "NOT_RUN",
+      "integer": null
+    },
+    "relative": {
+      "status": "NOT_RUN",
+      "reason": null
+    }
+  }
+}

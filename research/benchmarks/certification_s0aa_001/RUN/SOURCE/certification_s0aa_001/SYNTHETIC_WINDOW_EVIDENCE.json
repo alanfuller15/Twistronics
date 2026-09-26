@@ -1,0 +1,66 @@
+{
+  "schema": "synthetic_s1_window_evidence_v2",
+  "evidence_id": "FC49-77-S0Z-WINDOWS-001",
+  "evidence_scope": "synthetic_shape_fixture",
+  "physical_model_evaluations": 0,
+  "assembly_artifact": "SYNTHETIC_AFFINE_ASSEMBLY.json",
+  "assembly_artifact_sha256": "f5e05ec95f9d3aa8cf0ff87402f8df51888ed3615cc2b68f779add3a7b6b3461",
+  "path_artifact": "SYNTHETIC_PATH_EVIDENCE.json",
+  "path_artifact_sha256": "22516a1b2ada16f57169404673c6915c191b17c5f9dd670a6c8d1f48b8efc784",
+  "required_parameter_domain": {
+    "x": ["0", "1/8"],
+    "y": ["0", "1/8"]
+  },
+  "selected_zero_based_indices": [1, 2],
+  "contour_policy": "max_margin_midpoint_circle_v1",
+  "cells": [
+    {
+      "cell_id": "x0y0",
+      "domain": {"x": ["0", "1/16"], "y": ["0", "1/16"]},
+      "status": "CERTIFIED_SYNTHETIC_WINDOW",
+      "assembly_evidence_id": "FC49-77-S0Z-AFFINE-001",
+      "self_adjoint": true,
+      "selected_zero_based_indices": [1, 2],
+      "cluster_lower": "-1/3",
+      "cluster_upper": "1/3",
+      "lower_complement_upper": "-3",
+      "upper_complement_lower": "3"
+    },
+    {
+      "cell_id": "x0y1",
+      "domain": {"x": ["0", "1/16"], "y": ["1/16", "1/8"]},
+      "status": "CERTIFIED_SYNTHETIC_WINDOW",
+      "assembly_evidence_id": "FC49-77-S0Z-AFFINE-001",
+      "self_adjoint": true,
+      "selected_zero_based_indices": [1, 2],
+      "cluster_lower": "-1/3",
+      "cluster_upper": "13/48",
+      "lower_complement_upper": "-3",
+      "upper_complement_lower": "49/16"
+    },
+    {
+      "cell_id": "x1y0",
+      "domain": {"x": ["1/16", "1/8"], "y": ["0", "1/16"]},
+      "status": "CERTIFIED_SYNTHETIC_WINDOW",
+      "assembly_evidence_id": "FC49-77-S0Z-AFFINE-001",
+      "self_adjoint": true,
+      "selected_zero_based_indices": [1, 2],
+      "cluster_lower": "-13/48",
+      "cluster_upper": "1/3",
+      "lower_complement_upper": "-49/16",
+      "upper_complement_lower": "3"
+    },
+    {
+      "cell_id": "x1y1",
+      "domain": {"x": ["1/16", "1/8"], "y": ["1/16", "1/8"]},
+      "status": "CERTIFIED_SYNTHETIC_WINDOW",
+      "assembly_evidence_id": "FC49-77-S0Z-AFFINE-001",
+      "self_adjoint": true,
+      "selected_zero_based_indices": [1, 2],
+      "cluster_lower": "-13/48",
+      "cluster_upper": "13/48",
+      "lower_complement_upper": "-49/16",
+      "upper_complement_lower": "49/16"
+    }
+  ]
+}

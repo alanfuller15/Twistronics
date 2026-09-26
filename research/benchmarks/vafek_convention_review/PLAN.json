@@ -1,0 +1,17 @@
+{
+  "scope": "Small-matrix diagnostic of the two existing projected assemblies; no root search or convention selection",
+  "baseline_commit": "44dc66951057a995ee0999c785aca3e0e6c67092",
+  "model_sha256": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3",
+  "formula_and_hermiticity_tolerance_meV": 1e-10,
+  "witness_minimum_gap_difference_meV": 0.001,
+  "cases": [
+    {"id": "gamma", "K": [0.0, 0.0], "Q": 0.5, "parameters": {}, "expect_equal": true},
+    {"id": "axis", "K": [0.2, 0.0], "Q": 0.5, "parameters": {}, "expect_equal": true},
+    {"id": "off_axis_witness", "K": [0.23, -0.17], "Q": 0.5, "parameters": {}, "expect_equal": false},
+    {"id": "unboosted", "K": [0.23, -0.17], "Q": 0.0, "parameters": {}, "expect_equal": false},
+    {"id": "opposite_y", "K": [-0.11, 0.19], "Q": 0.8, "parameters": {}, "expect_equal": false},
+    {"id": "no_cf_coupling", "K": [0.23, -0.17], "Q": 0.5, "parameters": {"cpp": 0.0}, "expect_equal": true},
+    {"id": "no_strain", "K": [0.23, -0.17], "Q": 0.5, "parameters": {"strain": 0.0}, "expect_equal": true}
+  ],
+  "plan_note": "Frozen before the retained run. The first five points were explored interactively; this is a diagnostic reproduction, not preregistration or an independent test set."
+}

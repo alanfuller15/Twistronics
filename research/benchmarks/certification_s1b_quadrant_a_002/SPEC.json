@@ -1,0 +1,206 @@
+{
+  "schema_version": 2,
+  "packet_id": "S1B-QUADRANT-A-002",
+  "status": "PROTOCOL_AMENDED_REVIEW_PENDING",
+  "protocol_only": true,
+  "execution_authorized": false,
+  "supersedes_protocol_commit": "35664fc7f3a028a7b8d32848bc719e9fc01b8b74",
+  "review_finding_source": "issuecomment-5821711346",
+  "predecessor": {
+    "reviewed_commit": "16c864c9d0d0c545f4369567e81bfdbc826953d9",
+    "packet_id": "S1B-QUADRANT-A-001",
+    "partition_path": "research/benchmarks/certification_s1b_quadrant_a_001/PARTITION.json",
+    "partition_sha256": "2bbc19927b996e6d3b43ed9c17fe1d3b92f029bd1866cc031390b76d5814e000",
+    "results_path": "research/benchmarks/certification_s1b_quadrant_a_001/RESULTS.json",
+    "results_sha256": "e38b8a5d71f5a21521f0dde17924393e3e334a9d22ed263a7fbf567da491fa45",
+    "accepted_area_fraction_of_quadrant": "23/64",
+    "frontier_area_fraction_of_quadrant": "41/64",
+    "accepted_cells": 83,
+    "frontier_cells": 437,
+    "accepted_depth_histogram": {"4": 3, "5": 80},
+    "frontier_depth_histogram": {"5": 73, "6": 364}
+  },
+  "physical_case": "same pinned CASE.json as predecessor",
+  "cutoff": "a",
+  "domain": {"x": ["1/2", "1"], "y": ["1/2", "1"]},
+  "initial_state": {
+    "combined_accepted_prefix": "byte-identical predecessor accepted_cells array in predecessor order",
+    "work_queue": "byte-identical predecessor unprocessed_frontier_cells array before deterministic sorting",
+    "max_depth_unresolved_cells": "byte-identical predecessor unresolved_max_depth_cells array",
+    "required_counts": {"accepted": 83, "frontier": 437, "unresolved": 0},
+    "reject_if_any_source_binding_or_exact_array_mismatch": true
+  },
+  "priority": {
+    "type": "deterministic_best_first",
+    "target": {"x": "23/32", "y": "23/32"},
+    "key_ascending": [
+      "linf_distance_from_closed_cell_to_target_as_reduced_rational",
+      "negative_depth",
+      "ix",
+      "iy"
+    ],
+    "distance_definition": "max(distance(target_x,[ix/2^depth,(ix+1)/2^depth]),distance(target_y,[iy/2^depth,(iy+1)/2^depth]))",
+    "ties": "compare exact rationals by cross multiplication, then integer fields",
+    "queue_update": "after a durable inconclusive non-max-depth record, insert all four children and re-sort by the frozen key",
+    "child_order_before_sort": "x_bit_then_y_bit_low_first",
+    "accepted_cells_are_terminal": true,
+    "max_depth_cells_are_terminal_unresolved": true
+  },
+  "algorithm": {
+    "max_depth": 9,
+    "acceptance_method": "certification_s1b_method_004_direct_affine_cell_interval_inertia",
+    "acceptance_requires": [
+      "primary_17_digit_congruence_pass",
+      "independent_10_digit_congruence_recomputation_pass"
+    ],
+    "precision_bits": 128,
+    "recomputation_decimal_digits": 10,
+    "no_parameter_sweep": true
+  },
+  "limits": {
+    "physical_cases": 1,
+    "cutoffs": 1,
+    "parameter_sweeps": 0,
+    "workers": 1,
+    "max_new_attempted_cells": 1024,
+    "max_new_primary_factorizations": 4096,
+    "max_new_recomputation_factorizations": 4096,
+    "max_new_total_factorizations": 8192,
+    "worker_wall_seconds": 2700,
+    "supervisor_grace_seconds": 60,
+    "supervisor_hard_deadline_seconds": 2760,
+    "address_space_bytes": 2147483648,
+    "retries": 0
+  },
+  "admission": {
+    "check_before_each_queue_pop": true,
+    "require_room_for": {
+      "attempted_cells": 1,
+      "primary_factorizations": 4,
+      "recomputation_factorizations": 4,
+      "total_factorizations": 8
+    },
+    "on_insufficient_room": "do_not_pop_and_stop_INCONCLUSIVE_RESOURCE_CAP",
+    "count_only_durable_attempt_records": true
+  },
+  "durable_log": {
+    "path": "ATTEMPTS.ndjson",
+    "format": "utf8_canonical_json_one_object_per_line_newline_terminated",
+    "header": {
+      "sequence": -1,
+      "kind": "header",
+      "required_bindings": [
+        "approved_protocol_commit",
+        "predecessor_partition_sha256",
+        "predecessor_results_sha256",
+        "implementation_commit",
+        "runtime_provenance_digest"
+      ]
+    },
+    "attempt_record_required_fields": [
+      "kind_attempt",
+      "sequence",
+      "cell_depth_ix_iy",
+      "priority_distance_numerator_denominator_negative_depth_ix_iy",
+      "primary_factorizations",
+      "recomputation_factorizations",
+      "outcome",
+      "full_interval_evidence",
+      "previous_record_sha256",
+      "record_sha256"
+    ],
+    "sequence": "zero_based_contiguous",
+    "hash_chain": "record_sha256_is_SHA256_of_canonical_record_without_record_sha256; previous_record_sha256_is_prior_full_record_SHA256; first_attempt_points_to_header_SHA256",
+    "write_order": [
+      "select_but_do_not_durably_remove_current_minimum_cell",
+      "compute_complete_attempt",
+      "append_one_complete_newline_terminated_record",
+      "flush_and_fsync_log_file",
+      "fsync_parent_directory",
+      "only_then_commit_queue_transition_and_allow_next_pop"
+    ],
+    "trailing_recovery": "discard_only_a_final_non_newline_terminated_fragment; any newline_terminated_malformed_or_hash_invalid_record_is_EXECUTION_ERROR",
+    "memory_rule": "stream_records_and_do_not_accumulate_all_attempt_evidence_in_worker_memory"
+  },
+  "watchdog": {
+    "required": true,
+    "architecture": "separate_supervisor_process",
+    "worker_process_group": "new_session",
+    "worker_must_spawn_no_children_and_must_not_call_setsid": true,
+    "soft_action_at_worker_wall_seconds": "SIGTERM_entire_worker_process_group",
+    "hard_action_at_deadline": "SIGKILL_entire_worker_process_group",
+    "forbid_in_process_timer_as_sole_enforcement": true,
+    "supervisor_must_reap_worker_before_receipt": true,
+    "post_reap_group_empty_check": "killpg_process_group_0_must_return_ESRCH",
+    "receipt": {
+      "path": "SUPERVISOR_RECEIPT.json",
+      "write": "write_fresh_temp_flush_fsync_rename_and_fsync_parent_directory_after_reap",
+      "required_fields": [
+        "schema_version",
+        "approved_protocol_commit",
+        "implementation_commit",
+        "monotonic_start",
+        "sigterm_sent_at_or_null",
+        "sigkill_sent_at_or_null",
+        "reaped_at",
+        "worker_exit_code_or_signal",
+        "post_reap_killpg_result_ESRCH",
+        "durable_log_bytes",
+        "durable_log_sha256",
+        "termination_reason"
+      ]
+    },
+    "missing_invalid_or_crashed_supervisor_receipt": "EXECUTION_ERROR"
+  },
+  "replay_and_packaging": {
+    "authority": "supervisor_or_offline_verifier_never_killed_worker",
+    "input": "validated_durable_log_prefix_only",
+    "start": "exact_predecessor_accepted_unresolved_and_437_cell_frontier",
+    "per_record": "assert_record_cell_is_current_minimum_key_then_apply_recorded_terminal_or_child_transition",
+    "in_flight_cell_without_durable_record": "remains_in_frontier",
+    "caps": "derived_only_from_surviving_durable_attempt_records",
+    "terminal_partition": "derived_by_replay_never_trusted_from_worker_output",
+    "combined_accepted": "predecessor_83_cell_array_as_byte_identical_prefix_then_newly_accepted_cells_in_durable_sequence_order",
+    "gzip": "produce_canonical_JSON_then_gzip_mtime_0_fixed_parts_only_after_log_validation_and_replay",
+    "part_bytes": 500000
+  },
+  "verification": {
+    "recompute_all_sha256_bindings": true,
+    "verify_exact_predecessor_arrays_and_counts": true,
+    "verify_predecessor_accepted_prefix_byte_identical": true,
+    "verify_replay_starts_from_exact_437_cell_frontier": true,
+    "verify_log_sequence_and_hash_chain": true,
+    "verify_exact_priority_queue": true,
+    "verify_every_attempt_was_current_minimum_key": true,
+    "verify_factorization_caps_from_durable_records": true,
+    "verify_supervisor_receipt_and_group_empty": true,
+    "verify_accepted_iff_both_congruences_certify": true,
+    "verify_terminal_sets_disjoint_by_no_duplicate_or_ancestor_relation": true,
+    "verify_terminal_sets_complete_over_frozen_quadrant": true,
+    "verify_exact_rational_area_sum": "1",
+    "reject_partial_stale_substituted_or_unexpected_files": true
+  },
+  "terminal_status_mapping": {
+    "precedence_high_to_low": [
+      "EXECUTION_ERROR",
+      "INCONCLUSIVE_WATCHDOG_TIMEOUT",
+      "INCONCLUSIVE_RESOURCE_CAP",
+      "CERTIFIED_CUTOFF_A_HARD_QUADRANT_COVERAGE",
+      "INCONCLUSIVE_BOUNDED_COVERAGE"
+    ],
+    "EXECUTION_ERROR": "any binding mismatch; malformed or hash-invalid durable record; worker exception; RLIMIT_AS failure; unexpected worker exit; supervisor crash; missing or invalid receipt; post-reap group-empty check not ESRCH; replay, partition, evidence, or packaging verification failure",
+    "INCONCLUSIVE_WATCHDOG_TIMEOUT": "valid receipt proves SIGTERM or SIGKILL was sent for the frozen deadline, the worker group was reaped and empty, and the surviving durable log prefix verifies",
+    "INCONCLUSIVE_RESOURCE_CAP": "before the next pop, a frozen cell or factorization admission cap lacks room, with no higher-precedence condition",
+    "CERTIFIED_CUTOFF_A_HARD_QUADRANT_COVERAGE": "normal verified completion only when both derived unresolved and derived frontier sets are empty, with no higher-precedence condition",
+    "INCONCLUSIVE_BOUNDED_COVERAGE": "normal verified queue exhaustion with a nonempty derived depth-9 unresolved set and an empty derived frontier, with no higher-precedence condition",
+    "otherwise": "EXECUTION_ERROR"
+  },
+  "claim_ceiling": "S1B_CUTOFF_A_HARD_QUADRANT_BOUNDED_COVERAGE_ONLY_NO_UNIFORM_FULL_DOMAIN_OR_CUTOFF_AGREEMENT",
+  "fail_closed": true,
+  "review_gate": {
+    "required_before_implementation_or_execution": true,
+    "required_reviewer_marker": "[CLAUDE][REVIEW]",
+    "must_bind_exact_protocol_commit": true,
+    "pass_required": true
+  }
+}

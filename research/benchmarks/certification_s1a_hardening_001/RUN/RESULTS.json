@@ -1,0 +1,162 @@
+{
+  "schema": "twistronics_s1a_hardening_v1",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "reviewed_commit": "38984059e5a6a755c0a9c24400f2030100ad024a",
+  "status": "PASS_PHYSICAL_AFFINE_ASSEMBLY_BRIDGE",
+  "claim_ceiling": "PHYSICAL_AFFINE_ASSEMBLY_ONLY_NO_UNIFORM_ISOLATION_OR_TOPOLOGY",
+  "checks": {
+    "archive_sha256_matches": true,
+    "dimensions_match": true,
+    "geometry_denominators_exclude_zero": true,
+    "nested_affine_coefficients_overlap": true,
+    "assembly_radius_target_met": true,
+    "three_point_float_bridge_under_1e-9_meV": true,
+    "archived_real_basis_residual_under_1e-9_meV": true,
+    "case_semantics_bound": true,
+    "unsupported_constructor_mutations_refused": true,
+    "archived_harmonic_helper_executed": true,
+    "python_flint_wheel_and_native_version_bound": true
+  },
+  "case_binding": {
+    "constructor_guards": {
+      "phi_deg": "0",
+      "mass": "0",
+      "Dfield": "0",
+      "w_kappa": "0",
+      "w_mode": "average",
+      "geometry": "exact",
+      "kinetic": "lab_nn_full"
+    },
+    "guard_mutation_controls": {
+      "phi_deg": true,
+      "mass": true,
+      "Dfield": true,
+      "w_kappa": true,
+      "w_mode": true,
+      "geometry": true,
+      "kinetic": true,
+      "valley": true,
+      "harmonic": true,
+      "explicit_index": true
+    },
+    "constants": {
+      "HBARV_meV_angstrom": "5944",
+      "A_LAT_angstrom": "2.46"
+    },
+    "B": "-0.25",
+    "harmonic": {
+      "mat": "sz",
+      "use_sin": true,
+      "layer_sign": 1,
+      "which": [
+        0,
+        1,
+        2
+      ]
+    },
+    "archived_helper": "knobs.add_harmonic"
+  },
+  "runtime_binding": {
+    "filename": "python_flint-0.9.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76",
+    "python_flint_version": "0.9.0",
+    "native_flint_version": "3.6.0",
+    "python_abi": "cp310-abi3",
+    "platform_tag": "manylinux2014_x86_64.manylinux_2_17_x86_64"
+  },
+  "cutoffs": {
+    "a": {
+      "dimension": 196,
+      "coefficient_ball_sha256": "d4185b8c195693612711bdd0d96e6e1345ae7af6c229405125f12c39d040f15b",
+      "coefficient_frobenius_radius_upper_meV": {
+        "H0": 1.2347068086746926e-31,
+        "Hx": 2.8713935084044474e-32,
+        "Hy": 3.364715387912197e-32
+      },
+      "whole_domain_arithmetic_radius_upper_meV": 1.858317698306357e-31,
+      "diagnostic_bridge": [
+        {
+          "point": [
+            0,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 9.833911462919787e-12,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24845038316745,
+          "diagnostic_upper_external_gap_meV": 52.38679525747733
+        },
+        {
+          "point": [
+            1,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 1.0686562745831907e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24859215622894,
+          "diagnostic_upper_external_gap_meV": 52.38690236164506
+        },
+        {
+          "point": [
+            0,
+            1
+          ],
+          "max_abs_midpoint_difference_meV": 1.0516032489249483e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24513816170624,
+          "diagnostic_upper_external_gap_meV": 52.3894586823443
+        }
+      ]
+    },
+    "b": {
+      "dimension": 308,
+      "coefficient_ball_sha256": "8098a3429ed9604a72f2099cd014b8bae0166f0ed42c92aaafde27185bfaa788",
+      "coefficient_frobenius_radius_upper_meV": {
+        "H0": 1.931229603181537e-31,
+        "Hx": 3.599482254062564e-32,
+        "Hy": 4.217893957519971e-32
+      },
+      "whole_domain_arithmetic_radius_upper_meV": 2.7129672243397904e-31,
+      "diagnostic_bridge": [
+        {
+          "point": [
+            0,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 1.1795009413617663e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24770149693346,
+          "diagnostic_upper_external_gap_meV": 52.38653714818324
+        },
+        {
+          "point": [
+            1,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 1.2732925824820995e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24770162368716,
+          "diagnostic_upper_external_gap_meV": 52.38653749173022
+        },
+        {
+          "point": [
+            0,
+            1
+          ],
+          "max_abs_midpoint_difference_meV": 1.2562395568238571e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24767522730127,
+          "diagnostic_upper_external_gap_meV": 52.38654907465246
+        }
+      ]
+    }
+  },
+  "nested_identity": {
+    "nonoverlap_count": 0,
+    "worst_difference_abs_upper_meV": 2.715621213123868e-32
+  },
+  "limits": [
+    "No interval inertia or uniform external-gap certificate was attempted.",
+    "Three floating eigensolver evaluations per cutoff are diagnostics only.",
+    "No projector, transport, seam, integer, relative-class, cutoff-convergence, or experimental claim."
+  ]
+}

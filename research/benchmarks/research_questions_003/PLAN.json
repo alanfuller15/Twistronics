@@ -1,0 +1,89 @@
+{
+  "version": "research_questions_003",
+  "baseline_commit": "e6a3d944a0a7f5d14f39edc43491faa720bb0715",
+  "sources": {
+    "research/benchmarks/research_questions_003/bounds.py": "544f4bedecaa48d213273f8df52c564cb5c88ee20c616ca94cda03847ad48426",
+    "research/benchmarks/research_questions_002/calibrate.py": "c259f8dd9cd604033cbe92d9673456de71d7d2fd87e96f71c4443193d55e90aa",
+    "research/benchmarks/research_questions_001/reproduce.py": "f845bac8b5d87987bad017c089bae7ca47ec9f8193d38f6d6880dbbd42d0ef42",
+    "research/benchmarks/vafek_2025/model.py": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3",
+    "research/benchmarks/migration_contract_review/partner_v078p.zip": "d703b6c027d5725ed173c69d221f450a34922e46d1320350ab1c08e3448c545e"
+  },
+  "reference_folds": [
+    1,
+    49,
+    97
+  ],
+  "meshes": [
+    48,
+    96
+  ],
+  "production_runs": "Only fold97 at both meshes; original guarded_topology API, identity real basis and sewings",
+  "scalar_shift_meV": -132.5,
+  "Q": 0.5,
+  "centres_K": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.23,
+      -0.17
+    ],
+    [
+      0.4,
+      0.2
+    ]
+  ],
+  "radii_K": [
+    0.001,
+    0.1
+  ],
+  "directions": [
+    [
+      1,
+      0
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1
+    ]
+  ],
+  "expected_outcomes": [
+    "Nested-grid alias returns ~2 despite analytic Euler194",
+    "Analytic local-chart screen passes fold1 but is inconclusive for folds49 and97 at both meshes",
+    "Small projected-model disks have positive gap bounds; large disks are not certified"
+  ],
+  "limits": [
+    "Analytical local variation and isolation only; no certified Euler number",
+    "Float eigenvalues, not interval-enclosed gaps",
+    "Direct-projection family only; physical sign convention unresolved",
+    "Six local disks do not cover a physical parameter domain",
+    "No production edits, Fable repairs, TBG sweep, node search, braid or experimental claim",
+    "Plan saved before this execution, not independently timestamp-attested"
+  ],
+  "failure_policy": "Preserve an unexpected failed attempt before changing source or thresholds"
+}

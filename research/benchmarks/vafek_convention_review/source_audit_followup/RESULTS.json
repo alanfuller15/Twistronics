@@ -1,0 +1,708 @@
+{
+  "status": "DIRECT_TRANSCRIPTION_CHECKED_CONVENTION_UNRESOLVED",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "tolerance_meV": 1e-10,
+  "sources": {
+    "research/benchmarks/vafek_convention_review/source_audit/reproduce.py": "429b8a26af9c1f45af2c0ff5e19ff08ea2281ac76fb22d0848b89a2cf7ea9aa4",
+    "research/benchmarks/vafek_convention_review/source_audit/SOURCE_RECEIPT.json": "25af2d9b90bb58ade14d7a9322bada9aae5c5e98a9b89bd32c26a62fb75b98af",
+    "research/benchmarks/vafek_convention_review/source_audit/RESULTS.json": "6cf7380081f1ea33fc81afab95910691aa3902139566973c6b3b075573f33b41",
+    "research/benchmarks/vafek_2025/model.py": "28af2f9c143252a8422e2993bda1f5fca937445636adf5456a059fda706ed0b3",
+    "research/benchmarks/vafek_convention_review/source_audit_followup/reproduce.py": "619af1ffb0b7c91cf9718458629976874e913c32765b0c52214a200f0cf9a50c",
+    "research/benchmarks/vafek_convention_review/source_audit_followup/SOURCE_EXTRACTS.json": "7e38032c5f0a4a10885256c346932012a250b4b2fa3a8f2c26f3fa6d4f394940"
+  },
+  "predicates": {
+    "retained_witness:printed_matrix_hermitian": true,
+    "retained_witness:printed_equals_existing_literal": true,
+    "retained_witness:traceless_agrees_after_phase_conversion": true,
+    "retained_witness:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "retained_witness:trace_witness_matches_retained_value": true,
+    "retained_witness:valley_exchange_and_column_swap": true,
+    "retained_opposite_y:printed_matrix_hermitian": true,
+    "retained_opposite_y:printed_equals_existing_literal": true,
+    "retained_opposite_y:traceless_agrees_after_phase_conversion": true,
+    "retained_opposite_y:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "retained_opposite_y:trace_witness_matches_retained_value": true,
+    "retained_opposite_y:valley_exchange_and_column_swap": true,
+    "retained_axis:printed_matrix_hermitian": true,
+    "retained_axis:printed_equals_existing_literal": true,
+    "retained_axis:traceless_agrees_after_phase_conversion": true,
+    "retained_axis:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "retained_axis:trace_witness_matches_retained_value": true,
+    "retained_axis:valley_exchange_and_column_swap": true,
+    "retained_gamma:printed_matrix_hermitian": true,
+    "retained_gamma:printed_equals_existing_literal": true,
+    "retained_gamma:traceless_agrees_after_phase_conversion": true,
+    "retained_gamma:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "retained_gamma:trace_witness_matches_retained_value": true,
+    "retained_gamma:valley_exchange_and_column_swap": true,
+    "retained_zero_cpp:printed_matrix_hermitian": true,
+    "retained_zero_cpp:printed_equals_existing_literal": true,
+    "retained_zero_cpp:traceless_agrees_after_phase_conversion": true,
+    "retained_zero_cpp:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "retained_zero_cpp:trace_witness_matches_retained_value": true,
+    "retained_zero_cpp:valley_exchange_and_column_swap": true,
+    "retained_zero_strain:printed_matrix_hermitian": true,
+    "retained_zero_strain:printed_equals_existing_literal": true,
+    "retained_zero_strain:traceless_agrees_after_phase_conversion": true,
+    "retained_zero_strain:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "retained_zero_strain:trace_witness_matches_retained_value": true,
+    "retained_zero_strain:valley_exchange_and_column_swap": true,
+    "artificial_positive_gamma:printed_matrix_hermitian": true,
+    "artificial_positive_gamma:printed_equals_existing_literal": true,
+    "artificial_positive_gamma:traceless_agrees_after_phase_conversion": true,
+    "artificial_positive_gamma:printed_scalar_plus_projected_cf_scalar_zero": true,
+    "artificial_positive_gamma:trace_witness_matches_retained_value": true,
+    "artificial_positive_gamma:valley_exchange_and_column_swap": true,
+    "control:unmodified_trace_gate_accepts": true,
+    "control:printed_diagonal_flip_rejected": true,
+    "control:upper_block_adjoint_rejected": true,
+    "control:printed_diagonal_flip_eliminates_difference": true,
+    "control:upper_block_adjoint_eliminates_difference": true
+  },
+  "cases": [
+    {
+      "id": "retained_witness",
+      "K_dimensionless": [
+        0.23,
+        -0.17
+      ],
+      "physical_k_A_inverse": [
+        0.001326511627906977,
+        -0.0009804651162790697
+      ],
+      "overrides": {},
+      "printed_eq73": {
+        "real": [
+          [
+            -0.9192823072656681,
+            3.1447689776298766
+          ],
+          [
+            3.1447689776298766,
+            -0.9192823072656681
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0845391014975042
+          ],
+          [
+            -0.0845391014975042,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            0.919282307265668,
+            -0.9652333888172934
+          ],
+          [
+            -0.9652333888172937,
+            0.9192823072656677
+          ]
+        ],
+        "imag": [
+          [
+            4.333783764557977e-17,
+            -2.9941682129528955
+          ],
+          [
+            2.994168212952896,
+            1.5511810226240152e-16
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            0.919282307265668,
+            3.144768977629875
+          ],
+          [
+            3.1447689776298753,
+            0.9192823072656677
+          ]
+        ],
+        "imag": [
+          [
+            4.333783764557977e-17,
+            0.08453910149750414
+          ],
+          [
+            -0.08453910149750388,
+            9.090932517294035e-17
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": -3.677129229062672,
+      "raw_traceless_difference_meV": 5.135227179030324,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 4.449557262054371e-16,
+        "traceless_agrees_after_phase_conversion": 1.7772239894833365e-15,
+        "printed_scalar_plus_projected_cf_scalar_zero": 2.220446049250313e-16,
+        "trace_witness_matches_retained_value": 8.881784197001252e-16,
+        "valley_exchange_and_column_swap": 8.891536662303994e-16
+      }
+    },
+    {
+      "id": "retained_opposite_y",
+      "K_dimensionless": [
+        -0.11,
+        0.19
+      ],
+      "physical_k_A_inverse": [
+        -0.0006344186046511629,
+        0.0010958139534883722
+      ],
+      "overrides": {},
+      "printed_eq73": {
+        "real": [
+          [
+            1.0603674871207784,
+            3.3779020415951155
+          ],
+          [
+            3.3779020415951155,
+            1.0603674871207784
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            -0.08724899828277047
+          ],
+          [
+            0.08724899828277047,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            -1.0603674871207782,
+            3.378193571710227
+          ],
+          [
+            3.3781935717102267,
+            -1.0603674871207784
+          ]
+        ],
+        "imag": [
+          [
+            -4.8950086586952564e-18,
+            -0.07511845558513916
+          ],
+          [
+            0.07511845558513915,
+            -1.5117611463809918e-17
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            -1.0603674871207782,
+            3.377902041595116
+          ],
+          [
+            3.3779020415951155,
+            -1.0603674871207784
+          ]
+        ],
+        "imag": [
+          [
+            -4.8950086586952564e-18,
+            -0.08724899828277043
+          ],
+          [
+            0.08724899828277041,
+            -1.5150480919206463e-17
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": 4.241469948483113,
+      "raw_traceless_difference_meV": 0.012134045324914248,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 0.0,
+        "traceless_agrees_after_phase_conversion": 4.460365043975677e-16,
+        "printed_scalar_plus_projected_cf_scalar_zero": 2.220446049250313e-16,
+        "trace_witness_matches_retained_value": 8.881784197001252e-16,
+        "valley_exchange_and_column_swap": 4.449557262054371e-16
+      }
+    },
+    {
+      "id": "retained_axis",
+      "K_dimensionless": [
+        0.2,
+        0.0
+      ],
+      "physical_k_A_inverse": [
+        0.0011534883720930235,
+        0.0
+      ],
+      "overrides": {},
+      "printed_eq73": {
+        "real": [
+          [
+            0.0,
+            3.5576923076923084
+          ],
+          [
+            3.5576923076923084,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.14656153846153852
+          ],
+          [
+            -0.14656153846153852,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            0.0,
+            3.5576923076923066
+          ],
+          [
+            3.5576923076923066,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            1.8233846160918055e-17,
+            0.14656153846153844
+          ],
+          [
+            -0.14656153846153844,
+            -1.8233846160918055e-17
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            0.0,
+            3.5576923076923066
+          ],
+          [
+            3.5576923076923066,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            1.8233846160918055e-17,
+            0.14656153846153844
+          ],
+          [
+            -0.14656153846153844,
+            -1.8233846160918055e-17
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": 0.0,
+      "raw_traceless_difference_meV": 1.7783073324607987e-15,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 8.899114524108741e-16,
+        "traceless_agrees_after_phase_conversion": 1.7783073324607987e-15,
+        "printed_scalar_plus_projected_cf_scalar_zero": 0.0,
+        "trace_witness_matches_retained_value": 0.0,
+        "valley_exchange_and_column_swap": 8.881784197001252e-16
+      }
+    },
+    {
+      "id": "retained_gamma",
+      "K_dimensionless": [
+        0.0,
+        0.0
+      ],
+      "physical_k_A_inverse": [
+        0.0,
+        0.0
+      ],
+      "overrides": {},
+      "printed_eq73": {
+        "real": [
+          [
+            0.0,
+            3.7000000000000006
+          ],
+          [
+            3.7000000000000006,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            0.0,
+            3.6999999999999984
+          ],
+          [
+            3.6999999999999984,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            0.0,
+            3.6999999999999984
+          ],
+          [
+            3.6999999999999984,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": 0.0,
+      "raw_traceless_difference_meV": 2.220446049250313e-15,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 4.440892098500626e-16,
+        "traceless_agrees_after_phase_conversion": 2.220446049250313e-15,
+        "printed_scalar_plus_projected_cf_scalar_zero": 0.0,
+        "trace_witness_matches_retained_value": 0.0,
+        "valley_exchange_and_column_swap": 4.440892098500626e-16
+      }
+    },
+    {
+      "id": "retained_zero_cpp",
+      "K_dimensionless": [
+        0.23,
+        -0.17
+      ],
+      "physical_k_A_inverse": [
+        0.001326511627906977,
+        -0.0009804651162790697
+      ],
+      "overrides": {
+        "cpp": 0.0
+      },
+      "printed_eq73": {
+        "real": [
+          [
+            0.0,
+            3.1447689776298766
+          ],
+          [
+            3.1447689776298766,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0845391014975042
+          ],
+          [
+            -0.0845391014975042,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            -0.0,
+            -0.9652333888172934
+          ],
+          [
+            -0.9652333888172937,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            -2.9941682129528955
+          ],
+          [
+            2.994168212952896,
+            0.0
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            0.0,
+            3.144768977629875
+          ],
+          [
+            3.1447689776298753,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.08453910149750414
+          ],
+          [
+            -0.08453910149750388,
+            0.0
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": 0.0,
+      "raw_traceless_difference_meV": 5.135227179030324,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 4.449557262054371e-16,
+        "traceless_agrees_after_phase_conversion": 1.7772239894833365e-15,
+        "printed_scalar_plus_projected_cf_scalar_zero": 0.0,
+        "trace_witness_matches_retained_value": 0.0,
+        "valley_exchange_and_column_swap": 8.891536662303994e-16
+      }
+    },
+    {
+      "id": "retained_zero_strain",
+      "K_dimensionless": [
+        0.23,
+        -0.17
+      ],
+      "physical_k_A_inverse": [
+        0.001326511627906977,
+        -0.0009804651162790697
+      ],
+      "overrides": {
+        "strain": 0.0
+      },
+      "printed_eq73": {
+        "real": [
+          [
+            0.0,
+            3.420225550009244
+          ],
+          [
+            3.420225550009244,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            0.0,
+            -1.1364997060926998
+          ],
+          [
+            -1.1364997060927,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            -3.2258814657372685
+          ],
+          [
+            3.225881465737269,
+            0.0
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            0.0,
+            3.420225550009242
+          ],
+          [
+            3.4202255500092424,
+            0.0
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            -2.899470246219534e-16
+          ],
+          [
+            2.0762894548123313e-16,
+            0.0
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": 0.0,
+      "raw_traceless_difference_meV": 5.583014982120732,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 4.440892098500626e-16,
+        "traceless_agrees_after_phase_conversion": 2.239296750035253e-15,
+        "printed_scalar_plus_projected_cf_scalar_zero": 0.0,
+        "trace_witness_matches_retained_value": 0.0,
+        "valley_exchange_and_column_swap": 4.440892098500626e-16
+      }
+    },
+    {
+      "id": "artificial_positive_gamma",
+      "K_dimensionless": [
+        0.23,
+        -0.17
+      ],
+      "physical_k_A_inverse": [
+        -0.001326511627906977,
+        0.0009804651162790697
+      ],
+      "overrides": {
+        "gamma": 24.8
+      },
+      "printed_eq73": {
+        "real": [
+          [
+            -0.9192823072656681,
+            3.1447689776298766
+          ],
+          [
+            3.1447689776298766,
+            -0.9192823072656681
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0845391014975042
+          ],
+          [
+            -0.0845391014975042,
+            0.0
+          ]
+        ]
+      },
+      "raw_projection_using_printed_columns": {
+        "real": [
+          [
+            0.9192823072656683,
+            0.9652333888172957
+          ],
+          [
+            0.9652333888172958,
+            0.9192823072656682
+          ]
+        ],
+        "imag": [
+          [
+            -3.4715901316809713e-17,
+            2.9941682129528946
+          ],
+          [
+            -2.9941682129528946,
+            -9.742171962140632e-17
+          ]
+        ]
+      },
+      "projection_after_explicit_phase_conversion": {
+        "real": [
+          [
+            0.9192823072656683,
+            3.1447689776298744
+          ],
+          [
+            3.1447689776298744,
+            0.9192823072656682
+          ]
+        ],
+        "imag": [
+          [
+            -3.4715901316809713e-17,
+            0.08453910149750414
+          ],
+          [
+            -0.08453910149750393,
+            -1.3599712917913443e-16
+          ]
+        ]
+      },
+      "trace_printed_minus_raw_meV": -3.6771292290626727,
+      "raw_traceless_difference_meV": 3.6354252776159885,
+      "residuals_meV": {
+        "printed_matrix_hermitian": 0.0,
+        "printed_equals_existing_literal": 4.449557262054371e-16,
+        "traceless_agrees_after_phase_conversion": 2.2360471212887493e-15,
+        "printed_scalar_plus_projected_cf_scalar_zero": 1.1102230246251565e-16,
+        "trace_witness_matches_retained_value": 4.440892098500626e-16,
+        "valley_exchange_and_column_swap": 8.891536662303994e-16
+      }
+    }
+  ],
+  "controls": {
+    "unmodified_trace_gate_accepts": true,
+    "printed_diagonal_flip_rejected": true,
+    "upper_block_adjoint_rejected": true,
+    "printed_diagonal_flip_eliminates_difference": true,
+    "upper_block_adjoint_eliminates_difference": true
+  },
+  "control_trace_differences_meV": {
+    "printed_diagonal_flipped": 4.440892098500626e-16,
+    "upper_block_replaced_by_adjoint": -4.440892098500626e-16
+  },
+  "limitations": [
+    "The printed formula has a separate code path, but the same author transcribed it.",
+    "Projection helpers are shared with the earlier audit.",
+    "Supplied source excerpts do not prove independent retrieval or author intent.",
+    "Raw column phases differ; phase conversion is explicit, not attributed to the paper.",
+    "Later journal equations remain unchecked; no production convention selected.",
+    "Fixed matrix diagnostics only; no new topology or experimental result."
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "projector",
+      "passed": true
+    },
+    {
+      "name": "bridge",
+      "passed": true
+    },
+    {
+      "name": "exact_reference_contained",
+      "passed": true
+    },
+    {
+      "name": "partial_shift_seam",
+      "passed": true
+    },
+    {
+      "name": "rank_loss_refused",
+      "passed": true
+    },
+    {
+      "name": "frame_budget_refused",
+      "passed": true
+    }
+  ],
+  "projector": {
+    "nodes": 32,
+    "quadrature_identity": "roots_of_unity_trapezoid",
+    "inner_ratio_bound": {
+      "lower": {
+        "mantissa": "0",
+        "exponent": 0
+      },
+      "upper": {
+        "mantissa": "0",
+        "exponent": 0
+      }
+    },
+    "outer_ratio_bound": {
+      "lower": {
+        "mantissa": "1",
+        "exponent": 1
+      },
+      "upper": {
+        "mantissa": "1",
+        "exponent": 1
+      }
+    },
+    "analytic_operator_error_bound": {
+      "lower": {
+        "mantissa": "170141183500083312998042844551658340351",
+        "exponent": -159
+      },
+      "upper": {
+        "mantissa": "170141183500083312998042844551658340353",
+        "exponent": -159
+      }
+    },
+    "interval_rounding_F_bound": {
+      "lower": {
+        "mantissa": "1",
+        "exponent": -159
+      },
+      "upper": {
+        "mantissa": "1",
+        "exponent": -159
+      }
+    },
+    "total_projector_operator_error_bound": {
+      "lower": {
+        "mantissa": "79228162532711081671548469249",
+        "exponent": -128
+      },
+      "upper": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      }
+    },
+    "symmetry_defect_F_bound": {
+      "lower": {
+        "mantissa": "0",
+        "exponent": 0
+      },
+      "upper": {
+        "mantissa": "0",
+        "exponent": 0
+      }
+    },
+    "target_error": "1/64",
+    "status": "CERTIFIED",
+    "reason": "RIESZ_PROJECTOR_ENCLOSURE"
+  },
+  "bridge": {
+    "residual_F_bound": {
+      "lower": {
+        "mantissa": "170141183499928570493096283957756985215",
+        "exponent": -146
+      },
+      "upper": {
+        "mantissa": "170141183499928570493096283957756985219",
+        "exponent": -146
+      }
+    },
+    "projector_error": {
+      "lower": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      },
+      "upper": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      }
+    },
+    "off_plane_operator_bound": {
+      "lower": {
+        "mantissa": "42540488171841886376722497589919948769",
+        "exponent": -144
+      },
+      "upper": {
+        "mantissa": "42540488171841886376722497589919948769",
+        "exponent": -144
+      }
+    },
+    "frame_operator_error_bound": {
+      "lower": {
+        "mantissa": "170162114986260949257798491678212751357",
+        "exponent": -146
+      },
+      "upper": {
+        "mantissa": "170162114986260949257798491678214586371",
+        "exponent": -146
+      }
+    },
+    "status": "CERTIFIED",
+    "reason": "CONDITIONAL_PROJECTOR_FRAME_ENCLOSURE"
+  },
+  "seam": {
+    "overlap_built_internally": true,
+    "singular_square_defect_F": {
+      "lower": {
+        "mantissa": "170163132830626764531775449642876455409",
+        "exponent": -143
+      },
+      "upper": {
+        "mantissa": "170163132830626764531775449642876455411",
+        "exponent": -143
+      }
+    },
+    "singular_gate_threshold": {
+      "lower": {
+        "mantissa": "132710123099166000750716096898389602467",
+        "exponent": -130
+      },
+      "upper": {
+        "mantissa": "33177530774791500187679024224597400617",
+        "exponent": -128
+      }
+    },
+    "left_Gram_defect_F": {
+      "lower": {
+        "mantissa": "85081383101164433636514102555142230343",
+        "exponent": -143
+      },
+      "upper": {
+        "mantissa": "10635172887645554204564262819392778793",
+        "exponent": -140
+      }
+    },
+    "right_Gram_defect_F": {
+      "lower": {
+        "mantissa": "85081383101164433636514102555142230343",
+        "exponent": -143
+      },
+      "upper": {
+        "mantissa": "10635172887645554204564262819392778793",
+        "exponent": -140
+      }
+    },
+    "seam_map_error_F_bound": {
+      "lower": {
+        "mantissa": "110572194491544483603140280179531092617",
+        "exponent": -142
+      },
+      "upper": {
+        "mantissa": "55286097245772241801570140089765546309",
+        "exponent": -141
+      }
+    },
+    "status": "CERTIFIED",
+    "reason": "PARTIAL_SHIFT_SEAM_ENCLOSURE"
+  },
+  "rank_loss": {
+    "residual_F_bound": {
+      "lower": {
+        "mantissa": "170141183500083312998042844551658340351",
+        "exponent": -127
+      },
+      "upper": {
+        "mantissa": "170141183500083312998042844551658340355",
+        "exponent": -127
+      }
+    },
+    "projector_error": {
+      "lower": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      },
+      "upper": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      }
+    },
+    "off_plane_operator_bound": {
+      "lower": {
+        "mantissa": "42535295884924348566099596346858143745",
+        "exponent": -125
+      },
+      "upper": {
+        "mantissa": "42535295884924348566099596346858143745",
+        "exponent": -125
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "reason": "FRAME_PROJECTION_NOT_INJECTIVE"
+  },
+  "budget": {
+    "residual_F_bound": {
+      "lower": {
+        "mantissa": "170141183499928570493096283957756985215",
+        "exponent": -146
+      },
+      "upper": {
+        "mantissa": "170141183499928570493096283957756985219",
+        "exponent": -146
+      }
+    },
+    "projector_error": {
+      "lower": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      },
+      "upper": {
+        "mantissa": "85070591750041656499021422275829170177",
+        "exponent": -158
+      }
+    },
+    "off_plane_operator_bound": {
+      "lower": {
+        "mantissa": "42540488171841886376722497589919948769",
+        "exponent": -144
+      },
+      "upper": {
+        "mantissa": "42540488171841886376722497589919948769",
+        "exponent": -144
+      }
+    },
+    "frame_operator_error_bound": {
+      "lower": {
+        "mantissa": "170162114986260949257798491678212751357",
+        "exponent": -146
+      },
+      "upper": {
+        "mantissa": "170162114986260949257798491678214586371",
+        "exponent": -146
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "reason": "FRAME_ERROR_BUDGET"
+  },
+  "physical_evaluations": 0,
+  "spec": {
+    "id": "FC49-77-S0F-001",
+    "scope": "Fixed 3x3 synthetic projector-frame-seam bridge only",
+    "parent": "9c7993b693023c0746d3e5b134678797de44d5da",
+    "precision": 128,
+    "threads": 1,
+    "wall_seconds": 30,
+    "address_bytes": 1073741824,
+    "physical_evaluations": 0,
+    "expected_checks": 6,
+    "independent_review": "PENDING",
+    "upstream_S0e_review": "REVIEWED_5805023465",
+    "source_partner_comment": 5805000902,
+    "scope_limit": "Conditional frame-to-seam bridge; no final q composer"
+  },
+  "precision": 128,
+  "source_sha256": {
+    "SPEC.json": "db42fd1d4949bdc731e9f4d9b16b624a755002ec978260a236b656b1f509f53e",
+    "check.py": "3c5ee49b74d6646cea8e283f3f6319dd46410159ceae1db54f419df10d017783",
+    "frame_bridge.py": "fd1ed97b9ea976f344e247757e89da0e7f845c229475b1f41b26f52898a772de",
+    "primitives_s0f.py": "1e0029ab1cfc0ddfefcd0fc58ae3e746f7134b596d12ff197cf9bcae3483bf30",
+    "pair_s0f.py": "7b4667262188648513b2c2b5e47ddbb24cf068d36273f4d26f925776037219fe",
+    "certified_s0f.py": "8e38781d6d3885a43022a772d908b1f4348406d37f9c14de80ff83f0f377e255"
+  }
+}

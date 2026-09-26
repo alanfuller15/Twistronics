@@ -1,0 +1,142 @@
+{
+  "dimension": 308,
+  "exact_spectrum": {
+    "0": 2,
+    "2": 306
+  },
+  "frame": {
+    "frame_operator_error_bound": {
+      "lower": {
+        "exponent": -261,
+        "mantissa": "74840523328330225972691991429643466337462564056692764234872790385804887600271"
+      },
+      "upper": {
+        "exponent": -261,
+        "mantissa": "74840523328330225972691991429643466337462564056692764234872790385804887600497"
+      }
+    },
+    "off_plane_operator_bound": {
+      "lower": {
+        "exponent": -261,
+        "mantissa": "74099528039137382582863596407476408042760198973403513738907384918396366968227"
+      },
+      "upper": {
+        "exponent": -261,
+        "mantissa": "74099528039137382582863596407476408042760198973403513738907384918396366968227"
+      }
+    },
+    "projector_error": {
+      "lower": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613356169280615625043967637"
+      },
+      "upper": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613356169280615625043967637"
+      }
+    },
+    "reason": "CONDITIONAL_PROJECTOR_FRAME_ENCLOSURE",
+    "residual_F_bound": {
+      "lower": {
+        "exponent": -261,
+        "mantissa": "74099527176419089033175867398990088409908826747846320223537889822051409979275"
+      },
+      "upper": {
+        "exponent": -261,
+        "mantissa": "74099527176419089033175867398990088409908826747846320223537889822051409979757"
+      }
+    },
+    "status": "CERTIFIED"
+  },
+  "job": {
+    "dimension": 308,
+    "expected_reason": "FULL_DIMENSION_POINT_BRIDGE",
+    "expected_status": "CERTIFIED",
+    "frame_budget": "1/16",
+    "id": "full_308",
+    "nodes": 32,
+    "precision": 256
+  },
+  "physical_evaluations": 0,
+  "point": [
+    "1/2",
+    "1/2"
+  ],
+  "premises": "P=KK^T; U rational orthogonal; E=(u*K1+w*normal,K2), u^2+w^2=1; normalized PE=K",
+  "reason": "FULL_DIMENSION_POINT_BRIDGE",
+  "resources": {
+    "peak_rss_kib": 155724,
+    "system_cpu_seconds": 0.44503099999999995,
+    "user_cpu_seconds": 2.990951,
+    "wall_seconds": 3.330363571000362
+  },
+  "riesz": {
+    "analytic_operator_error_bound": {
+      "lower": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613168406440321120011812863"
+      },
+      "upper": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613168406440321120011812865"
+      }
+    },
+    "inner_ratio_bound": {
+      "lower": {
+        "exponent": 0,
+        "mantissa": "0"
+      },
+      "upper": {
+        "exponent": 0,
+        "mantissa": "0"
+      }
+    },
+    "interval_rounding_F_bound": {
+      "lower": {
+        "exponent": -464,
+        "mantissa": "35968214436455374963684072527374570107790637673312774419371642830949413847555"
+      },
+      "upper": {
+        "exponent": -462,
+        "mantissa": "8992053609113843740921018131843642526947659418328193604842910707737353461889"
+      }
+    },
+    "nodes": 32,
+    "outer_ratio_bound": {
+      "lower": {
+        "exponent": 1,
+        "mantissa": "1"
+      },
+      "upper": {
+        "exponent": 1,
+        "mantissa": "1"
+      }
+    },
+    "quadrature_identity": "roots_of_unity_trapezoid",
+    "reason": "RIESZ_PROJECTOR_ENCLOSURE",
+    "status": "CERTIFIED",
+    "symmetry_defect_F_bound": {
+      "lower": {
+        "exponent": -485,
+        "mantissa": "38176696458150796952613511310701723943786550354098175776464979985855420692735"
+      },
+      "upper": {
+        "exponent": -477,
+        "mantissa": "149127720539651550596146528557428609155416212320695999126816328069747737081"
+      }
+    },
+    "target_error": "1/1024",
+    "total_projector_operator_error_bound": {
+      "lower": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613356169280615625043967631"
+      },
+      "upper": {
+        "exponent": -287,
+        "mantissa": "57896044632138071048499363270101552670898295023844613356169280615625043967637"
+      }
+    }
+  },
+  "scope": "Dense fixed-point calibration, not uniform rectangle Riesz or a physical workload",
+  "status": "CERTIFIED"
+}

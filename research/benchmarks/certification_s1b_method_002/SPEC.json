@@ -1,0 +1,30 @@
+{
+  "schema": "twistronics_s1b_cell_intrinsic_probe_spec_v1",
+  "spec_id": "FC49-77-S1B-METHOD-002",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "parent_reviewed_commit": "cd22aa6950eb77a5220d84695abf10c60b68258b",
+  "parent_packet": "research/benchmarks/certification_s1b_001",
+  "precision_bits": 128,
+  "cutoff_order": ["a", "b"],
+  "probe_cells": [
+    [0, 0, 0],
+    [1, 0, 0], [1, 0, 1], [1, 1, 0], [1, 1, 1],
+    [2, 1, 1], [3, 3, 3], [4, 7, 7], [5, 15, 15]
+  ],
+  "limits": {
+    "physical_cases": 1,
+    "parameter_sweeps": 0,
+    "cells_total": 18,
+    "factorizations_total": 72,
+    "worker_processes": 1,
+    "wall_seconds": 180,
+    "address_bytes": 2147483648
+  },
+  "method": {
+    "name": "fixed-congruence direct affine-cell interval inertia",
+    "parameter_box": "exact dyadic cell endpoints are converted directly to Arb intervals; no float endpoint or row-sum upper bound is used",
+    "congruence": "midpoint eigensolver proposes a fixed decimal matrix; strict interval diagonal dominance of V^T V certifies nonsingularity",
+    "acceptance": "all four fixed window-endpoint LDL factorizations certify and have the required negative counts"
+  },
+  "claim_ceiling": "S1B_METHOD_FEASIBILITY_ONLY_NO_UNIFORM_ISOLATION_PROJECTOR_TRANSPORT_SEAM_OR_TOPOLOGY"
+}

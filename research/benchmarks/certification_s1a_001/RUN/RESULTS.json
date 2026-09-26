@@ -1,0 +1,111 @@
+{
+  "schema": "twistronics_s1a_affine_assembly_v1",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "reviewed_commit": "f822345a50a823885c731e3e6984beae26c9b803",
+  "status": "PASS_PHYSICAL_AFFINE_ASSEMBLY_BRIDGE",
+  "claim_ceiling": "PHYSICAL_AFFINE_ASSEMBLY_ONLY_NO_UNIFORM_ISOLATION_OR_TOPOLOGY",
+  "checks": {
+    "archive_sha256_matches": true,
+    "dimensions_match": true,
+    "geometry_denominators_exclude_zero": true,
+    "nested_affine_coefficients_overlap": true,
+    "assembly_radius_target_met": true,
+    "three_point_float_bridge_under_1e-9_meV": true,
+    "archived_real_basis_residual_under_1e-9_meV": true
+  },
+  "cutoffs": {
+    "a": {
+      "dimension": 196,
+      "coefficient_ball_sha256": "d4185b8c195693612711bdd0d96e6e1345ae7af6c229405125f12c39d040f15b",
+      "coefficient_frobenius_radius_upper_meV": {
+        "H0": 1.2347068086746926e-31,
+        "Hx": 2.8713935084044474e-32,
+        "Hy": 3.364715387912197e-32
+      },
+      "whole_domain_arithmetic_radius_upper_meV": 1.858317698306357e-31,
+      "diagnostic_bridge": [
+        {
+          "point": [
+            0,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 9.833911462919787e-12,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24845038316745,
+          "diagnostic_upper_external_gap_meV": 52.38679525747733
+        },
+        {
+          "point": [
+            1,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 1.0686562745831907e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24859215622894,
+          "diagnostic_upper_external_gap_meV": 52.38690236164506
+        },
+        {
+          "point": [
+            0,
+            1
+          ],
+          "max_abs_midpoint_difference_meV": 1.0516032489249483e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24513816170624,
+          "diagnostic_upper_external_gap_meV": 52.3894586823443
+        }
+      ]
+    },
+    "b": {
+      "dimension": 308,
+      "coefficient_ball_sha256": "8098a3429ed9604a72f2099cd014b8bae0166f0ed42c92aaafde27185bfaa788",
+      "coefficient_frobenius_radius_upper_meV": {
+        "H0": 1.931229603181537e-31,
+        "Hx": 3.599482254062564e-32,
+        "Hy": 4.217893957519971e-32
+      },
+      "whole_domain_arithmetic_radius_upper_meV": 2.7129672243397904e-31,
+      "diagnostic_bridge": [
+        {
+          "point": [
+            0,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 1.1795009413617663e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24770149693346,
+          "diagnostic_upper_external_gap_meV": 52.38653714818324
+        },
+        {
+          "point": [
+            1,
+            0
+          ],
+          "max_abs_midpoint_difference_meV": 1.2732925824820995e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24770162368716,
+          "diagnostic_upper_external_gap_meV": 52.38653749173022
+        },
+        {
+          "point": [
+            0,
+            1
+          ],
+          "max_abs_midpoint_difference_meV": 1.2562395568238571e-11,
+          "archived_imaginary_residual_meV": 0.0,
+          "diagnostic_lower_external_gap_meV": 81.24767522730127,
+          "diagnostic_upper_external_gap_meV": 52.38654907465246
+        }
+      ]
+    }
+  },
+  "nested_identity": {
+    "nonoverlap_count": 0,
+    "worst_difference_abs_upper_meV": 2.715621213123868e-32
+  },
+  "limits": [
+    "No interval inertia or uniform external-gap certificate was attempted.",
+    "Three floating eigensolver evaluations per cutoff are diagnostics only.",
+    "No projector, transport, seam, integer, relative-class, cutoff-convergence, or experimental claim."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "twistronics_s0c_spec_v1",
+  "id": "FC49-77-S0C-001",
+  "date": "2026-09-23",
+  "scope": "Reviewed corner-budget and spectral outcome corrections only; fixed synthetic cases",
+  "source_review": 5293785199,
+  "previous_evidence_sha": "c11ca5eeaa414553792249176546c4a0169346c7",
+  "frozen_before_execution": true,
+  "backend": {"python_flint": "0.9.0", "flint": "3.6.0", "threads": 1, "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"},
+  "limits": {"global_wall_seconds": 300, "job_wall_seconds": 90, "worker_address_bytes": 2147483648, "workers": 1, "retries": 0},
+  "ledger": {"frame_error": "1/16", "seam_map_error": "1/128", "repair_angle_error": "3/16", "additional_phase_error": "1/64", "q_halfwidth": "1/8"},
+  "windows": [["-5/4", "-3/4"], ["3/4", "5/4"]],
+  "jobs": [
+    {"id": "corner_rebalanced", "kind": "ledger", "precision": 128, "repair": "3/16", "expected_status": "CERTIFIED", "expected_reason": "CONDITIONAL_ERROR_BUDGET"},
+    {"id": "corner_old_cap", "kind": "ledger", "precision": 128, "repair": "1/32", "expected_status": "INCONCLUSIVE", "expected_reason": "CORNER_ALLOWANCE_NOT_JUSTIFIED"},
+    {"id": "corner_overspent", "kind": "ledger", "precision": 128, "repair": "1/4", "expected_status": "INCONCLUSIVE", "expected_reason": "Q_BUDGET_NOT_CERTIFIED"},
+    {"id": "inverse_uncertain_center", "kind": "inverse", "precision": 128, "mode": "center", "expected_status": "INCONCLUSIVE", "expected_reason": "COMPLEMENT_INVERSE_NOT_CERTIFIED"},
+    {"id": "inverse_wide_cell", "kind": "inverse", "precision": 128, "mode": "cell", "expected_status": "INCONCLUSIVE", "expected_reason": "COMPLEMENT_RESIDUAL_NOT_CERTIFIED"},
+    {"id": "uncertain_gram", "kind": "gram", "precision": 128, "expected_status": "INCONCLUSIVE", "expected_reason": "BASIS_NOT_CERTIFIED"},
+    {"id": "declared_pair_196", "kind": "cell", "dimension": 196, "precision": 128, "pair": [97, 98], "width": "1/8", "expected_status": "CERTIFIED", "expected_reason": "DECLARED_PAIR_WINDOWS"},
+    {"id": "declared_pair_308", "kind": "cell", "dimension": 308, "precision": 128, "pair": [153, 154], "width": "1/8", "expected_status": "CERTIFIED", "expected_reason": "DECLARED_PAIR_WINDOWS"},
+    {"id": "small_wrong_pair", "kind": "small_cell", "precision": 128, "pair": [1, 2], "expected_status": "INCONCLUSIVE", "expected_reason": "DECLARED_INDEX_NOT_CERTIFIED"},
+    {"id": "small_correct_pair", "kind": "small_cell", "precision": 128, "pair": [2, 3], "expected_status": "CERTIFIED", "expected_reason": "DECLARED_PAIR_WINDOWS"},
+    {"id": "genuine_dimension_fault", "kind": "dimension_fault", "precision": 128, "expected_status": "EXECUTION_ERROR", "expected_reason": "WORKER_EXCEPTION", "expected_error_type": "ValueError"}
+  ],
+  "interpretation": "Raw CERTIFIED, INCONCLUSIVE and EXECUTION_ERROR outcomes remain intact. The independent behavior harness matches status and reason; expected inconclusive/error controls are not certificates. Stop on any unexpected outcome, retain records, and do not retry or adapt cases.",
+  "physical_evaluations": 0
+}

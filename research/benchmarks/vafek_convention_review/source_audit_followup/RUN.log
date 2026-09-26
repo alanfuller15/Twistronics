@@ -1,0 +1,18 @@
+OPENBLAS_NUM_THREADS=1 python -B research/benchmarks/vafek_convention_review/source_audit_followup/reproduce.py --output research/benchmarks/vafek_convention_review/source_audit_followup/RESULTS.json
+{
+  "status": "DIRECT_TRANSCRIPTION_CHECKED_CONVENTION_UNRESOLVED",
+  "predicates": 47,
+  "failed": [],
+  "max_residual_meV": 2.239296750035253e-15,
+  "witness_trace_difference_meV": -3.677129229062672,
+  "witness_raw_traceless_difference_meV": 5.135227179030324,
+  "controls": {
+    "unmodified_trace_gate_accepts": true,
+    "printed_diagonal_flip_rejected": true,
+    "upper_block_adjoint_rejected": true,
+    "printed_diagonal_flip_eliminates_difference": true,
+    "upper_block_adjoint_eliminates_difference": true
+  }
+}
+
+exit_code: 0

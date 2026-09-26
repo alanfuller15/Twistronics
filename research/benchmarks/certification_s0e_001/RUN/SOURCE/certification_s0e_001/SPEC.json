@@ -1,0 +1,129 @@
+{
+  "schema": "twistronics_s0e_spec_v1",
+  "id": "FC49-77-S0E-001",
+  "date": "2026-09-23",
+  "scope": "Fixed synthetic S0e correction controls only; no physical execution",
+  "source_review": 5804864384,
+  "previous_evidence_sha": "2260ed4958785f49842d9cf70e885811d46f5721",
+  "frozen_before_execution": true,
+  "backend": {
+    "python_flint": "0.9.0",
+    "flint": "3.6.0",
+    "threads": 1,
+    "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+  },
+  "limits": {
+    "global_wall_seconds": 180,
+    "job_wall_seconds": 30,
+    "worker_address_bytes": 1073741824,
+    "workers": 1,
+    "retries": 0
+  },
+  "ledger": {
+    "frame_error": "1/16",
+    "seam_map_error": "1/128",
+    "repair_angle_error": "3/16",
+    "additional_phase_error": "1/64",
+    "q_halfwidth": "1/8"
+  },
+  "windows": [
+    [
+      "-5/4",
+      "-3/4"
+    ],
+    [
+      "3/4",
+      "5/4"
+    ]
+  ],
+  "jobs": [
+    {
+      "id": "phase_closed",
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "CONTINUOUS_PHASE_LIFT"
+    },
+    {
+      "id": "phase_open",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "INTEGER_OUTSIDE_ENCLOSURE"
+    },
+    {
+      "id": "phase_wide",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "INTEGER_HALFWIDTH_EXCEEDED"
+    },
+    {
+      "id": "phase_unbound",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "UPSTREAM_PATH_CERTIFICATE_REQUIRED"
+    },
+    {
+      "id": "seam_identity",
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "PARTIAL_SHIFT_SEAM_ENCLOSURE"
+    },
+    {
+      "id": "seam_deletion_pass",
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "PARTIAL_SHIFT_SEAM_ENCLOSURE"
+    },
+    {
+      "id": "seam_deletion_fail",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "SEAM_SINGULAR_GATE_NOT_CERTIFIED"
+    },
+    {
+      "id": "polar_negative",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "POLAR_ORIENTATION_NOT_CERTIFIED"
+    },
+    {
+      "id": "growth_bound",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "NONFINITE_ENCLOSURE"
+    },
+    {
+      "id": "growth_ldl",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "NONFINITE_ENCLOSURE"
+    },
+    {
+      "id": "composition_good",
+      "precision": 128,
+      "expected_status": "CERTIFIED",
+      "expected_reason": "SYNTHETIC_REASON_GATE_ONLY"
+    },
+    {
+      "id": "composition_budget",
+      "precision": 128,
+      "expected_status": "INCONCLUSIVE",
+      "expected_reason": "COMPOSITION_REASON_REFUSED"
+    },
+    {
+      "id": "shape_error",
+      "precision": 128,
+      "expected_status": "EXECUTION_ERROR",
+      "expected_reason": "WORKER_EXCEPTION",
+      "expected_error_type": "ValueError"
+    },
+    {
+      "id": "unrelated_error",
+      "precision": 128,
+      "expected_status": "EXECUTION_ERROR",
+      "expected_reason": "WORKER_EXCEPTION",
+      "expected_error_type": "ArithmeticError"
+    }
+  ],
+  "interpretation": "CERTIFIED applies only to the named synthetic implication. Expected INCONCLUSIVE and EXECUTION_ERROR controls remain raw outcomes and are not certificates. The harness stops on the first unexpected status/reason and does not retry or adapt a fixture.",
+  "physical_evaluations": 0
+}

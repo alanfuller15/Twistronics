@@ -1,0 +1,112 @@
+{
+  "schema": "twistronics_bounded_certification_plan_v1",
+  "plan_id": "FC49-77-PLAN-001",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "date": "2026-09-23",
+  "status": "DESIGN_REVIEW_PENDING",
+  "implementation_status": "NOT_IMPLEMENTED",
+  "execution_status": "NOT_RUN",
+  "backend": {
+    "python": "CPython 3.12.14",
+    "package": "python-flint",
+    "version": "0.9.0",
+    "native_flint_version": null,
+    "artifact_sha256": null,
+    "lock_status": "UNRESOLVED_S0_GATE",
+    "precision_bits": [
+      128,
+      256,
+      512
+    ],
+    "decimal_inputs": "exact rational strings",
+    "bound_export": "exact dyadic/rational lower and upper endpoints"
+  },
+  "global_limits": {
+    "wall_seconds": 2220,
+    "resident_bytes": 2147483648,
+    "worker_processes": 1,
+    "cases": 1,
+    "parameter_sweeps": 0,
+    "restarts_without_new_review": 0
+  },
+  "stages": [
+    {
+      "id": "S0",
+      "name": "Backend lock and synthetic primitive validation",
+      "wall_seconds": 120,
+      "physical_model_evaluation": false,
+      "max_synthetic_matrices": 12,
+      "max_dimension": 8,
+      "max_ode_examples": 4,
+      "next_gate": "Review primitive implementation and retained results before S1"
+    },
+    {
+      "id": "S1",
+      "name": "Exact affine assembly and uniform isolation",
+      "wall_seconds": 600,
+      "physical_model_evaluation": true,
+      "max_diagnostic_bridge_points": 3,
+      "max_attempted_cells_per_cutoff": 512,
+      "max_quadtree_depth": 8,
+      "max_inertia_factorizations_total": 8192,
+      "max_bisection_rounds_per_index": 64,
+      "max_shift_candidates_per_round": 3
+    },
+    {
+      "id": "S2",
+      "name": "Projector enclosures and basepoint identification",
+      "wall_seconds": 600,
+      "physical_model_evaluation": true,
+      "max_contour_segments_per_query": 2048,
+      "max_projector_queries_total": 1024
+    },
+    {
+      "id": "S3",
+      "name": "Parametric Kato frames and overlap bounds",
+      "wall_seconds": 600,
+      "physical_model_evaluation": true,
+      "max_x_strips_per_cutoff": 512,
+      "max_transport_attempts_per_cutoff": 8192,
+      "min_transport_step": "1/65536",
+      "max_picard_inflations_per_step": 8,
+      "contraction_norm_upper": "1/4"
+    },
+    {
+      "id": "S4",
+      "name": "Seams, exact repair, lifts and relative certificate",
+      "wall_seconds": 300,
+      "physical_model_evaluation": true,
+      "max_edge_intervals_per_cutoff": 4096,
+      "max_edge_bisection_depth": 12
+    }
+  ],
+  "ordering": "S0 then code review; S1 then S2 then S3 then S4. Shared query limits apply across stages, even when a primitive is called later. Per-stage and cumulative limits both apply.",
+  "subdivision_order": "Breadth-first dyadic cells/strips; fixed coordinate order x then y and low coordinate first. No data-dependent threshold, model or pivot change.",
+  "spectral_method": "Certified unpivoted interval LDL^T inertia; rational shift candidates midpoint, 3/8 and 5/8; all three precisions before inconclusive subdivision. Four selected-neighbor indices only. Weyl extension to closed cells.",
+  "projector_method": "Riesz contour with residual-certified inverses and rigorous derivative-based quadrature remainder",
+  "frame_method": "Whole-parameter interval Picard enclosures for exact Kato transport, including bottom path and vertical x strips",
+  "rank_two_polar": "Positive square-root formula for 2x2 SPD Gram matrix; no signed-SVD convention",
+  "phase_method": "Certified atan2 arcs and continuous lifts for alpha and repaired beta; q=(Delta beta-Delta alpha)/(2*pi)",
+  "termination": "First exhausted hard cap yields INCONCLUSIVE/BUDGET; preserve certified subresults. Proven violated hypotheses refuse the affected branch. Undefined exact geometry refuses. Backend or proof-logic defects are EXECUTION_ERROR.",
+  "retention": [
+    "case and plan hashes",
+    "source and environment artifact hashes",
+    "exact affine coefficient enclosures",
+    "accepted and unresolved domain partition",
+    "inertia shifts and signed pivots",
+    "projector contours and remainder bounds",
+    "fixed base frames and parametric transport tubes",
+    "loss and leakage bounds",
+    "seam orientations and exact-delta enclosures",
+    "both lift chains and integer intervals",
+    "individual and relative statuses",
+    "append-only resource/error log"
+  ],
+  "current_results": {
+    "stage": "NONE",
+    "physical_assemblies": 0,
+    "inertia_factorizations": 0,
+    "projector_queries": 0,
+    "transport_steps": 0
+  }
+}

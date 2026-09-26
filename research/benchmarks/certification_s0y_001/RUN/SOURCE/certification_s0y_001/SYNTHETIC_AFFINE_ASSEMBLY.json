@@ -1,0 +1,26 @@
+{
+  "schema": "synthetic_affine_self_adjoint_assembly_v1",
+  "evidence_id": "FC49-77-S0Y-AFFINE-001",
+  "evidence_scope": "synthetic_shape_fixture",
+  "physical_model_evaluations": 0,
+  "parameter_domain": {
+    "x": ["0", "1/8"],
+    "y": ["0", "1/8"]
+  },
+  "matrix_formula": "diag(-3-x,-1/3+x,1/3-y,3+y)",
+  "coefficient_semantics": "exact rational diagonal affine family",
+  "self_adjoint_proof": "all exact coefficient matrices are real diagonal",
+  "selected_zero_based_indices": [1, 2],
+  "derivative_contract": {
+    "contract_id": "synthetic_affine_path_derivatives_v1",
+    "norm": "operator",
+    "H1": "1",
+    "H2": "0",
+    "H3": "0"
+  },
+  "limitations": [
+    "not a graphene Hamiltonian",
+    "not physical S1 evidence",
+    "not an executed spectral-isolation run"
+  ]
+}

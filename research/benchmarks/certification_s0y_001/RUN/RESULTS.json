@@ -1,0 +1,189 @@
+{
+  "assembly_sha256": "ef53d2e2e992a265f868db77e985f04e0f1654c03f9ede8f6eb27cae060988ed",
+  "contract": {
+    "coverage": {
+      "cell_count": 4,
+      "exact_cover": true,
+      "required_parameter_domain": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "eligible_for_physical_transport": false,
+    "global_window": {
+      "cluster_lower": "-1/3",
+      "cluster_upper": "1/3",
+      "nearest_lower_complement_upper": "-3",
+      "nearest_upper_complement_lower": "3"
+    },
+    "inputs": {
+      "H_derivative_bounds": {
+        "H1": "1",
+        "H2": "0",
+        "H3": "0"
+      },
+      "assembly_artifact_sha256": "ef53d2e2e992a265f868db77e985f04e0f1654c03f9ede8f6eb27cae060988ed",
+      "assembly_evidence_id": "FC49-77-S0Y-AFFINE-001",
+      "cluster_center": "0",
+      "cluster_dimension": 2,
+      "cluster_enclosure_radius": "1/3",
+      "cluster_radius_semantics": "derived_uniform_supremum_over_exact_cell_cover",
+      "complement_distance_from_center_lower": "3",
+      "complement_distance_semantics": "derived_uniform_infimum_over_exact_cell_cover",
+      "contour_center": "0",
+      "contour_policy": "max_margin_midpoint_circle_v1",
+      "contour_radius": "5/3",
+      "contract_id": "synthetic_s1_window_derived_contract",
+      "derivative_contract_id": "synthetic_affine_path_derivatives_v1",
+      "fixed_contour": true,
+      "norm": "operator",
+      "required_parameter_domain": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/8"
+        ]
+      },
+      "resolvent_distance": "4/3",
+      "selected_zero_based_indices": [
+        1,
+        2
+      ],
+      "self_adjoint": true,
+      "source_evidence_id": "FC49-77-S0Y-WINDOWS-001",
+      "theorem_id": "self_adjoint_riesz_contour_differentiation_v1",
+      "uniform_over_parameter_domain": true,
+      "valid_parameter_domain": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "outputs": {
+      "K": "15/16",
+      "K1": "45/32",
+      "K2": "1485/256",
+      "P1": "15/16",
+      "P2": "45/32",
+      "P3": "405/128",
+      "norm": "operator",
+      "valid_parameter_domain": {
+        "x": [
+          "0",
+          "1/8"
+        ],
+        "y": [
+          "0",
+          "1/8"
+        ]
+      }
+    },
+    "physical_status": "DECLARED_UNEXECUTED",
+    "status": "PASS_SYNTHETIC_S1_WINDOW_TO_CONTRACT"
+  },
+  "evidence_sha256": "e84369031a991e0bba56854b69096196a18287584c82bf6ba2e59e5d121c42a7",
+  "physical_model_evaluations": 0,
+  "physical_status": "DECLARED_UNEXECUTED",
+  "refusal_controls": [
+    {
+      "error": "WINDOW_EVIDENCE_SCHEMA_REQUIRED",
+      "id": "wrong_schema"
+    },
+    {
+      "error": "PHYSICAL_S1_EVIDENCE_REQUIRED",
+      "id": "physical_scope_not_accepted"
+    },
+    {
+      "error": "ZERO_PHYSICAL_EVALUATIONS_REQUIRED",
+      "id": "physical_evaluation_claim"
+    },
+    {
+      "error": "ASSEMBLY_ARTIFACT_HASH_MISMATCH",
+      "id": "assembly_hash_mismatch"
+    },
+    {
+      "error": "CONTOUR_POLICY_REQUIRED",
+      "id": "contour_policy_missing"
+    },
+    {
+      "error": "INVALID_REQUIRED_DOMAIN",
+      "id": "invalid_required_domain"
+    },
+    {
+      "error": "CELL_OUTSIDE_REQUIRED_DOMAIN",
+      "id": "cell_outside_domain"
+    },
+    {
+      "error": "COVERAGE_GAP",
+      "id": "coverage_gap"
+    },
+    {
+      "error": "COVERAGE_OVERLAP",
+      "id": "coverage_overlap"
+    },
+    {
+      "error": "DUPLICATE_CELL_ID",
+      "id": "duplicate_cell_id"
+    },
+    {
+      "error": "UNCERTIFIED_WINDOW_CELL",
+      "id": "uncertified_cell"
+    },
+    {
+      "error": "ASSEMBLY_PROVENANCE_MISMATCH",
+      "id": "assembly_provenance_mismatch"
+    },
+    {
+      "error": "SELF_ADJOINT_EVIDENCE_REQUIRED",
+      "id": "self_adjoint_missing"
+    },
+    {
+      "error": "SELECTED_INDICES_MISMATCH",
+      "id": "selected_indices_mismatch"
+    },
+    {
+      "error": "CELL_SPECTRAL_ORDER_INVALID",
+      "id": "spectral_order_invalid"
+    },
+    {
+      "error": "MISSING_SPECTRAL_BOUND",
+      "id": "missing_spectral_bound"
+    },
+    {
+      "error": "INVALID_RATIONAL",
+      "id": "invalid_rational"
+    },
+    {
+      "error": "UNBOUND_DERIVATIVE_INPUT",
+      "id": "missing_derivative"
+    },
+    {
+      "error": "NEGATIVE_DERIVATIVE_BOUND",
+      "id": "negative_derivative"
+    },
+    {
+      "error": "DERIVATIVE_PROVENANCE_MISMATCH",
+      "id": "derivative_provenance_mismatch"
+    },
+    {
+      "error": "UNIFORM_SEPARATION_REQUIRED",
+      "id": "uniform_separation_missing"
+    }
+  ],
+  "status": "PASS_SYNTHETIC_S1_WINDOW_ADAPTER_AND_REFUSALS",
+  "wall_seconds": 0.004199222003080649
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "twistronics_static_declaration_checks_v2",
+  "date": "2026-09-23",
+  "case_id": "FC49-77-K-Bm025-v2",
+  "plan_id": "FC49-77-PLAN-001",
+  "outcome": "PASS_STATIC_INTEGRITY_AND_FINITE_SET_CHECKS_ONLY",
+  "method": "Read-only Python standard-library verifier; no archived imports or numerical model execution.",
+  "documents": [
+    {
+      "path": "docs/certification-readiness/README.md",
+      "sha256": "2a6ae91bcabfd7f5e6daac693813cdfdd813e4919a73828b911ec4c343890437",
+      "bytes": 12830
+    },
+    {
+      "path": "docs/certification-readiness/CASE.md",
+      "sha256": "ca0e29e30fb6f7405ec721c033f97ad620a29b761107c5029a722b7fc461edc9",
+      "bytes": 11061
+    },
+    {
+      "path": "docs/certification-readiness/CASE.json",
+      "sha256": "72c0a5801955777d041ae706f2356b9cf5c4a1941f366fe922b738e0bb099216",
+      "bytes": 19853
+    },
+    {
+      "path": "docs/certification-readiness/IMPLEMENTATION_PLAN.md",
+      "sha256": "8420357fb115480c93cf354f0f38a8947617230abe9b42bb0147228397eaad9e",
+      "bytes": 14808
+    },
+    {
+      "path": "docs/certification-readiness/PLAN.json",
+      "sha256": "b0c41faef08b372b2bb65d96e6f67081d8bb7e381f9190c9016c98bfb185c16f",
+      "bytes": 4524
+    },
+    {
+      "path": "docs/certification-readiness/verify_declaration.py",
+      "sha256": "d78259cdc21aa2eabfc37c7d97d3a72827bd9d14908e6ef19865206e3e25b336",
+      "bytes": 9124
+    },
+    {
+      "path": "docs/certification-readiness/SOURCE_BINDINGS.json",
+      "sha256": "dbd68e3ced48382fcf2fbbcdd2ed5c7d6b6ff9a76ccaa16e68e1c533d3337667",
+      "bytes": 7854
+    }
+  ],
+  "checks": {
+    "archive_binding": true,
+    "file:docs/certification-readiness/README.md": true,
+    "file:research/benchmarks/migration_contract_review/CONTRACT_EXPECTATIONS.json": true,
+    "file:research/benchmarks/research_questions_006/DERIVATION.md": true,
+    "file:research/benchmarks/research_questions_008/DERIVATION.md": true,
+    "file:docs/certification-readiness/CASE.md": true,
+    "file:docs/certification-readiness/CASE.json": true,
+    "file:research/benchmarks/research_questions_007/DERIVATION.md": true,
+    "file:docs/certification-readiness/IMPLEMENTATION_PLAN.md": true,
+    "file:docs/certification-readiness/PLAN.json": true,
+    "file:docs/certification-readiness/verify_declaration.py": true,
+    "member:migrated_valley_control.py": true,
+    "spans:migrated_valley_control.py": true,
+    "member:guarded_topology.py": true,
+    "spans:guarded_topology.py": true,
+    "member:response_inputs.py": true,
+    "spans:response_inputs.py": true,
+    "member:RUN/MODELS.json": true,
+    "member:RUN/BASIS.json": true,
+    "member:PLAN_MIGRATION.json": true,
+    "member:partner_v074p.zip": true,
+    "member:bm_strain.py": true,
+    "spans:bm_strain.py": true,
+    "member:knobs.py": true,
+    "spans:knobs.py": true,
+    "member:fast_engine.py": true,
+    "spans:fast_engine.py": true,
+    "member:euler.py": true,
+    "spans:euler.py": true,
+    "contract_outer_sources": true,
+    "retained_order": true,
+    "exact_neighbor_shell": true,
+    "basis_counts_nesting": true,
+    "dimensions_and_pairs": true,
+    "embedding_and_isometry": true,
+    "canonical_array_hashes": true,
+    "fixed_pivot_coordinates": true,
+    "retained_constructor_literals": true,
+    "retained_harmonic_and_case": true,
+    "source_to_target_shifts": true,
+    "partial_shift_ranks": true,
+    "repair_endpoint_jets": true,
+    "rational_thresholds": true,
+    "case_plan_and_budget_binding": true,
+    "unexecuted_and_dependency_lock_open": true
+  },
+  "counts": {
+    "retained_indices": 49,
+    "comparison_indices": 77,
+    "dimensions": [
+      196,
+      308
+    ],
+    "inclusion_columns": 196,
+    "shift_index_ranks": {
+      "a": [
+        42,
+        40
+      ],
+      "b": [
+        68,
+        66
+      ]
+    },
+    "archive_members_bound": 11
+  },
+  "execution": {
+    "archived_modules_imported": false,
+    "hamiltonian_assemblies": 0,
+    "eigensolver_runs": 0,
+    "parameter_sweeps": 0,
+    "physical_case_outcome": null
+  },
+  "limitations": [
+    "Integrity checks do not validate the proposed numerical methods or prove their hypotheses.",
+    "Independent revision/design review and a locked, audited implementation remain required."
+  ]
+}
