@@ -1,0 +1,141 @@
+{
+  "files": {
+    "bounded_worker.py": "e5e108e3d76ffce8da34a6a165c9959ac3582559fedb10f2663b1e8bccaf8661",
+    "concurrent_supervisor.py": "6a74f18cb5615a8fc3f2af648d4fd95cd253e3a75e17ee994ee82b43efb4d828",
+    "test_concurrent_supervisor.py": "ef70e13bf91fd864c86c44c3e40ca16a87b7b404f9bd2b62cc1b2a17ff82e8fa"
+  },
+  "physical_eigensolves": 0,
+  "status": "PASS",
+  "synthetic_only": true,
+  "tests": [
+    {
+      "bit_identical_synthetic_output_sha256": "d8d9b9c420a2709daed51968e6e55abe52dc5b2b893abac73a8aba5c129deef9",
+      "case": "normal_1_workers",
+      "jobs": 4,
+      "status": "PASS"
+    },
+    {
+      "bit_identical_synthetic_output_sha256": "d8d9b9c420a2709daed51968e6e55abe52dc5b2b893abac73a8aba5c129deef9",
+      "case": "normal_2_workers",
+      "jobs": 4,
+      "status": "PASS"
+    },
+    {
+      "bit_identical_synthetic_output_sha256": "d8d9b9c420a2709daed51968e6e55abe52dc5b2b893abac73a8aba5c129deef9",
+      "case": "normal_4_workers",
+      "jobs": 4,
+      "status": "PASS"
+    },
+    {
+      "all_direct_children_reaped": true,
+      "all_groups_empty": true,
+      "attempted_jobs": [
+        "job000",
+        "job001",
+        "job002",
+        "job003"
+      ],
+      "case": "worker_failure",
+      "observed_failure": "RuntimeError: WORKER_FAILED_OR_GROUP_NOT_EMPTY:job000",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "all_direct_children_reaped": true,
+      "all_groups_empty": true,
+      "attempted_jobs": [
+        "job000",
+        "job001",
+        "job002",
+        "job003"
+      ],
+      "case": "job_timeout",
+      "observed_failure": "RuntimeError: JOB_WATCHDOG_TIMEOUT:job000",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "all_direct_children_reaped": true,
+      "all_groups_empty": true,
+      "attempted_jobs": [
+        "job000",
+        "job001",
+        "job002",
+        "job003"
+      ],
+      "case": "batch_timeout",
+      "observed_failure": "RuntimeError: BATCH_WATCHDOG_TIMEOUT",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "all_direct_children_reaped": true,
+      "all_groups_empty": true,
+      "attempted_jobs": [
+        "job000",
+        "job001",
+        "job002",
+        "job003"
+      ],
+      "case": "file_limit",
+      "observed_failure": "RuntimeError: WORKER_FAILED_OR_GROUP_NOT_EMPTY:job000",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "all_direct_children_reaped": true,
+      "all_groups_empty": true,
+      "attempted_jobs": [
+        "job000",
+        "job001",
+        "job002",
+        "job003"
+      ],
+      "case": "memory_limit",
+      "observed_failure": "RuntimeError: WORKER_FAILED_OR_GROUP_NOT_EMPTY:job000",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "all_direct_children_reaped": true,
+      "all_groups_empty": true,
+      "attempted_jobs": [
+        "job000",
+        "job001",
+        "job002",
+        "job003"
+      ],
+      "case": "descendant_cleanup",
+      "observed_failure": "RuntimeError: JOB_WATCHDOG_TIMEOUT:job000",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "all_groups_empty": true,
+      "case": "second_launch_exception",
+      "receipts": 2,
+      "status": "PASS"
+    },
+    {
+      "all_groups_empty": true,
+      "case": "supervisor_sigterm",
+      "receipts": 4,
+      "status": "PASS"
+    },
+    {
+      "case": "existing_output",
+      "launches": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "unbalanced_jobs",
+      "launches": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "overlap",
+      "launches": 0,
+      "status": "PASS"
+    }
+  ]
+}

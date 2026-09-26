@@ -1,0 +1,209 @@
+{
+  "finding": "Failure paths return with other worker process groups still active and without their receipts.",
+  "physical_eigensolves": 0,
+  "real_subprocesses": 0,
+  "results": {
+    "controls_e_022": {
+      "run_py_sha256": "a1da1a827156fd635362ec4385669e9004190ab09297932c4817124895037a83",
+      "scenarios": [
+        {
+          "batch_receipt": true,
+          "exception": null,
+          "killed_jobs": [],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000",
+            "job001",
+            "job002",
+            "job003"
+          ],
+          "running_after_supervisor_returns": [],
+          "scenario": "normal"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "AssertionError: worker 0 failed",
+          "killed_jobs": [],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000"
+          ],
+          "running_after_supervisor_returns": [
+            1,
+            2,
+            3
+          ],
+          "scenario": "worker_failure"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "AssertionError: worker 0 failed",
+          "killed_jobs": [
+            0
+          ],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000"
+          ],
+          "running_after_supervisor_returns": [
+            1,
+            2,
+            3
+          ],
+          "scenario": "job_timeout"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "AssertionError: worker 0 failed",
+          "killed_jobs": [
+            0
+          ],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000"
+          ],
+          "running_after_supervisor_returns": [
+            1,
+            2,
+            3
+          ],
+          "scenario": "batch_timeout"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "OSError: synthetic launch failure",
+          "killed_jobs": [],
+          "launched_jobs": [
+            0
+          ],
+          "receipt_jobs": [],
+          "running_after_supervisor_returns": [
+            0
+          ],
+          "scenario": "second_launch_failure"
+        }
+      ]
+    },
+    "cutoff_f_023": {
+      "run_py_sha256": "b98bd2898019aa9c1b4c4782bd3edc2b765938029356cea75d92cb646cf0eeb8",
+      "scenarios": [
+        {
+          "batch_receipt": true,
+          "exception": null,
+          "killed_jobs": [],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000",
+            "job001",
+            "job002",
+            "job003"
+          ],
+          "running_after_supervisor_returns": [],
+          "scenario": "normal"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "AssertionError: worker 0 failed",
+          "killed_jobs": [],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000"
+          ],
+          "running_after_supervisor_returns": [
+            1,
+            2,
+            3
+          ],
+          "scenario": "worker_failure"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "AssertionError: worker 0 failed",
+          "killed_jobs": [
+            0
+          ],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000"
+          ],
+          "running_after_supervisor_returns": [
+            1,
+            2,
+            3
+          ],
+          "scenario": "job_timeout"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "AssertionError: worker 0 failed",
+          "killed_jobs": [
+            0
+          ],
+          "launched_jobs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "receipt_jobs": [
+            "job000"
+          ],
+          "running_after_supervisor_returns": [
+            1,
+            2,
+            3
+          ],
+          "scenario": "batch_timeout"
+        },
+        {
+          "batch_receipt": false,
+          "exception": "OSError: synthetic launch failure",
+          "killed_jobs": [],
+          "launched_jobs": [
+            0
+          ],
+          "receipt_jobs": [],
+          "running_after_supervisor_returns": [
+            0
+          ],
+          "scenario": "second_launch_failure"
+        }
+      ]
+    }
+  }
+}
