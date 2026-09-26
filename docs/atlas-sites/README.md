@@ -12,3 +12,5 @@ Independent review requested on PR #2. For coverage exporter replay, use the aud
 Version22 fixes the single grid-tolerance sentence in both index.html and graphene.html. Sites source 3c1f5d45331c4357093c60bb99dab719d48ca094. Restore with final argument22; v21 remains available. Numerical data and frames unchanged.
 
 Version 23 promotes independently reviewed depth-11 coverage (Claude review 5842413474) and the qualified cutoff a/b comparison. All eight partition selectors, 3151 latest cells, 1554 point-to-partition links and source-bound export checks pass. This is data/text only; prior independent browser checks are not a new browser test. Dynamics002 remains separate and pending review.
+
+Version 24 changes only the landing coverage render: a small full-square locator plus default 128× detail, yellow/dotted unresolved cells against dark blue accepted cells, visible legend and four area buttons. The four windows show36,30,26,19 unresolved cells, all111 in total. Data and scientific verdicts unchanged. DOM/geometry checks passed; a rasterized geometry preview was inspected. No new browser-rendering claim.

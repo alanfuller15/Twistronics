@@ -1,8 +1,8 @@
-"""Restore the exact Sites source at version 18, 19, 20, 21, 22 or 23 for independent review."""
+"""Restore the exact Sites source at version 18, 19, 20, 21, 22, 23 or 24 for independent review."""
 import base64,gzip,hashlib,io,json,subprocess,sys,tarfile
 from pathlib import Path
-here=Path(__file__).resolve().parent;m=json.loads((here/'MANIFEST.json').read_text());out=Path(sys.argv[1]).resolve();version=sys.argv[2] if len(sys.argv)>2 else '23'
-assert version in ['18','19','20','21','22','23'];assert not out.exists();out.mkdir(parents=True)
+here=Path(__file__).resolve().parent;m=json.loads((here/'MANIFEST.json').read_text());out=Path(sys.argv[1]).resolve();version=sys.argv[2] if len(sys.argv)>2 else '24'
+assert version in ['18','19','20','21','22','23','24'];assert not out.exists();out.mkdir(parents=True)
 parts=[]
 for item in m['parts']:
  data=base64.b64decode((here/item['path']).read_text());assert hashlib.sha256(data).hexdigest()==item['decoded_sha256'];parts.append(data)

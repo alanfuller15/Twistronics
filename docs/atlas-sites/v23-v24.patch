@@ -1,0 +1,126 @@
+diff --git a/dist/coverage-preview.js b/dist/coverage-preview.js
+new file mode 100644
+index 0000000..358fd49
+--- /dev/null
++++ b/dist/coverage-preview.js
+@@ -0,0 +1,42 @@
++'use strict';
++(() => {
++const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
++const latest=window.TWISTRONICS_COVERAGE.runs.at(-1);
++const cells=Object.entries(latest.quadrants).flatMap(([q,g])=>['accepted','frontier','unresolved'].flatMap(kind=>g[kind].map(([d,x,y])=>({d,x,y,q,kind}))));
++const unresolved=cells.filter(c=>c.kind==='unresolved');
++const depth=Math.max(...unresolved.map(c=>c.d)),side=2**depth,span=16;
++const colors={accepted:'#214d63',frontier:'#ad9ade',unresolved:'#ffca50'};
++function svg(parent,tag,attrs,text){const e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;parent.append(e);return e;}
++function bounds(c){const scale=2**(depth-c.d);return {x:c.x*scale,y:c.y*scale,w:scale};}
++function inside(c,w){const b=bounds(c);return b.x>=w.x&&b.x+b.w<=w.x+span&&b.y>=w.y&&b.y+b.w<=w.y+span;}
++// Greedy, deterministic close-ups of the retained cells; no invented cells or area.
++let remaining=[...unresolved];const windows=[];
++while(remaining.length){
++ let best=null;
++ for(const c of remaining){const b=bounds(c),w={x:Math.max(0,Math.min(side-span,b.x-8)),y:Math.max(0,Math.min(side-span,b.y-8)),q:c.q};w.count=remaining.filter(c=>inside(c,w)).length;if(!best||w.count>best.count)best=w;}
++ if(!best.count)throw new Error('Unresolved cell is too large for this close-up');
++ windows.push(best);remaining=remaining.filter(c=>!inside(c,best));
++}
++const overview=$('coverage-overview');
++svg(overview,'title',{},`${latest.label}: whole square. Markers locate unresolved areas; their sizes do not represent area.`);
++for(const c of cells){const n=2**c.d;svg(overview,'rect',{x:320*c.x/n,y:320*(1-(c.y+1)/n),width:320/n,height:320/n,fill:colors[c.kind],stroke:'none'});}
++svg(overview,'path',{d:'M160 0V320M0 160H320',stroke:'#7192a4','stroke-width':1,fill:'none'});
++const locators=windows.map(w=>svg(overview,'circle',{cx:320*(w.x+span/2)/side,cy:320*(1-(w.y+span/2)/side),r:4,fill:'#ffca50',stroke:'#06121c','stroke-width':1.5}));
++const ring=svg(overview,'circle',{r:12,fill:'none',stroke:'#fff','stroke-width':3});
++$('coverage-magnification').textContent=`${side/span}× closer`;
++function draw(i){
++ const w=windows[i],plot=$('coverage-closeup');plot.replaceChildren();const count=unresolved.filter(c=>inside(c,w)).length;
++ $('coverage-detail-title').textContent=`Area ${i+1} of ${windows.length} · ${w.q.toUpperCase()}`;
++ $('coverage-detail-count').textContent=`${count} unresolved cells`;
++ svg(plot,'title',{},`Area ${i+1}, ${count} unresolved depth-${depth} cells. ${side/span} times enlargement in each direction.`);
++ for(const c of cells){const b=bounds(c),x0=Math.max(b.x,w.x),x1=Math.min(b.x+b.w,w.x+span),y0=Math.max(b.y,w.y),y1=Math.min(b.y+b.w,w.y+span);if(x1<=x0||y1<=y0)continue;
++  const x=(x0-w.x)*320/span,y=(w.y+span-y1)*320/span,width=(x1-x0)*320/span,height=(y1-y0)*320/span;
++  svg(plot,'rect',{x,y,width,height,fill:colors[c.kind],stroke:c.kind==='unresolved'?'#06121c':'#65889c','stroke-width':c.kind==='unresolved'?1.6:.7,'data-status':c.kind});
++  if(c.kind==='unresolved')svg(plot,'circle',{cx:x+width/2,cy:y+height/2,r:2.5,fill:'#06121c','aria-hidden':'true'});
++ }
++ ring.setAttribute('cx',locators[i].getAttribute('cx'));ring.setAttribute('cy',locators[i].getAttribute('cy'));
++ [...$('coverage-area-buttons').children].forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));
++}
++windows.forEach((w,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`Area ${i+1}`;b.addEventListener('click',()=>draw(i));$('coverage-area-buttons').append(b);});
++draw(0);
++})();
+diff --git a/dist/gallery.css b/dist/gallery.css
+index 0e9e7ee..55c71c4 100644
+--- a/dist/gallery.css
++++ b/dist/gallery.css
+@@ -46,3 +46,17 @@
+ @media(max-width:720px){.model-gallery{gap:24px}.model-card .graphene-stage,.model-card .wave-stage{height:310px}.model-card .band-stage{height:340px}}
+ 
+ .gallery-heading .opening-objective{font-size:1.125rem;line-height:1.5;color:var(--text);max-width:62ch}.gallery-heading .opening-context{font-size:1rem;line-height:1.5;margin-top:10px;max-width:68ch}
++
++/* Readable coverage close-up: true cell geometry, enlarged before interaction. */
++.coverage-preview{padding:16px;background:#08141d}
++.coverage-preview-key{display:flex;flex-wrap:wrap;gap:10px 20px;margin-bottom:18px;font-size:.9375rem;color:#edf6fc}
++.coverage-preview-key>span{display:flex;gap:8px;align-items:center}.coverage-preview-key i{display:inline-grid;place-items:center;width:22px;height:22px;font-style:normal;border:1px solid #91acbc;border-radius:2px}
++.coverage-key-pass{background:#214d63}.coverage-preview-key .coverage-key-open{background:#ffca50;color:#06121c;border-color:#ffca50;font-size:24px;line-height:1}
++.coverage-locator-row{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:18px;max-width:480px;margin:0 auto 18px}.coverage-locator-row figure{margin:0}.coverage-locator-row figcaption{font-size:.875rem;color:#c6dbe7;margin-top:6px;text-align:center}
++#model-coverage #coverage-overview{width:112px;height:112px;max-width:none;border:1px solid #7192a4;background:#214d63}
++.coverage-locator-row p{font-size:.875rem;line-height:1.5;color:#c6dbe7;margin:0}.coverage-locator-row strong{display:block;font-size:1.125rem;color:#fff;margin-bottom:5px}
++.coverage-area-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;max-width:480px;margin:0 auto 16px}.coverage-area-buttons button{min-height:44px;padding:8px 4px;font-size:.9375rem;white-space:normal}.coverage-area-buttons button[aria-pressed=true]{background:#ffca50;color:#06121c;border-color:#ffca50}.coverage-area-buttons button:focus-visible{outline:3px solid #fff;outline-offset:2px}
++.coverage-detail-heading{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;max-width:480px;margin:0 auto 10px;font-size:.9375rem}.coverage-detail-heading span{color:#ffdb83}
++#coverage-closeup{display:block;width:100%;height:auto;max-width:480px;margin:auto;background:#214d63;border:1px solid #8aabbd}
++.coverage-detail-help{font-size:.9375rem;line-height:1.5;max-width:480px;margin:12px auto 0;color:#d0e2ec}
++@media(max-width:370px){.coverage-preview{padding:12px}.coverage-locator-row{grid-template-columns:96px minmax(0,1fr);gap:12px}#model-coverage #coverage-overview{width:96px;height:96px}}
+diff --git a/dist/index.html b/dist/index.html
+index a71c46c..5599626 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -23,7 +23,7 @@
+   <script src="gallery.js" defer></script>
+   <script src="app.js" defer></script>
+   <script src="bands3d.js" defer></script>
+-  <script src="learning.js" defer></script>
++  <script src="learning.js" defer></script><script src="coverage-preview.js" defer></script>
+   <script src="graphene3d.js" defer></script>
+   <script src="journey.js" defer></script>
+ </head>
+@@ -69,10 +69,17 @@
+   <div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Each dot marks a tracked band crossing. Playback changes a model parameter, not physical time. Connecting lines join saved settings; they do not establish the path between them.</p></details><a href="#nodes/nodes-reading" data-next="nodes/nodes-reading"><span>2</span> Understand the model</a><a href="#nodes/nodes-source-detail" data-next="nodes/nodes-source-detail"><span>3</span> Methods & evidence</a></div>
+ </article>
+ <article class="model-card" id="model-coverage" aria-labelledby="card-coverage-title">
+-<header class="model-card-heading"><h2 id="card-coverage-title">From points to whole cells</h2><span>Audited coverage</span></header>
+-<a class="coverage-overview-link" href="#coverage" data-next="coverage" aria-label="Open the audited depth-11 coverage map"><svg id="coverage-overview" viewBox="0 0 320 320" role="img" aria-label="Latest audited full-square cell partition"></svg></a>
+-<p class="model-caption"><strong id="home-coverage-percent">99.997354%</strong> of the full square is accepted. <strong id="home-unresolved-count">111</strong> depth-11 cells remain unresolved. Rose cells are small; open the map to inspect them.</p>
+-<div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>Cyan regions passed the local cell-isolation check. Rose regions remain unresolved. Small unresolved area can still block a global claim. Refining a cell changes its size, not its physical model.</p></details><a href="#coverage" data-next="coverage"><span>2</span> Inspect the cells</a><a href="#evidence" data-next="evidence"><span>3</span> What PASS means</a></div>
++<header class="model-card-heading"><h2 id="card-coverage-title">See the cells still unresolved</h2><span>Audited coverage</span></header>
++<div class="coverage-preview">
++  <div class="coverage-preview-key" aria-label="Map legend"><span><i class="coverage-key-pass" aria-hidden="true"></i>Passed local check</span><span><i class="coverage-key-open" aria-hidden="true">•</i>Unresolved</span></div>
++  <div class="coverage-locator-row"><figure><svg id="coverage-overview" viewBox="0 0 320 320" role="img" aria-label="Whole square; white ring locates the enlarged area below"></svg><figcaption>Whole square</figcaption></figure><p><strong id="coverage-magnification">128× closer</strong>The white ring locates the close-up below. Markers show location, not cell size.</p></div>
++  <div class="coverage-area-buttons" id="coverage-area-buttons" role="group" aria-label="Choose an unresolved area"></div>
++  <div class="coverage-detail-heading" aria-live="polite"><strong id="coverage-detail-title"></strong><span id="coverage-detail-count"></span></div>
++  <svg id="coverage-closeup" viewBox="0 0 320 320" role="img" aria-labelledby="coverage-detail-title coverage-detail-count"></svg>
++  <p class="coverage-detail-help">Each yellow square with a dot is one unresolved cell. Blue regions passed the local check.</p>
++</div>
++<p class="model-caption"><strong id="home-coverage-percent">99.997354%</strong> of the full square passed. <strong id="home-unresolved-count">111</strong> cells remain unresolved. A small unresolved area still prevents a full-domain result.</p>
++<div class="model-learning"><details><summary><span>1</span> Read the picture</summary><p>The large picture is a close-up of real cells, enlarged equally in both directions. Yellow cells remain unresolved; blue regions passed the local isolation check. The four area buttons cover all remaining unresolved cells. Enlargement changes the drawing, not the measured area or the result.</p></details><a href="#coverage" data-next="coverage"><span>2</span> Inspect the full map</a><a href="#evidence" data-next="evidence"><span>3</span> What PASS means</a></div>
+ </article></div>
+     </section>
+     <section id="graphene" class="lesson" hidden aria-labelledby="graphene-title">
+diff --git a/dist/learning.js b/dist/learning.js
+index 7defdc3..fbdb57d 100644
+--- a/dist/learning.js
++++ b/dist/learning.js
+@@ -9,16 +9,6 @@ $('home-coverage-percent').textContent=latest.percent.toFixed(6)+'%';
+ $('home-unresolved-count').textContent=String(latest.counts.unresolved);
+ $('evidence-area').textContent=latest.percent.toFixed(6)+'%';
+ $('evidence-unresolved').textContent=String(latest.counts.unresolved);
+-const overview=$('coverage-overview'),NS='http://www.w3.org/2000/svg';
+-const title=document.createElementNS(NS,'title');title.textContent=`${latest.label}, independently reviewed: ${latest.counts.accepted} accepted cells, ${latest.counts.unresolved} unresolved cells`;overview.append(title);
+-for(const g of Object.values(latest.quadrants))for(const kind of ['accepted','frontier','unresolved'])for(const [d,x,y] of g[kind]){
+-  const n=2**d,rect=document.createElementNS(NS,'rect');
+-  for(const [key,val] of Object.entries({x:320*x/n,y:320*(1-(y+1)/n),width:320/n,height:320/n,fill:kind==='accepted'?'#70d8dd':kind==='frontier'?'#b9a47b':'#ff8197'}))rect.setAttribute(key,val);
+-  overview.append(rect);
+-}
+-for(const [q,x,y] of [['Q00',12,300],['Q01',12,24],['Q10',172,300],['Q11',172,24]]){
+-  const label=document.createElementNS(NS,'text');label.setAttribute('x',x);label.setAttribute('y',y);label.setAttribute('fill','#08141d');label.setAttribute('font-size','16');label.textContent=q;overview.append(label);
+-}
+ const history=$('coverage-history');
+ for(const r of C.runs){
+   const button=document.createElement('button');button.className='history-row';
