@@ -10,3 +10,5 @@ Current index.html SHA-256: 929f470cfa46aad574da7650d09a8c91abb0698b1f2fcbc58274
 Independent review requested on PR #2. For coverage exporter replay, use the audited scientific repository separately and supply the script's repo argument. Original v18–21 byte hashes and source IDs are in MANIFEST.json.
 
 Version22 fixes the single grid-tolerance sentence in both index.html and graphene.html. Sites source 3c1f5d45331c4357093c60bb99dab719d48ca094. Restore with final argument22; v21 remains available. Numerical data and frames unchanged.
+
+Version 23 promotes independently reviewed depth-11 coverage (Claude review 5842413474) and the qualified cutoff a/b comparison. All eight partition selectors, 3151 latest cells, 1554 point-to-partition links and source-bound export checks pass. This is data/text only; prior independent browser checks are not a new browser test. Dynamics002 remains separate and pending review.
