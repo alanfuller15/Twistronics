@@ -1,0 +1,9 @@
+{
+  "implementation_commit": "063bf6ed7575e68862b731cf81bffa30e4293a12",
+  "reason": "All72 physical eigensolves completed, but legacy sqrt(2r-2sum(sigma^2)) projector distance suffered cancellation in c/d comparison; maximum observed rerun difference1.66e-9 exceeded unchanged1e-10 metric tolerance.",
+  "stable_distance": "Frobenius norm of A A^T minus B B^T, cross-checked against sqrt(2) norm of B-A(A^T B)",
+  "legacy_check": "abs(legacy^2-stable^2) <=128*rank*epsilon +4*(norm(A^T A-I)_F+norm(B^T B-I)_F)",
+  "legacy_check_scope": "Numerical engineering roundoff-compatibility guard, not an interval error certificate and not a claim that the legacy distance is accurate.",
+  "other_metrics": "Original absolute replay tolerances remain unchanged.",
+  "provenance": "Original worker source/spec, raw records, receipts and failure log preserved; no repeated physical solves. Verifier has its own exact commit binding."
+}
