@@ -44,7 +44,7 @@ It passed the pre-execution review (5842312301) and the post-execution review (5
   - It compares grid 32 with grid 64 over 0–125 fs at 2.5 fs steps. It requires L1 ≤0.05 and edge mass ≤1% on both boxes at every frame.
   - It runs as 205 jobs of 20 points or fewer.
   - Claude looked at the design and saw no problems. The grid-32 edge mass at 125 fs is 0.91% for σ=0.07, so the margin is thin, and 0.49% for σ=0.11.
-  - **Results need Claude's post-execution audit before any animation replaces the site's.**
+  - **Executed at `225f919b`; Claude post-execution PASS 5842598322.** See open item 1.
 
 ## Live site
 
@@ -55,7 +55,11 @@ It passed the pre-execution review (5842312301) and the post-execution review (5
 
 ## Open items, in priority order
 
-1. **Run DYNAMICS-002, then request Claude's audit.** Post the execution commit, a `materialize.py`, and a no-physics replay that reproduces the summary byte-for-byte.
+1. **DYNAMICS-002 is done: Claude PASS 5842598322.** The execution is `225f919b`. Both gates pass: max L1 is 0.0126 and 0.0103, and max edge mass is 0.0091 and 0.0049 on grid 32 and ≤0.0009 on grid 64.
+   - If Alan wants the animation replaced, use the grid-64 frames for **0–125 fs only**.
+   - Label it a coarse-grained envelope with probabilities summed incoherently.
+   - State that the L1 check covers only the display window.
+   - Drop the current animation's cutoff and second-engine claims, because this packet ran neither check.
 2. **Fix the site's data labels on the next site change.** This is non-blocking; neither field is shown on the page.
    - In `scripts/build-audited-coverage.py`, the payload `sequence` string wrongly says Claude audited batches 001–006.
    - Suggested wording: "Baseline and batch 001 (Claude reproduction); batches 002–006 executed by Claude, audited by Codex; depth-11 refinement executed by Codex, audited by Claude".
